@@ -1,0 +1,5 @@
+.site-boundary {
+	@include rem('width', $size__site-container);
+	margin-left: auto;
+	margin-right: auto;
+}

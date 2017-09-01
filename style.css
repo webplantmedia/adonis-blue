@@ -33,9 +33,12 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 # Alignments
 # Clearings
 # Widgets
+# Grid
+# Header
 # Content
 	## Posts and pages
 	## Comments
+# Footer
 # Infinite scroll
 # Media
 	## Captions
@@ -706,8 +709,42 @@ a:hover, a:active {
 }
 
 /*--------------------------------------------------------------
+# Grid
+--------------------------------------------------------------*/
+.site-boundary {
+  width: 68.75rem;
+  width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
+.content-area {
+  float: left;
+  margin: 0 -25% 0 0;
+  width: 100%;
+}
+
+.site-main {
+  margin: 0 25% 0 0;
+}
+
+.site-content .widget-area {
+  float: right;
+  overflow: hidden;
+  width: 25%;
+}
+
+.site-footer {
+  clear: both;
+  width: 100%;
+}
+
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
@@ -745,6 +782,9 @@ a:hover, a:active {
   display: block;
 }
 
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/
