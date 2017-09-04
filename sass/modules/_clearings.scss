@@ -1,3 +1,4 @@
+.site-boundary:before,
 .clear:before,
 .clear:after,
 .entry-content:before,
@@ -13,6 +14,7 @@
 	@include clearfix;
 }
 
+.site-boundary:after,
 .clear:after,
 .entry-content:after,
 .comment-content:after,

@@ -4,8 +4,8 @@
 		@return '';
 	} @else {
 		$sizeValueRem: (($sizeValue/1px)/16);
-		#{$selector}: #{$sizeValueRem}rem;
 		#{$selector}: $sizeValue;
+		#{$selector}: #{$sizeValueRem}rem;
 	}
 }
 

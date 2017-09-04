@@ -3,12 +3,16 @@
 	display: block;
 	float: left;
 	width: 100%;
+	border-bottom: 2px solid $color__background-hr;
+	text-align: center;
 
 	ul {
 		display: none;
 		list-style: none;
 		margin: 0;
-		padding-left: 0;
+		padding: 0;
+		vertical-align: top;
+		text-align: left;
 
 		ul {
 			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
@@ -24,6 +28,8 @@
 			}
 
 			li {
+				position: static;
+
 				&:hover > ul,
 				&.focus > ul {
 					left: 100%;
@@ -31,7 +37,9 @@
 			}
 
 			a {
-				width: 200px;
+				padding-top: 0.5em;
+				padding-bottom: 0.5em;
+				white-space: nowrap;
 			}
 
 			:hover > a,
@@ -61,6 +69,7 @@
 	a {
 		display: block;
 		text-decoration: none;
+		padding: 0.7em 1.2em;
 	}
 
 	.current_page_item > a,
@@ -81,7 +90,7 @@
 		display: none;
 	}
 	.main-navigation ul {
-		display: block;
+		display: inline-block;
 	}
 }
 

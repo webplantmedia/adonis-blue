@@ -354,7 +354,7 @@ blockquote:before, blockquote:after, q:before, q:after {
 }
 
 hr {
-  background-color: #ccc;
+  background-color: #bab8b9;
   border: 0;
   height: 1px;
   margin-bottom: 1.5em;
@@ -521,13 +521,17 @@ a:hover, a:active {
   display: block;
   float: left;
   width: 100%;
+  border-bottom: 2px solid #bab8b9;
+  text-align: center;
 }
 
 .main-navigation ul {
   display: none;
   list-style: none;
   margin: 0;
-  padding-left: 0;
+  padding: 0;
+  vertical-align: top;
+  text-align: left;
 }
 
 .main-navigation ul ul {
@@ -544,13 +548,19 @@ a:hover, a:active {
   top: 0;
 }
 
+.main-navigation ul ul li {
+  position: static;
+}
+
 .main-navigation ul ul li:hover > ul,
 .main-navigation ul ul li.focus > ul {
   left: 100%;
 }
 
 .main-navigation ul ul a {
-  width: 200px;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  white-space: nowrap;
 }
 
 .main-navigation ul li:hover > ul,
@@ -566,6 +576,7 @@ a:hover, a:active {
 .main-navigation a {
   display: block;
   text-decoration: none;
+  padding: 0.7em 1.2em;
 }
 
 /* Small menu. */
@@ -579,7 +590,7 @@ a:hover, a:active {
     display: none;
   }
   .main-navigation ul {
-    display: block;
+    display: inline-block;
   }
 }
 
@@ -670,6 +681,7 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 # Clearings
 --------------------------------------------------------------*/
+.site-boundary:before,
 .clear:before,
 .clear:after,
 .entry-content:before,
@@ -687,6 +699,7 @@ a:hover, a:active {
   table-layout: fixed;
 }
 
+.site-boundary:after,
 .clear:after,
 .entry-content:after,
 .comment-content:after,
@@ -712,10 +725,18 @@ a:hover, a:active {
 # Grid
 --------------------------------------------------------------*/
 .site-boundary {
-  width: 68.75rem;
-  width: 1100px;
+  max-width: 1100px;
+  max-width: 68.75rem;
   margin-left: auto;
   margin-right: auto;
+  display: block;
+}
+
+.site-content {
+  padding-top: 40px;
+  padding-top: 2.5rem;
+  padding-bottom: 40px;
+  padding-bottom: 2.5rem;
 }
 
 /*--------------------------------------------------------------
