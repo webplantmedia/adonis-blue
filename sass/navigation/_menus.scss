@@ -7,7 +7,7 @@
 	text-align: center;
 
 	ul {
-		display: none;
+		display: inline-block;
 		list-style: none;
 		margin: 0;
 		padding: 0;
@@ -15,11 +15,13 @@
 		text-align: left;
 
 		ul {
-			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+			border: 2px solid $color__background-hr;
+			border-top-width: 0;
 			float: left;
 			position: absolute;
 			top: 100%;
 			left: -999em;
+			padding-top: 2px;
 			z-index: 99999;
 
 			ul {
@@ -28,18 +30,26 @@
 			}
 
 			li {
+				background-color: $color__background-body;
 				position: static;
+				float: none;
 
 				&:hover > ul,
 				&.focus > ul {
 					left: 100%;
 				}
+
+				&:hover > a,
+				&.focus > a {
+					background-color: $color__light-gray;
+				}
 			}
 
 			a {
-				padding-top: 0.5em;
-				padding-bottom: 0.5em;
 				white-space: nowrap;
+				@include rem('font-size',15px);
+				text-transform: none;
+				@include rem('min-width',200px);
 			}
 
 			:hover > a,
@@ -53,7 +63,7 @@
 
 		li:hover > ul,
 		li.focus > ul {
-			left: auto;
+			left: -2px;
 		}
 	}
 
@@ -69,28 +79,85 @@
 	a {
 		display: block;
 		text-decoration: none;
+		text-transform: uppercase;
 		padding: 0.7em 1.2em;
+		color: $color__text-main;
+		@include rem('font-size',16px);
 	}
 
 	.current_page_item > a,
 	.current-menu-item > a,
 	.current_page_ancestor > a,
 	.current-menu-ancestor > a {
+		background-color: $color__light-gray;
 	}
+}
+
+.menu-toggle {
+	display: none;
 }
 
 /* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-	display: block;
-}
-
-@media screen and (min-width: 37.5em) {
-	.menu-toggle {
+@media screen and (max-width: 37.5em) {
+	.main-navigation ul {
 		display: none;
 	}
-	.main-navigation ul {
-		display: inline-block;
+
+	.menu-toggle,
+	.main-navigation.toggled ul {
+		display: block;
+	}
+
+	.main-navigation.toggled {
+		ul {
+			border-width: 0;
+			border-top: 2px solid $color__background-hr;
+
+			ul {
+				position: static;
+				left: auto;
+				float: none;
+				padding-top: 0;
+				border-top-width: 0;
+
+				a {
+					min-width: 0;
+					padding-left: 2.4em;
+
+				}
+
+				ul {
+					a {
+						padding-left: 3.6em;
+					}
+
+					ul {
+						a {
+							padding-left: 4.8em;
+						}
+					}
+				}
+			}
+
+			li {
+				float: none;
+
+				&:hover > a,
+				&.focus > a {
+					background-color: $color__background-body;
+				}
+
+				.current_page_item > a,
+				.current-menu-item > a {
+					background-color: $color__light-gray;
+				}
+			}
+
+			.current_page_ancestor > a,
+			.current-menu-ancestor > a {
+				background-color: $color__background-body;
+			}
+		}
 	}
 }
 
