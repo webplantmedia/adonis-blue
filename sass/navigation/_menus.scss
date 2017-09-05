@@ -95,10 +95,27 @@
 
 .menu-toggle {
 	display: none;
+	@include rem('font-size',18px);
+	@include rem('line-height',24px);
+	text-transform: uppercase;
+	padding: 0.7em 1.2em;
+	background: none;
+	font-weight: bold;
+	width: 100%;
+
+	i {
+		padding-left: 1em;
+
+		&:before {
+			content: "\f419";
+			@include rem('font-size',24px);
+			color: $color__primary;
+		}
+	}
 }
 
 /* Small menu. */
-@media screen and (max-width: 37.5em) {
+@media screen and (max-width: 60em) {
 	.main-navigation ul {
 		display: none;
 	}
@@ -109,6 +126,12 @@
 	}
 
 	.main-navigation.toggled {
+		.menu-toggle {
+			i:before {
+				content: "\f406";
+			}
+		}
+
 		ul {
 			border-width: 0;
 			border-top: 2px solid $color__background-hr;
@@ -151,6 +174,10 @@
 				.current-menu-item > a {
 					background-color: $color__light-gray;
 				}
+			}
+			
+			a {
+				@include rem('font-size',18px);
 			}
 
 			.current_page_ancestor > a,

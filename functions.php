@@ -120,6 +120,9 @@ function angiemakesdesign_scripts() {
 	// Add custom fonts, used in the main stylesheet.
 	wp_enqueue_style( 'angiemakesdesign-fonts', angiemakesdesign_fonts_url(), array(), null );
 	
+	// Add genericons
+	wp_enqueue_style( 'genericons', get_parent_theme_file_uri() . '/css/genericons/genericons.css', array(), '20151215' );
+	
 	wp_enqueue_style( 'angiemakesdesign-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'angiemakesdesign-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );

@@ -267,11 +267,14 @@ input,
 select,
 optgroup,
 textarea {
-  color: #404040;
-  font-family: sans-serif;
+  color: #6d686c;
+  font-family: "Lato", sans-serif;
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -410,15 +413,11 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-  border: 1px solid;
-  border-color: #ccc #ccc #bbb;
-  border-radius: 3px;
+  border: 0 solid;
   background: #e6e6e6;
   color: rgba(0, 0, 0, 0.8);
-  font-size: 12px;
-  font-size: 0.75rem;
   line-height: 1;
-  padding: .6em 1em .4em;
+  padding: .6em 1em .6em;
 }
 
 button:hover,
@@ -526,7 +525,7 @@ a:hover, a:active {
 }
 
 .main-navigation ul {
-  display: none;
+  display: inline-block;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -535,11 +534,13 @@ a:hover, a:active {
 }
 
 .main-navigation ul ul {
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+  border: 2px solid #bab8b9;
+  border-top-width: 0;
   float: left;
   position: absolute;
   top: 100%;
   left: -999em;
+  padding-top: 2px;
   z-index: 99999;
 }
 
@@ -549,7 +550,9 @@ a:hover, a:active {
 }
 
 .main-navigation ul ul li {
+  background-color: #fff;
   position: static;
+  float: none;
 }
 
 .main-navigation ul ul li:hover > ul,
@@ -557,15 +560,23 @@ a:hover, a:active {
   left: 100%;
 }
 
+.main-navigation ul ul li:hover > a,
+.main-navigation ul ul li.focus > a {
+  background-color: #f5f5f5;
+}
+
 .main-navigation ul ul a {
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
   white-space: nowrap;
+  font-size: 15px;
+  font-size: 0.9375rem;
+  text-transform: none;
+  min-width: 200px;
+  min-width: 12.5rem;
 }
 
 .main-navigation ul li:hover > ul,
 .main-navigation ul li.focus > ul {
-  left: auto;
+  left: -2px;
 }
 
 .main-navigation li {
@@ -576,21 +587,95 @@ a:hover, a:active {
 .main-navigation a {
   display: block;
   text-decoration: none;
+  text-transform: uppercase;
   padding: 0.7em 1.2em;
+  color: #6d686c;
+  font-size: 16px;
+  font-size: 1rem;
+}
+
+.main-navigation .current_page_item > a,
+.main-navigation .current-menu-item > a,
+.main-navigation .current_page_ancestor > a,
+.main-navigation .current-menu-ancestor > a {
+  background-color: #f5f5f5;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+  text-transform: uppercase;
+  padding: 0.7em 1.2em;
+  background: none;
+  font-weight: bold;
+  width: 100%;
+}
+
+.menu-toggle i {
+  padding-left: 1em;
+}
+
+.menu-toggle i:before {
+  content: "\f419";
+  font-size: 24px;
+  font-size: 1.5rem;
+  color: #fcd4c1;
 }
 
 /* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-  display: block;
-}
-
-@media screen and (min-width: 37.5em) {
-  .menu-toggle {
+@media screen and (max-width: 60em) {
+  .main-navigation ul {
     display: none;
   }
-  .main-navigation ul {
-    display: inline-block;
+  .menu-toggle,
+  .main-navigation.toggled ul {
+    display: block;
+  }
+  .main-navigation.toggled .menu-toggle i:before {
+    content: "\f406";
+  }
+  .main-navigation.toggled ul {
+    border-width: 0;
+    border-top: 2px solid #bab8b9;
+  }
+  .main-navigation.toggled ul ul {
+    position: static;
+    left: auto;
+    float: none;
+    padding-top: 0;
+    border-top-width: 0;
+  }
+  .main-navigation.toggled ul ul a {
+    min-width: 0;
+    padding-left: 2.4em;
+  }
+  .main-navigation.toggled ul ul ul a {
+    padding-left: 3.6em;
+  }
+  .main-navigation.toggled ul ul ul ul a {
+    padding-left: 4.8em;
+  }
+  .main-navigation.toggled ul li {
+    float: none;
+  }
+  .main-navigation.toggled ul li:hover > a,
+  .main-navigation.toggled ul li.focus > a {
+    background-color: #fff;
+  }
+  .main-navigation.toggled ul li .current_page_item > a,
+  .main-navigation.toggled ul li .current-menu-item > a {
+    background-color: #f5f5f5;
+  }
+  .main-navigation.toggled ul a {
+    font-size: 18px;
+    font-size: 1.125rem;
+  }
+  .main-navigation.toggled ul .current_page_ancestor > a,
+  .main-navigation.toggled ul .current-menu-ancestor > a {
+    background-color: #fff;
   }
 }
 
