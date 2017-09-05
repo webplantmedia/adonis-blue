@@ -612,6 +612,7 @@ a:hover, a:active {
   background: none;
   font-weight: bold;
   width: 100%;
+  color: #6d686c;
 }
 
 .menu-toggle i {
