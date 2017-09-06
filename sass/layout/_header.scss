@@ -1,2 +1,27 @@
-.site-header {
+.site-branding {
+	@include rem('padding-top',40px);
+	@include rem('padding-bottom',40px);
+
+	.site-logo {
+		text-align: center;
+		display: block;
+	}
+
+	.site-title {
+		text-align: center;
+		margin: 0;
+		// @include rem('margin-bottom',10px);
+		@include rem('font-size',40px);
+
+		a {
+			display: block;
+			text-decoration: none;
+			color: $color__text-title;
+		}
+	}
+
+	.site-description {
+		text-align: center;
+		margin: 0;
+	}
 }

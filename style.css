@@ -628,6 +628,10 @@ a:hover, a:active {
 
 /* Small menu. */
 @media screen and (max-width: 60em) {
+  .main-navigation .site-boundary {
+    padding-left: 0;
+    padding-right: 0;
+  }
   .main-navigation ul {
     display: none;
   }
@@ -816,6 +820,17 @@ a:hover, a:active {
   margin-left: auto;
   margin-right: auto;
   display: block;
+  padding-left: 20px;
+  padding-left: 1.25rem;
+  padding-right: 20px;
+  padding-right: 1.25rem;
+}
+
+.site-padding {
+  padding-left: 20px;
+  padding-left: 1.25rem;
+  padding-right: 20px;
+  padding-right: 1.25rem;
 }
 
 .site-content {
@@ -828,6 +843,36 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
+.site-branding {
+  padding-top: 40px;
+  padding-top: 2.5rem;
+  padding-bottom: 40px;
+  padding-bottom: 2.5rem;
+}
+
+.site-branding .site-logo {
+  text-align: center;
+  display: block;
+}
+
+.site-branding .site-title {
+  text-align: center;
+  margin: 0;
+  font-size: 40px;
+  font-size: 2.5rem;
+}
+
+.site-branding .site-title a {
+  display: block;
+  text-decoration: none;
+  color: #666666;
+}
+
+.site-branding .site-description {
+  text-align: center;
+  margin: 0;
+}
+
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
@@ -929,6 +974,11 @@ object {
 /* Make sure logo link wraps around logo image. */
 .custom-logo-link {
   display: inline-block;
+  margin: 0 auto;
+}
+
+.custom-logo-link img {
+  vertical-align: top;
 }
 
 /*--------------------------------------------------------------

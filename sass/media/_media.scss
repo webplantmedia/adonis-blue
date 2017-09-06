@@ -17,6 +17,11 @@ object {
 /* Make sure logo link wraps around logo image. */
 .custom-logo-link {
 	display: inline-block;
+	margin: 0 auto;
+
+	img {
+		vertical-align: top;
+	}
 }
 
 /*--------------------------------------------------------------

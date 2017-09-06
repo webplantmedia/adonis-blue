@@ -117,8 +117,15 @@
 
 /* Small menu. */
 @media screen and (max-width: 60em) {
-	.main-navigation ul {
-		display: none;
+	.main-navigation {
+		.site-boundary {
+			padding-left: 0;
+			padding-right: 0;
+		}
+
+		ul {
+			display: none;
+		}
 	}
 
 	.menu-toggle,
@@ -127,6 +134,7 @@
 	}
 
 	.main-navigation.toggled {
+
 		.menu-toggle {
 			i:before {
 				content: "\f406";
