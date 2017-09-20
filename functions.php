@@ -114,6 +114,19 @@ function angiemakesdesign_widgets_init() {
 add_action( 'widgets_init', 'angiemakesdesign_widgets_init' );
 
 /**
+ * Display customizer CSS.
+ */
+function twentyseventeen_customizer_css_wrap() {
+	require_once( get_parent_theme_file_path( '/css/customizer.css.php' ) );
+	?>
+	<style type="text/css">
+		<?php echo angiemakesdesign_customizer_css(); ?>
+	</style>
+	<?php
+}
+add_action( 'wp_head', 'twentyseventeen_customizer_css_wrap' );
+
+/**
  * Enqueue scripts and styles.
  */
 function angiemakesdesign_scripts() {
@@ -166,12 +179,6 @@ function angiemakesdesign_fonts_url() {
 
 /**
  * Add preconnect for Google Fonts.
- *
- * @since Twenty Seventeen 1.0
- *
- * @param array  $urls           URLs to print for resource hints.
- * @param string $relation_type  The relation type the URLs are printed.
- * @return array $urls           URLs to print for resource hints.
  */
 function angiemakesdesign_resource_hints( $urls, $relation_type ) {
 	if ( wp_style_is( 'angiemakesdesign-fonts', 'queue' ) && 'preconnect' === $relation_type ) {
@@ -184,6 +191,21 @@ function angiemakesdesign_resource_hints( $urls, $relation_type ) {
 	return $urls;
 }
 add_filter( 'wp_resource_hints', 'angiemakesdesign_resource_hints', 10, 2 );
+
+/**
+ * Add retina src image to custom logo
+ */
+function angiemakesdesign_get_custom_logo( $html, $blog_id ) {
+	if ( $retina_logo_id = get_theme_mod( 'custom_logo_2x' ) ) {
+		if( $img = wp_get_attachment_image_src( $retina_logo_id, 'full', false ) ) {
+			$url = $img[0];
+			$html = preg_replace( '/srcset=(\'|\").*?(\'|\")/', 'srcset="' . $url . ' 2x"', $html );
+		}
+	}
+
+	return $html;
+}
+add_filter( 'get_custom_logo', 'angiemakesdesign_get_custom_logo', 10, 2 );
 
 /**
  * Implement the Custom Header feature.
