@@ -1,4 +1,7 @@
+.top-header:before,
+.top-header:after,
 .site-boundary:before,
+.site-boundary:after,
 .clear:before,
 .clear:after,
 .entry-content:before,
@@ -14,6 +17,7 @@
 	@include clearfix;
 }
 
+.top-header:after,
 .site-boundary:after,
 .clear:after,
 .entry-content:after,

@@ -734,6 +734,118 @@ a:hover, a:active {
   width: 50%;
 }
 
+.top-header {
+  padding-top: 20px;
+  padding-top: 1.25rem;
+}
+
+.top-header .top-left-header {
+  float: left;
+}
+
+.top-header .top-right-header {
+  float: right;
+}
+
+.top-header .jetpack-social-navigation,
+.top-header .header-menu {
+  font-size: 12px;
+  font-size: 0.75rem;
+}
+
+.top-header .jetpack-social-navigation ul,
+.top-header .header-menu ul {
+  display: inline-block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
+  text-align: left;
+}
+
+.top-header .jetpack-social-navigation ul ul,
+.top-header .header-menu ul ul {
+  border-top: 2px solid #ececec;
+  float: left;
+  position: absolute;
+  top: 100%;
+  left: -999em;
+  z-index: 99999;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.08);
+}
+
+.top-header .jetpack-social-navigation ul ul a,
+.top-header .header-menu ul ul a {
+  padding-top: .5em;
+  padding-bottom: .5em;
+  border-bottom: 2px solid #ececec;
+  min-width: 150px;
+  min-width: 9.375rem;
+}
+
+.top-header .jetpack-social-navigation ul li:hover > ul,
+.top-header .header-menu ul li:hover > ul {
+  left: 0;
+}
+
+.top-header .jetpack-social-navigation li,
+.top-header .header-menu li {
+  float: left;
+  position: relative;
+}
+
+.top-header .jetpack-social-navigation a,
+.top-header .header-menu a {
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 0 0.5em;
+  font-size: 12px;
+  font-size: 0.75rem;
+  width: auto;
+  height: auto;
+  font-weight: bold;
+}
+
+.top-header .jetpack-social-navigation .menu > li > a,
+.top-header .header-menu .menu > li > a {
+  line-height: 36px;
+  line-height: 2.25rem;
+}
+
+.top-header .jetpack-social-navigation .menu > li:last-child a,
+.top-header .header-menu .menu > li:last-child a {
+  padding-right: 0;
+}
+
+.top-header .jetpack-social-navigation .menu > li:first-child a,
+.top-header .header-menu .menu > li:first-child a {
+  padding-left: 0;
+}
+
+.top-header .top-right-header-menu {
+  float: right;
+  padding-left: 1em;
+}
+
+.top-header .jetpack-social-navigation {
+  float: right;
+}
+
+.top-header .jetpack-social-navigation a {
+  font-weight: normal;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+}
+
+.top-header .jetpack-social-navigation a:before {
+  line-height: 36px;
+  line-height: 2.25rem;
+  font-size: 18px;
+  font-size: 1.125rem;
+}
+
+/* Small menu. */
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
@@ -799,7 +911,10 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 # Clearings
 --------------------------------------------------------------*/
+.top-header:before,
+.top-header:after,
 .site-boundary:before,
+.site-boundary:after,
 .clear:before,
 .clear:after,
 .entry-content:before,
@@ -817,6 +932,7 @@ a:hover, a:active {
   table-layout: fixed;
 }
 
+.top-header:after,
 .site-boundary:after,
 .clear:after,
 .entry-content:after,

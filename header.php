@@ -25,6 +25,8 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'angiemakesdesign' ); ?></a>
 
 	<header id="masthead" class="site-header">
+		<?php get_template_part( 'template-parts/menu', 'top' ); ?>
+
 		<div class="site-branding">
 			<div class="site-boundary">
 				<?php if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) : ?>

@@ -11,6 +11,7 @@ a:hover {
 	color: <?php echo $amd['link_hover_color']; ?>
 }
 
+.top-header .menu a:hover,
 .main-navigation a,
 .menu-toggle,
 body,
@@ -20,6 +21,13 @@ select,
 optgroup,
 textarea {
 	color: <?php echo $amd['text_color']; ?>
+}
+
+.top-header a:active,
+.top-header a:focus,
+.top-header a:visited,
+.top-header a {
+	color: <?php echo $amd['text_light_color']; ?>
 }
 
 .site-branding {
