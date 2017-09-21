@@ -116,15 +116,20 @@ add_action( 'widgets_init', 'angiemakesdesign_widgets_init' );
 /**
  * Display customizer CSS.
  */
-function twentyseventeen_customizer_css_wrap() {
-	require_once( get_parent_theme_file_path( '/css/customizer.css.php' ) );
-	?>
-	<style type="text/css">
-		<?php echo angiemakesdesign_customizer_css(); ?>
-	</style>
-	<?php
+function angiemakesdesign_customizer_css_wrap() {
+	ob_start();
+	get_template_part( 'css/css', 'customizer' );
+	$css = ob_get_clean();
+
+	if ( $css ) {
+		$out = '/* WP Customizer start */' . PHP_EOL;
+		$out .= apply_filters( 'angiemakesdesign_cached_css', $css );
+		$out .= PHP_EOL . '/* WP Customizer end */';
+		wp_add_inline_style( 'angiemakesdesign-style', $out );
+	}
+	return $css;
 }
-add_action( 'wp_head', 'twentyseventeen_customizer_css_wrap' );
+add_action( 'wp_enqueue_scripts', 'angiemakesdesign_customizer_css_wrap', 20 );
 
 /**
  * Enqueue scripts and styles.
@@ -196,7 +201,9 @@ add_filter( 'wp_resource_hints', 'angiemakesdesign_resource_hints', 10, 2 );
  * Add retina src image to custom logo
  */
 function angiemakesdesign_get_custom_logo( $html, $blog_id ) {
-	if ( $retina_logo_id = get_theme_mod( 'custom_logo_2x' ) ) {
+	global $amd;
+
+	if ( $retina_logo_id = get_theme_mod( 'custom_logo_2x', $amd['custom_logo_2x'] ) ) {
 		if( $img = wp_get_attachment_image_src( $retina_logo_id, 'full', false ) ) {
 			$url = $img[0];
 			$html = preg_replace( '/srcset=(\'|\").*?(\'|\")/', 'srcset="' . $url . ' 2x"', $html );
@@ -206,6 +213,11 @@ function angiemakesdesign_get_custom_logo( $html, $blog_id ) {
 	return $html;
 }
 add_filter( 'get_custom_logo', 'angiemakesdesign_get_custom_logo', 10, 2 );
+
+/**
+ * Default options.
+ */
+require get_template_directory() . '/inc/default-options.php';
 
 /**
  * Implement the Custom Header feature.

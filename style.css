@@ -267,7 +267,6 @@ input,
 select,
 optgroup,
 textarea {
-  color: #6d686c;
   font-family: "Lato", sans-serif;
   font-size: 16px;
   font-size: 1rem;
@@ -492,18 +491,6 @@ textarea {
 /*--------------------------------------------------------------
 ## Links
 --------------------------------------------------------------*/
-a {
-  color: royalblue;
-}
-
-a:visited {
-  color: purple;
-}
-
-a:hover, a:focus, a:active {
-  color: midnightblue;
-}
-
 a:focus {
   outline: thin dotted;
 }
@@ -534,17 +521,17 @@ a:hover, a:active {
 }
 
 .main-navigation ul ul {
-  border: 2px solid #bab8b9;
-  border-top-width: 0;
+  border-top: 2px solid #bab8b9;
   float: left;
   position: absolute;
   top: 100%;
   left: -999em;
-  padding-top: 2px;
   z-index: 99999;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.08);
 }
 
 .main-navigation ul ul ul {
+  border-top-width: 0;
   left: -999em;
   top: 0;
 }
@@ -562,10 +549,13 @@ a:hover, a:active {
 
 .main-navigation ul ul li:hover > a,
 .main-navigation ul ul li.focus > a {
-  background-color: #f5f5f5;
+  background-color: #ececec;
 }
 
 .main-navigation ul ul a {
+  border-bottom: 2px solid #ececec;
+  padding-top: 1em;
+  padding-bottom: 1em;
   white-space: nowrap;
   font-size: 15px;
   font-size: 0.9375rem;
@@ -576,7 +566,7 @@ a:hover, a:active {
 
 .main-navigation ul li:hover > ul,
 .main-navigation ul li.focus > ul {
-  left: -2px;
+  left: 0;
 }
 
 .main-navigation li {
@@ -589,7 +579,6 @@ a:hover, a:active {
   text-decoration: none;
   text-transform: uppercase;
   padding: 0.7em 1.2em;
-  color: #6d686c;
   font-size: 16px;
   font-size: 1rem;
 }
@@ -598,7 +587,7 @@ a:hover, a:active {
 .main-navigation .current-menu-item > a,
 .main-navigation .current_page_ancestor > a,
 .main-navigation .current-menu-ancestor > a {
-  background-color: #f5f5f5;
+  background-color: #ececec;
 }
 
 .menu-toggle {
@@ -608,11 +597,10 @@ a:hover, a:active {
   line-height: 24px;
   line-height: 1.5rem;
   text-transform: uppercase;
-  padding: 0.7em 1.2em;
+  padding: 1em 1.2em;
   background: none;
   font-weight: bold;
   width: 100%;
-  color: #6d686c;
 }
 
 .menu-toggle i {
@@ -639,6 +627,9 @@ a:hover, a:active {
   .main-navigation.toggled ul {
     display: block;
   }
+  .main-navigation.toggled {
+    border-bottom-width: 0;
+  }
   .main-navigation.toggled .menu-toggle i:before {
     content: "\f406";
   }
@@ -651,6 +642,7 @@ a:hover, a:active {
     left: auto;
     float: none;
     padding-top: 0;
+    box-shadow: none;
     border-top-width: 0;
   }
   .main-navigation.toggled ul ul a {
@@ -666,17 +658,54 @@ a:hover, a:active {
   .main-navigation.toggled ul li {
     float: none;
   }
+  .main-navigation.toggled ul li a,
   .main-navigation.toggled ul li:hover > a,
   .main-navigation.toggled ul li.focus > a {
     background-color: #fff;
   }
-  .main-navigation.toggled ul li .current_page_item > a,
-  .main-navigation.toggled ul li .current-menu-item > a {
-    background-color: #f5f5f5;
+  .main-navigation.toggled ul li.current_page_item > a,
+  .main-navigation.toggled ul li.current-menu-item > a {
+    background-color: #ececec;
   }
-  .main-navigation.toggled ul a {
+  .main-navigation.toggled ul li:last-child > a {
+    border-bottom: 2px solid #ececec;
+  }
+  .main-navigation.toggled ul li .sub-menu {
+    display: none;
+  }
+  .main-navigation.toggled ul li.focus > a {
+    font-weight: bold;
+  }
+  .main-navigation.toggled ul li.focus > .sub-menu {
+    display: block;
+  }
+  .main-navigation.toggled ul li.focus.menu-item-has-children > a > .genericon:before {
+    content: "\f50e";
+  }
+  .main-navigation.toggled ul li.menu-item-has-children > a > .genericon {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-left: 1.2em;
+    padding-right: 1.2em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    text-align: right;
+    line-height: 1.5;
     font-size: 18px;
     font-size: 1.125rem;
+  }
+  .main-navigation.toggled ul li.menu-item-has-children > a > .genericon:before {
+    content: "\f510";
+  }
+  .main-navigation.toggled ul a {
+    position: relative;
+    font-size: 18px;
+    font-size: 1.125rem;
+    border-bottom: 2px solid #ececec;
+    padding-top: 1em;
+    padding-bottom: 1em;
   }
   .main-navigation.toggled ul .current_page_ancestor > a,
   .main-navigation.toggled ul .current-menu-ancestor > a {

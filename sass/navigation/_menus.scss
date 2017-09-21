@@ -15,16 +15,16 @@
 		text-align: left;
 
 		ul {
-			border: 2px solid $color__background-hr;
-			border-top-width: 0;
+			border-top: 2px solid $color__background-hr;
 			float: left;
 			position: absolute;
 			top: 100%;
 			left: -999em;
-			padding-top: 2px;
 			z-index: 99999;
+			box-shadow: 0 1px 10px rgba(0, 0, 0, 0.08);
 
 			ul {
+				border-top-width: 0;
 				left: -999em;
 				top: 0;
 			}
@@ -46,10 +46,14 @@
 			}
 
 			a {
+				border-bottom: 2px solid $color__light-gray;
+				padding-top: 1em;
+				padding-bottom: 1em;
 				white-space: nowrap;
 				@include rem('font-size',15px);
 				text-transform: none;
 				@include rem('min-width',200px);
+
 			}
 
 			:hover > a,
@@ -63,7 +67,7 @@
 
 		li:hover > ul,
 		li.focus > ul {
-			left: -2px;
+			left: 0;
 		}
 	}
 
@@ -81,7 +85,6 @@
 		text-decoration: none;
 		text-transform: uppercase;
 		padding: 0.7em 1.2em;
-		color: $color__text-main;
 		@include rem('font-size',16px);
 	}
 
@@ -98,11 +101,10 @@
 	@include rem('font-size',18px);
 	@include rem('line-height',24px);
 	text-transform: uppercase;
-	padding: 0.7em 1.2em;
+	padding: 1em 1.2em;
 	background: none;
 	font-weight: bold;
 	width: 100%;
-	color: $color__text-main;
 
 	i {
 		padding-left: 1em;
@@ -135,6 +137,8 @@
 
 	.main-navigation.toggled {
 
+		border-bottom-width: 0;
+
 		.menu-toggle {
 			i:before {
 				content: "\f406";
@@ -150,6 +154,7 @@
 				left: auto;
 				float: none;
 				padding-top: 0;
+				box-shadow: none;
 				border-top-width: 0;
 
 				a {
@@ -174,19 +179,70 @@
 			li {
 				float: none;
 
+				a,
 				&:hover > a,
 				&.focus > a {
 					background-color: $color__background-body;
 				}
 
-				.current_page_item > a,
-				.current-menu-item > a {
+				&.current_page_item > a,
+				&.current-menu-item > a {
 					background-color: $color__light-gray;
+				}
+
+				&:last-child > a {
+					border-bottom: 2px solid $color__light-gray;
+				}
+
+				.sub-menu {
+					display: none;
+				}
+
+				&.focus {
+					> a {
+						font-weight: bold;
+					}
+
+					> .sub-menu {
+						display: block;
+					}
+
+					&.menu-item-has-children > a {
+						> .genericon {
+							&:before {
+								content: "\f50e";
+							}
+						}
+					}
+				}
+
+				&.menu-item-has-children > a {
+					> .genericon {
+						display: inline-block;
+						position: absolute;
+						top: 0;
+						right: 0;
+						padding-left: 1.2em;
+						padding-right: 1.2em;
+						padding-top: 1em;
+						padding-bottom: 1em;
+						text-align: right;
+						line-height: $font__line-height-body;
+						@include rem('font-size',18px);
+
+						&:before {
+							content: "\f510";
+						}
+					}
 				}
 			}
 			
 			a {
+				position: relative;
 				@include rem('font-size',18px);
+				border-bottom: 2px solid $color__light-gray;
+				padding-top: 1em;
+				padding-bottom: 1em;
 			}
 
 			.current_page_ancestor > a,

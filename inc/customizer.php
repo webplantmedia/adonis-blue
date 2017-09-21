@@ -11,6 +11,8 @@
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
 function angiemakesdesign_customize_register( $wp_customize ) {
+	global $amd_default;
+
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
@@ -29,12 +31,14 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 	/**
 	 * Logo
 	 */
-	$wp_customize->add_setting( 'custom_logo_2x', array(
-		'default' => '',
+	$setting_id = 'custom_logo_2x';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $amd_default[ $setting_id ],
+		'transport' => 'postMessage',
 		'sanitize_callback' => 'absint',
 	) );
 
-	$wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'custom_logo_2x', array(
+	$wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, $setting_id, array(
 		'label' => __( 'Retina Logo', 'angiemakesdesign' ),
 		'priority' => 8, // below the logo media selector
 		'section' => 'title_tagline',
@@ -49,16 +53,47 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 		'description' => __( 'Select image twice the size as your original logo image for crisp display on retina screens.', 'angiemakesdesign' ),
 	) ) );
 
+	$wp_customize->selective_refresh->add_partial( 'custom_logo_2x', array(
+		'selector'        => '.site-logo',
+		'render_callback' => 'angiemakesdesign_customize_partial_custom_logo',
+	) );
+
 	/**
 	 * Custom colors.
 	 */
-	$wp_customize->add_setting( 'accent_color', array(
-		'default' => '#f72525',
+	$setting_id = 'accent_color';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $amd_default[ $setting_id ],
+		'transport' => 'postMessage',
 		'sanitize_callback' => 'sanitize_hex_color',
 	) );
 
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'accent_color', array(
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $setting_id, array(
 		'label' => __( 'Accent Color', 'angiemakesdesign' ),
+		'section' => 'colors',
+	) ) );
+
+	$setting_id = 'text_color';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $amd_default[ $setting_id ],
+		'transport' => 'postMessage',
+		'sanitize_callback' => 'sanitize_hex_color',
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $setting_id, array(
+		'label' => __( 'Text Color', 'angiemakesdesign' ),
+		'section' => 'colors',
+	) ) );
+
+	$setting_id = 'link_color';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $amd_default[ $setting_id ],
+		'transport' => 'postMessage',
+		'sanitize_callback' => 'sanitize_hex_color',
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $setting_id, array(
+		'label' => __( 'Link Color', 'angiemakesdesign' ),
 		'section' => 'colors',
 	) ) );
 
@@ -88,6 +123,15 @@ function angiemakesdesign_customize_partial_blogname() {
  */
 function angiemakesdesign_customize_partial_blogdescription() {
 	bloginfo( 'description' );
+}
+
+/**
+ * Render the site logo for the selective refresh partial.
+ *
+ * @return void
+ */
+function angiemakesdesign_customize_partial_custom_logo() {
+	the_custom_logo();
 }
 
 /**

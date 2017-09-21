@@ -4,8 +4,8 @@
  * Handles toggling the navigation menu for small screens and enables TAB key
  * navigation support for dropdown menus.
  */
-( function() {
-	var container, button, menu, links, i, len;
+( function($) {
+	var container, button, menu, links, i, lenn, menuParent;
 
 	container = document.getElementById( 'site-navigation' );
 	if ( ! container ) {
@@ -42,47 +42,40 @@
 		}
 	};
 
-	// Get all the link elements within the menu.
-	links    = menu.getElementsByTagName( 'a' );
+	var menuParent = $(menu).find('.menu-item-has-children a');
+	menuParent.append('<i class="genericon"></i>');
+	var genericon = $(menuParent).find('i');
 
-	// Each time a menu link is focused or blurred, toggle focus.
-	for ( i = 0, len = links.length; i < len; i++ ) {
-		links[i].addEventListener( 'focus', toggleFocus, true );
-		links[i].addEventListener( 'blur', toggleFocus, true );
-	}
-
-	/**
-	 * Sets or removes .focus class on an element.
-	 */
-	function toggleFocus() {
-		var self = this;
-
-		// Move up through the ancestors of the current link until we hit .nav-menu.
-		while ( -1 === self.className.indexOf( 'nav-menu' ) ) {
-
-			// On li elements toggle the class .focus.
-			if ( 'li' === self.tagName.toLowerCase() ) {
-				if ( -1 !== self.className.indexOf( 'focus' ) ) {
-					self.className = self.className.replace( ' focus', '' );
-				} else {
-					self.className += ' focus';
-				}
-			}
-
-			self = self.parentElement;
-		}
-	}
+	$(genericon).click( function( event ) {
+		event.preventDefault();
+		$(this).parent().parent().toggleClass('focus');
+	} );
 
 	/**
 	 * Toggles `focus` class to allow submenu access on tablets.
 	 */
 	( function( container ) {
 		var touchStartFn, i,
-			parentLink = container.querySelectorAll( '.menu-item-has-children > a, .page_item_has_children > a' );
+			parentLinks = container.querySelectorAll( '.menu-item-has-children > a, .page_item_has_children > a' ),
+			menuToggle = $(container).find('.menu-toggle'),
+			links = container.querySelectorAll( 'ul a' );
+			li = container.querySelectorAll( 'ul li' );
 
 		if ( 'ontouchstart' in window ) {
+			clickOutsideMenu = function ( event ) {
+				if (!$(event.target).closest('li.focus').length) {
+					$(li).removeClass('focus');
+					$(document).off( 'touchstart', clickOutsideMenu );
+				} 
+			};
+
 			touchStartFn = function( e ) {
+				if ( $(menuToggle).is(':visible') ) {
+					return;
+				}
+
 				var menuItem = this.parentNode, i;
+				$(document).off( 'touchstart', clickOutsideMenu );
 
 				if ( ! menuItem.classList.contains( 'focus' ) ) {
 					e.preventDefault();
@@ -93,14 +86,13 @@
 						menuItem.parentNode.children[i].classList.remove( 'focus' );
 					}
 					menuItem.classList.add( 'focus' );
-				} else {
-					menuItem.classList.remove( 'focus' );
+					$(document).on( 'touchstart', clickOutsideMenu );
 				}
 			};
 
-			for ( i = 0; i < parentLink.length; ++i ) {
-				parentLink[i].addEventListener( 'touchstart', touchStartFn, false );
+			for ( i = 0; i < parentLinks.length; ++i ) {
+				parentLinks[i].addEventListener( 'click', touchStartFn, false );
 			}
 		}
 	}( container ) );
-} )();
+} )( jQuery );

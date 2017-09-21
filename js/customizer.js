@@ -39,4 +39,30 @@
 			}
 		} );
 	} );
+
+	// Colors
+	wp.customize( 'text_color', function( value ) {
+		value.bind( function( to ) {
+			var selectors = '.main-navigation a, .menu-toggle, body, button, input, select, optgroup, textarea';
+			$(selectors).css( {
+				'color': to
+			} );
+		} );
+	} );
+	wp.customize( 'link_color', function( value ) {
+		value.bind( function( to ) {
+			var selectors = 'a:visited, a:focus, a:active, a';
+			$(selectors).css( {
+				'color': to
+			} );
+		} );
+	} );
+	wp.customize( 'link_hover_color', function( value ) {
+		value.bind( function( to ) {
+			var selectors = 'a:hover';
+			$(selectors).css( {
+				'color': to
+			} );
+		} );
+	} );
 } )( jQuery );

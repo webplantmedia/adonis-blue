@@ -4,7 +4,6 @@ input,
 select,
 optgroup,
 textarea {
-	color: $color__text-main;
 	font-family: $font__main;
 	@include rem('font-size',16px);
 	line-height: $font__line-height-body;
