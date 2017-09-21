@@ -26,6 +26,10 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 			'selector'        => '.site-description',
 			'render_callback' => 'angiemakesdesign_customize_partial_blogdescription',
 		) );
+		$wp_customize->selective_refresh->add_partial( 'custom_logo_2x', array(
+			'selector'        => '.site-logo',
+			'render_callback' => 'angiemakesdesign_customize_partial_custom_logo',
+		) );
 	}
 
 	/**
@@ -53,9 +57,30 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 		'description' => __( 'Select image twice the size as your original logo image for crisp display on retina screens.', 'angiemakesdesign' ),
 	) ) );
 
-	$wp_customize->selective_refresh->add_partial( 'custom_logo_2x', array(
-		'selector'        => '.site-logo',
-		'render_callback' => 'angiemakesdesign_customize_partial_custom_logo',
+	$setting_id = 'heading_padding_top';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $amd_default[ $setting_id ],
+		'transport' => 'postMessage',
+		'sanitize_callback' => 'absint',
+	) );
+
+	$wp_customize->add_control( $setting_id, array(
+		'type' => 'number',
+		'label' => __( 'Padding Top', 'angiemakesdesign' ),
+		'section' => 'title_tagline',
+	) );
+
+	$setting_id = 'heading_padding_bottom';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $amd_default[ $setting_id ],
+		'transport' => 'postMessage',
+		'sanitize_callback' => 'absint',
+	) );
+
+	$wp_customize->add_control( $setting_id, array(
+		'type' => 'number',
+		'label' => __( 'Padding Bottom', 'angiemakesdesign' ),
+		'section' => 'title_tagline',
 	) );
 
 	/**

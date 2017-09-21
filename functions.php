@@ -117,6 +117,8 @@ add_action( 'widgets_init', 'angiemakesdesign_widgets_init' );
  * Display customizer CSS.
  */
 function angiemakesdesign_customizer_css_wrap() {
+	require get_template_directory() . '/css/mixins.php';
+
 	ob_start();
 	get_template_part( 'css/css', 'customizer' );
 	$css = ob_get_clean();

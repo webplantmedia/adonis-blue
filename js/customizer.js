@@ -8,6 +8,21 @@
 
 ( function( $ ) {
 
+	function rem( pixel ) {
+		pixel = parseInt( pixel );
+
+		if ( pixel < 1 ) {
+			return '';
+		}
+
+		var default_font_size = 16;
+
+		var css = '';
+		var em = pixel / default_font_size;
+
+		return em + 'rem';
+	}
+
 	// Site title and description.
 	wp.customize( 'blogname', function( value ) {
 		value.bind( function( to ) {
@@ -62,6 +77,22 @@
 			var selectors = 'a:hover';
 			$(selectors).css( {
 				'color': to
+			} );
+		} );
+	} );
+	wp.customize( 'heading_padding_top', function( value ) {
+		value.bind( function( to ) {
+			var selectors = '.site-branding';
+			$(selectors).css( {
+				'padding-top': to + 'px'
+			} );
+		} );
+	} );
+	wp.customize( 'heading_padding_bottom', function( value ) {
+		value.bind( function( to ) {
+			var selectors = '.site-branding';
+			$(selectors).css( {
+				'padding-bottom': to + 'px'
 			} );
 		} );
 	} );

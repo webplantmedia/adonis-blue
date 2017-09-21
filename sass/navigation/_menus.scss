@@ -50,7 +50,7 @@
 				padding-top: 1em;
 				padding-bottom: 1em;
 				white-space: nowrap;
-				@include rem('font-size',15px);
+				@include rem('font-size',$font__menu-dropdown-size);
 				text-transform: none;
 				@include rem('min-width',200px);
 
@@ -84,7 +84,7 @@
 		text-decoration: none;
 		text-transform: uppercase;
 		padding: 0.7em 1.2em;
-		@include rem('font-size',16px);
+		@include rem('font-size',$font__main-size);
 	}
 
 	.current_page_item > a,
@@ -97,8 +97,8 @@
 
 .menu-toggle {
 	display: none;
-	@include rem('font-size',18px);
-	@include rem('line-height',24px);
+	@include rem('font-size',$font__mobile-menu-size);
+	@include rem('line-height',$genericon__mobile-menu-size);
 	text-transform: uppercase;
 	padding: 1em 1.2em;
 	background: none;
@@ -110,7 +110,7 @@
 
 		&:before {
 			content: "\f419";
-			@include rem('font-size',24px);
+			@include rem('font-size',$genericon__mobile-menu-size);
 			color: $color__primary;
 		}
 	}
@@ -227,7 +227,7 @@
 						padding-bottom: 1em;
 						text-align: right;
 						line-height: $font__line-height-body;
-						@include rem('font-size',18px);
+						@include rem('font-size',$font__mobile-menu-size);
 
 						&:before {
 							content: "\f510";
@@ -238,7 +238,7 @@
 			
 			a {
 				position: relative;
-				@include rem('font-size',18px);
+				@include rem('font-size',$font__mobile-menu-size);
 				border-bottom: 2px solid $color__light-gray;
 				padding-top: 1em;
 				padding-bottom: 1em;

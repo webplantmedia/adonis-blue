@@ -21,3 +21,8 @@ optgroup,
 textarea {
 	color: <?php echo $amd['text_color']; ?>
 }
+
+.site-branding {
+	<?php echo angiemakesdesign_css_set_unit( 'padding-top', $amd['heading_padding_top'] ); ?>
+	<?php echo angiemakesdesign_css_set_unit( 'padding-bottom', $amd['heading_padding_bottom'] ); ?>
+}

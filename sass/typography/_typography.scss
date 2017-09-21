@@ -5,7 +5,7 @@ select,
 optgroup,
 textarea {
 	font-family: $font__main;
-	@include rem('font-size',16px);
+	@include rem('font-size',$font__main-size);
 	line-height: $font__line-height-body;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;

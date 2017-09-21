@@ -9,6 +9,8 @@ $amd_default['text_color'] = '#6d686c';
 $amd_default['accent_color'] = '#0000ff';
 $amd_default['link_color'] = '#ff0000';
 $amd_default['link_hover_color'] = '#ff0000';
+$amd_default['heading_padding_top'] = '40';
+$amd_default['heading_padding_bottom'] = '40';
 
 // Media
 $amd_default['custom_logo_2x'] = '';
