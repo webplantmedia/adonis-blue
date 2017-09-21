@@ -564,8 +564,7 @@ a:hover, a:active {
   min-width: 12.5rem;
 }
 
-.main-navigation ul li:hover > ul,
-.main-navigation ul li.focus > ul {
+.main-navigation ul li:hover > ul {
   left: 0;
 }
 
