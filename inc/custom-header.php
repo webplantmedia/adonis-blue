@@ -20,13 +20,19 @@ function angiemakesdesign_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'angiemakesdesign_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => '000000',
-		'width'                  => 1000,
-		'height'                 => 250,
-		'flex-height'            => true,
+		'flex-height'            => false,
 		'wp-head-callback'       => 'angiemakesdesign_header_style',
 	) ) );
 }
 add_action( 'after_setup_theme', 'angiemakesdesign_custom_header_setup' );
+
+/*register_default_headers( array(
+	'header' => array(
+		'url'           => '%s/img/headers-bg.png',
+		'thumbnail_url' => '%s/img/headers-bg.png',
+		'description'   => __( 'Header', 'angiemakesdesign' )
+	),
+) );*/
 
 if ( ! function_exists( 'angiemakesdesign_header_style' ) ) :
 	/**

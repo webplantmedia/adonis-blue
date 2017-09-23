@@ -207,11 +207,8 @@ add_filter( 'wp_resource_hints', 'angiemakesdesign_resource_hints', 10, 2 );
 function angiemakesdesign_get_custom_logo( $html, $blog_id ) {
 	global $amd;
 
-	if ( $retina_logo_id = get_theme_mod( 'custom_logo_2x', $amd['custom_logo_2x'] ) ) {
-		if( $img = wp_get_attachment_image_src( $retina_logo_id, 'full', false ) ) {
-			$url = $img[0];
-			$html = preg_replace( '/srcset=(\'|\").*?(\'|\")/', 'srcset="' . $url . ' 2x"', $html );
-		}
+	if ( $url = get_theme_mod( 'custom_logo_2x', $amd['custom_logo_2x'] ) ) {
+		$html = preg_replace( '/srcset=(\'|\").*?(\'|\")/', 'srcset="' . esc_url( $url ) . ' 2x"', $html );
 	}
 
 	return $html;

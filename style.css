@@ -734,11 +734,6 @@ a:hover, a:active {
   width: 50%;
 }
 
-.top-header {
-  padding-top: 20px;
-  padding-top: 1.25rem;
-}
-
 .top-header .top-left-header {
   float: left;
 }
@@ -987,6 +982,11 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
+.site-header {
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
 .site-branding {
   padding-top: 40px;
   padding-top: 2.5rem;

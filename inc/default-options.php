@@ -4,17 +4,25 @@ $amd = array();
 // Store default options;
 $amd_default = array();
 
+// Title & Tagline
+$amd_default['custom_logo_2x'] = '';
+$amd_default['heading_padding_top'] = '40';
+$amd_default['heading_padding_bottom'] = '40';
+
 // Colors
 $amd_default['text_color'] = '#6d686c';
 $amd_default['text_light_color'] = '#959595';
 $amd_default['accent_color'] = '#0000ff';
 $amd_default['link_color'] = '#ff0000';
 $amd_default['link_hover_color'] = '#ff0000';
-$amd_default['heading_padding_top'] = '40';
-$amd_default['heading_padding_bottom'] = '40';
 
-// Media
-$amd_default['custom_logo_2x'] = '';
+/*
+ * Theme Options
+ */
+
+// Top header
+$amd_default['top_header_background'] = get_template_directory_uri() . '/img/top-right-header-bg.png';
+$amd_default['top_header_background_offset'] = 460;
 
 /**
  * Set default options

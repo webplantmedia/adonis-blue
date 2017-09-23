@@ -39,14 +39,13 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( $setting_id, array(
 		'default' => $amd_default[ $setting_id ],
 		'transport' => 'postMessage',
-		'sanitize_callback' => 'absint',
+		'sanitize_callback' => 'esc_url_raw',
 	) );
 
-	$wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, $setting_id, array(
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, $setting_id, array(
 		'label' => __( 'Retina Logo', 'angiemakesdesign' ),
 		'priority' => 8, // below the logo media selector
 		'section' => 'title_tagline',
-		'mime_type' => 'image',
 		'button_labels' => array(
 			'select'       => __( 'Select Retina Logo', 'angiemakesdesign' ),
 			'change'       => __( 'Change Retina Logo', 'angiemakesdesign' ),
@@ -125,10 +124,59 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 	/**
 	 * Theme options.
 	 */
-	$wp_customize->add_section( 'theme_options', array(
+	$wp_customize->add_panel( 'theme_options', array(
 		'title'    => __( 'Theme Options', 'angiemakesdesign' ),
-		'priority' => 130, // Before Additional CSS.
+		'priority' => 330, // Before Additional CSS.
 	) );
+
+	/**
+	 * Top header.
+	 */
+	$wp_customize->add_section( 'top_header', array(
+		'title'    => __( 'Top Header', 'angiemakesdesign' ),
+		'panel'    => 'theme_options',
+	) );
+
+	$setting_id = 'top_header_background';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $amd_default[ $setting_id ],
+		'transport' => 'postMessage',
+		'sanitize_callback' => 'esc_url_raw',
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, $setting_id, array(
+		'label' => __( 'Top Right Header Background', 'angiemakesdesign' ),
+		'default' => $amd_default[ $setting_id ],
+		'section' => 'top_header',
+		'button_labels' => array(
+			'select'       => __( 'Select Image', 'angiemakesdesign' ),
+			'change'       => __( 'Change Image', 'angiemakesdesign' ),
+			'placeholder'  => __( 'No image selected', 'angiemakesdesign' ),
+			'frame_title'  => __( 'Select Image', 'angiemakesdesign' ),
+			'frame_button' => __( 'Choose Image', 'angiemakesdesign' ),
+		),
+		'description' => __( 'Select background image for top right header area.', 'angiemakesdesign' ),
+	) ) );
+
+	$setting_id = 'top_header_background_offset';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $amd_default[ $setting_id ],
+		'transport' => 'postMessage',
+		'sanitize_callback' => 'absint',
+	) );
+
+	$wp_customize->add_control( $setting_id, array(
+		'type' => 'range',
+		'label' => __( 'Offset', 'angiemakesdesign' ),
+		'section' => 'top_header',
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 500,
+			'step' => 1,
+			'style' => 'width:100%;',
+		),
+	) );
+
 }
 add_action( 'customize_register', 'angiemakesdesign_customize_register' );
 

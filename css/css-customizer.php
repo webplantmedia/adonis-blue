@@ -34,3 +34,29 @@ textarea {
 	<?php echo angiemakesdesign_css_set_unit( 'padding-top', $amd['heading_padding_top'] ); ?>
 	<?php echo angiemakesdesign_css_set_unit( 'padding-bottom', $amd['heading_padding_bottom'] ); ?>
 }
+
+<?php if ( ! empty( $amd['top_header_background'] ) ) : ?> 
+.site-header {
+	background-image: url("<?php echo $amd['top_header_background']; ?>");
+	background-position: calc(50% + <?php echo $amd['top_header_background_offset']; ?>px) top;
+}
+
+
+@media screen and (max-width: 1050px) {
+	.site-header {
+		background-position: calc(50% + <?php echo $amd['top_header_background_offset']-25; ?>px) top;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	.site-header {
+		background-position: calc(50% + <?php echo $amd['top_header_background_offset']-50; ?>px) top;
+	}
+}
+
+@media screen and (max-width: 950px) {
+	.site-header {
+		background-position: calc(50% + <?php echo $amd['top_header_background_offset']-75; ?>px) top;
+	}
+}
+<?php endif; ?>

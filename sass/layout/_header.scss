@@ -1,3 +1,8 @@
+.site-header {
+	background-position: center top;
+	background-repeat: no-repeat;
+}
+
 .site-branding {
 	@include rem('padding-top',40px);
 	@include rem('padding-bottom',40px);

@@ -96,4 +96,20 @@
 			} );
 		} );
 	} );
+	wp.customize( 'top_header_background', function( value ) {
+		value.bind( function( to ) {
+			var selectors = '.site-header';
+			$(selectors).css( {
+				'background-image': 'url("' + to + '")'
+			} );
+		} );
+	} );
+	wp.customize( 'top_header_background_offset', function( value ) {
+		value.bind( function( to ) {
+			var selectors = '.site-header';
+			$(selectors).css( {
+				'background-position': 'calc(50% + ' + to + 'px) top'
+			} );
+		} );
+	} );
 } )( jQuery );
