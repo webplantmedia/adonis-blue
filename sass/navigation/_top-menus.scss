@@ -89,9 +89,10 @@
 			}
 		}
 	}
-
 }
 
-/* Small menu. */
-@media screen and (max-width: 60em) {
+@media screen and (max-width: $size__menu-collapse-width) {
+	.top-header {
+		display: none;
+	}
 }

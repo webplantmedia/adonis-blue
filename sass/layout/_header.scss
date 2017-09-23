@@ -30,3 +30,9 @@
 		margin: 0;
 	}
 }
+
+@media screen and (max-width: $size__menu-collapse-width) {
+	#masthead.site-header {
+		background-image: none;
+	}
+}

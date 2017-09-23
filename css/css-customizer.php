@@ -11,6 +11,7 @@ a:hover {
 	color: <?php echo $amd['link_hover_color']; ?>
 }
 
+#site-navigation.toggled .top-mobile-header .focus > a,
 .top-header .menu a:hover,
 .main-navigation a,
 .menu-toggle,
@@ -23,6 +24,11 @@ textarea {
 	color: <?php echo $amd['text_color']; ?>
 }
 
+.toggled .top-mobile-header a:hover,
+.toggled .top-mobile-header a:active,
+.toggled .top-mobile-header a:focus,
+.toggled .top-mobile-header a:visited,
+.toggled .top-mobile-header a,
 .top-header a:active,
 .top-header a:focus,
 .top-header a:visited,

@@ -61,6 +61,7 @@
 						'menu_id'        => 'primary-menu',
 					) );
 				?>
+				<?php get_template_part( 'template-parts/menu', 'mobile' ); ?>
 			</div><!-- .site-boundary -->
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->

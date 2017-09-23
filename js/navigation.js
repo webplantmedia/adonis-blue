@@ -42,7 +42,7 @@
 		}
 	};
 
-	var menuParent = $(menu).find('.menu-item-has-children a');
+	var menuParent = $(container).find('.menu-item-has-children a');
 	menuParent.append('<i class="genericon"></i>');
 	var genericon = $(menuParent).find('i');
 
@@ -54,9 +54,9 @@
 	/**
 	 * Toggles `focus` class to allow submenu access on tablets.
 	 */
-	( function( container ) {
+	( function( container, menu ) {
 		var touchStartFn, i,
-			parentLinks = container.querySelectorAll( '.menu-item-has-children > a, .page_item_has_children > a' ),
+			parentLinks = menu.querySelectorAll( '.menu-item-has-children > a, .page_item_has_children > a' ),
 			menuToggle = $(container).find('.menu-toggle'),
 			links = container.querySelectorAll( 'ul a' );
 			li = container.querySelectorAll( 'ul li' );
@@ -94,5 +94,5 @@
 				parentLinks[i].addEventListener( 'click', touchStartFn, false );
 			}
 		}
-	}( container ) );
+	}( container, menu ) );
 } )( jQuery );

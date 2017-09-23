@@ -502,7 +502,7 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
-.main-navigation {
+#site-navigation {
   clear: both;
   display: block;
   float: left;
@@ -511,7 +511,7 @@ a:hover, a:active {
   text-align: center;
 }
 
-.main-navigation ul {
+#site-navigation ul {
   display: inline-block;
   list-style: none;
   margin: 0;
@@ -520,7 +520,7 @@ a:hover, a:active {
   text-align: left;
 }
 
-.main-navigation ul ul {
+#site-navigation ul ul {
   border-top: 2px solid #bab8b9;
   float: left;
   position: absolute;
@@ -530,29 +530,29 @@ a:hover, a:active {
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.08);
 }
 
-.main-navigation ul ul ul {
+#site-navigation ul ul ul {
   border-top-width: 0;
   left: -999em;
   top: 0;
 }
 
-.main-navigation ul ul li {
+#site-navigation ul ul li {
   background-color: #fff;
   position: static;
   float: none;
 }
 
-.main-navigation ul ul li:hover > ul,
-.main-navigation ul ul li.focus > ul {
+#site-navigation ul ul li:hover > ul,
+#site-navigation ul ul li.focus > ul {
   left: 100%;
 }
 
-.main-navigation ul ul li:hover > a,
-.main-navigation ul ul li.focus > a {
+#site-navigation ul ul li:hover > a,
+#site-navigation ul ul li.focus > a {
   background-color: #ececec;
 }
 
-.main-navigation ul ul a {
+#site-navigation ul ul a {
   border-bottom: 2px solid #ececec;
   padding-top: 1em;
   padding-bottom: 1em;
@@ -564,29 +564,41 @@ a:hover, a:active {
   min-width: 12.5rem;
 }
 
-.main-navigation ul li:hover > ul {
+#site-navigation ul li {
+  float: left;
+  position: relative;
+  display: block;
+}
+
+#site-navigation ul li:hover > ul {
   left: 0;
 }
 
-.main-navigation li {
-  float: left;
-  position: relative;
-}
-
-.main-navigation a {
+#site-navigation ul a {
   display: block;
   text-decoration: none;
   text-transform: uppercase;
   padding: 0.7em 1.2em;
   font-size: 16px;
   font-size: 1rem;
+  width: auto;
+  height: auto;
+  line-height: 1.5;
 }
 
-.main-navigation .current_page_item > a,
-.main-navigation .current-menu-item > a,
-.main-navigation .current_page_ancestor > a,
-.main-navigation .current-menu-ancestor > a {
+#site-navigation ul a:before {
+  line-height: 1.5;
+}
+
+#site-navigation ul .current_page_item > a,
+#site-navigation ul .current-menu-item > a,
+#site-navigation ul .current_page_ancestor > a,
+#site-navigation ul .current-menu-ancestor > a {
   background-color: #ececec;
+}
+
+#site-navigation .top-mobile-header {
+  display: none;
 }
 
 .menu-toggle {
@@ -615,28 +627,30 @@ a:hover, a:active {
 
 /* Small menu. */
 @media screen and (max-width: 60em) {
-  .main-navigation .site-boundary {
+  #site-navigation .site-boundary {
     padding-left: 0;
     padding-right: 0;
   }
-  .main-navigation ul {
+  #site-navigation ul {
     display: none;
   }
   .menu-toggle,
-  .main-navigation.toggled ul {
+  #site-navigation.toggled ul {
     display: block;
   }
-  .main-navigation.toggled {
+  #site-navigation.toggled {
     border-bottom-width: 0;
   }
-  .main-navigation.toggled .menu-toggle i:before {
+  #site-navigation.toggled .menu-toggle {
+    border-bottom: 2px solid #bab8b9;
+  }
+  #site-navigation.toggled .menu-toggle i:before {
     content: "\f406";
   }
-  .main-navigation.toggled ul {
+  #site-navigation.toggled ul {
     border-width: 0;
-    border-top: 2px solid #bab8b9;
   }
-  .main-navigation.toggled ul ul {
+  #site-navigation.toggled ul ul {
     position: static;
     left: auto;
     float: none;
@@ -644,71 +658,98 @@ a:hover, a:active {
     box-shadow: none;
     border-top-width: 0;
   }
-  .main-navigation.toggled ul ul a {
+  #site-navigation.toggled ul ul a {
     min-width: 0;
-    padding-left: 2.4em;
+    padding-left: 40px;
+    padding-left: 2.5rem;
   }
-  .main-navigation.toggled ul ul ul a {
-    padding-left: 3.6em;
+  #site-navigation.toggled ul ul ul a {
+    padding-left: 60px;
+    padding-left: 3.75rem;
   }
-  .main-navigation.toggled ul ul ul ul a {
-    padding-left: 4.8em;
+  #site-navigation.toggled ul ul ul ul a {
+    padding-left: 80px;
+    padding-left: 5rem;
   }
-  .main-navigation.toggled ul li {
+  #site-navigation.toggled ul li {
     float: none;
   }
-  .main-navigation.toggled ul li a,
-  .main-navigation.toggled ul li:hover > a,
-  .main-navigation.toggled ul li.focus > a {
+  #site-navigation.toggled ul li a,
+  #site-navigation.toggled ul li:hover > a,
+  #site-navigation.toggled ul li.focus > a {
     background-color: #fff;
   }
-  .main-navigation.toggled ul li.current_page_item > a,
-  .main-navigation.toggled ul li.current-menu-item > a {
+  #site-navigation.toggled ul li.current_page_item > a,
+  #site-navigation.toggled ul li.current-menu-item > a {
     background-color: #ececec;
   }
-  .main-navigation.toggled ul li:last-child > a {
+  #site-navigation.toggled ul li:last-child > a {
     border-bottom: 2px solid #ececec;
   }
-  .main-navigation.toggled ul li .sub-menu {
+  #site-navigation.toggled ul li .sub-menu {
     display: none;
   }
-  .main-navigation.toggled ul li.focus > a {
+  #site-navigation.toggled ul li.focus > a {
     font-weight: bold;
   }
-  .main-navigation.toggled ul li.focus > .sub-menu {
+  #site-navigation.toggled ul li.focus > .sub-menu {
     display: block;
   }
-  .main-navigation.toggled ul li.focus.menu-item-has-children > a > .genericon:before {
+  #site-navigation.toggled ul li.focus.menu-item-has-children > a > .genericon:before {
     content: "\f50e";
   }
-  .main-navigation.toggled ul li.menu-item-has-children > a > .genericon {
+  #site-navigation.toggled ul li.menu-item-has-children > a > .genericon {
     display: inline-block;
     position: absolute;
     top: 0;
     right: 0;
-    padding-left: 1.2em;
-    padding-right: 1.2em;
-    padding-top: 1em;
-    padding-bottom: 1em;
+    padding-left: 20px;
+    padding-left: 1.25rem;
+    padding-right: 20px;
+    padding-right: 1.25rem;
+    padding-top: 20px;
+    padding-top: 1.25rem;
+    padding-bottom: 20px;
+    padding-bottom: 1.25rem;
     text-align: right;
-    line-height: 1.5;
+    line-height: 28px;
     font-size: 18px;
     font-size: 1.125rem;
   }
-  .main-navigation.toggled ul li.menu-item-has-children > a > .genericon:before {
+  #site-navigation.toggled ul li.menu-item-has-children > a > .genericon:before {
     content: "\f510";
   }
-  .main-navigation.toggled ul a {
+  #site-navigation.toggled ul a {
     position: relative;
     font-size: 18px;
     font-size: 1.125rem;
     border-bottom: 2px solid #ececec;
-    padding-top: 1em;
-    padding-bottom: 1em;
+    padding-left: 20px;
+    padding-left: 1.25rem;
+    padding-right: 20px;
+    padding-right: 1.25rem;
+    padding-top: 20px;
+    padding-top: 1.25rem;
+    padding-bottom: 20px;
+    padding-bottom: 1.25rem;
+    line-height: 28px;
   }
-  .main-navigation.toggled ul .current_page_ancestor > a,
-  .main-navigation.toggled ul .current-menu-ancestor > a {
+  #site-navigation.toggled ul a:before {
+    line-height: 28px;
+  }
+  #site-navigation.toggled ul .current_page_ancestor > a,
+  #site-navigation.toggled ul .current-menu-ancestor > a {
     background-color: #fff;
+  }
+  #site-navigation.toggled .top-mobile-header {
+    display: block;
+  }
+  #site-navigation.toggled .top-mobile-header #top-left-menu a,
+  #site-navigation.toggled .top-mobile-header #top-right-menu a {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-size: 0.875rem;
+    font-weight: bold;
   }
 }
 
@@ -840,7 +881,12 @@ a:hover, a:active {
   font-size: 1.125rem;
 }
 
-/* Small menu. */
+@media screen and (max-width: 60em) {
+  .top-header {
+    display: none;
+  }
+}
+
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
@@ -1015,6 +1061,12 @@ a:hover, a:active {
 .site-branding .site-description {
   text-align: center;
   margin: 0;
+}
+
+@media screen and (max-width: 60em) {
+  #masthead.site-header {
+    background-image: none;
+  }
 }
 
 /*--------------------------------------------------------------
