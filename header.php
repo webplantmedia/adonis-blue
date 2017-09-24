@@ -59,8 +59,10 @@
 					wp_nav_menu( array(
 						'theme_location' => 'menu-1',
 						'menu_id'        => 'primary-menu',
+						'container_class' => 'primary-menu-container main-nav-item',
 					) );
 				?>
+				<?php get_template_part( 'template-parts/menu', 'cart' ); ?>
 				<?php get_template_part( 'template-parts/menu', 'mobile' ); ?>
 			</div><!-- .site-boundary -->
 		</nav><!-- #site-navigation -->

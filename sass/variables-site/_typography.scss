@@ -13,3 +13,6 @@ $font__pre: "Courier 10 Pitch", Courier, monospace;
 $font__line-height-body: 1.5;
 $font__line-height-top-menu: 36px;
 $font__line-height-pre: 1.6;
+
+$font__menu-icon-size: 30px;
+$font__line-height-menu-icon: ($font__main-size * $font__line-height-body) + (16px * 1.4);

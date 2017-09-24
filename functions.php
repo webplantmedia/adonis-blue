@@ -7,6 +7,11 @@
  * @package Angie_Makes_Design
  */
 
+/**
+ * The current version of the theme.
+ */
+define( 'ANGIEMAKESDESIGN_VERSION', '1.1' );
+
 if ( ! function_exists( 'angiemakesdesign_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -216,6 +221,13 @@ function angiemakesdesign_get_custom_logo( $html, $blog_id ) {
 add_filter( 'get_custom_logo', 'angiemakesdesign_get_custom_logo', 10, 2 );
 
 /**
+ * Query WooCommerce activation
+ */
+function angiemakesdesign_is_woocommerce_activated() {
+	return class_exists( 'woocommerce' ) ? true : false;
+}
+
+/**
  * Default options.
  */
 require get_template_directory() . '/inc/default-options.php';
@@ -245,4 +257,8 @@ require get_template_directory() . '/inc/customizer.php';
  */
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
+}
+
+if ( angiemakesdesign_is_woocommerce_activated() ) {
+	require get_parent_theme_file_path() . '/inc/woocommerce/class-woocommerce.php';
 }
