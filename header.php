@@ -55,6 +55,7 @@
 				<div class="menu-button-container">
 					<?php angiemakesdesign_mobile_menu_button(); ?>
 				</div>
+				<?php get_template_part( 'template-parts/menu', 'mobile-cart' ); ?>
 				<?php
 					wp_nav_menu( array(
 						'theme_location' => 'menu-1',
