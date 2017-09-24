@@ -171,7 +171,7 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 		'section' => 'top_header',
 		'input_attrs' => array(
 			'min' => 0,
-			'max' => 500,
+			'max' => 600,
 			'step' => 1,
 			'style' => 'width:100%;',
 		),

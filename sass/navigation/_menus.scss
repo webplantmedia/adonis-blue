@@ -34,13 +34,11 @@
 				position: static;
 				float: none;
 
-				&:hover > ul,
-				&.focus > ul {
+				&:hover > ul {
 					left: 100%;
 				}
 
-				&:hover > a,
-				&.focus > a {
+				&:hover > a {
 					background-color: $color__light-gray;
 				}
 			}
@@ -54,14 +52,6 @@
 				text-transform: none;
 				@include rem('min-width',200px);
 
-			}
-
-			:hover > a,
-			.focus > a {
-			}
-
-			a:hover,
-			a.focus {
 			}
 		}
 

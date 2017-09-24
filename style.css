@@ -542,13 +542,11 @@ a:hover, a:active {
   float: none;
 }
 
-#site-navigation ul ul li:hover > ul,
-#site-navigation ul ul li.focus > ul {
+#site-navigation ul ul li:hover > ul {
   left: 100%;
 }
 
-#site-navigation ul ul li:hover > a,
-#site-navigation ul ul li.focus > a {
+#site-navigation ul ul li:hover > a {
   background-color: #ececec;
 }
 
