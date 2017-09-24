@@ -103,9 +103,15 @@
 	font-weight: bold;
 	width: 100%;
 
-	i {
-		padding-left: 1em;
+	.menu-label {
+		@include rem('padding-right',10px);
 
+		&.menu-label-empty {
+			padding-right: 0;
+		}
+	}
+
+	i {
 		&:before {
 			content: "\f419";
 			@include rem('font-size',$genericon__mobile-menu-size);

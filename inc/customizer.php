@@ -177,6 +177,26 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 		),
 	) );
 
+	/**
+	 * Labels
+	 */
+	$wp_customize->add_section( 'labels', array(
+		'title'    => __( 'Labels', 'angiemakesdesign' ),
+		'panel'    => 'theme_options',
+	) );
+
+	$setting_id = 'mobile_menu_label';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $amd_default[ $setting_id ],
+		'transport' => 'postMessage',
+		'sanitize_callback' => 'sanitize_text_field',
+	) );
+
+	$wp_customize->add_control( $setting_id, array(
+		'type' => 'text',
+		'label' => __( 'Mobile Menu Label', 'angiemakesdesign' ),
+		'section' => 'labels',
+	) );
 }
 add_action( 'customize_register', 'angiemakesdesign_customize_register' );
 

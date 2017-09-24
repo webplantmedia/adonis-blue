@@ -612,8 +612,13 @@ a:hover, a:active {
   width: 100%;
 }
 
-.menu-toggle i {
-  padding-left: 1em;
+.menu-toggle .menu-label {
+  padding-right: 10px;
+  padding-right: 0.625rem;
+}
+
+.menu-toggle .menu-label.menu-label-empty {
+  padding-right: 0;
 }
 
 .menu-toggle i:before {

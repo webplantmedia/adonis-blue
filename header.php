@@ -52,9 +52,9 @@
 
 		<nav id="site-navigation" class="main-navigation">
 			<div class="site-boundary">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'angiemakesdesign' ); ?>
-					<i class="genericon"></i>
-				</button>
+				<div class="menu-button-container">
+					<?php angiemakesdesign_mobile_menu_button(); ?>
+				</div>
 				<?php
 					wp_nav_menu( array(
 						'theme_location' => 'menu-1',

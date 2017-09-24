@@ -24,6 +24,9 @@ $amd_default['link_hover_color'] = '#ff0000';
 $amd_default['top_header_background'] = get_template_directory_uri() . '/img/top-right-header-bg.png';
 $amd_default['top_header_background_offset'] = 460;
 
+// Labels
+$amd_default['mobile_menu_label'] = 'Menu';
+
 /**
  * Set default options
  *

@@ -100,3 +100,20 @@ if ( ! function_exists( 'angiemakesdesign_entry_footer' ) ) :
 		);
 	}
 endif;
+
+if ( ! function_exists( 'angiemakesdesign_mobile_menu_button' ) ) :
+	function angiemakesdesign_mobile_menu_button() {
+		global $amd;
+
+		?>
+		<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+			<?php if ( empty( $amd['mobile_menu_label'] ) ) : ?>
+				<span class="menu-label menu-label-empty"></span>
+			<?php else : ?>
+				<span class="menu-label"><?php esc_html_e( $amd['mobile_menu_label'], 'angiemakesdesign' ); ?></span>
+			<?php endif; ?>
+			<i class="genericon"></i>
+		</button>
+		<?php
+	}
+endif;
