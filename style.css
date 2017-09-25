@@ -619,7 +619,7 @@ a:hover, a:active {
   position: relative;
 }
 
-.cart-menu ul.menu li.cart a {
+.cart-menu ul.menu li.cart .cart_dropdown_link {
   padding: 0;
   position: relative;
   text-decoration: none;
@@ -646,11 +646,15 @@ a:hover, a:active {
 
 .cart-menu ul.menu li.cart ul.woo-sub-menu {
   width: 400px;
+  margin: 0;
   padding: 30px;
   padding: 1.875rem;
   background-color: #fff;
   border-top: 2px solid #bab8b9;
   float: left;
+  list-style: none;
+  vertical-align: top;
+  text-align: left;
   position: absolute;
   top: 100%;
   left: -999em;

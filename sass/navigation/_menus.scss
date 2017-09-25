@@ -111,7 +111,7 @@
 		li.cart {
 			position: relative;
 
-			a {
+			.cart_dropdown_link {
 				padding: 0;
 				position: relative;
 				text-decoration: none;
@@ -135,10 +135,14 @@
 			
 			ul.woo-sub-menu {
 				width: 400px;
+				margin: 0;
 				@include rem('padding',30px);
 				background-color: $color__background-body;
 				border-top: 2px solid $color__background-hr;
 				float: left;
+				list-style: none;
+				vertical-align: top;
+				text-align: left;
 				position: absolute;
 				top: 100%;
 				left: -999em;

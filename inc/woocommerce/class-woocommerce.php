@@ -212,7 +212,7 @@ if ( ! class_exists( 'AngieMakesDesign_WooCommerce' ) ) :
 				$output .= "<span class='alert-count'>" . $cart_items_count . '</span>';
 			}
 			$output .= '</a>';
-			$output .= '<ul class="woo-sub-menu"><li>';
+			$output .= '<ul class="woo-sub-menu woocommerce widget_shopping_cart cart_list"><li>';
 			$output .= '<div class="widget_shopping_cart_content"></div>';
 			$output .= '</li></ul>';
 			$output .= '</li>';
