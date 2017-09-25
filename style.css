@@ -773,9 +773,11 @@ a:hover, a:active {
   #site-navigation ul li.focus > ul {
     display: block;
   }
+  #site-navigation ul li.focus.page_item_has_children > a > .genericon:before,
   #site-navigation ul li.focus.menu-item-has-children > a > .genericon:before {
     content: "\f50e";
   }
+  #site-navigation ul li.page_item_has_children > a > .genericon,
   #site-navigation ul li.menu-item-has-children > a > .genericon {
     display: inline-block;
     position: absolute;
@@ -794,6 +796,7 @@ a:hover, a:active {
     font-size: 18px;
     font-size: 1.125rem;
   }
+  #site-navigation ul li.page_item_has_children > a > .genericon:before,
   #site-navigation ul li.menu-item-has-children > a > .genericon:before {
     content: "\f510";
   }

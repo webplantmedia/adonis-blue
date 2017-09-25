@@ -42,7 +42,7 @@
 		}
 	};
 
-	var menuParent = $(container).find('.menu-item-has-children a');
+	var menuParent = $(container).find('.menu-item-has-children a, .page_item_has_children a');
 	menuParent.append('<i class="genericon"></i>');
 	var genericon = $(menuParent).find('i');
 

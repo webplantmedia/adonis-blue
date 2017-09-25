@@ -285,6 +285,7 @@
 						display: block;
 					}
 
+					&.page_item_has_children > a,
 					&.menu-item-has-children > a {
 						> .genericon {
 							&:before {
@@ -294,6 +295,7 @@
 					}
 				}
 
+				&.page_item_has_children > a,
 				&.menu-item-has-children > a {
 					> .genericon {
 						display: inline-block;
