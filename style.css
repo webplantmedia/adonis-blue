@@ -525,7 +525,7 @@ a:hover, a:active {
   text-align: left;
 }
 
-.main-menu ul ul.sub-menu {
+.main-menu ul ul {
   border-top: 2px solid #bab8b9;
   float: left;
   position: absolute;
@@ -535,27 +535,27 @@ a:hover, a:active {
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.08);
 }
 
-.main-menu ul ul.sub-menu ul.sub-menu {
+.main-menu ul ul ul {
   border-top-width: 0;
   left: -999em;
   top: 0;
 }
 
-.main-menu ul ul.sub-menu li {
+.main-menu ul ul li {
   background-color: #fff;
   position: static;
   float: none;
 }
 
-.main-menu ul ul.sub-menu li:hover > ul.sub-menu {
+.main-menu ul ul li:hover > ul {
   left: 100%;
 }
 
-.main-menu ul ul.sub-menu li:hover > a {
+.main-menu ul ul li:hover > a {
   background-color: #ececec;
 }
 
-.main-menu ul ul.sub-menu a {
+.main-menu ul ul a {
   border-bottom: 2px solid #ececec;
   padding-top: 1em;
   padding-bottom: 1em;
@@ -573,7 +573,7 @@ a:hover, a:active {
   display: block;
 }
 
-.main-menu ul li:hover > ul.sub-menu {
+.main-menu ul li:hover > ul {
   left: 0;
 }
 
@@ -707,11 +707,9 @@ a:hover, a:active {
     padding-left: 0;
     padding-right: 0;
   }
+  #site-navigation .top-mobile-header,
   #site-navigation .main-menu {
-    display: block;
-  }
-  #site-navigation .top-mobile-header {
-    display: block;
+    display: none;
   }
   #site-navigation .top-mobile-header #top-left-menu a,
   #site-navigation .top-mobile-header #top-right-menu a {
@@ -722,7 +720,6 @@ a:hover, a:active {
   }
   #site-navigation ul {
     border-width: 0;
-    display: none;
     float: none;
     list-style: none;
     margin: 0;
@@ -767,13 +764,13 @@ a:hover, a:active {
   #site-navigation ul li:last-child > a {
     border-bottom: 2px solid #ececec;
   }
-  #site-navigation ul li .sub-menu {
+  #site-navigation ul li ul {
     display: none;
   }
   #site-navigation ul li.focus > a {
     font-weight: bold;
   }
-  #site-navigation ul li.focus > .sub-menu {
+  #site-navigation ul li.focus > ul {
     display: block;
   }
   #site-navigation ul li.focus.menu-item-has-children > a > .genericon:before {
@@ -829,8 +826,11 @@ a:hover, a:active {
   #site-navigation .cart-menu {
     display: none;
   }
-  .menu-toggle,
-  #site-navigation.toggled ul {
+  .menu-toggle {
+    display: block;
+  }
+  #site-navigation.toggled .top-mobile-header,
+  #site-navigation.toggled .main-menu {
     display: block;
   }
   #site-navigation.toggled {
