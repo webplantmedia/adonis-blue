@@ -502,7 +502,7 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
-#site-navigation {
+.main-navigation {
   clear: both;
   display: block;
   float: left;
@@ -511,12 +511,12 @@ a:hover, a:active {
   text-align: center;
 }
 
-#site-navigation .main-nav-item {
+.in-menu-bar {
   display: inline-block;
   vertical-align: top;
 }
 
-#site-navigation ul {
+.main-menu ul {
   float: left;
   list-style: none;
   margin: 0;
@@ -525,7 +525,7 @@ a:hover, a:active {
   text-align: left;
 }
 
-#site-navigation ul ul {
+.main-menu ul ul.sub-menu {
   border-top: 2px solid #bab8b9;
   float: left;
   position: absolute;
@@ -535,27 +535,27 @@ a:hover, a:active {
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.08);
 }
 
-#site-navigation ul ul ul {
+.main-menu ul ul.sub-menu ul.sub-menu {
   border-top-width: 0;
   left: -999em;
   top: 0;
 }
 
-#site-navigation ul ul li {
+.main-menu ul ul.sub-menu li {
   background-color: #fff;
   position: static;
   float: none;
 }
 
-#site-navigation ul ul li:hover > ul {
+.main-menu ul ul.sub-menu li:hover > ul.sub-menu {
   left: 100%;
 }
 
-#site-navigation ul ul li:hover > a {
+.main-menu ul ul.sub-menu li:hover > a {
   background-color: #ececec;
 }
 
-#site-navigation ul ul a {
+.main-menu ul ul.sub-menu a {
   border-bottom: 2px solid #ececec;
   padding-top: 1em;
   padding-bottom: 1em;
@@ -567,17 +567,17 @@ a:hover, a:active {
   min-width: 12.5rem;
 }
 
-#site-navigation ul li {
+.main-menu ul li {
   float: left;
   position: relative;
   display: block;
 }
 
-#site-navigation ul li:hover > ul {
+.main-menu ul li:hover > ul.sub-menu {
   left: 0;
 }
 
-#site-navigation ul a {
+.main-menu ul a {
   display: block;
   text-decoration: none;
   text-transform: uppercase;
@@ -589,71 +589,86 @@ a:hover, a:active {
   line-height: 1.5;
 }
 
-#site-navigation ul a i:before, #site-navigation ul a:before {
-  line-height: 1.5;
-  width: auto;
-  height: auto;
-}
-
-#site-navigation ul .current_page_item > a,
-#site-navigation ul .current-menu-item > a,
-#site-navigation ul .current_page_ancestor > a,
-#site-navigation ul .current-menu-ancestor > a {
+.main-menu ul .current_page_item > a,
+.main-menu ul .current-menu-item > a,
+.main-menu ul .current_page_ancestor > a,
+.main-menu ul .current-menu-ancestor > a {
   background-color: #ececec;
 }
 
-#site-navigation .extra-mobile-navigation,
-#site-navigation .top-mobile-header {
+.mobile-cart-navigation,
+.top-mobile-header {
   display: none;
 }
 
-#site-navigation .extra-navigation {
+.cart-menu {
   padding-left: 10px;
   padding-left: 0.625rem;
 }
 
-#site-navigation .extra-navigation ul.extra-menu li.cart a {
+.cart-menu ul.menu {
+  float: left;
+  list-style: none;
+  margin: 0;
   padding: 0;
+  vertical-align: top;
+  text-align: left;
+}
+
+.cart-menu ul.menu li.cart {
   position: relative;
 }
 
-#site-navigation .extra-navigation ul.extra-menu li.cart i,
-#site-navigation .extra-navigation ul.extra-menu li.cart i:before {
+.cart-menu ul.menu li.cart a {
+  padding: 0;
+  position: relative;
+  text-decoration: none;
+  display: block;
+}
+
+.cart-menu ul.menu li.cart i,
+.cart-menu ul.menu li.cart i:before {
   font-size: 30px;
   font-size: 1.875rem;
   line-height: 46.4px;
   line-height: 2.9rem;
 }
 
-#site-navigation .extra-navigation ul.extra-menu li.cart .alert-count {
+.cart-menu ul.menu li.cart .alert-count {
   position: absolute;
   top: 5px;
-  right: -5px;
+  left: 100%;
   font-size: 12px;
   font-size: 0.75rem;
   font-weight: bold;
   line-height: 1;
 }
 
-#site-navigation .extra-navigation ul.extra-menu li.cart ul {
+.cart-menu ul.menu li.cart ul.woo-sub-menu {
+  width: 400px;
+  padding: 30px;
+  padding: 1.875rem;
   background-color: #fff;
-  border-bottom: 2px solid #ececec;
+  border-top: 2px solid #bab8b9;
+  float: left;
+  position: absolute;
+  top: 100%;
+  left: -999em;
+  z-index: 99999;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.08);
 }
 
-#site-navigation .extra-navigation ul.extra-menu li.cart:hover ul {
-  width: 350px;
-  padding: 20px;
-  padding: 1.25rem;
+.cart-menu ul.menu li.cart:hover ul.woo-sub-menu {
   left: auto;
   right: -20px;
   right: -1.25rem;
 }
 
-#site-navigation .extra-navigation ul.extra-menu li.cart .widget_shopping_cart_content > *:first-child {
+.cart-menu ul.menu li.cart .widget_shopping_cart_content > *:first-child {
   margin-top: 0;
 }
 
-#site-navigation .extra-navigation ul.extra-menu li.cart .widget_shopping_cart_content > *:last-child {
+.cart-menu ul.menu li.cart .widget_shopping_cart_content > *:last-child {
   margin-bottom: 0;
 }
 
@@ -692,30 +707,30 @@ a:hover, a:active {
     padding-left: 0;
     padding-right: 0;
   }
+  #site-navigation .main-menu {
+    display: block;
+  }
+  #site-navigation .top-mobile-header {
+    display: block;
+  }
+  #site-navigation .top-mobile-header #top-left-menu a,
+  #site-navigation .top-mobile-header #top-right-menu a {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-size: 0.875rem;
+    font-weight: bold;
+  }
   #site-navigation ul {
+    border-width: 0;
     display: none;
     float: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+    text-align: left;
   }
-  #site-navigation .main-nav-item {
-    display: block;
-  }
-  .menu-toggle,
-  #site-navigation.toggled ul {
-    display: block;
-  }
-  #site-navigation.toggled {
-    border-bottom-width: 0;
-  }
-  #site-navigation.toggled .menu-toggle {
-    border-bottom: 2px solid #bab8b9;
-  }
-  #site-navigation.toggled .menu-toggle i:before {
-    content: "\f406";
-  }
-  #site-navigation.toggled ul {
-    border-width: 0;
-  }
-  #site-navigation.toggled ul ul {
+  #site-navigation ul ul {
     position: static;
     left: auto;
     float: none;
@@ -723,47 +738,48 @@ a:hover, a:active {
     box-shadow: none;
     border-top-width: 0;
   }
-  #site-navigation.toggled ul ul a {
+  #site-navigation ul ul a {
     min-width: 0;
     padding-left: 40px;
     padding-left: 2.5rem;
   }
-  #site-navigation.toggled ul ul ul a {
+  #site-navigation ul ul ul a {
     padding-left: 60px;
     padding-left: 3.75rem;
   }
-  #site-navigation.toggled ul ul ul ul a {
+  #site-navigation ul ul ul ul a {
     padding-left: 80px;
     padding-left: 5rem;
   }
-  #site-navigation.toggled ul li {
+  #site-navigation ul li {
     float: none;
-  }
-  #site-navigation.toggled ul li a,
-  #site-navigation.toggled ul li:hover > a,
-  #site-navigation.toggled ul li.focus > a {
-    background-color: #fff;
-  }
-  #site-navigation.toggled ul li.current_page_item > a,
-  #site-navigation.toggled ul li.current-menu-item > a {
-    background-color: #ececec;
-  }
-  #site-navigation.toggled ul li:last-child > a {
-    border-bottom: 2px solid #ececec;
-  }
-  #site-navigation.toggled ul li .sub-menu {
-    display: none;
-  }
-  #site-navigation.toggled ul li.focus > a {
-    font-weight: bold;
-  }
-  #site-navigation.toggled ul li.focus > .sub-menu {
     display: block;
   }
-  #site-navigation.toggled ul li.focus.menu-item-has-children > a > .genericon:before {
+  #site-navigation ul li a,
+  #site-navigation ul li:hover > a,
+  #site-navigation ul li.focus > a {
+    background-color: #fff;
+  }
+  #site-navigation ul li.current_page_item > a,
+  #site-navigation ul li.current-menu-item > a {
+    background-color: #ececec;
+  }
+  #site-navigation ul li:last-child > a {
+    border-bottom: 2px solid #ececec;
+  }
+  #site-navigation ul li .sub-menu {
+    display: none;
+  }
+  #site-navigation ul li.focus > a {
+    font-weight: bold;
+  }
+  #site-navigation ul li.focus > .sub-menu {
+    display: block;
+  }
+  #site-navigation ul li.focus.menu-item-has-children > a > .genericon:before {
     content: "\f50e";
   }
-  #site-navigation.toggled ul li.menu-item-has-children > a > .genericon {
+  #site-navigation ul li.menu-item-has-children > a > .genericon {
     display: inline-block;
     position: absolute;
     top: 0;
@@ -781,10 +797,10 @@ a:hover, a:active {
     font-size: 18px;
     font-size: 1.125rem;
   }
-  #site-navigation.toggled ul li.menu-item-has-children > a > .genericon:before {
+  #site-navigation ul li.menu-item-has-children > a > .genericon:before {
     content: "\f510";
   }
-  #site-navigation.toggled ul a {
+  #site-navigation ul a {
     position: relative;
     font-size: 18px;
     font-size: 1.125rem;
@@ -798,29 +814,36 @@ a:hover, a:active {
     padding-bottom: 20px;
     padding-bottom: 1.25rem;
     line-height: 28px;
+    display: block;
+    text-decoration: none;
+    width: auto;
+    height: auto;
   }
-  #site-navigation.toggled ul a:before {
+  #site-navigation ul a:before {
     line-height: 28px;
   }
-  #site-navigation.toggled ul .current_page_ancestor > a,
-  #site-navigation.toggled ul .current-menu-ancestor > a {
+  #site-navigation ul .current_page_ancestor > a,
+  #site-navigation ul .current-menu-ancestor > a {
     background-color: #fff;
   }
-  #site-navigation.toggled .top-mobile-header {
-    display: block;
-  }
-  #site-navigation.toggled .top-mobile-header #top-left-menu a,
-  #site-navigation.toggled .top-mobile-header #top-right-menu a {
-    text-transform: uppercase;
-    font-size: 14px;
-    font-size: 0.875rem;
-    font-weight: bold;
-  }
-  #site-navigation.toggled .extra-mobile-navigation {
-    display: block;
-  }
-  #site-navigation.toggled .extra-navigation {
+  #site-navigation .cart-menu {
     display: none;
+  }
+  .menu-toggle,
+  #site-navigation.toggled ul {
+    display: block;
+  }
+  #site-navigation.toggled {
+    border-bottom-width: 0;
+  }
+  #site-navigation.toggled .menu-toggle {
+    border-bottom: 2px solid #bab8b9;
+  }
+  #site-navigation.toggled .menu-toggle i:before {
+    content: "\f406";
+  }
+  #site-navigation.toggled .mobile-cart-navigation {
+    display: block;
   }
 }
 

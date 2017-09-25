@@ -20,18 +20,18 @@ if ( ! class_exists( 'AngieMakesDesign_WooCommerce' ) ) :
 		 * Setup class.
 		 */
 		public function __construct() {
-			add_action( 'wp_enqueue_scripts', array( $this, 'woocommerce_css' ) );
+			// add_action( 'wp_enqueue_scripts', array( $this, 'woocommerce_css' ) );
 
-			add_filter( 'woocommerce_output_related_products_args', array( $this, 'related_products_args' ) );
+			// add_filter( 'woocommerce_output_related_products_args', array( $this, 'related_products_args' ) );
 
-			remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
-			remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
-			remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
+			// remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
+			// remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
+			// remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
 
-			add_action( 'woocommerce_before_main_content', array( $this, 'angiemakesdesign_output_content_wrapper' ), 10 );
-			add_action( 'woocommerce_after_main_content', array( $this, 'angiemakesdesign_output_content_wrapper_end' ), 10 );
+			// add_action( 'woocommerce_before_main_content', array( $this, 'angiemakesdesign_output_content_wrapper' ), 10 );
+			// add_action( 'woocommerce_after_main_content', array( $this, 'angiemakesdesign_output_content_wrapper_end' ), 10 );
 
-			add_action( 'after_switch_theme', array( $this, 'angiemakesdesign_woocommerce_image_dimensions' ), 1 );
+			// add_action( 'after_switch_theme', array( $this, 'angiemakesdesign_woocommerce_image_dimensions' ), 1 );
 
 			add_action( 'angiemakesdesign_cart', array( $this, 'angiemakesdesign_woocommerce_cart_dropdown' ), 10 );
 
@@ -40,82 +40,82 @@ if ( ! class_exists( 'AngieMakesDesign_WooCommerce' ) ) :
 			add_action( 'woocommerce_before_mini_cart', array( $this, 'angiemakesdesign_add_header_mini_cart' ), 10 );
 
 			// remove breadcrumbs.
-			add_action( 'init', array( $this, 'angiemakesdesign_remove_wc_breadcrumbs' ) );
+			// add_action( 'init', array( $this, 'angiemakesdesign_remove_wc_breadcrumbs' ) );
 
 			// move payment on checkout page.
-			remove_action( 'woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20 );
-			add_action( 'woocommerce_checkout_after_order_review', 'woocommerce_checkout_payment', 20 );
+			// remove_action( 'woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20 );
+			// add_action( 'woocommerce_checkout_after_order_review', 'woocommerce_checkout_payment', 20 );
 
 			// Add header for payment info.
-			add_action( 'woocommerce_review_order_before_payment', array( $this, 'angiemakesdesign_before_shipping_title' ), 10 );
+			// add_action( 'woocommerce_review_order_before_payment', array( $this, 'angiemakesdesign_before_shipping_title' ), 10 );
 
 			// remove default coupon placement and readd under header.
-			remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 );
-			add_action( 'angiemakesdesign_coupon', 'woocommerce_checkout_coupon_form' );
+			// remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 );
+			// add_action( 'angiemakesdesign_coupon', 'woocommerce_checkout_coupon_form' );
 
 			// move login at checkout from above form to above billing.
-			remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_login_form', 10 );
-			add_action( 'angiemakesdesign_shop_login', 'woocommerce_checkout_login_form' );
+			// remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_login_form', 10 );
+			// add_action( 'angiemakesdesign_shop_login', 'woocommerce_checkout_login_form' );
 
 			// Remove payment methods at checkout, because already output manually.
-			add_filter( 'woocommerce_get_order_item_totals', array( $this, 'angiemakesdesign_remove_payment_methods' ), 10 );
+			// add_filter( 'woocommerce_get_order_item_totals', array( $this, 'angiemakesdesign_remove_payment_methods' ), 10 );
 
 			// single product: move sale flash to summary.
-			remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_sale_flash', 10 );
-			add_action( 'woocommerce_single_product_summary', 'woocommerce_show_product_sale_flash', 4 );
+			// remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_sale_flash', 10 );
+			// add_action( 'woocommerce_single_product_summary', 'woocommerce_show_product_sale_flash', 4 );
 
 			// single product: hide related products.
-			add_action( 'woocommerce_after_single_product_summary', array( $this, 'angiemakesdesign_hide_related_upsell' ), 5 );
+			// add_action( 'woocommerce_after_single_product_summary', array( $this, 'angiemakesdesign_hide_related_upsell' ), 5 );
 
 			// Rename product tabs.
-			add_filter( 'woocommerce_product_tabs', array( $this, 'angiemakesdesign_rename_tabs' ), 98 );
+			// add_filter( 'woocommerce_product_tabs', array( $this, 'angiemakesdesign_rename_tabs' ), 98 );
 
 			// Delete product description heading.
-			add_filter( 'woocommerce_product_description_heading', '__return_false' );
+			// add_filter( 'woocommerce_product_description_heading', '__return_false' );
 
 			// Removed and readd with own ouput title.
-			remove_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10 );
-			add_action( 'woocommerce_shop_loop_item_title', array( $this, 'angiemakesdesign_wrapped_link_title' ), 10 );
+			// remove_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10 );
+			// add_action( 'woocommerce_shop_loop_item_title', array( $this, 'angiemakesdesign_wrapped_link_title' ), 10 );
 
 			// Modify default thumbnails.
-			remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10 );
-			add_action( 'woocommerce_before_shop_loop_item_title', array( $this, 'angiemakesdesign_get_single_shop_thumbnail' ), 9 );
+			// remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10 );
+			// add_action( 'woocommerce_before_shop_loop_item_title', array( $this, 'angiemakesdesign_get_single_shop_thumbnail' ), 9 );
 			// add the filter for category thumbnails.
-			add_filter( 'subcategory_archive_thumbnail_size', array( $this, 'angiemakesdesign_filter_subcategory_thumbnail_size' ), 10, 1 );
+			// add_filter( 'subcategory_archive_thumbnail_size', array( $this, 'angiemakesdesign_filter_subcategory_thumbnail_size' ), 10, 1 );
 
 			// Add quantity text at single product.
-			add_action( 'woocommerce_after_add_to_cart_form', array( $this, 'angiemakesdesign_woo_add_qty' ), 10 );
+			// add_action( 'woocommerce_after_add_to_cart_form', array( $this, 'angiemakesdesign_woo_add_qty' ), 10 );
 
 			// Change add to cart button.
 			// add_filter( 'woocommerce_product_add_to_cart_text' , array( $this, 'angiemakesdesign_woo_product_add_to_cart_text' ), 10 );
 
 			// move result count under title.
-			remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
-			add_action( 'woocommerce_archive_description', 'woocommerce_result_count', 20 );
+			// remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
+			// add_action( 'woocommerce_archive_description', 'woocommerce_result_count', 20 );
 
 			// Remove store notice text.
-			remove_action( 'wp_footer', 'woocommerce_demo_store' );
-			add_filter( 'woocommerce_demo_store', array( $this, 'angiemakesdesign_store_notice' ) );
+			// remove_action( 'wp_footer', 'woocommerce_demo_store' );
+			// add_filter( 'woocommerce_demo_store', array( $this, 'angiemakesdesign_store_notice' ) );
 
 			// Add header to download tab at woocommerce/myaccount/dashboard.php.
-			add_action( 'woocommerce_before_account_downloads', array( $this, 'angiemakesdesign_account_download' ) );
+			// add_action( 'woocommerce_before_account_downloads', array( $this, 'angiemakesdesign_account_download' ) );
 
 			// Add header to account details tab at woocommerce/myaccount/form-edit-accounts.php.
-			add_action( 'woocommerce_before_edit_account_form', array( $this, 'angiemakesdesign_account_edit' ) );
+			// add_action( 'woocommerce_before_edit_account_form', array( $this, 'angiemakesdesign_account_edit' ) );
 
 			// Add header to orders tab at woocommerce/myaccount/orders.php.
-			add_action( 'woocommerce_before_account_orders', array( $this, 'angiemakesdesign_account_orders' ) );
+			// add_action( 'woocommerce_before_account_orders', array( $this, 'angiemakesdesign_account_orders' ) );
 
 			// For layout placement.
-			add_action( 'angiemakesdesign_after_img_wrapper', 'woocommerce_template_loop_add_to_cart', 11 );
-			add_action( 'angiemakesdesign_after_img_wrapper', array( $this, 'angiemakesdesign_add_outofstock_label' ) );
-			add_action( 'angiemakesdesign_after_img_wrapper', array( $this, 'angiemakesdesign_change_outofstock' ) );
+			// add_action( 'angiemakesdesign_after_img_wrapper', 'woocommerce_template_loop_add_to_cart', 11 );
+			// add_action( 'angiemakesdesign_after_img_wrapper', array( $this, 'angiemakesdesign_add_outofstock_label' ) );
+			// add_action( 'angiemakesdesign_after_img_wrapper', array( $this, 'angiemakesdesign_change_outofstock' ) );
 			// Add label and change to read more if out of stock.
-			add_action( 'woocommerce_before_shop_loop_item_title', array( $this, 'angiemakesdesign_add_outofstock_label' ) );
-			add_action( 'woocommerce_after_shop_loop_item', array( $this, 'angiemakesdesign_change_outofstock' ) );
+			// add_action( 'woocommerce_before_shop_loop_item_title', array( $this, 'angiemakesdesign_add_outofstock_label' ) );
+			// add_action( 'woocommerce_after_shop_loop_item', array( $this, 'angiemakesdesign_change_outofstock' ) );
 
 			// Change subcategory count text.
-			add_filter( 'woocommerce_subcategory_count_html' , array( $this, 'angiemakesdesign_change_count_subcategory' ), 10, 2 );
+			// add_filter( 'woocommerce_subcategory_count_html' , array( $this, 'angiemakesdesign_change_count_subcategory' ), 10, 2 );
 		}
 
 		/**
@@ -129,10 +129,10 @@ if ( ! class_exists( 'AngieMakesDesign_WooCommerce' ) ) :
 			wp_dequeue_style( 'woocommerce-smallscreen' );
 			wp_dequeue_style( 'woocommerce-layout' );
 
-			wp_enqueue_style( 'angiemakesdesign-woocommerce', get_template_directory_uri() . '/assets/css/woocommerce.css', array( 'angiemakesdesign-style' ), ANGIEMAKESDESIGN_VERSION );
+			// wp_enqueue_style( 'angiemakesdesign-woocommerce', get_template_directory_uri() . '/assets/css/woocommerce.css', array( 'angiemakesdesign-style' ), ANGIEMAKESDESIGN_VERSION );
 
 			// RTL Support.
-			wp_style_add_data( 'angiemakesdesign-woocommerce', 'rtl', 'replace' );
+			// wp_style_add_data( 'angiemakesdesign-woocommerce', 'rtl', 'replace' );
 
 			if ( is_single() && is_product() ) {
 				wp_dequeue_style( 'woocommerce_admin_styles' );
@@ -212,7 +212,7 @@ if ( ! class_exists( 'AngieMakesDesign_WooCommerce' ) ) :
 				$output .= "<span class='alert-count'>" . $cart_items_count . '</span>';
 			}
 			$output .= '</a>';
-			$output .= '<ul><li>';
+			$output .= '<ul class="woo-sub-menu"><li>';
 			$output .= '<div class="widget_shopping_cart_content"></div>';
 			$output .= '</li></ul>';
 			$output .= '</li>';

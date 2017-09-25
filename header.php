@@ -50,23 +50,25 @@
 			</div><!-- .site-boundary -->
 		</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation">
+		<div id="site-navigation" class="main-navigation">
 			<div class="site-boundary">
-				<div class="menu-button-container">
-					<?php angiemakesdesign_mobile_menu_button(); ?>
-				</div>
+				<?php angiemakesdesign_mobile_menu_button(); ?>
+
 				<?php get_template_part( 'template-parts/menu', 'mobile-cart' ); ?>
-				<?php
-					wp_nav_menu( array(
-						'theme_location' => 'menu-1',
-						'menu_id'        => 'primary-menu',
-						'container_class' => 'primary-menu-container main-nav-item',
-					) );
-				?>
+				<nav class="main-menu in-menu-bar">
+					<?php
+						wp_nav_menu( array(
+							'theme_location' => 'menu-1',
+							'menu_id'        => 'primary-menu',
+						) );
+					?>
+				</nav>
+
 				<?php get_template_part( 'template-parts/menu', 'cart' ); ?>
+
 				<?php get_template_part( 'template-parts/menu', 'mobile' ); ?>
 			</div><!-- .site-boundary -->
-		</nav><!-- #site-navigation -->
+		</div><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">

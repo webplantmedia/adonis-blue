@@ -1,5 +1,5 @@
 <?php if ( angiemakesdesign_is_woocommerce_activated() ) : ?>
-	<nav class="extra-mobile-navigation">
+	<nav class="mobile-cart-navigation">
 		<p class="buttons clearfix">
 			<?php
 			echo sprintf( '<a href="%s" class="button wc-forward">%s</a>', esc_url( wc_get_page_permalink( 'cart' ) ), esc_html__( 'View Cart', 'umarmulinde' ) );

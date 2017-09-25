@@ -1,6 +1,6 @@
 <?php if ( angiemakesdesign_is_woocommerce_activated() ) : ?>
-	<nav class="extra-navigation main-nav-item">
-		<ul id="extra-menu" class="extra-menu">
+	<nav class="cart-menu in-menu-bar">
+		<ul class="menu">
 			<?php do_action( 'angiemakesdesign_cart' ); ?>
 		</ul>
 	</nav>
