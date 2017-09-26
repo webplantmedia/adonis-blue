@@ -596,89 +596,8 @@ a:hover, a:active {
   background-color: #ececec;
 }
 
-.mobile-cart-navigation,
 .top-mobile-header {
   display: none;
-}
-
-.cart-menu ul.menu {
-  float: left;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  vertical-align: top;
-  text-align: left;
-}
-
-.cart-menu ul.menu li.cart {
-  position: relative;
-  padding-left: 10px;
-  padding-left: 0.625rem;
-  padding-right: 10px;
-  padding-right: 0.625rem;
-}
-
-.cart-menu ul.menu li.cart a.cart_dropdown_link {
-  position: relative;
-  padding: 0;
-  text-decoration: none;
-  display: block;
-}
-
-.cart-menu ul.menu li.cart i,
-.cart-menu ul.menu li.cart i:before {
-  font-size: 30px;
-  font-size: 1.875rem;
-  line-height: 46.4px;
-  line-height: 2.9rem;
-}
-
-.cart-menu ul.menu li.cart .alert-count {
-  position: absolute;
-  top: 5px;
-  left: 93%;
-  font-size: 12px;
-  font-size: 0.75rem;
-  font-weight: bold;
-  line-height: 1;
-}
-
-.cart-menu ul.menu li.cart ul.woo-sub-menu {
-  width: 480px;
-  margin: 0;
-  padding: 30px;
-  padding: 1.875rem;
-  background-color: #fff;
-  border-top: 0;
-  border-bottom: 2px solid #ececec;
-  float: left;
-  list-style: none;
-  vertical-align: top;
-  text-align: left;
-  position: absolute;
-  top: -20px;
-  top: -1.25rem;
-  left: -999em;
-  z-index: 99999;
-  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.08);
-}
-
-.cart-menu ul.menu li.cart:hover a.cart_dropdown_link {
-  z-index: 999999;
-}
-
-.cart-menu ul.menu li.cart:hover ul.woo-sub-menu {
-  left: auto;
-  right: -20px;
-  right: -1.25rem;
-}
-
-.cart-menu ul.menu li.cart .widget_shopping_cart_content > *:first-child {
-  margin-top: 0;
-}
-
-.cart-menu ul.menu li.cart .widget_shopping_cart_content > *:last-child {
-  margin-bottom: 0;
 }
 
 .menu-toggle {
@@ -835,9 +754,6 @@ a:hover, a:active {
   #site-navigation ul .current-menu-ancestor > a {
     background-color: #fff;
   }
-  #site-navigation .cart-menu {
-    display: none;
-  }
   .menu-toggle {
     display: block;
   }
@@ -853,9 +769,6 @@ a:hover, a:active {
   }
   #site-navigation.toggled .menu-toggle i:before {
     content: "\f406";
-  }
-  #site-navigation.toggled .mobile-cart-navigation {
-    display: block;
   }
 }
 
