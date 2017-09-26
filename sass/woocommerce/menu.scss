@@ -80,6 +80,45 @@
 
 .mobile-cart-navigation {
 	display: none;
+	@include rem('padding-top',25px);
+	@include rem('padding-bottom',25px);
+	@include rem('padding-left',20px);
+	@include rem('padding-right',20px);
+	border-bottom: 2px solid $color__light-gray;
+
+	.buttons {
+		margin: 0;
+	}
+
+	a.button {
+		margin: 0;
+		width: calc(50% - 5px);
+		
+		&.wc-forward {
+			float: left;
+		}
+
+		&.wc-forward.checkout {
+			float: right;
+		}
+	}
+}
+
+@media screen and (max-width: 320px) {
+	.mobile-cart-navigation {
+		a.button {
+			width: 100%;
+			
+			&.wc-forward {
+				float: none;
+			}
+
+			&.wc-forward.checkout {
+				@include rem('margin-top',20px);
+				float: none;
+			}
+		}
+	}
 }
 
 @media screen and (max-width: $size__menu-collapse-width) {

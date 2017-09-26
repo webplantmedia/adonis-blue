@@ -413,27 +413,364 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
   border: 0 solid;
-  background: #e6e6e6;
-  color: rgba(0, 0, 0, 0.8);
+}
+
+#master {
+  /* button, */
+}
+
+#master .button:not(.menu-toggle):not(.customize-partial-edit-shortcut),
+#master .addresses .edit,
+#master input[type="button"],
+#master input[type="reset"],
+#master input[type="submit"] {
+  display: inline-block;
+  padding: 16px 24px;
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 18px;
+  /*font-size: 0.75rem;*/
+  font-weight: bold;
   line-height: 1;
-  padding: .6em 1em .6em;
+  text-align: center;
+  text-decoration: none;
+  /* -webkit-transition: color 0.5s ease, background-color 0.5s ease; */
+  /* -moz-transition: color 0.5s ease, background-color 0.5s ease; */
+  /* -o-transition: color 0.5s ease, background-color 0.5s ease; */
+  /* transition: color 0.5s ease, background-color 0.5s ease; */
 }
 
-button:hover,
-input[type="button"]:hover,
-input[type="reset"]:hover,
-input[type="submit"]:hover {
-  border-color: #ccc #bbb #aaa;
+#master button:not(.menu-toggle):not(.customize-partial-edit-shortcut):not(.pswp__button):hover,
+#master .button:hover,
+#master input[type="button"]:hover,
+#master input[type="reset"]:hover,
+#master input[type="submit"]:hover {
+  color: #fff;
+  background: #1c2220;
 }
 
-button:active, button:focus,
-input[type="button"]:active,
-input[type="button"]:focus,
-input[type="reset"]:active,
-input[type="reset"]:focus,
-input[type="submit"]:active,
-input[type="submit"]:focus {
-  border-color: #aaa #bbb #bbb;
+#master button:not(.menu-toggle):not(.customize-partial-edit-shortcut):focus,
+#master .button:focus,
+#master input[type="button"]:focus,
+#master input[type="reset"]:focus,
+#master input[type="submit"]:focus,
+#master button:not(.menu-toggle):not(.customize-partial-edit-shortcut):active,
+#master .button:active,
+#master input[type="button"]:active,
+#master input[type="reset"]:active,
+#master input[type="submit"]:active {
+  color: #fff;
+  background: #252323;
+}
+
+#master .button.alt {
+  padding: 19px 59px;
+}
+
+#master .button.alt:hover {
+  color: #fff;
+  background: #1c2220;
+}
+
+#master .button.alt:focus,
+#master .button.alt:active {
+  color: #fff;
+  background: #252323;
+}
+
+#master form label {
+  display: block;
+  margin-bottom: 7px;
+  color: #39373a;
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+#master form label .input {
+  margin-top: 7px;
+}
+
+#master form .forgetmenot label {
+  display: inline-block;
+  margin-bottom: 0;
+  font-size: 16px;
+  font-weight: normal;
+  text-transform: none;
+}
+
+#master input[type="text"],
+#master input[type="email"],
+#master input[type="url"],
+#master input[type="password"],
+#master input[type="search"],
+#master input[type="number"],
+#master input[type="tel"],
+#master input[type="range"],
+#master input[type="date"],
+#master input[type="month"],
+#master input[type="week"],
+#master input[type="time"],
+#master input[type="datetime"],
+#master input[type="datetime-local"],
+#master input[type="color"],
+#master textarea {
+  border: 2px solid #ececec;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  outline: none;
+  color: #252323;
+  background: #fff;
+  font-size: 16px;
+  font-weight: normal;
+  text-transform: none;
+}
+
+#master select,
+#master .select2-choice {
+  height: 53px;
+  padding: 12px 46px 12px 12px;
+  border: 2px solid #ececec;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  color: #000;
+  background-color: #fff;
+  background-image: url(./assets/img/select_caret.png);
+  background-repeat: no-repeat;
+  background-position: 94% center;
+  background-position: calc(100% - 20px) center;
+  font-size: 16px;
+  font-weight: normal;
+  text-transform: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+#master .select2-container .select2-choice {
+  padding: 12px 46px 12px 12px;
+  border: 2px solid #ececec;
+  border-radius: 0;
+}
+
+#master .select2-container .select2-choice .select2-arrow {
+  display: none;
+}
+
+#master .select2-container .select2-choice > .select2-chosen {
+  color: #000;
+}
+
+#master .select2-search {
+  margin-top: 4px;
+}
+
+#master .select-w-caret {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  cursor: pointer;
+}
+
+#master .select-w-caret select {
+  height: 42px;
+  padding: 5px 56px 5px 16px;
+  border: 2px solid #ececec;
+  outline: none;
+  background: #fff;
+}
+
+#master .select-w-caret .caret {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 43px;
+  height: 42px;
+  border: 2px solid #ececec;
+  color: #252323;
+  font-size: 20px;
+  line-height: 37px;
+  text-align: center;
+  pointer-events: none;
+}
+
+#master input[type="text"]:focus,
+#master input[type="email"]:focus,
+#master input[type="url"]:focus,
+#master input[type="password"]:focus,
+#master input[type="search"]:focus,
+#master input[type="number"]:focus,
+#master input[type="tel"]:focus,
+#master input[type="range"]:focus,
+#master input[type="date"]:focus,
+#master input[type="month"]:focus,
+#master input[type="week"]:focus,
+#master input[type="time"]:focus,
+#master input[type="datetime"]:focus,
+#master input[type="datetime-local"]:focus,
+#master input[type="color"]:focus,
+#master textarea:focus {
+  color: #252323;
+}
+
+#master input[type="text"],
+#master input[type="email"],
+#master input[type="url"],
+#master input[type="password"],
+#master input[type="search"],
+#master input[type="number"],
+#master input[type="tel"],
+#master input[type="range"],
+#master input[type="date"],
+#master input[type="month"],
+#master input[type="week"],
+#master input[type="time"],
+#master input[type="datetime"],
+#master input[type="datetime-local"],
+#master input[type="color"] {
+  height: 53px;
+  padding: 12px;
+}
+
+#master textarea {
+  width: 100%;
+  padding: 11px 12px;
+}
+
+#master input[type="radio"],
+#master input[type="checkbox"] {
+  display: inline-block;
+  clear: none;
+  outline: 0;
+  line-height: 0;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+#master input[type="radio"] {
+  width: 15px;
+  min-width: 15px;
+  height: 15px;
+  border: 2px solid #ececec;
+}
+
+#master input[type="checkbox"] {
+  width: 16px;
+  min-width: 16px;
+  height: 16px;
+  margin-bottom: 4px;
+  border: 2px solid #ececec;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+
+#master input[type="checkbox"] + label {
+  margin-left: 10px;
+}
+
+#master label input[type="checkbox"] {
+  margin-right: 3px;
+}
+
+#master input[type="radio"]:focus,
+#master input[type="checkbox"]:focus {
+  outline: 0;
+}
+
+#master input[type="radio"] {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+
+#master input[type="radio"]:checked:before,
+#master input[type="checkbox"]:checked:before {
+  display: inline-block;
+  font-family: "Genericons";
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  vertical-align: top;
+  text-decoration: inherit;
+  text-transform: none;
+  -webkit-transition: color 0.1s ease-in 0s;
+  -moz-transition: color 0.1s ease-in 0s;
+  speak: none;
+}
+
+#master input[type="radio"]:checked:before {
+  font-size: 16px;
+  line-height: 15px;
+}
+
+#master input[type="checkbox"]:checked:before {
+  margin-left: -6px;
+  font-size: 23px;
+  line-height: 14px;
+}
+
+#master input[type="checkbox"]:checked:before {
+  width: 20px;
+  color: #39373a;
+  content: "\f418";
+}
+
+#master input[type="radio"]:checked:before {
+  width: 7px;
+  height: 7px;
+  margin-top: 2px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: #000;
+  text-indent: -9999px;
+  content: "";
+}
+
+#master input[type="radio"] + label,
+#master input[type="checkbox"] + label {
+  display: inline-block;
+  margin-bottom: 0;
+  margin-left: 10px;
+  font-size: 16px;
+  font-weight: normal;
+  vertical-align: middle;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+#master ::-webkit-input-placeholder {
+  color: #000;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+#master :-moz-placeholder {
+  /* Firefox 18- */
+  color: #000;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+#master ::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #000;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+#master :-ms-input-placeholder {
+  color: #000;
+  color: rgba(0, 0, 0, 0.5);
 }
 
 input[type="text"],
@@ -600,7 +937,7 @@ a:hover, a:active {
   display: none;
 }
 
-.menu-toggle {
+#master #site-navigation .menu-toggle {
   display: none;
   font-size: 18px;
   font-size: 1.125rem;
@@ -611,22 +948,27 @@ a:hover, a:active {
   background: none;
   font-weight: bold;
   width: 100%;
+  border-radius: 0;
 }
 
-.menu-toggle .menu-label {
+#master #site-navigation .menu-toggle .menu-label {
   padding-right: 10px;
   padding-right: 0.625rem;
 }
 
-.menu-toggle .menu-label.menu-label-empty {
+#master #site-navigation .menu-toggle .menu-label.menu-label-empty {
   padding-right: 0;
 }
 
-.menu-toggle i:before {
+#master #site-navigation .menu-toggle i:before {
   content: "\f419";
   font-size: 24px;
   font-size: 1.5rem;
   color: #fcd4c1;
+}
+
+#master #site-navigation .menu-toggle:hover {
+  background: none;
 }
 
 /* Small menu. */
@@ -754,20 +1096,20 @@ a:hover, a:active {
   #site-navigation ul .current-menu-ancestor > a {
     background-color: #fff;
   }
-  .menu-toggle {
+  #master #site-navigation .menu-toggle {
     display: block;
   }
   #site-navigation.toggled .top-mobile-header,
   #site-navigation.toggled .main-menu {
     display: block;
   }
-  #site-navigation.toggled {
+  #master #site-navigation.toggled {
     border-bottom-width: 0;
   }
-  #site-navigation.toggled .menu-toggle {
+  #master #site-navigation.toggled .menu-toggle {
     border-bottom: 2px solid #bab8b9;
   }
-  #site-navigation.toggled .menu-toggle i:before {
+  #master #site-navigation.toggled .menu-toggle i:before {
     content: "\f406";
   }
 }

@@ -15,7 +15,8 @@ a:hover {
 .top-header .menu a:hover,
 #master .main-menu a,
 #master .cart_dropdown_link,
-.menu-toggle,
+#master #site-navigation .menu-toggle,
+#master #site-navigation .menu-toggle:hover,
 body,
 button,
 input,
@@ -35,6 +36,15 @@ textarea {
 .top-header a:visited,
 .top-header a {
 	color: <?php echo $amd['text_light_color']; ?>
+}
+
+#master button,
+#master .button,
+#master .addresses .edit,
+#master input[type="button"],
+#master input[type="reset"],
+#master input[type="submit"] {
+	background-color: <?php echo $amd['accent_color']; ?>
 }
 
 .site-branding {
