@@ -53,7 +53,7 @@ WooCommerce styling
 }
 
 .cart-menu ul.menu li.cart ul.woo-sub-menu {
-  width: 480px;
+  width: 400px;
   margin: 0;
   padding: 30px;
   padding: 1.875rem;
@@ -110,7 +110,7 @@ WooCommerce styling
 #master .woocommerce ul.product_list_widget li img {
   float: left;
   margin-left: 0;
-  margin-right: 20px;
+  margin-right: 10px;
   width: 64px;
 }
 
