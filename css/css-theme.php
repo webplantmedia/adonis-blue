@@ -13,7 +13,8 @@ a:hover {
 
 #site-navigation.toggled .top-mobile-header .focus > a,
 .top-header .menu a:hover,
-.main-navigation a,
+#master .main-menu a,
+#master .cart_dropdown_link,
 .menu-toggle,
 body,
 button,

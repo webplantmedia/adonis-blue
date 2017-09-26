@@ -127,7 +127,10 @@ function angiemakesdesign_customizer_css_wrap() {
 	require get_template_directory() . '/css/mixins.php';
 
 	ob_start();
-	get_template_part( 'css/css', 'customizer' );
+	get_template_part( 'css/css', 'theme' );
+	if ( angiemakesdesign_is_woocommerce_activated() ) {
+		get_template_part( 'css/css', 'woocommerce' );
+	}
 	$css = ob_get_clean();
 
 	if ( $css ) {
@@ -151,10 +154,6 @@ function angiemakesdesign_scripts() {
 	wp_enqueue_style( 'genericons', get_parent_theme_file_uri() . '/fonts/genericons/genericons.css', array(), ANGIEMAKESDESIGN_VERSION );
 	
 	wp_enqueue_style( 'angiemakesdesign-style', get_stylesheet_uri() );
-
-	if ( angiemakesdesign_is_woocommerce_activated() ) {
-		wp_enqueue_style( 'angiemakesdesign-woocommerce', get_parent_theme_file_uri() . '/css/woocommerce.css', array(), ANGIEMAKESDESIGN_VERSION );
-	}
 
 	wp_enqueue_script( 'angiemakesdesign-navigation', get_template_directory_uri() . '/js/navigation.js', array(), ANGIEMAKESDESIGN_VERSION, true );
 

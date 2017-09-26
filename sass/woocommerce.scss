@@ -6,11 +6,17 @@ WooCommerce styling
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
 # Menu
+	## Cart Content
 --------------------------------------------------------------*/
 @import "variables-site/variables-site";
 @import "mixins/mixins-master";
 
 /*--------------------------------------------------------------
-# Typography
+# Menu
 --------------------------------------------------------------*/
-@import "woocommerce/woocommerce";
+@import "woocommerce/menu";
+
+/*--------------------------------------------------------------
+## Cart Content
+--------------------------------------------------------------*/
+@import "woocommerce/cart-content";
