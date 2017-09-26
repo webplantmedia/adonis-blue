@@ -98,7 +98,6 @@
 }
 	
 .cart-menu {
-	@include rem('padding-left',10px);
 
 	ul.menu {
 		float: left;
@@ -110,10 +109,12 @@
 
 		li.cart {
 			position: relative;
+			@include rem('padding-left',10px);
+			@include rem('padding-right',10px);
 
-			.cart_dropdown_link {
-				padding: 0;
+			a.cart_dropdown_link {
 				position: relative;
+				padding: 0;
 				text-decoration: none;
 				display: block;
 			}
@@ -127,30 +128,35 @@
 			.alert-count {
 				position: absolute;
 				top: 5px;
-				left: 100%;
+				left: 93%;
 				@include rem('font-size',($font__main-size - 4));
 				font-weight: bold;
 				line-height: 1;
 			}
 			
 			ul.woo-sub-menu {
-				width: 400px;
+				width: 480px;
 				margin: 0;
 				@include rem('padding',30px);
 				background-color: $color__background-body;
-				border-top: 2px solid $color__background-hr;
+				border-top: 0;
+				border-bottom: 2px solid $color__light-gray;
 				float: left;
 				list-style: none;
 				vertical-align: top;
 				text-align: left;
 				position: absolute;
-				top: 100%;
+				@include rem('top',-20px);
 				left: -999em;
 				z-index: 99999;
 				box-shadow: 0 1px 10px rgba(0, 0, 0, 0.08);
 			}
 			
 			&:hover {
+				a.cart_dropdown_link {
+					z-index: 999999;
+				}
+
 				ul.woo-sub-menu {
 					left: auto;
 					@include rem('right',-20px);

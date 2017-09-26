@@ -601,11 +601,6 @@ a:hover, a:active {
   display: none;
 }
 
-.cart-menu {
-  padding-left: 10px;
-  padding-left: 0.625rem;
-}
-
 .cart-menu ul.menu {
   float: left;
   list-style: none;
@@ -617,11 +612,15 @@ a:hover, a:active {
 
 .cart-menu ul.menu li.cart {
   position: relative;
+  padding-left: 10px;
+  padding-left: 0.625rem;
+  padding-right: 10px;
+  padding-right: 0.625rem;
 }
 
-.cart-menu ul.menu li.cart .cart_dropdown_link {
-  padding: 0;
+.cart-menu ul.menu li.cart a.cart_dropdown_link {
   position: relative;
+  padding: 0;
   text-decoration: none;
   display: block;
 }
@@ -637,7 +636,7 @@ a:hover, a:active {
 .cart-menu ul.menu li.cart .alert-count {
   position: absolute;
   top: 5px;
-  left: 100%;
+  left: 93%;
   font-size: 12px;
   font-size: 0.75rem;
   font-weight: bold;
@@ -645,21 +644,27 @@ a:hover, a:active {
 }
 
 .cart-menu ul.menu li.cart ul.woo-sub-menu {
-  width: 400px;
+  width: 480px;
   margin: 0;
   padding: 30px;
   padding: 1.875rem;
   background-color: #fff;
-  border-top: 2px solid #bab8b9;
+  border-top: 0;
+  border-bottom: 2px solid #ececec;
   float: left;
   list-style: none;
   vertical-align: top;
   text-align: left;
   position: absolute;
-  top: 100%;
+  top: -20px;
+  top: -1.25rem;
   left: -999em;
   z-index: 99999;
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.08);
+}
+
+.cart-menu ul.menu li.cart:hover a.cart_dropdown_link {
+  z-index: 999999;
 }
 
 .cart-menu ul.menu li.cart:hover ul.woo-sub-menu {
