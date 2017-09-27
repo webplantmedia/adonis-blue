@@ -38,13 +38,27 @@ textarea {
 	color: <?php echo $amd['text_light_color']; ?>
 }
 
-#master button,
 #master .button,
 #master .addresses .edit,
 #master input[type="button"],
 #master input[type="reset"],
 #master input[type="submit"] {
 	background-color: <?php echo $amd['accent_color']; ?>
+}
+
+#master .button:hover,
+#master input[type="button"]:hover,
+#master input[type="reset"]:hover,
+#master input[type="submit"]:hover,
+#master .button:focus,
+#master input[type="button"]:focus,
+#master input[type="reset"]:focus,
+#master input[type="submit"]:focus,
+#master .button:active,
+#master input[type="button"]:active,
+#master input[type="reset"]:active,
+#master input[type="submit"]:active {
+	background-color: <?php echo $amd['accent_hover_color']; ?>
 }
 
 .site-branding {

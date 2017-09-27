@@ -408,18 +408,14 @@ table {
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
+button {
   border: 0 solid;
+  padding: 0;
+  line-height: 1;
+  background: transparent;
 }
 
-#master {
-  /* button, */
-}
-
-#master .button:not(.menu-toggle):not(.customize-partial-edit-shortcut),
+#master .button,
 #master .addresses .edit,
 #master input[type="button"],
 #master input[type="reset"],
@@ -441,7 +437,6 @@ input[type="submit"] {
   /* transition: color 0.5s ease, background-color 0.5s ease; */
 }
 
-#master button:not(.menu-toggle):not(.customize-partial-edit-shortcut):not(.pswp__button):hover,
 #master .button:hover,
 #master input[type="button"]:hover,
 #master input[type="reset"]:hover,
@@ -450,12 +445,10 @@ input[type="submit"] {
   background: #1c2220;
 }
 
-#master button:not(.menu-toggle):not(.customize-partial-edit-shortcut):focus,
 #master .button:focus,
 #master input[type="button"]:focus,
 #master input[type="reset"]:focus,
 #master input[type="submit"]:focus,
-#master button:not(.menu-toggle):not(.customize-partial-edit-shortcut):active,
 #master .button:active,
 #master input[type="button"]:active,
 #master input[type="reset"]:active,
@@ -538,7 +531,7 @@ input[type="submit"] {
   border-radius: 0;
   color: #000;
   background-color: #fff;
-  background-image: url(./assets/img/select_caret.png);
+  background-image: url(./img/select_caret.png);
   background-repeat: no-repeat;
   background-position: 94% center;
   background-position: calc(100% - 20px) center;

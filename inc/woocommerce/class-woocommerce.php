@@ -20,7 +20,7 @@ if ( ! class_exists( 'AngieMakesDesign_WooCommerce' ) ) :
 		 * Setup class.
 		 */
 		public function __construct() {
-			add_action( 'wp_enqueue_scripts', array( $this, 'woocommerce_css' ) );
+			add_action( 'wp_enqueue_scripts', array( $this, 'woocommerce_enqueue' ) );
 
 			// add_filter( 'woocommerce_output_related_products_args', array( $this, 'related_products_args' ) );
 
@@ -123,7 +123,7 @@ if ( ! class_exists( 'AngieMakesDesign_WooCommerce' ) ) :
 		 *
 		 * @return void
 		 */
-		public function woocommerce_css() {
+		public function woocommerce_enqueue() {
 			/* Don't use WooCommerce default CSS */
 			// wp_dequeue_style( 'woocommerce-general' );
 			// wp_dequeue_style( 'woocommerce-smallscreen' );
@@ -131,12 +131,14 @@ if ( ! class_exists( 'AngieMakesDesign_WooCommerce' ) ) :
 
 			wp_enqueue_style( 'angiemakesdesign-woocommerce', get_template_directory_uri() . '/css/woocommerce.css', array( 'angiemakesdesign-style' ), ANGIEMAKESDESIGN_VERSION );
 
+			wp_enqueue_script( 'angiemakesdesign-woocommerce', get_template_directory_uri() . '/js/woocommerce.js', array(), ANGIEMAKESDESIGN_VERSION, true );
+
 			// RTL Support.
 			// wp_style_add_data( 'angiemakesdesign-woocommerce', 'rtl', 'replace' );
 
-			if ( is_single() && is_product() ) {
-				wp_dequeue_style( 'woocommerce_admin_styles' );
-			}
+			// if ( is_single() && is_product() ) {
+				// wp_dequeue_style( 'woocommerce_admin_styles' );
+			// }
 		}
 
 		/**

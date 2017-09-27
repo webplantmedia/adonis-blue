@@ -6,6 +6,7 @@ WooCommerce styling
 ----------------------------------------------------------------
 # Menu
 	## Cart Content
+# General
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # Menu
@@ -194,6 +195,7 @@ WooCommerce styling
 #master .woocommerce.widget_shopping_cart .buttons a {
   margin: 0;
   width: calc(50% - 5px);
+  padding: 13px 24px;
 }
 
 #master .woocommerce .widget_shopping_cart .buttons a.wc-forward,
@@ -204,6 +206,59 @@ WooCommerce styling
 #master .woocommerce .widget_shopping_cart .buttons a.wc-forward.checkout,
 #master .woocommerce.widget_shopping_cart .buttons a.wc-forward.checkout {
   float: right;
+}
+
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+#master .woocommerce ul.products li.product .button {
+  padding: 12px 22px;
+  font-size: 14px;
+  font-size: 0.875rem;
+}
+
+#master .woocommerce .summary .single_add_to_cart_button {
+  padding: 13px 27px;
+}
+
+#master .woocommerce .quantity.buttons_added .quantity-inner > * {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#master .woocommerce .summary .quantity {
+  float: left;
+  margin-right: 40px;
+  font-size: 15px;
+  color: #000;
+}
+
+#master .woocommerce .quantity input {
+  width: 60px;
+  height: 44px;
+  font-size: 25px;
+  font-weight: normal;
+  padding: 0;
+  text-align: center;
+  border: none;
+  background: none;
+  color: #2d2d2e;
+}
+
+#master .product-span {
+  float: left;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 15px;
+  color: #000;
+  line-height: 44px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#master .woocommerce .summary .quantity.buttons_added .quantity-inner {
+  /* margin-left: 50px; */
 }
 
 /*# sourceMappingURL=woocommerce.css.map */

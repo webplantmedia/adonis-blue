@@ -58,9 +58,25 @@
 	// Colors
 	wp.customize( 'text_color', function( value ) {
 		value.bind( function( to ) {
-			var selectors = '.main-navigation a, .menu-toggle, body, button, input, select, optgroup, textarea';
+			var selectors = '#site-navigation.toggled .top-mobile-header .focus > a, .top-header .menu a:hover, #master .main-menu a, #master .cart_dropdown_link, #master #site-navigation .menu-toggle, #master #site-navigation .menu-toggle:hover, body, button, input, select, optgroup, textarea';
 			$(selectors).css( {
 				'color': to
+			} );
+		} );
+	} );
+	wp.customize( 'accent_color', function( value ) {
+		value.bind( function( to ) {
+			var selectors = '#master button, #master .button, #master .addresses .edit, #master input[type="button"], #master input[type="reset"], #master input[type="submit"]';
+			$(selectors).css( {
+				'background-color': to
+			} );
+		} );
+	} );
+	wp.customize( 'accent_hover_color', function( value ) {
+		value.bind( function( to ) {
+			var selectors = '#master button:not(.menu-toggle):not(.customize-partial-edit-shortcut):not(.pswp__button):hover, #master .button:hover, #master input[type="button"]:hover, #master input[type="reset"]:hover, #master input[type="submit"]:hover, #master button:not(.menu-toggle):not(.customize-partial-edit-shortcut):focus, #master .button:focus, #master input[type="button"]:focus, #master input[type="reset"]:focus, #master input[type="submit"]:focus, #master button:not(.menu-toggle):not(.customize-partial-edit-shortcut):active, #master .button:active, #master input[type="button"]:active, #master input[type="reset"]:active, #master input[type="submit"]:active';
+			$(selectors).css( {
+				'background-color': to
 			} );
 		} );
 	} );

@@ -7,6 +7,7 @@ WooCommerce styling
 ----------------------------------------------------------------
 # Menu
 	## Cart Content
+# General
 --------------------------------------------------------------*/
 @import "variables-site/variables-site";
 @import "mixins/mixins-master";
@@ -20,3 +21,8 @@ WooCommerce styling
 ## Cart Content
 --------------------------------------------------------------*/
 @import "woocommerce/cart-content";
+
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+@import "woocommerce/general";
