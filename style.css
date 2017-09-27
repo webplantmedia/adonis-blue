@@ -1392,18 +1392,23 @@ a:hover, a:active {
 --------------------------------------------------------------*/
 .content-area {
   float: left;
-  margin: 0 -25% 0 0;
+  margin: 0 -360px 0 0;
   width: 100%;
 }
 
 .site-main {
-  margin: 0 25% 0 0;
+  margin: 0 360px 0 0;
 }
 
 .site-content .widget-area {
   float: right;
   overflow: hidden;
-  width: 25%;
+  width: 360px;
+}
+
+#secondary {
+  padding-left: 60px;
+  padding-left: 3.75rem;
 }
 
 .site-footer {
