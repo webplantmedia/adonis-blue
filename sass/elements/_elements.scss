@@ -12,12 +12,32 @@ body {
 	background: $color__background-body; /* Fallback for when there is no custom background color defined. */
 }
 
-blockquote, q {
-	quotes: "" "";
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: "";
+}
 
-	&:before,
-	&:after {
-		content: "";
+blockquote,
+q {
+	position: relative;
+	quotes: "" "";
+}
+
+blockquote:before {
+	position: absolute;
+	top: -26px;
+	left: -60px;
+	font-size: 80px;
+	content: "“";
+}
+
+@media (max-width: 959px) {
+	blockquote:before {
+		top: -20px;
+		left: -40px;
+		font-size: 70px;
 	}
 }
 

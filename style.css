@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
 Theme Name: Angie Makes Design
 Theme URI: http://underscores.me/
@@ -277,8 +278,50 @@ textarea {
   font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   clear: both;
+  margin: 0;
+  font-weight: bold;
+  line-height: 1.375;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: 300;
+  margin: 67px 0 27px;
+}
+
+h2 {
+  font-size: 28px;
+  margin: 25px 0 30px;
+}
+
+h3 {
+  font-size: 22px;
+  margin: 50px 0 30px;
+}
+
+h4 {
+  font-size: 18px;
+  margin: 50px 0 30px;
+}
+
+h5 {
+  font-size: 15px;
+  text-transform: uppercase;
+  margin: 30px 0 20px;
+}
+
+h6 {
+  font-size: 11px;
+  text-transform: uppercase;
+  margin: 30px 0 5px;
 }
 
 p {
@@ -290,7 +333,17 @@ dfn, cite, em, i {
 }
 
 blockquote {
-  margin: 0 1.5em;
+  margin: 80px 0 100px 100px;
+  color: #161616;
+  font-size: 25px;
+  line-height: 1.6;
+  letter-spacing: -0.001em;
+}
+
+@media (max-width: 959px) {
+  blockquote {
+    margin: 23px 0 23px 40px;
+  }
 }
 
 address {
@@ -348,12 +401,33 @@ body {
   /* Fallback for when there is no custom background color defined. */
 }
 
-blockquote, q {
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+}
+
+blockquote,
+q {
+  position: relative;
   quotes: "" "";
 }
 
-blockquote:before, blockquote:after, q:before, q:after {
-  content: "";
+blockquote:before {
+  position: absolute;
+  top: -26px;
+  left: -60px;
+  font-size: 80px;
+  content: "“";
+}
+
+@media (max-width: 959px) {
+  blockquote:before {
+    top: -20px;
+    left: -40px;
+    font-size: 70px;
+  }
 }
 
 hr {
@@ -1305,13 +1379,62 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
+.widget-divider {
+  text-align: center;
+}
+
+.widget-divider .line {
+  height: 5px;
+  background-color: #efd8ca;
+  width: 55px;
+  display: inline-block;
+  margin-bottom: 40px;
+  margin-bottom: 2.5rem;
+  vertical-align: top;
+}
+
 .widget {
-  margin: 0 0 1.5em;
+  margin: 0;
+  margin-bottom: 42px;
+  margin-bottom: 2.625rem;
   /* Make sure select elements fit in widgets. */
 }
 
 .widget select {
   max-width: 100%;
+}
+
+.widget h2.widget-title {
+  margin-top: 0;
+  margin-bottom: 28px;
+  margin-bottom: 1.75rem;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: initial;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.widget h3 {
+  font-size: 18px;
+  margin: 50px 0 30px;
+}
+
+.widget h4 {
+  font-size: 16px;
+  margin: 50px 0 30px;
+}
+
+.widget h5 {
+  font-size: 14px;
+  text-transform: uppercase;
+  margin: 30px 0 20px;
+}
+
+.widget h6 {
+  font-size: 12px;
+  text-transform: uppercase;
+  margin: 30px 0 5px;
 }
 
 /*--------------------------------------------------------------
@@ -1443,6 +1566,30 @@ a:hover, a:active {
 .page-links {
   clear: both;
   margin: 0 0 1.5em;
+}
+
+.archive .hentry .entry-title,
+.search .hentry .entry-title,
+.product .entry-title,
+.blog .hentry .entry-title {
+  margin-bottom: 25px;
+  color: #1c2220;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.posts-list .hentry .entry-title {
+  font-weight: bold;
+}
+
+.posts-list .hentry.sticky .entry-title {
+  margin-top: 25px;
+}
+
+.single-post .entry-thumbnail .entry-title,
+.page .entry-thumbnail .entry-title {
+  margin-bottom: 0 !important;
 }
 
 /*--------------------------------------------------------------

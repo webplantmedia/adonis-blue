@@ -20,3 +20,28 @@
 	clear: both;
 	margin: 0 0 1.5em;
 }
+
+// Entry Title
+.archive .hentry .entry-title,
+.search .hentry .entry-title,
+.product .entry-title,
+.blog .hentry .entry-title {
+	margin-bottom: 25px;
+	color: #1c2220;
+	font-size: 30px;
+	font-weight: 500;
+	line-height: 1.25;
+}
+
+.posts-list .hentry .entry-title {
+	font-weight: bold;
+}
+
+.posts-list .hentry.sticky .entry-title {
+	margin-top: 25px;
+}
+
+.single-post .entry-thumbnail .entry-title,
+.page .entry-thumbnail .entry-title {
+	margin-bottom: 0 !important;
+}
