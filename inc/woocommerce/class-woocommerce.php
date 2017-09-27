@@ -247,7 +247,7 @@ if ( ! class_exists( 'AngieMakesDesign_WooCommerce' ) ) :
 			global $woocommerce;
 			$cart_items_count = $woocommerce->cart->cart_contents_count;
 
-			$output = "<h3 class='widget-title'>" . $cart_items_count . ' ' . esc_html__( 'items in your cart', 'angiemakesdesign' ) . "</h3>";
+			$output = "<h3 class='widget-sub-title'>" . $cart_items_count . ' ' . esc_html__( 'items in your cart', 'angiemakesdesign' ) . "</h3>";
 
 			echo $output;
 		}

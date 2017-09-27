@@ -7,10 +7,12 @@ a {
 	color: <?php echo $amd['link_color']; ?>
 }
 
+#master .widget ul a:hover,
 a:hover {
 	color: <?php echo $amd['link_hover_color']; ?>
 }
 
+#master .widget ul a,
 #site-navigation.toggled .top-mobile-header .focus > a,
 .top-header .menu a:hover,
 #master .main-menu a,
@@ -38,6 +40,7 @@ textarea {
 	color: <?php echo $amd['text_light_color']; ?>
 }
 
+#master .widget-divider .line,
 #master .button.alt,
 #master .button,
 #master .addresses .edit,

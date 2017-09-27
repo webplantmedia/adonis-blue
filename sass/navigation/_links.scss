@@ -1,9 +1,26 @@
 a {
+	outline: none;
+	text-decoration: none;
+
 	&:focus {
-		outline: thin dotted;
+		outline: none;
 	}
 	&:hover,
 	&:active {
-		outline: 0;
+		outline: none;
 	}
 }
+
+/*
+.widget p >,
+.entry-content {
+	a {
+		border-bottom: 2px solid;
+		padding-bottom: 1px;
+
+		&:hover {
+			border-bottom-color: transparent;
+		}
+	}
+}
+*/

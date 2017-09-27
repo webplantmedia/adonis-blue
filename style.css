@@ -746,11 +746,16 @@ button {
 #master input[type="color"] {
   height: 53px;
   padding: 12px;
+  width: 100%;
 }
 
 #master textarea {
   width: 100%;
   padding: 11px 12px;
+}
+
+#master select {
+  width: 100%;
 }
 
 #master input[type="radio"],
@@ -891,14 +896,32 @@ button {
 /*--------------------------------------------------------------
 ## Links
 --------------------------------------------------------------*/
+a {
+  outline: none;
+  text-decoration: none;
+}
+
 a:focus {
-  outline: thin dotted;
+  outline: none;
 }
 
 a:hover, a:active {
-  outline: 0;
+  outline: none;
 }
 
+/*
+.widget p >,
+.entry-content {
+	a {
+		border-bottom: 2px solid;
+		padding-bottom: 1px;
+
+		&:hover {
+			border-bottom-color: transparent;
+		}
+	}
+}
+*/
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
@@ -1419,7 +1442,7 @@ a:hover, a:active {
 
 .widget-divider .line {
   height: 5px;
-  background-color: #efd8ca;
+  background-color: #cccccc;
   width: 55px;
   display: inline-block;
   margin-bottom: 40px;
@@ -1432,13 +1455,15 @@ a:hover, a:active {
   margin-bottom: 42px;
   margin-bottom: 2.625rem;
   /* Make sure select elements fit in widgets. */
+  /* Make sure select elements fit in widgets. */
 }
 
 .widget select {
   max-width: 100%;
 }
 
-.widget h2.widget-title {
+.widget .widgettitle,
+.widget .widget-title {
   margin-top: 0;
   margin-bottom: 28px;
   margin-bottom: 1.75rem;
@@ -1469,6 +1494,21 @@ a:hover, a:active {
   font-size: 12px;
   text-transform: uppercase;
   margin: 30px 0 5px;
+}
+
+.widget select {
+  max-width: 100%;
+}
+
+.widget ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.widget ul .children {
+  margin-top: 7px;
+  padding-left: 20px;
 }
 
 /*--------------------------------------------------------------
