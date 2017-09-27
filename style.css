@@ -25,19 +25,27 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 ----------------------------------------------------------------
 # Normalize
 # Typography
+	## Headings
+	## Copy
 # Elements
+	## Lists
+	## Tables
 # Forms
+	## Buttons
+	## Fields
 # Navigation
 	## Links
 	## Menus
+	## Top Menus
 # Accessibility
 # Alignments
 # Clearings
 # Widgets
+	## Search Widget
 # Grid
 # Header
+# Layout
 # Site
-# Content
 	## Posts and pages
 	## Comments
 # Footer
@@ -278,6 +286,9 @@ textarea {
   font-smoothing: antialiased;
 }
 
+/*--------------------------------------------------------------
+## Headings
+--------------------------------------------------------------*/
 h1,
 h2,
 h3,
@@ -324,6 +335,9 @@ h6 {
   margin: 30px 0 5px;
 }
 
+/*--------------------------------------------------------------
+## Copy
+--------------------------------------------------------------*/
 p {
   margin-bottom: 1.5em;
 }
@@ -437,6 +451,26 @@ hr {
   margin-bottom: 1.5em;
 }
 
+img {
+  height: auto;
+  /* Make sure images are scaled correctly. */
+  max-width: 100%;
+  /* Adhere to container width. */
+}
+
+figure {
+  margin: 1em 0;
+  /* Extra wide images within figure tags don't overflow the content area. */
+}
+
+.genericon {
+  font-size: inherit;
+  vertical-align: middle;
+}
+
+/*--------------------------------------------------------------
+## Lists
+--------------------------------------------------------------*/
 ul, ol {
   margin: 0 0 1.5em 3em;
 }
@@ -463,30 +497,19 @@ dd {
   margin: 0 1.5em 1.5em;
 }
 
-img {
-  height: auto;
-  /* Make sure images are scaled correctly. */
-  max-width: 100%;
-  /* Adhere to container width. */
-}
-
-figure {
-  margin: 1em 0;
-  /* Extra wide images within figure tags don't overflow the content area. */
-}
-
+/*--------------------------------------------------------------
+## Tables
+--------------------------------------------------------------*/
 table {
   margin: 0 0 1.5em;
   width: 100%;
 }
 
-.genericon {
-  font-size: inherit;
-  vertical-align: middle;
-}
-
 /*--------------------------------------------------------------
 # Forms
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Buttons
 --------------------------------------------------------------*/
 button {
   border: 0 solid;
@@ -565,6 +588,9 @@ button {
   background: #252323;
 }
 
+/*--------------------------------------------------------------
+## Fields
+--------------------------------------------------------------*/
 #master form label {
   display: block;
   margin-bottom: 7px;
@@ -1172,6 +1198,9 @@ a:hover, a:active {
   width: 50%;
 }
 
+/*--------------------------------------------------------------
+## Top Menus
+--------------------------------------------------------------*/
 .top-header .top-left-header {
   float: left;
 }
@@ -1443,30 +1472,15 @@ a:hover, a:active {
 }
 
 /*--------------------------------------------------------------
-## Widget Search
+## Search Widget
 --------------------------------------------------------------*/
-#master {
-  /* widget search when at widgetize page (include woocommerce search widget) */
-}
-
 #master .widget_search .search-form,
 #master .widget_product_search .search-form {
   position: relative;
 }
 
-#master .widget_search .home-widget-section-title,
-#master .widget_product_search .home-widget-section-title {
-  max-width: 1230px;
-  margin: 0 auto;
-  padding: 0 30px;
-}
-
-#master .widget_search .home-widget-section-title .widget-title,
-#master .widget_product_search .home-widget-section-title .widget-title {
-  margin-top: 0;
-}
-
-#master .widget_search .search-form label {
+#master .widget_search .search-form label,
+#master .widget_product_search .search-form label {
   margin-bottom: 0;
 }
 
@@ -1476,18 +1490,8 @@ a:hover, a:active {
   padding-right: 53px;
 }
 
-#master section .widget_search .search-field {
-  padding-right: 80px;
-}
-
-#master section .widget_search .search-field {
-  height: 70px;
-  padding: 25px 80px 25px 35px;
-  border-color: transparent;
-  font-size: 18px;
-}
-
-#master .widget_search .search-submit {
+#master .widget_search .search-submit,
+#master .widget_product_search .search-submit {
   position: absolute;
   top: 0;
   right: 0;
@@ -1500,51 +1504,13 @@ a:hover, a:active {
   line-height: 1;
 }
 
-#master section .widget_search .search-submit {
-  width: 80px;
-}
-
 #master .widget_search .search-submit:hover,
 #master .widget_search .search-submit:active,
-#master .widget_search .search-submit:focus {
+#master .widget_search .search-submit:focus,
+#master .widget_product_search .search-submit:hover,
+#master .widget_product_search .search-submit:active,
+#master .widget_product_search .search-submit:focus {
   background: none;
-}
-
-#master .home-widget.widget_search,
-#master .home-widget.widget_product_search {
-  padding: 70px 0;
-}
-
-@media (max-width: 640px) {
-  #master .home-widget.widget_search,
-  #master .home-widget.widget_product_search {
-    padding: 35px 0;
-  }
-}
-
-#master .home-widget.widget_search .search-field,
-#master .home-widget.widget_product_search .search-field {
-  height: 70px;
-  padding: 25px 80px 25px 35px;
-  border-color: transparent;
-  font-size: 18px;
-}
-
-@media screen and (max-width: 640px) {
-  #master section .widget_search .search-field,
-  #master .home-widget.widget_search .search-field {
-    height: 50px;
-    padding: 15px 50px 15px 15px;
-  }
-  #master section .widget_search .search-submit,
-  #master .home-widget.widget_search .search-submit {
-    width: 50px;
-  }
-}
-
-#master .home-widget.widget_search .search-submit,
-#master .home-widget.widget_product_search .search-submit {
-  width: 80px;
 }
 
 #master .widget_search .search-submit,
@@ -1591,6 +1557,35 @@ a:hover, a:active {
 }
 
 /*--------------------------------------------------------------
+# Layout
+--------------------------------------------------------------*/
+.content-area {
+  float: left;
+  margin: 0 -360px 0 0;
+  width: 100%;
+}
+
+.site-main {
+  margin: 0 360px 0 0;
+}
+
+.site-content .widget-area {
+  float: right;
+  overflow: hidden;
+  width: 360px;
+}
+
+#secondary {
+  padding-left: 60px;
+  padding-left: 3.75rem;
+}
+
+.site-footer {
+  clear: both;
+  width: 100%;
+}
+
+/*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
 .site-header {
@@ -1632,35 +1627,6 @@ a:hover, a:active {
   #masthead.site-header {
     background-image: none;
   }
-}
-
-/*--------------------------------------------------------------
-# Content
---------------------------------------------------------------*/
-.content-area {
-  float: left;
-  margin: 0 -360px 0 0;
-  width: 100%;
-}
-
-.site-main {
-  margin: 0 360px 0 0;
-}
-
-.site-content .widget-area {
-  float: right;
-  overflow: hidden;
-  width: 360px;
-}
-
-#secondary {
-  padding-left: 60px;
-  padding-left: 3.75rem;
-}
-
-.site-footer {
-  clear: both;
-  width: 100%;
 }
 
 /*--------------------------------------------------------------
