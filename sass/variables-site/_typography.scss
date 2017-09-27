@@ -1,22 +1,21 @@
 $font__main: 'Lato', sans-serif;
-
-$font__xlarge-size: 20px;
-$font__large-size: 18px;
-$font__main-size: 16px;
-$font__small-size: 14px;
-$font__xsmall-size: 12px;
-$font__menu-dropdown-size: 15px;
-$font__mobile-menu-size: 18px;
-$font__line-height-mobile-menu: 28px;
-$font__social-icon-size: 18px;
-$genericon__mobile-menu-size: 24px;
-$font__top-header-size: 12px;
-
 $font__code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 $font__pre: "Courier 10 Pitch", Courier, monospace;
-$font__line-height-body: 1.5;
-$font__line-height-top-menu: 36px;
-$font__line-height-pre: 1.6;
 
 $font__menu-icon-size: 30px;
-$font__line-height-menu-icon: ($font__main-size * $font__line-height-body) + (16px * 1.4);
+$font__super-size: 24px;
+$font__xlarge-size: 22px;
+$font__large-size: 20px;
+$font__main-size: 18px;
+$font__medium-size: 16px;
+$font__small-size: 15px;
+$font__xsmall-size: 14px;
+$font__tiny-size: 12px;
+
+$font__line-height-body: 1.8;
+$font__line-height-pre: 1.6;
+
+$font__line-height-top-menu: 36px;
+$font__line-height-mobile-menu: 28px;
+
+$font__line-height-menu-icon: ($font__medium-size * $font__line-height-body) + (16px * 1.4); // base size * top bottom menu padding

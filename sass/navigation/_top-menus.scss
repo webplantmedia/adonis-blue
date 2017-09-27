@@ -9,7 +9,7 @@
 
 	.jetpack-social-navigation,
 	.header-menu {
-		@include rem('font-size',$font__top-header-size);
+		@include rem('font-size',$font__tiny-size);
 
 		ul {
 			display: inline-block;
@@ -51,7 +51,7 @@
 			text-decoration: none;
 			text-transform: uppercase;
 			padding: 0 0.5em;
-			@include rem('font-size',$font__top-header-size);
+			@include rem('font-size',$font__tiny-size);
 			width: auto;
 			height: auto;
 			font-weight: bold;
@@ -85,7 +85,7 @@
 
 			&:before {
 				@include rem('line-height',$font__line-height-top-menu);
-				@include rem('font-size',$font__social-icon-size);
+				@include rem('font-size',$font__main-size);
 			}
 		}
 	}

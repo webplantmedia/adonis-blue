@@ -28,9 +28,9 @@
 
 			.alert-count {
 				position: absolute;
-				top: 5px;
+				top: 15%;
 				left: 93%;
-				@include rem('font-size',($font__main-size - 4));
+				@include rem('font-size',$font__tiny-size);
 				font-weight: bold;
 				line-height: 1;
 			}

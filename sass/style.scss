@@ -36,6 +36,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 # Widgets
 # Grid
 # Header
+# Site
 # Content
 	## Posts and pages
 	## Comments
@@ -105,6 +106,11 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 
 /*--------------------------------------------------------------
 # Content
+--------------------------------------------------------------*/
+@import "layout/content-sidebar";
+
+/*--------------------------------------------------------------
+# Site
 --------------------------------------------------------------*/
 @import "site/site";
 

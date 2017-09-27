@@ -39,13 +39,13 @@ WooCommerce styling
 .cart-menu ul.menu li.cart i:before {
   font-size: 30px;
   font-size: 1.875rem;
-  line-height: 46.4px;
-  line-height: 2.9rem;
+  line-height: 51.2px;
+  line-height: 3.2rem;
 }
 
 .cart-menu ul.menu li.cart .alert-count {
   position: absolute;
-  top: 5px;
+  top: 15%;
   left: 93%;
   font-size: 12px;
   font-size: 0.75rem;
@@ -213,8 +213,8 @@ WooCommerce styling
 --------------------------------------------------------------*/
 #master .woocommerce ul.products li.product .button {
   padding: 12px 22px;
-  font-size: 14px;
-  font-size: 0.875rem;
+  font-size: 15px;
+  font-size: 0.9375rem;
 }
 
 #master .woocommerce .summary .single_add_to_cart_button {
