@@ -38,6 +38,7 @@ textarea {
 	color: <?php echo $amd['text_light_color']; ?>
 }
 
+#master .button.alt,
 #master .button,
 #master .addresses .edit,
 #master input[type="button"],
@@ -46,14 +47,17 @@ textarea {
 	background-color: <?php echo $amd['accent_color']; ?>
 }
 
+#master .button.alt:hover,
 #master .button:hover,
 #master input[type="button"]:hover,
 #master input[type="reset"]:hover,
 #master input[type="submit"]:hover,
+#master .button.alt:focus,
 #master .button:focus,
 #master input[type="button"]:focus,
 #master input[type="reset"]:focus,
 #master input[type="submit"]:focus,
+#master .button.alt:active,
 #master .button:active,
 #master input[type="button"]:active,
 #master input[type="reset"]:active,

@@ -16,7 +16,7 @@ button {
 		border: none;
 		border-radius: 3px;
 		color: #fff;
-		font-size: 18px;
+		@include rem('font-size',$font__large-size);
 		/*font-size: 0.75rem;*/
 		font-weight: bold;
 		line-height: 1;
@@ -26,6 +26,18 @@ button {
 		/* -moz-transition: color 0.5s ease, background-color 0.5s ease; */
 		/* -o-transition: color 0.5s ease, background-color 0.5s ease; */
 		/* transition: color 0.5s ease, background-color 0.5s ease; */
+	}
+
+	#secondary {
+		.button,
+		.addresses .edit,
+		input[type="button"],
+		input[type="reset"],
+		input[type="submit"] {
+			@include rem('font-size',$font__xsmall-size);
+			text-transform: uppercase;
+			padding: 13px 30px;
+		}
 	}
 
 	.button:hover,
