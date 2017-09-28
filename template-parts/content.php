@@ -11,6 +11,12 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
+		<?php if ( 'post' === get_post_type() ) : ?>
+		<div class="entry-cat-meta">
+			<?php angiemakesdesign_entry_header(); ?>
+		</div><!-- .entry-meta -->
+		<?php endif; ?>
+
 		<?php
 		if ( is_singular() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );

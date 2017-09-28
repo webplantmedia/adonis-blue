@@ -12,6 +12,9 @@ a:hover {
 	color: <?php echo $amd['link_hover_color']; ?>
 }
 
+#master .entry-footer span a:hover,
+#master .entry-meta a:hover time,
+#master .entry-meta a:hover,
 #master .widget ul a,
 #site-navigation.toggled .top-mobile-header .focus > a,
 .top-header .menu a:hover,
@@ -28,6 +31,17 @@ textarea {
 	color: <?php echo $amd['text_color']; ?>
 }
 
+#master .entry-footer,
+#master .entry-footer span,
+#master .entry-footer a,
+#master .entry-footer a:active,
+#master .entry-footer a:focus,
+#master .entry-footer a:visited,
+#master .entry-meta,
+#master .entry-meta a,
+#master .entry-meta a:active,
+#master .entry-meta a:focus,
+#master .entry-meta a:visited,
 .toggled .top-mobile-header a:hover,
 .toggled .top-mobile-header a:active,
 .toggled .top-mobile-header a:focus,
@@ -40,6 +54,7 @@ textarea {
 	color: <?php echo $amd['text_light_color']; ?>
 }
 
+#master .content-divider .line,
 #master .widget-divider .line,
 #master .button.alt,
 #master .button,

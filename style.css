@@ -912,14 +912,11 @@ a:hover, a:active {
 .widget p > a,
 .entry-content a {
   text-decoration: underline;
-  /* border-bottom: 2px solid; */
-  /* padding-bottom: 1px; */
 }
 
 .widget p > a:hover,
 .entry-content a:hover {
   text-decoration: none;
-  /* border-bottom-color: transparent; */
 }
 
 /*--------------------------------------------------------------
@@ -1590,10 +1587,10 @@ a:hover, a:active {
 }
 
 .site-content {
-  padding-top: 40px;
-  padding-top: 2.5rem;
-  padding-bottom: 40px;
-  padding-bottom: 2.5rem;
+  padding-top: 50px;
+  padding-top: 3.125rem;
+  padding-bottom: 50px;
+  padding-bottom: 3.125rem;
 }
 
 /*--------------------------------------------------------------
@@ -1690,18 +1687,30 @@ a:hover, a:active {
 .page-content,
 .entry-content,
 .entry-summary {
-  margin: 1.5em 0 0;
+  margin: 0;
+  margin-top: 70px;
+  margin-top: 4.375rem;
 }
 
 .page-links {
   clear: both;
-  margin: 0 0 1.5em;
+  margin: 0;
+  margin-bottom: 70px;
+  margin-bottom: 4.375rem;
+}
+
+.entry-header .entry-title {
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: center;
+  font-weight: bold;
 }
 
 .archive .hentry .entry-title,
 .search .hentry .entry-title,
 .product .entry-title,
 .blog .hentry .entry-title {
+  margin-top: 0;
   margin-bottom: 25px;
   color: #1c2220;
   font-size: 30px;
@@ -1719,7 +1728,81 @@ a:hover, a:active {
 
 .single-post .entry-thumbnail .entry-title,
 .page .entry-thumbnail .entry-title {
-  margin-bottom: 0 !important;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.content-divider {
+  text-align: center;
+  padding-top: 70px;
+  padding-top: 4.375rem;
+  height: 75px;
+  height: 4.6875rem;
+}
+
+.content-divider .line {
+  height: 5px;
+  background-color: #cccccc;
+  width: 55px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.entry-header {
+  text-align: center;
+}
+
+.entry-cat-meta {
+  text-align: center;
+  font-size: 12px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 30px;
+  margin-bottom: 1.875rem;
+}
+
+.entry-cat-meta a {
+  padding: 7px 13px;
+  border: 2px solid;
+  border-radius: 3px;
+}
+
+.entry-meta {
+  text-align: center;
+  font-size: 14px;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  font-weight: normal;
+  margin-top: 35px;
+  margin-top: 2.1875rem;
+}
+
+.entry-footer {
+  font-size: 14px;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  font-weight: normal;
+  margin-top: 40px;
+  margin-top: 2.5rem;
+}
+
+.entry-footer span:after {
+  content: " / ";
+}
+
+.entry-footer span:last-child:after {
+  display: none;
+  content: "";
+}
+
+.entry-content > *:first-child {
+  margin-top: 0;
+}
+
+j
+.entry-content > *:last-child {
+  margin-bottom: 0;
 }
 
 /*--------------------------------------------------------------
