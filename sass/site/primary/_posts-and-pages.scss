@@ -3,7 +3,10 @@
 }
 
 .hentry {
-	margin: 0 0 1.5em;
+	margin: 0;
+	@include rem('margin-bottom',70px);
+	@include rem('padding-bottom',70px);
+	border-bottom: 2px solid $color__border;
 }
 
 .updated:not(.published) {
@@ -80,15 +83,35 @@
 // Entry cat header
 .entry-cat-meta {
 	text-align: center;
-	@include rem('font-size',$font__tiny_size);
+	@include rem('font-size',$font__xsmall_size);
 	text-transform: uppercase;
 	font-weight: bold;
 	@include rem('margin-bottom',30px);
+	
+	ul {
+		@include rem('font-size',$font__tiny_size);
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		
+		li {
+			display: inline-block;
+			@include rem('padding-right',5px);
 
-	a {
-		padding: 7px 13px;
-		border: 2px solid;
-		border-radius: 3px;
+			&:last-child {
+				padding-right: 0;
+			}
+			
+			a {
+				display: block;
+			}
+		}
+
+		a {
+			padding: 7px 13px;
+			border: 2px solid;
+			border-radius: 3px;
+		}
 	}
 }
 
@@ -102,13 +125,11 @@
 }
 
 .entry-footer {
-	@include rem('font-size',$font__xsmall_size);
-	text-transform: uppercase;
-	font-weight: normal;
+	@include rem('font-size',$font__small_size);
 	@include rem('margin-top',40px);
 
 	span:after {
-		content: " / ";
+		content: " | ";
 
 	}
 	span:last-child:after {

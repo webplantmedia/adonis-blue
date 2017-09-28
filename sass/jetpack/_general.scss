@@ -1,0 +1,7 @@
+#master {
+	div.sharedaddy h3.sd-title {
+		@include rem('font-size',$font__tiny_size);
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+}

@@ -445,7 +445,7 @@ blockquote:before {
 }
 
 hr {
-  background-color: #bab8b9;
+  background-color: #ececec;
   border: 0;
   height: 1px;
   margin-bottom: 1.5em;
@@ -1218,6 +1218,37 @@ a:hover, a:active {
   width: 50%;
 }
 
+.post-navigation span {
+  display: block;
+  overflow: hidden;
+}
+
+.post-navigation span.meta-nav {
+  font-size: 12px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.post-navigation span.post-title {
+  font-size: 15px;
+  font-size: 0.9375rem;
+}
+
+.post-navigation img {
+  width: 120px;
+  float: left;
+}
+
+.post-navigation .nav-next img {
+  float: right;
+  padding-left: 20px;
+}
+
+.post-navigation .nav-previous img {
+  padding-right: 20px;
+}
+
 /*--------------------------------------------------------------
 ## Top Menus
 --------------------------------------------------------------*/
@@ -1677,7 +1708,12 @@ a:hover, a:active {
 }
 
 .hentry {
-  margin: 0 0 1.5em;
+  margin: 0;
+  margin-bottom: 70px;
+  margin-bottom: 4.375rem;
+  padding-bottom: 70px;
+  padding-bottom: 4.375rem;
+  border-bottom: 2px solid #ececec;
 }
 
 .updated:not(.published) {
@@ -1754,15 +1790,37 @@ a:hover, a:active {
 
 .entry-cat-meta {
   text-align: center;
-  font-size: 12px;
-  font-size: 0.75rem;
+  font-size: 14px;
+  font-size: 0.875rem;
   text-transform: uppercase;
   font-weight: bold;
   margin-bottom: 30px;
   margin-bottom: 1.875rem;
 }
 
-.entry-cat-meta a {
+.entry-cat-meta ul {
+  font-size: 12px;
+  font-size: 0.75rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.entry-cat-meta ul li {
+  display: inline-block;
+  padding-right: 5px;
+  padding-right: 0.3125rem;
+}
+
+.entry-cat-meta ul li:last-child {
+  padding-right: 0;
+}
+
+.entry-cat-meta ul li a {
+  display: block;
+}
+
+.entry-cat-meta ul a {
   padding: 7px 13px;
   border: 2px solid;
   border-radius: 3px;
@@ -1779,16 +1837,14 @@ a:hover, a:active {
 }
 
 .entry-footer {
-  font-size: 14px;
-  font-size: 0.875rem;
-  text-transform: uppercase;
-  font-weight: normal;
+  font-size: 15px;
+  font-size: 0.9375rem;
   margin-top: 40px;
   margin-top: 2.5rem;
 }
 
 .entry-footer span:after {
-  content: " / ";
+  content: " | ";
 }
 
 .entry-footer span:last-child:after {

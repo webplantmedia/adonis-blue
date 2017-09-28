@@ -7,11 +7,13 @@ a {
 	color: <?php echo $amd['link_color']; ?>
 }
 
+#master .post-navigation a:hover .post-title,
 #master .widget ul a:hover,
 a:hover {
 	color: <?php echo $amd['link_hover_color']; ?>
 }
 
+#master .post-navigation .meta-nav,
 #master .entry-footer span a:hover,
 #master .entry-meta a:hover time,
 #master .entry-meta a:hover,
@@ -31,6 +33,7 @@ textarea {
 	color: <?php echo $amd['text_color']; ?>
 }
 
+#master .post-navigation .post-title,
 #master .entry-footer,
 #master .entry-footer span,
 #master .entry-footer a,

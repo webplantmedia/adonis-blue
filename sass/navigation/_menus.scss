@@ -3,7 +3,7 @@
 	display: block;
 	float: left;
 	width: 100%;
-	border-bottom: 2px solid $color__background-hr;
+	border-bottom: 2px solid $color__menu-border;
 	text-align: center;
 }
 	
@@ -22,7 +22,7 @@
 		text-align: left;
 
 		ul {
-			border-top: 2px solid $color__background-hr;
+			border-top: 2px solid $color__menu-border;
 			float: left;
 			position: absolute;
 			top: 100%;
@@ -46,12 +46,12 @@
 				}
 
 				&:hover > a {
-					background-color: $color__light-gray;
+					background-color: $color__border;
 				}
 			}
 
 			a {
-				border-bottom: 2px solid $color__light-gray;
+				border-bottom: 2px solid $color__border;
 				padding-top: 1em;
 				padding-bottom: 1em;
 				white-space: nowrap;
@@ -87,7 +87,7 @@
 		.current-menu-item > a,
 		.current_page_ancestor > a,
 		.current-menu-ancestor > a {
-			background-color: $color__light-gray;
+			background-color: $color__border;
 		}
 	}
 }
@@ -198,11 +198,11 @@
 
 				&.current_page_item > a,
 				&.current-menu-item > a {
-					background-color: $color__light-gray;
+					background-color: $color__border;
 				}
 
 				&:last-child > a {
-					border-bottom: 2px solid $color__light-gray;
+					border-bottom: 2px solid $color__border;
 				}
 
 				ul {
@@ -253,7 +253,7 @@
 			a {
 				position: relative;
 				@include rem('font-size',$font__main-size);
-				border-bottom: 2px solid $color__light-gray;
+				border-bottom: 2px solid $color__border;
 				@include rem('padding-left',20px);
 				@include rem('padding-right',20px);
 				@include rem('padding-top',20px);
@@ -291,7 +291,7 @@
 		border-bottom-width: 0;
 
 		.menu-toggle {
-			border-bottom: 2px solid $color__background-hr;
+			border-bottom: 2px solid $color__menu-border;
 
 			i:before {
 				content: "\f406";
@@ -318,5 +318,43 @@
 		float: right;
 		text-align: right;
 		width: 50%;
+	}
+}
+
+.post-navigation {
+	span {
+		display: block;
+		overflow: hidden;
+
+		&.meta-nav {
+			@include rem('font-size',$font__tiny_size);
+			text-transform: uppercase;
+			font-weight: bold;
+		}
+
+		&.post-title {
+			@include rem('font-size',$font__small_size);
+		}
+	}
+
+	img {
+		width: 120px;
+		float: left;
+	}
+
+	.nav-next {
+		span {
+		}
+
+		img {
+			float: right;
+			padding-left: 20px;
+		}
+	}
+
+	.nav-previous {
+		img {
+			padding-right: 20px;
+		}
 	}
 }

@@ -50,7 +50,7 @@ if ( ! function_exists( 'angiemakesdesign_entry_header' ) ) :
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
 			/* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list( esc_html__( ', ', 'angiemakesdesign' ) );
+			$categories_list = get_the_category_list( esc_html__( '', 'angiemakesdesign' ) );
 			if ( $categories_list ) {
 				/* translators: 1: list of categories. */
 				printf( '<span class="cat-links">' . esc_html__( '%1$s', 'angiemakesdesign' ) . '</span>', $categories_list ); // WPCS: XSS OK.
@@ -133,5 +133,33 @@ if ( ! function_exists( 'angiemakesdesign_mobile_menu_button' ) ) :
 			<i class="genericon"></i>
 		</button>
 		<?php
+	}
+endif;
+
+if ( ! function_exists( 'angiemakesdesign_featured_post_navigation' ) ) :
+	function angiemakesdesign_featured_post_navigation() {
+		$prev_text = $next_text = '';
+
+		// Previous/next post navigation.
+		if ( $next_post = get_next_post() ) {
+			$next_text .= get_the_post_thumbnail($next_post->ID,'thumbnail');
+		}
+
+		if ( $previous_post = get_previous_post() ) {
+			$prev_text .= get_the_post_thumbnail($previous_post->ID,'thumbnail');
+		}
+
+		$next_text .= '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'angiemakesdesign' ) . '</span> ' .
+			'<span class="screen-reader-text">' . __( 'Next post:', 'angiemakesdesign' ) . '</span> ' .
+			'<span class="post-title">%title</span>';
+
+		$prev_text .= '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'angiemakesdesign' ) . '</span> ' .
+			'<span class="screen-reader-text">' . __( 'Previous post:', 'angiemakesdesign' ) . '</span> ' .
+			'<span class="post-title">%title</span>';
+
+		the_post_navigation( array(
+			'next_text' => $next_text,
+			'prev_text' => $prev_text,
+		) );
 	}
 endif;
