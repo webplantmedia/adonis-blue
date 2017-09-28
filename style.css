@@ -909,19 +909,19 @@ a:hover, a:active {
   outline: none;
 }
 
-/*
-.widget p >,
-.entry-content {
-	a {
-		border-bottom: 2px solid;
-		padding-bottom: 1px;
-
-		&:hover {
-			border-bottom-color: transparent;
-		}
-	}
+.widget p > a,
+.entry-content a {
+  text-decoration: underline;
+  /* border-bottom: 2px solid; */
+  /* padding-bottom: 1px; */
 }
-*/
+
+.widget p > a:hover,
+.entry-content a:hover {
+  text-decoration: none;
+  /* border-bottom-color: transparent; */
+}
+
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
