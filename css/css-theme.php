@@ -13,6 +13,7 @@ a:hover {
 	color: <?php echo $amd['link_hover_color']; ?>
 }
 
+<?php /*
 #master .entry-cat-meta a {
 	color: <?php echo $amd['accent_color']; ?>
 }
@@ -20,6 +21,7 @@ a:hover {
 #master .entry-cat-meta a:hover {
 	color: <?php echo $amd['accent_hover_color']; ?>
 }
+ */ ?>
 
 
 #master .sd-social-icon .sd-content ul li a,
@@ -68,6 +70,7 @@ textarea {
 	color: <?php echo $amd['text_light_color']; ?>
 }
 
+#master .entry-cat-meta a,
 #master .sd-social-icon-text .sd-content ul li a,
 #master .sd-social-icon .sd-content ul li a,
 #master .content-divider .line,
@@ -93,6 +96,7 @@ textarea {
 	background-color: <?php echo $amd['accent_color']; ?>
 }
 
+#master .entry-cat-meta a:hover,
 #master .sd-social-icon-text .sd-content ul li a:hover,
 #master .sd-social-icon .sd-content ul li a:hover,
 #master .button.alt:hover,

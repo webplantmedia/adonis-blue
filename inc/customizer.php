@@ -6,16 +6,16 @@
  */
 
 /**
- * Add postMessage support for site title and description for the Theme Customizer.
+ * Add refresh support for site title and description for the Theme Customizer.
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
 function angiemakesdesign_customize_register( $wp_customize ) {
 	global $amd_default;
 
-	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
-	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+	$wp_customize->get_setting( 'blogname' )->transport         = 'refresh';
+	$wp_customize->get_setting( 'blogdescription' )->transport  = 'refresh';
+	$wp_customize->get_setting( 'header_textcolor' )->transport = 'refresh';
 
 	if ( isset( $wp_customize->selective_refresh ) ) {
 		$wp_customize->selective_refresh->add_partial( 'blogname', array(
@@ -38,7 +38,7 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 	$setting_id = 'custom_logo_2x';
 	$wp_customize->add_setting( $setting_id, array(
 		'default' => $amd_default[ $setting_id ],
-		'transport' => 'postMessage',
+		'transport' => 'refresh',
 		'sanitize_callback' => 'esc_url_raw',
 	) );
 
@@ -59,7 +59,7 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 	$setting_id = 'heading_padding_top';
 	$wp_customize->add_setting( $setting_id, array(
 		'default' => $amd_default[ $setting_id ],
-		'transport' => 'postMessage',
+		'transport' => 'refresh',
 		'sanitize_callback' => 'absint',
 	) );
 
@@ -72,7 +72,7 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 	$setting_id = 'heading_padding_bottom';
 	$wp_customize->add_setting( $setting_id, array(
 		'default' => $amd_default[ $setting_id ],
-		'transport' => 'postMessage',
+		'transport' => 'refresh',
 		'sanitize_callback' => 'absint',
 	) );
 
@@ -88,7 +88,7 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 	$setting_id = 'accent_color';
 	$wp_customize->add_setting( $setting_id, array(
 		'default' => $amd_default[ $setting_id ],
-		'transport' => 'postMessage',
+		'transport' => 'refresh',
 		'sanitize_callback' => 'sanitize_hex_color',
 	) );
 
@@ -100,7 +100,7 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 	$setting_id = 'accent_hover_color';
 	$wp_customize->add_setting( $setting_id, array(
 		'default' => $amd_default[ $setting_id ],
-		'transport' => 'postMessage',
+		'transport' => 'refresh',
 		'sanitize_callback' => 'sanitize_hex_color',
 	) );
 
@@ -112,7 +112,7 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 	$setting_id = 'text_color';
 	$wp_customize->add_setting( $setting_id, array(
 		'default' => $amd_default[ $setting_id ],
-		'transport' => 'postMessage',
+		'transport' => 'refresh',
 		'sanitize_callback' => 'sanitize_hex_color',
 	) );
 
@@ -124,7 +124,7 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 	$setting_id = 'link_color';
 	$wp_customize->add_setting( $setting_id, array(
 		'default' => $amd_default[ $setting_id ],
-		'transport' => 'postMessage',
+		'transport' => 'refresh',
 		'sanitize_callback' => 'sanitize_hex_color',
 	) );
 
@@ -152,7 +152,7 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 	$setting_id = 'top_header_background';
 	$wp_customize->add_setting( $setting_id, array(
 		'default' => $amd_default[ $setting_id ],
-		'transport' => 'postMessage',
+		'transport' => 'refresh',
 		'sanitize_callback' => 'esc_url_raw',
 	) );
 
@@ -173,7 +173,7 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 	$setting_id = 'top_header_background_offset';
 	$wp_customize->add_setting( $setting_id, array(
 		'default' => $amd_default[ $setting_id ],
-		'transport' => 'postMessage',
+		'transport' => 'refresh',
 		'sanitize_callback' => 'absint',
 	) );
 
@@ -200,7 +200,7 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 	$setting_id = 'mobile_menu_label';
 	$wp_customize->add_setting( $setting_id, array(
 		'default' => $amd_default[ $setting_id ],
-		'transport' => 'postMessage',
+		'transport' => 'refresh',
 		'sanitize_callback' => 'sanitize_text_field',
 	) );
 
