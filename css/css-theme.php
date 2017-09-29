@@ -13,6 +13,16 @@ a:hover {
 	color: <?php echo $amd['link_hover_color']; ?>
 }
 
+#master .entry-cat-meta a {
+	color: <?php echo $amd['accent_color']; ?>
+}
+
+#master .entry-cat-meta a:hover {
+	color: <?php echo $amd['accent_hover_color']; ?>
+}
+
+
+#master .sd-social-icon .sd-content ul li a,
 #master .post-navigation .meta-nav,
 #master .entry-footer span a:hover,
 #master .entry-meta a:hover time,
@@ -33,6 +43,7 @@ textarea {
 	color: <?php echo $amd['text_color']; ?>
 }
 
+#master div.sharedaddy h3.sd-title,
 #master .post-navigation .post-title,
 #master .entry-footer,
 #master .entry-footer span,
@@ -57,6 +68,8 @@ textarea {
 	color: <?php echo $amd['text_light_color']; ?>
 }
 
+#master .sd-social-icon-text .sd-content ul li a,
+#master .sd-social-icon .sd-content ul li a,
 #master .content-divider .line,
 #master .widget-divider .line,
 #master .button.alt,
@@ -64,25 +77,29 @@ textarea {
 #master .addresses .edit,
 #master input[type="button"],
 #master input[type="reset"],
-#master input[type="submit"] {
-	background-color: <?php echo $amd['accent_color']; ?>
-}
-
-#master .button.alt:hover,
-#master .button:hover,
-#master input[type="button"]:hover,
-#master input[type="reset"]:hover,
-#master input[type="submit"]:hover,
+#master input[type="submit"],
+#master .sd-social-icon .sd-content ul li a:focus,
 #master .button.alt:focus,
 #master .button:focus,
 #master input[type="button"]:focus,
 #master input[type="reset"]:focus,
 #master input[type="submit"]:focus,
+#master .sd-social-icon .sd-content ul li a:active,
 #master .button.alt:active,
 #master .button:active,
 #master input[type="button"]:active,
 #master input[type="reset"]:active,
 #master input[type="submit"]:active {
+	background-color: <?php echo $amd['accent_color']; ?>
+}
+
+#master .sd-social-icon-text .sd-content ul li a:hover,
+#master .sd-social-icon .sd-content ul li a:hover,
+#master .button.alt:hover,
+#master .button:hover,
+#master input[type="button"]:hover,
+#master input[type="reset"]:hover,
+#master input[type="submit"]:hover {
 	background-color: <?php echo $amd['accent_hover_color']; ?>
 }
 

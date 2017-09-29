@@ -55,3 +55,8 @@ function angiemakesdesign_infinite_scroll_render() {
 		endif;
 	}
 }
+
+function angiemakesdesign_jetpack_enqueue() {
+		wp_enqueue_style( 'angiemakesdesign-jetpack', get_template_directory_uri() . '/css/jetpack.css', array( 'angiemakesdesign-style' ), ANGIEMAKESDESIGN_VERSION );
+}
+add_action( 'wp_enqueue_scripts', 'angiemakesdesign_jetpack_enqueue' );

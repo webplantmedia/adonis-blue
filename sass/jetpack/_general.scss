@@ -3,5 +3,26 @@
 		@include rem('font-size',$font__tiny_size);
 		text-transform: uppercase;
 		font-weight: bold;
+
+		&:before {
+			border-top: 2px solid $color__border;
+		}
+	}
+	.sd-social-icon {
+		.sd-content ul li a:before {
+			color: $color__white !important;
+		}
+	}
+	.sd-social-icon-text {
+		.sd-content ul li a {
+			color: $color__white !important;
+			@include rem('font-size',$font__tiny_size);
+			font-family: $font__main;
+			line-height: $font__line-height-body;
+			border-width: 0;
+			box-shadow: none;
+			font-weight: bold;
+			text-transform: uppercase;
+		}
 	}
 }
