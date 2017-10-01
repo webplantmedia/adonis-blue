@@ -74,7 +74,7 @@ textarea {
 #master .sd-social-icon-text .sd-content ul li a,
 #master .sd-social-icon .sd-content ul li a,
 #master .content-divider .line,
-#master .widget-divider .line,
+#master .widget:before,
 #master .button.alt,
 #master .button,
 #master .addresses .edit,

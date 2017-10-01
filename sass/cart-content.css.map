@@ -1,9 +1,0 @@
-{
-	"version": 3,
-	"file": "cart-content.css",
-	"sources": [
-		"woocommerce/cart-content.scss"
-	],
-	"names": [],
-	"mappings": ""
-}

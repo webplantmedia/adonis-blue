@@ -1,17 +1,16 @@
-.widget-divider {
-	text-align: center;
-
-	.line {
+.widget {
+	&:before {
 		height: 5px;
 		background-color: #cccccc;
 		width: 55px;
-		display: inline-block;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
 		@include rem('margin-bottom',40px);
 		vertical-align: top;
+		content: " ";
 	}
-}
 
-.widget {
 	margin: 0;
 	@include rem('margin-bottom',42px);
 
