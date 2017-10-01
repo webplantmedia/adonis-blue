@@ -16,7 +16,7 @@ $amd_default['text_light_color'] = '#959595';
 $amd_default['accent_color'] = '#fbd5c1';
 $amd_default['accent_hover_color'] = '#f6a378';
 // $amd_default['link_color'] = '#f6a378';
-$amd_default['link_color'] = '#cccccc';
+$amd_default['link_color'] = '#666666';
 $amd_default['link_hover_color'] = '#f6874d';
 
 /*

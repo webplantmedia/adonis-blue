@@ -1,4 +1,9 @@
 #master {
+	.sharedaddy {
+		@include rem('margin-top',40px);
+		@include rem('margin-bottom',40px);
+	}
+	
 	div.sharedaddy h3.sd-title {
 		@include rem('font-size',$font__tiny_size);
 		text-transform: uppercase;
@@ -8,11 +13,17 @@
 			border-top: 2px solid $color__border;
 		}
 	}
+
+	.sd-content ul {
+		margin: 0 !important;
+	}
+
 	.sd-social-icon {
 		.sd-content ul li a:before {
 			color: $color__white !important;
 		}
 	}
+
 	.sd-social-text,
 	.sd-social-icon-text {
 		.sd-content ul li a {

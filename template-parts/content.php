@@ -32,6 +32,12 @@
 		endif; ?>
 	</header><!-- .entry-header -->
 
+	<?php if ( has_post_thumbnail() ) : ?>
+		<div class="entry-image">
+			<?php the_post_thumbnail( 'large' ); ?>
+		</div><!-- .entry-image -->
+	<?php endif; ?>
+
 	<div class="entry-content">
 		<?php
 			the_content( sprintf(

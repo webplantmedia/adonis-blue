@@ -29,7 +29,7 @@ blockquote:before {
 	position: absolute;
 	top: -26px;
 	left: -60px;
-	font-size: 80px;
+	@include rem('font-size',$font__quote_size);
 	content: "“";
 }
 
@@ -37,7 +37,7 @@ blockquote:before {
 	blockquote:before {
 		top: -20px;
 		left: -40px;
-		font-size: 70px;
+		@include rem('font-size',floor(0.875 * $font__quote_size));
 	}
 }
 

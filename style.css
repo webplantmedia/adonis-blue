@@ -367,8 +367,8 @@ address {
 pre {
   background: #eee;
   font-family: "Courier 10 Pitch", Courier, monospace;
-  font-size: 15px;
-  font-size: 0.9375rem;
+  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 1.6;
   margin-bottom: 1.6em;
   max-width: 100%;
@@ -378,8 +378,8 @@ pre {
 
 code, kbd, tt, var {
   font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-  font-size: 15px;
-  font-size: 0.9375rem;
+  font-size: 18px;
+  font-size: 1.125rem;
 }
 
 abbr, acronym {
@@ -433,6 +433,7 @@ blockquote:before {
   top: -26px;
   left: -60px;
   font-size: 80px;
+  font-size: 5rem;
   content: "“";
 }
 
@@ -441,6 +442,7 @@ blockquote:before {
     top: -20px;
     left: -40px;
     font-size: 70px;
+    font-size: 4.375rem;
   }
 }
 
@@ -1240,9 +1242,23 @@ a:hover, a:active {
   float: left;
 }
 
+.post-navigation .nav-next {
+  padding-left: 10px;
+}
+
+.post-navigation .nav-next:after {
+  position: absolute;
+  height: 100%;
+  width: 2px;
+}
+
 .post-navigation .nav-next img {
   float: right;
   padding-left: 20px;
+}
+
+.post-navigation .nav-previous {
+  padding-right: 10px;
 }
 
 .post-navigation .nav-previous img {
@@ -1723,8 +1739,6 @@ a:hover, a:active {
 .entry-content,
 .entry-summary {
   margin: 0;
-  margin-top: 70px;
-  margin-top: 4.375rem;
 }
 
 .page-links {
@@ -1785,6 +1799,8 @@ a:hover, a:active {
 
 .entry-header {
   text-align: center;
+  margin-bottom: 50px;
+  margin-bottom: 3.125rem;
 }
 
 .entry-cat-meta {
@@ -1851,13 +1867,21 @@ a:hover, a:active {
   content: "";
 }
 
-.entry-content > *:first-child {
+#master .entry-content > *:first-child {
   margin-top: 0;
 }
 
-j
-.entry-content > *:last-child {
+#master .entry-content > *:last-child {
   margin-bottom: 0;
+}
+
+.entry-image {
+  text-align: center;
+  margin-bottom: 1.5em;
+}
+
+.entry-image img {
+  vertical-align: top;
 }
 
 /*--------------------------------------------------------------

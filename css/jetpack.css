@@ -4,6 +4,13 @@ Jetpack styling
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+#master .sharedaddy {
+  margin-top: 40px;
+  margin-top: 2.5rem;
+  margin-bottom: 40px;
+  margin-bottom: 2.5rem;
+}
+
 #master div.sharedaddy h3.sd-title {
   font-size: 12px;
   font-size: 0.75rem;
@@ -13,6 +20,10 @@ Jetpack styling
 
 #master div.sharedaddy h3.sd-title:before {
   border-top: 2px solid #ececec;
+}
+
+#master .sd-content ul {
+  margin: 0 !important;
 }
 
 #master .sd-social-icon .sd-content ul li a:before {

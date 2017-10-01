@@ -17,7 +17,6 @@
 .entry-content,
 .entry-summary {
 	margin: 0;
-	@include rem('margin-top',70px);
 }
 
 .page-links {
@@ -78,6 +77,7 @@
 // Entry header
 .entry-header {
 	text-align: center;
+	@include rem('margin-bottom',50px);
 }
 
 // Entry cat header
@@ -139,12 +139,21 @@
 }
 
 // Entry content
-.entry-content {
+#master .entry-content {
 	& > *:first-child {
 		margin-top: 0;
 	}
-	j
 	& > *:last-child {
 		margin-bottom: 0;
+	}
+}
+
+// Entry image
+.entry-image {
+	text-align: center;
+	margin-bottom: 1.5em;
+
+	img {
+		vertical-align: top;
 	}
 }
