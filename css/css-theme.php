@@ -71,6 +71,7 @@ textarea {
 }
 
 #master .entry-cat-meta a,
+#master .sd-social-text .sd-content ul li a,
 #master .sd-social-icon-text .sd-content ul li a,
 #master .sd-social-icon .sd-content ul li a,
 #master .content-divider .line,
@@ -97,6 +98,7 @@ textarea {
 }
 
 #master .entry-cat-meta a:hover,
+#master .sd-social-text .sd-content ul li a:hover,
 #master .sd-social-icon-text .sd-content ul li a:hover,
 #master .sd-social-icon .sd-content ul li a:hover,
 #master .button.alt:hover,

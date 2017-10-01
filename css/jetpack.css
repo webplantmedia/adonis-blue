@@ -19,6 +19,7 @@ Jetpack styling
   color: #ffffff !important;
 }
 
+#master .sd-social-text .sd-content ul li a,
 #master .sd-social-icon-text .sd-content ul li a {
   color: #ffffff !important;
   font-size: 12px;
