@@ -224,6 +224,47 @@ function angiemakesdesign_get_custom_logo( $html, $blog_id ) {
 add_filter( 'get_custom_logo', 'angiemakesdesign_get_custom_logo', 10, 2 );
 
 /**
+ * Add "read more" link on all excerpts.
+ *
+ * @since 4.8.1
+ * @access public
+ *
+ * @param string $output
+ * @return string Appended "Read More" link
+ */
+function angiemakesdesign_excerpt_read_more_link( $output ) {
+	global $post;
+
+	$class = '';
+
+	if ( empty( $output ) ) {
+		$class = ' no-excerpt';
+	}
+
+	return $output . sprintf( ' <a class="more-link%1$s" href="%2$s">%3$s<i class="genericon genericon-next"></i></a>',
+		$class,
+		get_permalink( get_the_ID() ),
+		esc_html__( 'Read More', 'angiemakesdesign' )
+	);
+}
+add_filter('the_excerpt', 'angiemakesdesign_excerpt_read_more_link');
+
+/**
+ * Filter the except length to specified characters.
+ *
+ * @param int $length Excerpt length.
+ * @return int (Maybe) modified excerpt length.
+ */
+function angiemakesdesign_custom_excerpt_length( $length ) {
+	/*if ( '' !== angiemakesdesign_get_thememod_value( 'excerpt-length' ) ) {
+		return absint( angiemakesdesign_get_thememod_value( 'excerpt-length' ) );
+	}*/
+
+	return 80;
+}
+add_filter( 'excerpt_length', 'angiemakesdesign_custom_excerpt_length', 999 );
+
+/**
  * Query WooCommerce activation
  */
 function angiemakesdesign_is_woocommerce_activated() {

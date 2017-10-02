@@ -520,6 +520,7 @@ button {
   background: transparent;
 }
 
+#master .posts-navigation .nav-links a,
 #master .button,
 #master .addresses .edit,
 #master input[type="button"],
@@ -555,6 +556,7 @@ button {
   padding: 13px 30px;
 }
 
+#master .posts-navigation .nav-links a:hover,
 #master .button:hover,
 #master input[type="button"]:hover,
 #master input[type="reset"]:hover,
@@ -563,10 +565,12 @@ button {
   background: #1c2220;
 }
 
+#master .posts-navigation .nav-links a:focus,
 #master .button:focus,
 #master input[type="button"]:focus,
 #master input[type="reset"]:focus,
 #master input[type="submit"]:focus,
+#master .posts-navigation .nav-links a:active,
 #master .button:active,
 #master input[type="button"]:active,
 #master input[type="reset"]:active,
@@ -1722,13 +1726,18 @@ a:hover, a:active {
   display: block;
 }
 
+.archive .hentry,
+.blog .hentry,
+.single .hentry {
+  padding-bottom: 70px;
+  padding-bottom: 4.375rem;
+  border-bottom: 2px solid #ececec;
+}
+
 .hentry {
   margin: 0;
   margin-bottom: 70px;
   margin-bottom: 4.375rem;
-  padding-bottom: 70px;
-  padding-bottom: 4.375rem;
-  border-bottom: 2px solid #ececec;
 }
 
 .updated:not(.published) {
@@ -1873,6 +1882,19 @@ a:hover, a:active {
 
 #master .entry-content > *:last-child {
   margin-bottom: 0;
+}
+
+.hentry .entry-content .more-link {
+  font-weight: bold;
+}
+
+.hentry .entry-content .more-link i {
+  margin-left: 5px;
+  font-size: 22px;
+  font-size: 1.375rem;
+  vertical-align: text-bottom;
+  text-decoration: none;
+  border-bottom-width: 0;
 }
 
 .entry-image {

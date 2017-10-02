@@ -70,6 +70,7 @@ textarea {
 	color: <?php echo $amd['text_light_color']; ?>
 }
 
+#master .posts-navigation .nav-links a,
 #master .entry-cat-meta a,
 #master .sd-social-text .sd-content ul li a,
 #master .sd-social-icon-text .sd-content ul li a,
@@ -82,12 +83,14 @@ textarea {
 #master input[type="button"],
 #master input[type="reset"],
 #master input[type="submit"],
+#master .posts-navigation .nav-links a:focus,
 #master .sd-social-icon .sd-content ul li a:focus,
 #master .button.alt:focus,
 #master .button:focus,
 #master input[type="button"]:focus,
 #master input[type="reset"]:focus,
 #master input[type="submit"]:focus,
+#master .posts-navigation .nav-links a:active,
 #master .sd-social-icon .sd-content ul li a:active,
 #master .button.alt:active,
 #master .button:active,
@@ -97,6 +100,7 @@ textarea {
 	background-color: <?php echo $amd['accent_color']; ?>
 }
 
+#master .posts-navigation .nav-links a:hover,
 #master .entry-cat-meta a:hover,
 #master .sd-social-text .sd-content ul li a:hover,
 #master .sd-social-icon-text .sd-content ul li a:hover,

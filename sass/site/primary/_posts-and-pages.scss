@@ -2,11 +2,16 @@
 	display: block;
 }
 
+.archive .hentry,
+.blog .hentry,
+.single .hentry {
+	@include rem('padding-bottom',70px);
+	border-bottom: 2px solid $color__border;
+}
+
 .hentry {
 	margin: 0;
 	@include rem('margin-bottom',70px);
-	@include rem('padding-bottom',70px);
-	border-bottom: 2px solid $color__border;
 }
 
 .updated:not(.published) {
@@ -145,6 +150,17 @@
 	}
 	& > *:last-child {
 		margin-bottom: 0;
+	}
+}
+
+.hentry .entry-content .more-link {
+	font-weight: bold;
+
+	i {
+		margin-left: 5px;
+		@include rem('font-size',$font__xlarge_size);
+		vertical-align: text-bottom;
+		border-bottom-width: 0;
 	}
 }
 

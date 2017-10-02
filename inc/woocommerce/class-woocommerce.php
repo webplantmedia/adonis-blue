@@ -20,16 +20,18 @@ if ( ! class_exists( 'AngieMakesDesign_WooCommerce' ) ) :
 		 * Setup class.
 		 */
 		public function __construct() {
+			add_action( 'after_setup_theme', array( $this, 'angiemakesdesign_woocommerce_setup' ) );
+
 			add_action( 'wp_enqueue_scripts', array( $this, 'woocommerce_enqueue' ) );
 
 			// add_filter( 'woocommerce_output_related_products_args', array( $this, 'related_products_args' ) );
 
-			// remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
-			// remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
+			remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
+			remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
 			// remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
 
-			// add_action( 'woocommerce_before_main_content', array( $this, 'angiemakesdesign_output_content_wrapper' ), 10 );
-			// add_action( 'woocommerce_after_main_content', array( $this, 'angiemakesdesign_output_content_wrapper_end' ), 10 );
+			add_action( 'woocommerce_before_main_content', array( $this, 'angiemakesdesign_output_content_wrapper' ), 10 );
+			add_action( 'woocommerce_after_main_content', array( $this, 'angiemakesdesign_output_content_wrapper_end' ), 10 );
 
 			// add_action( 'after_switch_theme', array( $this, 'angiemakesdesign_woocommerce_image_dimensions' ), 1 );
 
@@ -118,6 +120,14 @@ if ( ! class_exists( 'AngieMakesDesign_WooCommerce' ) ) :
 			// add_filter( 'woocommerce_subcategory_count_html' , array( $this, 'angiemakesdesign_change_count_subcategory' ), 10, 2 );
 		}
 
+		function angiemakesdesign_woocommerce_setup() {
+			// Declare WooCommerce support.
+			add_theme_support( 'woocommerce' );
+			add_theme_support( 'wc-product-gallery-zoom' );
+			add_theme_support( 'wc-product-gallery-lightbox' );
+			add_theme_support( 'wc-product-gallery-slider' );
+		}
+
 		/**
 		 * Integration Styles & Scripts.
 		 *
@@ -190,11 +200,11 @@ if ( ! class_exists( 'AngieMakesDesign_WooCommerce' ) ) :
 		}
 
 		public function angiemakesdesign_output_content_wrapper() {
-			echo '<div id="primary" class="content-area"><main id="main" class="site-main" role="main"><div class="container">';
+			echo '<div id="content" class="site-content"><div class="site-boundary">';
 		}
 
 		public function angiemakesdesign_output_content_wrapper_end() {
-			echo '<div></main></div>';
+			echo '<div></div>';
 		}
 
 		/**
@@ -202,16 +212,17 @@ if ( ! class_exists( 'AngieMakesDesign_WooCommerce' ) ) :
 		 */
 		public function angiemakesdesign_woocommerce_cart_dropdown() {
 			global $woocommerce;
+
 			$cart_subtotal    = $woocommerce->cart->get_cart_subtotal();
 			$link             = $woocommerce->cart->get_cart_url();
 			$cart_items_count = $woocommerce->cart->cart_contents_count;
 
 			$output = '';
 			$output .= '<li class="cart">';
-			$output .= "<a class='cart_dropdown_link' href='" . $link . "'>";
+			$output .= "<a class='cart_dropdown_link' href='" . esc_url( $link ) . "'>";
 			$output .= "<i class='genericon genericon-cart'></i>";
 			if ( 0 !== WC()->cart->get_cart_contents_count() ) {
-				$output .= "<span class='alert-count'>" . $cart_items_count . '</span>';
+				$output .= "<span class='alert-count'>" . intval( $cart_items_count ) . '</span>';
 			}
 			$output .= '</a>';
 			$output .= '<ul class="woo-sub-menu woocommerce widget_shopping_cart cart_list"><li>';

@@ -6,6 +6,7 @@ button {
 }
 
 #master {
+	.posts-navigation .nav-links a,
 	.button,
 	.addresses .edit,
 	input[type="button"],
@@ -41,6 +42,7 @@ button {
 		}
 	}
 
+	.posts-navigation .nav-links a:hover,
 	.button:hover,
 	input[type="button"]:hover,
 	input[type="reset"]:hover,
@@ -49,10 +51,12 @@ button {
 		background: #1c2220;
 	}
 
+	.posts-navigation .nav-links a:focus,
 	.button:focus,
 	input[type="button"]:focus,
 	input[type="reset"]:focus,
 	input[type="submit"]:focus,
+	.posts-navigation .nav-links a:active,
 	.button:active,
 	input[type="button"]:active,
 	input[type="reset"]:active,
