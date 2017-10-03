@@ -264,6 +264,28 @@ function angiemakesdesign_custom_excerpt_length( $length ) {
 }
 add_filter( 'excerpt_length', 'angiemakesdesign_custom_excerpt_length', 999 );
 
+function angiemakesdesign_show_full_post() {
+	global $paged;
+
+	// should only show on first page
+	if ( $paged ) {
+		return false;
+	}
+
+	return true;
+}
+
+function angiemakesdesign_get_the_archive_title( $title ) {
+	$pieces = explode( ': ', $title );
+
+	if ( sizeof( $pieces ) == 2 ) {
+		$title = '<span class="archive-type">' . implode( '</span><span class="archive-title">', $pieces ) . '</span>';
+	}
+
+	return $title;
+}
+add_filter( 'get_the_archive_title', 'angiemakesdesign_get_the_archive_title', 10, 1 );
+
 /**
  * Query WooCommerce activation
  */

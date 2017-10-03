@@ -214,7 +214,7 @@ if ( ! class_exists( 'AngieMakesDesign_WooCommerce' ) ) :
 			global $woocommerce;
 
 			$cart_subtotal    = $woocommerce->cart->get_cart_subtotal();
-			$link             = $woocommerce->cart->get_cart_url();
+			$link             = get_permalink( wc_get_page_id( 'shop' ));
 			$cart_items_count = $woocommerce->cart->cart_contents_count;
 
 			$output = '';
@@ -240,7 +240,7 @@ if ( ! class_exists( 'AngieMakesDesign_WooCommerce' ) ) :
 			global $woocommerce;
 
 			$cart_subtotal    = $woocommerce->cart->get_cart_subtotal();
-			$link             = $woocommerce->cart->get_cart_url();
+			$link             = get_permalink( wc_get_page_id( 'shop' ));
 			$cart_items_count = $woocommerce->cart->cart_contents_count;
 
 			ob_start(); ?>

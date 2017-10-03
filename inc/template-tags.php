@@ -46,11 +46,11 @@ if ( ! function_exists( 'angiemakesdesign_entry_header' ) ) :
 	/**
 	 * Prints HTML with meta information for the categories, tags and comments.
 	 */
-	function angiemakesdesign_entry_header() {
+	function angiemakesdesign_entry_header( $delimeter = '' ) {
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
 			/* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list( esc_html__( '', 'angiemakesdesign' ) );
+			$categories_list = get_the_category_list( $delimeter, 'angiemakesdesign' );
 			if ( $categories_list ) {
 				/* translators: 1: list of categories. */
 				printf( '<span class="cat-links">' . esc_html__( '%1$s', 'angiemakesdesign' ) . '</span>', $categories_list ); // WPCS: XSS OK.

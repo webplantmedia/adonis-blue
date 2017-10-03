@@ -13,15 +13,13 @@ a:hover {
 	color: <?php echo $amd['link_hover_color']; ?>
 }
 
-<?php /*
-#master .entry-cat-meta a {
+#master .entry-cat-meta span > a {
 	color: <?php echo $amd['accent_color']; ?>
 }
 
-#master .entry-cat-meta a:hover {
+#master .entry-cat-meta span > a:hover {
 	color: <?php echo $amd['accent_hover_color']; ?>
 }
- */ ?>
 
 
 #master .sd-social-icon .sd-content ul li a,
@@ -71,7 +69,7 @@ textarea {
 }
 
 #master .posts-navigation .nav-links a,
-#master .entry-cat-meta a,
+#master .entry-cat-meta ul a,
 #master .sd-social-text .sd-content ul li a,
 #master .sd-social-icon-text .sd-content ul li a,
 #master .sd-social-icon .sd-content ul li a,
@@ -101,7 +99,7 @@ textarea {
 }
 
 #master .posts-navigation .nav-links a:hover,
-#master .entry-cat-meta a:hover,
+#master .entry-cat-meta ul a:hover,
 #master .sd-social-text .sd-content ul li a:hover,
 #master .sd-social-icon-text .sd-content ul li a:hover,
 #master .sd-social-icon .sd-content ul li a:hover,

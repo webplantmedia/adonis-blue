@@ -9,11 +9,17 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('excerpt'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('excerpt2'); ?>>
+	<?php if ( has_post_thumbnail() ) : ?>
+		<div class="entry-image">
+			<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'large' ); ?></a>
+		</div><!-- .entry-image -->
+	<?php endif; ?>
+
 	<header class="entry-header">
 		<?php if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-cat-meta">
-			<?php angiemakesdesign_entry_header(); ?>
+			<?php angiemakesdesign_entry_header( ' <span class="cat-bull-delim">•</span> ' ); ?>
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
 
@@ -31,14 +37,4 @@
 		<?php
 		endif; ?>
 	</header><!-- .entry-header -->
-
-	<?php if ( has_post_thumbnail() ) : ?>
-		<div class="entry-image">
-			<?php the_post_thumbnail( 'large' ); ?>
-		</div><!-- .entry-image -->
-	<?php endif; ?>
-
-	<div class="entry-content">
-		<?php the_excerpt(); ?>
-	</div><!-- .entry-content -->
 </article><!-- #post-<?php the_ID(); ?> -->
