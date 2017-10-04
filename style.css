@@ -303,7 +303,7 @@ h6 {
 }
 
 h1 {
-  font-size: 40px;
+  font-size: 50px;
   font-weight: 300;
   margin: 67px 0 27px;
 }
@@ -1043,6 +1043,7 @@ a:hover, a:active {
 #master #site-navigation .menu-toggle .menu-label {
   padding-right: 10px;
   padding-right: 0.625rem;
+  vertical-align: middle;
 }
 
 #master #site-navigation .menu-toggle .menu-label.menu-label-empty {
@@ -1205,7 +1206,11 @@ a:hover, a:active {
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main
 .post-navigation {
-  margin: 0 0 1.5em;
+  margin: 0;
+  margin-top: 70px;
+  margin-top: 4.375rem;
+  margin-bottom: 70px;
+  margin-bottom: 4.375rem;
   overflow: hidden;
 }
 
@@ -1649,14 +1654,23 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 # Layout
 --------------------------------------------------------------*/
-.content-area {
+.display-sidebar .content-area {
   float: left;
   margin: 0 -360px 0 0;
   width: 100%;
 }
 
-.site-main {
+.no-sidebar .content-area {
+  width: 760px;
+  margin: 0 auto;
+}
+
+.display-sidebar .site-main {
   margin: 0 360px 0 0;
+}
+
+.no-sidebar .site-main {
+  margin: 0;
 }
 
 .site-content .widget-area {
@@ -1673,6 +1687,31 @@ a:hover, a:active {
 .site-footer {
   clear: both;
   width: 100%;
+}
+
+@media only screen and (max-device-width: 1024px) {
+  #master .content-area {
+    float: none;
+    margin: 0 auto;
+  }
+  #master .site-main {
+    margin: 0;
+  }
+  #master .site-content .widget-area {
+    float: none;
+    width: 100%;
+    max-width: 300px;
+  }
+  #master #secondary {
+    padding: 0;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-device-width: 760px) {
+  #master .content-area {
+    width: 100%;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -1778,11 +1817,22 @@ a:hover, a:active {
 
 .entry-header {
   text-align: center;
+}
+
+.single .entry-header {
   margin-bottom: 80px;
   margin-bottom: 5rem;
 }
 
-.excerpt .entry-header {
+.page.hentry h1 {
+  text-align: center;
+  margin-bottom: 80px;
+  margin-bottom: 5rem;
+}
+
+.search .hentry .entry-header,
+.archive .hentry .entry-header,
+.blog .hentry .entry-header {
   margin-bottom: 50px;
   margin-bottom: 3.125rem;
 }
@@ -1791,12 +1841,10 @@ a:hover, a:active {
   margin-top: 0;
   margin-bottom: 0;
   text-align: center;
-  font-weight: bold;
 }
 
 .archive .hentry .entry-title,
 .search .hentry .entry-title,
-.product .entry-title,
 .blog .hentry .entry-title {
   margin-top: 0;
   margin-bottom: 25px;
@@ -1828,11 +1876,14 @@ a:hover, a:active {
   padding-bottom: 50px;
   padding-bottom: 3.125rem;
   border-bottom: 2px solid #ececec;
+  background-color: #f7f7f7;
 }
 
 .archive .page-header .page-title {
   margin: 0;
   text-transform: uppercase;
+  font-size: 40px;
+  font-size: 2.5rem;
 }
 
 .archive .page-header .page-title .archive-type {

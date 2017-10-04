@@ -209,61 +209,6 @@ function angiemakesdesign_resource_hints( $urls, $relation_type ) {
 }
 add_filter( 'wp_resource_hints', 'angiemakesdesign_resource_hints', 10, 2 );
 
-/**
- * Add retina src image to custom logo
- */
-function angiemakesdesign_get_custom_logo( $html, $blog_id ) {
-	global $amd;
-
-	if ( $url = get_theme_mod( 'custom_logo_2x', $amd['custom_logo_2x'] ) ) {
-		$html = preg_replace( '/srcset=(\'|\").*?(\'|\")/', 'srcset="' . esc_url( $url ) . ' 2x"', $html );
-	}
-
-	return $html;
-}
-add_filter( 'get_custom_logo', 'angiemakesdesign_get_custom_logo', 10, 2 );
-
-/**
- * Add "read more" link on all excerpts.
- *
- * @since 4.8.1
- * @access public
- *
- * @param string $output
- * @return string Appended "Read More" link
- */
-function angiemakesdesign_excerpt_read_more_link( $output ) {
-	global $post;
-
-	$class = '';
-
-	if ( empty( $output ) ) {
-		$class = ' no-excerpt';
-	}
-
-	return $output . sprintf( ' <a class="more-link%1$s" href="%2$s">%3$s<i class="genericon genericon-next"></i></a>',
-		$class,
-		get_permalink( get_the_ID() ),
-		esc_html__( 'Read More', 'angiemakesdesign' )
-	);
-}
-add_filter('the_excerpt', 'angiemakesdesign_excerpt_read_more_link');
-
-/**
- * Filter the except length to specified characters.
- *
- * @param int $length Excerpt length.
- * @return int (Maybe) modified excerpt length.
- */
-function angiemakesdesign_custom_excerpt_length( $length ) {
-	/*if ( '' !== angiemakesdesign_get_thememod_value( 'excerpt-length' ) ) {
-		return absint( angiemakesdesign_get_thememod_value( 'excerpt-length' ) );
-	}*/
-
-	return 80;
-}
-add_filter( 'excerpt_length', 'angiemakesdesign_custom_excerpt_length', 999 );
-
 function angiemakesdesign_show_full_post() {
 	global $paged;
 
@@ -275,16 +220,29 @@ function angiemakesdesign_show_full_post() {
 	return true;
 }
 
-function angiemakesdesign_get_the_archive_title( $title ) {
-	$pieces = explode( ': ', $title );
-
-	if ( sizeof( $pieces ) == 2 ) {
-		$title = '<span class="archive-type">' . implode( '</span><span class="archive-title">', $pieces ) . '</span>';
+function angiemakesdesign_display_sidebar() {
+	if ( is_single() && 'post' == get_post_type() ) {
+		return true;
+	}
+	
+	if ( angiemakesdesign_is_woocommerce_activated() ) {
+		if ( is_shop() ) {
+			return true;
+		}
 	}
 
-	return $title;
+	return false;
 }
-add_filter( 'get_the_archive_title', 'angiemakesdesign_get_the_archive_title', 10, 1 );
+
+function angiemakesdesign_display_fullwidth() {
+	if ( angiemakesdesign_is_woocommerce_activated() ) {
+		if ( is_woocommerce() || is_cart() || is_checkout() ) {
+			return true;
+		}
+	}
+
+	return false;
+}
 
 /**
  * Query WooCommerce activation

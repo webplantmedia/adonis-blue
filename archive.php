@@ -15,7 +15,7 @@ get_header(); ?>
 		<?php
 		if ( have_posts() ) : ?>
 
-			<?php get_template_part( 'template-parts/blog3' ); ?>
+			<?php get_template_part( 'template-parts/blog1' ); ?>
 			<?php
 
 			the_posts_navigation();

@@ -32,8 +32,8 @@ function angiemakesdesign_jetpack_setup() {
 	add_theme_support( 'jetpack-content-options', array(
 		'post-details' => array(
 			'stylesheet' => 'angiemakesdesign-style',
-			'date'       => '.posted-on',
-			'categories' => '.cat-links',
+			'date'       => '.posted-on,.entry-meta',
+			'categories' => '.cat-links,.entry-cat-meta',
 			'tags'       => '.tags-links',
 			'author'     => '.byline',
 			'comment'    => '.comments-link',

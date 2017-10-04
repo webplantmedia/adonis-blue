@@ -275,4 +275,10 @@ WooCommerce styling
   left: 0;
 }
 
+@media screen and (min-width: 769px) {
+  .display-sidebar.woocommerce-page ul.products li.product {
+    width: 30.8%;
+  }
+}
+
 /*# sourceMappingURL=woocommerce.css.map */

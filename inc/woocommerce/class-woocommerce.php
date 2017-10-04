@@ -20,7 +20,16 @@ if ( ! class_exists( 'AngieMakesDesign_WooCommerce' ) ) :
 		 * Setup class.
 		 */
 		public function __construct() {
-			add_action( 'after_setup_theme', array( $this, 'angiemakesdesign_woocommerce_setup' ) );
+
+			add_filter( 'loop_shop_per_page', array( $this, 'loop_shop_per_page' ), 20 );
+
+			add_filter('loop_shop_columns', array( $this, 'loop_columns' ) );
+
+			add_filter( 'woocommerce_show_page_title' , array( $this, 'hide_title' ) );
+
+			add_filter( 'get_the_archive_title', array( $this, 'get_the_archive_title' ), 10, 1 );
+
+			add_action( 'after_setup_theme', array( $this, 'woocommerce_setup' ) );
 
 			add_action( 'wp_enqueue_scripts', array( $this, 'woocommerce_enqueue' ) );
 
@@ -120,12 +129,51 @@ if ( ! class_exists( 'AngieMakesDesign_WooCommerce' ) ) :
 			// add_filter( 'woocommerce_subcategory_count_html' , array( $this, 'angiemakesdesign_change_count_subcategory' ), 10, 2 );
 		}
 
-		function angiemakesdesign_woocommerce_setup() {
+		function loop_shop_per_page( $cols ) {
+			$cols = 12;
+			return $cols;
+		}
+
+		function woocommerce_setup() {
 			// Declare WooCommerce support.
 			add_theme_support( 'woocommerce' );
 			add_theme_support( 'wc-product-gallery-zoom' );
 			add_theme_support( 'wc-product-gallery-lightbox' );
 			add_theme_support( 'wc-product-gallery-slider' );
+		}
+
+		function loop_columns( $number_columns ) {
+			if ( angiemakesdesign_display_sidebar() ) {
+				return 3; // 3 products per row
+			}
+
+			return $number_columns;
+		}
+
+		function hide_title( $title ) {
+			return false;
+		}
+
+		function get_the_archive_title( $title ) {
+			if ( is_shop() ) {
+				$title = woocommerce_page_title( false );
+			}
+			else if ( is_product_category() || is_product_taxonomy() ) {
+				$pieces = explode( ': ', $title );
+				if ( sizeof( $pieces ) == 2 ) {
+					$shop_page_id = wc_get_page_id( 'shop' );
+					$page_title   = get_the_title( $shop_page_id );
+					$page_title = apply_filters( 'woocommerce_page_title', $page_title );
+
+					$pieces[0] = $page_title;
+
+					$title = implode( ': ', $pieces );
+
+					return $title;
+				}
+			}
+
+			return $title;
 		}
 
 		/**
@@ -200,11 +248,11 @@ if ( ! class_exists( 'AngieMakesDesign_WooCommerce' ) ) :
 		}
 
 		public function angiemakesdesign_output_content_wrapper() {
-			echo '<div id="content" class="site-content"><div class="site-boundary">';
+			echo '<div id="primary" class="content-area"><main id="main" class="site-main">';
 		}
 
 		public function angiemakesdesign_output_content_wrapper_end() {
-			echo '<div></div>';
+			echo '</main></div>';
 		}
 
 		/**

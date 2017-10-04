@@ -43,7 +43,7 @@
 			the_content( sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<i class="genericon genericon-next"></i><span class="screen-reader-text">"%s"</span>', 'angiemakesdesign' ),
+					__( 'Read More<i class="genericon genericon-next"></i><span class="screen-reader-text">"%s"</span>', 'angiemakesdesign' ),
 					array(
 						'i' => array(
 							'class' => array(),

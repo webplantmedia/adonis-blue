@@ -7,6 +7,10 @@
  * @package Angie_Makes_Design
  */
 
+if ( ! angiemakesdesign_display_sidebar() ) {
+	return;
+}
+
 if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 	return;
 }

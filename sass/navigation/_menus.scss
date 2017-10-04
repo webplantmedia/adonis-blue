@@ -109,6 +109,7 @@
 
 	.menu-label {
 		@include rem('padding-right',10px);
+		vertical-align: middle;
 
 		&.menu-label-empty {
 			padding-right: 0;
@@ -305,7 +306,9 @@
 .post-navigation {
 
 	.site-main & {
-		margin: 0 0 1.5em;
+		margin: 0;
+		@include rem('margin-top',70px);
+		@include rem('margin-bottom',70px);
 		overflow: hidden;
 	}
 
