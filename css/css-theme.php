@@ -22,6 +22,7 @@ a:hover {
 }
 
 
+#master .woocommerce-result-count,
 #master .product_meta,
 #master .woocommerce-breadcrumb,
 #master .product_meta a,

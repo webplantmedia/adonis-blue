@@ -279,6 +279,11 @@ WooCommerce styling
   margin: 0;
 }
 
+#master .woocommerce-result-count {
+  font-size: 15px;
+  font-size: 0.9375rem;
+}
+
 #master .product_meta,
 #master .woocommerce-breadcrumb {
   text-transform: uppercase;
@@ -291,6 +296,37 @@ WooCommerce styling
 #master .product_meta a:hover,
 #master .woocommerce-breadcrumb a:hover {
   text-decoration: none;
+}
+
+#master .woocommerce ul.products li.product,
+#master .woocommerce-page ul.products li.product {
+  text-align: center;
+}
+
+#master .woocommerce ul.products li.product .star-rating,
+#master .woocommerce-page ul.products li.product .star-rating {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#master .added_to_cart.wc-forward {
+  text-transform: uppercase;
+  font-weight: bold;
+  vertical-align: middle;
+  font-size: 12px;
+  font-size: 0.75rem;
+  display: block;
+}
+
+#master .woocommerce #respond input#submit.loading::after,
+#master .woocommerce a.button.loading::after,
+#master .woocommerce button.button.loading::after,
+#master .woocommerce input.button.loading::after {
+  margin-left: .53em;
+  position: static;
+  top: auto;
+  right: auto;
+  left: auto;
 }
 
 @media screen and (min-width: 769px) {
