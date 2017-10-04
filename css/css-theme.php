@@ -22,27 +22,16 @@ a:hover {
 }
 
 
-#master .sd-social-icon .sd-content ul li a,
-#master .post-navigation .meta-nav,
-#master .entry-footer span a:hover,
-#master .entry-meta a:hover time,
-#master .entry-meta a:hover,
-#master .widget ul a,
-#site-navigation.toggled .top-mobile-header .focus > a,
-.top-header .menu a:hover,
-#master .main-menu a,
-#master .cart_dropdown_link,
-#master #site-navigation .menu-toggle,
-#master #site-navigation .menu-toggle:hover,
-body,
-button,
-input,
-select,
-optgroup,
-textarea {
-	color: <?php echo $amd['text_color']; ?>
-}
-
+#master .product_meta,
+#master .woocommerce-breadcrumb,
+#master .product_meta a,
+#master .woocommerce-breadcrumb a,
+#master .product_meta a:active,
+#master .woocommerce-breadcrumb a:active,
+#master .product_meta a:focus,
+#master .woocommerce-breadcrumb a:focus,
+#master .product_meta a:visited,
+#master .woocommerce-breadcrumb a:visited,
 #master div.sharedaddy h3.sd-title,
 #master .post-navigation .post-title,
 #master .entry-footer,
@@ -66,6 +55,29 @@ textarea {
 .top-header a:visited,
 .top-header a {
 	color: <?php echo $amd['text_light_color']; ?>
+}
+
+#master .product_meta a:hover,
+#master .woocommerce-breadcrumb a:hover,
+#master .sd-social-icon .sd-content ul li a,
+#master .post-navigation .meta-nav,
+#master .entry-footer span a:hover,
+#master .entry-meta a:hover time,
+#master .entry-meta a:hover,
+#master .widget ul a,
+#site-navigation.toggled .top-mobile-header .focus > a,
+.top-header .menu a:hover,
+#master .main-menu a,
+#master .cart_dropdown_link,
+#master #site-navigation .menu-toggle,
+#master #site-navigation .menu-toggle:hover,
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+	color: <?php echo $amd['text_color']; ?>
 }
 
 #master .posts-navigation .nav-links a,

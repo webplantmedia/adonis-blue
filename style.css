@@ -1848,7 +1848,6 @@ a:hover, a:active {
 .blog .hentry .entry-title {
   margin-top: 0;
   margin-bottom: 25px;
-  color: #1c2220;
   font-size: 35px;
   font-size: 2.1875rem;
   font-weight: 500;
@@ -1917,7 +1916,6 @@ a:hover, a:active {
   font-weight: bold;
   margin-bottom: 23px;
   margin-bottom: 1.4375rem;
-  color: #cccccc;
   vertical-align: middle;
 }
 
@@ -1973,10 +1971,12 @@ a:hover, a:active {
 }
 
 .entry-footer {
-  font-size: 15px;
-  font-size: 0.9375rem;
+  font-size: 12px;
+  font-size: 0.75rem;
   margin-top: 40px;
   margin-top: 2.5rem;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 .entry-footer span:after {

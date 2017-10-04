@@ -81,7 +81,6 @@
 .blog .hentry .entry-title {
 	margin-top: 0;
 	margin-bottom: 25px;
-	color: #1c2220;
 	@include rem('font-size',35px);
 	font-weight: 500;
 	line-height: 1.25;
@@ -144,7 +143,6 @@
 	text-transform: uppercase;
 	font-weight: bold;
 	@include rem('margin-bottom',23px);
-	color: $color__dark_gray;
 	vertical-align: middle;
 
 	span > a {
@@ -195,8 +193,10 @@
 }
 
 .entry-footer {
-	@include rem('font-size',$font__small_size);
+	@include rem('font-size',$font__tiny_size);
 	@include rem('margin-top',40px);
+	text-transform: uppercase;
+	font-weight: bold;
 
 	span:after {
 		content: " | ";

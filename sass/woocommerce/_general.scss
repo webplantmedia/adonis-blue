@@ -38,6 +38,22 @@
 		top: 0;
 		left: 0;
 	}
+	.woocommerce div.product div.images .woocommerce-product-gallery__wrapper {
+		margin: 0;
+	}
+	.product_meta,
+	.woocommerce-breadcrumb {
+		text-transform: uppercase;
+		font-weight: bold;
+		vertical-align: middle;
+		@include rem('font-size',$font__tiny_size);
+
+		a {
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
 }
 @media screen and (min-width: 769px) {
 	.display-sidebar.woocommerce-page ul.products li.product {

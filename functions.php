@@ -229,6 +229,9 @@ function angiemakesdesign_display_sidebar() {
 		if ( is_shop() ) {
 			return true;
 		}
+		else if ( is_product_category() || is_product_taxonomy() ) {
+			return true;
+		}
 	}
 
 	return false;

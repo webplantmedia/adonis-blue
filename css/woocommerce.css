@@ -275,6 +275,24 @@ WooCommerce styling
   left: 0;
 }
 
+#master .woocommerce div.product div.images .woocommerce-product-gallery__wrapper {
+  margin: 0;
+}
+
+#master .product_meta,
+#master .woocommerce-breadcrumb {
+  text-transform: uppercase;
+  font-weight: bold;
+  vertical-align: middle;
+  font-size: 12px;
+  font-size: 0.75rem;
+}
+
+#master .product_meta a:hover,
+#master .woocommerce-breadcrumb a:hover {
+  text-decoration: none;
+}
+
 @media screen and (min-width: 769px) {
   .display-sidebar.woocommerce-page ul.products li.product {
     width: 30.8%;
