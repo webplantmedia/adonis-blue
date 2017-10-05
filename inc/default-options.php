@@ -25,7 +25,7 @@ $amd_default['link_hover_color'] = '#f6874d';
 
 // Top header
 $amd_default['top_header_background'] = get_template_directory_uri() . '/img/top-right-header-bg.png';
-$amd_default['top_header_background_offset'] = 460;
+$amd_default['top_header_background_offset'] = 520;
 
 // Footer
 $amd_default['footer_background'] = get_template_directory_uri() . '/img/footer-bg.png';
