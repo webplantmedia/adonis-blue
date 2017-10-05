@@ -467,7 +467,6 @@ figure {
 
 .genericon {
   font-size: inherit;
-  vertical-align: middle;
 }
 
 /*--------------------------------------------------------------
@@ -520,6 +519,8 @@ button {
   background: transparent;
 }
 
+#master .woocommerce-pagination ul span,
+#master .woocommerce-pagination ul a,
 #master .posts-navigation .nav-links a,
 #master .button,
 #master .addresses .edit,
@@ -556,20 +557,13 @@ button {
   padding: 13px 30px;
 }
 
-#master .posts-navigation .nav-links a:hover,
-#master .button:hover,
-#master input[type="button"]:hover,
-#master input[type="reset"]:hover,
-#master input[type="submit"]:hover {
-  color: #fff;
-  background: #1c2220;
-}
-
+#master .woocommerce-pagination ul a:focus,
 #master .posts-navigation .nav-links a:focus,
 #master .button:focus,
 #master input[type="button"]:focus,
 #master input[type="reset"]:focus,
 #master input[type="submit"]:focus,
+#master .woocommerce-pagination ul a:active,
 #master .posts-navigation .nav-links a:active,
 #master .button:active,
 #master input[type="button"]:active,
@@ -577,6 +571,16 @@ button {
 #master input[type="submit"]:active {
   color: #fff;
   background: #252323;
+}
+
+#master .woocommerce-pagination ul a:hover,
+#master .posts-navigation .nav-links a:hover,
+#master .button:hover,
+#master input[type="button"]:hover,
+#master input[type="reset"]:hover,
+#master input[type="submit"]:hover {
+  color: #fff;
+  background: #1c2220;
 }
 
 #master .button.alt {

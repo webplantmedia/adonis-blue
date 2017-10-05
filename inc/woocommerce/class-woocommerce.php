@@ -21,6 +21,8 @@ if ( ! class_exists( 'AngieMakesDesign_WooCommerce' ) ) :
 		 */
 		public function __construct() {
 
+			add_filter( 'woocommerce_pagination_args', array( $this, 'woocommerce_pagination_args' ) );
+			
 			add_filter( 'loop_shop_per_page', array( $this, 'loop_shop_per_page' ), 20 );
 
 			add_filter('loop_shop_columns', array( $this, 'loop_columns' ) );
@@ -127,6 +129,13 @@ if ( ! class_exists( 'AngieMakesDesign_WooCommerce' ) ) :
 
 			// Change subcategory count text.
 			// add_filter( 'woocommerce_subcategory_count_html' , array( $this, 'angiemakesdesign_change_count_subcategory' ), 10, 2 );
+		}
+
+		function woocommerce_pagination_args( $args ) {
+			$args['prev_text'] = '<i class="genericon genericon-previous"></i>';
+			$args['next_text'] = '<i class="genericon genericon-next"></i>';
+
+			return $args;
 		}
 
 		function loop_shop_per_page( $cols ) {

@@ -20,3 +20,4 @@ $font__line-height-top-menu: 36px;
 $font__line-height-mobile-menu: 28px;
 
 $font__line-height-menu-icon: floor($font__medium-size * $font__line-height-body) + floor(16px * 1.4); // base size * top bottom menu padding
+$font__line-height-pagination-icon: floor($font__main-size + 32px); // top and bottom button padding
