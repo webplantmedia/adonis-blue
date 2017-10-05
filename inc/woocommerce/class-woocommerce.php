@@ -22,6 +22,7 @@ if ( ! class_exists( 'AngieMakesDesign_WooCommerce' ) ) :
 		public function __construct() {
 
 			add_filter( 'woocommerce_pagination_args', array( $this, 'woocommerce_pagination_args' ) );
+			add_filter( 'woocommerce_comment_pagination_args', array( $this, 'woocommerce_pagination_args' ) );
 			
 			add_filter( 'loop_shop_per_page', array( $this, 'loop_shop_per_page' ), 20 );
 
