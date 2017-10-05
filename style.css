@@ -2055,6 +2055,29 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
+.site-footer {
+  background-position: bottom center;
+  background-repeat: repeat-x;
+  min-height: 126px;
+  position: relative;
+}
+
+.site-info-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  padding-bottom: 0.5em;
+  font-size: 15px;
+  font-size: 0.9375rem;
+  letter-spacing: .1em;
+}
+
+.site-info-wrapper .genericon {
+  line-height: inherit;
+}
+
 /*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/

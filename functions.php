@@ -248,6 +248,57 @@ function angiemakesdesign_display_fullwidth() {
 }
 
 /**
+ * Return the WordPress array of allowed tags, with a few things added.
+ *
+ * @since 1.0.0.
+ *
+ * @return mixed|void
+ */
+function angiemakesdesign_allowed_html() {
+	$expandedtags = wp_kses_allowed_html();
+
+	// Span.
+	$expandedtags['span'] = array();
+
+	// H1 - H6.
+	$expandedtags['h1'] = array();
+	$expandedtags['h2'] = array();
+	$expandedtags['h3'] = array();
+	$expandedtags['h4'] = array();
+	$expandedtags['h5'] = array();
+	$expandedtags['h6'] = array();
+
+	// Enable id, class, and style attributes for each tag.
+	foreach ( $expandedtags as $tag => $attributes ) {
+		$expandedtags[ $tag ]['id']    = true;
+		$expandedtags[ $tag ]['class'] = true;
+		$expandedtags[ $tag ]['style'] = true;
+	}
+
+	// br (doesn't need attributes).
+	$expandedtags['br'] = array();
+
+	// img.
+	$expandedtags['img'] = array(
+		'src' => true,
+		'height' => true,
+		'width' => true,
+		'alt' => true,
+		'title' => true,
+	);
+
+	/**
+	 * Customize the tags and attributes that are allows during text sanitization.
+	 *
+	 * @since 1.0.0.
+	 *
+	 * @param array     $expandedtags    The list of allowed tags and attributes.
+	 * @param string    $string          The text string being sanitized.
+	 */
+	return apply_filters( 'angiemakesdesign_allowed_html', $expandedtags );
+}
+
+/**
  * Query WooCommerce activation
  */
 function angiemakesdesign_is_woocommerce_activated() {

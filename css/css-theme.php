@@ -4,24 +4,26 @@ a:visited,
 a:focus,
 a:active,
 a {
-	color: <?php echo $amd['link_color']; ?>
+	color: <?php echo $amd['link_color']; ?>; /*id:link_color*/
 }
 
 #master .post-navigation a:hover .post-title,
 #master .widget ul a:hover,
 a:hover {
-	color: <?php echo $amd['link_hover_color']; ?>
+	color: <?php echo $amd['link_hover_color']; ?>; /*id:link_hover_color*/
 }
 
 #master .entry-cat-meta span > a {
-	color: <?php echo $amd['accent_color']; ?>
+	color: <?php echo $amd['primary_color']; ?>; /*id:primary_color*/
 }
 
 #master .entry-cat-meta span > a:hover {
-	color: <?php echo $amd['accent_hover_color']; ?>
+	color: <?php echo $amd['primary_hover_color']; ?>; /*id:primary_hover_color*/
 }
 
 
+#master .site-info-wrapper,
+#master .site-info-wrapper a,
 #master .wp-caption-text,
 #master .woocommerce-result-count,
 #master .product_meta,
@@ -56,9 +58,10 @@ a:hover {
 .top-header a:focus,
 .top-header a:visited,
 .top-header a {
-	color: <?php echo $amd['text_light_color']; ?>
+	color: <?php echo $amd['text_light_color']; ?>; /*id:text_light_color*/
 }
 
+#master .site-info-wrapper a:hover,
 #master .product_meta a:hover,
 #master .woocommerce-breadcrumb a:hover,
 #master .sd-social-icon .sd-content ul li a,
@@ -79,7 +82,7 @@ input,
 select,
 optgroup,
 textarea {
-	color: <?php echo $amd['text_color']; ?>
+	color: <?php echo $amd['text_color']; ?>; /*id:text_color*/
 }
 
 #master .woocommerce-pagination ul a,
@@ -112,7 +115,7 @@ textarea {
 #master input[type="button"]:active,
 #master input[type="reset"]:active,
 #master input[type="submit"]:active {
-	background-color: <?php echo $amd['accent_color']; ?>
+	background-color: <?php echo $amd['primary_color']; ?>; /*id:primary_color*/
 }
 
 #master .woocommerce-pagination ul span,
@@ -127,30 +130,30 @@ textarea {
 #master input[type="button"]:hover,
 #master input[type="reset"]:hover,
 #master input[type="submit"]:hover {
-	background-color: <?php echo $amd['accent_hover_color']; ?>
+	background-color: <?php echo $amd['primary_hover_color']; ?>; /*id:primary_hover_color*/
 }
 
 .site-branding {
-	<?php echo angiemakesdesign_css_set_unit( 'padding-top', $amd['heading_padding_top'] ); ?>
-	<?php echo angiemakesdesign_css_set_unit( 'padding-bottom', $amd['heading_padding_bottom'] ); ?>
+	<?php echo angiemakesdesign_css_set_unit( 'padding-top', $amd['heading_padding_top'] ); ?> /*id:heading_padding_top*/
+	<?php echo angiemakesdesign_css_set_unit( 'padding-bottom', $amd['heading_padding_bottom'] ); ?> /*id:heading_padding_bottom*/
 }
 
 <?php if ( ! empty( $amd['top_header_background'] ) ) : ?> 
 .site-header {
-	background-image: url("<?php echo $amd['top_header_background']; ?>");
-	background-position: calc(50% + <?php echo $amd['top_header_background_offset']; ?>px) top;
+	background-image: url("<?php echo $amd['top_header_background']; ?>"); /*id:top_header_background*/
+	background-position: calc(50% + <?php echo $amd['top_header_background_offset']; ?>px) top; /*id:top_header_background_offset*/
 }
 
 
 @media screen and (max-width: 1050px) {
 	.site-header {
-		background-position: calc(50% + <?php echo $amd['top_header_background_offset']-25; ?>px) top;
+		background-position: calc(50% + <?php echo $amd['top_header_background_offset']-25; ?>px) top; /*id:top_header_background_offset*/
 	}
 }
 
 @media screen and (max-width: 1000px) {
 	.site-header {
-		background-position: calc(50% + <?php echo $amd['top_header_background_offset']-50; ?>px) top;
+		background-position: calc(50% + <?php echo $amd['top_header_background_offset']-50; ?>px) top; /*id:top_header_background_offset*/
 	}
 }
 
@@ -158,5 +161,11 @@ textarea {
 	.site-header {
 		background-position: calc(50% + <?php echo $amd['top_header_background_offset']-75; ?>px) top;
 	}
+}
+<?php endif; ?>
+
+<?php if ( ! empty( $amd['footer_background'] ) ) : ?> 
+.site-footer {
+	background-image: url("<?php echo $amd['footer_background']; ?>"); /*id:footer_background*/
 }
 <?php endif; ?>

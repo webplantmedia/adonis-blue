@@ -13,9 +13,9 @@
 function angiemakesdesign_customize_register( $wp_customize ) {
 	global $amd_default;
 
-	$wp_customize->get_setting( 'blogname' )->transport         = 'refresh';
-	$wp_customize->get_setting( 'blogdescription' )->transport  = 'refresh';
-	$wp_customize->get_setting( 'header_textcolor' )->transport = 'refresh';
+	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
+	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
+	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
 	if ( isset( $wp_customize->selective_refresh ) ) {
 		$wp_customize->selective_refresh->add_partial( 'blogname', array(
@@ -38,7 +38,7 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 	$setting_id = 'custom_logo_2x';
 	$wp_customize->add_setting( $setting_id, array(
 		'default' => $amd_default[ $setting_id ],
-		'transport' => 'refresh',
+		'transport' => 'postMessage',
 		'sanitize_callback' => 'esc_url_raw',
 	) );
 
@@ -59,7 +59,7 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 	$setting_id = 'heading_padding_top';
 	$wp_customize->add_setting( $setting_id, array(
 		'default' => $amd_default[ $setting_id ],
-		'transport' => 'refresh',
+		'transport' => 'postMessage',
 		'sanitize_callback' => 'absint',
 	) );
 
@@ -72,7 +72,7 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 	$setting_id = 'heading_padding_bottom';
 	$wp_customize->add_setting( $setting_id, array(
 		'default' => $amd_default[ $setting_id ],
-		'transport' => 'refresh',
+		'transport' => 'postMessage',
 		'sanitize_callback' => 'absint',
 	) );
 
@@ -85,34 +85,34 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 	/**
 	 * Custom colors.
 	 */
-	$setting_id = 'accent_color';
+	$setting_id = 'primary_color';
 	$wp_customize->add_setting( $setting_id, array(
 		'default' => $amd_default[ $setting_id ],
-		'transport' => 'refresh',
+		'transport' => 'postMessage',
 		'sanitize_callback' => 'sanitize_hex_color',
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $setting_id, array(
-		'label' => __( 'Accent Color', 'angiemakesdesign' ),
+		'label' => __( 'Primary Color', 'angiemakesdesign' ),
 		'section' => 'colors',
 	) ) );
 
-	$setting_id = 'accent_hover_color';
+	$setting_id = 'primary_hover_color';
 	$wp_customize->add_setting( $setting_id, array(
 		'default' => $amd_default[ $setting_id ],
-		'transport' => 'refresh',
+		'transport' => 'postMessage',
 		'sanitize_callback' => 'sanitize_hex_color',
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $setting_id, array(
-		'label' => __( 'Accent Hover Color', 'angiemakesdesign' ),
+		'label' => __( 'Primary Hover Color', 'angiemakesdesign' ),
 		'section' => 'colors',
 	) ) );
 
 	$setting_id = 'text_color';
 	$wp_customize->add_setting( $setting_id, array(
 		'default' => $amd_default[ $setting_id ],
-		'transport' => 'refresh',
+		'transport' => 'postMessage',
 		'sanitize_callback' => 'sanitize_hex_color',
 	) );
 
@@ -121,15 +121,39 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 		'section' => 'colors',
 	) ) );
 
+	$setting_id = 'text_light_color';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $amd_default[ $setting_id ],
+		'transport' => 'postMessage',
+		'sanitize_callback' => 'sanitize_hex_color',
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $setting_id, array(
+		'label' => __( 'Text Light Color', 'angiemakesdesign' ),
+		'section' => 'colors',
+	) ) );
+
 	$setting_id = 'link_color';
 	$wp_customize->add_setting( $setting_id, array(
 		'default' => $amd_default[ $setting_id ],
-		'transport' => 'refresh',
+		'transport' => 'postMessage',
 		'sanitize_callback' => 'sanitize_hex_color',
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $setting_id, array(
 		'label' => __( 'Link Color', 'angiemakesdesign' ),
+		'section' => 'colors',
+	) ) );
+
+	$setting_id = 'link_hover_color';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $amd_default[ $setting_id ],
+		'transport' => 'postMessage',
+		'sanitize_callback' => 'sanitize_hex_color',
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $setting_id, array(
+		'label' => __( 'Link Hover Color', 'angiemakesdesign' ),
 		'section' => 'colors',
 	) ) );
 
@@ -152,7 +176,7 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 	$setting_id = 'top_header_background';
 	$wp_customize->add_setting( $setting_id, array(
 		'default' => $amd_default[ $setting_id ],
-		'transport' => 'refresh',
+		'transport' => 'postMessage',
 		'sanitize_callback' => 'esc_url_raw',
 	) );
 
@@ -173,7 +197,7 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 	$setting_id = 'top_header_background_offset';
 	$wp_customize->add_setting( $setting_id, array(
 		'default' => $amd_default[ $setting_id ],
-		'transport' => 'refresh',
+		'transport' => 'postMessage',
 		'sanitize_callback' => 'absint',
 	) );
 
@@ -200,7 +224,7 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 	$setting_id = 'mobile_menu_label';
 	$wp_customize->add_setting( $setting_id, array(
 		'default' => $amd_default[ $setting_id ],
-		'transport' => 'refresh',
+		'transport' => 'postMessage',
 		'sanitize_callback' => 'sanitize_text_field',
 	) );
 

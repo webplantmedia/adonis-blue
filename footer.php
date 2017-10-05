@@ -15,19 +15,13 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer">
-		<div class="site-boundary">
-			<div class="site-info">
-				<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'angiemakesdesign' ) ); ?>"><?php
-					/* translators: %s: CMS name, i.e. WordPress. */
-					printf( esc_html__( 'Proudly powered by %s', 'angiemakesdesign' ), 'WordPress' );
-				?></a>
-				<span class="sep"> | </span>
-				<?php
-					/* translators: 1: Theme name, 2: Theme author. */
-					printf( esc_html__( 'Theme: %1$s by %2$s.', 'angiemakesdesign' ), 'angiemakesdesign', '<a href="http://angiemakes.com">Angie Makes</a>' );
-				?>
-			</div><!-- .site-info -->
-		</div><!-- .site-boundary -->
+		<div class="site-info-wrapper">
+			<div class="site-boundary">
+				<div class="site-info">
+					<?php angiemakesdesign_site_info(); ?>
+				</div><!-- .site-info -->
+			</div><!-- .site-boundary -->
+		</div><!-- .site-info-wrapper -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
