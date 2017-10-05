@@ -604,7 +604,6 @@ button {
 #master form label {
   display: block;
   margin-bottom: 7px;
-  color: #39373a;
   font-size: 15px;
   font-weight: bold;
   text-transform: uppercase;
@@ -643,7 +642,6 @@ button {
   -moz-border-radius: 0;
   border-radius: 0;
   outline: none;
-  color: #252323;
   background: #fff;
   font-size: 16px;
   font-weight: normal;
@@ -658,7 +656,6 @@ button {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
-  color: #000;
   background-color: #fff;
   background-image: url(./img/select_caret.png);
   background-repeat: no-repeat;
@@ -680,10 +677,6 @@ button {
 
 #master .select2-container .select2-choice .select2-arrow {
   display: none;
-}
-
-#master .select2-container .select2-choice > .select2-chosen {
-  color: #000;
 }
 
 #master .select2-search {
@@ -713,30 +706,10 @@ button {
   width: 43px;
   height: 42px;
   border: 2px solid #ececec;
-  color: #252323;
   font-size: 20px;
   line-height: 37px;
   text-align: center;
   pointer-events: none;
-}
-
-#master input[type="text"]:focus,
-#master input[type="email"]:focus,
-#master input[type="url"]:focus,
-#master input[type="password"]:focus,
-#master input[type="search"]:focus,
-#master input[type="number"]:focus,
-#master input[type="tel"]:focus,
-#master input[type="range"]:focus,
-#master input[type="date"]:focus,
-#master input[type="month"]:focus,
-#master input[type="week"]:focus,
-#master input[type="time"]:focus,
-#master input[type="datetime"]:focus,
-#master input[type="datetime-local"]:focus,
-#master input[type="color"]:focus,
-#master textarea:focus {
-  color: #252323;
 }
 
 #master input[type="text"],
@@ -850,7 +823,6 @@ button {
 
 #master input[type="checkbox"]:checked:before {
   width: 20px;
-  color: #39373a;
   content: "\f418";
 }
 
@@ -878,26 +850,12 @@ button {
   text-transform: none;
 }
 
-#master ::-webkit-input-placeholder {
-  color: #000;
-  color: rgba(0, 0, 0, 0.5);
-}
-
 #master :-moz-placeholder {
   /* Firefox 18- */
-  color: #000;
-  color: rgba(0, 0, 0, 0.5);
 }
 
 #master ::-moz-placeholder {
   /* Firefox 19+ */
-  color: #000;
-  color: rgba(0, 0, 0, 0.5);
-}
-
-#master :-ms-input-placeholder {
-  color: #000;
-  color: rgba(0, 0, 0, 0.5);
 }
 
 /*--------------------------------------------------------------
