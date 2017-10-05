@@ -360,6 +360,14 @@ WooCommerce styling
   line-height: 50px;
 }
 
+#master .woocommerce div.product p.price {
+  margin-bottom: 1.5em;
+}
+
+#master .woocommerce div.product .woocommerce-product-rating {
+  margin-bottom: 0;
+}
+
 @media screen and (min-width: 769px) {
   .display-sidebar.woocommerce-page ul.products li.product {
     width: 30.8%;
