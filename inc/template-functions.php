@@ -109,3 +109,10 @@ function angiemakesdesign_get_the_archive_title( $title ) {
 	return $title;
 }
 add_filter( 'get_the_archive_title', 'angiemakesdesign_get_the_archive_title', 11, 1 );
+
+function angiemakesdesign_post_class( $classes ) {
+	$classes[] = 'entry-wrap';
+
+	return $classes;
+}
+add_filter( 'post_class', 'angiemakesdesign_post_class', 10, 1 );

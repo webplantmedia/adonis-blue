@@ -339,7 +339,7 @@ h6 {
 ## Copy
 --------------------------------------------------------------*/
 p {
-  margin-bottom: 1.5em;
+  margin: 0 0 2.5em 0;
 }
 
 dfn, cite, em, i {
@@ -361,7 +361,7 @@ blockquote {
 }
 
 address {
-  margin: 0 0 1.5em;
+  margin: 0 0 2.5em;
 }
 
 pre {
@@ -473,7 +473,7 @@ figure {
 ## Lists
 --------------------------------------------------------------*/
 ul, ol {
-  margin: 0 0 1.5em 3em;
+  margin: 0 0 2.5em 3em;
 }
 
 ul {
@@ -495,7 +495,7 @@ dt {
 }
 
 dd {
-  margin: 0 1.5em 1.5em;
+  margin: 0 1.5em 2.5em;
 }
 
 /*--------------------------------------------------------------
@@ -920,11 +920,13 @@ a:hover, a:active {
 }
 
 .widget p > a,
+.entry-summary a,
 .entry-content a {
   text-decoration: underline;
 }
 
 .widget p > a:hover,
+.entry-summary a:hover,
 .entry-content a:hover {
   text-decoration: none;
 }
@@ -1573,24 +1575,20 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 ## Search Widget
 --------------------------------------------------------------*/
-#master .widget_search .search-form,
-#master .widget_product_search .search-form {
+#master .search-form {
   position: relative;
 }
 
-#master .widget_search .search-form label,
-#master .widget_product_search .search-form label {
+#master .search-form label {
   margin-bottom: 0;
 }
 
-#master .widget_search .search-field,
-#master .widget_product_search .search-field {
+#master .search-field {
   width: 100%;
   padding-right: 53px;
 }
 
-#master .widget_search .search-submit,
-#master .widget_product_search .search-submit {
+#master .search-submit {
   position: absolute;
   top: 0;
   right: 0;
@@ -1603,17 +1601,13 @@ a:hover, a:active {
   line-height: 1;
 }
 
-#master .widget_search .search-submit:hover,
-#master .widget_search .search-submit:active,
-#master .widget_search .search-submit:focus,
-#master .widget_product_search .search-submit:hover,
-#master .widget_product_search .search-submit:active,
-#master .widget_product_search .search-submit:focus {
+#master .search-submit:hover,
+#master .search-submit:active,
+#master .search-submit:focus {
   background: none;
 }
 
-#master .widget_search .search-submit,
-#master .widget_product_search .search-submit {
+#master .search-submit {
   position: absolute;
   top: 0;
   right: 0;
@@ -1772,15 +1766,18 @@ a:hover, a:active {
   display: block;
 }
 
-.archive .hentry,
-.blog .hentry,
-.single .hentry {
+.search .entry-wrap,
+.archive .entry-wrap,
+.blog .entry-wrap,
+.single .entry-wrap {
   padding-bottom: 70px;
   padding-bottom: 4.375rem;
+  margin-bottom: 70px;
+  margin-bottom: 4.375rem;
   border-bottom: 2px solid #ececec;
 }
 
-.hentry {
+.entry-wrap {
   margin: 0;
   margin-bottom: 70px;
   margin-bottom: 4.375rem;
@@ -1824,9 +1821,9 @@ a:hover, a:active {
   margin-bottom: 5rem;
 }
 
-.search .hentry .entry-header,
-.archive .hentry .entry-header,
-.blog .hentry .entry-header {
+.search .entry-wrap .entry-header,
+.archive .entry-wrap .entry-header,
+.blog .entry-wrap .entry-header {
   margin-bottom: 50px;
   margin-bottom: 3.125rem;
 }
@@ -1838,28 +1835,29 @@ a:hover, a:active {
   margin-bottom: 5rem;
 }
 
-.entry-header .entry-title {
-  margin-top: 0;
-  margin-bottom: 0;
-  text-align: center;
-}
-
-.archive .hentry .entry-title,
-.search .hentry .entry-title,
-.blog .hentry .entry-title {
+.search .entry-wrap .entry-title,
+.archive .entry-wrap .entry-title,
+.search .entry-wrap .entry-title,
+.blog .entry-wrap .entry-title {
   margin-top: 0;
   margin-bottom: 25px;
   font-size: 35px;
   font-size: 2.1875rem;
   font-weight: 500;
   line-height: 1.25;
+  text-align: center;
 }
 
-.posts-list .hentry .entry-title {
+.single .post.entry-wrap .entry-title {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.posts-list .entry-wrap .entry-title {
   font-weight: bold;
 }
 
-.posts-list .hentry.sticky .entry-title {
+.posts-list .entry-wrap.sticky .entry-title {
   margin-top: 25px;
 }
 
@@ -1929,6 +1927,7 @@ a:hover, a:active {
 .entry-cat-meta .cat-bull-delim {
   padding-left: .5em;
   padding-right: .5em;
+  color: #cccccc;
 }
 
 .entry-cat-meta ul {
@@ -1989,6 +1988,21 @@ a:hover, a:active {
   content: "";
 }
 
+#master .entry-content > *:first-child,
+#master .page-content > *:first-child {
+  margin-top: 0;
+}
+
+#master .entry-content > *:last-child,
+#master .page-content > *:last-child {
+  margin-bottom: 0;
+}
+
+#master .entry-content > div,
+#master .page-content > div {
+  margin-bottom: 2.5em;
+}
+
 #master .entry-content > *:first-child {
   margin-top: 0;
 }
@@ -1997,11 +2011,11 @@ a:hover, a:active {
   margin-bottom: 0;
 }
 
-.hentry .entry-content .more-link {
+#master .more-link {
   font-weight: bold;
 }
 
-.hentry .entry-content .more-link i {
+#master .more-link i {
   margin-left: 5px;
   font-size: 22px;
   font-size: 1.375rem;
@@ -2010,27 +2024,27 @@ a:hover, a:active {
   text-decoration: none;
 }
 
-.hentry.excerpt2 {
+#master .excerpt2 {
   padding-bottom: 0;
   border-bottom-width: 0;
 }
 
-.hentry.excerpt2 .entry-cat-meta {
+#master .excerpt2 .entry-cat-meta {
   margin-bottom: 8px;
   margin-bottom: 0.5rem;
 }
 
-.hentry.excerpt2 .entry-title {
+#master .excerpt2 .entry-title {
   margin-bottom: 15px;
   margin-bottom: 0.9375rem;
 }
 
-.hentry.excerpt2 .entry-meta {
+#master .excerpt2 .entry-meta {
   margin-top: 15px;
   margin-top: 0.9375rem;
 }
 
-.hentry.excerpt2 *:last-child {
+#master .excerpt2 *:last-child {
   margin-bottom: 0;
 }
 
@@ -2062,7 +2076,7 @@ a:hover, a:active {
 
 .entry-image {
   text-align: center;
-  margin-bottom: 1.5em;
+  margin-bottom: 2.5em;
 }
 
 .entry-image img {
