@@ -46,16 +46,7 @@
 }
 
 // Entry header
-.entry-header {
-	text-align: center;
-}
-
 .single .entry-header {
-	@include rem('margin-bottom',80px);
-}
-
-.page.hentry h1 {
-	text-align: center;
 	@include rem('margin-bottom',80px);
 }
 
@@ -68,6 +59,14 @@
 		}
 	}
 }
+
+// Entry Title & Page Title
+.content-area h1 {
+	text-align: center;
+	margin-top: 0;
+	@include rem('margin-bottom',80px);
+}
+
 
 // Entry Title
 .entry-header .entry-title {
