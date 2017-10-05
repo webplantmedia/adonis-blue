@@ -22,6 +22,7 @@ a:hover {
 }
 
 
+#master .wp-caption-text,
 #master .woocommerce-result-count,
 #master .product_meta,
 #master .woocommerce-breadcrumb,
