@@ -1766,10 +1766,10 @@ a:hover, a:active {
   display: block;
 }
 
-.search .entry-wrap,
-.archive .entry-wrap,
-.blog .entry-wrap,
-.single .entry-wrap {
+.search .site-main article,
+.archive .hentry,
+.blog .hentry,
+.single .hentry {
   padding-bottom: 70px;
   padding-bottom: 4.375rem;
   margin-bottom: 70px;
@@ -1777,7 +1777,7 @@ a:hover, a:active {
   border-bottom: 2px solid #ececec;
 }
 
-.entry-wrap {
+.hentry {
   margin: 0;
   margin-bottom: 70px;
   margin-bottom: 4.375rem;
@@ -1821,24 +1821,24 @@ a:hover, a:active {
   margin-bottom: 5rem;
 }
 
-.search .entry-wrap .entry-header,
-.archive .entry-wrap .entry-header,
-.blog .entry-wrap .entry-header {
+.search .site-main article .entry-header,
+.archive .hentry .entry-header,
+.blog .hentry .entry-header {
   margin-bottom: 50px;
   margin-bottom: 3.125rem;
 }
 
-.content-area h1 {
+.page-header h1,
+.hentry h1 {
   text-align: center;
   margin-top: 0;
   margin-bottom: 80px;
   margin-bottom: 5rem;
 }
 
-.search .entry-wrap .entry-title,
-.archive .entry-wrap .entry-title,
-.search .entry-wrap .entry-title,
-.blog .entry-wrap .entry-title {
+.search .site-main article .entry-title,
+.archive .hentry .entry-title,
+.blog .hentry .entry-title {
   margin-top: 0;
   margin-bottom: 25px;
   font-size: 35px;
@@ -1848,16 +1848,16 @@ a:hover, a:active {
   text-align: center;
 }
 
-.single .post.entry-wrap .entry-title {
+.single .post.hentry .entry-title {
   margin-top: 0;
   margin-bottom: 0;
 }
 
-.posts-list .entry-wrap .entry-title {
+.posts-list .hentry .entry-title {
   font-weight: bold;
 }
 
-.posts-list .entry-wrap.sticky .entry-title {
+.posts-list .hentry.sticky .entry-title {
   margin-top: 25px;
 }
 
@@ -2048,29 +2048,29 @@ a:hover, a:active {
   margin-bottom: 0;
 }
 
-.all-posts {
+#master .all-posts {
   overflow: hidden;
   margin-right: -20px;
   margin-right: -1.25rem;
 }
 
-.all-posts .excerpt2 {
+#master .all-posts .excerpt2 {
   width: 50%;
   float: left;
   padding-right: 20px;
   padding-right: 1.25rem;
 }
 
-.all-posts .excerpt2:nth-child(2n+1) {
+#master .all-posts .excerpt2:nth-child(2n+1) {
   clear: both;
 }
 
-.all-posts .excerpt2 .entry-title {
+#master .all-posts .excerpt2 .entry-title {
   font-size: 22px;
   font-size: 1.375rem;
 }
 
-.all-posts .excerpt2 .entry-image {
+#master .all-posts .excerpt2 .entry-image {
   margin-bottom: 1em;
 }
 
