@@ -1651,9 +1651,10 @@ a:hover, a:active {
   width: 100%;
 }
 
-@media only screen and (max-device-width: 1024px) {
+@media screen and (max-width: 1024px) {
   #master .content-area {
     float: none;
+    max-width: 760px;
     margin: 0 auto;
   }
   #master .site-main {
@@ -1670,7 +1671,7 @@ a:hover, a:active {
   }
 }
 
-@media only screen and (max-device-width: 760px) {
+@media screen and (max-width: 760px) {
   #master .content-area {
     width: 100%;
   }

@@ -32,10 +32,11 @@
 	width: 100%;
 }
 
-@media only screen and (max-device-width : 1024px) {
+@media screen and (max-width : 1024px) {
 	#master {
 		.content-area {
 			float: none;
+			max-width: $size__site-main-no-sidebar;
 			margin: 0 auto;
 		}
 
@@ -55,7 +56,7 @@
 	}
 }
 
-@media only screen and (max-device-width : $size__site-main-no-sidebar) {
+@media screen and (max-width : $size__site-main-no-sidebar) {
 	#master {
 		.content-area {
 			width: 100%;
