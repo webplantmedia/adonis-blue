@@ -2092,6 +2092,7 @@ a:hover, a:active {
   min-width: 110px;
   padding: 9px 9px;
   font-size: 12px;
+  font-size: 0.75rem;
   text-transform: uppercase;
 }
 
@@ -2127,21 +2128,18 @@ a:hover, a:active {
 
 .comment-author {
   font-size: 15px;
+  font-size: 0.9375rem;
   font-weight: bold;
   line-height: 1;
   text-transform: uppercase;
 }
 
 .comment-metadata {
-  color: #252323;
   font-size: 12px;
+  font-size: 0.75rem;
   font-weight: bold;
   line-height: 2.16666667;
   text-transform: uppercase;
-}
-
-.comment-metadata a {
-  text-decoration: underline;
 }
 
 .comment-metadata a:hover,
@@ -2182,9 +2180,8 @@ a:hover, a:active {
   overflow: hidden;
   margin-left: 100px;
   padding-top: 10px;
-  color: #151923;
-  font-size: 16px;
-  line-height: 1.625;
+  font-size: 18px;
+  font-size: 1.125rem;
 }
 
 @media (max-width: 959px) {
@@ -2262,10 +2259,6 @@ a:hover, a:active {
 .comment-form .form-submit input {
   width: auto;
   padding: 16px 46px;
-}
-
-.comment-form label {
-  color: #000;
 }
 
 @media screen and (max-width: 959px) {
@@ -2355,6 +2348,7 @@ a:hover, a:active {
   display: inline-block;
   padding-top: 30px;
   font-size: 15px;
+  font-size: 0.9375rem;
 }
 
 .comment-reply-link {
@@ -2364,6 +2358,7 @@ a:hover, a:active {
   border-radius: 3px;
   color: #fff;
   font-size: 12px;
+  font-size: 0.75rem;
   font-weight: bold;
   line-height: 1;
   background-color: #000000;
@@ -2385,6 +2380,11 @@ a:hover, a:active {
   .comment-reply-link {
     margin-top: 0;
   }
+}
+
+.comment-notes {
+  font-size: 15px;
+  font-size: 0.9375rem;
 }
 
 /*--------------------------------------------------------------

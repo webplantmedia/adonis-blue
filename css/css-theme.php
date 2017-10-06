@@ -25,6 +25,11 @@ a:hover {
 	background-color: <?php echo $amd['secondary_color']; ?>; /*id:secondary_color*/
 }
 
+#master .comment-metadata,
+#master .comment-metadata a,
+#master .comment-metadata a:active,
+#master .comment-metadata a:focus,
+#master .comment-metadata a:visited,
 #master .site-info-wrapper a:hover,
 #master .wp-caption-text,
 #master .woocommerce-result-count,
@@ -63,6 +68,9 @@ a:hover {
 	color: <?php echo $amd['text_light_color']; ?>; /*id:text_light_color*/
 }
 
+#master .comment-metadata a:hover,
+#master .comment-form label,
+#master .comment-content,
 #master .site-info-wrapper,
 #master .site-info-wrapper a,
 #master .product_meta a:hover,
