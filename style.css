@@ -1536,6 +1536,11 @@ a:hover, a:active {
   padding-left: 20px;
 }
 
+#tertiary .widget {
+  margin-bottom: 80px;
+  margin-bottom: 5rem;
+}
+
 /*--------------------------------------------------------------
 ## Search Widget
 --------------------------------------------------------------*/
@@ -1547,12 +1552,12 @@ a:hover, a:active {
   margin-bottom: 0;
 }
 
-#master .search-field {
+#master .search-form .search-field {
   width: 100%;
   padding-right: 53px;
 }
 
-#master .search-submit {
+#master .search-form .search-submit {
   position: absolute;
   top: 0;
   right: 0;
@@ -1565,13 +1570,13 @@ a:hover, a:active {
   line-height: 1;
 }
 
-#master .search-submit:hover,
-#master .search-submit:active,
-#master .search-submit:focus {
+#master .search-form .search-submit:hover,
+#master .search-form .search-submit:active,
+#master .search-form .search-submit:focus {
   background: none;
 }
 
-#master .search-submit {
+#master .search-form .search-submit {
   position: absolute;
   top: 0;
   right: 0;
@@ -2092,8 +2097,8 @@ a:hover, a:active {
 .footer-container {
   padding-top: 60px;
   padding-top: 3.75rem;
-  padding-bottom: 186px;
-  padding-bottom: 11.625rem;
+  padding-bottom: 106px;
+  padding-bottom: 6.625rem;
   margin-right: -80px;
   margin-right: -5rem;
 }
@@ -2103,6 +2108,22 @@ a:hover, a:active {
   float: left;
   padding-right: 80px;
   padding-right: 5rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .footer-column {
+    width: 100%;
+    float: none;
+    display: block;
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 0;
+  }
+  .footer-container {
+    margin-right: 0;
+    padding-bottom: 100px;
+    padding-bottom: 6.25rem;
+  }
 }
 
 /*--------------------------------------------------------------
