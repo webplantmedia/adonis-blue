@@ -8,6 +8,7 @@ button {
 #master {
 	.woocommerce-pagination ul span,
 	.woocommerce-pagination ul a,
+	.comment-navigation .nav-links a,
 	.posts-navigation .nav-links a,
 	.button,
 	.addresses .edit,
@@ -19,6 +20,7 @@ button {
 		border: none;
 		border-radius: 3px;
 		color: #fff;
+		background-color: #000000;
 		@include rem('font-size',$font__main-size);
 		/*font-size: 0.75rem;*/
 		font-weight: bold;
@@ -45,12 +47,14 @@ button {
 	}
 
 	.woocommerce-pagination ul a:focus,
+	.comment-navigation .nav-links a:focus,
 	.posts-navigation .nav-links a:focus,
 	.button:focus,
 	input[type="button"]:focus,
 	input[type="reset"]:focus,
 	input[type="submit"]:focus,
 	.woocommerce-pagination ul a:active,
+	.comment-navigation .nav-links a:active,
 	.posts-navigation .nav-links a:active,
 	.button:active,
 	input[type="button"]:active,
@@ -61,6 +65,7 @@ button {
 	}
 
 	.woocommerce-pagination ul a:hover,
+	.comment-navigation .nav-links a:hover,
 	.posts-navigation .nav-links a:hover,
 	.button:hover,
 	input[type="button"]:hover,

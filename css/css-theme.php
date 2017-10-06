@@ -88,7 +88,9 @@ textarea {
 	color: <?php echo $amd['text_color']; ?>; /*id:text_color*/
 }
 
+#master .comment-reply-link,
 #master .woocommerce-pagination ul a,
+#master .comment-navigation .nav-links a,
 #master .posts-navigation .nav-links a,
 #master .entry-cat-meta ul a,
 #master .sd-social-text .sd-content ul li a,
@@ -102,7 +104,9 @@ textarea {
 #master input[type="button"],
 #master input[type="reset"],
 #master input[type="submit"],
+#master .comment-reply-link:focus,
 #master .woocommerce-pagination ul a:focus,
+#master .comment-navigation .nav-links a:focus,
 #master .posts-navigation .nav-links a:focus,
 #master .sd-social-icon .sd-content ul li a:focus,
 #master .button.alt:focus,
@@ -110,7 +114,9 @@ textarea {
 #master input[type="button"]:focus,
 #master input[type="reset"]:focus,
 #master input[type="submit"]:focus,
+#master .comment-reply-link:active,
 #master .woocommerce-pagination ul a:active,
+#master .comment-navigation .nav-links a:active,
 #master .posts-navigation .nav-links a:active,
 #master .sd-social-icon .sd-content ul li a:active,
 #master .button.alt:active,
@@ -121,8 +127,10 @@ textarea {
 	background-color: <?php echo $amd['primary_color']; ?>; /*id:primary_color*/
 }
 
+#master .comment-reply-link:hover,
 #master .woocommerce-pagination ul span,
 #master .woocommerce-pagination ul a:hover,
+#master .comment-navigation .nav-links a:hover,
 #master .posts-navigation .nav-links a:hover,
 #master .entry-cat-meta ul a:hover,
 #master .sd-social-text .sd-content ul li a:hover,

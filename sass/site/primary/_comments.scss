@@ -8,7 +8,6 @@
 }
 
 .comments-title {
-	float: left;
 	padding-top: 5px;
 }
 
@@ -37,12 +36,17 @@
 	margin: 60px 0 0;
 	padding: 0;
 	list-style: none;
+	border-bottom: 2px solid $color__border;
 }
 
 .comment-list .children {
 	margin-left: 100px;
 	padding: 0;
 	list-style: none;
+}
+
+.comment-list .children .children .children {
+	margin-left: 0;
 }
 
 .bypostauthor {
@@ -121,13 +125,13 @@
 	padding-top: 45px;
 }
 
-.comment-list > .comment:first-child > .comment-body {
-	padding-top: 0;
+#master .comment-list > .comment:first-child > .comment-body {
+	border-top-width: 0;
 }
 
 .comment-list > .comment:not(.parent) > .comment-body {
 	padding-bottom: 45px;
-	border-bottom: 2px solid #ececec;
+	border-top: 2px solid #ececec;
 }
 
 .comment-list .parent > .comment-body .comment-content,
@@ -137,7 +141,7 @@
 
 .comment-list .comment-body {
 	padding-bottom: 27px;
-	border-bottom: 2px solid #ececec;
+	border-top: 2px solid #ececec;
 }
 
 @media screen and (max-width: 959px) {
@@ -153,9 +157,16 @@
 
 .comment-respond {
 	margin-top: 62px;
+	margin-bottom: 62px;
+}
+
+.comment .comment-respond {
+	margin-top: 0;
+	margin-left: 100px;
 }
 
 .comment-reply-title {
+	margin-top: 0;
 	margin-bottom: 70px;
 }
 
@@ -252,11 +263,9 @@
 
 	.comment-list .parent > .comment-body .comment-content,
 	.comment-list .children .comment-content {
-		padding-bottom: 31px;
 	}
 
 	.comment-body {
-		padding-top: 39px;
 	}
 
 	.comment-list .children {
@@ -265,32 +274,35 @@
 
 	.comment-list .children .comment-meta,
 	.comment-list .children .comment-content {
-		padding-left: 30px;
+		padding-left: 0px;
 	}
 
 	.comment-list .children .comment-reply-link {
 		margin-top: 0;
-		margin-left: 30px;
+		margin-left: 0px;
 	}
 
 	.comment-list .children .children .comment-meta,
 	.comment-list .children .children .comment-content {
-		padding-left: 60px;
+		padding-left: 0px;
 	}
 
 	.comment-list .children .children .comment-reply-link {
 		margin-top: 0;
-		margin-left: 60px;
+		margin-left: 0px;
 	}
 
 	.comment-list .children .children .children .comment-meta,
 	.comment-list .children .children .children .comment-content {
-		padding-left: 90px;
+		padding-left: 0px;
 	}
 
 	.comment-list .children .children .children .comment-reply-link {
 		margin-top: 0;
-		margin-left: 90px;
+		margin-left: 0px;
+	}
+	.comment .comment-respond {
+		margin-left: 0;
 	}
 }
 
@@ -302,7 +314,7 @@
 
 .comment-reply-link {
 	display: inline-block;
-	margin-top: 30px;
+	margin-top: 0;
 	padding: 5px 10px;
 	border-radius: 3px;
 	color: #fff;

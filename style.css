@@ -449,7 +449,7 @@ blockquote:before {
 hr {
   background-color: #ececec;
   border: 0;
-  height: 1px;
+  height: 2px;
   margin-bottom: 1.5em;
 }
 
@@ -521,6 +521,7 @@ button {
 
 #master .woocommerce-pagination ul span,
 #master .woocommerce-pagination ul a,
+#master .comment-navigation .nav-links a,
 #master .posts-navigation .nav-links a,
 #master .button,
 #master .addresses .edit,
@@ -532,6 +533,7 @@ button {
   border: none;
   border-radius: 3px;
   color: #fff;
+  background-color: #000000;
   font-size: 18px;
   font-size: 1.125rem;
   /*font-size: 0.75rem;*/
@@ -558,12 +560,14 @@ button {
 }
 
 #master .woocommerce-pagination ul a:focus,
+#master .comment-navigation .nav-links a:focus,
 #master .posts-navigation .nav-links a:focus,
 #master .button:focus,
 #master input[type="button"]:focus,
 #master input[type="reset"]:focus,
 #master input[type="submit"]:focus,
 #master .woocommerce-pagination ul a:active,
+#master .comment-navigation .nav-links a:active,
 #master .posts-navigation .nav-links a:active,
 #master .button:active,
 #master input[type="button"]:active,
@@ -574,6 +578,7 @@ button {
 }
 
 #master .woocommerce-pagination ul a:hover,
+#master .comment-navigation .nav-links a:hover,
 #master .posts-navigation .nav-links a:hover,
 #master .button:hover,
 #master input[type="button"]:hover,
@@ -1167,9 +1172,18 @@ a:hover, a:active {
   }
 }
 
-.site-main .comment-navigation, .site-main
-.posts-navigation, .site-main
+.site-main .posts-navigation, .site-main
 .post-navigation {
+  margin: 0;
+  margin-top: 70px;
+  margin-top: 4.375rem;
+  padding-bottom: 70px;
+  padding-bottom: 4.375rem;
+  border-bottom: 2px solid #ececec;
+  overflow: hidden;
+}
+
+.site-main .comment-navigation {
   margin: 0;
   margin-top: 70px;
   margin-top: 4.375rem;
@@ -2066,7 +2080,6 @@ a:hover, a:active {
 }
 
 .comments-title {
-  float: left;
   padding-top: 5px;
 }
 
@@ -2095,12 +2108,17 @@ a:hover, a:active {
   margin: 60px 0 0;
   padding: 0;
   list-style: none;
+  border-bottom: 2px solid #ececec;
 }
 
 .comment-list .children {
   margin-left: 100px;
   padding: 0;
   list-style: none;
+}
+
+.comment-list .children .children .children {
+  margin-left: 0;
 }
 
 .bypostauthor {
@@ -2179,13 +2197,13 @@ a:hover, a:active {
   padding-top: 45px;
 }
 
-.comment-list > .comment:first-child > .comment-body {
-  padding-top: 0;
+#master .comment-list > .comment:first-child > .comment-body {
+  border-top-width: 0;
 }
 
 .comment-list > .comment:not(.parent) > .comment-body {
   padding-bottom: 45px;
-  border-bottom: 2px solid #ececec;
+  border-top: 2px solid #ececec;
 }
 
 .comment-list .parent > .comment-body .comment-content,
@@ -2195,7 +2213,7 @@ a:hover, a:active {
 
 .comment-list .comment-body {
   padding-bottom: 27px;
-  border-bottom: 2px solid #ececec;
+  border-top: 2px solid #ececec;
 }
 
 @media screen and (max-width: 959px) {
@@ -2211,9 +2229,16 @@ a:hover, a:active {
 
 .comment-respond {
   margin-top: 62px;
+  margin-bottom: 62px;
+}
+
+.comment .comment-respond {
+  margin-top: 0;
+  margin-left: 100px;
 }
 
 .comment-reply-title {
+  margin-top: 0;
   margin-bottom: 70px;
 }
 
@@ -2294,39 +2319,35 @@ a:hover, a:active {
   .comment-list {
     margin-top: 38px;
   }
-  .comment-list .parent > .comment-body .comment-content,
-  .comment-list .children .comment-content {
-    padding-bottom: 31px;
-  }
-  .comment-body {
-    padding-top: 39px;
-  }
   .comment-list .children {
     margin-left: 0;
   }
   .comment-list .children .comment-meta,
   .comment-list .children .comment-content {
-    padding-left: 30px;
+    padding-left: 0px;
   }
   .comment-list .children .comment-reply-link {
     margin-top: 0;
-    margin-left: 30px;
+    margin-left: 0px;
   }
   .comment-list .children .children .comment-meta,
   .comment-list .children .children .comment-content {
-    padding-left: 60px;
+    padding-left: 0px;
   }
   .comment-list .children .children .comment-reply-link {
     margin-top: 0;
-    margin-left: 60px;
+    margin-left: 0px;
   }
   .comment-list .children .children .children .comment-meta,
   .comment-list .children .children .children .comment-content {
-    padding-left: 90px;
+    padding-left: 0px;
   }
   .comment-list .children .children .children .comment-reply-link {
     margin-top: 0;
-    margin-left: 90px;
+    margin-left: 0px;
+  }
+  .comment .comment-respond {
+    margin-left: 0;
   }
 }
 
@@ -2338,7 +2359,7 @@ a:hover, a:active {
 
 .comment-reply-link {
   display: inline-block;
-  margin-top: 30px;
+  margin-top: 0;
   padding: 5px 10px;
   border-radius: 3px;
   color: #fff;

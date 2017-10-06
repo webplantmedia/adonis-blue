@@ -301,17 +301,29 @@
 	}
 }
 
-.comment-navigation,
 .posts-navigation,
 .post-navigation {
+	.site-main & {
+		margin: 0;
+		@include rem('margin-top',70px);
+		@include rem('padding-bottom',70px);
+		border-bottom: 2px solid $color__border;
+		overflow: hidden;
+	}
+}
 
+.comment-navigation {
 	.site-main & {
 		margin: 0;
 		@include rem('margin-top',70px);
 		@include rem('margin-bottom',70px);
 		overflow: hidden;
 	}
+}
 
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
 	.nav-previous {
 		float: left;
 		width: 50%;
