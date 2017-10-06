@@ -13,9 +13,25 @@
 	text-align: center;
 	padding-bottom: 0.5em;
 	@include rem('font-size',$font__small-size);
-	letter-spacing: .1em;
+	letter-spacing: .15em;
 
 	.genericon {
 		line-height: inherit;
 	}
+}
+
+.footer-widget-area {
+	overflow: hidden;
+}
+
+.footer-container {
+	@include rem('padding-top',60px);
+	@include rem('padding-bottom',186px);
+	@include rem('margin-right',-80px);
+}
+
+.footer-column {
+	width: 33.3333%;
+	float: left;
+	@include rem('padding-right',80px);
 }

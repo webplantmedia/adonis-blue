@@ -1,7 +1,7 @@
 .display-sidebar .content-area {
 	float: left;
 	margin: 0 (-$size__site-sidebar-with-padding) 0 0;
-	width: $size__site-main;
+	width: 100%;
 }
 
 .no-sidebar .content-area {
@@ -29,7 +29,7 @@
 
 .site-footer {
 	clear: both;
-	width: $size__site-main;
+	width: 100%;
 }
 
 @media only screen and (max-device-width : 1024px) {
@@ -54,6 +54,7 @@
 		}
 	}
 }
+
 @media only screen and (max-device-width : $size__site-main-no-sidebar) {
 	#master {
 		.content-area {

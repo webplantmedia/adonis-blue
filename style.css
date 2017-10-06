@@ -1418,6 +1418,8 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 # Clearings
 --------------------------------------------------------------*/
+.footer-container:before,
+.footer-container:after,
 .all-posts:before,
 .all-posts:after,
 .top-header:before,
@@ -1441,6 +1443,7 @@ a:hover, a:active {
   table-layout: fixed;
 }
 
+.footer-container:after,
 .all-posts:after,
 .top-header:after,
 .site-boundary:after,
@@ -1456,15 +1459,12 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
-.widget {
-  margin: 0;
+#secondary .widget {
   margin-bottom: 42px;
   margin-bottom: 2.625rem;
-  /* Make sure select elements fit in widgets. */
-  /* Make sure select elements fit in widgets. */
 }
 
-.widget:before {
+#secondary .widget:before {
   height: 5px;
   background-color: #cccccc;
   width: 55px;
@@ -1475,6 +1475,12 @@ a:hover, a:active {
   margin-bottom: 2.5rem;
   vertical-align: top;
   content: " ";
+}
+
+.widget {
+  margin: 0;
+  /* Make sure select elements fit in widgets. */
+  /* Make sure select elements fit in widgets. */
 }
 
 .widget select {
@@ -2071,11 +2077,31 @@ a:hover, a:active {
   padding-bottom: 0.5em;
   font-size: 15px;
   font-size: 0.9375rem;
-  letter-spacing: .1em;
+  letter-spacing: .15em;
 }
 
 .site-info-wrapper .genericon {
   line-height: inherit;
+}
+
+.footer-widget-area {
+  overflow: hidden;
+}
+
+.footer-container {
+  padding-top: 60px;
+  padding-top: 3.75rem;
+  padding-bottom: 186px;
+  padding-bottom: 11.625rem;
+  margin-right: -80px;
+  margin-right: -5rem;
+}
+
+.footer-column {
+  width: 33.3333%;
+  float: left;
+  padding-right: 80px;
+  padding-right: 5rem;
 }
 
 /*--------------------------------------------------------------

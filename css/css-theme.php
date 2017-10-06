@@ -21,9 +21,11 @@ a:hover {
 	color: <?php echo $amd['primary_hover_color']; ?>; /*id:primary_hover_color*/
 }
 
+#master .site-footer.has-footer-widgets {
+	background-color: <?php echo $amd['secondary_color']; ?>; /*id:secondary_color*/
+}
 
-#master .site-info-wrapper,
-#master .site-info-wrapper a,
+#master .site-info-wrapper a:hover,
 #master .wp-caption-text,
 #master .woocommerce-result-count,
 #master .product_meta,
@@ -61,7 +63,8 @@ a:hover {
 	color: <?php echo $amd['text_light_color']; ?>; /*id:text_light_color*/
 }
 
-#master .site-info-wrapper a:hover,
+#master .site-info-wrapper,
+#master .site-info-wrapper a,
 #master .product_meta a:hover,
 #master .woocommerce-breadcrumb a:hover,
 #master .sd-social-icon .sd-content ul li a,
@@ -92,7 +95,7 @@ textarea {
 #master .sd-social-icon-text .sd-content ul li a,
 #master .sd-social-icon .sd-content ul li a,
 #master .content-divider .line,
-#master .widget:before,
+#master #secondary .widget:before,
 #master .button.alt,
 #master .button,
 #master .addresses .edit,

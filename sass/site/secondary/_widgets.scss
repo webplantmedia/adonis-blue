@@ -1,4 +1,6 @@
-.widget {
+#secondary .widget {
+	@include rem('margin-bottom',42px);
+
 	&:before {
 		height: 5px;
 		background-color: #cccccc;
@@ -10,9 +12,10 @@
 		vertical-align: top;
 		content: " ";
 	}
+}
 
+.widget {
 	margin: 0;
-	@include rem('margin-bottom',42px);
 
 	/* Make sure select elements fit in widgets. */
 	select {

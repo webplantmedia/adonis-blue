@@ -1,3 +1,5 @@
+.footer-container:before,
+.footer-container:after,
 .all-posts:before,
 .all-posts:after,
 .top-header:before,
@@ -19,6 +21,7 @@
 	@include clearfix;
 }
 
+.footer-container:after,
 .all-posts:after,
 .top-header:after,
 .site-boundary:after,
