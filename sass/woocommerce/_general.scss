@@ -131,6 +131,8 @@
 	.woocommerce div.product .woocommerce-product-rating {
 		margin-bottom: 0;
 	}
+	.woocommerce-review-link {
+	}
 	/*start*/
 	.woocommerce-store-notice,
 	p.demo_store {
@@ -149,7 +151,6 @@
 	}
 	.woocommerce div.product p.price,
 	.woocommerce div.product span.price {
-		color: $color__green;
 	}
 	.woocommerce div.product .stock {
 		color: $color__green;
@@ -223,7 +224,7 @@
 	}
 	.woocommerce div.product .woocommerce-tabs ul.tabs li a {
 		padding: 0 0 5px 0;
-		margin-right: 25px;
+		margin-right: 30px;
 		text-transform: uppercase;
 		@include rem('font-size',$font__medium-size);
 	}
@@ -354,7 +355,6 @@
 	.woocommerce ul.products li.product .button {
 	}
 	.woocommerce ul.products li.product .price {
-		color: $color__green;
 	}
 	.woocommerce ul.products li.product .price del {
 	}

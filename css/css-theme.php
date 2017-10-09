@@ -86,6 +86,9 @@ a:hover {
 	color: <?php echo $amd['text_light_color']; ?>; /*id:text_light_color*/
 }
 
+#master .woocommerce div.product p.price,
+#master .woocommerce div.product span.price,
+#master .woocommerce ul.products li.product .price,
 #master #add_payment_method #payment div.payment_box,
 #master .woocommerce-cart #payment div.payment_box,
 #master .woocommerce-checkout #payment div.payment_box,
