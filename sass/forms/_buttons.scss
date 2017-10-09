@@ -6,6 +6,7 @@ button {
 }
 
 #master {
+	.woocommerce #respond input#submit,
 	.woocommerce-pagination ul span,
 	.woocommerce-pagination ul a,
 	.comment-navigation .nav-links a,
@@ -46,6 +47,8 @@ button {
 		}
 	}
 
+	.woocommerce #respond input#submit:focus,
+	.woocommerce #respond input#submit:active,
 	.woocommerce-pagination ul a:focus,
 	.comment-navigation .nav-links a:focus,
 	.posts-navigation .nav-links a:focus,
@@ -64,6 +67,7 @@ button {
 		background: #252323;
 	}
 
+	.woocommerce #respond input#submit:active,
 	.woocommerce-pagination ul a:hover,
 	.comment-navigation .nav-links a:hover,
 	.posts-navigation .nav-links a:hover,

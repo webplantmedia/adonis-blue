@@ -164,6 +164,7 @@
 .comment-reply-title {
 	margin-top: 0;
 	margin-bottom: 70px;
+	display: block;
 }
 
 .comment-form .comment-form-comment {
@@ -337,6 +338,9 @@
 	}
 }
 
+.comment-reply-title,
+.logged-in-as,
 .comment-notes {
 	@include rem('font-size',$font__small-size);
+	margin-bottom: 0.7em;
 }

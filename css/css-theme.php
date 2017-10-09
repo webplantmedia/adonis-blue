@@ -126,6 +126,9 @@ textarea {
 	color: <?php echo $amd['text_color']; ?>; /*id:text_color*/
 }
 
+#master .woocommerce #respond input#submit,
+#master .woocommerce #respond input#submit:active,
+#master .woocommerce #respond input#submit:focus,
 #master .woocommerce small.note,
 #master .woocommerce-store-notice,
 #master p.demo_store,
@@ -168,6 +171,7 @@ textarea {
 	background-color: <?php echo $amd['primary_color']; ?>; /*id:primary_color*/
 }
 
+#master .woocommerce #respond input#submit:hover,
 #master .comment-reply-link:hover,
 #master .woocommerce-pagination ul span,
 #master .woocommerce-pagination ul a:hover,

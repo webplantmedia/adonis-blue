@@ -519,6 +519,7 @@ button {
   background: transparent;
 }
 
+#master .woocommerce #respond input#submit,
 #master .woocommerce-pagination ul span,
 #master .woocommerce-pagination ul a,
 #master .comment-navigation .nav-links a,
@@ -559,6 +560,8 @@ button {
   padding: 13px 30px;
 }
 
+#master .woocommerce #respond input#submit:focus,
+#master .woocommerce #respond input#submit:active,
 #master .woocommerce-pagination ul a:focus,
 #master .comment-navigation .nav-links a:focus,
 #master .posts-navigation .nav-links a:focus,
@@ -577,6 +580,7 @@ button {
   background: #252323;
 }
 
+#master .woocommerce #respond input#submit:active,
 #master .woocommerce-pagination ul a:hover,
 #master .comment-navigation .nav-links a:hover,
 #master .posts-navigation .nav-links a:hover,
@@ -2237,6 +2241,7 @@ a:hover, a:active {
 .comment-reply-title {
   margin-top: 0;
   margin-bottom: 70px;
+  display: block;
 }
 
 .comment-form .comment-form-comment {
@@ -2382,9 +2387,12 @@ a:hover, a:active {
   }
 }
 
+.comment-reply-title,
+.logged-in-as,
 .comment-notes {
   font-size: 15px;
   font-size: 0.9375rem;
+  margin-bottom: 0.7em;
 }
 
 /*--------------------------------------------------------------

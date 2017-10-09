@@ -302,6 +302,14 @@ WooCommerce styling
   text-decoration: none;
 }
 
+#master .product_meta > span {
+  margin-right: 2em;
+}
+
+#master .product_meta > span:last-child {
+  margin-right: 0;
+}
+
 #master .woocommerce ul.products li.product,
 #master .woocommerce-page ul.products li.product {
   text-align: center;
@@ -404,8 +412,16 @@ WooCommerce styling
   color: red;
 }
 
+#master .woocommerce div.product div.images {
+  margin-bottom: 5em;
+}
+
 #master .woocommerce div.product div.images .woocommerce-product-gallery__trigger {
   background: #ffffff;
+}
+
+#master .woocommerce div.product div.summary {
+  margin-bottom: 5em;
 }
 
 #master .woocommerce div.product .woocommerce-tabs ul.tabs {

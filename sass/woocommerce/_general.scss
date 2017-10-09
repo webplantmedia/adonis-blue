@@ -57,6 +57,15 @@
 			}
 		}
 	}
+	.product_meta {
+		> span {
+			margin-right: 2em;
+		}
+		
+		> span:last-child {
+			margin-right: 0;
+		}
+	}
 	.woocommerce ul.products li.product,
 	.woocommerce-page ul.products li.product {
 		text-align: center;
@@ -151,6 +160,7 @@
 	.woocommerce div.product .woocommerce-product-rating {
 	}
 	.woocommerce div.product div.images {
+		margin-bottom: 5em;
 	}
 	.woocommerce div.product div.images img {
 	}
@@ -188,6 +198,7 @@
 	.woocommerce div.product .woocommerce-product-gallery--columns-5 .flex-control-thumbs li:nth-child(5n+1) {
 	}
 	.woocommerce div.product div.summary {
+		margin-bottom: 5em;
 	}
 	.woocommerce div.product div.social {
 	}
