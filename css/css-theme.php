@@ -17,6 +17,11 @@ a:hover {
 	color: <?php echo $amd['primary_color']; ?>; /*id:primary_color*/
 }
 
+#master .woocommerce div.product .woocommerce-tabs ul.tabs li.active a,
+#master .woocommerce div.product .woocommerce-tabs ul.tabs li a:hover {
+	border-color: <?php echo $amd['primary_color']; ?>; /*id:primary_color*/
+}
+
 #master .entry-cat-meta span > a:hover {
 	color: <?php echo $amd['primary_hover_color']; ?>; /*id:primary_hover_color*/
 }
@@ -25,6 +30,19 @@ a:hover {
 	background-color: <?php echo $amd['secondary_color']; ?>; /*id:secondary_color*/
 }
 
+#master #add_payment_method .checkout .create-account small,
+#master .woocommerce-cart .checkout .create-account small,
+#master .woocommerce-checkout .checkout .create-account small,
+#master #add_payment_method .cart-collaterals .cart_totals table small,
+#master .woocommerce-cart .cart-collaterals .cart_totals table small,
+#master .woocommerce-checkout .cart-collaterals .cart_totals table small,
+#master #add_payment_method .cart-collaterals .cart_totals p smal,
+#master .woocommerce-cart .cart-collaterals .cart_totals p small,
+#master .woocommerce-checkout .cart-collaterals .cart_totals p small,
+#master .woocommerce #reviews #comments ol.commentlist li .meta,
+#master .woocommerce #reviews h2 small a,
+#master .woocommerce #reviews h2 small,
+#master	.woocommerce div.product .woocommerce-tabs ul.tabs li a,
 #master .comment-metadata,
 #master .comment-metadata a,
 #master .comment-metadata a:active,
@@ -68,6 +86,18 @@ a:hover {
 	color: <?php echo $amd['text_light_color']; ?>; /*id:text_light_color*/
 }
 
+#master #add_payment_method #payment div.payment_box,
+#master .woocommerce-cart #payment div.payment_box,
+#master .woocommerce-checkout #payment div.payment_box,
+#master .woocommerce-message::before,
+#master .woocommerce-message,
+#master .woocommerce form .form-row.woocommerce-validated .select2-container,
+#master .woocommerce form .form-row.woocommerce-validated input.input-text,
+#master .woocommerce form .form-row.woocommerce-validated select,
+#master .woocommerce div.product .woocommerce-tabs ul.tabs li a,
+#master .woocommerce div.product .woocommerce-tabs ul.tabs li a:hover,
+#master .product-span,
+#master .woocommerce .quantity input,
 #master .comment-metadata a:hover,
 #master .comment-form label,
 #master .comment-content,
@@ -96,6 +126,9 @@ textarea {
 	color: <?php echo $amd['text_color']; ?>; /*id:text_color*/
 }
 
+#master .woocommerce small.note,
+#master .woocommerce-store-notice,
+#master p.demo_store,
 #master .comment-reply-link,
 #master .woocommerce-pagination ul a,
 #master .comment-navigation .nav-links a,

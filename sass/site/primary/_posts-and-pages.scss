@@ -118,7 +118,7 @@
 		.archive-type {
 			font-style: italic;
 			@include rem('font-size',$font__main-size);
-			color: $color__dark-gray;
+			color: $color__gray;
 			display: block;
 			font-weight: bold;
 		}
@@ -126,7 +126,7 @@
 
 	.archive-description {
 		@include rem('font-size',$font__small-size);
-		color: $color__dark-gray;
+		color: $color__gray;
 
 		> *:first-child {
 			margin-top: 0;
@@ -155,7 +155,7 @@
 	.cat-bull-delim {
 		padding-left: .5em;
 		padding-right: .5em;
-		color: $color__dark-gray;
+		color: $color__gray;
 	}
 	
 	ul {
