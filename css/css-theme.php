@@ -128,6 +128,9 @@ optgroup,
 textarea {
 	color: <?php echo $amd['text_color']; ?>; /*id:text_color*/
 }
+#master .woocommerce a.remove {
+	color: <?php echo $amd['text_color']; ?> !important; /*id:text_color*/
+}
 
 #master .woocommerce #respond input#submit,
 #master .woocommerce #respond input#submit:active,

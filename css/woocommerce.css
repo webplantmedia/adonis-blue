@@ -399,13 +399,8 @@ WooCommerce styling
   color: #ffffff;
 }
 
-#master .woocommerce a.remove {
-  color: red !important;
-}
-
 #master .woocommerce a.remove:hover {
-  color: #ffffff !important;
-  background: red;
+  color: red !important;
 }
 
 #master .woocommerce div.product .stock {
@@ -561,11 +556,13 @@ WooCommerce styling
 }
 
 #master .woocommerce table.shop_table {
-  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-width: 0;
 }
 
 #master .woocommerce table.shop_table td {
-  border-top: 2px solid rgba(0, 0, 0, 0.1);
+  border-top: 2px solid #ececec;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 #master .woocommerce table.shop_table tbody th,
@@ -658,6 +655,19 @@ WooCommerce styling
 
 #master .woocommerce-error::before {
   color: red;
+}
+
+#master #add_payment_method table.cart .product-thumbnail a,
+#master .woocommerce-cart table.cart .product-thumbnail a,
+#master .woocommerce-checkout table.cart .product-thumbnail a {
+  display: block;
+}
+
+#master #add_payment_method table.cart img,
+#master .woocommerce-cart table.cart img,
+#master .woocommerce-checkout table.cart img {
+  width: 80px;
+  vertical-align: top;
 }
 
 #master #add_payment_method table.cart td.actions .coupon .input-text,

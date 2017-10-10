@@ -150,11 +150,9 @@
 		color: $color__white;
 	}
 	.woocommerce a.remove {
-		color: $color__red !important;
 	}
 	.woocommerce a.remove:hover {
-		color: $color__white !important;
-		background: $color__red;
+		color: $color__red !important;
 	}
 	.woocommerce div.product p.price,
 	.woocommerce div.product span.price {
@@ -608,12 +606,14 @@
 		// background: rgba(0, 0, 0, .025)
 	}
 	.woocommerce table.shop_table {
-		border: 2px solid rgba(0, 0, 0, .1);
+		border-width: 0;
 	}
 	.woocommerce table.shop_table th {
 	}
 	.woocommerce table.shop_table td {
-		border-top: 2px solid rgba(0, 0, 0, .1);
+		border-top: 2px solid $color__border;
+		padding-top: 20px;
+		padding-bottom: 20px;
 	}
 	.woocommerce table.shop_table td small {
 	}
@@ -980,10 +980,15 @@
 	#add_payment_method table.cart .product-thumbnail,
 	.woocommerce-cart table.cart .product-thumbnail,
 	.woocommerce-checkout table.cart .product-thumbnail {
+		a {
+			display: block;
+		}
 	}
 	#add_payment_method table.cart img,
 	.woocommerce-cart table.cart img,
 	.woocommerce-checkout table.cart img {
+		width: 80px;
+		vertical-align: top;
 	}
 	#add_payment_method table.cart td,
 	#add_payment_method table.cart th,
