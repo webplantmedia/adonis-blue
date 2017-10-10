@@ -733,7 +733,7 @@
 	}
 	.woocommerce .widget_shopping_cart .total,
 	.woocommerce.widget_shopping_cart .total {
-		border-top: 3px double $color__lightest-gray;
+		border-top: 3px double $color__border;
 	}
 	.woocommerce .widget_shopping_cart .total strong,
 	.woocommerce.widget_shopping_cart .total strong {
@@ -782,12 +782,13 @@
 	.woocommerce form .form-row.woocommerce-invalid label {
 		color: $color__red;
 	}
-	.woocommerce form .form-row.woocommerce-invalid .select2-container,
+	.woocommerce form .form-row.woocommerce-invalid .select2-container .select2-selection--single,
 	.woocommerce form .form-row.woocommerce-invalid input.input-text,
 	.woocommerce form .form-row.woocommerce-invalid select {
 		color: $color__red;
+		border: 2px solid $color__red;
 	}
-	.woocommerce form .form-row.woocommerce-validated .select2-container,
+	.woocommerce form .form-row.woocommerce-validated .select2-container .select2-selection--single,
 	.woocommerce form .form-row.woocommerce-validated input.input-text,
 	.woocommerce form .form-row.woocommerce-validated select {
 	}
@@ -800,8 +801,17 @@
 	.woocommerce form.checkout_coupon,
 	.woocommerce form.login,
 	.woocommerce form.register {
-		border: 1px solid $color__gray;
-		border-radius: 3px
+		border: 2px solid $color__border;
+		border-radius: 0;
+	}
+	.woocommerce form.checkout_coupon {
+		border: 0;
+		padding: 0;
+
+		p {
+			margin-bottom: 0;
+			padding: 0;
+		}
 	}
 	.woocommerce ul#shipping_method {
 	}
@@ -920,8 +930,9 @@
 	.woocommerce-error,
 	.woocommerce-info,
 	.woocommerce-message {
-		background-color: $color__lightest-gray;
-		border-top: 2px solid $color__border;
+		// background-color: $color__lightest-gray;
+		background: transparent;
+		border: 2px solid $color__border;
 	}
 	.woocommerce-error::after,
 	.woocommerce-error::before,
@@ -1127,13 +1138,15 @@
 	#add_payment_method #payment,
 	.woocommerce-cart #payment,
 	.woocommerce-checkout #payment {
-		background: $color__lightest-gray;
-		border-radius: 3px
+		background: transparent;
+		border-radius: 0
 	}
 	#add_payment_method #payment ul.payment_methods,
 	.woocommerce-cart #payment ul.payment_methods,
 	.woocommerce-checkout #payment ul.payment_methods {
-		border-bottom: 1px solid $color__gray;
+		border: 0;
+		background: transparent;
+		padding: 0;
 	}
 	#add_payment_method #payment ul.payment_methods::after,
 	#add_payment_method #payment ul.payment_methods::before,
@@ -1149,6 +1162,15 @@
 	#add_payment_method #payment ul.payment_methods li,
 	.woocommerce-cart #payment ul.payment_methods li,
 	.woocommerce-checkout #payment ul.payment_methods li {
+		padding: 30px 0;
+		border-bottom: 2px solid $color__border;
+	}
+	#add_payment_method #payment ul.payment_methods li label,
+	.woocommerce-cart #payment ul.payment_methods li label,
+	.woocommerce-checkout #payment ul.payment_methods li label {
+		text-transform: uppercase;
+		font-weight: bold;
+		@include rem('font-size',$font__medium-size);
 	}
 	#add_payment_method #payment ul.payment_methods li input,
 	.woocommerce-cart #payment ul.payment_methods li input,
@@ -1180,6 +1202,15 @@
 	#add_payment_method #payment div.payment_box,
 	.woocommerce-cart #payment div.payment_box,
 	.woocommerce-checkout #payment div.payment_box {
+		@include rem('font-size',$font__small-size);
+		background-color: transparent;
+		padding: 0;
+		margin: 0;
+
+		&:after,
+		&:before {
+			display: none;
+		}
 	}
 	#add_payment_method #payment div.payment_box input.input-text,
 	#add_payment_method #payment div.payment_box textarea,
@@ -1340,6 +1371,8 @@
 	#add_payment_method #payment .payment_method_paypal .about_paypal,
 	.woocommerce-cart #payment .payment_method_paypal .about_paypal,
 	.woocommerce-checkout #payment .payment_method_paypal .about_paypal {
+		@include rem('font-size',$font__tiny-size);
+		margin-left: 1em;
 	}
 	#add_payment_method #payment .payment_method_paypal img,
 	.woocommerce-cart #payment .payment_method_paypal img,

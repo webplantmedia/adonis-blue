@@ -593,7 +593,7 @@ WooCommerce styling
 
 #master .woocommerce .widget_shopping_cart .total,
 #master .woocommerce.widget_shopping_cart .total {
-  border-top: 3px double #f7f7f7;
+  border-top: 3px double #ececec;
 }
 
 #master .woocommerce form .form-row .required {
@@ -604,17 +604,28 @@ WooCommerce styling
   color: red;
 }
 
-#master .woocommerce form .form-row.woocommerce-invalid .select2-container,
+#master .woocommerce form .form-row.woocommerce-invalid .select2-container .select2-selection--single,
 #master .woocommerce form .form-row.woocommerce-invalid input.input-text,
 #master .woocommerce form .form-row.woocommerce-invalid select {
   color: red;
+  border: 2px solid red;
 }
 
 #master .woocommerce form.checkout_coupon,
 #master .woocommerce form.login,
 #master .woocommerce form.register {
-  border: 1px solid #cccccc;
-  border-radius: 3px;
+  border: 2px solid #ececec;
+  border-radius: 0;
+}
+
+#master .woocommerce form.checkout_coupon {
+  border: 0;
+  padding: 0;
+}
+
+#master .woocommerce form.checkout_coupon p {
+  margin-bottom: 0;
+  padding: 0;
 }
 
 #master .woocommerce ul.order_details li {
@@ -648,8 +659,8 @@ WooCommerce styling
 #master .woocommerce-error,
 #master .woocommerce-info,
 #master .woocommerce-message {
-  background-color: #f7f7f7;
-  border-top: 2px solid #ececec;
+  background: transparent;
+  border: 2px solid #ececec;
 }
 
 #master .woocommerce-message {
@@ -722,14 +733,58 @@ WooCommerce styling
 #master #add_payment_method #payment,
 #master .woocommerce-cart #payment,
 #master .woocommerce-checkout #payment {
-  background: #f7f7f7;
-  border-radius: 3px;
+  background: transparent;
+  border-radius: 0;
 }
 
 #master #add_payment_method #payment ul.payment_methods,
 #master .woocommerce-cart #payment ul.payment_methods,
 #master .woocommerce-checkout #payment ul.payment_methods {
-  border-bottom: 1px solid #cccccc;
+  border: 0;
+  background: transparent;
+  padding: 0;
+}
+
+#master #add_payment_method #payment ul.payment_methods li,
+#master .woocommerce-cart #payment ul.payment_methods li,
+#master .woocommerce-checkout #payment ul.payment_methods li {
+  padding: 30px 0;
+  border-bottom: 2px solid #ececec;
+}
+
+#master #add_payment_method #payment ul.payment_methods li label,
+#master .woocommerce-cart #payment ul.payment_methods li label,
+#master .woocommerce-checkout #payment ul.payment_methods li label {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 16px;
+  font-size: 1rem;
+}
+
+#master #add_payment_method #payment div.payment_box,
+#master .woocommerce-cart #payment div.payment_box,
+#master .woocommerce-checkout #payment div.payment_box {
+  font-size: 15px;
+  font-size: 0.9375rem;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+}
+
+#master #add_payment_method #payment div.payment_box:after, #master #add_payment_method #payment div.payment_box:before,
+#master .woocommerce-cart #payment div.payment_box:after,
+#master .woocommerce-cart #payment div.payment_box:before,
+#master .woocommerce-checkout #payment div.payment_box:after,
+#master .woocommerce-checkout #payment div.payment_box:before {
+  display: none;
+}
+
+#master #add_payment_method #payment .payment_method_paypal .about_paypal,
+#master .woocommerce-cart #payment .payment_method_paypal .about_paypal,
+#master .woocommerce-checkout #payment .payment_method_paypal .about_paypal {
+  font-size: 12px;
+  font-size: 0.75rem;
+  margin-left: 1em;
 }
 
 @media screen and (min-width: 769px) {

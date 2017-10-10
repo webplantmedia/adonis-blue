@@ -2,7 +2,7 @@
 	form label {
 		display: block;
 		margin-bottom: 7px;
-		font-size: 15px;
+		@include rem('font-size',$font__small-size);
 		font-weight: bold;
 		text-transform: uppercase;
 	}
@@ -14,7 +14,7 @@
 	form .forgetmenot label {
 		display: inline-block;
 		margin-bottom: 0;
-		font-size: 16px;
+		@include rem('font-size',$font__main-size);
 		font-weight: normal;
 		text-transform: none;
 	}
@@ -41,12 +41,13 @@
 		border-radius: 0;
 		outline: none;
 		background: #fff;
-		font-size: 16px;
+		@include rem('font-size',$font__main-size);
 		font-weight: normal;
 		text-transform: none;
 	}
 
 	select,
+	.select2-container .select2-selection--single,
 	.select2-choice {
 		height: 53px;
 		padding: 12px 46px 12px 12px;
@@ -59,7 +60,7 @@
 		background-repeat: no-repeat;
 		background-position: 94% center;
 		background-position: calc(100% - 20px) center;
-		font-size: 16px;
+		@include rem('font-size',$font__main-size);
 		font-weight: normal;
 		text-transform: none;
 
@@ -68,12 +69,18 @@
 		appearance: none;
 	}
 
+	.select2-selection__rendered {
+		padding: 0;
+	}
+
+	.select2-container .select2-selection--single,
 	.select2-container .select2-choice {
 		padding: 12px 46px 12px 12px;
 		border: 2px solid #ececec;
 		border-radius: 0;
 	}
 
+	.select2-container .select2-selection--single .select2-selection__arrow,
 	.select2-container .select2-choice .select2-arrow {
 		display: none;
 	}
@@ -82,7 +89,28 @@
 	}
 
 	.select2-search {
-		margin-top: 4px;
+		margin-top: 0;
+		padding: 0;
+	}
+
+	.select2-dropdown {
+		border: 0;
+		border-bottom: 2px solid $color__border;
+		border-radius: 0;
+		box-shadow: 0 1px 10px rgba(0, 0, 0, 0.08);
+	}
+
+	.select2-results__option {
+		padding-left: 12px;
+		padding-right: 12px;
+	}
+
+	.select2-search__field {
+		border-width: 0 !important;
+	}
+
+	.select2-results {
+		border-top: 2px solid $color__border;
 	}
 
 	.select-w-caret {
@@ -108,7 +136,7 @@
 		width: 43px;
 		height: 42px;
 		border: 2px solid #ececec;
-		font-size: 20px;
+		@include rem('font-size',$font__large-size);
 		line-height: 37px;
 		text-align: center;
 		pointer-events: none;
@@ -233,13 +261,13 @@
 	}
 
 	input[type="radio"]:checked:before {
-		font-size: 16px;
+		@include rem('font-size',$font__main-size);
 		line-height: 15px;
 	}
 
 	input[type="checkbox"]:checked:before {
 		margin-left: -6px;
-		font-size: 23px;
+		@include rem('font-size',$font__super-size);
 		line-height: 14px;
 	}
 
@@ -265,7 +293,7 @@
 		display: inline-block;
 		margin-bottom: 0;
 		margin-left: 10px;
-		font-size: 16px;
+		@include rem('font-size',$font__main-size);
 		font-weight: normal;
 		vertical-align: middle;
 		letter-spacing: 0;

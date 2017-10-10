@@ -548,6 +548,7 @@ button {
   /* transition: color 0.5s ease, background-color 0.5s ease; */
 }
 
+#master .woocommerce .checkout_coupon .input-text,
 #master .woocommerce .coupon .input-text {
   height: 50px;
   height: 3.125rem;
@@ -619,6 +620,7 @@ button {
   display: block;
   margin-bottom: 7px;
   font-size: 15px;
+  font-size: 0.9375rem;
   font-weight: bold;
   text-transform: uppercase;
 }
@@ -630,7 +632,8 @@ button {
 #master form .forgetmenot label {
   display: inline-block;
   margin-bottom: 0;
-  font-size: 16px;
+  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: normal;
   text-transform: none;
 }
@@ -657,12 +660,14 @@ button {
   border-radius: 0;
   outline: none;
   background: #fff;
-  font-size: 16px;
+  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: normal;
   text-transform: none;
 }
 
 #master select,
+#master .select2-container .select2-selection--single,
 #master .select2-choice {
   height: 53px;
   padding: 12px 46px 12px 12px;
@@ -675,7 +680,8 @@ button {
   background-repeat: no-repeat;
   background-position: 94% center;
   background-position: calc(100% - 20px) center;
-  font-size: 16px;
+  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: normal;
   text-transform: none;
   -webkit-appearance: none;
@@ -683,18 +689,45 @@ button {
   appearance: none;
 }
 
+#master .select2-selection__rendered {
+  padding: 0;
+}
+
+#master .select2-container .select2-selection--single,
 #master .select2-container .select2-choice {
   padding: 12px 46px 12px 12px;
   border: 2px solid #ececec;
   border-radius: 0;
 }
 
+#master .select2-container .select2-selection--single .select2-selection__arrow,
 #master .select2-container .select2-choice .select2-arrow {
   display: none;
 }
 
 #master .select2-search {
-  margin-top: 4px;
+  margin-top: 0;
+  padding: 0;
+}
+
+#master .select2-dropdown {
+  border: 0;
+  border-bottom: 2px solid #ececec;
+  border-radius: 0;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.08);
+}
+
+#master .select2-results__option {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+#master .select2-search__field {
+  border-width: 0 !important;
+}
+
+#master .select2-results {
+  border-top: 2px solid #ececec;
 }
 
 #master .select-w-caret {
@@ -721,6 +754,7 @@ button {
   height: 42px;
   border: 2px solid #ececec;
   font-size: 20px;
+  font-size: 1.25rem;
   line-height: 37px;
   text-align: center;
   pointer-events: none;
@@ -825,13 +859,15 @@ button {
 }
 
 #master input[type="radio"]:checked:before {
-  font-size: 16px;
+  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 15px;
 }
 
 #master input[type="checkbox"]:checked:before {
   margin-left: -6px;
-  font-size: 23px;
+  font-size: 24px;
+  font-size: 1.5rem;
   line-height: 14px;
 }
 
@@ -857,7 +893,8 @@ button {
   display: inline-block;
   margin-bottom: 0;
   margin-left: 10px;
-  font-size: 16px;
+  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: normal;
   vertical-align: middle;
   letter-spacing: 0;

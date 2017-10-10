@@ -30,6 +30,12 @@ a:hover {
 	background-color: <?php echo $amd['secondary_color']; ?>; /*id:secondary_color*/
 }
 
+#master #add_payment_method #payment .payment_method_paypal .about_paypal,
+#master .woocommerce-cart #payment .payment_method_paypal .about_paypal,
+#master .woocommerce-checkout #payment .payment_method_paypal .about_paypal,
+#master #add_payment_method #payment div.payment_box p,
+#master .woocommerce-cart #payment div.payment_box p,
+#master .woocommerce-checkout #payment div.payment_box p,
 #master #add_payment_method .checkout .create-account small,
 #master .woocommerce-cart .checkout .create-account small,
 #master .woocommerce-checkout .checkout .create-account small,
@@ -86,6 +92,7 @@ a:hover {
 	color: <?php echo $amd['text_light_color']; ?>; /*id:text_light_color*/
 }
 
+#master .select2-container .select2-selection__rendered,
 #master .woocommerce div.product p.price,
 #master .woocommerce div.product span.price,
 #master .woocommerce ul.products li.product .price,

@@ -35,6 +35,7 @@ button {
 	}
 
 	// inline buttons and input fields
+	.woocommerce .checkout_coupon .input-text,
 	.woocommerce .coupon .input-text {
 		@include rem('height',$button__height);
 	}
