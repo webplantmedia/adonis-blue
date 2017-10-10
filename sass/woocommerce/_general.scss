@@ -133,6 +133,13 @@
 	}
 	.woocommerce-review-link {
 	}
+	.woocommerce-loop-category__title mark {
+		background: transparent;
+		color: inherit;
+	}
+	a:hover .woocommerce-loop-category__title mark {
+		color: inherit;
+	}
 	/*start*/
 	.woocommerce-store-notice,
 	p.demo_store {

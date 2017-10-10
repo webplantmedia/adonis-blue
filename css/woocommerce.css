@@ -380,6 +380,15 @@ WooCommerce styling
   margin-bottom: 0;
 }
 
+#master .woocommerce-loop-category__title mark {
+  background: transparent;
+  color: inherit;
+}
+
+#master a:hover .woocommerce-loop-category__title mark {
+  color: inherit;
+}
+
 #master .woocommerce-store-notice,
 #master p.demo_store {
   color: #ffffff;
