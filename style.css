@@ -506,6 +506,13 @@ table {
   width: 100%;
 }
 
+table th {
+  font-size: 16px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
@@ -814,13 +821,13 @@ button {
   width: 16px;
   min-width: 16px;
   height: 16px;
-  margin-bottom: 4px;
   border: 2px solid #ececec;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
 }
 
+#master label > input[type="checkbox"] + span,
 #master input[type="checkbox"] + label {
   margin-left: 10px;
 }

@@ -147,6 +147,9 @@
 		width: 160px;
 		margin-right: .7em;
 	}
+	.woocommerce .wc-terms-and-conditions label {
+		cursor: pointer;
+	}
 	/*start*/
 	.woocommerce-store-notice,
 	p.demo_store {
@@ -1171,6 +1174,8 @@
 		text-transform: uppercase;
 		font-weight: bold;
 		@include rem('font-size',$font__medium-size);
+		display: inline;
+		cursor: pointer;
 	}
 	#add_payment_method #payment ul.payment_methods li input,
 	.woocommerce-cart #payment ul.payment_methods li input,
@@ -1198,6 +1203,9 @@
 	#add_payment_method #payment div.form-row,
 	.woocommerce-cart #payment div.form-row,
 	.woocommerce-checkout #payment div.form-row {
+		padding: 0;
+		margin: 0;
+		@include rem('margin-top',50px);
 	}
 	#add_payment_method #payment div.payment_box,
 	.woocommerce-cart #payment div.payment_box,

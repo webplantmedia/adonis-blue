@@ -397,6 +397,10 @@ WooCommerce styling
   margin-right: .7em;
 }
 
+#master .woocommerce .wc-terms-and-conditions label {
+  cursor: pointer;
+}
+
 #master .woocommerce-store-notice,
 #master p.demo_store {
   color: #ffffff;
@@ -759,6 +763,17 @@ WooCommerce styling
   font-weight: bold;
   font-size: 16px;
   font-size: 1rem;
+  display: inline;
+  cursor: pointer;
+}
+
+#master #add_payment_method #payment div.form-row,
+#master .woocommerce-cart #payment div.form-row,
+#master .woocommerce-checkout #payment div.form-row {
+  padding: 0;
+  margin: 0;
+  margin-top: 50px;
+  margin-top: 3.125rem;
 }
 
 #master #add_payment_method #payment div.payment_box,

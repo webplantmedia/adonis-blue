@@ -1,4 +1,10 @@
 table {
 	margin: 0 0 1.5em;
 	width: 100%;
+
+	th {
+		@include rem('font-size',$font__medium-size);
+		text-transform: uppercase;
+		font-weight: bold;
+	}
 }
