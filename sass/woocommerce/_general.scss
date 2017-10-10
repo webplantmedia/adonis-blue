@@ -44,6 +44,7 @@
 		@include rem('font-size',$font__small_size);
 	}
 
+	.reset_variations,
 	.product_meta,
 	.woocommerce-breadcrumb {
 		text-transform: uppercase;
@@ -132,6 +133,10 @@
 		margin-bottom: 0;
 	}
 	.woocommerce-review-link {
+		@include rem('font-size',$font__small-size);
+		text-transform: uppercase;
+		font-weight: bold;
+		text-decoration: none;
 	}
 	.woocommerce-loop-category__title mark {
 		background: transparent;
@@ -149,6 +154,10 @@
 	}
 	.woocommerce .wc-terms-and-conditions label {
 		cursor: pointer;
+	}
+	.woocommerce .comment-reply-title {
+		@include rem('font-size',$font__small-size);
+		margin-bottom: 0.7em;
 	}
 	/*start*/
 	.woocommerce-store-notice,
@@ -736,7 +745,6 @@
 	}
 	.woocommerce .widget_shopping_cart .total,
 	.woocommerce.widget_shopping_cart .total {
-		border-top: 3px double $color__border;
 	}
 	.woocommerce .widget_shopping_cart .total strong,
 	.woocommerce.widget_shopping_cart .total strong {
@@ -1167,6 +1175,10 @@
 	.woocommerce-checkout #payment ul.payment_methods li {
 		padding: 30px 0;
 		border-bottom: 2px solid $color__border;
+
+		&:first-child {
+			padding-top: 0;
+		}
 	}
 	#add_payment_method #payment ul.payment_methods li label,
 	.woocommerce-cart #payment ul.payment_methods li label,

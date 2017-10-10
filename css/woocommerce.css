@@ -288,6 +288,7 @@ WooCommerce styling
   font-size: 0.9375rem;
 }
 
+#master .reset_variations,
 #master .product_meta,
 #master .woocommerce-breadcrumb {
   text-transform: uppercase;
@@ -297,6 +298,7 @@ WooCommerce styling
   font-size: 0.75rem;
 }
 
+#master .reset_variations a:hover,
 #master .product_meta a:hover,
 #master .woocommerce-breadcrumb a:hover {
   text-decoration: none;
@@ -380,6 +382,14 @@ WooCommerce styling
   margin-bottom: 0;
 }
 
+#master .woocommerce-review-link {
+  font-size: 15px;
+  font-size: 0.9375rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: none;
+}
+
 #master .woocommerce-loop-category__title mark {
   background: transparent;
   color: inherit;
@@ -399,6 +409,12 @@ WooCommerce styling
 
 #master .woocommerce .wc-terms-and-conditions label {
   cursor: pointer;
+}
+
+#master .woocommerce .comment-reply-title {
+  font-size: 15px;
+  font-size: 0.9375rem;
+  margin-bottom: 0.7em;
 }
 
 #master .woocommerce-store-notice,
@@ -595,11 +611,6 @@ WooCommerce styling
   border-left: 2px solid rgba(0, 0, 0, 0.1);
 }
 
-#master .woocommerce .widget_shopping_cart .total,
-#master .woocommerce.widget_shopping_cart .total {
-  border-top: 3px double #ececec;
-}
-
 #master .woocommerce form .form-row .required {
   color: red;
 }
@@ -754,6 +765,12 @@ WooCommerce styling
 #master .woocommerce-checkout #payment ul.payment_methods li {
   padding: 30px 0;
   border-bottom: 2px solid #ececec;
+}
+
+#master #add_payment_method #payment ul.payment_methods li:first-child,
+#master .woocommerce-cart #payment ul.payment_methods li:first-child,
+#master .woocommerce-checkout #payment ul.payment_methods li:first-child {
+  padding-top: 0;
 }
 
 #master #add_payment_method #payment ul.payment_methods li label,

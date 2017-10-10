@@ -7,6 +7,12 @@ a {
 	color: <?php echo $amd['link_color']; ?>; /*id:link_color*/
 }
 
+#master h1 a:hover,
+#master h2 a:hover,
+#master h3 a:hover,
+#master h4 a:hover,
+#master h5 a:hover,
+#master h6 a:hover,
 #master .post-navigation a:hover .post-title,
 #master .widget ul a:hover,
 a:hover {
@@ -28,6 +34,21 @@ a:hover {
 
 #master .site-footer.has-footer-widgets {
 	background-color: <?php echo $amd['secondary_color']; ?>; /*id:secondary_color*/
+}
+
+#master h1,
+#master h2,
+#master h3,
+#master h4,
+#master h5,
+#master h6,
+#master h1 a,
+#master h2 a,
+#master h3 a,
+#master h4 a,
+#master h5 a,
+#master h6 a {
+	color: <?php echo $amd['heading_color']; ?>; /*id:heading_color*/
 }
 
 #master #add_payment_method #payment .payment_method_paypal .about_paypal,
@@ -57,6 +78,11 @@ a:hover {
 #master .site-info-wrapper a:hover,
 #master .wp-caption-text,
 #master .woocommerce-result-count,
+#master .reset_variations,
+#master .reset_variations a,
+#master .reset_variations a:active,
+#master .reset_variations a:focus,
+#master .reset_variations a:visited,
 #master .product_meta,
 #master .woocommerce-breadcrumb,
 #master .product_meta a,
@@ -113,6 +139,7 @@ a:hover {
 #master .comment-content,
 #master .site-info-wrapper,
 #master .site-info-wrapper a,
+#master .reset_variations a:hover,
 #master .product_meta a:hover,
 #master .woocommerce-breadcrumb a:hover,
 #master .sd-social-icon .sd-content ul li a,

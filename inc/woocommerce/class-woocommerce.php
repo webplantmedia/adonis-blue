@@ -61,7 +61,7 @@ if ( ! class_exists( 'AngieMakesDesign_WooCommerce' ) ) :
 			// add_action( 'woocommerce_checkout_after_order_review', 'woocommerce_checkout_payment', 20 );
 
 			// Add header for payment info.
-			// add_action( 'woocommerce_review_order_before_payment', array( $this, 'angiemakesdesign_before_shipping_title' ), 10 );
+			add_action( 'woocommerce_review_order_before_payment', array( $this, 'angiemakesdesign_before_shipping_title' ), 10 );
 
 			// remove default coupon placement and readd under header.
 			// remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 );
@@ -332,7 +332,7 @@ if ( ! class_exists( 'AngieMakesDesign_WooCommerce' ) ) :
 		 *  Add header for payment info
 		 */
 		function angiemakesdesign_before_shipping_title() {
-			echo '<h2 id="payment_method_heading">' . esc_html__( 'Payment info', 'angiemakesdesign' ) . '</h3>';
+			echo '<h3 id="payment_method_heading">' . esc_html__( 'Payment info', 'angiemakesdesign' ) . '</h3>';
 		}
 
 		/**
