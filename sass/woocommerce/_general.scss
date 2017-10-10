@@ -614,6 +614,11 @@
 	}
 	.woocommerce table.shop_table {
 		border-width: 0;
+
+		td.actions {
+			padding-left: 0;
+			padding-right: 0;
+		}
 	}
 	.woocommerce table.shop_table th {
 	}
@@ -621,6 +626,7 @@
 		border-top: 2px solid $color__border;
 		padding-top: 20px;
 		padding-bottom: 20px;
+		background: transparent;
 	}
 	.woocommerce table.shop_table td small {
 	}
@@ -630,7 +636,8 @@
 	.woocommerce table.shop_table tbody th,
 	.woocommerce table.shop_table tfoot td,
 	.woocommerce table.shop_table tfoot th {
-		border-top: 2px solid rgba(0, 0, 0, .1)
+		border-top: 2px solid $color__border;
+		vertical-align: middle;
 	}
 	.woocommerce table.my_account_orders {
 	}
@@ -1007,7 +1014,6 @@
 	#add_payment_method table.cart td.actions .coupon .input-text,
 	.woocommerce-cart table.cart td.actions .coupon .input-text,
 	.woocommerce-checkout table.cart td.actions .coupon .input-text {
-		border: 2px solid $color__gray;
 	}
 	#add_payment_method table.cart input,
 	.woocommerce-cart table.cart input,
@@ -1031,10 +1037,12 @@
 	#add_payment_method .wc-proceed-to-checkout a.checkout-button,
 	.woocommerce-cart .wc-proceed-to-checkout a.checkout-button,
 	.woocommerce-checkout .wc-proceed-to-checkout a.checkout-button {
+		display: block;
 	}
 	#add_payment_method .cart-collaterals .shipping_calculator .button,
 	.woocommerce-cart .cart-collaterals .shipping_calculator .button,
 	.woocommerce-checkout .cart-collaterals .shipping_calculator .button {
+		display: block;
 	}
 	#add_payment_method .cart-collaterals .shipping_calculator .shipping-calculator-button::after,
 	.woocommerce-cart .cart-collaterals .shipping_calculator .shipping-calculator-button::after,
@@ -1085,7 +1093,7 @@
 	.woocommerce-cart .cart-collaterals .cart_totals tr th,
 	.woocommerce-checkout .cart-collaterals .cart_totals tr td,
 	.woocommerce-checkout .cart-collaterals .cart_totals tr th {
-		border-top: 1px solid $color__lightest-gray
+		border-top: 2px solid $color__border;
 	}
 	#add_payment_method .cart-collaterals .cross-sells ul.products li.product,
 	.woocommerce-cart .cart-collaterals .cross-sells ul.products li.product,
