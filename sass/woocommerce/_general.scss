@@ -140,6 +140,13 @@
 	a:hover .woocommerce-loop-category__title mark {
 		color: inherit;
 	}
+	.woocommerce #content table.cart td.actions .input-text,
+	.woocommerce table.cart td.actions .input-text,
+	.woocommerce-page #content table.cart td.actions .input-text,
+	.woocommerce-page table.cart td.actions .input-text {
+		width: 160px;
+		margin-right: .7em;
+	}
 	/*start*/
 	.woocommerce-store-notice,
 	p.demo_store {
@@ -1368,5 +1375,19 @@
 @media screen and (min-width: 769px) {
 	.display-sidebar.woocommerce-page ul.products li.product {
 		width: 30.8%;
+	}
+}
+@media screen and (max-width: 768px) {
+	#master {
+		.woocommerce #content table.cart td.actions .input-text,
+		.woocommerce table.cart td.actions .input-text,
+		.woocommerce-page #content table.cart td.actions .input-text,
+		.woocommerce-page table.cart td.actions .input-text {
+			width: 100%;
+			margin-bottom: 0.5em;
+		}
+		.woocommerce .coupon input.button {
+			width: 100% !important;
+		}
 	}
 }

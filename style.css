@@ -548,6 +548,11 @@ button {
   /* transition: color 0.5s ease, background-color 0.5s ease; */
 }
 
+#master .woocommerce .coupon .input-text {
+  height: 50px;
+  height: 3.125rem;
+}
+
 #master #secondary .button.alt,
 #master #secondary .button,
 #master #secondary .addresses .edit,
