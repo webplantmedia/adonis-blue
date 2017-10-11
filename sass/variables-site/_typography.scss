@@ -23,3 +23,4 @@ $font__line-height-menu-icon: floor($font__medium-size * $font__line-height-body
 $font__line-height-pagination-icon: floor($font__main-size + 32px); // top and bottom button padding
 
 $button__height: floor($font__main-size + 32px);
+$table__cell-height: floor($font__main-size * $font__line-height-body) + 40px;

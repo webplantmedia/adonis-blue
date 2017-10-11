@@ -502,7 +502,7 @@ dd {
 ## Tables
 --------------------------------------------------------------*/
 table {
-  margin: 0 0 1.5em;
+  margin: 0 0 2.5em;
   width: 100%;
 }
 
@@ -511,6 +511,26 @@ table th {
   font-size: 1rem;
   text-transform: uppercase;
   font-weight: bold;
+}
+
+.entry-content > table th,
+.entry-content > table td {
+  padding: 20px 12px;
+  border-bottom: 2px solid #ececec;
+  text-align: left;
+}
+
+@media screen and (max-width: 600px) {
+  .entry-content > table tr:nth-child(2n-1) {
+    background-color: #f7f7f7;
+  }
+  .entry-content > table th,
+  .entry-content > table td {
+    display: block;
+    text-align: center;
+    width: 100%;
+    min-height: 72px;
+  }
 }
 
 /*--------------------------------------------------------------

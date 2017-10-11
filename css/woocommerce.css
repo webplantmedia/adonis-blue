@@ -417,6 +417,12 @@ WooCommerce styling
   margin-bottom: 0.7em;
 }
 
+#master .woocommerce-terms-and-conditions {
+  background: #f7f7f7;
+  box-shadow: none;
+  border: 2px solid #ececec;
+}
+
 #master .woocommerce-store-notice,
 #master p.demo_store {
   color: #ffffff;
@@ -433,6 +439,10 @@ WooCommerce styling
 
 #master .woocommerce div.product .stock {
   color: green;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-size: 0.9375rem;
+  font-weight: bold;
 }
 
 #master .woocommerce div.product .out-of-stock {
@@ -592,8 +602,13 @@ WooCommerce styling
   padding-right: 0;
 }
 
+#master .woocommerce table.shop_table th {
+  border-bottom: 0;
+}
+
 #master .woocommerce table.shop_table td {
   border-top: 2px solid #ececec;
+  border-bottom: 0;
   padding-top: 20px;
   padding-bottom: 20px;
   background: transparent;

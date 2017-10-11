@@ -159,6 +159,11 @@
 		@include rem('font-size',$font__small-size);
 		margin-bottom: 0.7em;
 	}
+	.woocommerce-terms-and-conditions {
+		background: $color__lightest-gray;
+		box-shadow: none;
+		border: 2px solid $color__border;
+	}
 	/*start*/
 	.woocommerce-store-notice,
 	p.demo_store {
@@ -178,6 +183,9 @@
 	}
 	.woocommerce div.product .stock {
 		color: $color__green;
+		text-transform: uppercase;
+		@include rem('font-size',$font__small-size);
+		font-weight: bold;
 	}
 	.woocommerce div.product .out-of-stock {
 		color: $color__red;
@@ -633,9 +641,11 @@
 		}
 	}
 	.woocommerce table.shop_table th {
+		border-bottom: 0;
 	}
 	.woocommerce table.shop_table td {
 		border-top: 2px solid $color__border;
+		border-bottom: 0;
 		padding-top: 20px;
 		padding-bottom: 20px;
 		background: transparent;
