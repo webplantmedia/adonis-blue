@@ -928,14 +928,6 @@ button {
   text-transform: none;
 }
 
-#master :-moz-placeholder {
-  /* Firefox 18- */
-}
-
-#master ::-moz-placeholder {
-  /* Firefox 19+ */
-}
-
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
