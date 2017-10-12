@@ -193,6 +193,21 @@
 	text-transform: uppercase;
 	font-weight: normal;
 	@include rem('margin-top',35px);
+	color: $color__text-light;
+	
+	a {
+		&,
+		&:visited,
+		&:focus,
+		&:active {
+			color: $color__text-light;
+		}
+		
+		&:hover,
+		&:hover time {
+			color: $color__text;
+		}
+	}
 }
 
 .entry-footer {
@@ -200,6 +215,26 @@
 	@include rem('margin-top',40px);
 	text-transform: uppercase;
 	font-weight: bold;
+	color: $color__text-light;
+
+	a {
+		&,
+		&:active,
+		&:visited,
+		&:focus {
+			color: $color__text-light;
+		}
+	}
+
+	span {
+		color: $color__text-light;
+
+		a {
+			&:hover {
+				color: $color__text;
+			}
+		}
+	}
 
 	span:after {
 		content: " | ";

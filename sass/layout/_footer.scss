@@ -14,9 +14,18 @@
 	padding-bottom: 0.5em;
 	@include rem('font-size',$font__small-size);
 	letter-spacing: .15em;
+	color: $color__text;
 
 	.genericon {
 		line-height: inherit;
+	}
+	
+	a {
+		color: $color__text;
+
+		&:hover {
+			color: $color__text-light;
+		}
 	}
 }
 

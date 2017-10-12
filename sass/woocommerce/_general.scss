@@ -25,6 +25,7 @@
 		text-align: center;
 		border: none;
 		background: none;
+		color: $color__text;
 	}
 	.product-span {
 		float: left;
@@ -36,12 +37,14 @@
 		position: absolute;
 		top: 0;
 		left: 0;
+		color: $color__text;
 	}
 	.woocommerce div.product div.images .woocommerce-product-gallery__wrapper {
 		margin: 0;
 	}
 	.woocommerce-result-count {
 		@include rem('font-size',$font__small_size);
+		color: $color__text-light;
 	}
 
 	.reset_variations,
@@ -51,10 +54,14 @@
 		font-weight: bold;
 		vertical-align: middle;
 		@include rem('font-size',$font__tiny_size);
+		color: $color__text-light;
 
 		a {
+			color: $color__text-light;
+
 			&:hover {
 				text-decoration: none;
+				color: $color__text;
 			}
 		}
 	}
@@ -174,12 +181,14 @@
 		color: $color__white;
 	}
 	.woocommerce a.remove {
+		color: $color__text-dark !important;
 	}
 	.woocommerce a.remove:hover {
 		color: $color__red !important;
 	}
 	.woocommerce div.product p.price,
 	.woocommerce div.product span.price {
+		color: $color__text;
 	}
 	.woocommerce div.product .stock {
 		color: $color__green;
@@ -259,6 +268,7 @@
 		margin-right: 30px;
 		text-transform: uppercase;
 		@include rem('font-size',$font__medium-size);
+		color: $color__text;
 	}
 	.woocommerce div.product .woocommerce-tabs ul.tabs li:last-child a {
 		margin-right: 0;
@@ -266,6 +276,7 @@
 	.woocommerce div.product .woocommerce-tabs ul.tabs li a:hover {
 		border-bottom-width: 2px;
 		border-bottom-style: solid;
+		color: $color__text;
 	}
 	.woocommerce div.product .woocommerce-tabs ul.tabs li.active {
 	}
@@ -387,6 +398,7 @@
 	.woocommerce ul.products li.product .button {
 	}
 	.woocommerce ul.products li.product .price {
+		color: $color__text;
 	}
 	.woocommerce ul.products li.product .price del {
 	}
@@ -508,8 +520,10 @@
 	}
 	.woocommerce #reviews h2 small {
 		@include rem('font-size',$font__small-size);
+		color: $color__text-light;
 	}
 	.woocommerce #reviews h2 small a {
+		color: $color__text-light;
 	}
 	.woocommerce #reviews h3 {
 	}
@@ -535,6 +549,7 @@
 	.woocommerce #reviews #comments ol.commentlist li {
 	}
 	.woocommerce #reviews #comments ol.commentlist li .meta {
+		color: $color__text-light;
 	}
 	.woocommerce #reviews #comments ol.commentlist li img.avatar {
 		background: transparent;
@@ -570,8 +585,11 @@
 	}
 	.woocommerce .star-rating {
 	}
+	.woocommerce a:hover .star-rating,
+	.woocommerce a:hover .star-rating::before,
+	.woocommerce .star-rating,
 	.woocommerce .star-rating::before {
-		color: $color__gray;
+		color: $color__text;
 	}
 	.woocommerce .star-rating span {
 	}
@@ -809,6 +827,11 @@
 		color: $color__red;
 		border: 2px solid $color__red;
 	}
+	.woocommerce form .form-row.woocommerce-validated .select2-container,
+	.woocommerce form .form-row.woocommerce-validated input.input-text,
+	.woocommerce form .form-row.woocommerce-validated select {
+		color: $color__text;
+	}
 	.woocommerce form .form-row.woocommerce-validated .select2-container .select2-selection--single,
 	.woocommerce form .form-row.woocommerce-validated input.input-text,
 	.woocommerce form .form-row.woocommerce-validated select {
@@ -982,8 +1005,10 @@
 	}
 	.woocommerce-message {
 		border-top-color: $color__border;
+		color: $color__text;
 	}
 	.woocommerce-message::before {
+		color: $color__text;
 	}
 	.woocommerce-info {
 		border-top-color: $color__border;
@@ -1083,6 +1108,7 @@
 	#add_payment_method .cart-collaterals .cart_totals p small,
 	.woocommerce-cart .cart-collaterals .cart_totals p small,
 	.woocommerce-checkout .cart-collaterals .cart_totals p small {
+		color: $color__text-light;
 	}
 	#add_payment_method .cart-collaterals .cart_totals table,
 	.woocommerce-cart .cart-collaterals .cart_totals table,
@@ -1109,6 +1135,7 @@
 	#add_payment_method .cart-collaterals .cart_totals table small,
 	.woocommerce-cart .cart-collaterals .cart_totals table small,
 	.woocommerce-checkout .cart-collaterals .cart_totals table small {
+		color: $color__text-light;
 	}
 	#add_payment_method .cart-collaterals .cart_totals table select,
 	.woocommerce-cart .cart-collaterals .cart_totals table select,
@@ -1147,6 +1174,7 @@
 	.woocommerce-cart .checkout .create-account small,
 	.woocommerce-checkout .checkout .create-account small {
 		@include rem('font-size',$font__tiny-size);
+		color: $color__text-light;
 	}
 	#add_payment_method .checkout div.shipping-address,
 	.woocommerce-cart .checkout div.shipping-address,
@@ -1236,6 +1264,7 @@
 		background-color: transparent;
 		padding: 0;
 		margin: 0;
+		color: $color__text;
 
 		&:after,
 		&:before {
@@ -1390,6 +1419,11 @@
 	.woocommerce-cart #payment div.payment_box .form-row,
 	.woocommerce-checkout #payment div.payment_box .form-row {
 	}
+	#add_payment_method #payment div.payment_box p,
+	.woocommerce-cart #payment div.payment_box p,
+	.woocommerce-checkout #payment div.payment_box p {
+		color: $color__text-light;
+	}
 	#add_payment_method #payment div.payment_box p:last-child,
 	.woocommerce-cart #payment div.payment_box p:last-child,
 	.woocommerce-checkout #payment div.payment_box p:last-child {
@@ -1403,6 +1437,7 @@
 	.woocommerce-checkout #payment .payment_method_paypal .about_paypal {
 		@include rem('font-size',$font__tiny-size);
 		margin-left: 1em;
+		color: $color__text-light;
 	}
 	#add_payment_method #payment .payment_method_paypal img,
 	.woocommerce-cart #payment .payment_method_paypal img,

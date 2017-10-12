@@ -68,6 +68,7 @@
 }
 
 .comment-metadata a {
+	color: $color__text-light;
 }
 
 .comment-metadata a:hover,
@@ -75,6 +76,9 @@
 .comment-metadata a:active {
 	color: inherit;
 	text-decoration: none;
+}
+.comment-metadata a:hover {
+	color: $color__text;
 }
 
 .comment .avatar {
@@ -109,6 +113,7 @@
 	margin-left: 100px;
 	padding-top: 10px;
 	@include rem('font-size',$font__main-size);
+	color: $color__text;
 }
 
 @media (max-width: 959px) {
@@ -190,6 +195,7 @@
 }
 
 .comment-form label {
+	color: $color__text;
 }
 
 @media screen and (max-width: 959px) {

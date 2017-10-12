@@ -8,6 +8,7 @@
 		@include rem('font-size',$font__tiny_size);
 		text-transform: uppercase;
 		font-weight: bold;
+		color: $color__text-light;
 
 		&:before {
 			border-top: 2px solid $color__border;
@@ -19,8 +20,12 @@
 	}
 
 	.sd-social-icon {
-		.sd-content ul li a:before {
-			color: $color__white !important;
+		.sd-content ul li a {
+			color: $color__text;
+
+			&:before {
+				color: $color__white !important;
+			}
 		}
 	}
 

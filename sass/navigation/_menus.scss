@@ -90,6 +90,10 @@
 			background-color: $color__border;
 		}
 	}
+	
+	a {
+		color: $color__text;
+	}
 }
 
 .top-mobile-header {
@@ -117,6 +121,8 @@
 	}
 
 	i {
+		vertical-align: middle;
+
 		&:before {
 			content: "\f419";
 			@include rem('font-size',$font__super-size);
@@ -125,6 +131,11 @@
 
 	&:hover {
 		background: none;
+	}
+
+	&,
+	&:hover {
+		color: $color__text;
 	}
 }
 
@@ -148,6 +159,14 @@
 					text-transform: uppercase;
 					@include rem('font-size',$font__xsmall-size);
 					font-weight: bold;
+
+					&,
+					&:hover,
+					&:active,
+					&:visited,
+					&:focus {
+						color: $color__text-light;
+					}
 				}
 			}
 		}
@@ -268,6 +287,14 @@
 				&:before {
 					line-height: $font__line-height-mobile-menu;
 				}
+
+				&,
+				&:hover,
+				&:active,
+				&:visited,
+				&:focus {
+					color: $color__text;
+				}
 			}
 
 			.current_page_ancestor > a,
@@ -285,6 +312,22 @@
 		.top-mobile-header,
 		.main-menu {
 			display: block;
+		}
+
+		.top-mobile-header {
+			a {
+				&,
+				&:hover,
+				&:focus,
+				&:active,
+				&:visited {
+					color: $color__text-light;
+				}
+			}
+
+			.focus > a {
+				color: $color__text;
+			}
 		}
 	}
 
@@ -309,6 +352,12 @@
 		@include rem('padding-bottom',70px);
 		border-bottom: 2px solid $color__border;
 		overflow: hidden;
+	}
+}
+
+.post-navigation {
+	.meta-nav {
+		color: $color__text;
 	}
 }
 
@@ -349,6 +398,7 @@
 
 		&.post-title {
 			@include rem('font-size',$font__small_size);
+			color: $color__text-light;
 		}
 	}
 

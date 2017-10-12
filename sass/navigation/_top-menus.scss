@@ -89,6 +89,23 @@
 			}
 		}
 	}
+	
+	a {
+		&,
+		&:focus,
+		&:active,
+		&:visited {
+			color: $color__text-light;
+		}
+	}
+	
+	.menu {
+		a {
+			&:hover {
+				color: $color__text;
+			}
+		}
+	}
 }
 
 @media screen and (max-width: $size__menu-collapse-width) {

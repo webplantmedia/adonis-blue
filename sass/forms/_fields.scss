@@ -72,6 +72,7 @@
 	}
 
 	.select2-selection__rendered {
+		color: $color__text;
 		padding: 0;
 	}
 
@@ -301,4 +302,20 @@
 		letter-spacing: 0;
 		text-transform: none;
 	}
+}
+
+::-webkit-input-placeholder {
+	color: $color__text-light;
+}
+
+:-moz-placeholder {
+	color: $color__text-light;
+}
+
+::-moz-placeholder {
+	color: $color__text-light;
+}
+
+:-ms-input-placeholder {
+	color: $color__text-light;
 }

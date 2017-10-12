@@ -16,6 +16,7 @@ Jetpack styling
   font-size: 0.75rem;
   text-transform: uppercase;
   font-weight: bold;
+  color: #959595;
 }
 
 #master div.sharedaddy h3.sd-title:before {
@@ -24,6 +25,10 @@ Jetpack styling
 
 #master .sd-content ul {
   margin: 0 !important;
+}
+
+#master .sd-social-icon .sd-content ul li a {
+  color: #6d686c;
 }
 
 #master .sd-social-icon .sd-content ul li a:before {
