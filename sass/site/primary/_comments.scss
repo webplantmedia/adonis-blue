@@ -127,7 +127,7 @@
 
 .comment-list > .comment:not(.parent) > .comment-body {
 	padding-bottom: 45px;
-	border-top: 2px solid #ececec;
+	border-top: 2px solid $color__border;
 }
 
 .comment-list .parent > .comment-body .comment-content,
@@ -137,7 +137,7 @@
 
 .comment-list .comment-body {
 	padding-bottom: 27px;
-	border-top: 2px solid #ececec;
+	border-top: 2px solid $color__border;
 }
 
 @media screen and (max-width: 959px) {

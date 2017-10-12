@@ -35,7 +35,7 @@
 	input[type="datetime-local"],
 	input[type="color"],
 	textarea {
-		border: 2px solid #ececec;
+		border: 2px solid $color__form-border;
 		-webkit-border-radius: 0;
 		-moz-border-radius: 0;
 		border-radius: 0;
@@ -51,7 +51,7 @@
 	.select2-choice {
 		height: 53px;
 		padding: 12px 46px 12px 12px;
-		border: 2px solid #ececec;
+		border: 2px solid $color__form-border;
 		-webkit-border-radius: 0;
 		-moz-border-radius: 0;
 		border-radius: 0;
@@ -76,7 +76,7 @@
 	.select2-container .select2-selection--single,
 	.select2-container .select2-choice {
 		padding: 12px 46px 12px 12px;
-		border: 2px solid #ececec;
+		border: 2px solid $color__form-border;
 		border-radius: 0;
 	}
 
@@ -123,7 +123,7 @@
 	.select-w-caret select {
 		height: 42px;
 		padding: 5px 56px 5px 16px;
-		border: 2px solid #ececec;
+		border: 2px solid $color__form-border;
 		outline: none;
 		background: #fff;
 	}
@@ -135,7 +135,7 @@
 		right: 0;
 		width: 43px;
 		height: 42px;
-		border: 2px solid #ececec;
+		border: 2px solid $color__form-border;
 		@include rem('font-size',$font__large-size);
 		line-height: 37px;
 		text-align: center;
@@ -208,14 +208,14 @@
 		width: 15px;
 		min-width: 15px;
 		height: 15px;
-		border: 2px solid $color__border;
+		border: 2px solid $color__form-border;
 	}
 
 	input[type="checkbox"] {
 		width: 16px;
 		min-width: 16px;
 		height: 16px;
-		border: 2px solid $color__border;
+		border: 2px solid $color__form-border;
 		-webkit-border-radius: 2px;
 		-moz-border-radius: 2px;
 		border-radius: 2px;
