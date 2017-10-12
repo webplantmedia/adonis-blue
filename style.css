@@ -1090,7 +1090,7 @@ a:hover, a:active {
   background-color: #ececec;
 }
 
-.main-menu a {
+.main-menu a, .main-menu a:focus, .main-menu a:active, .main-menu a:visited, .main-menu a:hover {
   color: #6d686c;
 }
 

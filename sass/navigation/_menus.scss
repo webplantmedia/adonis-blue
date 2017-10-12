@@ -92,7 +92,13 @@
 	}
 	
 	a {
-		color: $color__text;
+		&,
+		&:focus,
+		&:active,
+		&:visited,
+		&:hover {
+			color: $color__text;
+		}
 	}
 }
 

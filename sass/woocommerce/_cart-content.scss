@@ -7,9 +7,19 @@
 		width: 64px;
 	}
 
-	.widget_shopping_cart .cart_list li a.remove,
-	&.widget_shopping_cart .cart_list li a.remove {
-		top: 25%;
+	.widget_shopping_cart .cart_list li,
+	&.widget_shopping_cart .cart_list li {
+		a {
+			@include rem('font-size',$font__medium-size);
+
+			&.remove {
+				top: -3px;
+				font-size: 1.5em;
+				height: 64px;
+				line-height: 64px;
+				vertical-align: middle;
+			}
+		}
 	}
 
 	a.remove:hover {

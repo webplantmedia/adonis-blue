@@ -33,7 +33,6 @@ WooCommerce styling
   padding: 0;
   text-decoration: none;
   display: block;
-  color: #6d686c;
 }
 
 .cart-menu ul.menu li.cart i,
@@ -156,9 +155,19 @@ WooCommerce styling
   width: 64px;
 }
 
+#master .woocommerce .widget_shopping_cart .cart_list li a,
+#master .woocommerce.widget_shopping_cart .cart_list li a {
+  font-size: 16px;
+  font-size: 1rem;
+}
+
 #master .woocommerce .widget_shopping_cart .cart_list li a.remove,
 #master .woocommerce.widget_shopping_cart .cart_list li a.remove {
-  top: 25%;
+  top: -3px;
+  font-size: 1.5em;
+  height: 64px;
+  line-height: 64px;
+  vertical-align: middle;
 }
 
 #master .woocommerce a.remove:hover {
