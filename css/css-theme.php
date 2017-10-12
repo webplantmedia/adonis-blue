@@ -51,10 +51,22 @@ a:hover {
 	color: <?php echo $amd['heading_color']; ?>; /*id:heading_color*/
 }
 
-#master ::-webkit-input-placeholder,
-#master :-moz-placeholder,
-#master ::-moz-placeholder,
-#master :-ms-input-placeholder,
+::-webkit-input-placeholder {
+	color: <?php echo $amd['text_light_color']; ?>; /*id:text_light_color*/
+}
+
+:-moz-placeholder {
+	color: <?php echo $amd['text_light_color']; ?>; /*id:text_light_color*/
+}
+
+::-moz-placeholder {
+	color: <?php echo $amd['text_light_color']; ?>; /*id:text_light_color*/
+}
+
+:-ms-input-placeholder {
+	color: <?php echo $amd['text_light_color']; ?>; /*id:text_light_color*/
+}
+
 #master #add_payment_method #payment .payment_method_paypal .about_paypal,
 #master .woocommerce-cart #payment .payment_method_paypal .about_paypal,
 #master .woocommerce-checkout #payment .payment_method_paypal .about_paypal,

@@ -411,7 +411,7 @@ html {
 }
 
 body {
-  background: #fff;
+  background: #ffffff;
   /* Fallback for when there is no custom background color defined. */
 }
 
@@ -1003,7 +1003,7 @@ a:hover, a:active {
 }
 
 .main-menu ul ul li {
-  background-color: #fff;
+  background-color: #ffffff;
   position: static;
   float: none;
 }
@@ -1149,7 +1149,7 @@ a:hover, a:active {
   #site-navigation ul li a,
   #site-navigation ul li:hover > a,
   #site-navigation ul li.focus > a {
-    background-color: #fff;
+    background-color: #ffffff;
   }
   #site-navigation ul li.current_page_item > a,
   #site-navigation ul li.current-menu-item > a {
@@ -1218,7 +1218,7 @@ a:hover, a:active {
   }
   #site-navigation ul .current_page_ancestor > a,
   #site-navigation ul .current-menu-ancestor > a {
-    background-color: #fff;
+    background-color: #ffffff;
   }
   #master #site-navigation .menu-toggle {
     display: block;
@@ -1753,6 +1753,8 @@ a:hover, a:active {
   #master #secondary {
     padding: 0;
     margin: 0 auto;
+    margin-top: 70px;
+    margin-top: 4.375rem;
   }
 }
 
@@ -2487,8 +2489,8 @@ a:hover, a:active {
 }
 
 .footer-container {
-  padding-top: 60px;
-  padding-top: 3.75rem;
+  padding-top: 70px;
+  padding-top: 4.375rem;
   padding-bottom: 106px;
   padding-bottom: 6.625rem;
   margin-right: -80px;
