@@ -78,16 +78,6 @@
 			changeInlineCSS( 'link_hover_color', 'color', to );
 		} );
 	} );
-	wp.customize( 'text_color', function( value ) {
-		value.bind( function( to ) {
-			changeInlineCSS( 'text_color', 'color', to );
-		} );
-	} );
-	wp.customize( 'text_light_color', function( value ) {
-		value.bind( function( to ) {
-			changeInlineCSS( 'text_light_color', 'color', to );
-		} );
-	} );
 	wp.customize( 'primary_color', function( value ) {
 		value.bind( function( to ) {
 			changeInlineCSS( 'primary_color', 'background-color', to );

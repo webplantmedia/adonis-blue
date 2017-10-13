@@ -109,30 +109,6 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 		'section' => 'colors',
 	) ) );
 
-	$setting_id = 'text_color';
-	$wp_customize->add_setting( $setting_id, array(
-		'default' => $amd_default[ $setting_id ],
-		'transport' => 'postMessage',
-		'sanitize_callback' => 'sanitize_hex_color',
-	) );
-
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $setting_id, array(
-		'label' => __( 'Text Color', 'angiemakesdesign' ),
-		'section' => 'colors',
-	) ) );
-
-	$setting_id = 'text_light_color';
-	$wp_customize->add_setting( $setting_id, array(
-		'default' => $amd_default[ $setting_id ],
-		'transport' => 'postMessage',
-		'sanitize_callback' => 'sanitize_hex_color',
-	) );
-
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $setting_id, array(
-		'label' => __( 'Text Light Color', 'angiemakesdesign' ),
-		'section' => 'colors',
-	) ) );
-
 	$setting_id = 'link_color';
 	$wp_customize->add_setting( $setting_id, array(
 		'default' => $amd_default[ $setting_id ],
