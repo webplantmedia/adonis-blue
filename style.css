@@ -2177,6 +2177,10 @@ a:hover, a:active {
   font-weight: bold;
 }
 
+#master .more-link, #master .more-link:focus, #master .more-link:active, #master .more-link:visited {
+  color: #6d686c;
+}
+
 #master .more-link i {
   margin-left: 5px;
   font-size: 22px;

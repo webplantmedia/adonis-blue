@@ -277,6 +277,13 @@
 	.more-link {
 		font-weight: bold;
 
+		&,
+		&:focus,
+		&:active,
+		&:visited {
+			color: $color__text;
+		}
+
 		i {
 			margin-left: 5px;
 			@include rem('font-size',$font__xlarge_size);

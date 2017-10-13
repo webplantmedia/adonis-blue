@@ -54,6 +54,11 @@ if ( ! function_exists( 'angiemakesdesign_setup' ) ) :
 			'menu-3' => esc_html__( 'Top Header Left', 'angiemakesdesign' ),
 		) );
 
+		$google_request = str_replace( ',', '%2C', angiemakesdesign_fonts_url() );
+
+		// This theme styles the visual editor with editor-style.css to match the theme style.
+		add_editor_style( array( 'css/editor-style.css', $google_request ) );
+
 		/*
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
@@ -145,6 +150,16 @@ function angiemakesdesign_widgets_init() {
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Front Page', 'angiemakesdesign' ),
+		'id'            => 'front-page',
+		'description'   => esc_html__( 'Add widgets here.', 'angiemakesdesign' ),
+		'before_widget' => '<section id="%1$s" class="content-widget widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title content-widget-title">',
 		'after_title'   => '</h2>',
 	) );
 }
@@ -354,6 +369,11 @@ require get_template_directory() . '/inc/template-tags.php';
  * Functions which enhance the theme by hooking into WordPress.
  */
 require get_template_directory() . '/inc/template-functions.php';
+
+/**
+ * Widgetized Pages
+ */
+require get_template_directory() . '/inc/class-widgetized-pages.php';
 
 /**
  * Customizer additions.
