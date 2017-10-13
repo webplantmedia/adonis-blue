@@ -95,9 +95,12 @@
 		&,
 		&:focus,
 		&:active,
-		&:visited,
-		&:hover {
+		&:visited {
 			color: $color__text;
+		}
+
+		&:hover {
+			color: $color__text-dark;
 		}
 	}
 }
