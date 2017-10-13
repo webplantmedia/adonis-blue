@@ -973,6 +973,10 @@ a {
   text-decoration: none;
 }
 
+a, a:focus, a:active, a:visited {
+  color: #6d686c;
+}
+
 a:focus {
   outline: none;
 }

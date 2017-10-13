@@ -35,6 +35,10 @@ WooCommerce styling
   display: block;
 }
 
+.cart-menu ul.menu li.cart a.cart_dropdown_link:hover {
+  color: #6d686c;
+}
+
 .cart-menu ul.menu li.cart i,
 .cart-menu ul.menu li.cart i:before {
   font-size: 30px;
@@ -626,6 +630,10 @@ WooCommerce styling
 #master .woocommerce a:hover .star-rating::before,
 #master .woocommerce .star-rating,
 #master .woocommerce .star-rating::before {
+  color: #6d686c;
+}
+
+#master .woocommerce p.stars a, #master .woocommerce p.stars a:hover, #master .woocommerce p.stars a:focus, #master .woocommerce p.stars a:active, #master .woocommerce p.stars a:visited {
   color: #6d686c;
 }
 

@@ -1,9 +1,9 @@
 <?php global $amd; ?>
 
-a:visited,
-a:focus,
-a:active,
-a {
+.entry-content a:visited,
+.entry-content a:focus,
+.entry-content a:active,
+.entry-content a {
 	color: <?php echo $amd['link_color']; ?>; /*id:link_color*/
 }
 

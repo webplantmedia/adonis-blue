@@ -622,6 +622,13 @@
 	.woocommerce #review_form #respond textarea {
 	}
 	.woocommerce p.stars a {
+		&,
+		&:hover,
+		&:focus,
+		&:active,
+		&:visited {
+			color: $color__text;
+		}
 	}
 	.woocommerce p.stars a::before {
 	}

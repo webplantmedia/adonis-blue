@@ -2,6 +2,13 @@ a {
 	outline: none;
 	text-decoration: none;
 
+	&,
+	&:focus,
+	&:active,
+	&:visited {
+		color: $color__text;
+	}
+
 	&:focus {
 		outline: none;
 	}
