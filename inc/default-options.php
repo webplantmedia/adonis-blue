@@ -10,10 +10,6 @@ $amd_default['heading_padding_top'] = '40';
 $amd_default['heading_padding_bottom'] = '40';
 
 // Colors
-$amd_default['heading_color'] = '#3A3839';
-$amd_default['text_dark_color'] = '#333333';
-$amd_default['text_color'] = '#6d686c';
-$amd_default['text_light_color'] = '#959595';
 $amd_default['primary_color'] = '#fbd5c1';
 $amd_default['primary_hover_color'] = '#f6a378';
 $amd_default['secondary_color'] = '#fef8f3';
