@@ -376,6 +376,18 @@ require get_template_directory() . '/inc/template-functions.php';
 require get_template_directory() . '/inc/class-widgetized-pages.php';
 
 /**
+ * Widget Base
+ */
+require get_template_directory() . '/inc/class-widget.php';
+
+/**
+ * Get Each Widget
+ */
+foreach ( glob( get_template_directory() . '/inc/widgets/*.php' ) as $filename ) {
+    require_once( $filename );
+}
+
+/**
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
