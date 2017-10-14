@@ -2,36 +2,36 @@
 /**
  * Section: Featured Slides Widget
  *
- * @since Atik 1.0.0.
+ * @since AngieMakesDesign 1.0.0.
  *
- * @package Atik
+ * @package AngieMakesDesign
  */
 
-if ( ! class_exists( 'Atik_Widget_Featured_Slides' ) ) :
+if ( ! class_exists( 'AngieMakesDesign_Widget_Featured_Slides' ) ) :
 	/**
 	 * Display Featured Slide Item for section
 	 *
-	 * @since Atik 1.0.0.
+	 * @since AngieMakesDesign 1.0.0.
 	 *
-	 * @package Atik
+	 * @package AngieMakesDesign
 	 */
-	class Atik_Widget_Featured_Slides extends Atik_Widget {
+	class AngieMakesDesign_Widget_Featured_Slides extends AngieMakesDesign_Widget {
 		/**
 		 * Constructor
 		 */
 		public function __construct() {
-			$this->widget_id          = 'atik_widget_featured_slides';
-			$this->widget_cssclass    = 'atik_widget_featured_slides';
-			$this->widget_description = esc_html__( 'Displays all contents under &ldquo;Featured Slides Sidebar&rdquo; Area.', 'atik' );
-			$this->widget_name        = esc_html__( 'Section: Featured Slides', 'atik' );
+			$this->widget_id          = 'angiemakesdesign_widget_featured_slides';
+			$this->widget_cssclass    = 'angiemakesdesign_widget_featured_slides';
+			$this->widget_description = esc_html__( 'Displays all contents under &ldquo;Featured Slides Sidebar&rdquo; Area.', 'angiemakesdesign' );
+			$this->widget_name        = esc_html__( 'Section: Featured Slides', 'angiemakesdesign' );
 			$this->settings           = array(
 				'flex_transition' => array(
 					'type'  => 'select',
 					'std'   => 'fade',
-					'label' => esc_html__( 'Transition Effect:', 'atik' ),
+					'label' => esc_html__( 'Transition Effect:', 'angiemakesdesign' ),
 					'options' => array(
-						'fade'  => esc_html__( 'Fade', 'atik' ),
-						'slide' => esc_html__( 'Slide', 'atik' ),
+						'fade'  => esc_html__( 'Fade', 'angiemakesdesign' ),
+						'slide' => esc_html__( 'Slide', 'angiemakesdesign' ),
 					),
 				),
 				'flex_speed' => array(
@@ -40,22 +40,22 @@ if ( ! class_exists( 'Atik_Widget_Featured_Slides' ) ) :
 					'step'  => 1,
 					'min'   => 1,
 					'max'   => 100,
-					'label' => esc_html__( 'Speed of the slideshow change in seconds:', 'atik' ),
+					'label' => esc_html__( 'Speed of the slideshow change in seconds:', 'angiemakesdesign' ),
 				),
 				'flex_pause' => array(
 					'type'  => 'checkbox',
 					'std'   => 0,
-					'label' => esc_html__( 'Pause slideshow when hover?', 'atik' ),
+					'label' => esc_html__( 'Pause slideshow when hover?', 'angiemakesdesign' ),
 				),
 				'slide_pagination' => array(
 					'type'  => 'checkbox',
 					'std'   => 0,
-					'label' => esc_html__( 'Show slide pagination?', 'atik' ),
+					'label' => esc_html__( 'Show slide pagination?', 'angiemakesdesign' ),
 				),
 				'hide_on_mobile' => array(
 					'type'  => 'checkbox',
 					'std'   => 0,
-					'label' => esc_html__( 'Hide on mobile?', 'atik' ),
+					'label' => esc_html__( 'Hide on mobile?', 'angiemakesdesign' ),
 				),
 			);
 
@@ -120,4 +120,4 @@ if ( ! class_exists( 'Atik_Widget_Featured_Slides' ) ) :
 	}
 endif;
 
-add_action( 'widgets_init', array( 'Atik_Widget_Featured_Slides', 'register' ) );
+add_action( 'widgets_init', array( 'AngieMakesDesign_Widget_Featured_Slides', 'register' ) );

@@ -2,43 +2,43 @@
 /**
  * Featured Slide Item Widget
  *
- * @since Atik 1.0.0.
+ * @since AngieMakesDesign 1.0.0.
  *
- * @package Atik
+ * @package AngieMakesDesign
  */
 
-if ( ! class_exists( 'Atik_Widget_Featured_Slide_Item' ) ) :
+if ( ! class_exists( 'AngieMakesDesign_Widget_Featured_Slide_Item' ) ) :
 	/**
 	 * Display featured slide item for featured sliders.
 	 *
-	 * @since Atik 1.0.0.
+	 * @since AngieMakesDesign 1.0.0.
 	 *
-	 * @package Atik
+	 * @package AngieMakesDesign
 	 */
-	class Atik_Widget_Featured_Slide_Item extends Atik_Widget {
+	class AngieMakesDesign_Widget_Featured_Slide_Item extends AngieMakesDesign_Widget {
 		/**
 		 * Constructor
 		 */
 		public function __construct() {
-			$this->widget_id          = 'atik_featured_slide';
-			$this->widget_cssclass    = 'atik_featured_slide';
-			$this->widget_description = esc_html__( 'Display Featured Slide, should be used only in &ldquo;Featured Slider Sidebar&rdquo; Area.', 'atik' );
-			$this->widget_name        = esc_html__( 'Featured Slide Item', 'atik' );
+			$this->widget_id          = 'angiemakesdesign_featured_slide';
+			$this->widget_cssclass    = 'angiemakesdesign_featured_slide';
+			$this->widget_description = esc_html__( 'Display Featured Slide, should be used only in &ldquo;Featured Slider Sidebar&rdquo; Area.', 'angiemakesdesign' );
+			$this->widget_name        = esc_html__( 'Featured Slide Item', 'angiemakesdesign' );
 			$this->settings           = array(
 				'background_image' => array(
 					'type'  => 'image',
 					'std'   => null,
-					'label' => esc_html__( 'Background Image:', 'atik' ),
+					'label' => esc_html__( 'Background Image:', 'angiemakesdesign' ),
 				),
 				'content_text' => array(
 					'type'  => 'textarea',
 					'std'   => '',
-					'label' => esc_html__( 'Content:', 'atik' ),
+					'label' => esc_html__( 'Content:', 'angiemakesdesign' ),
 				),
 				'box_color' => array(
 					'type'  => 'colorpicker',
 					'std'   => '#fff',
-					'label' => esc_html__( 'Content Box Color:', 'atik' ),
+					'label' => esc_html__( 'Content Box Color:', 'angiemakesdesign' ),
 				),
 				'box_opacity' => array(
 					'type'  => 'number',
@@ -46,37 +46,37 @@ if ( ! class_exists( 'Atik_Widget_Featured_Slide_Item' ) ) :
 					'step'  => 5,
 					'min'   => 0,
 					'max'   => 100,
-					'label' => esc_html__( 'Content Box Opacity:', 'atik' ),
+					'label' => esc_html__( 'Content Box Opacity:', 'angiemakesdesign' ),
 				),
 				'text_color' => array(
 					'type'  => 'colorpicker',
 					'std'   => '#000',
-					'label' => esc_html__( 'Text Color:', 'atik' ),
+					'label' => esc_html__( 'Text Color:', 'angiemakesdesign' ),
 				),
 				'link_color' => array(
 					'type'  => 'colorpicker',
 					'std'   => '#000',
-					'label' => esc_html__( 'Link Color:', 'atik' ),
+					'label' => esc_html__( 'Link Color:', 'angiemakesdesign' ),
 				),
 				'content_position' => array(
 					'type'  => 'select',
 					'std'   => 'slide-content-left',
-					'label' => esc_html__( 'Content Position:', 'atik' ),
+					'label' => esc_html__( 'Content Position:', 'angiemakesdesign' ),
 					'options' => array(
-						'slide-content-left'   => esc_html__( 'Left', 'atik' ),
-						'slide-content-center' => esc_html__( 'Center', 'atik' ),
-						'slide-content-right'  => esc_html__( 'Right', 'atik' ),
+						'slide-content-left'   => esc_html__( 'Left', 'angiemakesdesign' ),
+						'slide-content-center' => esc_html__( 'Center', 'angiemakesdesign' ),
+						'slide-content-right'  => esc_html__( 'Right', 'angiemakesdesign' ),
 					),
 				),
 				'button_link' => array(
 					'type'  => 'text',
 					'std'   => '',
-					'label' => esc_html__( 'Button URL:', 'atik' ),
+					'label' => esc_html__( 'Button URL:', 'angiemakesdesign' ),
 				),
 				'button_text' => array(
 					'type'  => 'text',
 					'std'   => '',
-					'label' => esc_html__( 'Button Text:', 'atik' ),
+					'label' => esc_html__( 'Button Text:', 'angiemakesdesign' ),
 				),
 			);
 
@@ -167,4 +167,4 @@ if ( ! class_exists( 'Atik_Widget_Featured_Slide_Item' ) ) :
 	}
 endif;
 
-add_action( 'widgets_init', array( 'Atik_Widget_Featured_Slide_Item', 'register' ) );
+add_action( 'widgets_init', array( 'AngieMakesDesign_Widget_Featured_Slide_Item', 'register' ) );

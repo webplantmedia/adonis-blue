@@ -2,47 +2,47 @@
 /**
  * Section: Blog Posts Widget
  *
- * @since Atik 1.0.0.
+ * @since AngieMakesDesign 1.0.0.
  *
- * @package Atik
+ * @package AngieMakesDesign
  */
 
-if ( ! class_exists( 'Atik_Widget_Blog_Post' ) ) :
+if ( ! class_exists( 'AngieMakesDesign_Widget_Blog_Post' ) ) :
 	/**
 	 * Display static content from an specific page.
 	 *
-	 * @since Atik 1.0.0.
+	 * @since AngieMakesDesign 1.0.0.
 	 *
-	 * @package Atik
+	 * @package AngieMakesDesign
 	 */
-	class Atik_Widget_Blog_Post extends Atik_Widget {
+	class AngieMakesDesign_Widget_Blog_Post extends AngieMakesDesign_Widget {
 		/**
 		 * Constructor
 		 */
 		public function __construct() {
-			$this->widget_id          = 'atik_blog_post';
-			$this->widget_cssclass    = 'atik_blog_post';
-			$this->widget_description = esc_html__( 'Displays content from blog posts.', 'atik' );
-			$this->widget_name        = esc_html__( 'Section: Blog Posts', 'atik' );
+			$this->widget_id          = 'angiemakesdesign_blog_post';
+			$this->widget_cssclass    = 'angiemakesdesign_blog_post';
+			$this->widget_description = esc_html__( 'Displays content from blog posts.', 'angiemakesdesign' );
+			$this->widget_name        = esc_html__( 'Section: Blog Posts', 'angiemakesdesign' );
 			$this->settings           = array(
 				'title' => array(
 					'type'  => 'text',
 					'std'   => '',
-					'label' => esc_html__( 'Title:', 'atik' ),
+					'label' => esc_html__( 'Title:', 'angiemakesdesign' ),
 				),
 				'category' => array(
 					'type'  => 'category',
 					'std'   => 0,
-					'label' => esc_html__( 'Category:', 'atik' ),
+					'label' => esc_html__( 'Category:', 'angiemakesdesign' ),
 				),
 				'blog_layout' => array(
 					'type'  => 'select',
 					'std'   => 'one',
-					'label' => esc_html__( 'Select layout:', 'atik' ),
+					'label' => esc_html__( 'Select layout:', 'angiemakesdesign' ),
 					'options' => array(
-						'one'   => esc_html__( 'Layout 1', 'atik' ),
-						'two'   => esc_html__( 'Layout 2', 'atik' ),
-						'three' => esc_html__( 'Layout 3', 'atik' ),
+						'one'   => esc_html__( 'Layout 1', 'angiemakesdesign' ),
+						'two'   => esc_html__( 'Layout 2', 'angiemakesdesign' ),
+						'three' => esc_html__( 'Layout 3', 'angiemakesdesign' ),
 					),
 				),
 				'post_count' => array(
@@ -51,22 +51,22 @@ if ( ! class_exists( 'Atik_Widget_Blog_Post' ) ) :
 					'step'  => 1,
 					'min'   => 1,
 					'max'   => 100,
-					'label' => esc_html__( 'Number of Posts:', 'atik' ),
+					'label' => esc_html__( 'Number of Posts:', 'angiemakesdesign' ),
 				),
 				'random_order' => array(
 					'type'  => 'checkbox',
 					'std'   => 0,
-					'label' => __( 'Random order?', 'atik' ),
+					'label' => __( 'Random order?', 'angiemakesdesign' ),
 				),
 				'button_text' => array(
 					'type'  => 'text',
 					'std'   => '',
-					'label' => esc_html__( 'Button Text:', 'atik' ),
+					'label' => esc_html__( 'Button Text:', 'angiemakesdesign' ),
 				),
 				'button_link' => array(
 					'type'  => 'text',
 					'std'   => '',
-					'label' => esc_html__( 'Button Link:', 'atik' ),
+					'label' => esc_html__( 'Button Link:', 'angiemakesdesign' ),
 				),
 			);
 
@@ -117,7 +117,7 @@ if ( ! class_exists( 'Atik_Widget_Blog_Post' ) ) :
 			echo  $before_widget;
 
 			// Allow site-wide customization of the 'Read more' link text.
-			$read_more = apply_filters( 'atik_read_more_text', esc_html__( 'Read more', 'atik' ) );
+			$read_more = apply_filters( 'angiemakesdesign_read_more_text', esc_html__( 'Read more', 'angiemakesdesign' ) );
 			$button_text = isset( $instance['button_text'] ) ? strip_tags( $instance['button_text'] ) : '';
 			$button_link = isset( $instance['button_link'] ) ? esc_url( $instance['button_link'] ) : '';
 			?>
@@ -217,4 +217,4 @@ if ( ! class_exists( 'Atik_Widget_Blog_Post' ) ) :
 	}
 endif;
 
-add_action( 'widgets_init', array( 'Atik_Widget_Blog_Post', 'register' ) );
+add_action( 'widgets_init', array( 'AngieMakesDesign_Widget_Blog_Post', 'register' ) );

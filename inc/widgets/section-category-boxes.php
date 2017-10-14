@@ -2,33 +2,33 @@
 /**
  * Section: Category Boxes Widget
  *
- * @since Atik 1.0.0.
+ * @since AngieMakesDesign 1.0.0.
  *
- * @package Atik
+ * @package AngieMakesDesign
  */
 
-if ( ! class_exists( 'Atik_Widget_Category_Boxes' ) ) :
+if ( ! class_exists( 'AngieMakesDesign_Widget_Category_Boxes' ) ) :
 	/**
 	 * Display category box for section
 	 *
-	 * @since Atik 1.0.0.
+	 * @since AngieMakesDesign 1.0.0.
 	 *
-	 * @package Atik
+	 * @package AngieMakesDesign
 	 */
-	class Atik_Widget_Category_Boxes extends Atik_Widget {
+	class AngieMakesDesign_Widget_Category_Boxes extends AngieMakesDesign_Widget {
 		/**
 		 * Constructor
 		 */
 		public function __construct() {
-			$this->widget_id          = 'atik_widget_category_boxes';
-			$this->widget_cssclass    = 'atik_widget_category_boxes';
-			$this->widget_description = esc_html__( 'Displays Category Boxes.', 'atik' );
-			$this->widget_name        = esc_html__( 'Section: Category Boxes', 'atik' );
+			$this->widget_id          = 'angiemakesdesign_widget_category_boxes';
+			$this->widget_cssclass    = 'angiemakesdesign_widget_category_boxes';
+			$this->widget_description = esc_html__( 'Displays Category Boxes.', 'angiemakesdesign' );
+			$this->widget_name        = esc_html__( 'Section: Category Boxes', 'angiemakesdesign' );
 			$this->settings           = array(
 				'title' => array(
 					'type'  => 'text',
 					'std'   => '',
-					'label' => esc_html__( 'Title:', 'atik' ),
+					'label' => esc_html__( 'Title:', 'angiemakesdesign' ),
 				),
 				'features' => array(
 					'type' => 'features',
@@ -40,8 +40,8 @@ if ( ! class_exists( 'Atik_Widget_Category_Boxes' ) ) :
 			parent::__construct();
 
 			add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
-			add_action( 'atik_widget_type_features', array( $this, 'output' ), 10, 4 );
-			add_action( 'atik_widget_update_type_features', array( $this, '_update' ), 10, 3 );
+			add_action( 'angiemakesdesign_widget_type_features', array( $this, 'output' ), 10, 4 );
+			add_action( 'angiemakesdesign_widget_update_type_features', array( $this, '_update' ), 10, 3 );
 		}
 
 		public function admin_enqueue_scripts() {
@@ -52,7 +52,7 @@ if ( ! class_exists( 'Atik_Widget_Category_Boxes' ) ) :
 			}
 
 			wp_enqueue_media();
-			wp_enqueue_script( 'atik-admin-widget-features', get_template_directory_uri() . '/js/admin/widget-features.js', array( 'underscore', 'backbone', 'jquery', 'jquery-ui-sortable' ) );
+			wp_enqueue_script( 'angiemakesdesign-admin-widget-features', get_template_directory_uri() . '/js/admin/widget-features.js', array( 'underscore', 'backbone', 'jquery', 'jquery-ui-sortable' ) );
 		}
 
 		public function _update( $new_instance, $key, $setting ) {
@@ -120,7 +120,7 @@ if ( ! class_exists( 'Atik_Widget_Category_Boxes' ) ) :
 
 					$feature = compact( 'background', 'button_url', 'button_text' );
 
-					atik_get_template_part( 'partials/content-home-feature', array( 'feature' => $feature ) );
+				 angiemakesdesign_get_template_part( 'partials/content-home-feature', array( 'feature' => $feature ) );
 				}
 				?>
 				</div>
@@ -143,24 +143,24 @@ if ( ! class_exists( 'Atik_Widget_Category_Boxes' ) ) :
 	 	?>
 
 			<div id="features-<?php echo $widget->id; ?>">
-				<p><a href="#" class="button-add-feature button button-secondary"><?php esc_html_e( 'Add Box', 'atik' ); ?></a></p>
+				<p><a href="#" class="button-add-feature button button-secondary"><?php esc_html_e( 'Add Box', 'angiemakesdesign' ); ?></a></p>
 			</div>
 
 			<script id="tmpl-feature" type="text/template">
 				<a href="#" class="button-remove-feature">&nbsp;</a>
 
 				<p>
-					<label><?php esc_html_e( 'Background Image:', 'atik' ); ?></label>
+					<label><?php esc_html_e( 'Background Image:', 'angiemakesdesign' ); ?></label>
 					<input type="text" class="widefat" name="<?php echo $this->get_field_name( $key ); ?>[<%= order %>][background]" value="<%= background %>" placeholder="http://" />
 				</p>
 
 				<p>
-					<label><?php esc_html_e( 'Button Text:', 'atik' ); ?></label>
+					<label><?php esc_html_e( 'Button Text:', 'angiemakesdesign' ); ?></label>
 					<input name="<?php echo $this->get_field_name( $key ); ?>[<%= order %>][button_text]" type="text" value="<%= button_text %>" class="widefat" />
 				</p>
 
 				<p>
-					<label><?php esc_html_e( 'Button URL:', 'atik' ); ?></label>
+					<label><?php esc_html_e( 'Button URL:', 'angiemakesdesign' ); ?></label>
 					<input name="<?php echo $this->get_field_name( $key ); ?>[<%= order %>][button_url]" type="text" value="<%= button_url %>" class="widefat" />
 				</p>
 
@@ -217,4 +217,4 @@ if ( ! class_exists( 'Atik_Widget_Category_Boxes' ) ) :
 	}
 endif;
 
-add_action( 'widgets_init', array( 'Atik_Widget_Category_Boxes', 'register' ) );
+add_action( 'widgets_init', array( 'AngieMakesDesign_Widget_Category_Boxes', 'register' ) );

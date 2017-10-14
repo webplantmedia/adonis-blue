@@ -10,7 +10,7 @@
       var id_base, widget_id;
       id_base = widget_el.find('input[name="id_base"]').val();
       widget_id = widget_el.find('input[name="widget-id"]').val();
-      if ('atik_widget_category_boxes' === id_base) {
+      if ('angiemakesdesign_widget_category_boxes' === id_base) {
         if ('widget-added' === e.type) {
           return init('#features-' + widget_id, false);
         }

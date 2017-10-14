@@ -2,90 +2,90 @@
 /**
  * Feature collout widget for widgetized pages.
  *
- * @since Atik 1.0.0.
+ * @since AngieMakesDesign 1.0.0.
  *
- * @package Atik
+ * @package AngieMakesDesign
  */
-class Atik_Widget_Feature_Callout extends Atik_Widget {
+class AngieMakesDesign_Widget_Feature_Callout extends AngieMakesDesign_Widget {
 	/**
 	 * Constructor
 	 */
 	public function __construct() {
-		$this->widget_id          = 'atik_widget_feature_callout';
-		$this->widget_description = esc_html__( 'Displays a feature callout.', 'atik' );
-		$this->widget_name        = esc_html__( 'Section: Feature Callout', 'atik' );
+		$this->widget_id          = 'angiemakesdesign_widget_feature_callout';
+		$this->widget_description = esc_html__( 'Displays a feature callout.', 'angiemakesdesign' );
+		$this->widget_name        = esc_html__( 'Section: Feature Callout', 'angiemakesdesign' );
 		$this->settings           = array(
 			'title' => array(
 				'type'  => 'text',
 				'std'   => '',
-				'label' => __( 'Title:', 'atik' ),
+				'label' => __( 'Title:', 'angiemakesdesign' ),
 			),
 			'content' => array(
 				'type'  => 'textarea',
 				'std'   => '',
-				'label' => __( 'Content:', 'atik' ),
+				'label' => __( 'Content:', 'angiemakesdesign' ),
 				'rows'  => 5,
 			),
 			'text_align' => array(
 				'type'  => 'select',
 				'std'   => 'left',
-				'label' => __( 'Text Align:', 'atik' ),
+				'label' => __( 'Text Align:', 'angiemakesdesign' ),
 				'options' => array(
-					'left' => __( 'Left', 'atik' ),
-					'right' => __( 'Right', 'atik' ),
-					'center' => __( 'Center (cover only)', 'atik' ),
+					'left' => __( 'Left', 'angiemakesdesign' ),
+					'right' => __( 'Right', 'angiemakesdesign' ),
+					'center' => __( 'Center (cover only)', 'angiemakesdesign' ),
 				),
 			),
 			'vertical_align' => array(
 				'type'  => 'select',
 				'std'   => 'middle',
-				'label' => __( 'Vertical Alignment:', 'atik' ),
+				'label' => __( 'Vertical Alignment:', 'angiemakesdesign' ),
 				'options' => array(
-					'top' => __( 'Top', 'atik' ),
-					'middle' => __( 'Middle', 'atik' ),
-					'bottom' => __( 'Bottom', 'atik' ),
+					'top' => __( 'Top', 'angiemakesdesign' ),
+					'middle' => __( 'Middle', 'angiemakesdesign' ),
+					'bottom' => __( 'Bottom', 'angiemakesdesign' ),
 				),
 			),
 			'image' => array(
 				'type'  => 'image',
 				'std'   => null,
-				'label' => esc_html__( 'Image:', 'atik' ),
+				'label' => esc_html__( 'Image:', 'angiemakesdesign' ),
 			),
 			'background' => array(
 				'type'  => 'select',
 				'std'   => 'pull',
-				'label' => __( 'Image Style:', 'atik' ),
+				'label' => __( 'Image Style:', 'angiemakesdesign' ),
 				'options' => array(
-					'cover' => __( 'Cover', 'atik' ),
-					'pull'  => __( 'Pull Out', 'atik' ),
+					'cover' => __( 'Cover', 'angiemakesdesign' ),
+					'pull'  => __( 'Pull Out', 'angiemakesdesign' ),
 				),
 			),
 			'cover_overlay' => array(
 				'type' => 'checkbox',
 				'std'  => 1,
-				'label' => __( 'Use dark transparent overlay (cover only)', 'atik' ),
+				'label' => __( 'Use dark transparent overlay (cover only)', 'angiemakesdesign' ),
 			),
 			'text_color' => array(
 				'type'  => 'colorpicker',
 				'std'   => '#2b2828',
-				'label' => __( 'Text Color:', 'atik' ),
+				'label' => __( 'Text Color:', 'angiemakesdesign' ),
 			),
 			'background_color' => array(
 				'type'  => 'colorpicker',
 				'std'   => '#ffffff',
-				'label' => __( 'Background Color:', 'atik' ),
+				'label' => __( 'Background Color:', 'angiemakesdesign' ),
 			),
 		);
 
 		parent::__construct();
 
-		add_filter( 'atik_feature_callout_description', 'wptexturize' );
-		add_filter( 'atik_feature_callout_description', 'convert_smilies' );
-		add_filter( 'atik_feature_callout_description', 'convert_chars' );
-		add_filter( 'atik_feature_callout_description', 'wpautop' );
-		add_filter( 'atik_feature_callout_description', 'shortcode_unautop' );
-		add_filter( 'atik_feature_callout_description', 'prepend_attachment' );
-		add_filter( 'atik_feature_callout_description', 'do_shortcode' );
+		add_filter( 'angiemakesdesign_feature_callout_description', 'wptexturize' );
+		add_filter( 'angiemakesdesign_feature_callout_description', 'convert_smilies' );
+		add_filter( 'angiemakesdesign_feature_callout_description', 'convert_chars' );
+		add_filter( 'angiemakesdesign_feature_callout_description', 'wpautop' );
+		add_filter( 'angiemakesdesign_feature_callout_description', 'shortcode_unautop' );
+		add_filter( 'angiemakesdesign_feature_callout_description', 'prepend_attachment' );
+		add_filter( 'angiemakesdesign_feature_callout_description', 'do_shortcode' );
 	}
 
 	/**
@@ -172,7 +172,7 @@ class Atik_Widget_Feature_Callout extends Atik_Widget {
 		$output .= wpautop( $content );
 		$output .= '</div>';
 
-		$output  = apply_filters( 'atik_feature_callout_description', $output );
+		$output  = apply_filters( 'angiemakesdesign_feature_callout_description', $output );
 
 		return $output;
 	}
@@ -187,4 +187,4 @@ class Atik_Widget_Feature_Callout extends Atik_Widget {
 	}
 }
 
-add_action( 'widgets_init', array( 'Atik_Widget_Feature_Callout', 'register' ) );
+add_action( 'widgets_init', array( 'AngieMakesDesign_Widget_Feature_Callout', 'register' ) );

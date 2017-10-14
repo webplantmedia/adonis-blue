@@ -2,43 +2,43 @@
 /**
  * Section: Static Content Widget
  *
- * @since Atik 1.0.0.
+ * @since AngieMakesDesign 1.0.0.
  *
- * @package Atik
+ * @package AngieMakesDesign
  */
 
-if ( ! class_exists( 'Atik_Widget_Static_Content' ) ) :
+if ( ! class_exists( 'AngieMakesDesign_Widget_Static_Content' ) ) :
 	/**
 	 * Display static content from an specific page.
 	 *
-	 * @since Atik 1.0.0.
+	 * @since AngieMakesDesign 1.0.0.
 	 *
-	 * @package Atik
+	 * @package AngieMakesDesign
 	 */
-	class Atik_Widget_Static_Content extends Atik_Widget {
+	class AngieMakesDesign_Widget_Static_Content extends AngieMakesDesign_Widget {
 		/**
 		 * Constructor
 		 */
 		public function __construct() {
-			$this->widget_id          = 'atik_static_content';
-			$this->widget_cssclass    = 'atik_static_content';
-			$this->widget_description = esc_html__( 'Displays content from a specific page.', 'atik' );
-			$this->widget_name        = esc_html__( 'Section: Static Content', 'atik' );
+			$this->widget_id          = 'angiemakesdesign_static_content';
+			$this->widget_cssclass    = 'angiemakesdesign_static_content';
+			$this->widget_description = esc_html__( 'Displays content from a specific page.', 'angiemakesdesign' );
+			$this->widget_name        = esc_html__( 'Section: Static Content', 'angiemakesdesign' );
 			$this->settings           = array(
 				'title' => array(
 					'type'  => 'text',
 					'std'   => '',
-					'label' => esc_html__( 'Title:', 'atik' ),
+					'label' => esc_html__( 'Title:', 'angiemakesdesign' ),
 				),
 				'page' => array(
 					'type'  => 'page',
 					'std'   => '',
-					'label' => esc_html__( 'Select Page:', 'atik' ),
+					'label' => esc_html__( 'Select Page:', 'angiemakesdesign' ),
 				),
 				'background_image' => array(
 					'type'  => 'image',
 					'std'   => null,
-					'label' => esc_html__( 'Background Image:', 'atik' ),
+					'label' => esc_html__( 'Background Image:', 'angiemakesdesign' ),
 				),
 				'background_opacity' => array(
 					'type'  => 'number',
@@ -46,22 +46,22 @@ if ( ! class_exists( 'Atik_Widget_Static_Content' ) ) :
 					'step'  => '10',
 					'min'   => '10',
 					'max'   => '100',
-					'label' => esc_html__( 'Background Opacity:', 'atik' ),
+					'label' => esc_html__( 'Background Opacity:', 'angiemakesdesign' ),
 				),
 				'background_color' => array(
 					'type'  => 'colorpicker',
 					'std'   => '#fff',
-					'label' => esc_html__( 'Background Color:', 'atik' ),
+					'label' => esc_html__( 'Background Color:', 'angiemakesdesign' ),
 				),
 				'text_color' => array(
 					'type'  => 'colorpicker',
 					'std'   => '#000',
-					'label' => esc_html__( 'Text Color:', 'atik' ),
+					'label' => esc_html__( 'Text Color:', 'angiemakesdesign' ),
 				),
 				'link_color' => array(
 					'type'  => 'colorpicker',
 					'std'   => '#000',
-					'label' => esc_html__( 'Link Color:', 'atik' ),
+					'label' => esc_html__( 'Link Color:', 'angiemakesdesign' ),
 				),
 			);
 
@@ -97,7 +97,7 @@ if ( ! class_exists( 'Atik_Widget_Static_Content' ) ) :
 			echo  $before_widget;
 
 			// Allow site-wide customization of the 'Read more' link text.
-			$read_more = apply_filters( 'atik_read_more_text', esc_html__( 'Read more', 'atik' ) );
+			$read_more = apply_filters( 'angiemakesdesign_read_more_text', esc_html__( 'Read more', 'angiemakesdesign' ) );
 			?>
 
 			<?php if ( '' !== $background_image ) : ?>
@@ -112,7 +112,7 @@ if ( ! class_exists( 'Atik_Widget_Static_Content' ) ) :
 				#<?php echo esc_html( $this->id ) ?> .entry-content a {
 					color: <?php echo esc_html( $link_color ); ?>;
 				}
-				.atik_static_content.widget .widget-title {
+				.angiemakesdesign_static_content.widget .widget-title {
 					color: <?php echo esc_html( $text_color ); ?>;
 				}
 			</style>
@@ -156,4 +156,4 @@ if ( ! class_exists( 'Atik_Widget_Static_Content' ) ) :
 	}
 endif;
 
-add_action( 'widgets_init', array( 'Atik_Widget_Static_Content', 'register' ) );
+add_action( 'widgets_init', array( 'AngieMakesDesign_Widget_Static_Content', 'register' ) );

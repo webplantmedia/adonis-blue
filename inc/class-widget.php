@@ -2,13 +2,13 @@
 /**
  * Widget base class.
  *
- * @package Atik
+ * @package AngieMakesDesign
  */
 
 /**
  * Widget base
  */
-class Atik_Widget extends WP_Widget {
+class AngieMakesDesign_Widget extends WP_Widget {
 
 	public $widget_description;
 	public $widget_id;
@@ -56,7 +56,7 @@ class Atik_Widget extends WP_Widget {
 	 * get_cached_widget function.
 	 */
 	function get_cached_widget( $args ) {
-		if ( apply_filters( 'atik_disable_widget_cache', false ) ) {
+		if ( apply_filters( 'angiemakesdesign_disable_widget_cache', false ) ) {
 			return false;
 		}
 
@@ -141,7 +141,7 @@ class Atik_Widget extends WP_Widget {
 				break;
 
 				default :
-					$instance[ $key ] = apply_filters( 'atik_widget_update_type_' . $setting['type'], $new_instance[ $key ], $key, $setting );
+					$instance[ $key ] = apply_filters( 'angiemakesdesign_widget_update_type_' . $setting['type'], $new_instance[ $key ], $key, $setting );
 				break;
 			}
 		}
@@ -205,8 +205,8 @@ class Atik_Widget extends WP_Widget {
 						</div>
 
 						<input type="hidden" class="widefat" id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>" name="<?php echo $this->get_field_name( $key ); ?>"value="<?php echo $value; ?>" placeholder="http://" />
-						<a href="#" class="button-secondary <?php echo esc_attr( $this->get_field_id( $key ) ); ?>-add" onclick="imageWidget.uploader( '<?php echo $this->id; ?>', '<?php echo $id_prefix; ?>', '<?php echo $key; ?>' ); return false;"><?php esc_html_e( 'Choose Image', 'atik' ); ?></a>
-						<a href="#" style="display:inline-block;margin:5px 0 0 3px;<?php if ( empty( $value ) ) echo 'display:none;'; ?>" id="<?php echo esc_attr( $id_prefix ); ?>remove" class="button-link-delete" onclick="imageWidget.remove( '<?php echo $this->id; ?>', '<?php echo $id_prefix; ?>', '<?php echo $key; ?>' ); return false;"><?php esc_html_e( 'Remove', 'atik' ); ?></a>
+						<a href="#" class="button-secondary <?php echo esc_attr( $this->get_field_id( $key ) ); ?>-add" onclick="imageWidget.uploader( '<?php echo $this->id; ?>', '<?php echo $id_prefix; ?>', '<?php echo $key; ?>' ); return false;"><?php esc_html_e( 'Choose Image', 'angiemakesdesign' ); ?></a>
+						<a href="#" style="display:inline-block;margin:5px 0 0 3px;<?php if ( empty( $value ) ) echo 'display:none;'; ?>" id="<?php echo esc_attr( $id_prefix ); ?>remove" class="button-link-delete" onclick="imageWidget.remove( '<?php echo $this->id; ?>', '<?php echo $id_prefix; ?>', '<?php echo $key; ?>' ); return false;"><?php esc_html_e( 'Remove', 'angiemakesdesign' ); ?></a>
 					</p>
 				<?php
 				break;
@@ -328,7 +328,7 @@ class Atik_Widget extends WP_Widget {
 					$categories_dropdown = wp_dropdown_categories( array(
 						'name'            => $this->get_field_name( 'category' ),
 						'selected'        => $value,
-						'show_option_all' => esc_html__( 'All Categories', 'atik' ),
+						'show_option_all' => esc_html__( 'All Categories', 'angiemakesdesign' ),
 						'show_count'      => true,
 						'orderby'         => 'slug',
 						'hierarchical'    => true,
@@ -344,7 +344,7 @@ class Atik_Widget extends WP_Widget {
 				break;
 
 				default :
-					do_action( 'atik_widget_type_' . $setting['type'], $this, $key, $setting, $instance );
+					do_action( 'angiemakesdesign_widget_type_' . $setting['type'], $this, $key, $setting, $instance );
 				break;
 			}
 		}
