@@ -25,58 +25,64 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Featured_Slide_Item' ) ) :
 			$this->widget_description = esc_html__( 'Display Featured Slide, should be used only in &ldquo;Featured Slider Sidebar&rdquo; Area.', 'angiemakesdesign' );
 			$this->widget_name        = esc_html__( 'Featured Slide Item', 'angiemakesdesign' );
 			$this->settings           = array(
-				'background_image' => array(
-					'type'  => 'image',
-					'std'   => null,
-					'label' => esc_html__( 'Background Image:', 'angiemakesdesign' ),
-				),
-				'content_text' => array(
-					'type'  => 'textarea',
-					'std'   => '',
-					'label' => esc_html__( 'Content:', 'angiemakesdesign' ),
-				),
-				'box_color' => array(
-					'type'  => 'colorpicker',
-					'std'   => '#fff',
-					'label' => esc_html__( 'Content Box Color:', 'angiemakesdesign' ),
-				),
-				'box_opacity' => array(
-					'type'  => 'number',
-					'std'   => 100,
-					'step'  => 5,
-					'min'   => 0,
-					'max'   => 100,
-					'label' => esc_html__( 'Content Box Opacity:', 'angiemakesdesign' ),
-				),
-				'text_color' => array(
-					'type'  => 'colorpicker',
-					'std'   => '#000',
-					'label' => esc_html__( 'Text Color:', 'angiemakesdesign' ),
-				),
-				'link_color' => array(
-					'type'  => 'colorpicker',
-					'std'   => '#000',
-					'label' => esc_html__( 'Link Color:', 'angiemakesdesign' ),
-				),
-				'content_position' => array(
-					'type'  => 'select',
-					'std'   => 'slide-content-left',
-					'label' => esc_html__( 'Content Position:', 'angiemakesdesign' ),
-					'options' => array(
-						'slide-content-left'   => esc_html__( 'Left', 'angiemakesdesign' ),
-						'slide-content-center' => esc_html__( 'Center', 'angiemakesdesign' ),
-						'slide-content-right'  => esc_html__( 'Right', 'angiemakesdesign' ),
+				'panels' => array(
+					'title' => esc_html__( 'Slide', 'angiemakesdesign' ),
+					'type' => 'repeater',
+					'fields' => array(
+						'background_image' => array(
+							'type'  => 'image',
+							'std'   => null,
+							'label' => esc_html__( 'Background Image:', 'angiemakesdesign' ),
+						),
+						'content_text' => array(
+							'type'  => 'textarea',
+							'std'   => '',
+							'label' => esc_html__( 'Content:', 'angiemakesdesign' ),
+						),
+						'box_color' => array(
+							'type'  => 'colorpicker',
+							'std'   => '#fff',
+							'label' => esc_html__( 'Content Box Color:', 'angiemakesdesign' ),
+						),
+						'box_opacity' => array(
+							'type'  => 'number',
+							'std'   => 100,
+							'step'  => 5,
+							'min'   => 0,
+							'max'   => 100,
+							'label' => esc_html__( 'Content Box Opacity:', 'angiemakesdesign' ),
+						),
+						'text_color' => array(
+							'type'  => 'colorpicker',
+							'std'   => '#000',
+							'label' => esc_html__( 'Text Color:', 'angiemakesdesign' ),
+						),
+						'link_color' => array(
+							'type'  => 'colorpicker',
+							'std'   => '#000',
+							'label' => esc_html__( 'Link Color:', 'angiemakesdesign' ),
+						),
+						'content_position' => array(
+							'type'  => 'select',
+							'std'   => 'slide-content-left',
+							'label' => esc_html__( 'Content Position:', 'angiemakesdesign' ),
+							'options' => array(
+								'slide-content-left'   => esc_html__( 'Left', 'angiemakesdesign' ),
+								'slide-content-center' => esc_html__( 'Center', 'angiemakesdesign' ),
+								'slide-content-right'  => esc_html__( 'Right', 'angiemakesdesign' ),
+							),
+						),
+						'button_link' => array(
+							'type'  => 'text',
+							'std'   => '',
+							'label' => esc_html__( 'Button URL:', 'angiemakesdesign' ),
+						),
+						'button_text' => array(
+							'type'  => 'text',
+							'std'   => '',
+							'label' => esc_html__( 'Button Text:', 'angiemakesdesign' ),
+						),
 					),
-				),
-				'button_link' => array(
-					'type'  => 'text',
-					'std'   => '',
-					'label' => esc_html__( 'Button URL:', 'angiemakesdesign' ),
-				),
-				'button_text' => array(
-					'type'  => 'text',
-					'std'   => '',
-					'label' => esc_html__( 'Button Text:', 'angiemakesdesign' ),
 				),
 			);
 

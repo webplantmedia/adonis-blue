@@ -49,6 +49,9 @@ class AngieMakesDesign_Widget extends WP_Widget {
 		}
 		wp_enqueue_style( 'wp-color-picker' );
 		wp_enqueue_script( 'wp-color-picker' );
+		wp_enqueue_script( 'jquery-ui' );
+		wp_enqueue_script( 'jquery-ui-autocomplete' );
+		wp_enqueue_script( 'jquery-ui-accordion' );
 		wp_enqueue_script( 'underscore' );
 	}
 
@@ -164,189 +167,237 @@ class AngieMakesDesign_Widget extends WP_Widget {
 		if ( ! $this->settings ) {
 			return;
 		}
+		$id_prefix = $this->get_field_id( '' );
+
+		?>
+		<div id="<?php echo $id_prefix; ?>" class="widget-inner-container">
+		<?php
 
 		foreach ( $this->settings as $key => $setting ) {
 
-			$value = isset( $instance[ $key ] ) ? $instance[ $key ] : $setting['std'];
+			if ( 'panels' == $key ) {
+				$this->display_before_panel( $setting['title'] );
 
-			switch ( $setting['type'] ) {
-				case 'description' :
-					?>
-					<p class="description"><?php echo $value; ?></p>
-					<?php
-				break;
+				foreach ( $setting['fields'] as $key => $panel_setting ) {
+					$this->display_settings( $instance, $key, $panel_setting );
+				}
 
-				case 'text':
-					?>
-					<p>
-						<label for="<?php echo $this->get_field_id( $key ); ?>"><?php echo esc_html( $setting['label'] ); ?></label>
-						<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>" type="text" value="<?php echo esc_attr( $value ); ?>" />
-					</p>
-					<?php
-				break;
+				$this->display_after_panel();
+			}
+			else {
+				$this->display_settings( $instance, $key, $setting );
+			}
+		}
 
-				case 'image' :
-					wp_enqueue_media();
-					wp_enqueue_script( 'app-image-widget-admin', get_template_directory_uri() . '/js/app-image-widget-admin.js', array( 'jquery' ), '', true );
-					$id_prefix = $this->get_field_id( '' );
+		?>
+		</div>
+		<?php
+	}
+
+	public function display_before_panel( $title ) {
+		?>
+		<h3><?php echo esc_html( $title ); ?></h3>
+		<div>
+		<?php
+	}
+
+	public function display_after_panel() {
+		$id_prefix = $this->get_field_id( '' );
+
+		?>
+		</div>
+		<script type="text/javascript">
+			/* <![CDATA[ */
+			jQuery(document).ready(function($){
+				$('#<?php echo $id_prefix; ?>').accordion({heightStyle: "content", collapsible: true});
+			});
+			/* ]]> */
+		</script>
+		<?php
+	}
+
+	public function display_settings( $instance, $key, $setting ) {
+		$value = isset( $instance[ $key ] ) ? $instance[ $key ] : $setting['std'];
+		$field_id = $this->get_field_id( $key );
+		$field_name = $this->get_field_name( $key );
+
+		switch ( $setting['type'] ) {
+			case 'description' :
 				?>
-					<p style="margin-bottom: 0;">
-						<label for="<?php echo $this->get_field_id( $key ); ?>"><?php echo $setting['label']; ?></label>
-					</p>
-
-					<p style="margin-top: 3px;">
-						<div id="<?php echo esc_attr( $id_prefix ); ?>preview" class="stag-image-preview">
-							<style type="text/css">
-								.stag-image-preview img { max-width: 100%; border: 1px solid #e5e5e5; padding: 2px; margin-bottom: 5px;  }
-							</style>
-							<?php if ( ! empty( $value ) ) : ?>
-							<img src="<?php echo esc_url( $value ); ?>" alt="">
-							<?php endif; ?>
-						</div>
-
-						<input type="hidden" class="widefat" id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>" name="<?php echo $this->get_field_name( $key ); ?>"value="<?php echo $value; ?>" placeholder="http://" />
-						<a href="#" class="button-secondary <?php echo esc_attr( $this->get_field_id( $key ) ); ?>-add" onclick="imageWidget.uploader( '<?php echo $this->id; ?>', '<?php echo $id_prefix; ?>', '<?php echo $key; ?>' ); return false;"><?php esc_html_e( 'Choose Image', 'angiemakesdesign' ); ?></a>
-						<a href="#" style="display:inline-block;margin:5px 0 0 3px;<?php if ( empty( $value ) ) echo 'display:none;'; ?>" id="<?php echo esc_attr( $id_prefix ); ?>remove" class="button-link-delete" onclick="imageWidget.remove( '<?php echo $this->id; ?>', '<?php echo $id_prefix; ?>', '<?php echo $key; ?>' ); return false;"><?php esc_html_e( 'Remove', 'angiemakesdesign' ); ?></a>
-					</p>
+				<p class="description"><?php echo $value; ?></p>
 				<?php
-				break;
+			break;
 
-				case 'checkbox' :
-					?>
-					<p>
-						<label for="<?php echo $this->get_field_id( $key ); ?>">
-							<input type="checkbox" id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>" type="text" value="1" <?php checked( 1, esc_attr( $value ) ); ?>/>
-							<?php echo esc_html( $setting['label'] ); ?>
-						</label>
-					</p>
-					<?php
-				break;
+			case 'text':
+				?>
+				<p>
+					<label for="<?php echo $field_id; ?>"><?php echo esc_html( $setting['label'] ); ?></label>
+					<input class="widefat" id="<?php echo esc_attr( $field_id ); ?>" name="<?php echo esc_attr( $field_name ); ?>" type="text" value="<?php echo esc_attr( $value ); ?>" />
+				</p>
+				<?php
+			break;
 
-				case 'multicheck' :
-					$value = maybe_unserialize( $value );
+			case 'image' :
+				wp_enqueue_media();
+				wp_enqueue_script( 'app-image-widget-admin', get_template_directory_uri() . '/js/app-image-widget-admin.js', array( 'jquery' ), '', true );
+				$id_prefix = $this->get_field_id( '' );
+			?>
+				<p style="margin-bottom: 0;">
+					<label for="<?php echo $field_id; ?>"><?php echo $setting['label']; ?></label>
+				</p>
 
-					if ( ! is_array( $value ) ) {
-						$value = array();
-					}
-					?>
-					<p><?php echo esc_attr( $setting['label'] ); ?></p>
-					<p>
-						<?php foreach ( $setting['options'] as $id => $label ) : ?>
-						<label for="<?php echo sanitize_title( $label ); ?>-<?php echo esc_attr( $id ); ?>">
-							<input type="checkbox" id="<?php echo sanitize_title( $label ); ?>-<?php echo esc_attr( $id ); ?>" name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>[]" value="<?php echo esc_attr( $id ); ?>" <?php if ( in_array( $id, $value ) ) : ?>checked="checked"<?php endif; ?>/>
-							<?php echo esc_attr( $label ); ?><br />
-						</label>
-						<?php endforeach; ?>
-					</p>
-					<?php
-				break;
+				<p style="margin-top: 3px;">
+					<div id="<?php echo esc_attr( $id_prefix ); ?>preview" class="stag-image-preview">
+						<style type="text/css">
+							.stag-image-preview img { max-width: 100%; border: 1px solid #e5e5e5; padding: 2px; margin-bottom: 5px;  }
+						</style>
+						<?php if ( ! empty( $value ) ) : ?>
+						<img src="<?php echo esc_url( $value ); ?>" alt="">
+						<?php endif; ?>
+					</div>
 
-				case 'select' :
-					?>
-					<p>
-						<label for="<?php echo $this->get_field_id( $key ); ?>"><?php echo esc_html( $setting['label'] ); ?></label>
-						<select class="widefat" id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>" name="<?php echo $this->get_field_name( $key ); ?>">
-							<?php foreach ( $setting['options'] as $key => $label ) : ?>
-							<option value="<?php echo esc_attr( $key ); ?>" <?php selected( $key, $value ); ?>><?php echo esc_attr( $label ); ?></option>
-							<?php endforeach; ?>
-						</select>
-					</p>
-					<?php
-				break;
+					<input type="hidden" class="widefat" id="<?php echo esc_attr( $field_id ); ?>" name="<?php echo $field_name; ?>"value="<?php echo $value; ?>" placeholder="http://" />
+					<a href="#" class="button-secondary <?php echo esc_attr( $field_id ); ?>-add" onclick="imageWidget.uploader( '<?php echo $this->id; ?>', '<?php echo $id_prefix; ?>', '<?php echo $key; ?>' ); return false;"><?php esc_html_e( 'Choose Image', 'angiemakesdesign' ); ?></a>
+					<a href="#" style="display:inline-block;margin:5px 0 0 3px;<?php if ( empty( $value ) ) echo 'display:none;'; ?>" id="<?php echo esc_attr( $id_prefix ); ?>remove" class="button-link-delete" onclick="imageWidget.remove( '<?php echo $this->id; ?>', '<?php echo $id_prefix; ?>', '<?php echo $key; ?>' ); return false;"><?php esc_html_e( 'Remove', 'angiemakesdesign' ); ?></a>
+				</p>
+			<?php
+			break;
 
-				case 'page':
-					$exclude_ids = implode( ',', array( get_option( 'page_for_posts' ), get_option( 'page_on_front' ) ) );
-					$pages       = get_pages( 'sort_order=ASC&sort_column=post_title&post_status=publish&exclude=' . $exclude_ids );
-					?>
-					<label for="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>"><?php echo esc_html( $setting['label'] ); ?></label>
-					<select class="widefat" id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>">
-						<?php foreach ( $pages as $page ) : ?>
-							<option value="<?php echo esc_attr( $page->ID ); ?>" <?php selected( $page->ID, $value ); ?>><?php echo esc_attr( $page->post_title ); ?></option>
+			case 'checkbox' :
+				?>
+				<p>
+					<label for="<?php echo $field_id; ?>">
+						<input type="checkbox" id="<?php echo esc_attr( $field_id ); ?>" name="<?php echo esc_attr( $field_name ); ?>" type="text" value="1" <?php checked( 1, esc_attr( $value ) ); ?>/>
+						<?php echo esc_html( $setting['label'] ); ?>
+					</label>
+				</p>
+				<?php
+			break;
+
+			case 'multicheck' :
+				$value = maybe_unserialize( $value );
+
+				if ( ! is_array( $value ) ) {
+					$value = array();
+				}
+				?>
+				<p><?php echo esc_attr( $setting['label'] ); ?></p>
+				<p>
+					<?php foreach ( $setting['options'] as $id => $label ) : ?>
+					<label for="<?php echo sanitize_title( $label ); ?>-<?php echo esc_attr( $id ); ?>">
+						<input type="checkbox" id="<?php echo sanitize_title( $label ); ?>-<?php echo esc_attr( $id ); ?>" name="<?php echo esc_attr( $field_name ); ?>[]" value="<?php echo esc_attr( $id ); ?>" <?php if ( in_array( $id, $value ) ) : ?>checked="checked"<?php endif; ?>/>
+						<?php echo esc_attr( $label ); ?><br />
+					</label>
+					<?php endforeach; ?>
+				</p>
+				<?php
+			break;
+
+			case 'select' :
+				?>
+				<p>
+					<label for="<?php echo $field_id; ?>"><?php echo esc_html( $setting['label'] ); ?></label>
+					<select class="widefat" id="<?php echo esc_attr( $field_id ); ?>" name="<?php echo $field_name; ?>">
+						<?php foreach ( $setting['options'] as $key => $label ) : ?>
+						<option value="<?php echo esc_attr( $key ); ?>" <?php selected( $key, $value ); ?>><?php echo esc_attr( $label ); ?></option>
 						<?php endforeach; ?>
 					</select>
-					<?php
-				break;
+				</p>
+				<?php
+			break;
 
-				case 'number' :
-					?>
-					<p>
-						<label for="<?php echo $this->get_field_id( $key ); ?>"><?php echo esc_html( $setting['label'] ); ?></label>
-						<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>" type="number" step="<?php echo esc_attr( $setting['step'] ); ?>" min="<?php echo esc_attr( $setting['min'] ); ?>" max="<?php echo esc_attr( $setting['max'] ); ?>" value="<?php echo esc_attr( $value ); ?>" />
+			case 'page':
+				$exclude_ids = implode( ',', array( get_option( 'page_for_posts' ), get_option( 'page_on_front' ) ) );
+				$pages       = get_pages( 'sort_order=ASC&sort_column=post_title&post_status=publish&exclude=' . $exclude_ids );
+				?>
+				<label for="<?php echo esc_attr( $field_id ); ?>"><?php echo esc_html( $setting['label'] ); ?></label>
+				<select class="widefat" id="<?php echo esc_attr( $field_id ); ?>" name="<?php echo esc_attr( $field_name ); ?>">
+					<?php foreach ( $pages as $page ) : ?>
+						<option value="<?php echo esc_attr( $page->ID ); ?>" <?php selected( $page->ID, $value ); ?>><?php echo esc_attr( $page->post_title ); ?></option>
+					<?php endforeach; ?>
+				</select>
+				<?php
+			break;
+
+			case 'number' :
+				?>
+				<p>
+					<label for="<?php echo $field_id; ?>"><?php echo esc_html( $setting['label'] ); ?></label>
+					<input class="widefat" id="<?php echo esc_attr( $field_id ); ?>" name="<?php echo esc_attr( $field_name ); ?>" type="number" step="<?php echo esc_attr( $setting['step'] ); ?>" min="<?php echo esc_attr( $setting['min'] ); ?>" max="<?php echo esc_attr( $setting['max'] ); ?>" value="<?php echo esc_attr( $value ); ?>" />
+				</p>
+				<?php
+			break;
+
+			case 'textarea' :
+				?>
+				<p>
+					<label for="<?php echo $field_id; ?>"><?php echo esc_html( $setting['label'] ); ?></label>
+					<textarea class="widefat" id="<?php echo esc_attr( $field_id ); ?>"
+					name="<?php echo esc_attr( $field_name ); ?>" rows="<?php echo isset( $setting['rows'] )
+					? $setting['rows'] : 3; ?>"><?php echo esc_html( $value ); ?></textarea>
+				</p>
+				<?php
+			break;
+
+			case 'colorpicker' :
+					wp_enqueue_script( 'wp-color-picker' );
+					wp_enqueue_style( 'wp-color-picker' );
+					wp_enqueue_style( 'underscore' );
+				?>
+					<p style="margin-bottom: 0;">
+						<label for="<?php echo $field_id; ?>"><?php echo esc_html( $setting['label'] ); ?></label>
 					</p>
-					<?php
-				break;
+					<input type="text" class="widefat color-picker" id="<?php echo esc_attr( $field_id ); ?>" name="<?php echo esc_attr( $field_name ); ?>" data-default-color="<?php echo $value; ?>" value="<?php echo $value; ?>" />
+					<script>
 
-				case 'textarea' :
-					?>
-					<p>
-						<label for="<?php echo $this->get_field_id( $key ); ?>"><?php echo esc_html( $setting['label'] ); ?></label>
-						<textarea class="widefat" id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>"
-						name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>" rows="<?php echo isset( $setting['rows'] )
-						? $setting['rows'] : 3; ?>"><?php echo esc_html( $value ); ?></textarea>
-					</p>
-					<?php
-				break;
+						( function( $ ){
+							function initColorPicker( widget ) {
+								widget.find( '.color-picker' ).wpColorPicker( {
+									change: _.throttle( function() { // For Customizer
+										$(this).trigger( 'change' );
+									}, 3000 )
+								});
+							}
 
-				case 'colorpicker' :
-						wp_enqueue_script( 'wp-color-picker' );
-						wp_enqueue_style( 'wp-color-picker' );
-						wp_enqueue_style( 'underscore' );
-					?>
-						<p style="margin-bottom: 0;">
-							<label for="<?php echo $this->get_field_id( $key ); ?>"><?php echo esc_html( $setting['label'] ); ?></label>
-						</p>
-						<input type="text" class="widefat color-picker" id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>" data-default-color="<?php echo $value; ?>" value="<?php echo $value; ?>" />
-						<script>
+							function onFormUpdate( event, widget ) {
+								initColorPicker( widget );
+							}
 
-							( function( $ ){
-								function initColorPicker( widget ) {
-									widget.find( '.color-picker' ).wpColorPicker( {
-										change: _.throttle( function() { // For Customizer
-											$(this).trigger( 'change' );
-										}, 3000 )
-									});
-								}
+							$( document ).on( 'widget-added widget-updated', onFormUpdate );
 
-								function onFormUpdate( event, widget ) {
-									initColorPicker( widget );
-								}
-
-								$( document ).on( 'widget-added widget-updated', onFormUpdate );
-
-								$( document ).ready( function() {
-									$( '#widgets-right .widget:has(.color-picker)' ).each( function () {
-										initColorPicker( $( this ) );
-									} );
+							$( document ).ready( function() {
+								$( '#widgets-right .widget:has(.color-picker)' ).each( function () {
+									initColorPicker( $( this ) );
 								} );
-							}( jQuery ) );
-						</script>
-						<p></p>
-					<?php
-				break;
+							} );
+						}( jQuery ) );
+					</script>
+					<p></p>
+				<?php
+			break;
 
-				case 'category':
-					$categories_dropdown = wp_dropdown_categories( array(
-						'name'            => $this->get_field_name( 'category' ),
-						'selected'        => $value,
-						'show_option_all' => esc_html__( 'All Categories', 'angiemakesdesign' ),
-						'show_count'      => true,
-						'orderby'         => 'slug',
-						'hierarchical'    => true,
-						'class'           => 'widefat',
-						'echo'            => false,
-					) );
-					?>
+			case 'category':
+				$categories_dropdown = wp_dropdown_categories( array(
+					'name'            => $this->get_field_name( 'category' ),
+					'selected'        => $value,
+					'show_option_all' => esc_html__( 'All Categories', 'angiemakesdesign' ),
+					'show_count'      => true,
+					'orderby'         => 'slug',
+					'hierarchical'    => true,
+					'class'           => 'widefat',
+					'echo'            => false,
+				) );
+				?>
 
-					<label for="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>"><?php echo esc_html( $setting['label'] ); ?></label>
-					<?php echo $categories_dropdown;  ?>
+				<label for="<?php echo esc_attr( $field_id ); ?>"><?php echo esc_html( $setting['label'] ); ?></label>
+				<?php echo $categories_dropdown;  ?>
 
-					<?php
-				break;
+				<?php
+			break;
 
-				default :
-					do_action( 'angiemakesdesign_widget_type_' . $setting['type'], $this, $key, $setting, $instance );
-				break;
-			}
+			default :
+				do_action( 'angiemakesdesign_widget_type_' . $setting['type'], $this, $key, $setting, $instance );
+			break;
 		}
 	}
 
