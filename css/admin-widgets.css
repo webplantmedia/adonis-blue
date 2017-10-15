@@ -1,0 +1,168 @@
+.ui-theme-override.ui-widget {
+    font-family: inherit;
+    font-size: inherit;
+}
+.ui-theme-override.ui-helper-reset {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    line-height: inherit;
+    text-decoration: none;
+    font-size: inherit;
+    list-style: none;
+}
+.ui-theme-override.ui-accordion .ui-accordion-header {
+    display: block;
+    cursor: pointer;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    font-size: inherit;
+}
+.ui-theme-override .ui-corner-all,
+.ui-theme-override .ui-corner-top,
+.ui-theme-override .ui-corner-right,
+.ui-theme-override .ui-corner-tr {
+    border-radius: 0;
+}
+.ui-theme-override .ui-state-hover,
+.ui-theme-override .ui-widget-content .ui-state-hover,
+.ui-theme-override .ui-widget-header .ui-state-hover,
+.ui-theme-override .ui-state-focus,
+.ui-theme-override .ui-widget-content .ui-state-focus,
+.ui-theme-override .ui-widget-header .ui-state-focus,
+.ui-theme-override .ui-button:hover,
+.ui-theme-override .ui-button:focus {
+    border: 0px solid #e5e5e5;
+    background: #ddd;
+	font-weight: inherit;
+    color: inherit;
+}
+.ui-theme-override .ui-menu .ui-state-focus,
+.ui-theme-override .ui-menu .ui-state-active {
+    margin: 0;
+}
+.ui-theme-override .ui-state-active,
+.ui-theme-override .ui-widget-content .ui-state-active,
+.ui-theme-override .ui-widget-header .ui-state-active,
+.ui-theme-override a.ui-button:active,
+.ui-theme-override .ui-button:active,
+.ui-theme-override .ui-button.ui-state-active:hover,
+.ui-theme-override .ui-state-default,
+.ui-theme-override .ui-widget-content .ui-state-default,
+.ui-theme-override .ui-widget-header .ui-state-default,
+.ui-theme-override .ui-button,
+.ui-theme-override .ui-button.ui-state-disabled:hover,
+.ui-theme-override .ui-button.ui-state-disabled:active {
+	border-style: solid;
+	border-width: 1px;
+	border-color: #e5e5e5;
+    background: #ffffff;
+    font-weight: inherit;
+    color: inherit;
+}
+.ui-theme-override .ui-icon,
+.ui-theme-override .ui-widget-content .ui-icon {
+	display: none;
+}
+.ui-theme-override.ui-accordion .ui-accordion-content {
+    padding: 0;
+    border-top: 0;
+    overflow: visible;
+}
+.ui-theme-override .ui-widget-content {
+    border: 0px solid #e5e5e5;
+    background: #ffffff;
+    color: inherit;
+}
+/* accordion */
+.ui-theme-override .ui-widget.ui-widget-content {
+    border: 1px solid #e5e5e5;
+}
+.ui-theme-override .ui-widget .ui-widget {
+    font-size: inherit;
+}
+.ui-theme-override .ui-menu {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: block;
+	outline: 0;
+}
+.ui-theme-override .ui-autocomplete {
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: default;
+}
+.ui-theme-override .ui-front {
+	z-index: 999999;
+}
+.ui-theme-override .ui-autocomplete {
+	border: 1px solid #5b9dd9 !important;
+	-webkit-box-shadow: 0 1px 2px rgba(30,140,190,.8) !important;
+	box-shadow: 0 1px 2px rgba(30,140,190,.8) !important;
+	background-color: #fff !important;
+}
+
+html .widget-inner-container,
+html .widget-inner-container .ui-accordion,
+html .widget-inner-container.ui-accordion {
+	margin-bottom: 1.5em;
+}
+html .widget-inner-container .ui-autocomplete,
+html .widget-inner-container .ui-accordion .ui-autocomplete,
+html .widget-inner-container.ui-accordion .ui-autocomplete {
+	z-index: 999999;
+	max-height: 300px;
+	overflow: auto;
+}
+html .widget-inner-container .ui-autocomplete li,
+html .widget-inner-container .ui-accordion .ui-autocomplete li,
+html .widget-inner-container.ui-accordion .ui-autocomplete li {
+	white-space: normal;
+}
+html .widget-inner-container .ui-accordion .ui-accordion-header,
+html .widget-inner-container.ui-accordion .ui-accordion-header {
+	border: 1px solid #ddd;
+	position: relative;
+	padding: 10px 15px;
+	height: auto;
+	line-height: 30px;
+	overflow: hidden;
+	word-wrap: break-word;
+	background: #fafafa;
+	color: #23282d;
+	margin-bottom: 0;
+	cursor: pointer;
+	font-size: 1em;
+	font-weight: 600;
+	margin-top: 1em;
+	outline: 0;
+}
+html .widget-inner-container .ui-accordion .ui-accordion-header:before,
+html .widget-inner-container.ui-accordion .ui-accordion-header:before {
+	content: "\f345";
+	border: none;
+	background: 0 0;
+	font-size: 1.0em;
+	font-family: dashicons;
+	speak: none;
+	display: inline-block;
+	padding: 0;
+	text-indent: 0;
+	text-align: center;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-decoration: none !important;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+	text-indent: -1px;
+	vertical-align: bottom;
+	margin-right: 5px;
+}
+html .widget-inner-container .ui-accordion .ui-accordion-header.ui-accordion-header-active:before,
+html .widget-inner-container.ui-accordion .ui-accordion-header.ui-accordion-header-active:before {
+	content: "\f347";
+}

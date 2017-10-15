@@ -48,6 +48,8 @@ class AngieMakesDesign_Widget extends WP_Widget {
 			return;
 		}
 		wp_enqueue_style( 'wp-color-picker' );
+		wp_enqueue_style( 'angiemakesdesign-ui-theme-override', get_parent_theme_file_uri() . '/css/admin-widgets.css', array(), ANGIEMAKESDESIGN_VERSION );
+
 		wp_enqueue_script( 'wp-color-picker' );
 		wp_enqueue_script( 'jquery-ui' );
 		wp_enqueue_script( 'jquery-ui-autocomplete' );
@@ -170,7 +172,7 @@ class AngieMakesDesign_Widget extends WP_Widget {
 		$id_prefix = $this->get_field_id( '' );
 
 		?>
-		<div id="<?php echo $id_prefix; ?>" class="widget-inner-container">
+		<div id="<?php echo $id_prefix; ?>" class="widget-inner-container ui-theme-override">
 		<?php
 
 		foreach ( $this->settings as $key => $setting ) {
