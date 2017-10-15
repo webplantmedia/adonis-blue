@@ -48,13 +48,15 @@ class AngieMakesDesign_Widget extends WP_Widget {
 			return;
 		}
 		wp_enqueue_style( 'wp-color-picker' );
-		wp_enqueue_style( 'angiemakesdesign-ui-theme-override', get_parent_theme_file_uri() . '/css/admin-widgets.css', array(), ANGIEMAKESDESIGN_VERSION );
+		wp_enqueue_style( 'angiemakesdesign-ui-theme-override', get_parent_theme_file_uri() . '/css/admin/admin-widgets.css', array(), ANGIEMAKESDESIGN_VERSION );
 
 		wp_enqueue_script( 'wp-color-picker' );
 		wp_enqueue_script( 'jquery-ui' );
 		wp_enqueue_script( 'jquery-ui-autocomplete' );
 		wp_enqueue_script( 'jquery-ui-accordion' );
-		wp_enqueue_script( 'underscore' );
+		// wp_enqueue_script( 'underscore' );
+
+		wp_enqueue_script( 'angiemakesdesign-admin-widgets', get_template_directory_uri() . '/js/admin/admin-widgets.js', array(), ANGIEMAKESDESIGN_VERSION, true );
 	}
 
 	/**
@@ -169,52 +171,65 @@ class AngieMakesDesign_Widget extends WP_Widget {
 		if ( ! $this->settings ) {
 			return;
 		}
-		$id_prefix = $this->get_field_id( '' );
-
+		$display_panel = false;
+		$repeater = false;
 		?>
-		<div id="<?php echo $id_prefix; ?>" class="widget-inner-container ui-theme-override">
-		<?php
 
-		foreach ( $this->settings as $key => $setting ) {
+		<div id="<?php echo $this->id; ?>" class="widget-inner-container ui-theme-override">
+			<?php
 
-			if ( 'panels' == $key ) {
-				$this->display_before_panel( $setting['title'] );
+			foreach ( $this->settings as $key => $setting ) {
 
-				foreach ( $setting['fields'] as $key => $panel_setting ) {
-					$this->display_settings( $instance, $key, $panel_setting );
+				if ( 'panels' == $key ) {
+					$display_panel = true;
+
+					if ( isset( $setting['type'] ) && 'repeater' == $setting['type'] ) {
+						$repeater = true;
+					}
+
+					$this->display_before_panel( $setting['title'] );
+
+					foreach ( $setting['fields'] as $key => $panel_setting ) {
+						$this->display_settings( $instance, $key, $panel_setting );
+					}
+
+					$this->display_after_panel();
 				}
-
-				$this->display_after_panel();
+				else {
+					$this->display_settings( $instance, $key, $setting );
+				}
 			}
-			else {
-				$this->display_settings( $instance, $key, $setting );
-			}
-		}
 
-		?>
+			?>
 		</div>
+
+		<?php if ( $repeater ) : ?>
+			<a href="#" class="button-secondary widget-panel-repeater" onclick="widgetPanelRepeater( '<?php echo $this->id; ?>' ); return false;"><?php esc_html_e( 'Add New Item', 'angiemakesdesign' ); ?></a>
+		<?php endif; ?>
+
+		<?php if ( $display_panel ) : ?>
+			<script type="text/javascript">
+				/* <![CDATA[ */
+				jQuery(document).ready(function($){
+					$('#<?php echo $this->id; ?>').accordion({heightStyle: "content", collapsible: true, active: false});
+				});
+				/* ]]> */
+			</script>
+		<?php endif; ?>
+
 		<?php
 	}
 
 	public function display_before_panel( $title ) {
 		?>
-		<h3><?php echo esc_html( $title ); ?></h3>
-		<div>
+		<h3 class="widget-panel-title"><?php echo esc_html( $title ); ?></h3>
+		<div class="widget-panel-body">
 		<?php
 	}
 
 	public function display_after_panel() {
-		$id_prefix = $this->get_field_id( '' );
-
 		?>
 		</div>
-		<script type="text/javascript">
-			/* <![CDATA[ */
-			jQuery(document).ready(function($){
-				$('#<?php echo $id_prefix; ?>').accordion({heightStyle: "content", collapsible: true});
-			});
-			/* ]]> */
-		</script>
 		<?php
 	}
 
@@ -241,7 +256,7 @@ class AngieMakesDesign_Widget extends WP_Widget {
 
 			case 'image' :
 				wp_enqueue_media();
-				wp_enqueue_script( 'app-image-widget-admin', get_template_directory_uri() . '/js/app-image-widget-admin.js', array( 'jquery' ), '', true );
+				wp_enqueue_script( 'angiemakesdesign-widget-image', get_template_directory_uri() . '/js/admin/admin-image.js', array( 'jquery' ), '', true );
 				$id_prefix = $this->get_field_id( '' );
 			?>
 				<p style="margin-bottom: 0;">

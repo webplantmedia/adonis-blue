@@ -166,3 +166,6 @@ html .widget-inner-container .ui-accordion .ui-accordion-header.ui-accordion-hea
 html .widget-inner-container.ui-accordion .ui-accordion-header.ui-accordion-header-active:before {
 	content: "\f347";
 }
+.widget-panel-repeater {
+	margin-bottom: 1.5em !important;
+}
