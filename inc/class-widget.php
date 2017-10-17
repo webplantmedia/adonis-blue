@@ -208,13 +208,32 @@ class AngieMakesDesign_Widget extends WP_Widget {
 		<?php endif; ?>
 
 		<?php if ( $display_panel ) : ?>
-			<script type="text/javascript">
-				/* <![CDATA[ */
-				jQuery(document).ready(function($){
-					$('#<?php echo $this->id; ?>').accordion({heightStyle: "content", collapsible: true, active: false});
-				});
-				/* ]]> */
-			</script>
+				<script type="text/javascript">
+					/* <![CDATA[ */
+					jQuery(document).ready(function($){
+						$('#<?php echo $this->id; ?>').accordion({
+							header: '.widget-panel-title',
+							heightStyle: "content",
+							collapsible: true,
+							active: false
+						})
+						<?php if ( $repeater ) : ?>
+						.sortable({
+							axis: "y",
+							handle: '.panel-sort',
+							stop: function( event, ui ) {
+								// IE doesn't register the blur when sorting
+								// so trigger focusout handlers to remove .ui-state-focus
+								ui.item.children( '.panel-sort' ).triggerHandler( "focusout" );
+
+								// Refresh accordion to handle new order
+								$( this ).accordion( "refresh" );
+							}
+						});
+						<?php endif; ?>
+					});
+					/* ]]> */
+				</script>
 		<?php endif; ?>
 
 		<?php
@@ -222,13 +241,22 @@ class AngieMakesDesign_Widget extends WP_Widget {
 
 	public function display_before_panel( $title ) {
 		?>
-		<h3 class="widget-panel-title"><?php echo esc_html( $title ); ?></h3>
-		<div class="widget-panel-body">
+		<div class="widget-panel">
+			<h3 class="widget-panel-title"><?php echo esc_html( $title ); ?></h3>
+			<div class="widget-panel-body">
 		<?php
 	}
 
 	public function display_after_panel() {
 		?>
+			</div>
+			<div class="dashicons-before dashicons-move panel-sort panel-button"></div>
+			<div onclick="widgetPanelDelete( this ); return false;" class="dashicons-before dashicons-no panel-delete panel-button"></div>
+			<span class="panel-delete-final">
+				<?php echo esc_html__( 'Delete Slide?', 'angiemakesdesign' ); ?>
+				<a href="#" onclick="widgetPanelDeleteYes( this ); return false;"><?php echo esc_html__( 'Yes', 'angiemakesdesign' ); ?></a>
+				<a href="#" onclick="widgetPanelDeleteNo( this ); return false;"><?php echo esc_html__( 'No', 'angiemakesdesign' ); ?></a>
+			</span>
 		</div>
 		<?php
 	}
@@ -361,35 +389,20 @@ class AngieMakesDesign_Widget extends WP_Widget {
 					wp_enqueue_style( 'wp-color-picker' );
 					wp_enqueue_style( 'underscore' );
 				?>
-					<p style="margin-bottom: 0;">
-						<label for="<?php echo $field_id; ?>"><?php echo esc_html( $setting['label'] ); ?></label>
-					</p>
+				<p style="margin-bottom: 0;">
+					<label for="<?php echo $field_id; ?>"><?php echo esc_html( $setting['label'] ); ?></label>
+				</p>
+				<div class="color-picker-wrapper">
 					<input type="text" class="widefat color-picker" id="<?php echo esc_attr( $field_id ); ?>" name="<?php echo esc_attr( $field_name ); ?>" data-default-color="<?php echo $value; ?>" value="<?php echo $value; ?>" />
 					<script>
-
 						( function( $ ){
-							function initColorPicker( widget ) {
-								widget.find( '.color-picker' ).wpColorPicker( {
-									change: _.throttle( function() { // For Customizer
-										$(this).trigger( 'change' );
-									}, 3000 )
-								});
-							}
-
-							function onFormUpdate( event, widget ) {
-								initColorPicker( widget );
-							}
-
-							$( document ).on( 'widget-added widget-updated', onFormUpdate );
-
 							$( document ).ready( function() {
-								$( '#widgets-right .widget:has(.color-picker)' ).each( function () {
-									initColorPicker( $( this ) );
-								} );
+								$('#<?php echo $field_id; ?>').wpColorPicker();
 							} );
 						}( jQuery ) );
 					</script>
-					<p></p>
+				</div>
+				<p></p>
 				<?php
 			break;
 
