@@ -41,22 +41,43 @@
 		$panel.addClass('panel-delete-confirm');
 	}
 
-	window.widgetPanelRepeater = function( id ) {
+	window.widgetPanelButtons = function( id ) {
 		var $widget = $('#'+id);
-		var $panel = $widget.find('.widget-panel:last');
 		var $panels = $widget.find('.widget-panel');
 
-		if ( $panels.length >= 1 ) {
+		if ( $panels.length > 1 ) {
 			$widget.addClass('show-panel-buttons');
 		}
 		else {
 			$widget.removeClass('show-panel-buttons');
 		}
+	}
+
+	window.widgetPanelRepeater = function( id ) {
+		var $widget = $('#'+id);
+		var $panel = $widget.find('.widget-panel:last');
+		var $panels = $widget.find('.widget-panel');
+		var panelCount = $panels.length;
+		var nextPanelCount = panelCount + 1;
 
 		if ( $panel.length ) {
 			var $copy = $panel.clone();
 			$copy.find('.widget-panel-title').removeClass('ui-accordion-header-active ui-state-active');
 			$copy.find('.widget-panel-body').removeClass('ui-accordion-content-active');
+
+			var $names = $copy.find('[name]');
+			$names.each( function() {
+				var $this = $(this);
+
+				var name = $this.attr('name');
+				name = name.replace(/\[panel\]\[\d+\]/,'[panel]['+nextPanelCount+']');
+				$this.attr('name',name);
+
+				var id = $this.attr('id');
+				id = id.replace(/panel\-\d+\-/,'panel-'+nextPanelCount+'-');
+				$this.attr('id',id);
+			});
+
 			$copy.appendTo( $widget );
 
 			if ( $copy.hasClass('panel-delete-confirm') ) {
@@ -75,9 +96,11 @@
 				}
 			});
 		}
+
 		$widget.accordion( "refresh" ).sortable( "refresh" );
 
-		// $widget.accordion({active:false});
+		widgetPanelButtons( id );
+
 	}
 
 } )( jQuery );

@@ -119,6 +119,8 @@ class AngieMakesDesign_Widget extends WP_Widget {
 	 * @return array
 	 */
 	function update( $new_instance, $old_instance ) {
+		return $new_instance;
+
 		$instance = $old_instance;
 
 		if ( ! $this->settings ) {
@@ -173,6 +175,14 @@ class AngieMakesDesign_Widget extends WP_Widget {
 		}
 		$display_panel = false;
 		$repeater = false;
+		$panel_count = 1;
+
+		if ( isset( $instance['panel'] ) && is_array( $instance['panel'] ) ) {
+			$panel_instance = $instance['panel'];
+		}
+		else {
+			$panel_instance[1] = $instance;
+		}
 		?>
 
 		<div id="<?php echo $this->id; ?>" class="widget-inner-container ui-theme-override">
@@ -186,14 +196,17 @@ class AngieMakesDesign_Widget extends WP_Widget {
 					if ( isset( $setting['type'] ) && 'repeater' == $setting['type'] ) {
 						$repeater = true;
 					}
+					foreach ( $panel_instance as $instance ) {
 
-					$this->display_before_panel( $setting['title'] );
+						$this->display_before_panel( $setting['title'] );
 
-					foreach ( $setting['fields'] as $key => $panel_setting ) {
-						$this->display_settings( $instance, $key, $panel_setting );
+						foreach ( $setting['fields'] as $key => $panel_setting ) {
+							$this->display_settings( $instance, $key, $panel_setting, $repeater, $panel_count );
+						}
+						$panel_count++;
+
+						$this->display_after_panel();
 					}
-
-					$this->display_after_panel();
 				}
 				else {
 					$this->display_settings( $instance, $key, $setting );
@@ -231,6 +244,10 @@ class AngieMakesDesign_Widget extends WP_Widget {
 							}
 						});
 						<?php endif; ?>
+
+						<?php if ( is_int( $this->number ) ) : ?>
+							widgetPanelButtons( '<?php echo $this->id; ?>' );
+						<?php endif; ?>
 					});
 					/* ]]> */
 				</script>
@@ -261,10 +278,16 @@ class AngieMakesDesign_Widget extends WP_Widget {
 		<?php
 	}
 
-	public function display_settings( $instance, $key, $setting ) {
+	public function display_settings( $instance, $key, $setting, $repeater = false, $count = 1 ) {
 		$value = isset( $instance[ $key ] ) ? $instance[ $key ] : $setting['std'];
-		$field_id = $this->get_field_id( $key );
-		$field_name = $this->get_field_name( $key );
+		if ( $repeater ) {
+			$field_id = $this->get_field_id('panel') . '-'.$count.'-' .$key;
+			$field_name = $this->get_field_name('panel') . '['.$count.']' . '['.$key.']';
+		}
+		else {
+			$field_id = $this->get_field_id( $key );
+			$field_name = $this->get_field_name( $key );
+		}
 
 		switch ( $setting['type'] ) {
 			case 'description' :
@@ -291,20 +314,20 @@ class AngieMakesDesign_Widget extends WP_Widget {
 					<label for="<?php echo $field_id; ?>"><?php echo $setting['label']; ?></label>
 				</p>
 
-				<p style="margin-top: 3px;">
-					<div id="<?php echo esc_attr( $id_prefix ); ?>preview" class="stag-image-preview">
+				<div class="image-sel-container" style="margin-top: 3px;">
+					<div class="image-sel-preview">
 						<style type="text/css">
-							.stag-image-preview img { max-width: 100%; border: 1px solid #e5e5e5; padding: 2px; margin-bottom: 5px;  }
+							.image-sel-preview img { max-width: 100%; border: 1px solid #e5e5e5; padding: 2px; margin-bottom: 5px;  }
 						</style>
 						<?php if ( ! empty( $value ) ) : ?>
 						<img src="<?php echo esc_url( $value ); ?>" alt="">
 						<?php endif; ?>
 					</div>
 
-					<input type="hidden" class="widefat" id="<?php echo esc_attr( $field_id ); ?>" name="<?php echo $field_name; ?>"value="<?php echo $value; ?>" placeholder="http://" />
-					<a href="#" class="button-secondary <?php echo esc_attr( $field_id ); ?>-add" onclick="imageWidget.uploader( '<?php echo $this->id; ?>', '<?php echo $id_prefix; ?>', '<?php echo $key; ?>' ); return false;"><?php esc_html_e( 'Choose Image', 'angiemakesdesign' ); ?></a>
-					<a href="#" style="display:inline-block;margin:5px 0 0 3px;<?php if ( empty( $value ) ) echo 'display:none;'; ?>" id="<?php echo esc_attr( $id_prefix ); ?>remove" class="button-link-delete" onclick="imageWidget.remove( '<?php echo $this->id; ?>', '<?php echo $id_prefix; ?>', '<?php echo $key; ?>' ); return false;"><?php esc_html_e( 'Remove', 'angiemakesdesign' ); ?></a>
-				</p>
+					<input type="hidden" class="widefat image-sel-value" id="<?php echo esc_attr( $field_id ); ?>" name="<?php echo $field_name; ?>"value="<?php echo $value; ?>" placeholder="http://" />
+					<a href="#" class="button-secondary image-sel-add" onclick="imageWidget.uploader( this ); return false;"><?php esc_html_e( 'Choose Image', 'angiemakesdesign' ); ?></a>
+					<a href="#" style="display:inline-block;margin:5px 0 0 3px;<?php if ( empty( $value ) ) echo 'display:none;'; ?>" class="image-sel-remove" onclick="imageWidget.remove( this ); return false;"><?php esc_html_e( 'Remove', 'angiemakesdesign' ); ?></a>
+				</div>
 			<?php
 			break;
 

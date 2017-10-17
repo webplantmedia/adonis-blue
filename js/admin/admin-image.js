@@ -3,7 +3,9 @@ jQuery(document).ready(function($){
 	imageWidget = {
 
 		// Call this from the upload button to initiate the upload frame.
-		uploader : function( widget_id, widget_id_string, key ) {
+		uploader : function( el ) {
+
+			var $container = $(el).closest('.image-sel-container');
 
 			var frame = wp.media({
 				title : 'Choose an Image',
@@ -15,26 +17,28 @@ jQuery(document).ready(function($){
 			// Handle results from media manager.
 			frame.on('close',function( ) {
 				var attachments = frame.state().get('selection').toJSON();
-				imageWidget.render( widget_id, widget_id_string, attachments[0], key );
-				$("#" + widget_id_string + key).trigger('change');
+				imageWidget.render( attachments[0], $container );
+				$container.find(".image-sel-value").trigger('change');
 			});
 
 			frame.open();
 			return false;
 		},
 
-		remove : function( widget_id, widget_id_string, key ) {
-			$("#" + widget_id_string + 'preview').html('');
-			$("#" + widget_id_string + key).val('');
-			$("#" + widget_id_string + 'remove').css('display', 'none');
-			$("#" + widget_id_string + key).trigger('change');
+		remove : function( el ) {
+			var $container = $(el).closest('.image-sel-container');
+
+			$container.find('.image-sel-preview').html('');
+			$container.find('.image-sel-value').val('');
+			$container.find('.image-sel-remove').css('display', 'none');
+			$container.find('.image-sel-value').trigger('change');
 		},
 
 		// Output Image preview and populate widget form.
-		render : function( widget_id, widget_id_string, attachment, key ) {
-			$("#" + widget_id_string + 'preview').html(imageWidget.imgHTML( attachment ));
-			$("#" + widget_id_string + key).val(attachment.url);
-			$("#" + widget_id_string + 'remove').css('display', 'inline-block');
+		render : function( attachment, $container ) {
+			$container.find('.image-sel-preview').html(imageWidget.imgHTML( attachment ));
+			$container.find('.image-sel-value').val(attachment.url);
+			$container.find('.image-sel-remove').css('display', 'inline-block');
 		},
 
 		// Render html for the image.
