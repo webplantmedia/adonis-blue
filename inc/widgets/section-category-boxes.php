@@ -168,7 +168,6 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Category_Boxes' ) ) :
 
 			<script>
 				jQuery(document).ready(function($) {
-					window.featuresWidget( '#features-<?php echo $widget->id; ?>', <?php echo json_encode( (array) $features ); ?> );
 				});
 			</script>
 

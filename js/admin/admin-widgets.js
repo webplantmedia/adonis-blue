@@ -66,17 +66,30 @@
 			$copy.find('.widget-panel-body').removeClass('ui-accordion-content-active');
 
 			var $names = $copy.find('[name]');
-			$names.each( function() {
-				var $this = $(this);
+			if ( $names.length ) {
+				$names.each( function() {
+					var $this = $(this);
 
-				var name = $this.attr('name');
-				name = name.replace(/\[panel\]\[\d+\]/,'[panel]['+nextPanelCount+']');
-				$this.attr('name',name);
+					var name = $this.attr('name');
+					name = name.replace(/\[panel\]\[\d+\]/,'[panel]['+nextPanelCount+']');
+					$this.attr('name',name);
 
-				var id = $this.attr('id');
-				id = id.replace(/panel\-\d+\-/,'panel-'+nextPanelCount+'-');
-				$this.attr('id',id);
-			});
+					var id = $this.attr('id');
+					id = id.replace(/panel\-\d+\-/,'panel-'+nextPanelCount+'-');
+					$this.attr('id',id);
+				});
+			}
+
+			var $fors = $copy.find('[for]');
+			if ( $fors.length ) {
+				$fors.each( function() {
+					var $this = $(this);
+
+					var id = $this.attr('for');
+					id = id.replace(/panel\-\d+\-/,'panel-'+nextPanelCount+'-');
+					$this.attr('for',id);
+				});
+			}
 
 			$copy.appendTo( $widget );
 
