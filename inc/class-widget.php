@@ -213,7 +213,7 @@ class AngieMakesDesign_Widget extends WP_Widget {
 					jQuery(document).ready(function($){
 						$('#<?php echo $this->id; ?>').accordion({
 							header: '.widget-panel-title',
-							heightStyle: "content",
+							heightStyle: 'content',
 							collapsible: true,
 							active: false
 						})

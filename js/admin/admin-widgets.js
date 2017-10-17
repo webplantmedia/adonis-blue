@@ -5,7 +5,7 @@
 		var $this = $(el);
 		var $panel = $this.closest('.widget-panel');
 
-		$panel.removeClass("panel-delete-confirm");
+		$panel.removeClass('panel-delete-confirm');
 	}
 
 	window.widgetPanelDeleteYes = function( el ) {
@@ -30,8 +30,9 @@
 	window.widgetPanelDelete = function( el ) {
 		var $this = $(el);
 		var $panel = $this.closest('.widget-panel');
-		var $parent = $panel.parent();
-		var $panels = $parent.find('.widget-panel');
+		var $widget = $this.closest('.widget-inner-container');
+		var $panels = $widget.find('.widget-panel');
+		$widget.accordion({active:false});
 
 		if ( $panels.length <= 1 ) {
 			return;
@@ -53,7 +54,15 @@
 		}
 
 		if ( $panel.length ) {
-			var $copy = $panel.clone().appendTo( $widget );
+			var $copy = $panel.clone();
+			$copy.find('.widget-panel-title').removeClass('ui-accordion-header-active ui-state-active');
+			$copy.find('.widget-panel-body').removeClass('ui-accordion-content-active');
+			$copy.appendTo( $widget );
+
+			if ( $copy.hasClass('panel-delete-confirm') ) {
+				$copy.removeClass('panel-delete-confirm');
+			}
+
 			$copy.find('.color-picker').each(function () {
 				var $inputElement = $(this);
 				if ( $inputElement.is('.wp-color-picker') ) {
@@ -67,6 +76,8 @@
 			});
 		}
 		$widget.accordion( "refresh" ).sortable( "refresh" );
+
+		// $widget.accordion({active:false});
 	}
 
 } )( jQuery );
