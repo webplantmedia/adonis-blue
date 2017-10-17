@@ -57,7 +57,7 @@ if ( ! function_exists( 'angiemakesdesign_setup' ) ) :
 		$google_request = str_replace( ',', '%2C', angiemakesdesign_fonts_url() );
 
 		// This theme styles the visual editor with editor-style.css to match the theme style.
-		add_editor_style( array( 'css/editor-style.css', $google_request ) );
+		add_editor_style( array( 'css/admin/editor-style.css', $google_request ) );
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
