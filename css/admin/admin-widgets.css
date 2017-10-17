@@ -196,6 +196,7 @@ html .widget-inner-container.ui-accordion .ui-accordion-header.ui-accordion-head
 }
 .widget-panel .panel-sort {
 	right: 50px;
+	cursor: move;
 }
 .widget-panel .panel-delete:hover {
 	color: red;

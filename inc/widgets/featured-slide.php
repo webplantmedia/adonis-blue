@@ -99,6 +99,8 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Featured_Slide_Item' ) ) :
 		 * @return void
 		 */
 		function widget( $args, $instance ) {
+			return;
+
 			if ( $this->get_cached_widget( $args ) )
 				return;
 

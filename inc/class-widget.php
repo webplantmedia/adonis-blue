@@ -235,19 +235,24 @@ class AngieMakesDesign_Widget extends WP_Widget {
 							axis: "y",
 							handle: '.panel-sort',
 							stop: function( event, ui ) {
+								var $this = $( this );
 								// IE doesn't register the blur when sorting
 								// so trigger focusout handlers to remove .ui-state-focus
 								ui.item.children( '.panel-sort' ).triggerHandler( "focusout" );
 
 								// Refresh accordion to handle new order
-								$( this ).accordion( "refresh" );
+								$this.accordion( "refresh" );
+
+								/*var $input = $this.find('input[name]:first');
+								if ( $input.length ) {
+									$input.trigger( 'change' );
+									$input.keyup();
+								}*/
 							}
 						});
 						<?php endif; ?>
 
-						<?php if ( is_int( $this->number ) ) : ?>
-							widgetPanelButtons( '<?php echo $this->id; ?>' );
-						<?php endif; ?>
+						widgetPanelButtons( '<?php echo $this->id; ?>' );
 					});
 					/* ]]> */
 				</script>
