@@ -52,7 +52,7 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Category_Boxes' ) ) :
 			}
 
 			wp_enqueue_media();
-			wp_enqueue_script( 'angiemakesdesign-admin-widget-features', get_template_directory_uri() . '/js/admin/widget-features.js', array( 'underscore', 'backbone', 'jquery', 'jquery-ui-sortable' ) );
+			// wp_enqueue_script( 'angiemakesdesign-admin-widget-features', get_template_directory_uri() . '/js/admin/widget-features.js', array( 'underscore', 'backbone', 'jquery', 'jquery-ui-sortable' ) );
 		}
 
 		public function _update( $new_instance, $key, $setting ) {

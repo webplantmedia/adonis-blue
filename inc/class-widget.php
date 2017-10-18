@@ -190,12 +190,17 @@ class AngieMakesDesign_Widget extends WP_Widget {
 
 			foreach ( $this->settings as $key => $setting ) {
 
-				if ( 'panels' == $key ) {
+				if ( 'panel' == $key ) {
 					$display_panel = true;
 
 					if ( isset( $setting['type'] ) && 'repeater' == $setting['type'] ) {
 						$repeater = true;
 					}
+
+					if ( $repeater ) {
+						$this->display_before_panel_repeater();
+					}
+
 					foreach ( $panel_instance as $instance ) {
 
 						$this->display_before_panel( $setting['title'] );
@@ -207,6 +212,10 @@ class AngieMakesDesign_Widget extends WP_Widget {
 
 						$this->display_after_panel();
 					}
+
+					if ( $repeater ) {
+						$this->display_after_panel_repeater();
+					}
 				}
 				else {
 					$this->display_settings( $instance, $key, $setting );
@@ -216,48 +225,56 @@ class AngieMakesDesign_Widget extends WP_Widget {
 			?>
 		</div>
 
-		<?php if ( $repeater ) : ?>
-			<a href="#" class="button-secondary widget-panel-repeater" onclick="widgetPanelRepeater( '<?php echo $this->id; ?>' ); return false;"><?php esc_html_e( 'Add New Item', 'angiemakesdesign' ); ?></a>
-		<?php endif; ?>
-
 		<?php if ( $display_panel ) : ?>
+				<?php $selector = $repeater ? '#' . $this->id . ' .panel-repeater-container' : '#' . $this->id; ?>
 				<script type="text/javascript">
 					/* <![CDATA[ */
-					jQuery(document).ready(function($){
-						$('#<?php echo $this->id; ?>').accordion({
-							header: '.widget-panel-title',
-							heightStyle: 'content',
-							collapsible: true,
-							active: false
-						})
-						<?php if ( $repeater ) : ?>
-						.sortable({
-							axis: "y",
-							handle: '.panel-sort',
-							stop: function( event, ui ) {
-								var $this = $( this );
-								// IE doesn't register the blur when sorting
-								// so trigger focusout handlers to remove .ui-state-focus
-								ui.item.children( '.panel-sort' ).triggerHandler( "focusout" );
+					( function( $ ) {
+						"use strict";
+						$(document).ready(function($){
+							$('<?php echo $selector; ?>').accordion({
+								header: '.widget-panel-title',
+								heightStyle: 'content',
+								collapsible: true,
+								active: false
+							})
+							<?php if ( $repeater ) : ?>
+							.sortable({
+								axis: "y",
+								handle: '.panel-sort',
+								stop: function( event, ui ) {
+									var $this = $( this );
+									// IE doesn't register the blur when sorting
+									// so trigger focusout handlers to remove .ui-state-focus
+									ui.item.children( '.panel-sort' ).triggerHandler( "focusout" );
 
-								// Refresh accordion to handle new order
-								$this.accordion( "refresh" );
+									// Refresh accordion to handle new order
+									$this.accordion( "refresh" );
+								}
+							});
 
-								/*var $input = $this.find('input[name]:first');
-								if ( $input.length ) {
-									$input.trigger( 'change' );
-									$input.keyup();
-								}*/
-							}
+							widgetPanelRepeaterButtons( $('<?php echo $selector; ?>') );
+
+							<?php endif; ?>
 						});
-						<?php endif; ?>
-
-						widgetPanelButtons( '<?php echo $this->id; ?>' );
-					});
+					} )( jQuery );
 					/* ]]> */
 				</script>
 		<?php endif; ?>
 
+		<?php
+	}
+
+	public function display_before_panel_repeater() {
+		?>
+		<div class="panel-repeater-container">
+		<?php
+	}
+
+	public function display_after_panel_repeater() {
+		?>
+		</div>
+		<a href="#" class="button-secondary widget-panel-repeater" onclick="widgetPanelRepeater( '<?php echo $this->id; ?>' ); return false;"><?php esc_html_e( 'Add New Item', 'angiemakesdesign' ); ?></a>
 		<?php
 	}
 

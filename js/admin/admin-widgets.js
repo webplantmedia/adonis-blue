@@ -11,18 +11,18 @@
 	window.widgetPanelDeleteYes = function( el ) {
 		var $this = $(el);
 		var $panel = $this.closest('.widget-panel');
-		var $widget = $this.closest('.widget-inner-container');
-		var $panels = $widget.find('.widget-panel');
+		var $container = $this.closest('.panel-repeater-container');
+		var $panels = $container.find('.widget-panel');
 
 		if ( $panels.length <= 1 ) {
 			return;
 		}
 
 		if ( $panel.remove() ) {
-			$panels = $widget.find('.widget-panel');
+			$panels = $container.find('.widget-panel');
 
 			if ( $panels.length <= 1 ) {
-				$widget.removeClass('show-panel-buttons');
+				$container.removeClass('show-panel-buttons');
 			}
 		}
 	}
@@ -30,9 +30,9 @@
 	window.widgetPanelDelete = function( el ) {
 		var $this = $(el);
 		var $panel = $this.closest('.widget-panel');
-		var $widget = $this.closest('.widget-inner-container');
-		var $panels = $widget.find('.widget-panel');
-		$widget.accordion({active:false});
+		var $container = $this.closest('.panel-repeater-container');
+		var $panels = $container.find('.widget-panel');
+		$container.accordion({active:false});
 
 		if ( $panels.length <= 1 ) {
 			return;
@@ -41,22 +41,22 @@
 		$panel.addClass('panel-delete-confirm');
 	}
 
-	window.widgetPanelButtons = function( id ) {
-		var $widget = $('#'+id);
-		var $panels = $widget.find('.widget-panel');
+	window.widgetPanelRepeaterButtons = function( $container ) {
+		var $panels = $container.find('.widget-panel');
 
 		if ( $panels.length > 1 ) {
-			$widget.addClass('show-panel-buttons');
+			$container.addClass('show-panel-buttons');
 		}
 		else {
-			$widget.removeClass('show-panel-buttons');
+			$container.removeClass('show-panel-buttons');
 		}
 	}
 
 	window.widgetPanelRepeater = function( id ) {
 		var $widget = $('#'+id);
-		var $panel = $widget.find('.widget-panel:last');
-		var $panels = $widget.find('.widget-panel');
+		var $container = $widget.find('.panel-repeater-container');
+		var $panel = $container.find('.widget-panel:last');
+		var $panels = $container.find('.widget-panel');
 		var panelCount = $panels.length;
 		var nextPanelCount = panelCount + 1;
 
@@ -91,7 +91,7 @@
 				});
 			}
 
-			$copy.appendTo( $widget );
+			$copy.appendTo( $container );
 
 			if ( $copy.hasClass('panel-delete-confirm') ) {
 				$copy.removeClass('panel-delete-confirm');
@@ -110,9 +110,9 @@
 			});
 		}
 
-		$widget.accordion( "refresh" ).sortable( "refresh" );
+		$container.accordion( "refresh" ).sortable( "refresh" );
 
-		widgetPanelButtons( id );
+		widgetPanelRepeaterButtons( $container );
 
 	}
 

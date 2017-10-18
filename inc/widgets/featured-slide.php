@@ -25,7 +25,7 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Featured_Slide_Item' ) ) :
 			$this->widget_description = esc_html__( 'Display Featured Slide, should be used only in &ldquo;Featured Slider Sidebar&rdquo; Area.', 'angiemakesdesign' );
 			$this->widget_name        = esc_html__( 'Featured Slide Item', 'angiemakesdesign' );
 			$this->settings           = array(
-				'panels' => array(
+				'panel' => array(
 					'title' => esc_html__( 'Slide', 'angiemakesdesign' ),
 					'type' => 'repeater',
 					'fields' => array(
