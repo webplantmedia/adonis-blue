@@ -112,7 +112,7 @@
 html .widget-inner-container,
 html .widget-inner-container .ui-accordion,
 html .widget-inner-container.ui-accordion {
-	margin-bottom: 1.5em;
+	margin-bottom: 1em;
 }
 html .widget-inner-container .ui-autocomplete,
 html .widget-inner-container .ui-accordion .ui-autocomplete,

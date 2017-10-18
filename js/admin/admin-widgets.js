@@ -32,7 +32,7 @@
 		var $panel = $this.closest('.widget-panel');
 		var $container = $this.closest('.panel-repeater-container');
 		var $panels = $container.find('.widget-panel');
-		$container.accordion({active:false});
+		// $container.accordion({active:false});
 
 		if ( $panels.length <= 1 ) {
 			return;
@@ -56,8 +56,8 @@
 		var $widget = $('#'+id);
 		var $container = $widget.find('.panel-repeater-container');
 		var $panel = $container.find('.widget-panel:last');
-		var $panels = $container.find('.widget-panel');
-		var panelCount = $panels.length;
+		var $panelCount = $widget.find('#widget-panel-repeater-count');
+		var panelCount = parseInt( $panelCount.val() );
 		var nextPanelCount = panelCount + 1;
 
 		if ( $panel.length ) {
@@ -71,11 +71,11 @@
 					var $this = $(this);
 
 					var name = $this.attr('name');
-					name = name.replace(/\[panel\]\[\d+\]/,'[panel]['+nextPanelCount+']');
+					name = name.replace(/\[repeater\]\[\d+\]/,'[repeater]['+nextPanelCount+']');
 					$this.attr('name',name);
 
 					var id = $this.attr('id');
-					id = id.replace(/panel\-\d+\-/,'panel-'+nextPanelCount+'-');
+					id = id.replace(/repeater\-\d+\-/,'repeater-'+nextPanelCount+'-');
 					$this.attr('id',id);
 				});
 			}
@@ -86,12 +86,13 @@
 					var $this = $(this);
 
 					var id = $this.attr('for');
-					id = id.replace(/panel\-\d+\-/,'panel-'+nextPanelCount+'-');
+					id = id.replace(/repeater\-\d+\-/,'repeater-'+nextPanelCount+'-');
 					$this.attr('for',id);
 				});
 			}
 
 			$copy.appendTo( $container );
+			$panelCount.val( nextPanelCount );
 
 			if ( $copy.hasClass('panel-delete-confirm') ) {
 				$copy.removeClass('panel-delete-confirm');

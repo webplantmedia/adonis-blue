@@ -173,15 +173,16 @@ class AngieMakesDesign_Widget extends WP_Widget {
 		if ( ! $this->settings ) {
 			return;
 		}
-		$display_panel = false;
-		$repeater = false;
-		$panel_count = 1;
+		$display_panels = false;
+		$display_repeater = false;
+		$panel_count = 0;
 
-		if ( isset( $instance['panel'] ) && is_array( $instance['panel'] ) ) {
-			$panel_instance = $instance['panel'];
+		if ( isset( $instance['repeater'] ) && is_array( $instance['repeater'] ) ) {
+			$repeater_instances = $instance['repeater'];
+			unset( $instance['repeater'] );
 		}
 		else {
-			$panel_instance[1] = $instance;
+			$repeater_instances[1] = array();
 		}
 		?>
 
@@ -190,32 +191,42 @@ class AngieMakesDesign_Widget extends WP_Widget {
 
 			foreach ( $this->settings as $key => $setting ) {
 
-				if ( 'panel' == $key ) {
-					$display_panel = true;
+				if ( 'repeater' == $key ) {
+					$display_repeater = true;
 
-					if ( isset( $setting['type'] ) && 'repeater' == $setting['type'] ) {
-						$repeater = true;
-					}
+					$this->display_before_panel_repeater();
 
-					if ( $repeater ) {
-						$this->display_before_panel_repeater();
-					}
-
-					foreach ( $panel_instance as $instance ) {
+					foreach ( $repeater_instances as $repeater_instance ) {
 
 						$this->display_before_panel( $setting['title'] );
 
-						foreach ( $setting['fields'] as $key => $panel_setting ) {
-							$this->display_settings( $instance, $key, $panel_setting, $repeater, $panel_count );
-						}
 						$panel_count++;
+						foreach ( $setting['fields'] as $key => $repeater_setting ) {
+							$this->display_settings( $repeater_instance, $key, $repeater_setting, $display_repeater, $panel_count );
+						}
+
+						$this->display_after_panel( $display_repeater );
+					}
+
+					$this->display_after_panel_repeater( $panel_count );
+				}
+				else if ( 'panels' == $key ) {
+					$display_panels = true;
+
+					$this->display_before_panels();
+
+					foreach ( $setting as $s ) {
+
+						$this->display_before_panel( $s['title'] );
+
+						foreach ( $s['fields'] as $key => $panel_setting ) {
+							$this->display_settings( $instance, $key, $panel_setting );
+						}
 
 						$this->display_after_panel();
 					}
 
-					if ( $repeater ) {
-						$this->display_after_panel_repeater();
-					}
+					$this->display_after_panels();
 				}
 				else {
 					$this->display_settings( $instance, $key, $setting );
@@ -225,8 +236,8 @@ class AngieMakesDesign_Widget extends WP_Widget {
 			?>
 		</div>
 
-		<?php if ( $display_panel ) : ?>
-				<?php $selector = $repeater ? '#' . $this->id . ' .panel-repeater-container' : '#' . $this->id; ?>
+		<?php if ( $display_repeater ) : ?>
+				<?php $selector = '#' . $this->id . ' .panel-repeater-container'; ?>
 				<script type="text/javascript">
 					/* <![CDATA[ */
 					( function( $ ) {
@@ -238,7 +249,6 @@ class AngieMakesDesign_Widget extends WP_Widget {
 								collapsible: true,
 								active: false
 							})
-							<?php if ( $repeater ) : ?>
 							.sortable({
 								axis: "y",
 								handle: '.panel-sort',
@@ -254,8 +264,25 @@ class AngieMakesDesign_Widget extends WP_Widget {
 							});
 
 							widgetPanelRepeaterButtons( $('<?php echo $selector; ?>') );
+						});
+					} )( jQuery );
+					/* ]]> */
+				</script>
+		<?php endif; ?>
 
-							<?php endif; ?>
+		<?php if ( $display_panels ) : ?>
+				<?php $selector = '#' . $this->id . ' .panel-container'; ?>
+				<script type="text/javascript">
+					/* <![CDATA[ */
+					( function( $ ) {
+						"use strict";
+						$(document).ready(function($){
+							$('<?php echo $selector; ?>').accordion({
+								header: '.widget-panel-title',
+								heightStyle: 'content',
+								collapsible: true,
+								active: false
+							});
 						});
 					} )( jQuery );
 					/* ]]> */
@@ -265,15 +292,28 @@ class AngieMakesDesign_Widget extends WP_Widget {
 		<?php
 	}
 
+	public function display_before_panels() {
+		?>
+		<div class="panel-container">
+		<?php
+	}
+
+	public function display_after_panels() {
+		?>
+		</div>
+		<?php
+	}
+
 	public function display_before_panel_repeater() {
 		?>
 		<div class="panel-repeater-container">
 		<?php
 	}
 
-	public function display_after_panel_repeater() {
+	public function display_after_panel_repeater( $panel_count ) {
 		?>
 		</div>
+		<input type="hidden" id="widget-panel-repeater-count" value="<?php echo $panel_count; ?>" />
 		<a href="#" class="button-secondary widget-panel-repeater" onclick="widgetPanelRepeater( '<?php echo $this->id; ?>' ); return false;"><?php esc_html_e( 'Add New Item', 'angiemakesdesign' ); ?></a>
 		<?php
 	}
@@ -286,9 +326,12 @@ class AngieMakesDesign_Widget extends WP_Widget {
 		<?php
 	}
 
-	public function display_after_panel() {
+	public function display_after_panel( $display_repeater = false ) {
 		?>
 			</div>
+
+			<?php if ( $display_repeater ) : ?>
+
 			<div class="dashicons-before dashicons-move panel-sort panel-button"></div>
 			<div onclick="widgetPanelDelete( this ); return false;" class="dashicons-before dashicons-no panel-delete panel-button"></div>
 			<span class="panel-delete-final">
@@ -296,15 +339,17 @@ class AngieMakesDesign_Widget extends WP_Widget {
 				<a href="#" onclick="widgetPanelDeleteYes( this ); return false;"><?php echo esc_html__( 'Yes', 'angiemakesdesign' ); ?></a>
 				<a href="#" onclick="widgetPanelDeleteNo( this ); return false;"><?php echo esc_html__( 'No', 'angiemakesdesign' ); ?></a>
 			</span>
+
+			<?php endif; ?>
 		</div>
 		<?php
 	}
 
-	public function display_settings( $instance, $key, $setting, $repeater = false, $count = 1 ) {
+	public function display_settings( $instance, $key, $setting, $display_repeater = false, $count = 1 ) {
 		$value = isset( $instance[ $key ] ) ? $instance[ $key ] : $setting['std'];
-		if ( $repeater ) {
-			$field_id = $this->get_field_id('panel') . '-'.$count.'-' .$key;
-			$field_name = $this->get_field_name('panel') . '['.$count.']' . '['.$key.']';
+		if ( $display_repeater ) {
+			$field_id = $this->get_field_id('repeater') . '-'.$count.'-' .$key;
+			$field_name = $this->get_field_name('repeater') . '['.$count.']' . '['.$key.']';
 		}
 		else {
 			$field_id = $this->get_field_id( $key );
