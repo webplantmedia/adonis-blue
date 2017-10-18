@@ -173,12 +173,16 @@ html .widget-inner-container.ui-accordion .ui-accordion-header.ui-accordion-head
 .widget-panel {
 	position: relative;
 	margin-top: 1em;
+	margin-bottom: 1em;
 }
 .widget-panel-repeater {
 	margin-bottom: 1.5em !important;
 }
 .widget-panel-title {
 	position: relative;
+}
+.widget-panel-body > *:last-child {
+	margin-bottom: 0 !important;
 }
 .widget-panel .panel-delete,
 .widget-panel .panel-sort {
