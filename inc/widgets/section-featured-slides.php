@@ -67,6 +67,11 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Featured_Slides' ) ) :
 				'repeater' => array(
 					'title' => esc_html__( 'Slide', 'angiemakesdesign' ),
 					'fields' => array(
+						'background_color' => array(
+							'type'  => 'colorpicker',
+							'std'   => '#ffece3',
+							'label' => esc_html__( 'Background Color:', 'angiemakesdesign' ),
+						),
 						'background_image' => array(
 							'type'  => 'image',
 							'std'   => null,
