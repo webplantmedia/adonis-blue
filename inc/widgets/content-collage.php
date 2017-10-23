@@ -7,7 +7,7 @@
  * @package AngieMakesDesign
  */
 
-if ( ! class_exists( 'AngieMakesDesign_Widget_Featured_Slides' ) ) :
+if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 	/**
 	 * Display Featured Slide Item for section
 	 *
@@ -15,15 +15,15 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Featured_Slides' ) ) :
 	 *
 	 * @package AngieMakesDesign
 	 */
-	class AngieMakesDesign_Widget_Featured_Slides extends AngieMakesDesign_Widget {
+	class AngieMakesDesign_Widget_Collage extends AngieMakesDesign_Widget {
 		/**
 		 * Constructor
 		 */
 		public function __construct() {
-			$this->widget_id          = 'angiemakesdesign_widget_featured_slides';
-			$this->widget_cssclass    = 'angiemakesdesign_widget_featured_slides';
-			$this->widget_description = esc_html__( 'Displays all contents under &ldquo;Featured Slides Sidebar&rdquo; Area.', 'angiemakesdesign' );
-			$this->widget_name        = esc_html__( 'Section: Featured Slides', 'angiemakesdesign' );
+			$this->widget_id          = 'angiemakesdesign_widget_collage';
+			$this->widget_cssclass    = 'angiemakesdesign_widget_collage';
+			$this->widget_description = esc_html__( 'Displays collage', 'angiemakesdesign' );
+			$this->widget_name        = esc_html__( 'Content: Collage', 'angiemakesdesign' );
 			$this->settings           = array(
 				'panels' => array(
 					array(
@@ -179,4 +179,4 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Featured_Slides' ) ) :
 	}
 endif;
 
-add_action( 'widgets_init', array( 'AngieMakesDesign_Widget_Featured_Slides', 'register' ) );
+add_action( 'widgets_init', array( 'AngieMakesDesign_Widget_Collage', 'register' ) );
