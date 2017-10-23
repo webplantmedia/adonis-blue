@@ -48,7 +48,7 @@ class AngieMakesDesign_Widget extends WP_Widget {
 			return;
 		}
 		wp_enqueue_style( 'wp-color-picker' );
-		wp_enqueue_style( 'angiemakesdesign-ui-theme-override', get_parent_theme_file_uri() . '/css/admin/admin-widgets.css', array(), ANGIEMAKESDESIGN_VERSION );
+		wp_enqueue_style( 'angiemakesdesign-admin-widgets', get_parent_theme_file_uri() . '/css/admin/admin-widgets.css', array(), ANGIEMAKESDESIGN_VERSION );
 
 		wp_enqueue_script( 'wp-color-picker' );
 		wp_enqueue_script( 'jquery-ui' );
@@ -347,6 +347,7 @@ class AngieMakesDesign_Widget extends WP_Widget {
 
 	public function display_settings( $instance, $key, $setting, $display_repeater = false, $count = 1 ) {
 		$value = isset( $instance[ $key ] ) ? $instance[ $key ] : $setting['std'];
+
 		if ( $display_repeater ) {
 			$field_id = $this->get_field_id('repeater') . '-'.$count.'-' .$key;
 			$field_name = $this->get_field_name('repeater') . '['.$count.']' . '['.$key.']';

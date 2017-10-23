@@ -82,22 +82,9 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Featured_Slides' ) ) :
 							'std'   => '',
 							'label' => esc_html__( 'Content:', 'angiemakesdesign' ),
 						),
-						'box_color' => array(
-							'type'  => 'colorpicker',
-							'std'   => '#fff',
-							'label' => esc_html__( 'Content Box Color:', 'angiemakesdesign' ),
-						),
-						'box_opacity' => array(
-							'type'  => 'number',
-							'std'   => 100,
-							'step'  => 5,
-							'min'   => 0,
-							'max'   => 100,
-							'label' => esc_html__( 'Content Box Opacity:', 'angiemakesdesign' ),
-						),
 						'text_color' => array(
 							'type'  => 'colorpicker',
-							'std'   => '#000',
+							'std'   => '#ffece3',
 							'label' => esc_html__( 'Text Color:', 'angiemakesdesign' ),
 						),
 						'link_color' => array(
