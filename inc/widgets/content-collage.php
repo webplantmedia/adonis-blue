@@ -155,7 +155,7 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 				<?php if ( $slider_size > 5 ) : ?>
 					<div class="slide carousel slide-5">
 						<div class="slide-gutter">
-							<div class="slide-overflow">
+							<div class="carousel-container slide-overflow">
 								<?php foreach ( $o['repeater'] as $key => $slide_setting ) : ?>
 									<div class="carousel-item">
 										<?php $this->widget_get_slide( $slide_setting ); ?>

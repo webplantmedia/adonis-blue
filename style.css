@@ -1849,6 +1849,9 @@ a:hover, a:active {
   overflow: hidden;
 }
 
+.angiemakesdesign_widget_collage .collage .bx-wrapper,
+.angiemakesdesign_widget_collage .collage .bx-viewport,
+.angiemakesdesign_widget_collage .collage .carousel-item,
 .angiemakesdesign_widget_collage .collage .slide-overflow,
 .angiemakesdesign_widget_collage .collage .slide-gutter,
 .angiemakesdesign_widget_collage .collage .slide-inner {

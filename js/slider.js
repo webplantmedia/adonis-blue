@@ -7,11 +7,16 @@
 ( function($) {
 	'use strict';
 
-	$('.carousel .slide-overflow').each( function() {
-		var $this = $(this);
+	$(document).ready(function(){
+		$('.carousel-container').each( function() {
+			var $this = $(this);
 
-		$this.flexslider({
-			animation: 'slide'
+			$this.bxSlider({
+				auto: true,
+				autoControls: false,
+				stopAutoOnClick: true,
+				pager: true,
+			});
 		});
 	});
 } )( jQuery );
