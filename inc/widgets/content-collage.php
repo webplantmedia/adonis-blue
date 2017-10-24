@@ -84,23 +84,9 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 						),
 						'text_color' => array(
 							'type'  => 'colorpicker',
-							'std'   => '#ffece3',
+							'std'   => '',
 							'label' => esc_html__( 'Text Color:', 'angiemakesdesign' ),
-						),
-						'link_color' => array(
-							'type'  => 'colorpicker',
-							'std'   => '#000',
-							'label' => esc_html__( 'Link Color:', 'angiemakesdesign' ),
-						),
-						'content_position' => array(
-							'type'  => 'select',
-							'std'   => 'slide-content-left',
-							'label' => esc_html__( 'Content Position:', 'angiemakesdesign' ),
-							'options' => array(
-								'slide-content-left'   => esc_html__( 'Left', 'angiemakesdesign' ),
-								'slide-content-center' => esc_html__( 'Center', 'angiemakesdesign' ),
-								'slide-content-right'  => esc_html__( 'Right', 'angiemakesdesign' ),
-							),
+							'description' => esc_html__( 'Leave blank to use default theme color.', 'angiemakesdesign' ),
 						),
 						'button_link' => array(
 							'type'  => 'text',
@@ -129,8 +115,6 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 		 * @return void
 		 */
 		function widget( $args, $instance ) {
-			return;
-
 			if ( $this->get_cached_widget( $args ) ) {
 				return;
 			}

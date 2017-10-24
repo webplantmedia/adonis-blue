@@ -408,6 +408,9 @@ class AngieMakesDesign_Widget extends WP_Widget {
 				<p>
 					<label for="<?php echo $field_id; ?>"><?php echo esc_html( $setting['label'] ); ?></label>
 					<input class="widefat" id="<?php echo esc_attr( $field_id ); ?>" name="<?php echo esc_attr( $field_name ); ?>" type="text" value="<?php echo esc_attr( $value ); ?>" />
+					<?php if ( isset( $setting['description'] ) ) : ?>
+						<span class="description"><?php echo esc_html( $setting['description'] ); ?></span>
+					<?php endif; ?>
 				</p>
 				<?php
 			break;
@@ -435,6 +438,9 @@ class AngieMakesDesign_Widget extends WP_Widget {
 					<a href="#" class="button-secondary image-sel-add" onclick="imageWidget.uploader( this ); return false;"><?php esc_html_e( 'Choose Image', 'angiemakesdesign' ); ?></a>
 					<a href="#" style="display:inline-block;margin:5px 0 0 3px;<?php if ( empty( $value ) ) echo 'display:none;'; ?>" class="image-sel-remove" onclick="imageWidget.remove( this ); return false;"><?php esc_html_e( 'Remove', 'angiemakesdesign' ); ?></a>
 				</div>
+				<?php if ( isset( $setting['description'] ) ) : ?>
+					<span class="description"><?php echo esc_html( $setting['description'] ); ?></span>
+				<?php endif; ?>
 			<?php
 			break;
 
@@ -445,6 +451,9 @@ class AngieMakesDesign_Widget extends WP_Widget {
 						<input type="checkbox" id="<?php echo esc_attr( $field_id ); ?>" name="<?php echo esc_attr( $field_name ); ?>" type="text" value="1" <?php checked( 1, esc_attr( $value ) ); ?>/>
 						<?php echo esc_html( $setting['label'] ); ?>
 					</label>
+					<?php if ( isset( $setting['description'] ) ) : ?>
+						<span class="description"><?php echo esc_html( $setting['description'] ); ?></span>
+					<?php endif; ?>
 				</p>
 				<?php
 			break;
@@ -464,6 +473,9 @@ class AngieMakesDesign_Widget extends WP_Widget {
 						<?php echo esc_attr( $label ); ?><br />
 					</label>
 					<?php endforeach; ?>
+					<?php if ( isset( $setting['description'] ) ) : ?>
+						<span class="description"><?php echo esc_html( $setting['description'] ); ?></span>
+					<?php endif; ?>
 				</p>
 				<?php
 			break;
@@ -477,6 +489,9 @@ class AngieMakesDesign_Widget extends WP_Widget {
 						<option value="<?php echo esc_attr( $key ); ?>" <?php selected( $key, $value ); ?>><?php echo esc_attr( $label ); ?></option>
 						<?php endforeach; ?>
 					</select>
+					<?php if ( isset( $setting['description'] ) ) : ?>
+						<span class="description"><?php echo esc_html( $setting['description'] ); ?></span>
+					<?php endif; ?>
 				</p>
 				<?php
 			break;
@@ -491,6 +506,9 @@ class AngieMakesDesign_Widget extends WP_Widget {
 						<option value="<?php echo esc_attr( $page->ID ); ?>" <?php selected( $page->ID, $value ); ?>><?php echo esc_attr( $page->post_title ); ?></option>
 					<?php endforeach; ?>
 				</select>
+				<?php if ( isset( $setting['description'] ) ) : ?>
+					<span class="description"><?php echo esc_html( $setting['description'] ); ?></span>
+				<?php endif; ?>
 				<?php
 			break;
 
@@ -499,6 +517,9 @@ class AngieMakesDesign_Widget extends WP_Widget {
 				<p>
 					<label for="<?php echo $field_id; ?>"><?php echo esc_html( $setting['label'] ); ?></label>
 					<input class="widefat" id="<?php echo esc_attr( $field_id ); ?>" name="<?php echo esc_attr( $field_name ); ?>" type="number" step="<?php echo esc_attr( $setting['step'] ); ?>" min="<?php echo esc_attr( $setting['min'] ); ?>" max="<?php echo esc_attr( $setting['max'] ); ?>" value="<?php echo esc_attr( $value ); ?>" />
+					<?php if ( isset( $setting['description'] ) ) : ?>
+						<span class="description"><?php echo esc_html( $setting['description'] ); ?></span>
+					<?php endif; ?>
 				</p>
 				<?php
 			break;
@@ -510,6 +531,9 @@ class AngieMakesDesign_Widget extends WP_Widget {
 					<textarea class="widefat" id="<?php echo esc_attr( $field_id ); ?>"
 					name="<?php echo esc_attr( $field_name ); ?>" rows="<?php echo isset( $setting['rows'] )
 					? $setting['rows'] : 3; ?>"><?php echo esc_html( $value ); ?></textarea>
+					<?php if ( isset( $setting['description'] ) ) : ?>
+						<span class="description"><?php echo esc_html( $setting['description'] ); ?></span>
+					<?php endif; ?>
 				</p>
 				<?php
 			break;
@@ -532,6 +556,9 @@ class AngieMakesDesign_Widget extends WP_Widget {
 						}( jQuery ) );
 					</script>
 				</div>
+				<?php if ( isset( $setting['description'] ) ) : ?>
+					<span class="description"><?php echo esc_html( $setting['description'] ); ?></span>
+				<?php endif; ?>
 				<p></p>
 				<?php
 			break;
