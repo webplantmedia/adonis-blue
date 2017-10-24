@@ -109,6 +109,47 @@ class AngieMakesDesign_Widget extends WP_Widget {
 		wp_cache_delete( $this->widget_id, 'widget' );
 	}
 
+	function sanitize( $instance ) {
+		$new_instance = $instance;
+
+		if ( ! $this->settings ) {
+			return $instance;
+		}
+
+		if ( isset( $new_instance['repeater'] ) && is_array( $new_instance['repeater'] ) ) {
+			$repeater_instances = $new_instance['repeater'];
+			unset( $new_instance['repeater'] );
+		}
+		else {
+			$repeater_instances[1] = array();
+		}
+
+		foreach ( $this->settings as $key => $setting ) {
+			if ( $key == 'panels' ) {
+				foreach ( $setting as $panel ) {
+					foreach ( $panel['fields'] as $panel_field_key => $panel_field_setting ) {
+						$value = array_key_exists( $panel_field_key, $new_instance ) ? $new_instance[ $panel_field_key ] : '';
+						$instance[ $panel_field_key ] = $this->sanitize_instance( $panel_field_setting['type'], $value );
+					}
+				}
+			}
+			else if ( $key == 'repeater' ) {
+				foreach ( $repeater_instances as $repeater_count => $repeater_instance ) {
+					foreach ( $setting['fields'] as $repeater_field_key => $repeater_field_setting ) {
+						$value = array_key_exists( $repeater_field_key, $repeater_instance ) ? $repeater_instance[ $repeater_field_key ] : '';
+						$instance['repeater'][ $repeater_count ][ $repeater_field_key ] = $this->sanitize_instance( $repeater_field_setting['type'], $value );
+					}
+				}
+			}
+			else {
+				$value = array_key_exists( $key, $new_instance ) ? $new_instance[ $key ] : '';
+				$instance[ $key ] = $this->sanitize_instance( $setting['type'], $value );
+			}
+		}
+
+		return $instance;
+	}
+
 	/**
 	 * Update function.
 	 *

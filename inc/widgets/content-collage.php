@@ -119,26 +119,63 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 				return;
 			}
 
+			$o = $this->sanitize( $instance );
+
+			if ( ( ! isset( $o['repeater'] ) ) || ! is_array( $o['repeater'] ) ) {
+				return;
+			}
+
 			ob_start();
 
 			extract( $args );
-
-			$flex_transition  = isset( $instance['flex_transition'] ) ? esc_attr( $instance['flex_transition'] ) : 'fade';
-			$flex_speed       = absint( $instance['flex_speed'] );
-			$flex_pause       = absint( $instance['flex_pause'] );
-			$pagination       = isset( $instance['slide_pagination'] ) ? absint( $instance['slide_pagination'] ) : false;
-			$hide_on_mobile   = isset( $instance['hide_on_mobile'] ) ? absint( $instance['hide_on_mobile'] ) : false;
+			?>
+			<style>
+			#<?php echo $this->id; ?> .slide-inner {
+				background-image: url("");
+			}
+			</style>
+			<?php
 
 			echo  $before_widget;
 
 			?>
 
-			<section class="featured-slides" data-transition="<?php echo esc_attr( $flex_transition ); ?>" data-speed="<?php echo esc_attr( $flex_speed ); ?>" data-pause="<?php echo esc_attr( $flex_pause ); ?>" data-pagination="<?php echo esc_attr( $pagination ) ?>" data-hideonmobile="<?php echo esc_attr( $hide_on_mobile ) ?>">
+			<div class="featured-slides" data-transition="<?php echo esc_attr( $o['flex_transition'] ); ?>" data-speed="<?php echo esc_attr( $o['flex_speed'] ); ?>" data-pause="<?php echo esc_attr( $o['flex_pause'] ); ?>" data-pagination="<?php echo esc_attr( $o['slide_pagination'] ) ?>" data-hideonmobile="<?php echo esc_attr( $o['hide_on_mobile'] ) ?>">
 				<div class="site-slider loading">
-					<ul class="slides"><?php dynamic_sidebar( 'sidebar-4' ); ?></ul>
+					<ul class="slides">
+						<?php foreach ( $o['repeater'] as $slide_setting ) :
+							$tag = 'div';
+							$attr[] = 'class="slide-inner"';
+							$style[] = '';
+
+							if ( ! empty( $slide_setting['button_link'] ) ) {
+								$tag = 'a';
+								$attr[] = 'href="' . esc_url( $slide_setting['button_link'] ) . '"';
+							}
+
+							if ( ! empty( $slide_setting['background_image'] ) ) {
+								$style[] = 'background-image:url(\'' . esc_url( $slide_setting['background_image'] ) . '\');';
+							}
+
+							if ( ! empty( $slide_setting['background_color'] ) ) {
+								$style[] = 'background-color:' . esc_attr( $slide_setting['background_color'] ) . ';';
+							}
+
+							if ( ! empty( $style ) ) {
+								$attr[] = 'style="' . implode( '', $style ) . '"';
+							}
+
+							?>
+							<li class="slide">
+								<<?php echo $tag; ?> <?php echo implode( ' ', $attr ); ?>>
+									
+								</<?php echo $tag; ?>>
+							</li>
+						<?php endforeach; ?>
+					</ul>
 					<div class="control-nav-container"></div>
 				</div>
-			</section>
+			</div>
 
 			<?php
 			echo  $after_widget;
