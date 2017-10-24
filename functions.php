@@ -197,8 +197,15 @@ function angiemakesdesign_scripts() {
 	
 	// Add genericons
 	wp_enqueue_style( 'genericons', get_parent_theme_file_uri() . '/fonts/genericons/genericons.css', array(), ANGIEMAKESDESIGN_VERSION );
-	
+
 	wp_enqueue_style( 'angiemakesdesign-style', get_stylesheet_uri() );
+
+	// Add flexslider style
+	wp_enqueue_style( 'angiemakesdesign-flexslider', get_parent_theme_file_uri() . '/css/flexslider.css', array(), ANGIEMAKESDESIGN_VERSION );
+
+	// Register flexslider
+	wp_register_script( 'angiemakesdesign-flexslider', get_template_directory_uri() . '/js/jquery.flexslider-min.js', array( 'jquery' ), '2.6.4', true );
+	wp_register_script( 'angiemakesdesign-slider', get_template_directory_uri() . '/js/slider.js', array( 'angiemakesdesign-flexslider' ), ANGIEMAKESDESIGN_VERSION, true );
 
 	wp_enqueue_script( 'angiemakesdesign-navigation', get_template_directory_uri() . '/js/navigation.js', array(), ANGIEMAKESDESIGN_VERSION, true );
 

@@ -123,6 +123,8 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 		 * @return void
 		 */
 		function widget( $args, $instance ) {
+			wp_enqueue_script( 'angiemakesdesign-slider' );
+
 			if ( $this->get_cached_widget( $args ) ) {
 				return;
 			}
@@ -144,13 +146,6 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 			ob_start();
 
 			extract( $args );
-			?>
-			<style>
-			#<?php echo $this->id; ?> .slide-inner {
-				background-image: url("");
-			}
-			</style>
-			<?php
 
 			echo  $before_widget;
 
