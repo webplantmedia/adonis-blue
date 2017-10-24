@@ -119,45 +119,84 @@ class AngieMakesDesign_Widget extends WP_Widget {
 	 * @return array
 	 */
 	function update( $new_instance, $old_instance ) {
-		return $new_instance;
-
 		$instance = $old_instance;
 
 		if ( ! $this->settings ) {
 			return $instance;
 		}
 
+		if ( isset( $new_instance['repeater'] ) && is_array( $new_instance['repeater'] ) ) {
+			$repeater_instances = $new_instance['repeater'];
+			unset( $new_instance['repeater'] );
+		}
+		else {
+			$repeater_instances[1] = array();
+		}
+
 		foreach ( $this->settings as $key => $setting ) {
-			switch ( $setting['type'] ) {
-				case 'textarea' :
-					if ( current_user_can( 'unfiltered_html' ) ) {
-						$instance[ $key ] = $new_instance[ $key ];
-					} else {
-						$instance[ $key ] = wp_kses_data( $new_instance[ $key ] );
+			if ( $key == 'panels' ) {
+				foreach ( $setting as $panel ) {
+					foreach ( $panel['fields'] as $panel_field_key => $panel_field_setting ) {
+						$value = array_key_exists( $panel_field_key, $new_instance ) ? $new_instance[ $panel_field_key ] : '';
+						$instance[ $panel_field_key ] = $this->sanitize_instance( $panel_field_setting['type'], $value );
 					}
-				break;
-
-				case 'multicheck' :
-					$instance[ $key ] = maybe_serialize( $new_instance[ $key ] );
-				break;
-
-				case 'text' :
-				case 'checkbox' :
-				case 'select' :
-				case 'number' :
-				case 'colorpicker' :
-					$instance[ $key ] = sanitize_text_field( $new_instance[ $key ] );
-				break;
-
-				default :
-					$instance[ $key ] = apply_filters( 'angiemakesdesign_widget_update_type_' . $setting['type'], $new_instance[ $key ], $key, $setting );
-				break;
+				}
+			}
+			else if ( $key == 'repeater' ) {
+				foreach ( $repeater_instances as $repeater_count => $repeater_instance ) {
+					foreach ( $setting['fields'] as $repeater_field_key => $repeater_field_setting ) {
+						$value = array_key_exists( $repeater_field_key, $repeater_instance ) ? $repeater_instance[ $repeater_field_key ] : '';
+						$instance['repeater'][ $repeater_count ][ $repeater_field_key ] = $this->sanitize_instance( $repeater_field_setting['type'], $value );
+					}
+				}
+			}
+			else {
+				$value = array_key_exists( $key, $new_instance ) ? $new_instance[ $key ] : '';
+				$instance[ $key ] = $this->sanitize_instance( $setting['type'], $value );
 			}
 		}
 
 		$this->flush_widget_cache();
 
 		return $instance;
+	}
+
+	function sanitize_instance( $type, $new_value ) {
+		$value = '';
+
+		switch ( $type ) {
+			case 'textarea' :
+				if ( current_user_can( 'unfiltered_html' ) ) {
+					$value = $new_value;
+				} else {
+					$value = wp_kses_data( $new_value );
+				}
+				break;
+
+			case 'multicheck' :
+				$value = maybe_serialize( $new_value );
+				break;
+
+			case 'text' :
+			case 'checkbox' :
+			case 'select' :
+				$value = sanitize_text_field( $new_value );
+				break;
+
+			case 'number' :
+				$value = intval( $new_value );
+				break;
+
+			case 'colorpicker' :
+				$value = sanitize_hex_color( $new_value );
+				break;
+
+			default :
+				$value = $new_value;
+				break;
+		}
+
+		return $value;
 	}
 
 	/**
@@ -346,7 +385,7 @@ class AngieMakesDesign_Widget extends WP_Widget {
 	}
 
 	public function display_settings( $instance, $key, $setting, $display_repeater = false, $count = 1 ) {
-		$value = isset( $instance[ $key ] ) ? $instance[ $key ] : $setting['std'];
+		$value = array_key_exists( $key, $instance ) ? $instance[ $key ] : $setting['std'];
 
 		if ( $display_repeater ) {
 			$field_id = $this->get_field_id('repeater') . '-'.$count.'-' .$key;
