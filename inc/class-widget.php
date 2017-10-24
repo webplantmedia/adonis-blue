@@ -128,7 +128,7 @@ class AngieMakesDesign_Widget extends WP_Widget {
 			if ( $key == 'panels' ) {
 				foreach ( $setting as $panel ) {
 					foreach ( $panel['fields'] as $panel_field_key => $panel_field_setting ) {
-						$value = array_key_exists( $panel_field_key, $new_instance ) ? $new_instance[ $panel_field_key ] : '';
+						$value = $this->default_value( $panel_field_key, $new_instance, $panel_field_setting );
 						$instance[ $panel_field_key ] = $this->sanitize_instance( $panel_field_setting['type'], $value );
 					}
 				}
@@ -136,18 +136,32 @@ class AngieMakesDesign_Widget extends WP_Widget {
 			else if ( $key == 'repeater' ) {
 				foreach ( $repeater_instances as $repeater_count => $repeater_instance ) {
 					foreach ( $setting['fields'] as $repeater_field_key => $repeater_field_setting ) {
-						$value = array_key_exists( $repeater_field_key, $repeater_instance ) ? $repeater_instance[ $repeater_field_key ] : '';
+						$value = $this->default_value( $repeater_field_key, $repeater_instance, $repeater_field_setting );
 						$instance['repeater'][ $repeater_count ][ $repeater_field_key ] = $this->sanitize_instance( $repeater_field_setting['type'], $value );
 					}
 				}
 			}
 			else {
-				$value = array_key_exists( $key, $new_instance ) ? $new_instance[ $key ] : '';
+				$value = $this->default_value( $key, $new_instance, $setting );
 				$instance[ $key ] = $this->sanitize_instance( $setting['type'], $value );
 			}
 		}
 
 		return $instance;
+	}
+
+	function default_value( $key, $instance, $setting ) {
+		if ( array_key_exists( $key, $instance ) ) {
+			return $instance[ $key ];
+		}
+		else {
+			if ( $setting['type'] == 'checkbox' ) {
+				return '';
+			}
+			else {
+				return $setting['std'];
+			}
+		}
 	}
 
 	/**

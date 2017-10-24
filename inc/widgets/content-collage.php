@@ -29,6 +29,14 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 					array(
 						'title' => esc_html__( 'Slider Settings', 'angiemakesdesign' ),
 						'fields' => array(
+							'slider_height' => array(
+								'type'  => 'number',
+								'std'   => 500,
+								'step'  => 1,
+								'min'   => 250,
+								'max'   => 1000,
+								'label' => esc_html__( 'Height of Collage:', 'angiemakesdesign' ),
+							),
 							'flex_transition' => array(
 								'type'  => 'select',
 								'std'   => 'fade',
@@ -125,6 +133,14 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 				return;
 			}
 
+			$sytle = array();
+			$slider_size = sizeof( $o['repeater'] );
+			$repeater = $o['repeater'];
+
+			if ( isset( $o['slider_height'] ) ) {
+				$style[] = 'height:' . $o['slider_height'] . 'px;';
+			}
+
 			ob_start();
 
 			extract( $args );
@@ -140,67 +156,36 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 
 			?>
 
-			<div class="featured-slides" data-transition="<?php echo esc_attr( $o['flex_transition'] ); ?>" data-speed="<?php echo esc_attr( $o['flex_speed'] ); ?>" data-pause="<?php echo esc_attr( $o['flex_pause'] ); ?>" data-pagination="<?php echo esc_attr( $o['slide_pagination'] ) ?>" data-hideonmobile="<?php echo esc_attr( $o['hide_on_mobile'] ) ?>">
-				<div class="site-slider loading">
-					<ul class="slides">
-						<?php foreach ( $o['repeater'] as $slide_setting ) :
-							$tag = 'div';
-							$button_tag = 'div';
-							$button_href = '';
-							$attr[] = 'class="slide-inner"';
-							$style[] = '';
-
-							if ( ! empty( $slide_setting['button_link'] ) ) {
-								if ( ! empty( $slide_setting['button_text'] ) ) {
-									$button_tag = 'a';
-									$button_href = ' href="' . esc_url( $slide_setting['button_link'] ) . '"';
-								}
-								else {
-									$tag = 'a';
-									$attr[] = 'href="' . esc_url( $slide_setting['button_link'] ) . '"';
-								}
-							}
-
-							if ( ! empty( $slide_setting['background_image'] ) ) {
-								$style[] = 'background-image:url(\'' . esc_url( $slide_setting['background_image'] ) . '\');';
-							}
-
-							if ( ! empty( $slide_setting['background_color'] ) ) {
-								$style[] = 'background-color:' . esc_attr( $slide_setting['background_color'] ) . ';';
-							}
-
-							if ( ! empty( $slide_setting['text_color'] ) ) {
-								$style[] = 'color:' . esc_attr( $slide_setting['text_color'] ) . ';';
-							}
-
-							if ( ! empty( $style ) ) {
-								$attr[] = 'style="' . implode( '', $style ) . '"';
-							}
-
-							?>
-							<li class="slide">
-								<<?php echo $tag; ?> <?php echo implode( ' ', $attr ); ?>>
-									
-								<?php if ( ! empty( $slide_setting['content_text'] ) ) : ?>
-									<div class="content-text">
-										<?php echo wp_kses( $slide_setting['content_text'], angiemakesdesign_allowed_html() ); ?>
+			<div class="collage" style="<?php echo implode( '', $style ); ?>" data-transition="<?php echo esc_attr( $o['flex_transition'] ); ?>" data-speed="<?php echo esc_attr( $o['flex_speed'] ); ?>" data-pause="<?php echo esc_attr( $o['flex_pause'] ); ?>" data-pagination="<?php echo esc_attr( $o['slide_pagination'] ) ?>" data-hideonmobile="<?php echo esc_attr( $o['hide_on_mobile'] ) ?>">
+				<?php if ( $slider_size > 5 ) : ?>
+					<div class="slide carousel slide-5">
+						<div class="slide-gutter">
+							<div class="slide-overflow">
+								<?php foreach ( $o['repeater'] as $key => $slide_setting ) : ?>
+									<div class="carousel-item">
+										<?php $this->widget_get_slide( $slide_setting ); ?>
 									</div>
-								<?php endif; ?>
 
-								<?php if ( ! empty( $slide_setting['button_text'] ) ) : ?>
-									<div class="button-text">
-										<<?php echo $button_tag; ?> class="button slide-button"<?php echo $button_href; ?>>
-											<?php echo sanitize_text_field( $slide_setting['button_text'] ); ?>
-										</<?php echo $button_tag; ?>>
-									</div>
-								<?php endif; ?>
-
-								</<?php echo $tag; ?>>
-							</li>
-						<?php endforeach; ?>
-					</ul>
-					<div class="control-nav-container"></div>
-				</div>
+									<?php unset( $repeater[ $key ] ); ?>
+									<?php $slider_size--; ?>
+									<?php if ( $slider_size < 5 ) : ?>
+										<?php break; ?>
+									<?php endif; ?>
+								<?php endforeach; ?>
+							</div>
+						</div>
+					</div>
+				<?php endif; ?>
+				<?php foreach ( $repeater as $slide_setting ) : ?>
+					<div class="slide slide-<?php echo $slider_size; ?>">
+						<div class="slide-gutter">
+							<div class="slide-overflow">
+								<?php $this->widget_get_slide( $slide_setting ); ?>
+							</div>
+						</div>
+					</div>
+					<?php $slider_size--; ?>
+				<?php endforeach; ?>
 			</div>
 
 			<?php
@@ -213,6 +198,61 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 			echo  $content;
 
 			$this->cache_widget( $args, $content );
+		}
+
+		function widget_get_slide( $slide_setting ) {
+			$tag = 'div';
+			$button_tag = 'div';
+			$button_href = '';
+			$attr[] = 'class="slide-inner"';
+			$style[] = '';
+
+			if ( ! empty( $slide_setting['button_link'] ) ) {
+				if ( ! empty( $slide_setting['button_text'] ) ) {
+					$button_tag = 'a';
+					$button_href = ' href="' . esc_url( $slide_setting['button_link'] ) . '"';
+				}
+				else {
+					$tag = 'a';
+					$attr[] = 'href="' . esc_url( $slide_setting['button_link'] ) . '"';
+				}
+			}
+
+			if ( ! empty( $slide_setting['background_image'] ) ) {
+				$style[] = 'background-image:url(\'' . esc_url( $slide_setting['background_image'] ) . '\');';
+			}
+
+			if ( ! empty( $slide_setting['background_color'] ) ) {
+				$style[] = 'background-color:' . esc_attr( $slide_setting['background_color'] ) . ';';
+			}
+
+			if ( ! empty( $slide_setting['text_color'] ) ) {
+				$style[] = 'color:' . esc_attr( $slide_setting['text_color'] ) . ';';
+			}
+
+			if ( ! empty( $style ) ) {
+				$attr[] = 'style="' . implode( '', $style ) . '"';
+			}
+			?>
+
+			<<?php echo $tag; ?> <?php echo implode( ' ', $attr ); ?>>
+					
+				<?php if ( ! empty( $slide_setting['content_text'] ) ) : ?>
+					<div class="content-text">
+						<?php echo wp_kses( $slide_setting['content_text'], angiemakesdesign_allowed_html() ); ?>
+					</div>
+				<?php endif; ?>
+
+				<?php if ( ! empty( $slide_setting['button_text'] ) ) : ?>
+					<div class="button-text">
+						<<?php echo $button_tag; ?> class="button slide-button"<?php echo $button_href; ?>>
+							<?php echo sanitize_text_field( $slide_setting['button_text'] ); ?>
+						</<?php echo $button_tag; ?>>
+					</div>
+				<?php endif; ?>
+
+			</<?php echo $tag; ?>>
+			<?php
 		}
 
 		/**
