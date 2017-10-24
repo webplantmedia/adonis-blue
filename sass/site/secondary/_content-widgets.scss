@@ -1,0 +1,14 @@
+.content-widget {
+	margin: 0;
+
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+
+		.children {
+			margin-top: 7px;
+			padding-left: 20px;
+		}
+	}
+}

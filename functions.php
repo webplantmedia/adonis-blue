@@ -157,7 +157,7 @@ function angiemakesdesign_widgets_init() {
 		'name'          => esc_html__( 'Front Page', 'angiemakesdesign' ),
 		'id'            => 'front-page',
 		'description'   => esc_html__( 'Add widgets here.', 'angiemakesdesign' ),
-		'before_widget' => '<section id="%1$s" class="content-widget widget %2$s">',
+		'before_widget' => '<section id="%1$s" class="content-widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title content-widget-title">',
 		'after_title'   => '</h2>',

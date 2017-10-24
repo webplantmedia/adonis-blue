@@ -145,12 +145,20 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 					<ul class="slides">
 						<?php foreach ( $o['repeater'] as $slide_setting ) :
 							$tag = 'div';
+							$button_tag = 'div';
+							$button_href = '';
 							$attr[] = 'class="slide-inner"';
 							$style[] = '';
 
 							if ( ! empty( $slide_setting['button_link'] ) ) {
-								$tag = 'a';
-								$attr[] = 'href="' . esc_url( $slide_setting['button_link'] ) . '"';
+								if ( ! empty( $slide_setting['button_text'] ) ) {
+									$button_tag = 'a';
+									$button_href = ' href="' . esc_url( $slide_setting['button_link'] ) . '"';
+								}
+								else {
+									$tag = 'a';
+									$attr[] = 'href="' . esc_url( $slide_setting['button_link'] ) . '"';
+								}
 							}
 
 							if ( ! empty( $slide_setting['background_image'] ) ) {
@@ -161,6 +169,10 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 								$style[] = 'background-color:' . esc_attr( $slide_setting['background_color'] ) . ';';
 							}
 
+							if ( ! empty( $slide_setting['text_color'] ) ) {
+								$style[] = 'color:' . esc_attr( $slide_setting['text_color'] ) . ';';
+							}
+
 							if ( ! empty( $style ) ) {
 								$attr[] = 'style="' . implode( '', $style ) . '"';
 							}
@@ -169,6 +181,20 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 							<li class="slide">
 								<<?php echo $tag; ?> <?php echo implode( ' ', $attr ); ?>>
 									
+								<?php if ( ! empty( $slide_setting['content_text'] ) ) : ?>
+									<div class="content-text">
+										<?php echo wp_kses( $slide_setting['content_text'], angiemakesdesign_allowed_html() ); ?>
+									</div>
+								<?php endif; ?>
+
+								<?php if ( ! empty( $slide_setting['button_text'] ) ) : ?>
+									<div class="button-text">
+										<<?php echo $button_tag; ?> class="button slide-button"<?php echo $button_href; ?>>
+											<?php echo sanitize_text_field( $slide_setting['button_text'] ); ?>
+										</<?php echo $button_tag; ?>>
+									</div>
+								<?php endif; ?>
+
 								</<?php echo $tag; ?>>
 							</li>
 						<?php endforeach; ?>

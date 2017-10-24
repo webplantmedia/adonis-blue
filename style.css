@@ -42,6 +42,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 # Clearings
 # Widgets
 	## Search Widget
+	## Content Widgets
 # Grid
 # Header
 # Layout
@@ -1754,6 +1755,24 @@ a:hover, a:active {
   background: none;
   font-size: 35px;
   line-height: 1;
+}
+
+/*--------------------------------------------------------------
+## Content Widgets
+--------------------------------------------------------------*/
+.content-widget {
+  margin: 0;
+}
+
+.content-widget ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.content-widget ul .children {
+  margin-top: 7px;
+  padding-left: 20px;
 }
 
 /*--------------------------------------------------------------
