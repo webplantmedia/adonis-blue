@@ -16,6 +16,8 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 	 * @package AngieMakesDesign
 	 */
 	class AngieMakesDesign_Widget_Collage extends AngieMakesDesign_Widget {
+		public $selective_refresh = true;
+
 		/**
 		 * Constructor
 		 */
@@ -39,7 +41,7 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 								),
 								'sanitize' => 'text',
 							),
-							'slider_speed' => array(
+							'slider_pause' => array(
 								'type'  => 'number',
 								'std'   => 9,
 								'step'  => 1,
@@ -51,10 +53,10 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 							'slider_auto' => array(
 								'type'  => 'checkbox',
 								'std'   => 1,
-								'label' => esc_html__( 'Auto start slideshow?', 'angiemakesdesign' ),
+								'label' => esc_html__( 'Auto start slider transitions?', 'angiemakesdesign' ),
 								'sanitize' => 'checkbox',
 							),
-							'slider_pause' => array(
+							'slider_autohover' => array(
 								'type'  => 'checkbox',
 								'std'   => 1,
 								'label' => esc_html__( 'Pause slideshow when hovering?', 'angiemakesdesign' ),
@@ -66,7 +68,7 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 								'label' => esc_html__( 'Show slide control?', 'angiemakesdesign' ),
 								'sanitize' => 'checkbox',
 							),
-							'slider_pagination' => array(
+							'slider_pager' => array(
 								'type'  => 'checkbox',
 								'std'   => 1,
 								'label' => esc_html__( 'Show slide pagination?', 'angiemakesdesign' ),
@@ -163,7 +165,7 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 						array(
 							'background_color' => '#ffede4',
 							'background_image' => get_template_directory_uri() . '/img/collage/fonts-bg.jpg',
-							'background_size' => 'contain',
+							'background_size' => 'auto',
 							'content_text' => '',
 							'text_color' => '',
 							'button_link' => 'http://dev.angiemakes.com',
@@ -195,7 +197,7 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 		 * @return void
 		 */
 		function widget( $args, $instance ) {
-			wp_enqueue_script( 'angiemakesdesign-slider' );
+			wp_enqueue_script( 'angiemakesdesign-bxslider' );
 
 			if ( $this->get_cached_widget( $args ) ) {
 				return;
@@ -218,11 +220,11 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 
 			?>
 
-			<div class="collage" data-slidermode="<?php echo esc_attr( $o['slider_mode'] ); ?>" data-sliderspeed="<?php echo esc_attr( $o['slider_speed'] ); ?>" data-sliderauto="<?php echo esc_attr( $o['slider_auto'] ); ?>" data-sliderpause="<?php echo esc_attr( $o['slider_pause'] ) ?>" data-slidercontrols="<?php echo esc_attr( $o['slider_controls'] ) ?>" data-sliderpagination="<?php echo esc_attr( $o['slider_pagination'] ) ?>">
+			<div class="collage">
 				<?php if ( $slider_size > 5 ) : ?>
 					<div class="slide carousel slide-5">
 						<div class="slide-gutter">
-							<div class="carousel-container slide-overflow">
+							<div class="carousel-container slide-overflow" data-sliderauto="<?php echo esc_attr( $o['slider_auto'] ); ?>" data-slidermode="<?php echo esc_attr( $o['slider_mode'] ); ?>" data-sliderpause="<?php echo esc_attr( $o['slider_pause'] ); ?>" data-sliderautohover="<?php echo esc_attr( $o['slider_autohover'] ) ?>" data-slidercontrols="<?php echo esc_attr( $o['slider_controls'] ) ?>" data-sliderpager="<?php echo esc_attr( $o['slider_pager'] ) ?>">
 								<?php foreach ( $o['repeater'] as $key => $slide_setting ) : ?>
 									<div class="carousel-item">
 										<?php $this->widget_get_slide( $slide_setting ); ?>
@@ -249,6 +251,43 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 					<?php $slider_size--; ?>
 				<?php endforeach; ?>
 			</div>
+			<script type="text/javascript">
+				/* <![CDATA[ */
+				( function($) {
+					'use strict';
+
+					$(document).ready(function(){
+						$('#<?php echo $this->id; ?> .carousel-container').each( function() {
+							var $this = $(this);
+							var sliderauto = $this.data('sliderauto');
+							var slidermode = $this.data('slidermode');
+							var sliderpause = $this.data('sliderpause');
+							var sliderautohover = $this.data('sliderautohover');
+							var slidercontrols = $this.data('slidercontrols');
+							var sliderpager = $this.data('sliderpager');
+
+							slidermode = typeof slidermode === 'undefined' ? 'horizontal' : slidermode;
+							sliderpause = typeof sliderpause === 'undefined' ? 9000 : ( 1000 * sliderpause );
+							sliderauto = sliderauto == 1 ? true : false;
+							sliderautohover = sliderautohover == 1 ? true : false;
+							slidercontrols = slidercontrols == 1 ? true : false;
+							sliderpager = sliderpager == 1 ? true : false;
+
+							$this.bxSlider({
+								auto: sliderauto,
+								nextText: '<i class="genericon genericon-expand genericon-rotate-270"></i>',
+								prevText: '<i class="genericon genericon-expand genericon-rotate-90"></i>',
+								mode: slidermode,
+								pause: sliderpause,
+								autoHover: sliderautohover,
+								controls: slidercontrols,
+								pager: sliderpager
+							});
+						});
+					});
+				} )( jQuery );
+				/* ]]> */
+			</script>
 
 			<?php
 			echo  $after_widget;

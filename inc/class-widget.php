@@ -24,7 +24,7 @@ class AngieMakesDesign_Widget extends WP_Widget {
 		$widget_ops = array(
 			'classname' => $this->widget_id,
 			'description' => $this->widget_description,
-			'customize_selective_refresh' => true,
+			'customize_selective_refresh' => $this->selective_refresh,
 		);
 
 		parent::__construct( $this->widget_id, $this->widget_name, $widget_ops, $this->control_ops );

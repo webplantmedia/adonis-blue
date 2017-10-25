@@ -205,7 +205,7 @@ function angiemakesdesign_scripts() {
 
 	// Register bxslider
 	wp_register_script( 'angiemakesdesign-bxslider', get_template_directory_uri() . '/inc/vendors/bxslider/js/jquery.bxslider.js', array( 'jquery' ), '4.2.12', true );
-	wp_register_script( 'angiemakesdesign-slider', get_template_directory_uri() . '/js/slider.js', array( 'angiemakesdesign-bxslider' ), ANGIEMAKESDESIGN_VERSION, true );
+	// wp_register_script( 'angiemakesdesign-slider', get_template_directory_uri() . '/js/slider.js', array( 'angiemakesdesign-bxslider' ), ANGIEMAKESDESIGN_VERSION, true );
 
 	wp_enqueue_script( 'angiemakesdesign-navigation', get_template_directory_uri() . '/js/navigation.js', array(), ANGIEMAKESDESIGN_VERSION, true );
 
