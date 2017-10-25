@@ -15,6 +15,10 @@
 				h6 {
 					font-weight: normal;
 				}
+
+				* {
+					margin-top: 0;
+				}
 			}
 		}
 	}
@@ -232,7 +236,7 @@
 @media screen and (max-width : 568px) {
 	#master .angiemakesdesign_widget_collage {
 		.collage {
-			height: 1400px;
+			height: 1500px;
 
 			.slide {
 				width: 100%;

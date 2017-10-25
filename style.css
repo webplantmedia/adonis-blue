@@ -1793,6 +1793,10 @@ a:hover, a:active {
   font-weight: normal;
 }
 
+#master .angiemakesdesign_widget_collage .collage .slide-inner .content-text * {
+  margin-top: 0;
+}
+
 .angiemakesdesign_widget_collage .collage {
   position: relative;
   height: 650px;
@@ -1992,7 +1996,7 @@ a:hover, a:active {
 
 @media screen and (max-width: 568px) {
   #master .angiemakesdesign_widget_collage .collage {
-    height: 1400px;
+    height: 1500px;
   }
   #master .angiemakesdesign_widget_collage .collage .slide {
     width: 100%;
