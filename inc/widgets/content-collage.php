@@ -29,45 +29,42 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 					array(
 						'title' => esc_html__( 'Slider Settings', 'angiemakesdesign' ),
 						'fields' => array(
-							'slider_height' => array(
-								'type'  => 'number',
-								'std'   => 500,
-								'step'  => 1,
-								'min'   => 250,
-								'max'   => 1000,
-								'label' => esc_html__( 'Height of Collage:', 'angiemakesdesign' ),
-							),
-							'flex_transition' => array(
+							'slider_mode' => array(
 								'type'  => 'select',
-								'std'   => 'fade',
+								'std'   => 'horizontal',
 								'label' => esc_html__( 'Transition Effect:', 'angiemakesdesign' ),
 								'options' => array(
-									'fade'  => esc_html__( 'Fade', 'angiemakesdesign' ),
-									'slide' => esc_html__( 'Slide', 'angiemakesdesign' ),
+									'horizontal' => esc_html__( 'Slide', 'angiemakesdesign' ),
+									'fade' => esc_html__( 'Fade', 'angiemakesdesign' ),
 								),
 							),
-							'flex_speed' => array(
+							'slider_speed' => array(
 								'type'  => 'number',
-								'std'   => 4,
+								'std'   => 9,
 								'step'  => 1,
 								'min'   => 1,
 								'max'   => 100,
 								'label' => esc_html__( 'Speed of the slideshow change in seconds:', 'angiemakesdesign' ),
 							),
-							'flex_pause' => array(
+							'slider_auto' => array(
 								'type'  => 'checkbox',
-								'std'   => 0,
-								'label' => esc_html__( 'Pause slideshow when hover?', 'angiemakesdesign' ),
+								'std'   => 1,
+								'label' => esc_html__( 'Auto start slideshow?', 'angiemakesdesign' ),
 							),
-							'slide_pagination' => array(
+							'slider_pause' => array(
 								'type'  => 'checkbox',
-								'std'   => 0,
+								'std'   => 1,
+								'label' => esc_html__( 'Pause slideshow when hovering?', 'angiemakesdesign' ),
+							),
+							'slider_controls' => array(
+								'type'  => 'checkbox',
+								'std'   => 1,
+								'label' => esc_html__( 'Show slide control?', 'angiemakesdesign' ),
+							),
+							'slider_pagination' => array(
+								'type'  => 'checkbox',
+								'std'   => 1,
 								'label' => esc_html__( 'Show slide pagination?', 'angiemakesdesign' ),
-							),
-							'hide_on_mobile' => array(
-								'type'  => 'checkbox',
-								'std'   => 0,
-								'label' => esc_html__( 'Hide on mobile?', 'angiemakesdesign' ),
 							),
 						),
 					),
@@ -107,6 +104,24 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 							'label' => esc_html__( 'Button Text:', 'angiemakesdesign' ),
 						),
 					),
+					'default' => array(
+						array(
+							'background_color' => '#deead0',
+							'background_image' => '',
+							'content_text' => 'Samuel said to Saul, "You have acted foolishly; you have not kept the commandment of the LORD your God, which He commanded you, for now the LORD would have established your kingdom over Israel forever.',
+							'text_color' => '',
+							'button_link' => 'http://dev.angiemakes.com',
+							'button_text' => 'See More',
+						),
+						array(
+							'background_color' => '#deead0',
+							'background_image' => '',
+							'content_text' => 'Samuel said to Saul, "You have acted foolishly; you have not kept the commandment of the LORD your God, which He commanded you, for now the LORD would have established your kingdom over Israel forever.',
+							'text_color' => '',
+							'button_link' => 'http://dev.angiemakes.com',
+							'button_text' => 'See More',
+						),
+					),
 				),
 			);
 
@@ -135,13 +150,8 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 				return;
 			}
 
-			$sytle = array();
 			$slider_size = sizeof( $o['repeater'] );
 			$repeater = $o['repeater'];
-
-			if ( isset( $o['slider_height'] ) ) {
-				$style[] = 'height:' . $o['slider_height'] . 'px;';
-			}
 
 			ob_start();
 
@@ -151,7 +161,7 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 
 			?>
 
-			<div class="collage" style="<?php echo implode( '', $style ); ?>" data-transition="<?php echo esc_attr( $o['flex_transition'] ); ?>" data-speed="<?php echo esc_attr( $o['flex_speed'] ); ?>" data-pause="<?php echo esc_attr( $o['flex_pause'] ); ?>" data-pagination="<?php echo esc_attr( $o['slide_pagination'] ) ?>" data-hideonmobile="<?php echo esc_attr( $o['hide_on_mobile'] ) ?>">
+			<div class="collage" data-slidermode="<?php echo esc_attr( $o['slider_mode'] ); ?>" data-sliderspeed="<?php echo esc_attr( $o['slider_speed'] ); ?>" data-sliderauto="<?php echo esc_attr( $o['slider_auto'] ); ?>" data-sliderpause="<?php echo esc_attr( $o['slider_pause'] ) ?>" data-slidercontrols="<?php echo esc_attr( $o['slider_controls'] ) ?>" data-sliderpagination="<?php echo esc_attr( $o['slider_pagination'] ) ?>">
 				<?php if ( $slider_size > 5 ) : ?>
 					<div class="slide carousel slide-5">
 						<div class="slide-gutter">

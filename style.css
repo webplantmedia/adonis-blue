@@ -42,7 +42,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 # Clearings
 # Widgets
 	## Search Widget
-	## Content Widgets
+# Content Widgets
+	## Collage Widget
 # Grid
 # Header
 # Layout
@@ -1758,7 +1759,7 @@ a:hover, a:active {
 }
 
 /*--------------------------------------------------------------
-## Content Widgets
+# Content Widgets
 --------------------------------------------------------------*/
 .content-widget {
   margin: 0;
@@ -1775,8 +1776,12 @@ a:hover, a:active {
   padding-left: 20px;
 }
 
+/*--------------------------------------------------------------
+## Collage Widget
+--------------------------------------------------------------*/
 .angiemakesdesign_widget_collage .collage {
   position: relative;
+  height: 600px;
 }
 
 .angiemakesdesign_widget_collage .collage .slide-5 {
@@ -1849,8 +1854,6 @@ a:hover, a:active {
   overflow: hidden;
 }
 
-.angiemakesdesign_widget_collage .collage .bx-wrapper,
-.angiemakesdesign_widget_collage .collage .bx-viewport,
 .angiemakesdesign_widget_collage .collage .carousel-item,
 .angiemakesdesign_widget_collage .collage .slide-overflow,
 .angiemakesdesign_widget_collage .collage .slide-gutter,
@@ -1859,12 +1862,117 @@ a:hover, a:active {
   height: 100%;
 }
 
+.angiemakesdesign_widget_collage .collage .bx-wrapper,
+.angiemakesdesign_widget_collage .collage .bx-viewport {
+  width: 100%;
+  height: 100% !important;
+}
+
 .angiemakesdesign_widget_collage .collage .slide-gutter {
   box-sizing: border-box;
 }
 
 .angiemakesdesign_widget_collage .collage .slide-overflow {
   overflow: hidden;
+}
+
+@media screen and (max-width: 991px) {
+  .angiemakesdesign_widget_collage .collage {
+    height: 1200px;
+  }
+  .angiemakesdesign_widget_collage .collage .slide-5 {
+    width: 100%;
+    height: 30%;
+    top: 0;
+    left: 0;
+  }
+  .angiemakesdesign_widget_collage .collage .slide-5 .slide-gutter {
+    padding-right: 0;
+    padding-bottom: 10px;
+  }
+  .angiemakesdesign_widget_collage .collage .slide-4 {
+    width: 100%;
+    height: 20%;
+    top: 30%;
+    left: 0;
+  }
+  .angiemakesdesign_widget_collage .collage .slide-4 .slide-gutter {
+    padding-right: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .angiemakesdesign_widget_collage .collage .slide-3 {
+    width: 100%;
+    height: 20%;
+    top: 50%;
+    right: 0;
+  }
+  .angiemakesdesign_widget_collage .collage .slide-3 .slide-gutter {
+    padding-top: 10px;
+    padding-left: 0;
+    padding-bottom: 10px;
+  }
+  .angiemakesdesign_widget_collage .collage .slide-2 {
+    width: 50%;
+    height: 30%;
+    bottom: 0;
+    left: 0;
+    right: auto;
+  }
+  .angiemakesdesign_widget_collage .collage .slide-2 .slide-gutter {
+    padding-left: 0;
+    padding-right: 10px;
+    padding-top: 10px;
+  }
+  .angiemakesdesign_widget_collage .collage .slide-1 {
+    width: 50%;
+    height: 30%;
+    bottom: 0;
+    right: 0;
+  }
+  .angiemakesdesign_widget_collage .collage .slide-1 .slide-gutter {
+    padding-left: 10px;
+    padding-top: 10px;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  #master .angiemakesdesign_widget_collage .collage {
+    height: 1400px;
+  }
+  #master .angiemakesdesign_widget_collage .collage .slide {
+    width: 100%;
+    height: 20%;
+  }
+  #master .angiemakesdesign_widget_collage .collage .slide .slide-gutter {
+    padding: 0;
+  }
+  #master .angiemakesdesign_widget_collage .collage .slide-4,
+  #master .angiemakesdesign_widget_collage .collage .slide-3,
+  #master .angiemakesdesign_widget_collage .collage .slide-2,
+  #master .angiemakesdesign_widget_collage .collage .slide-1 {
+    left: 0;
+    right: 0;
+    bottom: auto;
+  }
+  #master .angiemakesdesign_widget_collage .collage .slide-4 .slide-gutter,
+  #master .angiemakesdesign_widget_collage .collage .slide-3 .slide-gutter,
+  #master .angiemakesdesign_widget_collage .collage .slide-2 .slide-gutter,
+  #master .angiemakesdesign_widget_collage .collage .slide-1 .slide-gutter {
+    padding: 20px 0 0 0;
+  }
+  #master .angiemakesdesign_widget_collage .collage .slide-4 {
+    top: 20%;
+  }
+  #master .angiemakesdesign_widget_collage .collage .slide-3 {
+    top: 40%;
+  }
+  #master .angiemakesdesign_widget_collage .collage .slide-2 {
+    top: 60%;
+  }
+  #master .angiemakesdesign_widget_collage .collage .slide-1 {
+    top: 80%;
+  }
 }
 
 /*--------------------------------------------------------------

@@ -42,7 +42,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 # Clearings
 # Widgets
 	## Search Widget
-	## Content Widgets
+# Content Widgets
+	## Collage Widget
 # Grid
 # Header
 # Layout
@@ -150,9 +151,14 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 @import "site/secondary/search-widget";
 
 /*--------------------------------------------------------------
-## Content Widgets
+# Content Widgets
 --------------------------------------------------------------*/
 @import "site/secondary/content-widgets";
+
+/*--------------------------------------------------------------
+## Collage Widget
+--------------------------------------------------------------*/
+@import "site/secondary/collage-widget";
 
 /*--------------------------------------------------------------
 # Grid
