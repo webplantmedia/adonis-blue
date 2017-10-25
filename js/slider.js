@@ -16,6 +16,8 @@
 				autoControls: false,
 				stopAutoOnClick: true,
 				pager: true,
+				nextText: '<i class="genericon genericon-expand genericon-rotate-270"></i>',
+				prevText: '<i class="genericon genericon-expand genericon-rotate-90"></i>'
 			});
 		});
 	});
