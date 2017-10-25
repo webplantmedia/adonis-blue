@@ -1854,18 +1854,26 @@ a:hover, a:active {
   overflow: hidden;
 }
 
+.angiemakesdesign_widget_collage .collage .slide .slide-inner {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
 .angiemakesdesign_widget_collage .collage .carousel-item,
 .angiemakesdesign_widget_collage .collage .slide-overflow,
 .angiemakesdesign_widget_collage .collage .slide-gutter,
 .angiemakesdesign_widget_collage .collage .slide-inner {
   width: 100%;
   height: 100%;
+  display: block;
 }
 
 .angiemakesdesign_widget_collage .collage .bx-wrapper,
 .angiemakesdesign_widget_collage .collage .bx-viewport {
   width: 100%;
   height: 100% !important;
+  display: block;
 }
 
 .angiemakesdesign_widget_collage .collage .slide-gutter {
@@ -1879,6 +1887,9 @@ a:hover, a:active {
 @media screen and (max-width: 991px) {
   .angiemakesdesign_widget_collage .collage {
     height: 1200px;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
   }
   .angiemakesdesign_widget_collage .collage .slide-5 {
     width: 100%;

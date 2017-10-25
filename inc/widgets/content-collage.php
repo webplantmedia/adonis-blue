@@ -106,20 +106,44 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 					),
 					'default' => array(
 						array(
-							'background_color' => '#deead0',
-							'background_image' => '',
-							'content_text' => 'Samuel said to Saul, "You have acted foolishly; you have not kept the commandment of the LORD your God, which He commanded you, for now the LORD would have established your kingdom over Israel forever.',
+							'background_color' => '#ffede4',
+							'background_image' => get_template_directory_uri() . '/img/collage/hallie.jpg',
+							'content_text' => '',
 							'text_color' => '',
-							'button_link' => 'http://dev.angiemakes.com',
-							'button_text' => 'See More',
+							'button_link' => '',
+							'button_text' => '',
 						),
 						array(
-							'background_color' => '#deead0',
-							'background_image' => '',
-							'content_text' => 'Samuel said to Saul, "You have acted foolishly; you have not kept the commandment of the LORD your God, which He commanded you, for now the LORD would have established your kingdom over Israel forever.',
+							'background_color' => '#fdf3ec',
+							'background_image' => get_template_directory_uri() . '/img/collage/bghome.jpg',
+							'content_text' => 'WordPress Themes + Graphics to Rock Your Brand and Style Your Life',
 							'text_color' => '',
 							'button_link' => 'http://dev.angiemakes.com',
-							'button_text' => 'See More',
+							'button_text' => '',
+						),
+						array(
+							'background_color' => '#fdf7f3',
+							'background_image' => '',
+							'content_text' => 'Feminine WordPress Themes',
+							'text_color' => '',
+							'button_link' => 'http://dev.angiemakes.com',
+							'button_text' => 'Shop',
+						),
+						array(
+							'background_color' => '#ffede4',
+							'background_image' => get_template_directory_uri() . '/img/collage/fonts.jpg',
+							'content_text' => '',
+							'text_color' => '',
+							'button_link' => '',
+							'button_text' => '',
+						),
+						array(
+							'background_color' => '#fffdfc',
+							'background_image' => get_template_directory_uri() . '/img/collage/homegreen.jpg',
+							'content_text' => '24 Hour Installation',
+							'text_color' => '',
+							'button_link' => 'http://dev.angiemakes.com',
+							'button_text' => '',
 						),
 					),
 				),
@@ -150,7 +174,7 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 				return;
 			}
 
-			$slider_size = sizeof( $o['repeater'] );
+			$slider_size = max( sizeof( $o['repeater'] ), 5 );
 			$repeater = $o['repeater'];
 
 			ob_start();

@@ -54,7 +54,6 @@ class AngieMakesDesign_Widget extends WP_Widget {
 		wp_enqueue_script( 'jquery-ui' );
 		wp_enqueue_script( 'jquery-ui-autocomplete' );
 		wp_enqueue_script( 'jquery-ui-accordion' );
-		// wp_enqueue_script( 'underscore' );
 
 		wp_enqueue_script( 'angiemakesdesign-admin-widgets', get_template_directory_uri() . '/js/admin/admin-widgets.js', array(), ANGIEMAKESDESIGN_VERSION, true );
 	}
@@ -363,7 +362,7 @@ class AngieMakesDesign_Widget extends WP_Widget {
 					( function( $ ) {
 						"use strict";
 						$(document).ready(function($){
-							$('<?php echo $selector; ?>').accordion({
+							$('#widgets-right <?php echo $selector; ?>').accordion({
 								header: '.widget-panel-title',
 								heightStyle: 'content',
 								collapsible: true,
@@ -397,7 +396,7 @@ class AngieMakesDesign_Widget extends WP_Widget {
 					( function( $ ) {
 						"use strict";
 						$(document).ready(function($){
-							$('<?php echo $selector; ?>').accordion({
+							$('#widgets-right <?php echo $selector; ?>').accordion({
 								header: '.widget-panel-title',
 								heightStyle: 'content',
 								collapsible: true,
@@ -622,19 +621,20 @@ class AngieMakesDesign_Widget extends WP_Widget {
 			case 'colorpicker' :
 					wp_enqueue_script( 'wp-color-picker' );
 					wp_enqueue_style( 'wp-color-picker' );
-					wp_enqueue_style( 'underscore' );
 				?>
 				<p style="margin-bottom: 0;">
 					<label for="<?php echo $field_id; ?>"><?php echo esc_html( $setting['label'] ); ?></label>
 				</p>
 				<div class="color-picker-wrapper">
 					<input type="text" class="widefat color-picker" id="<?php echo esc_attr( $field_id ); ?>" name="<?php echo esc_attr( $field_name ); ?>" data-default-color="<?php echo $value; ?>" value="<?php echo $value; ?>" />
-					<script>
+					<script type="text/javascript">
+						/* <![CDATA[ */
 						( function( $ ){
 							$( document ).ready( function() {
-								$('#<?php echo $field_id; ?>').wpColorPicker();
+								$('#widgets-right #<?php echo $field_id; ?>').wpColorPicker();
 							} );
 						}( jQuery ) );
+						/* ]]> */
 					</script>
 				</div>
 				<?php if ( isset( $setting['description'] ) ) : ?>
