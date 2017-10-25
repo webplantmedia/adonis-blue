@@ -1779,9 +1779,23 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 ## Collage Widget
 --------------------------------------------------------------*/
+#master .angiemakesdesign_widget_collage .collage .slide-inner .content-text,
+#master .angiemakesdesign_widget_collage .collage .slide-inner .content-text * {
+  color: #6d686c;
+}
+
+#master .angiemakesdesign_widget_collage .collage .slide-inner .content-text h1,
+#master .angiemakesdesign_widget_collage .collage .slide-inner .content-text h2,
+#master .angiemakesdesign_widget_collage .collage .slide-inner .content-text h3,
+#master .angiemakesdesign_widget_collage .collage .slide-inner .content-text h4,
+#master .angiemakesdesign_widget_collage .collage .slide-inner .content-text h5,
+#master .angiemakesdesign_widget_collage .collage .slide-inner .content-text h6 {
+  font-weight: normal;
+}
+
 .angiemakesdesign_widget_collage .collage {
   position: relative;
-  height: 600px;
+  height: 650px;
 }
 
 .angiemakesdesign_widget_collage .collage .slide-5 {
@@ -1813,7 +1827,7 @@ a:hover, a:active {
 .angiemakesdesign_widget_collage .collage .slide-3 {
   position: absolute;
   width: 50%;
-  height: 35%;
+  height: 40%;
   top: 0;
   right: 0;
 }
@@ -1826,7 +1840,7 @@ a:hover, a:active {
 .angiemakesdesign_widget_collage .collage .slide-2 {
   position: absolute;
   width: 25%;
-  height: 65%;
+  height: 60%;
   bottom: 0;
   right: 25%;
 }
@@ -1840,7 +1854,7 @@ a:hover, a:active {
 .angiemakesdesign_widget_collage .collage .slide-1 {
   position: absolute;
   width: 25%;
-  height: 65%;
+  height: 60%;
   bottom: 0;
   right: 0;
 }
@@ -1858,6 +1872,35 @@ a:hover, a:active {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+  position: relative;
+}
+
+.angiemakesdesign_widget_collage .collage .slide .slide-inner .content-wrapper {
+  position: absolute;
+  padding: 0 20px;
+  text-align: center;
+  top: 50%;
+  right: 0;
+  left: 0;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.angiemakesdesign_widget_collage .collage .slide .slide-inner .content-wrapper .content-text + .button-text {
+  margin-top: 20px;
+}
+
+.angiemakesdesign_widget_collage .collage .slide .slide-inner .content-wrapper .content-text > *:first-child {
+  margin-top: 0;
+}
+
+.angiemakesdesign_widget_collage .collage .slide .slide-inner .content-wrapper .content-text > *:last-child {
+  margin-bottom: 0;
 }
 
 .angiemakesdesign_widget_collage .collage .carousel-item,
@@ -1886,7 +1929,7 @@ a:hover, a:active {
 
 @media screen and (max-width: 991px) {
   .angiemakesdesign_widget_collage .collage {
-    height: 1200px;
+    height: 1300px;
     max-width: 520px;
     margin-left: auto;
     margin-right: auto;

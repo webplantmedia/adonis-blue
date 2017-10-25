@@ -134,10 +134,19 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 							'button_text' => '',
 						),
 						array(
+							'background_color' => '#fdf8f3',
+							'background_image' => get_template_directory_uri() . '/img/collage/gentry.jpg',
+							'background_size' => 'contain',
+							'content_text' => '',
+							'text_color' => '',
+							'button_link' => '',
+							'button_text' => '',
+						),
+						array(
 							'background_color' => '#fdf3ec',
 							'background_image' => get_template_directory_uri() . '/img/collage/bghome.jpg',
 							'background_size' => 'stretch',
-							'content_text' => 'WordPress Themes + Graphics to Rock Your Brand and Style Your Life',
+							'content_text' => '<h3>WORDPRESS THEMES + GRAPHICS TO ROCK YOUR BRAND AND STYLE YOUR LIFE</h3>',
 							'text_color' => '',
 							'button_link' => 'http://dev.angiemakes.com',
 							'button_text' => '',
@@ -146,7 +155,7 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 							'background_color' => '#fdf7f3',
 							'background_image' => '',
 							'background_size' => 'cover',
-							'content_text' => 'Feminine WordPress Themes',
+							'content_text' => '<h3>FEMININE WORDPRESS THEMES</h3>',
 							'text_color' => '',
 							'button_link' => 'http://dev.angiemakes.com',
 							'button_text' => 'Shop',
@@ -164,7 +173,7 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 							'background_color' => '#fffdfc',
 							'background_image' => get_template_directory_uri() . '/img/collage/homegreen.jpg',
 							'background_size' => 'stretch',
-							'content_text' => '24 Hour Installation',
+							'content_text' => '<h3>24 HOUR INSTALLATION</h3>',
 							'text_color' => '',
 							'button_link' => 'http://dev.angiemakes.com',
 							'button_text' => '',
@@ -294,19 +303,21 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 
 			<<?php echo $tag; ?> <?php echo implode( ' ', $attr ); ?>>
 					
-				<?php if ( ! empty( $slide_setting['content_text'] ) ) : ?>
-					<div class="content-text">
-						<?php echo wp_kses( $slide_setting['content_text'], angiemakesdesign_allowed_html() ); ?>
-					</div>
-				<?php endif; ?>
+				<div class="content-wrapper">
+					<?php if ( ! empty( $slide_setting['content_text'] ) ) : ?>
+						<div class="content-text">
+							<?php echo wp_kses( $slide_setting['content_text'], angiemakesdesign_allowed_html() ); ?>
+						</div>
+					<?php endif; ?>
 
-				<?php if ( ! empty( $slide_setting['button_text'] ) ) : ?>
-					<div class="button-text">
-						<<?php echo $button_tag; ?> class="button slide-button"<?php echo $button_href; ?>>
-							<?php echo sanitize_text_field( $slide_setting['button_text'] ); ?>
-						</<?php echo $button_tag; ?>>
-					</div>
-				<?php endif; ?>
+					<?php if ( ! empty( $slide_setting['button_text'] ) ) : ?>
+						<div class="button-text">
+							<<?php echo $button_tag; ?> class="button slide-button"<?php echo $button_href; ?>>
+								<?php echo sanitize_text_field( $slide_setting['button_text'] ); ?>
+							</<?php echo $button_tag; ?>>
+						</div>
+					<?php endif; ?>
+				</div>
 
 			</<?php echo $tag; ?>>
 			<?php

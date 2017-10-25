@@ -1,7 +1,29 @@
+#master .angiemakesdesign_widget_collage {
+	.collage {
+		.slide-inner {
+			.content-text {
+				&,
+				* {
+					color: $color__text;
+				}
+
+				h1,
+				h2,
+				h3,
+				h4,
+				h5,
+				h6 {
+					font-weight: normal;
+				}
+			}
+		}
+	}
+}
+
 .angiemakesdesign_widget_collage {
 	.collage {
 		position: relative;
-		height: 600px;
+		height: 650px;
 
 		.slide-5 {
 			position: absolute;
@@ -32,7 +54,7 @@
 		.slide-3 {
 			position: absolute;
 			width: 50%;
-			height: 35%;
+			height: 40%;
 			top: 0;
 			right: 0;
 
@@ -45,7 +67,7 @@
 		.slide-2 {
 			position: absolute;
 			width: 25%;
-			height: 65%;
+			height: 60%;
 			bottom: 0;
 			right: 25%;
 
@@ -59,7 +81,7 @@
 		.slide-1 {
 			position: absolute;
 			width: 25%;
-			height: 65%;
+			height: 60%;
 			bottom: 0;
 			right: 0;
 
@@ -76,7 +98,34 @@
 				background-size: cover;
 				background-repeat: no-repeat;
 				background-position: center center;
+				position: relative;
+
+				.content-wrapper {
+					position: absolute;
+					padding: 0 20px;
+					text-align: center;
+					top: 50%;
+					right: 0;
+					left: 0;
+					width: 100%;
+					max-width: 400px;
+					margin: 0 auto;
+					@include crossBrowser('transform',translateY(-50%));
+
+					.content-text + .button-text {
+						margin-top: 20px;
+					}
+
+					.content-text > *:first-child {
+						margin-top: 0;
+					}
+
+					.content-text > *:last-child {
+						margin-bottom: 0;
+					}
+				}
 			}
+
 		}
 
 		.carousel-item,
@@ -108,7 +157,7 @@
 @media screen and (max-width : 991px) {
 	.angiemakesdesign_widget_collage {
 		.collage {
-			height: 1200px;
+			height: 1300px;
 			max-width: 520px;
 			margin-left: auto;
 			margin-right: auto;

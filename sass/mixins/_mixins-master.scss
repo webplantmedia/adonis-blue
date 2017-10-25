@@ -33,3 +33,10 @@
 @mixin clearfix-after() {
 	clear: both;
 }
+
+@mixin crossBrowser($property, $val){
+  -webkit-#{$property}: $val;
+  -moz-#{$property}: $val;
+  -ms-#{$property}: $val;
+  #{$property}: $val;
+}
