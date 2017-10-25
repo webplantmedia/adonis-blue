@@ -37,6 +37,7 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 									'horizontal' => esc_html__( 'Slide', 'angiemakesdesign' ),
 									'fade' => esc_html__( 'Fade', 'angiemakesdesign' ),
 								),
+								'sanitize' => 'text',
 							),
 							'slider_speed' => array(
 								'type'  => 'number',
@@ -45,26 +46,31 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 								'min'   => 1,
 								'max'   => 100,
 								'label' => esc_html__( 'Speed of the slideshow change in seconds:', 'angiemakesdesign' ),
+								'sanitize' => 'number',
 							),
 							'slider_auto' => array(
 								'type'  => 'checkbox',
 								'std'   => 1,
 								'label' => esc_html__( 'Auto start slideshow?', 'angiemakesdesign' ),
+								'sanitize' => 'checkbox',
 							),
 							'slider_pause' => array(
 								'type'  => 'checkbox',
 								'std'   => 1,
 								'label' => esc_html__( 'Pause slideshow when hovering?', 'angiemakesdesign' ),
+								'sanitize' => 'checkbox',
 							),
 							'slider_controls' => array(
 								'type'  => 'checkbox',
 								'std'   => 1,
 								'label' => esc_html__( 'Show slide control?', 'angiemakesdesign' ),
+								'sanitize' => 'checkbox',
 							),
 							'slider_pagination' => array(
 								'type'  => 'checkbox',
 								'std'   => 1,
 								'label' => esc_html__( 'Show slide pagination?', 'angiemakesdesign' ),
+								'sanitize' => 'checkbox',
 							),
 						),
 					),
@@ -76,38 +82,52 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 							'type'  => 'colorpicker',
 							'std'   => '#ffece3',
 							'label' => esc_html__( 'Background Color:', 'angiemakesdesign' ),
+							'sanitize' => 'color',
 						),
 						'background_image' => array(
 							'type'  => 'image',
 							'std'   => null,
 							'label' => esc_html__( 'Background Image:', 'angiemakesdesign' ),
+							'sanitize' => 'url',
+						),
+						'background_size' => array(
+							'type'  => 'select',
+							'std'   => 'cover',
+							'label' => esc_html__( 'Background Size:', 'angiemakesdesign' ),
+							'options' => $this->options_background_size(),
+							'sanitize' => 'background_size',
 						),
 						'content_text' => array(
 							'type'  => 'textarea',
 							'std'   => '',
 							'label' => esc_html__( 'Content:', 'angiemakesdesign' ),
+							'sanitize' => 'html',
 						),
 						'text_color' => array(
 							'type'  => 'colorpicker',
 							'std'   => '',
 							'label' => esc_html__( 'Text Color:', 'angiemakesdesign' ),
 							'description' => esc_html__( 'Leave blank to use default theme color.', 'angiemakesdesign' ),
+							'sanitize' => 'color',
 						),
 						'button_link' => array(
 							'type'  => 'text',
 							'std'   => '',
 							'label' => esc_html__( 'Button URL:', 'angiemakesdesign' ),
+							'sanitize' => 'text',
 						),
 						'button_text' => array(
 							'type'  => 'text',
 							'std'   => '',
 							'label' => esc_html__( 'Button Text:', 'angiemakesdesign' ),
+							'sanitize' => 'text',
 						),
 					),
 					'default' => array(
 						array(
 							'background_color' => '#ffede4',
 							'background_image' => get_template_directory_uri() . '/img/collage/hallie.jpg',
+							'background_size' => 'contain',
 							'content_text' => '',
 							'text_color' => '',
 							'button_link' => '',
@@ -116,6 +136,7 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 						array(
 							'background_color' => '#fdf3ec',
 							'background_image' => get_template_directory_uri() . '/img/collage/bghome.jpg',
+							'background_size' => 'stretch',
 							'content_text' => 'WordPress Themes + Graphics to Rock Your Brand and Style Your Life',
 							'text_color' => '',
 							'button_link' => 'http://dev.angiemakes.com',
@@ -124,6 +145,7 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 						array(
 							'background_color' => '#fdf7f3',
 							'background_image' => '',
+							'background_size' => 'cover',
 							'content_text' => 'Feminine WordPress Themes',
 							'text_color' => '',
 							'button_link' => 'http://dev.angiemakes.com',
@@ -132,6 +154,7 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 						array(
 							'background_color' => '#ffede4',
 							'background_image' => get_template_directory_uri() . '/img/collage/fonts.jpg',
+							'background_size' => 'contain',
 							'content_text' => '',
 							'text_color' => '',
 							'button_link' => '',
@@ -140,6 +163,7 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 						array(
 							'background_color' => '#fffdfc',
 							'background_image' => get_template_directory_uri() . '/img/collage/homegreen.jpg',
+							'background_size' => 'stretch',
 							'content_text' => '24 Hour Installation',
 							'text_color' => '',
 							'button_link' => 'http://dev.angiemakes.com',
@@ -249,6 +273,10 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 
 			if ( ! empty( $slide_setting['background_image'] ) ) {
 				$style[] = 'background-image:url(\'' . esc_url( $slide_setting['background_image'] ) . '\');';
+			}
+
+			if ( ! empty( $slide_setting['background_size'] ) ) {
+				$style[] = 'background-size:' . esc_attr( $this->get_background_size( $slide_setting['background_size'] ) ) . ';';
 			}
 
 			if ( ! empty( $slide_setting['background_color'] ) ) {

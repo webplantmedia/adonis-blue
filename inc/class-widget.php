@@ -133,7 +133,7 @@ class AngieMakesDesign_Widget extends WP_Widget {
 				foreach ( $setting as $panel ) {
 					foreach ( $panel['fields'] as $panel_field_key => $panel_field_setting ) {
 						$value = $this->default_sanitize_value( $panel_field_key, $new_instance, $panel_field_setting );
-						$instance[ $panel_field_key ] = $this->sanitize_instance( $panel_field_setting['type'], $value );
+						$instance[ $panel_field_key ] = $this->sanitize_instance( $panel_field_setting, $value );
 					}
 				}
 			}
@@ -141,13 +141,13 @@ class AngieMakesDesign_Widget extends WP_Widget {
 				foreach ( $repeater_instances as $repeater_count => $repeater_instance ) {
 					foreach ( $setting['fields'] as $repeater_field_key => $repeater_field_setting ) {
 						$value = $this->default_sanitize_value( $repeater_field_key, $repeater_instance, $repeater_field_setting );
-						$instance['repeater'][ $repeater_count ][ $repeater_field_key ] = $this->sanitize_instance( $repeater_field_setting['type'], $value );
+						$instance['repeater'][ $repeater_count ][ $repeater_field_key ] = $this->sanitize_instance( $repeater_field_setting, $value );
 					}
 				}
 			}
 			else {
 				$value = $this->default_sanitize_value( $key, $new_instance, $setting );
-				$instance[ $key ] = $this->sanitize_instance( $setting['type'], $value );
+				$instance[ $key ] = $this->sanitize_instance( $setting, $value );
 			}
 		}
 
@@ -212,7 +212,7 @@ class AngieMakesDesign_Widget extends WP_Widget {
 				foreach ( $setting as $panel ) {
 					foreach ( $panel['fields'] as $panel_field_key => $panel_field_setting ) {
 						$value = $this->default_update_value( $panel_field_key, $new_instance, $panel_field_setting );
-						$instance[ $panel_field_key ] = $this->sanitize_instance( $panel_field_setting['type'], $value );
+						$instance[ $panel_field_key ] = $this->sanitize_instance( $panel_field_setting, $value );
 					}
 				}
 			}
@@ -221,13 +221,13 @@ class AngieMakesDesign_Widget extends WP_Widget {
 					$repeater_count++;
 					foreach ( $setting['fields'] as $repeater_field_key => $repeater_field_setting ) {
 						$value = $this->default_update_value( $repeater_field_key, $repeater_instance, $repeater_field_setting );
-						$instance['repeater'][ $repeater_count ][ $repeater_field_key ] = $this->sanitize_instance( $repeater_field_setting['type'], $value );
+						$instance['repeater'][ $repeater_count ][ $repeater_field_key ] = $this->sanitize_instance( $repeater_field_setting, $value );
 					}
 				}
 			}
 			else {
 				$value = $this->default_update_value( $key, $new_instance, $setting );
-				$instance[ $key ] = $this->sanitize_instance( $setting['type'], $value );
+				$instance[ $key ] = $this->sanitize_instance( $setting, $value );
 			}
 		}
 
@@ -236,11 +236,15 @@ class AngieMakesDesign_Widget extends WP_Widget {
 		return $instance;
 	}
 
-	function sanitize_instance( $type, $new_value ) {
+	function sanitize_instance( $setting, $new_value ) {
+		if ( ! isset( $setting['sanitize'] ) ) {
+			return $new_value;
+		}
+
 		$value = '';
 
-		switch ( $type ) {
-			case 'textarea' :
+		switch ( $setting['sanitize'] ) {
+			case 'html' :
 				if ( current_user_can( 'unfiltered_html' ) ) {
 					$value = $new_value;
 				} else {
@@ -252,9 +256,11 @@ class AngieMakesDesign_Widget extends WP_Widget {
 				$value = maybe_serialize( $new_value );
 				break;
 
-			case 'text' :
 			case 'checkbox' :
-			case 'select' :
+				$value = $new_value == 1 ? 1 : 0;
+				break;
+
+			case 'text' :
 				$value = sanitize_text_field( $new_value );
 				break;
 
@@ -262,8 +268,16 @@ class AngieMakesDesign_Widget extends WP_Widget {
 				$value = intval( $new_value );
 				break;
 
-			case 'colorpicker' :
+			case 'color' :
 				$value = sanitize_hex_color( $new_value );
+				break;
+
+			case 'url' :
+				$value = esc_url_raw( $new_value );
+				break;
+
+			case 'background_size' :
+				$value = $this->sanitize_background_size( $new_value );
 				break;
 
 			default :
@@ -669,6 +683,43 @@ class AngieMakesDesign_Widget extends WP_Widget {
 		}
 	}
 
+	function sanitize_background_size( $value ) {
+		$whitelist = $this->options_background_size();
+
+		if ( array_key_exists( $value, $whitelist ) ) {
+			return $value;
+		}
+
+		return '';
+	}
+
+	function options_background_size() {
+		return array(
+			'cover' => __( 'Cover', 'angiemakesdesign' ),
+			'contain' => __( 'Contain', 'angiemakesdesign' ),
+			'stretch' => __( 'Stretch', 'angiemakesdesign' ),
+			'fit-width' => __( 'Fit Width', 'angiemakesdesign' ),
+			'fit-height' => __( 'Fit Height', 'angiemakesdesign' ),
+			'auto' => __( 'Auto', 'angiemakesdesign' ),
+		);
+	}
+
+	function get_background_size( $value ) {
+		switch ( $value ) {
+			case 'stretch' :
+				$value = '100% 100%';
+				break;
+			case 'fit-width' :
+				$value = '100% auto';
+				break;
+			case 'fit-height' :
+				$value = 'auto 100%';
+				break;
+		}
+
+		return $value;
+	}
+
 	/**
 	 * Widget function.
 	 *
@@ -680,5 +731,5 @@ class AngieMakesDesign_Widget extends WP_Widget {
 	 *
 	 * @return void
 	 */
-	 public function widget( $args, $instance ) {}
+	public function widget( $args, $instance ) {}
 }
