@@ -382,7 +382,7 @@ class AngieMakesDesign_Widget extends WP_Widget {
 								collapsible: true,
 								active: false
 							})
-							.sortable({
+							/*.sortable({
 								axis: "y",
 								handle: '.panel-sort',
 								stop: function( event, ui ) {
@@ -394,7 +394,7 @@ class AngieMakesDesign_Widget extends WP_Widget {
 									// Refresh accordion to handle new order
 									$this.accordion( "refresh" );
 								}
-							});
+							});*/
 
 							widgetPanelRepeaterButtons( $('<?php echo $selector; ?>') );
 						});
@@ -645,7 +645,9 @@ class AngieMakesDesign_Widget extends WP_Widget {
 						/* <![CDATA[ */
 						( function( $ ){
 							$( document ).ready( function() {
-								$('#widgets-right #<?php echo $field_id; ?>').wpColorPicker();
+								$('#widgets-right #<?php echo $field_id; ?>').wpColorPicker().focus( function() {
+									$(this).trigger( 'change' );
+								});
 							} );
 						}( jQuery ) );
 						/* ]]> */
