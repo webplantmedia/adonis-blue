@@ -303,14 +303,12 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 
 		function widget_get_slide( $slide_setting ) {
 			$tag = 'div';
-			$button_tag = 'div';
 			$button_href = '';
 			$attr[] = 'class="slide-inner"';
 			$style[] = '';
 
 			if ( ! empty( $slide_setting['button_link'] ) ) {
 				if ( ! empty( $slide_setting['button_text'] ) ) {
-					$button_tag = 'a';
 					$button_href = ' href="' . esc_url( $slide_setting['button_link'] ) . '"';
 				}
 				else {
@@ -351,9 +349,9 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 
 					<?php if ( ! empty( $slide_setting['button_text'] ) ) : ?>
 						<div class="button-text">
-							<<?php echo $button_tag; ?> class="button slide-button"<?php echo $button_href; ?>>
+							<a class="button slide-button fancy-button"<?php echo $button_href; ?>>
 								<?php echo sanitize_text_field( $slide_setting['button_text'] ); ?>
-							</<?php echo $button_tag; ?>>
+							</a>
 						</div>
 					<?php endif; ?>
 				</div>
