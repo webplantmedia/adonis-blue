@@ -24,6 +24,72 @@
 			if ( $panels.length <= 1 ) {
 				$container.removeClass('show-panel-buttons');
 			}
+
+			widgetPanelMoveRefresh( $container );
+		}
+	}
+
+	function swapElements(obj1, obj2) {
+		// create marker element and insert it where obj1 is
+		var temp = document.createElement("div");
+		obj1.parentNode.insertBefore(temp, obj1);
+
+		// move obj1 to right before obj2
+		obj2.parentNode.insertBefore(obj1, obj2);
+
+		// move obj2 to right before where obj1 used to be
+		temp.parentNode.insertBefore(obj2, temp);
+
+		// remove temporary marker node
+		temp.parentNode.removeChild(temp);
+	}
+
+	window.widgetPanelMoveRefresh = function( $container ) {
+		var $move = $container.find('.panel-move');
+		$move.removeClass('panel-move-hide');
+
+		$move = $container.find('.widget-panel:first .panel-move-up');
+		$move.addClass('panel-move-hide');
+
+		$move = $container.find('.widget-panel:last .panel-move-down');
+		$move.addClass('panel-move-hide');
+	}
+
+	window.widgetPanelMoveUp = function( el ) {
+		var $this = $(el);
+		var $panel = $this.closest('.widget-panel');
+		var $container = $this.closest('.panel-repeater-container');
+		var $panels = $container.find('.widget-panel');
+
+		if ( $panels.length <= 1 ) {
+			return;
+		}
+
+		if ( ! $panel.is(':first-child') ) {
+			var $prevPanel = $panel.prev();
+			swapElements( $prevPanel[0], $panel[0] );
+			$container.accordion( "refresh" );
+			$this.focus();
+			widgetPanelMoveRefresh( $container );
+		}
+	}
+	
+	window.widgetPanelMoveDown = function( el ) {
+		var $this = $(el);
+		var $panel = $this.closest('.widget-panel');
+		var $container = $this.closest('.panel-repeater-container');
+		var $panels = $container.find('.widget-panel');
+
+		if ( $panels.length <= 1 ) {
+			return;
+		}
+
+		if ( ! $panel.is(':last-child') ) {
+			var $nextPanel = $panel.next();
+			swapElements( $panel[0], $nextPanel[0] );
+			$container.accordion( "refresh" );
+			$this.focus();
+			widgetPanelMoveRefresh( $container );
 		}
 	}
 
@@ -111,10 +177,10 @@
 			});
 		}
 
-		$container.accordion( "refresh" ).sortable( "refresh" );
+		$container.accordion( "refresh" );
 
 		widgetPanelRepeaterButtons( $container );
-
+		widgetPanelMoveRefresh( $container );
 	}
 
 	function initColorPicker( widget ) {

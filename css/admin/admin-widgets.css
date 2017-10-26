@@ -184,34 +184,59 @@ html .widget-inner-container.ui-accordion .ui-accordion-header.ui-accordion-head
 .widget-panel-body > *:last-child {
 	margin-bottom: 0 !important;
 }
+.widget-panel .panel-move.panel-move-hide {
+	opacity: 0.3;
+}
+.widget-panel .panel-move-up,
+.widget-panel .panel-move-down,
 .widget-panel .panel-delete,
 .widget-panel .panel-sort {
 	position: absolute;
 	border: none;
 	background: 0 0;
-	top: 0;
+	top: 1px;
+	bottom: 1px;
 	right: 0;
-	height: 52px;
-	width: 52px;
-	line-height: 52px;
+	height: 50px;
+	width: 40px;
+	line-height: 50px;
 	text-align: center;
 	cursor: pointer;
+	color: #23282d;
+	text-decoration: none;
+	outline: none;
+	box-shadow: none;
+}
+.widget-panel .panel-move-up {
+	right: 40px;
+}
+.widget-panel .panel-move-down {
+	right: 80px;
 }
 .widget-panel .panel-sort {
-	right: 50px;
+	right: 40px;
 	cursor: move;
 }
 .widget-panel .panel-delete:hover {
 	color: red;
 }
+.widget-panel .panel-move-up:focus,
+.widget-panel .panel-move-down:focus,
+.widget-panel .panel-move-up:active,
+.widget-panel .panel-move-down:active,
+.widget-panel .panel-move-up:hover,
+.widget-panel .panel-move-down:hover,
 .widget-panel .panel-sort:hover {
-	color: #0073aa;
+	background-color: #eee;
+	color: #191e23;
 }
+.widget-panel .panel-move-up:before,
+.widget-panel .panel-move-down:before,
 .widget-panel .panel-delete:before,
 .widget-panel .panel-sort:before {
 	text-align: center;
-	height: 52px;
-	line-height: 52px;
+	height: 50px;
+	line-height: 50px;
 	vertical-align: middle;
 }
 .panel-delete-confirm .panel-delete-final {

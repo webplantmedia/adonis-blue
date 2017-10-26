@@ -381,22 +381,10 @@ class AngieMakesDesign_Widget extends WP_Widget {
 								heightStyle: 'content',
 								collapsible: true,
 								active: false
-							})
-							/*.sortable({
-								axis: "y",
-								handle: '.panel-sort',
-								stop: function( event, ui ) {
-									var $this = $( this );
-									// IE doesn't register the blur when sorting
-									// so trigger focusout handlers to remove .ui-state-focus
-									ui.item.children( '.panel-sort' ).triggerHandler( "focusout" );
-
-									// Refresh accordion to handle new order
-									$this.accordion( "refresh" );
-								}
-							});*/
+							});
 
 							widgetPanelRepeaterButtons( $('<?php echo $selector; ?>') );
+							widgetPanelMoveRefresh( $('<?php echo $selector; ?>') );
 						});
 					} )( jQuery );
 					/* ]]> */
@@ -465,8 +453,9 @@ class AngieMakesDesign_Widget extends WP_Widget {
 
 			<?php if ( $display_repeater ) : ?>
 
-			<div class="dashicons-before dashicons-move panel-sort panel-button"></div>
-			<div onclick="widgetPanelDelete( this ); return false;" class="dashicons-before dashicons-no panel-delete panel-button"></div>
+			<a onclick="widgetPanelMoveUp( this ); return false;" href="#" class="dashicons-before dashicons-arrow-up-alt2 panel-move panel-move-up panel-button"></a>
+			<a onclick="widgetPanelMoveDown( this ); return false;" href="#" class="dashicons-before dashicons-arrow-down-alt2 panel-move panel-move-down panel-button"></a>
+			<a onclick="widgetPanelDelete( this ); return false;" href="#" class="dashicons-before dashicons-no panel-delete panel-button"></a>
 			<span class="panel-delete-final">
 				<?php echo esc_html__( 'Delete Slide?', 'angiemakesdesign' ); ?>
 				<a href="#" onclick="widgetPanelDeleteYes( this ); return false;"><?php echo esc_html__( 'Yes', 'angiemakesdesign' ); ?></a>
