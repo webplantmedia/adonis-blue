@@ -672,7 +672,12 @@ button {
   font-size: 1.25rem;
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  padding: 20px 28px;
+  padding: 24px 30px;
+}
+
+#master body .fancy-button:after {
+  content: ">>";
+  margin-left: 10px;
 }
 
 /*--------------------------------------------------------------

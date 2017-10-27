@@ -116,6 +116,13 @@ button {
 		@include rem('font-size',$font__large-size);
 		background-size: 100% 100%;
 		background-repeat: no-repeat;
-		padding: 20px 28px;
+		padding: 24px 30px;
+	}
+
+	.fancy-button {
+		&:after {
+			content: ">>";
+			margin-left: 10px;
+		}
 	}
 }
