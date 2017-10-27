@@ -111,6 +111,18 @@ a:hover {
 	<?php echo angiemakesdesign_css_set_unit( 'padding-bottom', $amd['heading_padding_bottom'] ); ?> /*id:heading_padding_bottom*/
 }
 
+<?php if ( ! empty( $amd['fancy_button_background'] ) ) : ?>
+#master .fancy-button {
+	background-image: url("<?php echo $amd['fancy_button_background']; ?>"); /*id:fancy_button_background*/
+}
+<?php endif; ?>
+
+<?php if ( ! empty( $amd['fancy_button_hover_background'] ) ) : ?>
+#master .fancy-button:hover {
+	background-image: url("<?php echo $amd['fancy_button_hover_background']; ?>"); /*id:fancy_button_background*/
+}
+<?php endif; ?>
+
 <?php if ( ! empty( $amd['top_header_background'] ) ) : ?> 
 .site-header {
 	background-image: url("<?php echo $amd['top_header_background']; ?>"); /*id:top_header_background*/

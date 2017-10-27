@@ -100,4 +100,22 @@ button {
 		color: #fff;
 		background: #252323;
 	}
+
+}
+#master body {
+	.fancy-button:focus,
+	.fancy-button:visited,
+	.fancy-button:active,
+	.fancy-button:hover,
+	.fancy-button {
+		background-color: transparent;
+		border-width: 0;
+		color: $color__text;
+		text-transform: uppercase;
+		font-weight: normal;
+		@include rem('font-size',$font__large-size);
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+		padding: 20px 28px;
+	}
 }

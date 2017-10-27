@@ -24,6 +24,10 @@ $amd_default['link_hover_color'] = '#f6874d';
 $amd_default['top_header_background'] = get_template_directory_uri() . '/img/top-right-header-bg.png';
 $amd_default['top_header_background_offset'] = 520;
 
+// Body
+$amd_default['fancy_button_background'] = get_template_directory_uri() . '/img/button-bg.png';
+$amd_default['fancy_button_hover_background'] = get_template_directory_uri() . '/img/button-bg-dark.png';
+
 // Footer
 $amd_default['footer_background'] = get_template_directory_uri() . '/img/footer-bg.png';
 $amd_default['site_info'] = 'Site made with <i class="genericon genericon-heart"></i> by <a href="https://angiemakes.com/">Angie Makes</a>';

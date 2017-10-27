@@ -658,6 +658,23 @@ button {
   background: #252323;
 }
 
+#master body .fancy-button:focus,
+#master body .fancy-button:visited,
+#master body .fancy-button:active,
+#master body .fancy-button:hover,
+#master body .fancy-button {
+  background-color: transparent;
+  border-width: 0;
+  color: #6d686c;
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: 20px;
+  font-size: 1.25rem;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  padding: 20px 28px;
+}
+
 /*--------------------------------------------------------------
 ## Fields
 --------------------------------------------------------------*/
