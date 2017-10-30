@@ -236,6 +236,44 @@ class AngieMakesDesign_Widget extends WP_Widget {
 		return $instance;
 	}
 
+	function allowed_html() {
+		$expandedtags = wp_kses_allowed_html();
+
+		// Paragraph.
+		$expandedtags['span'] = array();
+		$expandedtags['p'] = array();
+		$expandedtags['br'] = array();
+
+		// H1 - H6.
+		$expandedtags['h1'] = array();
+		$expandedtags['h2'] = array();
+		$expandedtags['h3'] = array();
+		$expandedtags['h4'] = array();
+		$expandedtags['h5'] = array();
+		$expandedtags['h6'] = array();
+
+		// Enable id, class, and style attributes for each tag.
+		foreach ( $expandedtags as $tag => $attributes ) {
+			$expandedtags[ $tag ]['id']    = true;
+			$expandedtags[ $tag ]['class'] = true;
+			$expandedtags[ $tag ]['style'] = true;
+		}
+
+		// img.
+		$expandedtags['img'] = array(
+			'src' => true,
+			'height' => true,
+			'width' => true,
+			'alt' => true,
+			'title' => true,
+			'class' => true,
+			'style' => true,
+			'id' => true,
+		);
+
+		return $expandedtags;
+	}
+
 	function sanitize_instance( $setting, $new_value ) {
 		if ( ! isset( $setting['sanitize'] ) ) {
 			return $new_value;
@@ -245,11 +283,7 @@ class AngieMakesDesign_Widget extends WP_Widget {
 
 		switch ( $setting['sanitize'] ) {
 			case 'html' :
-				if ( current_user_can( 'unfiltered_html' ) ) {
-					$value = $new_value;
-				} else {
-					$value = wp_kses_data( $new_value );
-				}
+				$value = wp_kses( $new_value, $this->allowed_html() );
 				break;
 
 			case 'multicheck' :

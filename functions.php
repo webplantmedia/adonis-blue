@@ -309,8 +309,10 @@ function angiemakesdesign_display_fullwidth() {
 function angiemakesdesign_allowed_html() {
 	$expandedtags = wp_kses_allowed_html();
 
-	// Span.
+	// Paragraph.
 	$expandedtags['span'] = array();
+	$expandedtags['p'] = array();
+	$expandedtags['br'] = array();
 
 	// H1 - H6.
 	$expandedtags['h1'] = array();
@@ -327,9 +329,6 @@ function angiemakesdesign_allowed_html() {
 		$expandedtags[ $tag ]['style'] = true;
 	}
 
-	// br (doesn't need attributes).
-	$expandedtags['br'] = array();
-
 	// img.
 	$expandedtags['img'] = array(
 		'src' => true,
@@ -337,6 +336,9 @@ function angiemakesdesign_allowed_html() {
 		'width' => true,
 		'alt' => true,
 		'title' => true,
+		'class' => true,
+		'style' => true,
+		'id' => true,
 	);
 
 	/**
