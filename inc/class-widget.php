@@ -271,7 +271,15 @@ class AngieMakesDesign_Widget extends WP_Widget {
 			'id' => true,
 		);
 
-		return $expandedtags;
+		/**
+		 * Customize the tags and attributes that are allows during text sanitization.
+		 *
+		 * @since 1.0.0.
+		 *
+		 * @param array     $expandedtags    The list of allowed tags and attributes.
+		 * @param string    $string          The text string being sanitized.
+		 */
+		return apply_filters( 'angiemakesdesign_allowed_html', $expandedtags );
 	}
 
 	function sanitize_instance( $setting, $new_value ) {

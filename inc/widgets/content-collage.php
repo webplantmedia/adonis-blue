@@ -74,6 +74,15 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 								'label' => esc_html__( 'Show slide pagination?', 'angiemakesdesign' ),
 								'sanitize' => 'checkbox',
 							),
+							'margin_bottom' => array(
+								'type'  => 'number',
+								'std'   => 40,
+								'step'  => 1,
+								'min'   => 0,
+								'max'   => 300,
+								'label' => esc_html__( 'Bottom margin of widget:', 'angiemakesdesign' ),
+								'sanitize' => 'number',
+							),
 						),
 					),
 				),
@@ -132,7 +141,7 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 							'background_size' => 'contain',
 							'content_text' => '',
 							'text_color' => '',
-							'button_link' => 'http://dev.angiemakes.com',
+							'button_link' => 'https://angiemakes.com',
 							'button_text' => '',
 						),
 						array(
@@ -212,6 +221,11 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 			$slider_size = max( sizeof( $o['repeater'] ), 5 );
 			$repeater = $o['repeater'];
 
+			$style = array();
+			if ( ! empty( $o['margin_bottom'] ) ) {
+				$style[] = 'margin-bottom:' . $o['margin_bottom'] . 'px;';
+			}
+
 			ob_start();
 
 			extract( $args );
@@ -220,7 +234,7 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 
 			?>
 
-			<div class="collage">
+			<div class="collage" style="<?php echo implode( '', $style ); ?>">
 				<?php if ( $slider_size > 5 ) : ?>
 					<div class="slide carousel slide-5">
 						<div class="slide-gutter">
@@ -343,14 +357,14 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 				<div class="content-wrapper">
 					<?php if ( ! empty( $slide_setting['content_text'] ) ) : ?>
 						<div class="content-text">
-							<?php echo wp_kses( $slide_setting['content_text'], angiemakesdesign_allowed_html() ); ?>
+							<?php echo $slide_setting['content_text']; ?>
 						</div>
 					<?php endif; ?>
 
 					<?php if ( ! empty( $slide_setting['button_text'] ) ) : ?>
 						<div class="button-text">
 							<a class="button slide-button fancy-button"<?php echo $button_href; ?>>
-								<?php echo sanitize_text_field( $slide_setting['button_text'] ); ?>
+								<?php echo $slide_setting['button_text']; ?>
 							</a>
 						</div>
 					<?php endif; ?>

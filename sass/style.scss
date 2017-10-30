@@ -30,6 +30,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 # Elements
 	## Lists
 	## Tables
+# Grid
 # Forms
 	## Buttons
 	## Fields
@@ -44,9 +45,9 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 	## Search Widget
 # Content Widgets
 	## Collage Widget
-# Grid
-# Header
 # Layout
+	## Content & Sidebar
+# Header
 # Site
 	## Posts and pages
 	## Comments
@@ -93,6 +94,11 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 ## Tables
 --------------------------------------------------------------*/
 @import "elements/tables";
+
+/*--------------------------------------------------------------
+# Grid
+--------------------------------------------------------------*/
+@import "layout/grid";
 
 /*--------------------------------------------------------------
 # Forms
@@ -161,12 +167,12 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 @import "site/secondary/collage-widget";
 
 /*--------------------------------------------------------------
-# Grid
+# Layout
 --------------------------------------------------------------*/
-@import "layout/grid";
+@import "layout/layout";
 
 /*--------------------------------------------------------------
-# Layout
+## Content & Sidebar
 --------------------------------------------------------------*/
 @import "layout/content-sidebar";
 

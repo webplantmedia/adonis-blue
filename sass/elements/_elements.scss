@@ -12,6 +12,10 @@ body {
 	background: $color__background-body; /* Fallback for when there is no custom background color defined. */
 }
 
+html, body {
+	overflow-x: hidden;
+}
+
 blockquote:before,
 blockquote:after,
 q:before,

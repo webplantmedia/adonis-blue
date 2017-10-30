@@ -51,6 +51,9 @@ h4,
 h5,
 h6 {
 	&,
+	a:active,
+	a:focus,
+	a:visited,
 	a {
 		color: $color__text-heading;
 	}
