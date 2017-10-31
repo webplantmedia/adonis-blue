@@ -118,12 +118,54 @@ button {
 		background-repeat: no-repeat;
 		padding: 24px 30px;
 		cursor: pointer;
+		border-radius: 0;
 	}
 
 	.fancy-button {
 		&:after {
 			content: ">>";
 			margin-left: 10px;
+		}
+	}
+
+	.fancy2-button:focus,
+	.fancy2-button:visited,
+	.fancy2-button:active,
+	.fancy2-button:hover,
+	.fancy2-button {
+		background-color: transparent;
+		border-width: 0;
+		color: $color__text;
+		text-transform: uppercase;
+		font-weight: normal;
+		@include rem('font-size',$font__large-size);
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+		padding: 24px 30px;
+		padding-right: 71px;
+		cursor: pointer;
+		border-radius: 0;
+		color: $color__white;
+		font-weight: bold;
+		position: relative;
+	}
+
+	.fancy2-button {
+		i {
+			font-weight: normal;
+			color: $color__text;
+			background-color: $color__white;
+			border-radius: 100%;
+			@include rem('font-size',$font__large-size);
+			vertical-align: middle;
+			width: 26px;
+			height: 26px;
+			line-height: 26px;
+			display: inline-block;
+			position: absolute;
+			right: 30px;
+			top: 50%;
+			margin-top: -13px;
 		}
 	}
 }

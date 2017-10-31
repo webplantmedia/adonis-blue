@@ -123,6 +123,18 @@ a:hover {
 }
 <?php endif; ?>
 
+<?php if ( ! empty( $amd['fancy2_button_background'] ) ) : ?>
+#master .fancy2-button {
+	background-image: url("<?php echo $amd['fancy2_button_background']; ?>"); /*id:fancy2_button_background*/
+}
+<?php endif; ?>
+
+<?php if ( ! empty( $amd['fancy2_button_hover_background'] ) ) : ?>
+#master .fancy2-button:hover {
+	background-image: url("<?php echo $amd['fancy2_button_hover_background']; ?>"); /*id:fancy2_button_background*/
+}
+<?php endif; ?>
+
 <?php if ( ! empty( $amd['top_header_background'] ) ) : ?> 
 .site-header {
 	background-image: url("<?php echo $amd['top_header_background']; ?>"); /*id:top_header_background*/

@@ -28,6 +28,9 @@ $amd_default['top_header_background_offset'] = 520;
 $amd_default['fancy_button_background'] = get_template_directory_uri() . '/img/button-bg.png';
 $amd_default['fancy_button_hover_background'] = get_template_directory_uri() . '/img/button-bg-dark.png';
 
+$amd_default['fancy2_button_background'] = get_template_directory_uri() . '/img/button2-bg.jpg';
+$amd_default['fancy2_button_hover_background'] = get_template_directory_uri() . '/img/button2-bg-dark.jpg';
+
 // Footer
 $amd_default['footer_background'] = get_template_directory_uri() . '/img/footer-bg.png';
 $amd_default['site_info'] = 'Site made with <i class="genericon genericon-heart"></i> by <a href="https://angiemakes.com/">Angie Makes</a>';

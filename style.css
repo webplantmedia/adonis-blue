@@ -1107,11 +1107,53 @@ button {
   background-repeat: no-repeat;
   padding: 24px 30px;
   cursor: pointer;
+  border-radius: 0;
 }
 
 #master body .fancy-button:after {
   content: ">>";
   margin-left: 10px;
+}
+
+#master body .fancy2-button:focus,
+#master body .fancy2-button:visited,
+#master body .fancy2-button:active,
+#master body .fancy2-button:hover,
+#master body .fancy2-button {
+  background-color: transparent;
+  border-width: 0;
+  color: #6d686c;
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: 20px;
+  font-size: 1.25rem;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  padding: 24px 30px;
+  padding-right: 71px;
+  cursor: pointer;
+  border-radius: 0;
+  color: #ffffff;
+  font-weight: bold;
+  position: relative;
+}
+
+#master body .fancy2-button i {
+  font-weight: normal;
+  color: #6d686c;
+  background-color: #ffffff;
+  border-radius: 100%;
+  font-size: 20px;
+  font-size: 1.25rem;
+  vertical-align: middle;
+  width: 26px;
+  height: 26px;
+  line-height: 26px;
+  display: inline-block;
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  margin-top: -13px;
 }
 
 /*--------------------------------------------------------------
@@ -2243,12 +2285,12 @@ a:hover, a:active {
   vertical-align: top;
 }
 
-.content-callout .valign-top .grid__col {
-  vertical-align: bottom;
-}
-
 .content-callout .valign-middle .grid__col {
   vertical-align: middle;
+}
+
+.content-callout .valign-bottom .grid__col {
+  vertical-align: bottom;
 }
 
 .content-callout .image-container {
@@ -2279,6 +2321,10 @@ a:hover, a:active {
 
 .content-callout.text-left .text-container {
   padding-right: 100px;
+}
+
+.content-callout.text-right .text-container {
+  padding-left: 100px;
 }
 
 /*--------------------------------------------------------------

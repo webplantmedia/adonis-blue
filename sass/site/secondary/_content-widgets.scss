@@ -25,12 +25,12 @@
 		vertical-align: top;
 	}
 
-	.valign-top .grid__col {
-		vertical-align: bottom;
-	}
-
 	.valign-middle .grid__col {
 		vertical-align: middle;
+	}
+
+	.valign-bottom .grid__col {
+		vertical-align: bottom;
 	}
 
 	.image-container {
@@ -66,5 +66,8 @@
 .content-callout {
 	&.text-left .text-container {
 		padding-right: 100px;
+	}
+	&.text-right .text-container {
+		padding-left: 100px;
 	}
 }
