@@ -2772,7 +2772,7 @@ a:hover, a:active {
   margin-bottom: 25px;
   font-size: 35px;
   font-size: 2.1875rem;
-  font-weight: 500;
+  font-weight: normal;
   line-height: 1.25;
   text-align: center;
 }
