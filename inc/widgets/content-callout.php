@@ -184,10 +184,10 @@ class AngieMakesDesign_Widget_Callout extends AngieMakesDesign_Widget {
 				<div class="content-callout full-width-bar text-<?php echo $o['text_align']; ?>" style="<?php echo implode( '', $style ); ?>">
 					<div class="container">
 						<div class="grid grid--no-gutter valign-<?php echo esc_attr( $o['vertical_align'] ); ?>">
-							<div class="grid__col grid__col--1-of-2 text-container <?php echo ( 'right' === $o['text_align'] ) ? 'grid__col--push-1-of-2' : ''; ?>"><?php echo $content; ?></div>
+							<div class="grid__col grid__col--1-of-2 text-container<?php echo ( 'right' === $o['text_align'] ) ? ' grid__col--push-1-of-2' : ''; ?>"><?php echo $content; ?></div>
 
 							<?php if ( '' !== $o['image'] ) : ?>
-							<div class="grid__col grid__col--1-of-2 image-container <?php echo ( 'right' === $o['text_align'] ) ? 'grid__col--pull-2-of-2' : ''; ?>">
+							<div class="grid__col grid__col--1-of-2 image-container<?php echo ( 'right' === $o['text_align'] ) ? ' grid__col--pull-2-of-2' : ''; ?>">
 								<img src="<?php echo $o['image']; ?>" alt="<?php echo $o['title']; ?>">
 							</div>
 							<?php endif; ?>
@@ -212,7 +212,7 @@ class AngieMakesDesign_Widget_Callout extends AngieMakesDesign_Widget {
 	private function callout_content( $o ) {
 		$style = array();
 		if ( isset( $o['text_color'] ) && ! empty( $o['text_color'] ) ) {
-			$style[] = 'text_color:' . $o['text_color'] . ';';
+			$style[] = 'color:' . $o['text_color'] . ';';
 		}
 
 		$output  = '<div class="content-callout__content" style="'.implode( '', $style ).'">';
