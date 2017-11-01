@@ -109,6 +109,7 @@
 }
 
 // Page header
+.search .page-header,
 .archive .page-header {
 	text-align: center;
 	@include rem('padding-top',50px);

@@ -67,6 +67,10 @@ add_filter( 'get_custom_logo', 'angiemakesdesign_get_custom_logo', 10, 2 );
 function angiemakesdesign_excerpt_read_more_link( $output ) {
 	global $post;
 
+	if ( ! isset( $post->post_type ) || 'post' != $post->post_type ) {
+		return $output;
+	}
+
 	$class = '';
 
 	if ( empty( $output ) ) {

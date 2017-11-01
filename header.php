@@ -80,6 +80,16 @@
 				?>
 			</div><!-- .site-boundary -->
 		</header><!-- .page-header -->
+	<?php elseif ( is_search() ) : ?>
+		<header class="page-header">
+			<div class="site-boundary">
+				<h1 class="page-title">
+					<span class="archive-type"><?php echo esc_html__( 'Search Results for:', 'angiemakesdesign' ); ?></span>
+					<span class="archive-title"><?php echo get_search_query(); ?></span>
+				</h1>
+			</div>
+		</header><!-- .page-header -->
+
 	<?php endif; ?>
 
 	<div id="content" class="site-content">

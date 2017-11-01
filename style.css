@@ -2885,6 +2885,7 @@ a:hover, a:active {
   margin-bottom: 0;
 }
 
+.search .page-header,
 .archive .page-header {
   text-align: center;
   padding-top: 50px;
@@ -2895,6 +2896,7 @@ a:hover, a:active {
   background-color: #f7f7f7;
 }
 
+.search .page-header .page-title,
 .archive .page-header .page-title {
   margin: 0;
   text-transform: uppercase;
@@ -2902,6 +2904,7 @@ a:hover, a:active {
   font-size: 2.5rem;
 }
 
+.search .page-header .page-title .archive-type,
 .archive .page-header .page-title .archive-type {
   font-style: italic;
   font-size: 18px;
@@ -2911,16 +2914,19 @@ a:hover, a:active {
   font-weight: bold;
 }
 
+.search .page-header .archive-description,
 .archive .page-header .archive-description {
   font-size: 15px;
   font-size: 0.9375rem;
   color: #cccccc;
 }
 
+.search .page-header .archive-description > *:first-child,
 .archive .page-header .archive-description > *:first-child {
   margin-top: 0;
 }
 
+.search .page-header .archive-description > *:last-child,
 .archive .page-header .archive-description > *:last-child {
   margin-bottom: 0;
 }
