@@ -1,9 +1,23 @@
 #master .angiemakesdesign_widget_collage {
 	.collage {
+
 		.slide-inner {
+			color: $color__text;
+
 			.content-text {
 				* {
 					margin-top: 0;
+					color: inherit;
+				}
+			}
+		}
+
+		a.slide-inner {
+			&:hover {
+				.content-text {
+					* {
+						color: inherit;
+					}
 				}
 			}
 		}

@@ -369,7 +369,7 @@ h6 a:active,
 h6 a:focus,
 h6 a:visited,
 h6 a {
-  color: #6d686c;
+  color: #7b7776;
 }
 
 /*--------------------------------------------------------------
@@ -2305,20 +2305,35 @@ a:hover, a:active {
   vertical-align: bottom;
 }
 
-.content-callout .content-callout__content * {
+.content-callout .content-callout__content {
+  color: #6d686c;
+}
+
+.content-callout .content-callout__content .content-callout__text,
+.content-callout .content-callout__content .content-callout__text * {
+  color: inherit;
+}
+
+.content-callout .content-callout__content .content-callout__text * {
   margin-top: 0;
 }
 
-@media (min-width: 780px) {
+.content-callout .content-callout__content .content-callout__text *:last-child {
+  margin-bottom: 0;
+}
+
+.content-callout .content-callout__content .button-text {
+  margin-top: 40px;
+  margin-top: 2.5rem;
+}
+
+@media (min-width: 701px) {
   .content-callout.text-left .text-container {
     padding-right: 100px;
   }
   .content-callout.text-right .text-container {
     padding-left: 100px;
   }
-}
-
-@media (min-width: 701px) {
   .content-callout .valign-top .grid__col {
     vertical-align: top;
   }
@@ -2327,6 +2342,15 @@ a:hover, a:active {
   }
   .content-callout .valign-bottom .grid__col {
     vertical-align: bottom;
+  }
+}
+
+@media (min-width: 701px) and (max-width: 780px) {
+  .content-callout.text-left .text-container {
+    padding-right: 20px;
+  }
+  .content-callout.text-right .text-container {
+    padding-left: 20px;
   }
 }
 
@@ -2344,8 +2368,17 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 ## Collage Widget
 --------------------------------------------------------------*/
+#master .angiemakesdesign_widget_collage .collage .slide-inner {
+  color: #6d686c;
+}
+
 #master .angiemakesdesign_widget_collage .collage .slide-inner .content-text * {
   margin-top: 0;
+  color: inherit;
+}
+
+#master .angiemakesdesign_widget_collage .collage a.slide-inner:hover .content-text * {
+  color: inherit;
 }
 
 .angiemakesdesign_widget_collage .collage {
@@ -2717,7 +2750,7 @@ a:hover, a:active {
 .site-branding .site-title a {
   display: block;
   text-decoration: none;
-  color: #6d686c;
+  color: #7b7776;
 }
 
 .site-branding .site-description {

@@ -216,20 +216,24 @@ class AngieMakesDesign_Widget_Callout extends AngieMakesDesign_Widget {
 		}
 
 		$output  = '<div class="content-callout__content" style="'.implode( '', $style ).'">';
-		if ( ! empty( $o['title'] ) ) {
-			$output .= '<h2 class="content-callout__title" style="'.implode( '', $style ).'">' . $o['title'] . '</h2>';
-		}
+			$output .= '<div class="content-callout__text">';
 
-		$output .= wpautop( $o['content'] );
+				if ( ! empty( $o['title'] ) ) {
+					$output .= '<h2 class="content-callout__title" style="'.implode( '', $style ).'">' . $o['title'] . '</h2>';
+				}
 
-		if ( ! empty( $o['button_text'] ) && ! empty( $o['button_link'] ) ) {
-			$output .= '<div class="button-text">';
-				$output .= '<a class="button callout-button fancy2-button href="' . esc_url( $o['button_link'] ) . '">';
-					$output .= $o['button_text'];
-				$output .= '<i class="genericon genericon-rotate-270 genericon-expand"></i>';
-				$output .= '</a>';
+				$output .= wpautop( $o['content'] );
+
 			$output .= '</div>';
-		}
+
+			if ( ! empty( $o['button_text'] ) && ! empty( $o['button_link'] ) ) {
+				$output .= '<div class="button-text">';
+					$output .= '<a class="button callout-button fancy2-button href="' . esc_url( $o['button_link'] ) . '">';
+						$output .= $o['button_text'];
+					$output .= '<i class="genericon genericon-rotate-270 genericon-expand"></i>';
+					$output .= '</a>';
+				$output .= '</div>';
+			}
 
 		$output .= '</div>';
 
