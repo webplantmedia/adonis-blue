@@ -118,6 +118,7 @@ a:hover {
 <?php endif; ?>
 
 <?php if ( ! empty( $amd['fancy_button_hover_background'] ) ) : ?>
+#master .fancy-button:before,
 #master .fancy-button:hover {
 	background-image: url("<?php echo $amd['fancy_button_hover_background']; ?>"); /*id:fancy_button_background*/
 }
@@ -130,6 +131,7 @@ a:hover {
 <?php endif; ?>
 
 <?php if ( ! empty( $amd['fancy2_button_hover_background'] ) ) : ?>
+#master .fancy2-button:before,
 #master .fancy2-button:hover {
 	background-image: url("<?php echo $amd['fancy2_button_hover_background']; ?>"); /*id:fancy2_button_background*/
 }

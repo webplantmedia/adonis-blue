@@ -122,6 +122,13 @@ button {
 	}
 
 	.fancy-button {
+		&:before {
+			content: " ";
+			position: absolute;
+			clip: rect(1px, 1px, 1px, 1px);
+			background-repeat: no-repeat;
+			background-position: -9999px -9999px;
+		}
 		&:after {
 			content: ">>";
 			margin-left: 10px;
@@ -151,6 +158,14 @@ button {
 	}
 
 	.fancy2-button {
+		&:before {
+			content: " ";
+			position: absolute;
+			clip: rect(1px, 1px, 1px, 1px);
+			background-repeat: no-repeat;
+			background-position: -9999px -9999px;
+		}
+
 		i {
 			font-weight: normal;
 			color: $color__text;

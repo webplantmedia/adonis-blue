@@ -369,7 +369,7 @@ h6 a:active,
 h6 a:focus,
 h6 a:visited,
 h6 a {
-  color: #3a3839;
+  color: #6d686c;
 }
 
 /*--------------------------------------------------------------
@@ -385,7 +385,6 @@ dfn, cite, em, i {
 
 blockquote {
   margin: 80px 0 100px 100px;
-  color: #161616;
   font-size: 25px;
   line-height: 1.6;
   letter-spacing: -0.001em;
@@ -1110,6 +1109,14 @@ button {
   border-radius: 0;
 }
 
+#master body .fancy-button:before {
+  content: " ";
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  background-repeat: no-repeat;
+  background-position: -9999px -9999px;
+}
+
 #master body .fancy-button:after {
   content: ">>";
   margin-left: 10px;
@@ -1136,6 +1143,14 @@ button {
   color: #ffffff;
   font-weight: bold;
   position: relative;
+}
+
+#master body .fancy2-button:before {
+  content: " ";
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  background-repeat: no-repeat;
+  background-position: -9999px -9999px;
 }
 
 #master body .fancy2-button i {
@@ -2160,6 +2175,7 @@ a:hover, a:active {
   text-transform: initial;
   text-align: center;
   text-transform: uppercase;
+  color: #5b5a5a;
 }
 
 .widget h3 {
@@ -2289,22 +2305,8 @@ a:hover, a:active {
   vertical-align: bottom;
 }
 
-.content-callout .content-callout__content,
-.content-callout .content-callout__content * {
-  color: #6d686c;
-}
-
 .content-callout .content-callout__content * {
   margin-top: 0;
-}
-
-.content-callout .content-callout__content h1,
-.content-callout .content-callout__content h2,
-.content-callout .content-callout__content h3,
-.content-callout .content-callout__content h4,
-.content-callout .content-callout__content h5,
-.content-callout .content-callout__content h6 {
-  font-weight: normal;
 }
 
 @media (min-width: 780px) {
@@ -2342,20 +2344,6 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 ## Collage Widget
 --------------------------------------------------------------*/
-#master .angiemakesdesign_widget_collage .collage .slide-inner .content-text,
-#master .angiemakesdesign_widget_collage .collage .slide-inner .content-text * {
-  color: #6d686c;
-}
-
-#master .angiemakesdesign_widget_collage .collage .slide-inner .content-text h1,
-#master .angiemakesdesign_widget_collage .collage .slide-inner .content-text h2,
-#master .angiemakesdesign_widget_collage .collage .slide-inner .content-text h3,
-#master .angiemakesdesign_widget_collage .collage .slide-inner .content-text h4,
-#master .angiemakesdesign_widget_collage .collage .slide-inner .content-text h5,
-#master .angiemakesdesign_widget_collage .collage .slide-inner .content-text h6 {
-  font-weight: normal;
-}
-
 #master .angiemakesdesign_widget_collage .collage .slide-inner .content-text * {
   margin-top: 0;
 }
@@ -2729,7 +2717,7 @@ a:hover, a:active {
 .site-branding .site-title a {
   display: block;
   text-decoration: none;
-  color: #3a3839;
+  color: #6d686c;
 }
 
 .site-branding .site-description {
@@ -2821,6 +2809,7 @@ a:hover, a:active {
   margin-top: 0;
   margin-bottom: 80px;
   margin-bottom: 5rem;
+  color: #5b5a5a;
 }
 
 .search .site-main article .entry-title,
@@ -2833,6 +2822,15 @@ a:hover, a:active {
   font-weight: normal;
   line-height: 1.25;
   text-align: center;
+}
+
+.search .site-main article .entry-title,
+.search .site-main article .entry-title a,
+.archive .hentry .entry-title,
+.archive .hentry .entry-title a,
+.blog .hentry .entry-title,
+.blog .hentry .entry-title a {
+  color: #5b5a5a;
 }
 
 .single .post.hentry .entry-title {

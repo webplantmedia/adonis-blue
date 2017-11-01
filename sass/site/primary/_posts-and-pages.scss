@@ -66,6 +66,7 @@
 	text-align: center;
 	margin-top: 0;
 	@include rem('margin-bottom',80px);
+	color: $color__text-title;
 }
 
 
@@ -80,6 +81,11 @@
 		font-weight: normal;
 		line-height: 1.25;
 		text-align: center;
+
+		&,
+		a {
+			color: $color__text-title;
+		}
 	}
 }
 

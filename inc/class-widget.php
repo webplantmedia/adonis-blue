@@ -559,7 +559,7 @@ class AngieMakesDesign_Widget extends WP_Widget {
 						<?php endif; ?>
 					</div>
 
-					<input type="hidden" class="widefat image-sel-value" id="<?php echo esc_attr( $field_id ); ?>" name="<?php echo $field_name; ?>"value="<?php echo $value; ?>" placeholder="http://" />
+					<input type="text" class="widefat image-sel-value" id="<?php echo esc_attr( $field_id ); ?>" name="<?php echo $field_name; ?>"value="<?php echo $value; ?>" placeholder="http://" style="margin-bottom:5px;" />
 					<a href="#" class="button-secondary image-sel-add" onclick="imageWidget.uploader( this ); return false;"><?php esc_html_e( 'Choose Image', 'angiemakesdesign' ); ?></a>
 					<a href="#" style="display:inline-block;margin:5px 0 0 3px;<?php if ( empty( $value ) ) echo 'display:none;'; ?>" class="image-sel-remove" onclick="imageWidget.remove( this ); return false;"><?php esc_html_e( 'Remove', 'angiemakesdesign' ); ?></a>
 				</div>
