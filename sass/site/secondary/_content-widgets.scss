@@ -13,6 +13,7 @@
 	}
 }
 
+// Content Callout
 .content-callout-border-wrap {
 	border-top: 2px solid $color__border;
 	border-bottom: 2px solid $color__border;
@@ -99,6 +100,51 @@
 			max-width: 450px;
 			margin-left: auto;
 			margin-right: auto;
+		}
+	}
+}
+
+// Content Jetpack Testimonial
+.content-jetpack-testimonial {
+	.testimonial-featured-image {
+		display: block;
+		float: left;
+		padding-right: 20px;
+
+		img {
+			width: 100px;
+			border-radius: 100%;
+		}
+	}
+
+	.testimonial-entry-content-wrapper {
+		overflow: hidden;
+	}
+
+	.testimonial-entry {
+		padding: 30px;
+		background-color: $color__background-accent;
+	}
+
+	.testimonial-slide-size-1 {
+		.testimonial-entry {
+			max-width: 510px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+
+	.testimonial-slide-size-2 {
+		.testimonial-position-0 {
+			.testimonial-entry {
+				margin-right: 20px;
+			}
+		}
+
+		.testimonial-position-1 {
+			.testimonial-entry {
+				margin-left: 20px;
+			}
 		}
 	}
 }

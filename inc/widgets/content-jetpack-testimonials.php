@@ -49,18 +49,14 @@ class AngieMakesDesign_Widget_Jetpack_Testimonials extends AngieMakesDesign_Widg
 				'options' => array(
 					'1' => __( '1', 'angiemakesdesign' ),
 					'2' => __( '2', 'angiemakesdesign' ),
-					'3' => __( '3', 'angiemakesdesign' ),
-					'4' => __( '4', 'angiemakesdesign' ),
-					'5' => __( '5', 'angiemakesdesign' ),
-					'6' => __( '6', 'angiemakesdesign' ),
 				),
 				'sanitize' => 'text',
 			),
 			'showposts' => array(
 				'type'  => 'number',
-				'std'   => '',
+				'std'   => 0,
 				'label' => __( 'Number of testimonials to display:', 'angiemakesdesign' ),
-				'description' => esc_html__( 'Leave blank to display all.', 'angiemakesdesign' ),
+				'description' => esc_html__( 'Set to zero to display all.', 'angiemakesdesign' ),
 				'sanitize' => 'number',
 			),
 			'order' => array(
@@ -85,32 +81,82 @@ class AngieMakesDesign_Widget_Jetpack_Testimonials extends AngieMakesDesign_Widg
 				),
 				'sanitize' => 'text',
 			),
-			'padding_top' => array(
-				'type'  => 'number',
-				'std'   => 40,
-				'step'  => 1,
-				'min'   => 0,
-				'max'   => 300,
-				'label' => esc_html__( 'Top padding of widget:', 'angiemakesdesign' ),
-				'sanitize' => 'number',
-			),
-			'padding_bottom' => array(
-				'type'  => 'number',
-				'std'   => 40,
-				'step'  => 1,
-				'min'   => 0,
-				'max'   => 300,
-				'label' => esc_html__( 'Top padding of widget:', 'angiemakesdesign' ),
-				'sanitize' => 'number',
-			),
-			'margin_bottom' => array(
-				'type'  => 'number',
-				'std'   => 40,
-				'step'  => 1,
-				'min'   => 0,
-				'max'   => 300,
-				'label' => esc_html__( 'Bottom margin of widget:', 'angiemakesdesign' ),
-				'sanitize' => 'number',
+			'panels' => array(
+				array(
+					'title' => esc_html__( 'Slider Settings', 'angiemakesdesign' ),
+					'fields' => array(
+						'slider_mode' => array(
+							'type'  => 'select',
+							'std'   => 'horizontal',
+							'label' => esc_html__( 'Transition Effect:', 'angiemakesdesign' ),
+							'options' => array(
+								'horizontal' => esc_html__( 'Slide', 'angiemakesdesign' ),
+								'fade' => esc_html__( 'Fade', 'angiemakesdesign' ),
+							),
+							'sanitize' => 'text',
+						),
+						'slider_pause' => array(
+							'type'  => 'number',
+							'std'   => 9,
+							'step'  => 1,
+							'min'   => 1,
+							'max'   => 100,
+							'label' => esc_html__( 'Speed of the slideshow change in seconds:', 'angiemakesdesign' ),
+							'sanitize' => 'number',
+						),
+						'slider_auto' => array(
+							'type'  => 'checkbox',
+							'std'   => 1,
+							'label' => esc_html__( 'Auto start slider transitions?', 'angiemakesdesign' ),
+							'sanitize' => 'checkbox',
+						),
+						'slider_autohover' => array(
+							'type'  => 'checkbox',
+							'std'   => 1,
+							'label' => esc_html__( 'Pause slideshow when hovering?', 'angiemakesdesign' ),
+							'sanitize' => 'checkbox',
+						),
+						'slider_controls' => array(
+							'type'  => 'checkbox',
+							'std'   => 1,
+							'label' => esc_html__( 'Show slide control?', 'angiemakesdesign' ),
+							'sanitize' => 'checkbox',
+						),
+						'slider_pager' => array(
+							'type'  => 'checkbox',
+							'std'   => 1,
+							'label' => esc_html__( 'Show slide pagination?', 'angiemakesdesign' ),
+							'sanitize' => 'checkbox',
+						),
+						'padding_top' => array(
+							'type'  => 'number',
+							'std'   => 40,
+							'step'  => 1,
+							'min'   => 0,
+							'max'   => 300,
+							'label' => esc_html__( 'Top padding of widget:', 'angiemakesdesign' ),
+							'sanitize' => 'number',
+						),
+						'padding_bottom' => array(
+							'type'  => 'number',
+							'std'   => 40,
+							'step'  => 1,
+							'min'   => 0,
+							'max'   => 300,
+							'label' => esc_html__( 'Bottom padding of widget:', 'angiemakesdesign' ),
+							'sanitize' => 'number',
+						),
+						'margin_bottom' => array(
+							'type'  => 'number',
+							'std'   => 40,
+							'step'  => 1,
+							'min'   => 0,
+							'max'   => 300,
+							'label' => esc_html__( 'Bottom margin of widget:', 'angiemakesdesign' ),
+							'sanitize' => 'number',
+						),
+					),
+				),
 			),
 		);
 
@@ -155,15 +201,11 @@ class AngieMakesDesign_Widget_Jetpack_Testimonials extends AngieMakesDesign_Widg
 		$options['post_type'] = 'jetpack-testimonial'; // Force this post type
 		$query = new WP_Query( $options );
 
-		$testimonial_index_number = 0;
+		$testimonial_index_number = 1;
+		$column = 0;
+		$testimonials = array();
+		$notice = '';
 
-		ob_start(); ?>
-
-		<?php echo $before_widget; ?>
-
-			<div class="content-jetpack-testimonial full-width-bar" style="<?php echo implode( '', $style ); ?>">
-
-			<?php
 			// If we have testimonials, create the html
 			if ( $query->have_posts() ) {
 
@@ -175,31 +217,42 @@ class AngieMakesDesign_Widget_Jetpack_Testimonials extends AngieMakesDesign_Widg
 					while ( $query->have_posts() ) {
 						$query->the_post();
 						$post_id = get_the_ID();
+						ob_start();
 						?>
 						<div class="testimonial-entry">
 							<?php
-							// The content
-							if ( 'false' !== $o['display_content'] ) {
-								if ( 'full' === $o['display_content'] ) {
-								?>
-									<div class="testimonial-entry-content"><?php the_content(); ?></div>
-								<?php
-								} else {
-								?>
-									<div class="testimonial-entry-content"><?php the_excerpt(); ?></div>
-								<?php
-								}
-							}
-							?>
-							<span class="testimonial-entry-title">&#8213; <a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php echo esc_attr( the_title_attribute( ) ); ?>"><?php the_title(); ?></a></span>
-							<?php
 							// Featured image
 							if ( 'false' !== $o['image'] ) :
-								echo $this->get_testimonial_thumbnail_link( $post_id );
+								if ( $image = $this->get_testimonial_thumbnail_link( $post_id ) ) {
+									echo $image;
+								}
 							endif;
 							?>
+
+							<div class="testimonial-entry-content-wrapper">
+								<?php
+								// The content
+								if ( 'false' !== $o['display_content'] ) {
+									if ( 'full' === $o['display_content'] ) {
+									?>
+										<div class="testimonial-entry-content"><?php the_content(); ?></div>
+									<?php
+									} else {
+									?>
+										<div class="testimonial-entry-content"><?php the_excerpt(); ?></div>
+									<?php
+									}
+								}
+								?>
+								<span class="testimonial-entry-title">&#8213; <a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php echo esc_attr( the_title_attribute( ) ); ?>"><?php the_title(); ?></a></span>
+							</div><!-- close .testimonial-entry-content-wrapper -->
 						</div><!-- close .testimonial-entry -->
 						<?php
+						$testimonials[ $column ][] = ob_get_clean();
+						$mod = $testimonial_index_number % $o['columns'];
+						if ( 0 === $mod ) {
+							$column++;
+						}
 						$testimonial_index_number++;
 					} // end of while loop
 
@@ -207,12 +260,82 @@ class AngieMakesDesign_Widget_Jetpack_Testimonials extends AngieMakesDesign_Widg
 					?>
 				</div><!-- close .jetpack-testimonial-shortcode -->
 			<?php
-			} else { ?>
-				<p><em><?php _e( 'Your Testimonial Archive currently has no entries. You can start creating them on your dashboard.', 'jetpack' ); ?></p></em>
-			<?php
+			} else {
+				$notice = '<p><em>'._e( 'Your Testimonial Archive currently has no entries. You can start creating them on your dashboard.', 'angiemakesdesign' ).'</p></em>';
 			}
 			?>
 
+		<?php
+		//ob_start(); ?>
+
+		<?php echo $before_widget; ?>
+
+			<div class="content-jetpack-testimonial full-width-bar" style="<?php echo implode( '', $style ); ?>">
+				<?php if ( ! empty( $testimonials ) ) : ?>
+
+					<div class="testimonial-slider" data-sliderauto="<?php echo esc_attr( $o['slider_auto'] ); ?>" data-slidermode="<?php echo esc_attr( $o['slider_mode'] ); ?>" data-sliderpause="<?php echo esc_attr( $o['slider_pause'] ); ?>" data-sliderautohover="<?php echo esc_attr( $o['slider_autohover'] ) ?>" data-slidercontrols="<?php echo esc_attr( $o['slider_controls'] ) ?>" data-sliderpager="<?php echo esc_attr( $o['slider_pager'] ) ?>">
+						<?php foreach ( $testimonials as $slide ) :
+							$size = sizeof( $slide );
+							?>
+							<div class="testimonial-slide testimonial-slide-size-<?php echo $size; ?>">
+								<div class="grid grid--no-gutter">
+									<?php foreach ( $slide as $key => $testimonial ) : ?>
+										<?php if ( $size == 1 ) : ?>
+											<div class="grid__col grid__col--2-of-2 testimonial-position-<?php echo $key; ?>">
+												<?php echo $testimonial; ?>
+											</div>
+										<?php else : ?>
+											<div class="grid__col grid__col--1-of-2 testimonial-position-<?php echo $key; ?>">
+												<?php echo $testimonial; ?>
+											</div>
+										<?php endif; ?>
+									<?php endforeach; ?>
+								</div>
+							</div>
+						<?php endforeach; ?>
+					</div>
+
+					<script type="text/javascript">
+						/* <![CDATA[ */
+						( function($) {
+							'use strict';
+
+							$(document).ready(function(){
+								var $slider = $('#<?php echo $this->id; ?> .testimonial-slider');
+								var sliderauto = $slider.data('sliderauto');
+								var slidermode = $slider.data('slidermode');
+								var sliderpause = $slider.data('sliderpause');
+								var sliderautohover = $slider.data('sliderautohover');
+								var slidercontrols = $slider.data('slidercontrols');
+								var sliderpager = $slider.data('sliderpager');
+
+								slidermode = typeof slidermode === 'undefined' ? 'horizontal' : slidermode;
+								sliderpause = typeof sliderpause === 'undefined' ? 9000 : ( 1000 * sliderpause );
+								sliderauto = sliderauto == 1 ? true : false;
+								sliderautohover = sliderautohover == 1 ? true : false;
+								slidercontrols = slidercontrols == 1 ? true : false;
+								sliderpager = sliderpager == 1 ? true : false;
+
+								$slider.bxSlider({
+									auto: sliderauto,
+									nextText: '<i class="genericon genericon-expand genericon-rotate-270"></i>',
+									prevText: '<i class="genericon genericon-expand genericon-rotate-90"></i>',
+									mode: slidermode,
+									pause: sliderpause,
+									autoHover: sliderautohover,
+									controls: slidercontrols,
+									pager: sliderpager
+								});
+							});
+						} )( jQuery );
+						/* ]]> */
+					</script>
+
+				<?php else : ?>
+
+					<p><em><?php echo _e( 'Your Testimonial Archive currently has no entries. You can start creating them on your dashboard.', 'angiemakesdesign' ); ?></p></em>
+
+				<?php endif; ?>
 			</div><!-- .content-jetpack-testimonial -->
 
 		<?php echo $after_widget; ?>

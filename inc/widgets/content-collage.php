@@ -271,32 +271,30 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 					'use strict';
 
 					$(document).ready(function(){
-						$('#<?php echo $this->id; ?> .carousel-container').each( function() {
-							var $this = $(this);
-							var sliderauto = $this.data('sliderauto');
-							var slidermode = $this.data('slidermode');
-							var sliderpause = $this.data('sliderpause');
-							var sliderautohover = $this.data('sliderautohover');
-							var slidercontrols = $this.data('slidercontrols');
-							var sliderpager = $this.data('sliderpager');
+						var $slider = $('#<?php echo $this->id; ?> .carousel-container');
+						var sliderauto = $slider.data('sliderauto');
+						var slidermode = $slider.data('slidermode');
+						var sliderpause = $slider.data('sliderpause');
+						var sliderautohover = $slider.data('sliderautohover');
+						var slidercontrols = $slider.data('slidercontrols');
+						var sliderpager = $slider.data('sliderpager');
 
-							slidermode = typeof slidermode === 'undefined' ? 'horizontal' : slidermode;
-							sliderpause = typeof sliderpause === 'undefined' ? 9000 : ( 1000 * sliderpause );
-							sliderauto = sliderauto == 1 ? true : false;
-							sliderautohover = sliderautohover == 1 ? true : false;
-							slidercontrols = slidercontrols == 1 ? true : false;
-							sliderpager = sliderpager == 1 ? true : false;
+						slidermode = typeof slidermode === 'undefined' ? 'horizontal' : slidermode;
+						sliderpause = typeof sliderpause === 'undefined' ? 9000 : ( 1000 * sliderpause );
+						sliderauto = sliderauto == 1 ? true : false;
+						sliderautohover = sliderautohover == 1 ? true : false;
+						slidercontrols = slidercontrols == 1 ? true : false;
+						sliderpager = sliderpager == 1 ? true : false;
 
-							$this.bxSlider({
-								auto: sliderauto,
-								nextText: '<i class="genericon genericon-expand genericon-rotate-270"></i>',
-								prevText: '<i class="genericon genericon-expand genericon-rotate-90"></i>',
-								mode: slidermode,
-								pause: sliderpause,
-								autoHover: sliderautohover,
-								controls: slidercontrols,
-								pager: sliderpager
-							});
+						$slider.bxSlider({
+							auto: sliderauto,
+							nextText: '<i class="genericon genericon-expand genericon-rotate-270"></i>',
+							prevText: '<i class="genericon genericon-expand genericon-rotate-90"></i>',
+							mode: slidermode,
+							pause: sliderpause,
+							autoHover: sliderautohover,
+							controls: slidercontrols,
+							pager: sliderpager
 						});
 					});
 				} )( jQuery );
