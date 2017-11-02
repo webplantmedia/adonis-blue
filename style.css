@@ -2381,7 +2381,6 @@ a:hover, a:active {
 }
 
 .content-jetpack-testimonial .testimonial-featured-image img {
-  width: 150px;
   border-radius: 100%;
   vertical-align: bottom;
 }
@@ -2389,6 +2388,12 @@ a:hover, a:active {
 .content-jetpack-testimonial .testimonial-entry-content-wrapper {
   width: calc( 100% - 154px);
   padding-left: 20px;
+  position: relative;
+  /* used for detecting responsiveness in jquery */
+}
+
+.content-jetpack-testimonial .testimonial-entry-content {
+  font-style: italic;
 }
 
 .content-jetpack-testimonial .testimonial-entry-content > *:first-child {
@@ -2414,7 +2419,7 @@ a:hover, a:active {
 }
 
 .content-jetpack-testimonial .testimonial-slide-size-1 .testimonial-entry-wrapper {
-  max-width: 510px;
+  width: 50%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -2423,6 +2428,63 @@ a:hover, a:active {
   padding-bottom: 0;
   bottom: auto;
   top: 100%;
+}
+
+@media (max-width: 991px) {
+  #master .content-jetpack-testimonial .testimonial-featured-image {
+    width: 70px;
+  }
+  #master .content-jetpack-testimonial .testimonial-entry-content-wrapper {
+    width: calc( 100% - 74px);
+    font-size: 16px;
+  }
+  #master .content-jetpack-testimonial .testimonial-entry-wrapper {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (max-width: 700px) {
+  #master .content-jetpack-testimonial .testimonial-entry-wrapper {
+    height: auto !important;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    max-width: none;
+    width: 100%;
+    margin: 0;
+  }
+  #master .content-jetpack-testimonial .testimonial-entry-wrapper .testimonial-entry {
+    top: auto;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    transform: none;
+  }
+  #master .content-jetpack-testimonial .testimonial-entry-content-wrapper {
+    position: static;
+    /* used for detecting responsiveness in jquery */
+  }
+  #master .content-jetpack-testimonial .grid__col {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  #master .content-jetpack-testimonial .testimonial-featured-image,
+  #master .content-jetpack-testimonial .testimonial-entry-content-wrapper {
+    margin: 0;
+    padding: 0;
+    display: block;
+  }
+  #master .content-jetpack-testimonial .testimonial-featured-image {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+  }
+  #master .content-jetpack-testimonial .testimonial-entry-content-wrapper {
+    width: 100%;
+  }
 }
 
 /*--------------------------------------------------------------

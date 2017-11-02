@@ -351,14 +351,41 @@ class AngieMakesDesign_Widget_Jetpack_Testimonials extends AngieMakesDesign_Widg
 								sliderpager = sliderpager == 1 ? true : false;
 
 								$slider.bxSlider({
-									auto: sliderauto,
+									adaptiveHeight: true,
+									auto: false,
 									nextText: '<i class="genericon genericon-expand genericon-rotate-270"></i>',
 									prevText: '<i class="genericon genericon-expand genericon-rotate-90"></i>',
 									mode: slidermode,
 									pause: sliderpause,
 									autoHover: sliderautohover,
 									controls: slidercontrols,
-									pager: sliderpager
+									pager: sliderpager,
+									onSliderLoad: function() {
+										if ( sliderauto ) {
+											var $el = $(this);
+											var $e = $el.find('.testimonial-entry-content-wrapper').first();
+											var check = $e.css('position');
+											if ( 'static' == check ) {
+												$slider.stopAuto();
+											}
+											else {
+												$slider.startAuto();
+											}
+										}
+									},
+									onSliderResize: function() {
+										if ( sliderauto ) {
+											var $el = $(this);
+											var $e = $el.find('.testimonial-entry-content-wrapper').first();
+											var check = $e.css('position');
+											if ( 'static' == check ) {
+												$slider.stopAuto();
+											}
+											else {
+												$slider.startAuto();
+											}
+										}
+									}
 								});
 							});
 						} )( jQuery );
