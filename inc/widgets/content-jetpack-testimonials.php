@@ -32,6 +32,16 @@ class AngieMakesDesign_Widget_Jetpack_Testimonials extends AngieMakesDesign_Widg
 				),
 				'sanitize' => 'text',
 			),
+			'display_signature' => array(
+				'type'  => 'select',
+				'std'   => 'false',
+				'label' => __( 'Display Signature:', 'angiemakesdesign' ),
+				'options' => array(
+					'true' => __( 'True', 'angiemakesdesign' ),
+					'false' => __( 'False', 'angiemakesdesign' ),
+				),
+				'sanitize' => 'text',
+			),
 			'image' => array(
 				'type'  => 'select',
 				'std'   => 'true',
@@ -55,6 +65,8 @@ class AngieMakesDesign_Widget_Jetpack_Testimonials extends AngieMakesDesign_Widg
 			'showposts' => array(
 				'type'  => 'number',
 				'std'   => 0,
+				'step'  => 1,
+				'min'   => 0,
 				'label' => __( 'Number of testimonials to display:', 'angiemakesdesign' ),
 				'description' => esc_html__( 'Set to zero to display all.', 'angiemakesdesign' ),
 				'sanitize' => 'number',
@@ -155,6 +167,15 @@ class AngieMakesDesign_Widget_Jetpack_Testimonials extends AngieMakesDesign_Widg
 							'label' => esc_html__( 'Bottom margin of widget:', 'angiemakesdesign' ),
 							'sanitize' => 'number',
 						),
+						'height' => array(
+							'type'  => 'number',
+							'std'   => 300,
+							'step'  => 1,
+							'min'   => 0,
+							'max'   => 1000,
+							'label' => esc_html__( 'Height of testimonials:', 'angiemakesdesign' ),
+							'sanitize' => 'number',
+						),
 					),
 				),
 			),
@@ -181,6 +202,7 @@ class AngieMakesDesign_Widget_Jetpack_Testimonials extends AngieMakesDesign_Widg
 		$o = $this->sanitize( $instance );
 
 		$style = array();
+		$testimonial_style = array();
 
 		if ( ! empty( $o['margin_bottom'] ) ) {
 			$style[] = 'margin-bottom:' . $o['margin_bottom'] . 'px;';
@@ -192,6 +214,10 @@ class AngieMakesDesign_Widget_Jetpack_Testimonials extends AngieMakesDesign_Widg
 
 		if ( ! empty( $o['padding_bottom'] ) ) {
 			$style[] = 'padding-bottom:' . $o['padding_bottom'] . 'px;';
+		}
+
+		if ( ! empty( $o['height'] ) ) {
+			$testimonial_style[] = 'height:' . $o['height'] . 'px;';
 		}
 
 		$options['showposts'] = $this->settings['showposts']['std'];
@@ -219,34 +245,38 @@ class AngieMakesDesign_Widget_Jetpack_Testimonials extends AngieMakesDesign_Widg
 						$post_id = get_the_ID();
 						ob_start();
 						?>
-						<div class="testimonial-entry">
-							<?php
-							// Featured image
-							if ( 'false' !== $o['image'] ) :
-								if ( $image = $this->get_testimonial_thumbnail_link( $post_id ) ) {
-									echo $image;
-								}
-							endif;
-							?>
-
-							<div class="testimonial-entry-content-wrapper">
+						<div class="testimonial-entry-wrapper" style="<?php echo implode( '', $testimonial_style ); ?>">
+							<div class="testimonial-entry">
 								<?php
-								// The content
-								if ( 'false' !== $o['display_content'] ) {
-									if ( 'full' === $o['display_content'] ) {
-									?>
-										<div class="testimonial-entry-content"><?php the_content(); ?></div>
-									<?php
-									} else {
-									?>
-										<div class="testimonial-entry-content"><?php the_excerpt(); ?></div>
-									<?php
+								// Featured image
+								if ( 'false' !== $o['image'] ) :
+									if ( $image = $this->get_testimonial_thumbnail_link( $post_id ) ) {
+										echo $image;
 									}
-								}
+								endif;
 								?>
-								<span class="testimonial-entry-title">&#8213; <a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php echo esc_attr( the_title_attribute( ) ); ?>"><?php the_title(); ?></a></span>
-							</div><!-- close .testimonial-entry-content-wrapper -->
-						</div><!-- close .testimonial-entry -->
+
+								<div class="testimonial-entry-content-wrapper">
+									<?php
+									// The content
+									if ( 'false' !== $o['display_content'] ) {
+										if ( 'full' === $o['display_content'] ) {
+										?>
+											<div class="testimonial-entry-content"><?php the_content(); ?></div>
+										<?php
+										} else {
+										?>
+											<div class="testimonial-entry-content"><?php the_excerpt(); ?></div>
+										<?php
+										}
+									}
+									?>
+									<?php if ( 'true' === $o['display_signature'] ) : ?>
+										<span class="testimonial-entry-title">&#8213; <a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php echo esc_attr( the_title_attribute( ) ); ?>"><?php the_title(); ?></a></span>
+									<?php endif; ?>
+								</div><!-- close .testimonial-entry-content-wrapper -->
+							</div><!-- close .testimonial-entry -->
+						</div><!-- close .testimonial-entry-wrapper -->
 						<?php
 						$testimonials[ $column ][] = ob_get_clean();
 						$mod = $testimonial_index_number % $o['columns'];
@@ -271,6 +301,10 @@ class AngieMakesDesign_Widget_Jetpack_Testimonials extends AngieMakesDesign_Widg
 		<?php echo $before_widget; ?>
 
 			<div class="content-jetpack-testimonial full-width-bar" style="<?php echo implode( '', $style ); ?>">
+				<?php if ( ! empty( $o['title'] ) ) : ?>
+					<?php echo $before_title . $o['title'] . $after_title; ?>
+				<?php endif; ?>
+
 				<?php if ( ! empty( $testimonials ) ) : ?>
 
 					<div class="testimonial-slider" data-sliderauto="<?php echo esc_attr( $o['slider_auto'] ); ?>" data-slidermode="<?php echo esc_attr( $o['slider_mode'] ); ?>" data-sliderpause="<?php echo esc_attr( $o['slider_pause'] ); ?>" data-sliderautohover="<?php echo esc_attr( $o['slider_autohover'] ) ?>" data-slidercontrols="<?php echo esc_attr( $o['slider_controls'] ) ?>" data-sliderpager="<?php echo esc_attr( $o['slider_pager'] ) ?>">
@@ -278,7 +312,7 @@ class AngieMakesDesign_Widget_Jetpack_Testimonials extends AngieMakesDesign_Widg
 							$size = sizeof( $slide );
 							?>
 							<div class="testimonial-slide testimonial-slide-size-<?php echo $size; ?>">
-								<div class="grid grid--no-gutter">
+								<div class="grid">
 									<?php foreach ( $slide as $key => $testimonial ) : ?>
 										<?php if ( $size == 1 ) : ?>
 											<div class="grid__col grid__col--2-of-2 testimonial-position-<?php echo $key; ?>">

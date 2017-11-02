@@ -313,8 +313,8 @@ h1 {
 }
 
 h2 {
-  font-size: 28px;
-  margin: 25px 0 30px;
+  font-size: 22px;
+  margin: 50px 0 30px;
 }
 
 h3 {
@@ -2290,6 +2290,11 @@ a:hover, a:active {
   padding-left: 20px;
 }
 
+.content-widget .content-widget-title {
+  text-align: center;
+  margin-top: 0;
+}
+
 .content-callout-border-wrap {
   border-top: 2px solid #ececec;
   border-bottom: 2px solid #ececec;
@@ -2365,38 +2370,59 @@ a:hover, a:active {
   }
 }
 
+.content-jetpack-testimonial .testimonial-featured-image,
+.content-jetpack-testimonial .testimonial-entry-content-wrapper {
+  display: inline-block;
+  vertical-align: middle;
+}
+
 .content-jetpack-testimonial .testimonial-featured-image {
-  display: block;
-  float: left;
-  padding-right: 20px;
+  width: 150px;
 }
 
 .content-jetpack-testimonial .testimonial-featured-image img {
-  width: 100px;
+  width: 150px;
   border-radius: 100%;
+  vertical-align: bottom;
 }
 
 .content-jetpack-testimonial .testimonial-entry-content-wrapper {
-  overflow: hidden;
+  width: calc( 100% - 154px);
+  padding-left: 20px;
+}
+
+.content-jetpack-testimonial .testimonial-entry-content > *:first-child {
+  margin-top: 0;
+}
+
+.content-jetpack-testimonial .testimonial-entry-content > *:last-child {
+  margin-bottom: 0;
+}
+
+.content-jetpack-testimonial .testimonial-entry-wrapper {
+  padding: 0 40px;
+  background-color: #f7f7f7;
 }
 
 .content-jetpack-testimonial .testimonial-entry {
-  padding: 30px;
-  background-color: #eeeeee;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
-.content-jetpack-testimonial .testimonial-slide-size-1 .testimonial-entry {
+.content-jetpack-testimonial .testimonial-slide-size-1 .testimonial-entry-wrapper {
   max-width: 510px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.content-jetpack-testimonial .testimonial-slide-size-2 .testimonial-position-0 .testimonial-entry {
-  margin-right: 20px;
-}
-
-.content-jetpack-testimonial .testimonial-slide-size-2 .testimonial-position-1 .testimonial-entry {
-  margin-left: 20px;
+.content-jetpack-testimonial .bx-wrapper .bx-pager {
+  padding-bottom: 0;
+  bottom: auto;
+  top: 100%;
 }
 
 /*--------------------------------------------------------------
