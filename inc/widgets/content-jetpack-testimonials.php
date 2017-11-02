@@ -21,17 +21,6 @@ class AngieMakesDesign_Widget_Jetpack_Testimonials extends AngieMakesDesign_Widg
 				'label' => __( 'Title:', 'angiemakesdesign' ),
 				'sanitize' => 'text',
 			),
-			'display_content' => array(
-				'type'  => 'select',
-				'std'   => 'true',
-				'label' => __( 'Display Content:', 'angiemakesdesign' ),
-				'options' => array(
-					'true' => __( 'True', 'angiemakesdesign' ),
-					'false' => __( 'False', 'angiemakesdesign' ),
-					'full' => __( 'Full', 'angiemakesdesign' ),
-				),
-				'sanitize' => 'text',
-			),
 			'display_signature' => array(
 				'type'  => 'select',
 				'std'   => 'false',
@@ -257,20 +246,9 @@ class AngieMakesDesign_Widget_Jetpack_Testimonials extends AngieMakesDesign_Widg
 								?>
 
 								<div class="testimonial-entry-content-wrapper">
-									<?php
-									// The content
-									if ( 'false' !== $o['display_content'] ) {
-										if ( 'full' === $o['display_content'] ) {
-										?>
-											<div class="testimonial-entry-content"><?php the_content(); ?></div>
-										<?php
-										} else {
-										?>
-											<div class="testimonial-entry-content"><?php the_excerpt(); ?></div>
-										<?php
-										}
-									}
-									?>
+
+									<div class="testimonial-entry-content"><?php the_excerpt(); ?></div>
+
 									<?php if ( 'true' === $o['display_signature'] ) : ?>
 										<span class="testimonial-entry-title">&#8213; <a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php echo esc_attr( the_title_attribute( ) ); ?>"><?php the_title(); ?></a></span>
 									<?php endif; ?>
