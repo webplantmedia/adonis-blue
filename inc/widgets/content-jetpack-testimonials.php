@@ -22,22 +22,21 @@ class AngieMakesDesign_Widget_Jetpack_Testimonials extends AngieMakesDesign_Widg
 				'sanitize' => 'text',
 			),
 			'display_signature' => array(
-				'type'  => 'select',
-				'std'   => 'false',
+				'type'  => 'checkbox',
+				'std'   => 0,
 				'label' => __( 'Display Signature:', 'angiemakesdesign' ),
-				'options' => array(
-					'true' => __( 'True', 'angiemakesdesign' ),
-					'false' => __( 'False', 'angiemakesdesign' ),
-				),
-				'sanitize' => 'text',
+				'sanitize' => 'checkbox',
 			),
-			'image' => array(
+			'signature_icon' => array(
 				'type'  => 'select',
-				'std'   => 'true',
-				'label' => __( 'Display Image:', 'angiemakesdesign' ),
+				'std'   => 'heart',
+				'label' => __( 'Icon to display before signature:', 'angiemakesdesign' ),
 				'options' => array(
-					'true' => __( 'True', 'angiemakesdesign' ),
-					'false' => __( 'False', 'angiemakesdesign' ),
+					'short-dash' => __( 'Short Dash', 'angiemakesdesign' ),
+					'medium-dash' => __( 'Medium Dash', 'angiemakesdesign' ),
+					'long-dash' => __( 'Long Dash', 'angiemakesdesign' ),
+					'heart' => __( 'Heart', 'angiemakesdesign' ),
+					'' => __( 'None', 'angiemakesdesign' ),
 				),
 				'sanitize' => 'text',
 			),
@@ -238,19 +237,39 @@ class AngieMakesDesign_Widget_Jetpack_Testimonials extends AngieMakesDesign_Widg
 							<div class="testimonial-entry">
 								<?php
 								// Featured image
-								if ( 'false' !== $o['image'] ) :
-									if ( $image = $this->get_testimonial_thumbnail_link( $post_id ) ) {
-										echo $image;
-									}
-								endif;
+								$class = ' no-testimonial-image';
+								if ( $image = $this->get_testimonial_thumbnail_link( $post_id ) ) {
+									echo $image;
+									$class = ' has-testimonial-image';
+								}
 								?>
 
-								<div class="testimonial-entry-content-wrapper">
+								<div class="testimonial-entry-content-wrapper<?php echo $class; ?>">
 
 									<div class="testimonial-entry-content"><?php the_excerpt(); ?></div>
 
-									<?php if ( 'true' === $o['display_signature'] ) : ?>
-										<span class="testimonial-entry-title">&#8213; <a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php echo esc_attr( the_title_attribute( ) ); ?>"><?php the_title(); ?></a></span>
+									<?php if ( $o['display_signature'] ) :
+										switch ( $o['signature_icon'] ) {
+											case 'short-dash' :
+												$icon = '&#8211; ';
+												break;
+											case 'medium-dash' :
+												$icon = '&#8212; ';
+												break;
+											case 'long-dash' :
+												$icon = '&#8213; ';
+												break;
+											case 'heart' :
+												$icon = '<i class="genericon genericon-heart"></i>';
+												break;
+											default :
+												$icon = '';
+												break;
+										}
+									?>
+										<div class="testimonial-entry-signature">
+											<?php echo $icon; ?><span class="testimonial-signature"><?php the_title(); ?></span>
+										</div>
 									<?php endif; ?>
 								</div><!-- close .testimonial-entry-content-wrapper -->
 							</div><!-- close .testimonial-entry -->
@@ -403,7 +422,7 @@ class AngieMakesDesign_Widget_Jetpack_Testimonials extends AngieMakesDesign_Widg
 			 *
 			 * @param string|array $var Either a registered size keyword or size array.
 			 */
-			return '<a class="testimonial-featured-image" href="' . esc_url( get_permalink( $post_id ) ) . '">' . get_the_post_thumbnail( $post_id, 'thumbnail' ) . '</a>';
+			return '<div class="testimonial-featured-image">' . get_the_post_thumbnail( $post_id, 'thumbnail' ) . '</div>';
 		}
 	}
 

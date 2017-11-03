@@ -2386,10 +2386,18 @@ a:hover, a:active {
 }
 
 .content-jetpack-testimonial .testimonial-entry-content-wrapper {
-  width: calc( 100% - 154px);
-  padding-left: 20px;
   position: relative;
   /* used for detecting responsiveness in jquery */
+}
+
+.content-jetpack-testimonial .testimonial-entry-content-wrapper.has-testimonial-image {
+  width: calc( 100% - 154px);
+  padding-left: 20px;
+}
+
+.content-jetpack-testimonial .testimonial-entry-content-wrapper.no-testimonial-image {
+  padding-left: 0;
+  width: 100%;
 }
 
 .content-jetpack-testimonial .testimonial-entry-content {
@@ -2418,12 +2426,17 @@ a:hover, a:active {
   transform: translateY(-50%);
 }
 
-.content-jetpack-testimonial .testimonial-entry-title {
+.content-jetpack-testimonial .testimonial-entry-signature {
   display: block;
   margin-top: 1em;
   font-style: italic;
   text-align: left;
   font-weight: bold;
+}
+
+.content-jetpack-testimonial .testimonial-entry-signature .genericon {
+  line-height: 1.8;
+  margin-right: 5px;
 }
 
 .content-jetpack-testimonial .testimonial-slide-size-1 .testimonial-entry-wrapper {
@@ -2443,8 +2456,10 @@ a:hover, a:active {
     width: 70px;
   }
   #master .content-jetpack-testimonial .testimonial-entry-content-wrapper {
-    width: calc( 100% - 74px);
     font-size: 16px;
+  }
+  #master .content-jetpack-testimonial .testimonial-entry-content-wrapper.has-testimonial-image {
+    width: calc( 100% - 74px);
   }
   #master .content-jetpack-testimonial .testimonial-entry-wrapper {
     padding-left: 20px;
