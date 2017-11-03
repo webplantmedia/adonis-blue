@@ -205,7 +205,9 @@ function angiemakesdesign_scripts() {
 
 	// Register bxslider
 	wp_register_script( 'angiemakesdesign-bxslider', get_template_directory_uri() . '/inc/vendors/bxslider/js/jquery.bxslider.js', array( 'jquery' ), '4.2.12', true );
-	// wp_register_script( 'angiemakesdesign-slider', get_template_directory_uri() . '/js/slider.js', array( 'angiemakesdesign-bxslider' ), ANGIEMAKESDESIGN_VERSION, true );
+
+	// Register accordion
+	wp_register_script( 'angiemakesdesign-accordion', get_template_directory_uri() . '/js/accordion.js', array(), ANGIEMAKESDESIGN_VERSION, true );
 
 	wp_enqueue_script( 'angiemakesdesign-navigation', get_template_directory_uri() . '/js/navigation.js', array(), ANGIEMAKESDESIGN_VERSION, true );
 
@@ -294,6 +296,10 @@ function angiemakesdesign_display_fullwidth() {
 		if ( is_woocommerce() || is_cart() || is_checkout() ) {
 			return true;
 		}
+	}
+
+	if ( is_page_template( 'page-templates/accordion.php' ) ) {
+		return true;
 	}
 
 	return false;

@@ -179,3 +179,66 @@ if ( ! function_exists( 'angiemakesdesign_site_info' ) ) :
 		echo wp_kses( $amd['site_info'], $allowed_tags );
 	}
 endif;
+
+if ( ! function_exists( 'angiemakesdesign_the_accordion' ) ) :
+	function angiemakesdesign_the_accordion() {
+		$html = '';
+		$index = 0;
+		$tag_closed = true;
+		$content = get_the_content();
+
+		$content = preg_replace( "/(\<h2\>.*?\<\/h2\>)/", "------\\1", $content );
+		$content = preg_replace( "/(\<h3\>.*?\<\/h3\>)/", "++++++\\1******", $content );
+		$grid = explode( '------', $content );
+
+		foreach ( $grid as $section ) {
+
+			if ( preg_match( '/\+\+\+\+\+\+/', $section ) ) { // if there exists accordions in section
+				if ( 0 == $index % 2 ) {
+					$html .= '<div class="grid">';
+					$tag_closed = false;
+				}
+						$accordion = explode( '++++++', $section );
+
+						$html .= '<div class="grid__col grid__col--1-of-2">';
+						foreach ( $accordion as $item ) {
+							if ( preg_match( '/\*\*\*\*\*\*/', $item ) ) {
+								$pieces = explode( '******', $item );
+								if ( isset( $pieces[0] ) ) {
+									$html .= $pieces[0];
+								}
+								if ( isset( $pieces[1] ) ) {
+									$html .= '<div class="accordion-content">' . trim( $pieces[1] ) . '</div>';
+								}
+							}
+							else {
+								$html .= $item;
+							}
+						}
+						$html .= '</div>';
+
+				if ( 1 == $index % 2 ) {
+					$html .= '</div>';
+					$tag_closed = true;
+				}
+
+				$index++;
+			}
+			else {
+				if ( ! $tag_closed ) {
+					$html .= '</div>';
+					$tag_closed = true;
+				}
+
+				$html .= $section; // display non-accordion section
+			}
+		}
+
+		if ( ! $tag_closed ) {
+			$html .= '</div>';
+			$tag_closed = true;
+		}
+
+		echo $html;
+	}
+endif;

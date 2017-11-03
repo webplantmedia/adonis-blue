@@ -313,7 +313,7 @@ h1 {
 }
 
 h2 {
-  font-size: 22px;
+  font-size: 28px;
   margin: 50px 0 30px;
 }
 
@@ -3282,6 +3282,19 @@ a:hover, a:active {
 
 .entry-image img {
   vertical-align: top;
+}
+
+.page-template-accordion .entry-content h3 {
+  margin: 0;
+  margin-top: 20px;
+  margin-top: 1.25rem;
+  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
+}
+
+.page-template-accordion .entry-content .accordion-content {
+  height: 0;
+  overflow: hidden;
 }
 
 /*--------------------------------------------------------------

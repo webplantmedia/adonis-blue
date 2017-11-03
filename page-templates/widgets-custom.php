@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Page: Widgetized
+ * Template Name: Widgets: Custom Sidebar
  *
  * @package Angie_Makes_Design
  */

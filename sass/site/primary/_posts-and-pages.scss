@@ -354,3 +354,18 @@
 		vertical-align: top;
 	}
 }
+
+// Accordion page template
+.page-template-accordion {
+	.entry-content {
+		h3 {
+			margin: 0;
+			@include rem('margin-top',20px);
+			@include rem('margin-bottom',20px);
+		}
+		.accordion-content {
+			height: 0;
+			overflow: hidden;
+		}
+	}
+}
