@@ -2370,6 +2370,11 @@ a:hover, a:active {
   }
 }
 
+.content-jetpack-testimonial {
+  border-top: 2px solid #ececec;
+  border-bottom: 2px solid #ececec;
+}
+
 .content-jetpack-testimonial .testimonial-featured-image,
 .content-jetpack-testimonial .testimonial-entry-content-wrapper {
   display: inline-block;
