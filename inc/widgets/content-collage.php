@@ -133,6 +133,17 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 							'label' => esc_html__( 'Button Text:', 'angiemakesdesign' ),
 							'sanitize' => 'text',
 						),
+						'button_style' => array(
+							'type'  => 'select',
+							'std'   => 'button-1',
+							'label' => __( 'Button Style:', 'angiemakesdesign' ),
+							'options' => array(
+								'default' => __( 'Default Button', 'angiemakesdesign' ),
+								'button-1' => __( 'Image Button 1', 'angiemakesdesign' ),
+								'button-2' => __( 'Image Button 2', 'angiemakesdesign' ),
+							),
+							'sanitize' => 'text',
+						),
 					),
 					'default' => array(
 						array(
@@ -360,9 +371,24 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 					<?php endif; ?>
 
 					<?php if ( ! empty( $slide_setting['button_text'] ) ) : ?>
+					<?php
+					$button_icon = '';
+					switch ( $slide_setting['button_style'] ) {
+						case 'button-1' :
+							$button_class = ' fancy-button';
+							break;
+						case 'button-2' :
+							$button_class = ' fancy2-button';
+							$button_icon = '<i class="genericon genericon-rotate-270 genericon-expand"></i>';
+							break;
+						default :
+							$button_class = '';
+							break;
+					}
+					?>
 						<div class="button-text">
-							<a class="button slide-button fancy-button"<?php echo $button_href; ?>>
-								<?php echo $slide_setting['button_text']; ?>
+							<a class="button slide-button<?php echo $button_class; ?>"<?php echo $button_href; ?>>
+								<?php echo $slide_setting['button_text'] . $button_icon; ?>
 							</a>
 						</div>
 					<?php endif; ?>

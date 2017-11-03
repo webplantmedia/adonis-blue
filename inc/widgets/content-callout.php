@@ -80,10 +80,21 @@ class AngieMakesDesign_Widget_Callout extends AngieMakesDesign_Widget {
 				'label' => esc_html__( 'Button Text:', 'angiemakesdesign' ),
 				'sanitize' => 'text',
 			),
+			'button_style' => array(
+				'type'  => 'select',
+				'std'   => 'button-2',
+				'label' => __( 'Button Style:', 'angiemakesdesign' ),
+				'options' => array(
+					'default' => __( 'Default Button', 'angiemakesdesign' ),
+					'button-1' => __( 'Image Button 1', 'angiemakesdesign' ),
+					'button-2' => __( 'Image Button 2', 'angiemakesdesign' ),
+				),
+				'sanitize' => 'text',
+			),
 			'style' => array(
 				'type'  => 'select',
 				'std'   => 'border',
-				'label' => __( 'Text Align:', 'angiemakesdesign' ),
+				'label' => __( 'Box Style:', 'angiemakesdesign' ),
 				'options' => array(
 					'plain' => __( 'Plain', 'angiemakesdesign' ),
 					'border' => __( 'Border', 'angiemakesdesign' ),
@@ -228,9 +239,22 @@ class AngieMakesDesign_Widget_Callout extends AngieMakesDesign_Widget {
 
 			if ( ! empty( $o['button_text'] ) && ! empty( $o['button_link'] ) ) {
 				$output .= '<div class="button-text">';
-					$output .= '<a class="button callout-button fancy2-button href="' . esc_url( $o['button_link'] ) . '">';
+					$button_icon = '';
+					switch ( $o['button_style'] ) {
+						case 'button-1' :
+							$button_class = ' fancy-button';
+							break;
+						case 'button-2' :
+							$button_class = ' fancy2-button';
+							$button_icon = '<i class="genericon genericon-rotate-270 genericon-expand"></i>';
+							break;
+						default :
+							$button_class = '';
+							break;
+					}
+					$output .= '<a class="button callout-button'.$button_class.'" href="' . esc_url( $o['button_link'] ) . '">';
 						$output .= $o['button_text'];
-					$output .= '<i class="genericon genericon-rotate-270 genericon-expand"></i>';
+					$output .= $button_icon;
 					$output .= '</a>';
 				$output .= '</div>';
 			}
