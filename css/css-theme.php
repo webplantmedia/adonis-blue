@@ -7,6 +7,7 @@
 	color: <?php echo $amd['link_color']; ?>; /*id:link_color*/
 }
 
+.entry-content a:hover,
 .accordion-section h3:hover,
 #master a.more-link:hover,
 #master h1 a:hover,
