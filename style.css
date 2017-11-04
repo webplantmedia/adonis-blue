@@ -41,6 +41,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 # Accessibility
 # Alignments
 # Clearings
+# Global Classes
 # Widgets
 	## Search Widget
 # Content Widgets
@@ -618,7 +619,7 @@ table th {
 \*-----------------------------------*/
 .grid {
   list-style: none;
-  margin-left: -20px;
+  margin-left: -50px;
 }
 
 .grid__col--2-of-2, .grid__col--3-of-3, .grid__col--4-of-4, .grid__col--5-of-5, .grid__col--6-of-6, .grid__col--8-of-8, .grid__col--12-of-12 {
@@ -630,11 +631,11 @@ table th {
 }
 
 .grid__col--1-of-3, .grid__col--2-of-6, .grid__col--4-of-12 {
-  width: 33.33333%;
+  width: 33.3333333333%;
 }
 
 .grid__col--2-of-3, .grid__col--4-of-6, .grid__col--8-of-12 {
-  width: 66.66667%;
+  width: 66.6666666667%;
 }
 
 .grid__col--1-of-4, .grid__col--2-of-8, .grid__col--3-of-12 {
@@ -654,11 +655,11 @@ table th {
 }
 
 .grid__col--push-1-of-3, .grid__col--push-2-of-6, .grid__col--push-4-of-12 {
-  margin-left: 33.33333%;
+  margin-left: 33.3333333333%;
 }
 
 .grid__col--push-2-of-3, .grid__col--push-4-of-6, .grid__col--push-8-of-12 {
-  margin-left: 66.66667%;
+  margin-left: 66.6666666667%;
 }
 
 .grid__col--push-1-of-4, .grid__col--push-2-of-8, .grid__col--push-3-of-12 {
@@ -678,11 +679,11 @@ table th {
 }
 
 .grid__col--pull-1-of-3, .grid__col--pull-2-of-6, .grid__col--pull-4-of-12 {
-  margin-left: -33.33333%;
+  margin-left: -33.3333333333%;
 }
 
 .grid__col--pull-2-of-3, .grid__col--pull-4-of-6, .grid__col--pull-8-of-12 {
-  margin-left: -66.66667%;
+  margin-left: -66.6666666667%;
 }
 
 .grid__col--pull-1-of-4, .grid__col--pull-2-of-8, .grid__col--pull-3-of-12 {
@@ -742,27 +743,27 @@ table th {
 }
 
 .grid__col--1-of-6 {
-  width: 16.66667%;
+  width: 16.6666666667%;
 }
 
 .grid__col--push-1-of-6 {
-  margin-left: 16.66667%;
+  margin-left: 16.6666666667%;
 }
 
 .grid__col--pull-1-of-6 {
-  margin-left: -16.66667%;
+  margin-left: -16.6666666667%;
 }
 
 .grid__col--5-of-6 {
-  width: 83.33333%;
+  width: 83.3333333333%;
 }
 
 .grid__col--push-5-of-6 {
-  margin-left: 83.33333%;
+  margin-left: 83.3333333333%;
 }
 
 .grid__col--pull-5-of-6 {
-  margin-left: -83.33333%;
+  margin-left: -83.3333333333%;
 }
 
 .grid__col--1-of-8 {
@@ -814,75 +815,75 @@ table th {
 }
 
 .grid__col--1-of-12 {
-  width: 8.33333%;
+  width: 8.3333333333%;
 }
 
 .grid__col--push-1-of-12 {
-  margin-left: 8.33333%;
+  margin-left: 8.3333333333%;
 }
 
 .grid__col--pull-1-of-12 {
-  margin-left: -8.33333%;
+  margin-left: -8.3333333333%;
 }
 
 .grid__col--2-of-12 {
-  width: 16.66667%;
+  width: 16.6666666667%;
 }
 
 .grid__col--push-2-of-12 {
-  margin-left: 16.66667%;
+  margin-left: 16.6666666667%;
 }
 
 .grid__col--pull-2-of-12 {
-  margin-left: -16.66667%;
+  margin-left: -16.6666666667%;
 }
 
 .grid__col--5-of-12 {
-  width: 41.66667%;
+  width: 41.6666666667%;
 }
 
 .grid__col--push-5-of-12 {
-  margin-left: 41.66667%;
+  margin-left: 41.6666666667%;
 }
 
 .grid__col--pull-5-of-12 {
-  margin-left: -41.66667%;
+  margin-left: -41.6666666667%;
 }
 
 .grid__col--7-of-12 {
-  width: 58.33333%;
+  width: 58.3333333333%;
 }
 
 .grid__col--push-7-of-12 {
-  margin-left: 58.33333%;
+  margin-left: 58.3333333333%;
 }
 
 .grid__col--pull-7-of-12 {
-  margin-left: -58.33333%;
+  margin-left: -58.3333333333%;
 }
 
 .grid__col--10-of-12 {
-  width: 83.33333%;
+  width: 83.3333333333%;
 }
 
 .grid__col--push-10-of-12 {
-  margin-left: 83.33333%;
+  margin-left: 83.3333333333%;
 }
 
 .grid__col--pull-10-of-12 {
-  margin-left: -83.33333%;
+  margin-left: -83.3333333333%;
 }
 
 .grid__col--11-of-12 {
-  width: 91.66667%;
+  width: 91.6666666667%;
 }
 
 .grid__col--push-11-of-12 {
-  margin-left: 91.66667%;
+  margin-left: 91.6666666667%;
 }
 
 .grid__col--pull-11-of-12 {
-  margin-left: -91.66667%;
+  margin-left: -91.6666666667%;
 }
 
 .grid__col {
@@ -890,7 +891,7 @@ table th {
   display: inline-block;
   margin-right: -.25em;
   min-height: 1px;
-  padding-left: 20px;
+  padding-left: 50px;
   vertical-align: top;
 }
 
@@ -912,10 +913,10 @@ table th {
     width: 50%;
   }
   .grid__col.grid__col--m-1-of-3 {
-    width: 33.33333%;
+    width: 33.3333333333%;
   }
   .grid__col.grid__col--m-2-of-3 {
-    width: 66.66667%;
+    width: 66.6666666667%;
   }
   .grid__col.grid__col--m-1-of-4 {
     width: 25%;
@@ -934,10 +935,10 @@ table th {
     width: 50%;
   }
   .grid__col.grid__col--s-1-of-3 {
-    width: 33.33333%;
+    width: 33.3333333333%;
   }
   .grid__col.grid__col--s-2-of-3 {
-    width: 66.66667%;
+    width: 66.6666666667%;
   }
   .grid__col.grid__col--s-1-of-4 {
     width: 25%;
@@ -2135,6 +2136,17 @@ a:hover, a:active {
 }
 
 /*--------------------------------------------------------------
+# Global Classes
+--------------------------------------------------------------*/
+.no-top-bottom-margins > *:first-child {
+  margin-top: 0;
+}
+
+.no-top-bottom-margins > *:last-child {
+  margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
 #secondary .widget {
@@ -2454,6 +2466,14 @@ a:hover, a:active {
   padding-bottom: 0;
   bottom: auto;
   top: 100%;
+}
+
+.content-jetpack-testimonial .grid {
+  margin-left: -20px;
+}
+
+.content-jetpack-testimonial .grid .grid__col {
+  padding-left: 20px;
 }
 
 @media (max-width: 1050px) {
@@ -3284,17 +3304,71 @@ a:hover, a:active {
   vertical-align: top;
 }
 
-.page-template-accordion .entry-content h3 {
-  margin: 0;
-  margin-top: 20px;
-  margin-top: 1.25rem;
-  margin-bottom: 20px;
-  margin-bottom: 1.25rem;
+.page-template-accordion .accordion-section h2 {
+  text-align: center;
+  margin-bottom: 60px;
+  margin-bottom: 3.75rem;
 }
 
-.page-template-accordion .entry-content .accordion-content {
+.page-template-accordion .accordion-section h3 {
+  margin: 0;
+  margin-top: 40px;
+  margin-top: 2.5rem;
+  cursor: pointer;
+  padding-left: 30px;
+  padding-left: 1.875rem;
+  position: relative;
+}
+
+.page-template-accordion .accordion-section h3:before {
+  vertical-align: top;
+  text-align: center;
+  -webkit-transition: -webkit-transform .2s;
+  -moz-transition: -moz-transform .2s;
+  -ms-transition: -ms-transform .2s;
+  -o-transition: -o-transform .2s;
+  transition: transform .2s;
+  display: inline-block;
+  font-family: "Genericons";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-decoration: inherit;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  speak: none;
+  content: "\f431";
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.page-template-accordion .accordion-section h3.accordion-item-open:before {
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0);
+}
+
+.page-template-accordion .accordion-section .accordion-content {
   height: 0;
   overflow: hidden;
+}
+
+.page-template-accordion .accordion-section .accordion-content-inner {
+  padding-top: 40px;
+  padding-top: 2.5rem;
+  padding-left: 30px;
+  padding-left: 1.875rem;
 }
 
 /*--------------------------------------------------------------

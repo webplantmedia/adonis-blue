@@ -200,7 +200,7 @@ if ( ! function_exists( 'angiemakesdesign_the_accordion' ) ) :
 				}
 						$accordion = explode( '++++++', $section );
 
-						$html .= '<div class="grid__col grid__col--1-of-2">';
+						$html .= '<div class="grid__col grid__col--1-of-2 accordion-section">';
 						foreach ( $accordion as $item ) {
 							if ( preg_match( '/\*\*\*\*\*\*/', $item ) ) {
 								$pieces = explode( '******', $item );
@@ -208,7 +208,8 @@ if ( ! function_exists( 'angiemakesdesign_the_accordion' ) ) :
 									$html .= $pieces[0];
 								}
 								if ( isset( $pieces[1] ) ) {
-									$html .= '<div class="accordion-content">' . trim( $pieces[1] ) . '</div>';
+									$text = wpautop( trim( $pieces[1] ) );
+									$html .= '<div class="accordion-content"><div class="accordion-content-inner no-top-bottom-margins">' . $text . '</div></div>';
 								}
 							}
 							else {
@@ -239,6 +240,8 @@ if ( ! function_exists( 'angiemakesdesign_the_accordion' ) ) :
 			$tag_closed = true;
 		}
 
+		$html = apply_filters( 'the_content', $html );
+		$html = str_replace( ']]>', ']]&gt;', $html );
 		echo $html;
 	}
 endif;

@@ -41,6 +41,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 # Accessibility
 # Alignments
 # Clearings
+# Global Classes
 # Widgets
 	## Search Widget
 # Content Widgets
@@ -145,6 +146,11 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 # Clearings
 --------------------------------------------------------------*/
 @import "modules/clearings";
+
+/*--------------------------------------------------------------
+# Global Classes
+--------------------------------------------------------------*/
+@import "modules/global-classes";
 
 /*--------------------------------------------------------------
 # Widgets

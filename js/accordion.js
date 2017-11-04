@@ -26,14 +26,15 @@
 		$title.click( function() {
 			var $_title = $(this);
 			var $_content = $_title.next('.accordion-content');
+			var $_inner = $_content.children('.accordion-content-inner');
 			if ( $_content.length ) {
 				if ( '0px' === $_content.css('height') ) {
-					var height = get_height( $_content );
-					console.log(height);
-					$_content.animate({height:height},'fast','linear',function() {});
+					var height = get_height( $_inner );
+					$_title.addClass('accordion-item-open');
+					$_content.animate({height:height},'fast','linear',function() {$(this).css('height','auto')});
 				}
 				else {
-					// $content.hide();
+					$_title.removeClass('accordion-item-open');
 					$_content.animate({height:0},'fast','linear');
 				}
 			}

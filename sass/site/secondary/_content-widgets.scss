@@ -192,6 +192,14 @@
 		bottom: auto;
 		top: 100%;
 	}
+
+	.grid {
+		margin-left: -20px;
+
+		.grid__col {
+			padding-left: 20px;
+		}
+	}
 }
 
 @media (max-width : 1050px) {
