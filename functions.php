@@ -291,6 +291,16 @@ function angiemakesdesign_display_sidebar() {
 	return false;
 }
 
+function angiemakesdesign_display_header() {
+	global $post;
+
+	if ( get_post_meta($post->ID, '_angiemakesdesign_no_header', true) ) {
+		return false;
+	}
+
+	return true;
+}
+
 function angiemakesdesign_display_fullwidth() {
 	if ( angiemakesdesign_is_woocommerce_activated() ) {
 		if ( is_woocommerce() || is_cart() || is_checkout() ) {
@@ -401,6 +411,11 @@ require get_template_directory() . '/inc/class-widget.php';
 foreach ( glob( get_template_directory() . '/inc/widgets/*.php' ) as $filename ) {
     require_once( $filename );
 }
+
+/**
+ * Meta Box
+ */
+require get_template_directory() . '/inc/class-meta-box.php';
 
 /**
  * Customizer additions.
