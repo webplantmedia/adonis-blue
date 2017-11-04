@@ -36,12 +36,11 @@
 	}
 
 	.content-callout__content {
-		color: $color__text;
-
 		.content-callout__text {
-			&,
-			* {
-				color: inherit;
+			&.custom-color {
+				* {
+					color: inherit;
+				}
 			}
 
 			* {

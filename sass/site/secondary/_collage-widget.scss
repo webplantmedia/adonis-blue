@@ -2,21 +2,31 @@
 	.collage {
 
 		.slide-inner {
-			color: $color__text;
-
 			.content-text {
 				* {
 					margin-top: 0;
-					color: inherit;
 				}
 			}
 		}
 
 		a.slide-inner {
-			&:hover {
+			&,
+			&:hover,
+			&:active,
+			&:focus,
+			&:visited {
 				.content-text {
-					* {
-						color: inherit;
+					&.no-custom-color {
+						* {
+							color: $color__text-heading;
+						}
+					}
+				}
+				.content-text {
+					&.custom-color {
+						* {
+							color: inherit;
+						}
 					}
 				}
 			}

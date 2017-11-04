@@ -327,8 +327,11 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 		function widget_get_slide( $slide_setting ) {
 			$tag = 'div';
 			$button_href = '';
-			$attr[] = 'class="slide-inner"';
-			$style[] = '';
+			$classes[] = 'slide-inner';
+			$attr = array();
+			$style = array();
+			$text_style = '';
+			$text_class = '';
 
 			if ( ! empty( $slide_setting['button_link'] ) ) {
 				if ( ! empty( $slide_setting['button_text'] ) ) {
@@ -353,11 +356,19 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 			}
 
 			if ( ! empty( $slide_setting['text_color'] ) ) {
-				$style[] = 'color:' . esc_attr( $slide_setting['text_color'] ) . ';';
+				$text_style = 'color:' . esc_attr( $slide_setting['text_color'] ) . ';';
+				$text_class = ' custom-color';
+			}
+			else {
+				$text_class = ' no-custom-color';
 			}
 
 			if ( ! empty( $style ) ) {
 				$attr[] = 'style="' . implode( '', $style ) . '"';
+			}
+
+			if ( ! empty( $classes ) ) {
+				$attr[] = 'class="' . implode( ' ', $classes ) . '"';
 			}
 			?>
 
@@ -365,7 +376,7 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 					
 				<div class="content-wrapper">
 					<?php if ( ! empty( $slide_setting['content_text'] ) ) : ?>
-						<div class="content-text">
+						<div class="content-text<?php echo $text_class; ?>" style="<?php echo $text_style; ?>">
 							<?php echo $slide_setting['content_text']; ?>
 						</div>
 					<?php endif; ?>

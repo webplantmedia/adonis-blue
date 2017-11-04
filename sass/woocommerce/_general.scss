@@ -171,6 +171,9 @@
 		box-shadow: none;
 		border: 2px solid $color__border;
 	}
+	.woocommerce div.product .product_title {
+		color: $color__text-title;
+	}
 	/*start*/
 	.woocommerce-store-notice,
 	p.demo_store {

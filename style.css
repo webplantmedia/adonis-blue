@@ -370,7 +370,7 @@ h6 a:active,
 h6 a:focus,
 h6 a:visited,
 h6 a {
-  color: #7b7776;
+  color: #444444;
 }
 
 /*--------------------------------------------------------------
@@ -2187,7 +2187,7 @@ a:hover, a:active {
   text-transform: initial;
   text-align: center;
   text-transform: uppercase;
-  color: #5b5a5a;
+  color: #444444;
 }
 
 .widget h3 {
@@ -2322,12 +2322,7 @@ a:hover, a:active {
   vertical-align: bottom;
 }
 
-.content-callout .content-callout__content {
-  color: #6d686c;
-}
-
-.content-callout .content-callout__content .content-callout__text,
-.content-callout .content-callout__content .content-callout__text * {
+.content-callout .content-callout__content .content-callout__text.custom-color * {
   color: inherit;
 }
 
@@ -2538,16 +2533,15 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 ## Collage Widget
 --------------------------------------------------------------*/
-#master .angiemakesdesign_widget_collage .collage .slide-inner {
-  color: #6d686c;
-}
-
 #master .angiemakesdesign_widget_collage .collage .slide-inner .content-text * {
   margin-top: 0;
-  color: inherit;
 }
 
-#master .angiemakesdesign_widget_collage .collage a.slide-inner:hover .content-text * {
+#master .angiemakesdesign_widget_collage .collage a.slide-inner .content-text.no-custom-color *, #master .angiemakesdesign_widget_collage .collage a.slide-inner:hover .content-text.no-custom-color *, #master .angiemakesdesign_widget_collage .collage a.slide-inner:active .content-text.no-custom-color *, #master .angiemakesdesign_widget_collage .collage a.slide-inner:focus .content-text.no-custom-color *, #master .angiemakesdesign_widget_collage .collage a.slide-inner:visited .content-text.no-custom-color * {
+  color: #444444;
+}
+
+#master .angiemakesdesign_widget_collage .collage a.slide-inner .content-text.custom-color *, #master .angiemakesdesign_widget_collage .collage a.slide-inner:hover .content-text.custom-color *, #master .angiemakesdesign_widget_collage .collage a.slide-inner:active .content-text.custom-color *, #master .angiemakesdesign_widget_collage .collage a.slide-inner:focus .content-text.custom-color *, #master .angiemakesdesign_widget_collage .collage a.slide-inner:visited .content-text.custom-color * {
   color: inherit;
 }
 
@@ -2920,7 +2914,7 @@ a:hover, a:active {
 .site-branding .site-title a {
   display: block;
   text-decoration: none;
-  color: #7b7776;
+  color: #444444;
 }
 
 .site-branding .site-description {
@@ -3033,7 +3027,7 @@ a:hover, a:active {
 .archive .hentry .entry-title a,
 .blog .hentry .entry-title,
 .blog .hentry .entry-title a {
-  color: #5b5a5a;
+  color: #444444;
 }
 
 .single .post.hentry .entry-title {
@@ -3318,6 +3312,7 @@ a:hover, a:active {
   padding-left: 30px;
   padding-left: 1.875rem;
   position: relative;
+  font-weight: normal;
 }
 
 .page-template-accordion .accordion-section h3:before {

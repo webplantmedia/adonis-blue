@@ -221,16 +221,22 @@ class AngieMakesDesign_Widget_Callout extends AngieMakesDesign_Widget {
 	}
 
 	private function callout_content( $o ) {
-		$style = array();
+		$style = '';
+		$class = '';
+
 		if ( isset( $o['text_color'] ) && ! empty( $o['text_color'] ) ) {
-			$style[] = 'color:' . $o['text_color'] . ';';
+			$style = 'color:' . $o['text_color'] . ';';
+			$class = ' custom-color';
+		}
+		else {
+			$class = ' no-custom-color';
 		}
 
-		$output  = '<div class="content-callout__content" style="'.implode( '', $style ).'">';
-			$output .= '<div class="content-callout__text">';
+		$output  = '<div class="content-callout__content">';
+			$output .= '<div class="content-callout__text'.$class.'" style="'.$style.'">';
 
 				if ( ! empty( $o['title'] ) ) {
-					$output .= '<h2 class="content-callout__title" style="'.implode( '', $style ).'">' . $o['title'] . '</h2>';
+					$output .= '<h2 class="content-callout__title">' . $o['title'] . '</h2>';
 				}
 
 				$output .= wpautop( $o['content'] );
