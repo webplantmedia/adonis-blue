@@ -13,9 +13,11 @@ get_header(); ?>
 		<main id="main" class="site-main">
 
 		<?php
+		get_search_form();
+
 		if ( have_posts() ) : ?>
 
-			<?php get_template_part( 'template-parts/blog3' ); ?>
+			<?php get_template_part( 'template-parts/blog2' ); ?>
 			<?php
 
 			the_posts_navigation();

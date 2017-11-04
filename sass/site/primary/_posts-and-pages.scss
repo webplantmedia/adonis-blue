@@ -11,6 +11,11 @@
 	border-bottom: 2px solid $color__border;
 }
 
+.search .search-form-container {
+	@include rem('margin-top',30px);
+	@include rem('margin-bottom',70px);
+}
+
 .hentry {
 	margin: 0;
 	@include rem('margin-bottom',70px);
@@ -30,6 +35,12 @@
 	clear: both;
 	margin: 0;
 	@include rem('margin-bottom',70px);
+}
+
+.site-main {
+	> *:last-child {
+		border-bottom-width: 0;
+	}
 }
 
 // Content divider
@@ -267,6 +278,10 @@
 
 	> div {
 		margin-bottom: 2.5em;
+
+		&.grid {
+			@include rem('margin-bottom',70px);
+		}
 	}
 }
 
@@ -361,6 +376,7 @@
 		h2 {
 			text-align: center;
 			@include rem('margin-bottom',60px);
+			text-transform: uppercase;
 		}
 
 		h3 {
@@ -424,4 +440,21 @@
 			@include rem('padding-left',30px);
 		}
 	}
+
 }
+#master .page-template-accordion {
+	#page .grid {
+		@include rem('margin-bottom',100px);
+	}
+}
+
+// Widgets Front Page Sidebar
+/*.page-template-widgets-front-page {
+	.site-content > .site-boundary {
+		> *:last-child {
+			> * {
+				border-bottom-width: 0;
+			}
+		}
+	}
+}*/

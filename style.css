@@ -2949,6 +2949,13 @@ a:hover, a:active {
   border-bottom: 2px solid #ececec;
 }
 
+.search .search-form-container {
+  margin-top: 30px;
+  margin-top: 1.875rem;
+  margin-bottom: 70px;
+  margin-bottom: 4.375rem;
+}
+
 .hentry {
   margin: 0;
   margin-bottom: 70px;
@@ -2970,6 +2977,10 @@ a:hover, a:active {
   margin: 0;
   margin-bottom: 70px;
   margin-bottom: 4.375rem;
+}
+
+.site-main > *:last-child {
+  border-bottom-width: 0;
 }
 
 .content-divider {
@@ -3214,6 +3225,12 @@ a:hover, a:active {
   margin-bottom: 2.5em;
 }
 
+#master .entry-content > div.grid,
+#master .page-content > div.grid {
+  margin-bottom: 70px;
+  margin-bottom: 4.375rem;
+}
+
 #master .entry-content > *:first-child {
   margin-top: 0;
 }
@@ -3302,6 +3319,7 @@ a:hover, a:active {
   text-align: center;
   margin-bottom: 60px;
   margin-bottom: 3.75rem;
+  text-transform: uppercase;
 }
 
 .page-template-accordion .accordion-section h3 {
@@ -3366,6 +3384,20 @@ a:hover, a:active {
   padding-left: 1.875rem;
 }
 
+#master .page-template-accordion #page .grid {
+  margin-bottom: 100px;
+  margin-bottom: 6.25rem;
+}
+
+/*.page-template-widgets-front-page {
+	.site-content > .site-boundary {
+		> *:last-child {
+			> * {
+				border-bottom-width: 0;
+			}
+		}
+	}
+}*/
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/

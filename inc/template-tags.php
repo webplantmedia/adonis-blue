@@ -200,7 +200,7 @@ if ( ! function_exists( 'angiemakesdesign_the_accordion' ) ) :
 				}
 						$accordion = explode( '++++++', $section );
 
-						$html .= '<div class="grid__col grid__col--1-of-2 accordion-section">';
+						$html .= '<div class="grid__col grid__col--1-of-2 accordion-section no-top-bottom-margins">';
 						foreach ( $accordion as $item ) {
 							if ( preg_match( '/\*\*\*\*\*\*/', $item ) ) {
 								$pieces = explode( '******', $item );
