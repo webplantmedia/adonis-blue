@@ -7,6 +7,16 @@ class AngieMakesDesign_Meta_Box {
 		add_action( 'add_meta_boxes', array( &$this, 'metabox' ) );
 
 		// add_action('do_meta_boxes', array( &$this, 'replace_featured_image_box' ) );
+
+		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
+	}
+
+	public function enqueue_scripts( $hook_suffix ) {
+		if ( 'post.php' !== $hook_suffix ) {
+			return;
+		}
+
+		wp_enqueue_script( 'angiemakesdesign-admin-meta-box', get_template_directory_uri() . '/js/admin/admin-meta-box.js', array(), ANGIEMAKESDESIGN_VERSION, true );
 	}
 
 	function replace_featured_image_box() {
