@@ -406,6 +406,11 @@ require get_template_directory() . '/inc/class-widgetized-pages.php';
 require get_template_directory() . '/inc/class-widget.php';
 
 /**
+ * Layout Divider
+ */
+require get_template_directory() . '/inc/vendors/layout-divider/init.php';
+
+/**
  * Get Each Widget
  */
 foreach ( glob( get_template_directory() . '/inc/widgets/*.php' ) as $filename ) {
