@@ -70,7 +70,7 @@ class AngieMakesDesign_Meta_Box {
 		
 		?>
 		<p><input id="angiemakesdesign-no-header" type="checkbox" name="_angiemakesdesign_no_header" value="1" <?php checked( $no_heading, 1 ); ?> class="widefat" /><label for="angiemakesdesign-no-header">No Header</label></p>
-		<p class="description">Remove header title from post. Insert custom h1 header in your editor.</p>
+		<p class="description">Remove header title from post. Insert h1 header in your editor for custom title.</p>
 		<?php
 	}
 
