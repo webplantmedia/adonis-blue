@@ -11,7 +11,11 @@
 				$description.html( msg ).show();
 				break;
 			case 'page-templates/two-columns.php' :
-			msg = 'Look for the <i class="mce-ico mce-i-layout_divider" style="color:inherit;padding:0 4px;"></i> icon in your WP editor toolbar, and insert the divider line in between your content. This template will create columns based on where you have inserted your divider line.';
+				msg = 'Look for the <i class="mce-ico mce-i-layout_divider" style="color:inherit;padding:0 4px;"></i> icon in your WP editor toolbar, and insert the divider line in between your content. This template will create columns based on where you have inserted your divider line.';
+				$description.html( msg ).show();
+				break;
+			case 'page-templates/widgets-front-page.php' :
+				msg = 'Go to your widgets page, and look for your "Front Page" sidebar area. You will need to drag the blue "Content Widgets" to your Front Page sidebar area to build your content.';
 				$description.html( msg ).show();
 				break;
 			default :

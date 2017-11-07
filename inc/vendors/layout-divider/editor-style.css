@@ -2,6 +2,12 @@
 	background: transparent url( layout-divider.png ) repeat-y scroll center center;
 }*/
 .layout-divider {
-	border-top: 3px dashed #cccccc;
 	background-color: transparent;
+	background: url( layout-divider.png );
+	background-repeat: repeat-x;
+	background-position: center center;
+	border: none;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	height: 30px;
 }
