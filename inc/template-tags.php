@@ -245,3 +245,53 @@ if ( ! function_exists( 'angiemakesdesign_the_accordion' ) ) :
 		echo $html;
 	}
 endif;
+
+if ( ! function_exists( 'angiemakesdesign_get_the_layout' ) ) :
+	function angiemakesdesign_get_the_layout( $layout = array( array( 1, 1 ) ) ) {
+		if ( ! is_array( $layout ) ) {
+			return;
+		}
+
+		$content = get_the_content();
+		$grid = array();
+		$index = 0;
+		$row = 0;
+
+		$content = str_replace( '<hr class="layout-divider">', '------', $content );
+		$content = str_replace( '<hr class="layout-divider" />', '------', $content );
+		$pieces = explode( '------', $content );
+
+		if ( empty( $pieces ) ) {
+			return $grid;
+		}
+
+		while ( ! empty( $pieces ) ) {
+			foreach ( $layout as $columns ) {
+				$size = 0;
+
+				foreach ( $columns as $span ) {
+
+					$span = intval( $span );
+
+					if ( array_key_exists( $index, $pieces ) ) {
+						$grid[ $row ]['columns'][ $index ]['span'] = $span;
+						$grid[ $row ]['columns'][ $index ]['content'] = trim( $pieces[ $index ] );
+						unset( $pieces[ $index ] );
+					}
+					else {
+						break;
+					}
+
+					$index++;
+					$size += $span;
+				}
+
+				$grid[ $row ]['size'] = $size;
+
+				$row++;
+			}
+		}
+
+		return $grid;
+	}
+endif;

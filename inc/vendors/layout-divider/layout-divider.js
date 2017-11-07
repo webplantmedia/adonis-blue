@@ -9,7 +9,7 @@
 				
 
 			if ( tag.length > 0 ) {
-				html = '<hr class="layout-divider-'+tag+'" />';
+				html = '<hr class="layout-divider-'+tag+'">';
 			}
 			else {
 				html = '<hr class="layout-divider" />';
