@@ -5,6 +5,8 @@
 			var parent, html,
 				dom = editor.dom,
 				node = editor.selection.getNode();
+				mceSelectedHTML = editor.selection.getContent({format: 'html'});
+				
 
 			if ( tag.length > 0 ) {
 				html = '<hr class="layout-divider-'+tag+'" />';
@@ -30,7 +32,7 @@
 
 			if ( parent ) {
 				if ( parent.nodeName === 'P' ) {
-					parent.appendChild( dom.create( 'p', null, html ).firstChild );
+					parent.after( dom.create( 'p', null, html ).firstChild );
 				} else {
 					dom.insertAfter( dom.create( 'p', null, html ), parent );
 				}

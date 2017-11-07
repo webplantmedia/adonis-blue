@@ -400,11 +400,6 @@ require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/template-functions.php';
 
 /**
- * Widgetized Pages
- */
-require get_template_directory() . '/inc/class-widgetized-pages.php';
-
-/**
  * Widget Base
  */
 require get_template_directory() . '/inc/class-widget.php';
