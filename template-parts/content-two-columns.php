@@ -26,8 +26,8 @@
 				if ( is_array( $row ) && ! empty( $row ) ) {
 					$html .= '<div class="grid">';
 					foreach ( $row['columns'] as $column ) {
-						$html .= '<div class="grid__col grid__col--'.$column['span'].'-of-'.$row['size'].' no-top-bottom-margins">';
-							$html .= wpautop( $column['content'] );
+						$html .= '<div class="grid__col grid__col--1-of-'.$row['size'].' no-top-bottom-margins">';
+							$html .= wpautop( $column );
 						$html .= '</div>';
 					}
 					$html .= '</div>';

@@ -291,16 +291,6 @@ function angiemakesdesign_display_sidebar() {
 	return false;
 }
 
-function angiemakesdesign_display_header() {
-	global $post;
-
-	if ( get_post_meta($post->ID, '_angiemakesdesign_no_header', true) ) {
-		return false;
-	}
-
-	return true;
-}
-
 function angiemakesdesign_display_fullwidth() {
 	if ( angiemakesdesign_is_woocommerce_activated() ) {
 		if ( is_woocommerce() || is_cart() || is_checkout() ) {
@@ -308,15 +298,15 @@ function angiemakesdesign_display_fullwidth() {
 		}
 	}
 
-	if ( is_page_template( 'page-templates/accordion.php' ) ) {
+	if ( is_page_template( 'templates/accordion.php' ) ) {
 		return true;
 	}
 
-	if ( is_page_template( 'page-templates/wide-content.php' ) ) {
+	if ( is_page_template( 'templates/wide-content.php' ) ) {
 		return true;
 	}
 
-	if ( is_page_template( 'page-templates/two-columns.php' ) ) {
+	if ( is_page_template( 'templates/two-columns.php' ) ) {
 		return true;
 	}
 
@@ -409,21 +399,11 @@ require get_template_directory() . '/inc/template-functions.php';
 require get_template_directory() . '/inc/class-widget.php';
 
 /**
- * Layout Divider
- */
-require get_template_directory() . '/inc/vendors/layout-divider/init.php';
-
-/**
  * Get Each Widget
  */
 foreach ( glob( get_template_directory() . '/inc/widgets/*.php' ) as $filename ) {
     require_once( $filename );
 }
-
-/**
- * Meta Box
- */
-require get_template_directory() . '/inc/class-meta-box.php';
 
 /**
  * Customizer additions.

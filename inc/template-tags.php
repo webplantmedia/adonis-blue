@@ -187,8 +187,8 @@ if ( ! function_exists( 'angiemakesdesign_the_accordion' ) ) :
 		$tag_closed = true;
 		$content = get_the_content();
 
-		$content = preg_replace( "/(\<h2\>.*?\<\/h2\>)/", "------\\1", $content );
-		$content = preg_replace( "/(\<h3\>.*?\<\/h3\>)/", "++++++\\1******", $content );
+		$content = preg_replace( "/(\<h2.*?\<\/h2\>)/", "------\\1", $content );
+		$content = preg_replace( "/(\<h3.*?\<\/h3\>)/", "++++++\\1******", $content );
 		$grid = explode( '------', $content );
 
 		foreach ( $grid as $section ) {
@@ -247,48 +247,48 @@ if ( ! function_exists( 'angiemakesdesign_the_accordion' ) ) :
 endif;
 
 if ( ! function_exists( 'angiemakesdesign_get_the_layout' ) ) :
-	function angiemakesdesign_get_the_layout( $layout = array( array( 1, 1 ) ) ) {
-		if ( ! is_array( $layout ) ) {
-			return;
-		}
-
+	function angiemakesdesign_get_the_layout() {
 		$content = get_the_content();
-		$grid = array();
-		$index = 0;
-		$row = 0;
+		$row = -1;
+		$column = 0;
+		$pushed = '';
+		$grid[ 0 ]['columns'][0] = '';
 
-		$content = str_replace( '<hr class="layout-divider">', '------', $content );
-		$content = str_replace( '<hr class="layout-divider" />', '------', $content );
+		$content = preg_replace( "/(\<h2.*?\<\/h2\>)/", "------\\1", $content );
+		$content = preg_replace( "/(\<h5.*?\<\/h5\>)/", "------\\1", $content );
 		$pieces = explode( '------', $content );
 
 		if ( empty( $pieces ) ) {
 			return $grid;
 		}
 
-		while ( ! empty( $pieces ) ) {
-			foreach ( $layout as $columns ) {
-				$size = 0;
+		foreach ( $pieces as $key => $piece ) {
+			if ( empty( $piece ) ) {
+				continue;
+			}
 
-				foreach ( $columns as $span ) {
-
-					$span = intval( $span );
-
-					if ( array_key_exists( $index, $pieces ) ) {
-						$grid[ $row ]['columns'][ $index ]['span'] = $span;
-						$grid[ $row ]['columns'][ $index ]['content'] = trim( $pieces[ $index ] );
-						unset( $pieces[ $index ] );
-					}
-					else {
-						break;
-					}
-
-					$index++;
-					$size += $span;
+			if ( preg_match( '/\<h5/', $piece ) ) {
+				if ( ( $pushed != '3cols' ) || ( sizeof( $grid[ $row ]['columns'] ) >= 3 ) ) {
+					$row++;
+					$column = 0;
+					$grid[ $row ]['size'] = 3;
 				}
 
-				$grid[ $row ]['size'] = $size;
+				$grid[ $row ]['columns'][ $column ] = $piece;
+				$column++;
+				$pushed = '3cols';
+			}
+			else {
+				if ( ( $pushed != '2cols' ) || ( sizeof( $grid[ $row ]['columns'] ) >= 2 ) ) {
+					$row++;
+					$column = 0;
+					$grid[ $row ]['size'] = 2;
+				}
 
-				$row++;
+				$grid[ $row ]['columns'][ $column ] = $piece;
+				$column++;
+				$pushed = '2cols';
+
 			}
 		}
 
