@@ -17,7 +17,7 @@ class Layout_Divider {
     public function init() {
 		global $current_screen;
 
-		if ( ! current_user_can('edit_posts') && ! current_user_can('edit_pages') )
+		if ( ! current_user_can('edit_pages') )
 			return;		
 
 		if ( isset( $current_screen->post_type ) && 'page' == $current_screen->post_type ) {

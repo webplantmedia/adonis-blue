@@ -1,3 +1,7 @@
-.mce-content-body img[data-wp-more="layout-divider"] {
+/*.mce-content-body img[data-wp-more="layout-divider"] {
 	background: transparent url( layout-divider.png ) repeat-y scroll center center;
+}*/
+.layout-divider {
+	border-top: 3px dashed #cccccc;
+	background-color: transparent;
 }
