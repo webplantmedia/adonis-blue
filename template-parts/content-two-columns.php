@@ -16,10 +16,7 @@
 
 	<div class="entry-content">
 		<?php
-			$layout = array(
-				array( 1, 1 ), // Row 1: 1 of 2 || 1 of 2
-			);
-			$grid = angiemakesdesign_get_the_layout( $layout );
+			$grid = angiemakesdesign_get_the_layout();
 			
 			$html = '';
 			foreach( $grid as $row ) {

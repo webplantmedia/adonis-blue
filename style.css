@@ -2142,11 +2142,11 @@ a img {
 /*--------------------------------------------------------------
 # Global Classes
 --------------------------------------------------------------*/
-.no-top-bottom-margins > *:first-child {
+#master .no-top-bottom-margins > *:first-child {
   margin-top: 0;
 }
 
-.no-top-bottom-margins > *:last-child {
+#master .no-top-bottom-margins > *:last-child {
   margin-bottom: 0;
 }
 
@@ -3231,16 +3231,16 @@ a img {
 
 #master .entry-content > div.grid,
 #master .page-content > div.grid {
-  margin-bottom: 70px;
-  margin-bottom: 4.375rem;
+  margin-bottom: 100px;
+  margin-bottom: 6.25rem;
 }
 
 #master .entry-content > hr,
 #master .page-content > hr {
-  margin-top: 70px;
-  margin-top: 4.375rem;
-  margin-bottom: 70px;
-  margin-bottom: 4.375rem;
+  margin-top: 100px;
+  margin-top: 6.25rem;
+  margin-bottom: 100px;
+  margin-bottom: 6.25rem;
 }
 
 #master .entry-content > *:first-child {
@@ -3327,17 +3327,21 @@ a img {
   vertical-align: top;
 }
 
-.page-template-accordion .accordion-section h2 {
+#master .page-template-accordion .accordion-item {
+  margin: 0;
+  margin-top: 40px;
+  margin-top: 2.5rem;
+}
+
+.page-template-accordion .entry-content h2 {
   text-align: center;
   margin-bottom: 60px;
   margin-bottom: 3.75rem;
   text-transform: uppercase;
 }
 
-.page-template-accordion .accordion-section h3 {
+.page-template-accordion .accordion-item h3 {
   margin: 0;
-  margin-top: 40px;
-  margin-top: 2.5rem;
   cursor: pointer;
   padding-left: 30px;
   padding-left: 1.875rem;
@@ -3345,7 +3349,7 @@ a img {
   font-weight: normal;
 }
 
-.page-template-accordion .accordion-section h3:before {
+.page-template-accordion .accordion-item h3:before {
   vertical-align: top;
   text-align: center;
   -webkit-transition: -webkit-transform .2s;
@@ -3375,7 +3379,7 @@ a img {
   top: 0;
 }
 
-.page-template-accordion .accordion-section h3.accordion-item-open:before {
+.page-template-accordion .accordion-item h3.accordion-item-open:before {
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
@@ -3384,21 +3388,16 @@ a img {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0);
 }
 
-.page-template-accordion .accordion-section .accordion-content {
+.page-template-accordion .accordion-item .accordion-content {
   height: 0;
   overflow: hidden;
 }
 
-.page-template-accordion .accordion-section .accordion-content-inner {
+.page-template-accordion .accordion-item .accordion-content-inner {
   padding-top: 40px;
   padding-top: 2.5rem;
   padding-left: 30px;
   padding-left: 1.875rem;
-}
-
-#master .page-template-accordion #page .grid {
-  margin-bottom: 100px;
-  margin-bottom: 6.25rem;
 }
 
 /*.page-template-widgets-front-page {

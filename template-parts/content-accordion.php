@@ -16,7 +16,34 @@
 
 	<div class="entry-content">
 		<?php
-			angiemakesdesign_the_accordion();
+			$grid = angiemakesdesign_get_the_layout();
+			
+			$html = '';
+			foreach( $grid as $row ) {
+				$size = sizeof( $row['columns'] );
+				if ( $size > 1 ) {
+					if ( is_array( $row ) && ! empty( $row ) ) {
+						$html .= '<div class="grid">';
+						foreach ( $row['columns'] as $column ) {
+							$html .= '<div class="grid__col grid__col--1-of-'.$size.' no-top-bottom-margins">';
+								$html .= angiemakesdesign_the_accordion( $column );
+							$html .= '</div>';
+						}
+						$html .= '</div>';
+					}
+				}
+				else {
+					if ( is_array( $row ) && ! empty( $row ) ) {
+						foreach ( $row['columns'] as $column ) {
+							$html .= angiemakesdesign_the_accordion( $column );
+						}
+					}
+				}
+			}
+
+			$html = apply_filters( 'the_content', $html );
+			$html = str_replace( ']]>', ']]&gt;', $html );
+			echo $html;
 
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'angiemakesdesign' ),

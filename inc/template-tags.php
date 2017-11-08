@@ -181,69 +181,31 @@ if ( ! function_exists( 'angiemakesdesign_site_info' ) ) :
 endif;
 
 if ( ! function_exists( 'angiemakesdesign_the_accordion' ) ) :
-	function angiemakesdesign_the_accordion() {
-		$grid = angiemakesdesign_get_the_layout();
+	function angiemakesdesign_the_accordion( $content ) {
 		$html = '';
-		$index = 0;
-		$tag_closed = true;
-		$content = get_the_content();
-
-		$content = preg_replace( "/(\<h2.*?\<\/h2\>)/", "------\\1", $content );
 		$content = preg_replace( "/(\<h3.*?\<\/h3\>)/", "++++++\\1******", $content );
-		$grid = explode( '------', $content );
 
-		foreach ( $grid as $section ) {
+		$accordion = explode( '++++++', $content );
 
-			if ( preg_match( '/\+\+\+\+\+\+/', $section ) ) { // if there exists accordions in section
-				if ( 0 == $index % 2 ) {
-					$html .= '<div class="grid">';
-					$tag_closed = false;
+		foreach ( $accordion as $item ) {
+			if ( preg_match( '/\*\*\*\*\*\*/', $item ) ) {
+				$html .= '<div class="accordion-item no-top-bottom-margins">';
+				$pieces = explode( '******', $item );
+				if ( isset( $pieces[0] ) ) {
+					$html .= $pieces[0];
 				}
-						$accordion = explode( '++++++', $section );
-
-						$html .= '<div class="grid__col grid__col--1-of-2 accordion-section no-top-bottom-margins">';
-						foreach ( $accordion as $item ) {
-							if ( preg_match( '/\*\*\*\*\*\*/', $item ) ) {
-								$pieces = explode( '******', $item );
-								if ( isset( $pieces[0] ) ) {
-									$html .= $pieces[0];
-								}
-								if ( isset( $pieces[1] ) ) {
-									$text = wpautop( trim( $pieces[1] ) );
-									$html .= '<div class="accordion-content"><div class="accordion-content-inner no-top-bottom-margins">' . $text . '</div></div>';
-								}
-							}
-							else {
-								$html .= $item;
-							}
-						}
-						$html .= '</div>';
-
-				if ( 1 == $index % 2 ) {
-					$html .= '</div>';
-					$tag_closed = true;
+				if ( isset( $pieces[1] ) ) {
+					$text = wpautop( trim( $pieces[1] ) );
+					$html .= '<div class="accordion-content"><div class="accordion-content-inner no-top-bottom-margins">' . $text . '</div></div>';
 				}
-
-				$index++;
+				$html .= '</div>';
 			}
 			else {
-				if ( ! $tag_closed ) {
-					$html .= '</div>';
-					$tag_closed = true;
-				}
-
-				$html .= $section; // display non-accordion section
+				$html .= wpautop( $item );
 			}
 		}
 
-		if ( ! $tag_closed ) {
-			$html .= '</div>';
-			$tag_closed = true;
-		}
-
-		$html = apply_filters( 'the_content', $html );
-		$html = str_replace( ']]>', ']]&gt;', $html );
-		echo $html;
+		return $html;
 	}
 endif;
 
