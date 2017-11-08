@@ -281,6 +281,10 @@
 
 		&.grid {
 			@include rem('margin-bottom',100px);
+
+			h2 {
+				text-align: center;
+			}
 		}
 	}
 
@@ -384,13 +388,6 @@
 }
 
 .page-template-accordion {
-	.entry-content {
-		h2 {
-			text-align: center;
-			@include rem('margin-bottom',60px);
-			text-transform: uppercase;
-		}
-	}
 	.accordion-item {
 		h3 {
 			margin: 0;

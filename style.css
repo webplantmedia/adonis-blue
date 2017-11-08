@@ -315,7 +315,7 @@ h1 {
 
 h2 {
   font-size: 28px;
-  margin: 50px 0 30px;
+  margin: 50px 0 60px;
 }
 
 h3 {
@@ -3235,6 +3235,11 @@ a img {
   margin-bottom: 6.25rem;
 }
 
+#master .entry-content > div.grid h2,
+#master .page-content > div.grid h2 {
+  text-align: center;
+}
+
 #master .entry-content > hr,
 #master .page-content > hr {
   margin-top: 100px;
@@ -3331,13 +3336,6 @@ a img {
   margin: 0;
   margin-top: 40px;
   margin-top: 2.5rem;
-}
-
-.page-template-accordion .entry-content h2 {
-  text-align: center;
-  margin-bottom: 60px;
-  margin-bottom: 3.75rem;
-  text-transform: uppercase;
 }
 
 .page-template-accordion .accordion-item h3 {
