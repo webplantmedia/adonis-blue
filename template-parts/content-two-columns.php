@@ -23,14 +23,24 @@
 			
 			$html = '';
 			foreach( $grid as $row ) {
-				if ( is_array( $row ) && ! empty( $row ) ) {
-					$html .= '<div class="grid">';
-					foreach ( $row['columns'] as $column ) {
-						$html .= '<div class="grid__col grid__col--1-of-'.$row['size'].' no-top-bottom-margins">';
-							$html .= wpautop( $column );
+				$size = sizeof( $row['columns'] );
+				if ( $size > 1 ) {
+					if ( is_array( $row ) && ! empty( $row ) ) {
+						$html .= '<div class="grid">';
+						foreach ( $row['columns'] as $column ) {
+							$html .= '<div class="grid__col grid__col--1-of-'.$size.' no-top-bottom-margins">';
+								$html .= wpautop( $column );
+							$html .= '</div>';
+						}
 						$html .= '</div>';
 					}
-					$html .= '</div>';
+				}
+				else {
+					if ( is_array( $row ) && ! empty( $row ) ) {
+						foreach ( $row['columns'] as $column ) {
+							$html .= $column;
+						}
+					}
 				}
 			}
 

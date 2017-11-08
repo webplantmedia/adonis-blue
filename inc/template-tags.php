@@ -182,6 +182,7 @@ endif;
 
 if ( ! function_exists( 'angiemakesdesign_the_accordion' ) ) :
 	function angiemakesdesign_the_accordion() {
+		$grid = angiemakesdesign_get_the_layout();
 		$html = '';
 		$index = 0;
 		$tag_closed = true;
@@ -256,6 +257,8 @@ if ( ! function_exists( 'angiemakesdesign_get_the_layout' ) ) :
 
 		$content = preg_replace( "/(\<h2.*?\<\/h2\>)/", "------\\1", $content );
 		$content = preg_replace( "/(\<h5.*?\<\/h5\>)/", "------\\1", $content );
+		$content = preg_replace( "/(\<h6.*?\<\/h6\>)/", "------\\1", $content );
+		$content = preg_replace( "/(\<hr.*?\>)/", "------\\1", $content );
 		$pieces = explode( '------', $content );
 
 		if ( empty( $pieces ) ) {
@@ -263,6 +266,8 @@ if ( ! function_exists( 'angiemakesdesign_get_the_layout' ) ) :
 		}
 
 		foreach ( $pieces as $key => $piece ) {
+			$piece = trim( $piece );
+
 			if ( empty( $piece ) ) {
 				continue;
 			}
@@ -277,6 +282,28 @@ if ( ! function_exists( 'angiemakesdesign_get_the_layout' ) ) :
 				$grid[ $row ]['columns'][ $column ] = $piece;
 				$column++;
 				$pushed = '3cols';
+			}
+			else if ( preg_match( '/\<h6/', $piece ) ) {
+				if ( ( $pushed != '4cols' ) || ( sizeof( $grid[ $row ]['columns'] ) >= 4 ) ) {
+					$row++;
+					$column = 0;
+					$grid[ $row ]['size'] = 4;
+				}
+
+				$grid[ $row ]['columns'][ $column ] = $piece;
+				$column++;
+				$pushed = '4cols';
+			}
+			else if ( preg_match( '/\<hr/', $piece ) ) {
+				if ( ( $pushed != '1col' ) || ( sizeof( $grid[ $row ]['columns'] ) >= 1 ) ) {
+					$row++;
+					$column = 0;
+					$grid[ $row ]['size'] = 1;
+				}
+
+				$grid[ $row ]['columns'][ $column ] = $piece;
+				$column++;
+				$pushed = '1col';
 			}
 			else {
 				if ( ( $pushed != '2cols' ) || ( sizeof( $grid[ $row ]['columns'] ) >= 2 ) ) {

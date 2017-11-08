@@ -335,9 +335,9 @@ h5 {
 }
 
 h6 {
-  font-size: 11px;
+  font-size: 13px;
   text-transform: uppercase;
-  margin: 30px 0 5px;
+  margin: 30px 0 20px;
 }
 
 h1,
@@ -3231,6 +3231,14 @@ a:hover, a:active {
   margin-bottom: 4.375rem;
 }
 
+#master .entry-content > hr,
+#master .page-content > hr {
+  margin-top: 70px;
+  margin-top: 4.375rem;
+  margin-bottom: 70px;
+  margin-bottom: 4.375rem;
+}
+
 #master .entry-content > *:first-child {
   margin-top: 0;
 }
@@ -3924,5 +3932,3 @@ object {
 .gallery-caption {
   display: block;
 }
-
-/*# sourceMappingURL=style.css.map */

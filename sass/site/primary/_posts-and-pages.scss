@@ -283,6 +283,11 @@
 			@include rem('margin-bottom',70px);
 		}
 	}
+
+	> hr {
+		@include rem('margin-top',70px);
+		@include rem('margin-bottom',70px);
+	}
 }
 
 // Entry content
