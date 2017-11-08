@@ -274,6 +274,16 @@ function angiemakesdesign_show_full_post() {
 	return true;
 }
 
+function angiemakesdesign_display_header() {
+	global $post;
+
+	if ( preg_match( '/^\s*\<h1/', $post->post_content ) ) {
+		return false;
+	}
+
+	return true;
+}
+
 function angiemakesdesign_display_sidebar() {
 	if ( is_single() && 'post' == get_post_type() ) {
 		return true;

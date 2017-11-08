@@ -3231,8 +3231,8 @@ a img {
 
 #master .entry-content > div.grid,
 #master .page-content > div.grid {
-  margin-bottom: 100px;
-  margin-bottom: 6.25rem;
+  margin-bottom: 80px;
+  margin-bottom: 5rem;
 }
 
 #master .entry-content > div.grid h2,
@@ -3242,10 +3242,10 @@ a img {
 
 #master .entry-content > hr,
 #master .page-content > hr {
-  margin-top: 100px;
-  margin-top: 6.25rem;
-  margin-bottom: 100px;
-  margin-bottom: 6.25rem;
+  margin-top: 80px;
+  margin-top: 5rem;
+  margin-bottom: 80px;
+  margin-bottom: 5rem;
 }
 
 #master .entry-content > *:first-child {
