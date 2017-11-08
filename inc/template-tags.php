@@ -272,7 +272,18 @@ if ( ! function_exists( 'angiemakesdesign_get_the_layout' ) ) :
 				continue;
 			}
 
-			if ( preg_match( '/\<h5/', $piece ) ) {
+			if ( preg_match( '/^\<h2/', $piece ) ) {
+				if ( ( $pushed != '2cols' ) || ( sizeof( $grid[ $row ]['columns'] ) >= 2 ) ) {
+					$row++;
+					$column = 0;
+					$grid[ $row ]['size'] = 2;
+				}
+
+				$grid[ $row ]['columns'][ $column ] = $piece;
+				$column++;
+				$pushed = '2cols';
+			}
+			else if ( preg_match( '/\<h5/', $piece ) ) {
 				if ( ( $pushed != '3cols' ) || ( sizeof( $grid[ $row ]['columns'] ) >= 3 ) ) {
 					$row++;
 					$column = 0;
@@ -306,15 +317,15 @@ if ( ! function_exists( 'angiemakesdesign_get_the_layout' ) ) :
 				$pushed = '1col';
 			}
 			else {
-				if ( ( $pushed != '2cols' ) || ( sizeof( $grid[ $row ]['columns'] ) >= 2 ) ) {
+				if ( ( $pushed != '1col' ) || ( sizeof( $grid[ $row ]['columns'] ) >= 1 ) ) {
 					$row++;
 					$column = 0;
-					$grid[ $row ]['size'] = 2;
+					$grid[ $row ]['size'] = 1;
 				}
 
 				$grid[ $row ]['columns'][ $column ] = $piece;
 				$column++;
-				$pushed = '2cols';
+				$pushed = '1col';
 
 			}
 		}

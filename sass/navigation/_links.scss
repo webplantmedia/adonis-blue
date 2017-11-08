@@ -16,6 +16,10 @@ a {
 	&:active {
 		outline: none;
 	}
+
+	img {
+		vertical-align: top;
+	}
 }
 
 .widget p >,

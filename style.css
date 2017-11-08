@@ -1501,6 +1501,10 @@ a:hover, a:active {
   outline: none;
 }
 
+a img {
+  vertical-align: top;
+}
+
 .widget p > a,
 .entry-summary a,
 .entry-content a {
@@ -3932,3 +3936,5 @@ object {
 .gallery-caption {
   display: block;
 }
+
+/*# sourceMappingURL=style.css.map */
