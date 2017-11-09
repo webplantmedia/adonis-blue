@@ -16,8 +16,6 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 	 * @package AngieMakesDesign
 	 */
 	class AngieMakesDesign_Widget_Collage extends AngieMakesDesign_Widget {
-		public $selective_refresh = true;
-
 		/**
 		 * Constructor
 		 */

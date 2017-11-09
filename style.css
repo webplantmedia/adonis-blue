@@ -1127,8 +1127,8 @@ button {
   margin-left: 10px;
 }
 
-#master body #master .fancy-button:before,
-#master body #master .fancy-button:hover {
+#master body .fancy-button:before,
+#master body .fancy-button:hover {
   background-image: url("img/button-bg-dark.png");
 }
 
@@ -2575,6 +2575,12 @@ a img {
   }
 }
 
+.angiemakesdesign_static_content .bg-image-cover {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
 /*--------------------------------------------------------------
 ## Collage Widget
 --------------------------------------------------------------*/
@@ -2855,7 +2861,7 @@ a img {
   padding-bottom: 3.125rem;
 }
 
-.full-width-bar {
+.ffull-width-bar {
   margin-left: -9999rem;
   margin-right: -9999rem;
   /* add back negative margin value */
@@ -2872,6 +2878,7 @@ a img {
   width: 100%;
 }
 
+.angiemakesdesign_static_content .hentry,
 .no-sidebar .content-area {
   width: 760px;
   margin: 0 auto;
@@ -2924,6 +2931,7 @@ a img {
 }
 
 @media screen and (max-width: 760px) {
+  #master .angiemakesdesign_static_content .hentry,
   #master .content-area {
     width: 100%;
   }

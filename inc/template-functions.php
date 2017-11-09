@@ -27,6 +27,10 @@ function angiemakesdesign_body_classes( $classes ) {
 		$classes[] = 'no-sidebar';
 	}
 
+	if ( is_page_template( 'templates/front-page.php' ) ) {
+		$classes[] = 'widgetized-page';
+	}
+
 	return $classes;
 }
 add_filter( 'body_class', 'angiemakesdesign_body_classes' );
@@ -64,7 +68,7 @@ add_filter( 'get_custom_logo', 'angiemakesdesign_get_custom_logo', 10, 2 );
  * @param string $output
  * @return string Appended "Read More" link
  */
-function angiemakesdesign_excerpt_read_more_link( $output ) {
+function angiemakesdesign_read_more_link( $output ) {
 	global $amd;
 
 	if ( 'post' != get_post_type() ) {
@@ -83,7 +87,18 @@ function angiemakesdesign_excerpt_read_more_link( $output ) {
 		esc_html__( $amd['read_more_label'], 'angiemakesdesign' )
 	);
 }
-add_filter('the_excerpt', 'angiemakesdesign_excerpt_read_more_link');
+add_filter('the_excerpt', 'angiemakesdesign_read_more_link');
+
+function angiemakesdesign_read_more_text() {
+	global $amd;
+
+	if ( 'post' != get_post_type() ) {
+		return '';
+	}
+
+	return esc_html__( $amd['read_more_label'], 'angiemakesdesign' );
+}
+add_filter('angiemakesdesign_read_more_text', 'angiemakesdesign_read_more_text');
 
 function angiemakesdesign_the_content( $output ) {
 	global $amd;

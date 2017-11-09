@@ -622,8 +622,7 @@ class AngieMakesDesign_Widget extends WP_Widget {
 			break;
 
 			case 'page':
-				$exclude_ids = implode( ',', array( get_option( 'page_for_posts' ), get_option( 'page_on_front' ) ) );
-				$pages       = get_pages( 'sort_order=ASC&sort_column=post_title&post_status=publish&exclude=' . $exclude_ids );
+				$pages = get_pages( 'sort_order=ASC&sort_column=post_title&post_status=publish' );
 				?>
 				<label for="<?php echo esc_attr( $field_id ); ?>"><?php echo esc_html( $setting['label'] ); ?></label>
 				<select class="widefat" id="<?php echo esc_attr( $field_id ); ?>" name="<?php echo esc_attr( $field_name ); ?>">
@@ -714,6 +713,23 @@ class AngieMakesDesign_Widget extends WP_Widget {
 				do_action( 'angiemakesdesign_widget_type_' . $setting['type'], $this, $key, $setting, $instance );
 			break;
 		}
+	}
+
+	function hex2rgb( $colour ) {
+		if ( $colour[0] == '#' ) {
+				$colour = substr( $colour, 1 );
+		}
+		if ( strlen( $colour ) == 6 ) {
+				list( $r, $g, $b ) = array( $colour[0] . $colour[1], $colour[2] . $colour[3], $colour[4] . $colour[5] );
+		} elseif ( strlen( $colour ) == 3 ) {
+				list( $r, $g, $b ) = array( $colour[0] . $colour[0], $colour[1] . $colour[1], $colour[2] . $colour[2] );
+		} else {
+				return false;
+		}
+		$r = hexdec( $r );
+		$g = hexdec( $g );
+		$b = hexdec( $b );
+		return array( 'red' => $r, 'green' => $g, 'blue' => $b );
 	}
 
 	function sanitize_background_size( $value ) {
