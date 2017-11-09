@@ -301,13 +301,9 @@ if ( ! class_exists( 'AngieMakesDesign_WooCommerce' ) ) :
 			$link             = get_permalink( wc_get_page_id( 'shop' ));
 			$cart_items_count = $woocommerce->cart->cart_contents_count;
 
-			ob_start(); ?>
+			$temp = "<a class='cart_dropdown_link' href='" . $link . "'><i class='genericon genericon-cart'></i><span class='alert-count'>" . $cart_items_count . "</span></a><!--<span class='cart_subtotal'>" . $cart_subtotal . "</span>-->";
 
-			<a class='cart_dropdown_link' href='<?php echo $link; ?>'><i class='genericon genericon-cart'></i><span class='alert-count'><?php echo $cart_items_count; ?></span></a><!--<span class='cart_subtotal'><?php echo $cart_subtotal; ?></span>-->
-
-			<?php
-
-			$fragments['a.cart_dropdown_link'] = ob_get_clean();
+			$fragments['a.cart_dropdown_link'] = $temp;
 
 			return $fragments;
 		}
