@@ -308,15 +308,15 @@ function angiemakesdesign_display_fullwidth() {
 		}
 	}
 
-	if ( is_page_template( 'templates/accordion.php' ) ) {
+	if ( is_page_template( 'templates/grid-accordion-page.php' ) ) {
 		return true;
 	}
 
-	if ( is_page_template( 'templates/wide-content.php' ) ) {
+	if ( is_page_template( 'templates/full-width-page.php' ) ) {
 		return true;
 	}
 
-	if ( is_page_template( 'templates/columns.php' ) ) {
+	if ( is_page_template( 'templates/grid-page.php' ) ) {
 		return true;
 	}
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Widgets: Front Page Sidebar
+ * Template Name: Front Page Sidebar
  *
  * @package Angie_Makes_Design
  */

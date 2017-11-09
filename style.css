@@ -3355,13 +3355,13 @@ a img {
   vertical-align: top;
 }
 
-#master .page-template-accordion .accordion-item {
+#master .page-template-grid-accordion-page .accordion-item {
   margin: 0;
   margin-top: 40px;
   margin-top: 2.5rem;
 }
 
-.page-template-accordion .accordion-item h3 {
+.page-template-grid-accordion-page .accordion-item h3 {
   margin: 0;
   cursor: pointer;
   padding-left: 30px;
@@ -3370,7 +3370,7 @@ a img {
   font-weight: normal;
 }
 
-.page-template-accordion .accordion-item h3:before {
+.page-template-grid-accordion-page .accordion-item h3:before {
   vertical-align: top;
   text-align: center;
   -webkit-transition: -webkit-transform .2s;
@@ -3400,7 +3400,7 @@ a img {
   top: 0;
 }
 
-.page-template-accordion .accordion-item h3.accordion-item-open:before {
+.page-template-grid-accordion-page .accordion-item h3.accordion-item-open:before {
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
@@ -3409,12 +3409,12 @@ a img {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0);
 }
 
-.page-template-accordion .accordion-item .accordion-content {
+.page-template-grid-accordion-page .accordion-item .accordion-content {
   height: 0;
   overflow: hidden;
 }
 
-.page-template-accordion .accordion-item .accordion-content-inner {
+.page-template-grid-accordion-page .accordion-item .accordion-content-inner {
   padding-top: 40px;
   padding-top: 2.5rem;
   padding-left: 30px;

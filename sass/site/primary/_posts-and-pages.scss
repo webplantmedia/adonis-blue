@@ -380,14 +380,14 @@
 }
 
 // Accordion page template
-#master .page-template-accordion {
+#master .page-template-grid-accordion-page {
 	.accordion-item {
 		margin: 0;
 		@include rem('margin-top',40px);
 	}
 }
 
-.page-template-accordion {
+.page-template-grid-accordion-page {
 	.accordion-item {
 		h3 {
 			margin: 0;

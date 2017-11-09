@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Accordion Page
+ * Template Name: Grid Accordion Page
  *
  * @package Angie_Makes_Design
  */
@@ -13,7 +13,7 @@ get_header(); ?>
 			<?php
 			while ( have_posts() ) : the_post();
 
-				get_template_part( 'template-parts/content', 'accordion' );
+				get_template_part( 'template-parts/content', 'grid-accordion' );
 
 				// If comments are open or we have at least one comment, load up the comment template.
 				if ( comments_open() || get_comments_number() ) :
