@@ -1,10 +1,13 @@
-<?php global $amd; ?>
+<?php
+function angiemakesdesign_custom_css() {
+	global $amd;
 
+	$css = '
 .entry-content a:visited,
 .entry-content a:focus,
 .entry-content a:active,
 .entry-content a {
-	color: <?php echo $amd['link_color']; ?>; /*id:link_color*/
+	color: ' . $amd['link_color'] . '; /*id:link_color*/
 }
 
 .entry-content a:hover,
@@ -25,24 +28,28 @@
 #master .post-navigation a:hover .post-title,
 #master .widget ul a:hover,
 a:hover {
-	color: <?php echo $amd['link_hover_color']; ?>; /*id:link_hover_color*/
+	color: ' . $amd['link_hover_color'] . '; /*id:link_hover_color*/
+}
+
+#master .woocommerce a.remove:hover {
+	color: ' . $amd['link_hover_color'] . ' !important; /*id:link_hover_color*/
 }
 
 #master .entry-cat-meta span > a {
-	color: <?php echo $amd['primary_color']; ?>; /*id:primary_color*/
+	color: ' . $amd['primary_color'] . '; /*id:primary_color*/
 }
 
 #master .woocommerce div.product .woocommerce-tabs ul.tabs li.active a,
 #master .woocommerce div.product .woocommerce-tabs ul.tabs li a:hover {
-	border-color: <?php echo $amd['primary_color']; ?>; /*id:primary_color*/
+	border-color: ' . $amd['primary_color'] . '; /*id:primary_color*/
 }
 
 #master .entry-cat-meta span > a:hover {
-	color: <?php echo $amd['primary_hover_color']; ?>; /*id:primary_hover_color*/
+	color: ' . $amd['primary_hover_color'] . '; /*id:primary_hover_color*/
 }
 
 #master .site-footer.has-footer-widgets {
-	background-color: <?php echo $amd['secondary_color']; ?>; /*id:secondary_color*/
+	background-color: ' . $amd['secondary_color'] . '; /*id:secondary_color*/
 }
 
 #master .woocommerce #respond input#submit,
@@ -87,7 +94,7 @@ a:hover {
 #master input[type="button"]:active,
 #master input[type="reset"]:active,
 #master input[type="submit"]:active {
-	background-color: <?php echo $amd['primary_color']; ?>; /*id:primary_color*/
+	background-color: ' . $amd['primary_color'] . '; /*id:primary_color*/
 }
 
 #master .woocommerce #respond input#submit:hover,
@@ -105,68 +112,83 @@ a:hover {
 #master input[type="button"]:hover,
 #master input[type="reset"]:hover,
 #master input[type="submit"]:hover {
-	background-color: <?php echo $amd['primary_hover_color']; ?>; /*id:primary_hover_color*/
+	background-color: ' . $amd['primary_hover_color'] . '; /*id:primary_hover_color*/
 }
 
 .site-branding {
-	<?php echo angiemakesdesign_css_set_unit( 'padding-top', $amd['heading_padding_top'] ); ?> /*id:heading_padding_top*/
-	<?php echo angiemakesdesign_css_set_unit( 'padding-bottom', $amd['heading_padding_bottom'] ); ?> /*id:heading_padding_bottom*/
+	' . angiemakesdesign_css_set_unit( 'padding-top', $amd['heading_padding_top'] ) . ' /*id:heading_padding_top*/
+	' . angiemakesdesign_css_set_unit( 'padding-bottom', $amd['heading_padding_bottom'] ) . ' /*id:heading_padding_bottom*/
 }
 
-<?php if ( ! empty( $amd['fancy_button_background'] ) ) : ?>
+';
+	if ( ! empty( $amd['fancy_button_background'] ) ) {
+$css .= '
 #master .fancy-button {
-	background-image: url("<?php echo $amd['fancy_button_background']; ?>"); /*id:fancy_button_background*/
+	background-image: url("' . $amd['fancy_button_background'] . '"); /*id:fancy_button_background*/
 }
-<?php endif; ?>
+';
+	}
 
-<?php if ( ! empty( $amd['fancy_button_hover_background'] ) ) : ?>
+	if ( ! empty( $amd['fancy_button_hover_background'] ) ) {
+$css .= '
 #master .fancy-button:before,
 #master .fancy-button:hover {
-	background-image: url("<?php echo $amd['fancy_button_hover_background']; ?>"); /*id:fancy_button_background*/
+	background-image: url("' . $amd['fancy_button_hover_background'] . '"); /*id:fancy_button_background*/
 }
-<?php endif; ?>
+';
+	}
 
-<?php if ( ! empty( $amd['fancy2_button_background'] ) ) : ?>
+	if ( ! empty( $amd['fancy2_button_background'] ) ) {
+$css .= '
 #master .fancy2-button {
-	background-image: url("<?php echo $amd['fancy2_button_background']; ?>"); /*id:fancy2_button_background*/
+	background-image: url("' . $amd['fancy2_button_background'] . '"); /*id:fancy2_button_background*/
 }
-<?php endif; ?>
+';
+	}
 
-<?php if ( ! empty( $amd['fancy2_button_hover_background'] ) ) : ?>
+	if ( ! empty( $amd['fancy2_button_hover_background'] ) ) {
+$css .= '
 #master .fancy2-button:before,
 #master .fancy2-button:hover {
-	background-image: url("<?php echo $amd['fancy2_button_hover_background']; ?>"); /*id:fancy2_button_background*/
+	background-image: url("' . $amd['fancy2_button_hover_background'] . '"); /*id:fancy2_button_background*/
 }
-<?php endif; ?>
+';
+	}
 
-<?php if ( ! empty( $amd['top_header_background'] ) ) : ?> 
+	if ( ! empty( $amd['top_header_background'] ) ) {
+$css .= '
 .site-header {
-	background-image: url("<?php echo $amd['top_header_background']; ?>"); /*id:top_header_background*/
-	background-position: calc(50% + <?php echo $amd['top_header_background_offset']; ?>px) top; /*id:top_header_background_offset*/
+	background-image: url("' . $amd['top_header_background'] . '"); /*id:top_header_background*/
+	background-position: calc(50% + ' . $amd['top_header_background_offset'] . 'px) top; /*id:top_header_background_offset*/
 }
-
 
 @media screen and (max-width: 1050px) {
 	.site-header {
-		background-position: calc(50% + <?php echo $amd['top_header_background_offset']-25; ?>px) top; /*id:top_header_background_offset*/
+		background-position: calc(50% + ' . ( $amd['top_header_background_offset'] - 25 ) . 'px) top; /*id:top_header_background_offset*/
 	}
 }
 
 @media screen and (max-width: 1000px) {
 	.site-header {
-		background-position: calc(50% + <?php echo $amd['top_header_background_offset']-50; ?>px) top; /*id:top_header_background_offset*/
+		background-position: calc(50% + ' . ( $amd['top_header_background_offset'] - 50 ) . 'px) top; /*id:top_header_background_offset*/
 	}
 }
 
 @media screen and (max-width: 950px) {
 	.site-header {
-		background-position: calc(50% + <?php echo $amd['top_header_background_offset']-75; ?>px) top;
+		background-position: calc(50% + ' . ( $amd['top_header_background_offset'] - 75 ) . 'px) top; /*id:top_header_background_offset*/
 	}
 }
-<?php endif; ?>
+';
+	}
 
-<?php if ( ! empty( $amd['footer_background'] ) ) : ?> 
+	if ( ! empty( $amd['footer_background'] ) )  {
+$css .= '
 .site-footer {
-	background-image: url("<?php echo $amd['footer_background']; ?>"); /*id:footer_background*/
+	background-image: url("' . $amd['footer_background'] . '"); /*id:footer_background*/
 }
-<?php endif; ?>
+';
+	}
+
+	return $css;
+}

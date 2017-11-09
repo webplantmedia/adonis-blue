@@ -170,21 +170,12 @@ add_action( 'widgets_init', 'angiemakesdesign_widgets_init' );
  */
 function angiemakesdesign_customizer_css_wrap() {
 	require get_template_directory() . '/css/mixins.php';
+	require get_template_directory() . '/css/css-theme.php';
 
-	ob_start();
-	get_template_part( 'css/css', 'theme' );
-	if ( angiemakesdesign_is_woocommerce_activated() ) {
-		get_template_part( 'css/css', 'woocommerce' );
-	}
-	$css = ob_get_clean();
-
-	if ( $css ) {
-		$out = '/* WP Customizer start */' . PHP_EOL;
-		$out .= apply_filters( 'angiemakesdesign_cached_css', $css );
-		$out .= PHP_EOL . '/* WP Customizer end */';
-		wp_add_inline_style( 'angiemakesdesign-style', $out );
-	}
-	return $css;
+	$out = '/* WP Customizer start */' . PHP_EOL;
+	$out .= angiemakesdesign_custom_css();
+	$out .= PHP_EOL . '/* WP Customizer end */';
+	wp_add_inline_style( 'angiemakesdesign-style', $out );
 }
 add_action( 'wp_enqueue_scripts', 'angiemakesdesign_customizer_css_wrap', 20 );
 
