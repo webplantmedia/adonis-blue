@@ -166,7 +166,33 @@ button {
 			background-position: -9999px -9999px;
 		}
 
-		i {
+		&:after {
+			font-size: 16px;
+			vertical-align: top;
+			text-align: center;
+			-moz-transition: color .1s ease-in 0;
+			-webkit-transition: color .1s ease-in 0;
+			display: inline-block;
+			font-family: "Genericons";
+			font-style: normal;
+			font-weight: normal;
+			font-variant: normal;
+			line-height: 1;
+			text-decoration: inherit;
+			text-transform: none;
+			-moz-osx-font-smoothing: grayscale;
+			-webkit-font-smoothing: antialiased;
+			speak: none;
+
+			-webkit-transform: rotate(270deg);
+			-moz-transform: rotate(270deg);
+			-ms-transform: rotate(270deg);
+			-o-transform: rotate(270deg);
+			transform: rotate(270deg);
+			filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+
+			content: "\f431"; 
+
 			font-weight: normal;
 			color: $color__text;
 			background-color: $color__white;

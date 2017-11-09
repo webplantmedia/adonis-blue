@@ -13,7 +13,7 @@ class AngieMakesDesign_Widget_Jetpack_Testimonials extends AngieMakesDesign_Widg
 	public function __construct() {
 		$this->widget_id          = 'angiemakesdesign_widget_jetpack_testimonials';
 		$this->widget_description = esc_html__( 'Displays Jetpack Testimonials.', 'angiemakesdesign' );
-		$this->widget_name        = esc_html__( 'Content: Jetpack Testimonials', 'angiemakesdesign' );
+		$this->widget_name        = esc_html__( 'Angie Makes Design: Jetpack Testimonials', 'angiemakesdesign' );
 		$this->settings           = array(
 			'title' => array(
 				'type'  => 'text',

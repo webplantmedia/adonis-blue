@@ -25,7 +25,7 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 			$this->widget_id          = 'angiemakesdesign_widget_collage';
 			$this->widget_cssclass    = 'angiemakesdesign_widget_collage';
 			$this->widget_description = esc_html__( 'Displays collage', 'angiemakesdesign' );
-			$this->widget_name        = esc_html__( 'Content: Collage', 'angiemakesdesign' );
+			$this->widget_name        = esc_html__( 'Angie Makes Design: Collage', 'angiemakesdesign' );
 			$this->settings           = array(
 				'panels' => array(
 					array(
@@ -383,14 +383,12 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 
 					<?php if ( ! empty( $slide_setting['button_text'] ) ) : ?>
 					<?php
-					$button_icon = '';
 					switch ( $slide_setting['button_style'] ) {
 						case 'button-1' :
 							$button_class = ' fancy-button';
 							break;
 						case 'button-2' :
 							$button_class = ' fancy2-button';
-							$button_icon = '<i class="genericon genericon-rotate-270 genericon-expand"></i>';
 							break;
 						default :
 							$button_class = '';
@@ -399,7 +397,7 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 					?>
 						<div class="button-text">
 							<a class="button slide-button<?php echo $button_class; ?>"<?php echo $button_href; ?>>
-								<?php echo $slide_setting['button_text'] . $button_icon; ?>
+								<?php echo $slide_setting['button_text']; ?>
 							</a>
 						</div>
 					<?php endif; ?>

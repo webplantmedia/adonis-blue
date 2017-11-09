@@ -65,10 +65,9 @@ add_filter( 'get_custom_logo', 'angiemakesdesign_get_custom_logo', 10, 2 );
  * @return string Appended "Read More" link
  */
 function angiemakesdesign_excerpt_read_more_link( $output ) {
-	global $post;
 	global $amd;
 
-	if ( ! isset( $post->post_type ) || 'post' != $post->post_type ) {
+	if ( 'post' != get_post_type() ) {
 		return $output;
 	}
 
@@ -85,6 +84,50 @@ function angiemakesdesign_excerpt_read_more_link( $output ) {
 	);
 }
 add_filter('the_excerpt', 'angiemakesdesign_excerpt_read_more_link');
+
+function angiemakesdesign_the_content( $output ) {
+	global $amd;
+
+	$search = array();
+	$replace = array();
+
+	switch ( $amd['default_button_style'] ) {
+		case 'button-1' :
+			$button_class = ' fancy-button';
+			break;
+		case 'button-2' :
+			$button_class = ' fancy2-button';
+			break;
+		default :
+			$button_class = '';
+			break;
+	}
+
+	$post_type = get_post_type();
+
+	if ( 'post' != $post_type && 'page' != $post_type && 'product' != $post_type ) {
+		return $output;
+	}
+
+	if ( preg_match_all( '/\<p.*?>\<a.*?\>\s*[^\<].*?\<\/a\><\/p\>/', $output, $matches ) ) {
+		foreach ( $matches as $match ) {
+			foreach ( $match as $html ) {
+				if ( ! preg_match( '/class\=\"|\'/', $html ) ) {
+					$search[] = $html;
+					$replace[] = str_replace( '<a', '<a class="button'.$button_class.'"', $html );
+				}
+			}
+		}
+	}
+
+	if ( ! empty( $search ) ) {
+		$output = str_replace( $search, $replace, $output );
+	}
+
+	return $output;
+
+}
+add_filter('the_content', 'angiemakesdesign_the_content', 11 );
 
 /**
  * Filter the except length to specified characters.

@@ -13,7 +13,7 @@ class AngieMakesDesign_Widget_Callout extends AngieMakesDesign_Widget {
 	public function __construct() {
 		$this->widget_id          = 'angiemakesdesign_widget_callout';
 		$this->widget_description = esc_html__( 'Displays a callout.', 'angiemakesdesign' );
-		$this->widget_name        = esc_html__( 'Content: Callout', 'angiemakesdesign' );
+		$this->widget_name        = esc_html__( 'Angie Makes Design: Callout', 'angiemakesdesign' );
 		$this->settings           = array(
 			'title' => array(
 				'type'  => 'text',
@@ -245,14 +245,12 @@ class AngieMakesDesign_Widget_Callout extends AngieMakesDesign_Widget {
 
 			if ( ! empty( $o['button_text'] ) && ! empty( $o['button_link'] ) ) {
 				$output .= '<div class="button-text">';
-					$button_icon = '';
 					switch ( $o['button_style'] ) {
 						case 'button-1' :
 							$button_class = ' fancy-button';
 							break;
 						case 'button-2' :
 							$button_class = ' fancy2-button';
-							$button_icon = '<i class="genericon genericon-rotate-270 genericon-expand"></i>';
 							break;
 						default :
 							$button_class = '';
@@ -260,7 +258,6 @@ class AngieMakesDesign_Widget_Callout extends AngieMakesDesign_Widget {
 					}
 					$output .= '<a class="button callout-button'.$button_class.'" href="' . esc_url( $o['button_link'] ) . '">';
 						$output .= $o['button_text'];
-					$output .= $button_icon;
 					$output .= '</a>';
 				$output .= '</div>';
 			}
