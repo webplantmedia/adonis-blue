@@ -316,7 +316,7 @@ function angiemakesdesign_display_fullwidth() {
 		return true;
 	}
 
-	if ( is_page_template( 'templates/two-columns.php' ) ) {
+	if ( is_page_template( 'templates/columns.php' ) ) {
 		return true;
 	}
 

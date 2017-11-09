@@ -66,6 +66,7 @@ add_filter( 'get_custom_logo', 'angiemakesdesign_get_custom_logo', 10, 2 );
  */
 function angiemakesdesign_excerpt_read_more_link( $output ) {
 	global $post;
+	global $amd;
 
 	if ( ! isset( $post->post_type ) || 'post' != $post->post_type ) {
 		return $output;
@@ -80,7 +81,7 @@ function angiemakesdesign_excerpt_read_more_link( $output ) {
 	return $output . sprintf( ' <a class="more-link%1$s" href="%2$s">%3$s<i class="genericon genericon-next"></i></a>',
 		$class,
 		get_permalink( get_the_ID() ),
-		esc_html__( 'Read More', 'angiemakesdesign' )
+		esc_html__( $amd['read_more_label'], 'angiemakesdesign' )
 	);
 }
 add_filter('the_excerpt', 'angiemakesdesign_excerpt_read_more_link');

@@ -38,6 +38,7 @@ $amd_default['site_info'] = 'Site made with <i class="genericon genericon-heart"
 
 // Labels
 $amd_default['mobile_menu_label'] = 'Menu';
+$amd_default['read_more_label'] = 'Continue Reading';
 
 /**
  * Set default options
