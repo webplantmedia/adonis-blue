@@ -8,13 +8,13 @@
 
 ( function( $ ) {
 
-	function changeInlineCSS( id, property, value) {
+	function changeInlineCSS( id, value) {
 		var stylesheet = '#angiemakesdesign-style-inline-css';
 		var $css = $('head ' + stylesheet);
 		if ( $css.length ) {
 			var css = $css.html();
-			var regexp = new RegExp(property + ':\\s*.*?;\\s*\\/\\*id:' + id + '\\*\\/', 'g');
-			var replace = property + ': ' + value + '; /*id:' + id + '*/';
+			var regexp = new RegExp('(\\s*.*?):\\s*.*?;\\s*\\/\\*id:' + id + '\\*\\/', 'g');
+			var replace = '$1: ' + value + '; /*id:' + id + '*/';
 			css = css.replace(regexp,replace);
 			$css.html( css );
 		}
@@ -70,22 +70,27 @@
 	// Colors
 	wp.customize( 'link_color', function( value ) {
 		value.bind( function( to ) {
-			changeInlineCSS( 'link_color', 'color', to );
+			changeInlineCSS( 'link_color', to );
 		} );
 	} );
 	wp.customize( 'link_hover_color', function( value ) {
 		value.bind( function( to ) {
-			changeInlineCSS( 'link_hover_color', 'color', to );
+			changeInlineCSS( 'link_hover_color', to );
 		} );
 	} );
 	wp.customize( 'primary_color', function( value ) {
 		value.bind( function( to ) {
-			changeInlineCSS( 'primary_color', 'background-color', to );
+			changeInlineCSS( 'primary_color', to );
 		} );
 	} );
 	wp.customize( 'primary_hover_color', function( value ) {
 		value.bind( function( to ) {
-			changeInlineCSS( 'primary_hover_color', 'background-color', to );
+			changeInlineCSS( 'primary_hover_color', to );
+		} );
+	} );
+	wp.customize( 'footer_background_color', function( value ) {
+		value.bind( function( to ) {
+			changeInlineCSS( 'footer_background_color', to );
 		} );
 	} );
 	wp.customize( 'heading_padding_top', function( value ) {
@@ -104,20 +109,12 @@
 			} );
 		} );
 	} );
-	wp.customize( 'top_header_background', function( value ) {
-		value.bind( function( to ) {
-			var selectors = '.site-header';
-			$(selectors).css( {
-				'background-image': 'url("' + to + '")'
-			} );
-		} );
-	} );
 	wp.customize( 'top_header_background_offset', function( value ) {
 		value.bind( function( to ) {
-			var selectors = '.site-header';
-			$(selectors).css( {
-				'background-position': 'calc(50% + ' + to + 'px) top'
-			} );
+			changeInlineCSS( 'top_header_background_offset', 'calc(50% + ' + to + 'px) top' );
+			changeInlineCSS( 'top_header_background_offset_1', 'calc(50% + ' + ( to - 25 ) + 'px) top' );
+			changeInlineCSS( 'top_header_background_offset_2', 'calc(50% + ' + ( to - 50 ) + 'px) top' );
+			changeInlineCSS( 'top_header_background_offset_3', 'calc(50% + ' + ( to - 75 ) + 'px) top' );
 		} );
 	} );
 	wp.customize( 'mobile_menu_label', function( value ) {
@@ -128,6 +125,11 @@
 			else {
 				$( '.menu-label' ).removeClass('menu-label-empty');
 			}
+			$( '.menu-label' ).text( to );
+		} );
+	} );
+	wp.customize( 'read_more_label', function( value ) {
+		value.bind( function( to ) {
 			$( '.menu-label' ).text( to );
 		} );
 	} );

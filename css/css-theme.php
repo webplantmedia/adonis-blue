@@ -49,7 +49,7 @@ a:hover {
 }
 
 #master .site-footer.has-footer-widgets {
-	background-color: ' . $amd['secondary_color'] . '; /*id:secondary_color*/
+	background-color: ' . $amd['footer_background_color'] . '; /*id:footer_background_color*/
 }
 
 #master .woocommerce #respond input#submit,
@@ -120,75 +120,28 @@ a:hover {
 	' . angiemakesdesign_css_set_unit( 'padding-bottom', $amd['heading_padding_bottom'] ) . ' /*id:heading_padding_bottom*/
 }
 
-';
-	if ( ! empty( $amd['fancy_button_background'] ) ) {
-$css .= '
-#master .fancy-button {
-	background-image: url("' . $amd['fancy_button_background'] . '"); /*id:fancy_button_background*/
-}
-';
-	}
-
-	if ( ! empty( $amd['fancy_button_hover_background'] ) ) {
-$css .= '
-#master .fancy-button:before,
-#master .fancy-button:hover {
-	background-image: url("' . $amd['fancy_button_hover_background'] . '"); /*id:fancy_button_background*/
-}
-';
-	}
-
-	if ( ! empty( $amd['fancy2_button_background'] ) ) {
-$css .= '
-#master .fancy2-button {
-	background-image: url("' . $amd['fancy2_button_background'] . '"); /*id:fancy2_button_background*/
-}
-';
-	}
-
-	if ( ! empty( $amd['fancy2_button_hover_background'] ) ) {
-$css .= '
-#master .fancy2-button:before,
-#master .fancy2-button:hover {
-	background-image: url("' . $amd['fancy2_button_hover_background'] . '"); /*id:fancy2_button_background*/
-}
-';
-	}
-
-	if ( ! empty( $amd['top_header_background'] ) ) {
-$css .= '
 .site-header {
-	background-image: url("' . $amd['top_header_background'] . '"); /*id:top_header_background*/
 	background-position: calc(50% + ' . $amd['top_header_background_offset'] . 'px) top; /*id:top_header_background_offset*/
 }
 
 @media screen and (max-width: 1050px) {
 	.site-header {
-		background-position: calc(50% + ' . ( $amd['top_header_background_offset'] - 25 ) . 'px) top; /*id:top_header_background_offset*/
+		background-position: calc(50% + ' . ( $amd['top_header_background_offset'] - 25 ) . 'px) top; /*id:top_header_background_offset_1*/
 	}
 }
 
 @media screen and (max-width: 1000px) {
 	.site-header {
-		background-position: calc(50% + ' . ( $amd['top_header_background_offset'] - 50 ) . 'px) top; /*id:top_header_background_offset*/
+		background-position: calc(50% + ' . ( $amd['top_header_background_offset'] - 50 ) . 'px) top; /*id:top_header_background_offset_2*/
 	}
 }
 
 @media screen and (max-width: 950px) {
 	.site-header {
-		background-position: calc(50% + ' . ( $amd['top_header_background_offset'] - 75 ) . 'px) top; /*id:top_header_background_offset*/
+		background-position: calc(50% + ' . ( $amd['top_header_background_offset'] - 75 ) . 'px) top; /*id:top_header_background_offset_3*/
 	}
 }
 ';
-	}
-
-	if ( ! empty( $amd['footer_background'] ) )  {
-$css .= '
-.site-footer {
-	background-image: url("' . $amd['footer_background'] . '"); /*id:footer_background*/
-}
-';
-	}
 
 	return $css;
 }

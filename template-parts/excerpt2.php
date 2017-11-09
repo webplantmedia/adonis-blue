@@ -18,9 +18,9 @@
 
 	<header class="entry-header">
 		<?php if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-cat-meta">
-			<?php angiemakesdesign_entry_header( ' <span class="cat-bull-delim">•</span> ' ); ?>
-		</div><!-- .entry-meta -->
+			<div class="entry-cat-meta">
+				<?php angiemakesdesign_entry_header( ' <span class="cat-bull-delim">•</span> ' ); ?>
+			</div><!-- .entry-meta -->
 		<?php endif; ?>
 
 		<?php

@@ -1110,6 +1110,10 @@ button {
   border-radius: 0;
 }
 
+#master body .fancy-button {
+  background-image: url("img/button-bg.png");
+}
+
 #master body .fancy-button:before {
   content: " ";
   position: absolute;
@@ -1121,6 +1125,11 @@ button {
 #master body .fancy-button:after {
   content: ">>";
   margin-left: 10px;
+}
+
+#master body #master .fancy-button:before,
+#master body #master .fancy-button:hover {
+  background-image: url("img/button-bg-dark.png");
 }
 
 #master body .fancy2-button:focus,
@@ -1144,6 +1153,10 @@ button {
   color: #ffffff;
   font-weight: bold;
   position: relative;
+}
+
+#master body .fancy2-button {
+  background-image: url("img/button2-bg.jpg");
 }
 
 #master body .fancy2-button:before {
@@ -1193,6 +1206,11 @@ button {
   right: 30px;
   top: 50%;
   margin-top: -13px;
+}
+
+#master body .fancy2-button:before,
+#master body .fancy2-button:hover {
+  background-image: url("img/button2-bg-dark.jpg");
 }
 
 /*--------------------------------------------------------------
@@ -2917,6 +2935,7 @@ a img {
 .site-header {
   background-position: center top;
   background-repeat: no-repeat;
+  background-image: url("img/top-right-header-bg.png");
 }
 
 .site-branding {
@@ -3774,6 +3793,7 @@ a img {
   background-repeat: repeat-x;
   min-height: 126px;
   position: relative;
+  background-image: url("img/footer-bg.png");
 }
 
 .site-info-wrapper {

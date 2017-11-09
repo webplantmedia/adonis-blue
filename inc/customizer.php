@@ -109,6 +109,18 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 		'section' => 'colors',
 	) ) );
 
+	$setting_id = 'footer_background_color';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $amd_default[ $setting_id ],
+		'transport' => 'postMessage',
+		'sanitize_callback' => 'sanitize_hex_color',
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $setting_id, array(
+		'label' => __( 'Footer Background Color', 'angiemakesdesign' ),
+		'section' => 'colors',
+	) ) );
+
 	$setting_id = 'link_color';
 	$wp_customize->add_setting( $setting_id, array(
 		'default' => $amd_default[ $setting_id ],
@@ -149,27 +161,6 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 		'panel'    => 'theme_options',
 	) );
 
-	$setting_id = 'top_header_background';
-	$wp_customize->add_setting( $setting_id, array(
-		'default' => $amd_default[ $setting_id ],
-		'transport' => 'postMessage',
-		'sanitize_callback' => 'esc_url_raw',
-	) );
-
-	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, $setting_id, array(
-		'label' => __( 'Top Right Header Background', 'angiemakesdesign' ),
-		'default' => $amd_default[ $setting_id ],
-		'section' => 'top_header',
-		'button_labels' => array(
-			'select'       => __( 'Select Image', 'angiemakesdesign' ),
-			'change'       => __( 'Change Image', 'angiemakesdesign' ),
-			'placeholder'  => __( 'No image selected', 'angiemakesdesign' ),
-			'frame_title'  => __( 'Select Image', 'angiemakesdesign' ),
-			'frame_button' => __( 'Choose Image', 'angiemakesdesign' ),
-		),
-		'description' => __( 'Select background image for top right header area.', 'angiemakesdesign' ),
-	) ) );
-
 	$setting_id = 'top_header_background_offset';
 	$wp_customize->add_setting( $setting_id, array(
 		'default' => $amd_default[ $setting_id ],
@@ -179,7 +170,8 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'range',
-		'label' => __( 'Offset', 'angiemakesdesign' ),
+		'label' => __( 'Top Header Background Offset', 'angiemakesdesign' ),
+		'description' => __( 'This changes the position of your top header background so you can center it perfectly with your top header menu.', 'angiemakesdesign' ),
 		'section' => 'top_header',
 		'input_attrs' => array(
 			'min' => 0,
@@ -187,6 +179,7 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 			'step' => 1,
 			'style' => 'width:100%;',
 		),
+		'sanitize_callback' => 'intval',
 	) );
 
 	/**
@@ -207,6 +200,19 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'text',
 		'label' => __( 'Mobile Menu Label', 'angiemakesdesign' ),
+		'section' => 'labels',
+	) );
+
+	$setting_id = 'read_more_label';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $amd_default[ $setting_id ],
+		'transport' => 'postMessage',
+		'sanitize_callback' => 'sanitize_text_field',
+	) );
+
+	$wp_customize->add_control( $setting_id, array(
+		'type' => 'text',
+		'label' => __( 'Read More Label', 'angiemakesdesign' ),
 		'section' => 'labels',
 	) );
 }
