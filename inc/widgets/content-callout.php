@@ -151,9 +151,6 @@ class AngieMakesDesign_Widget_Callout extends AngieMakesDesign_Widget {
 	 * @return void
 	 */
 	function widget( $args, $instance ) {
-		if ( $this->get_cached_widget( $args ) )
-			return;
-
 		extract( $args );
 
 		$o = $this->sanitize( $instance );
@@ -184,9 +181,7 @@ class AngieMakesDesign_Widget_Callout extends AngieMakesDesign_Widget {
 			$style[] = 'padding-bottom:' . $o['padding_bottom'] . 'px;';
 		}
 
-		ob_start(); ?>
-
-		<?php echo $before_widget; ?>
+		echo $before_widget; ?>
 
 		<?php if ( 'border' == $o['style'] ) : ?>
 			<div class="full-width-bar content-callout-border-wrap" style="<?php echo implode( '', $wrap_style ); ?>">
@@ -213,11 +208,6 @@ class AngieMakesDesign_Widget_Callout extends AngieMakesDesign_Widget {
 		<?php echo $after_widget; ?>
 
 		<?php
-		$content = ob_get_clean();
-
-		echo apply_filters( $this->widget_id, $content );
-
-		$this->cache_widget( $args, $content );
 	}
 
 	private function callout_content( $o ) {

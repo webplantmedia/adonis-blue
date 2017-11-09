@@ -219,10 +219,6 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 		function widget( $args, $instance ) {
 			wp_enqueue_script( 'angiemakesdesign-bxslider' );
 
-			if ( $this->get_cached_widget( $args ) ) {
-				return;
-			}
-
 			$o = $this->sanitize( $instance );
 
 			if ( ( ! isset( $o['repeater'] ) ) || ! is_array( $o['repeater'] ) ) {
@@ -236,8 +232,6 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 			if ( ! empty( $o['margin_bottom'] ) ) {
 				$style[] = 'margin-bottom:' . $o['margin_bottom'] . 'px;';
 			}
-
-			ob_start();
 
 			extract( $args );
 
@@ -314,14 +308,6 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 
 			<?php
 			echo  $after_widget;
-
-			wp_reset_postdata();
-
-			$content = ob_get_clean();
-
-			echo  $content;
-
-			$this->cache_widget( $args, $content );
 		}
 
 		function widget_get_slide( $slide_setting ) {

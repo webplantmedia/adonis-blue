@@ -78,11 +78,6 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Static_Content' ) ) :
 		 * @return void
 		 */
 		function widget( $args, $instance ) {
-			if ( $this->get_cached_widget( $args ) )
-				return;
-
-			$html = '';
-
 			extract( $args );
 
 			$title              = apply_filters( 'widget_title', $instance['title'], $instance, $this->id_base );
@@ -94,59 +89,49 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Static_Content' ) ) :
 			$text_color         = maybe_hash_hex_color( $instance['text_color'] );
 			$link_color         = maybe_hash_hex_color( $instance['link_color'] );
 
-			$html .= $before_widget;
+			echo  $before_widget;
 
 			// Allow site-wide customization of the 'Read more' link text.
 			$read_more = apply_filters( 'angiemakesdesign_read_more_text', esc_html__( 'Read more', 'angiemakesdesign' ) );
+			?>
 
-			if ( '' !== $background_image ) {
-				$html .= '<div class="static-content-cover" style="opacity:' . ( absint( $background_opacity ) / 100 ) . ';background-image:url(' . esc_url( $background_image ) . ');"></div>'
-			}
+			<?php if ( '' !== $background_image ) : ?>
+			<div class="static-content-cover" style="opacity:<?php echo absint( $background_opacity ) / 100 ; ?>;background-image:url(<?php echo esc_url( $background_image ); ?>);"></div>
+			<?php endif; ?>
 
-			$html .= '
 			<style type="text/css">
-				#' . esc_html( $this->id ) . ' {
-					background-color: ' . esc_html( $background_color ) . ';
-					color: ' . esc_html( $text_color ) . ';
+				#<?php echo esc_html( $this->id ) ?> {
+					background-color: <?php echo esc_html( $background_color ); ?>;
+					color: <?php echo esc_html( $text_color ); ?>;
 				}
-				#' . esc_html( $this->id ) . ' .entry-content a {
-					color: ' . esc_html( $link_color ) . ';
+				#<?php echo esc_html( $this->id ) ?> .entry-content a {
+					color: <?php echo esc_html( $link_color ); ?>;
 				}
 				.angiemakesdesign_static_content.widget .widget-title {
-					color: ' . esc_html( $text_color ) . ';
+					color: <?php echo esc_html( $text_color ); ?>;
 				}
 			</style>
-			';
 
-			$html .= '<section class="container">';
+			<section class="container">
 
-			if ( $post->have_posts() ) {
-				while ( $post->have_posts() ) {
-					$post->the_post();
-					$html .= '<article id="post-' . get_the_ID() . '" ' . 'class="' . join( ' ', get_post_class() ) . '">';
-						if ( $title ) {
-							$html .= $before_title . $title . $after_title;
-						}
+				<?php if ( $post->have_posts() ) : ?>
+					<?php while ( $post->have_posts() ) : $post->the_post(); ?>
+						<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+							<?php if ( $title ) echo  $before_title . $title . $after_title; ?>
 
-						$content = get_the_content( $read_more );
-						$html .= '
 							<div class="entry-content">
-								' . $content . '
+								<?php the_content( $read_more ); ?>
 							</div>
 						</article>
-					';
-				}
-			}
+					<?php endwhile; ?>
+				<?php endif; ?>
 
-			$html .= '</section>';
+			</section>
 
-			$html .= $after_widget;
+			<?php
+			echo  $after_widget;
 
 			wp_reset_postdata();
-
-			echo  $html;
-
-			$this->cache_widget( $args, $html );
 		}
 
 		/**

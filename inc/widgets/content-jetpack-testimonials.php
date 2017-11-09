@@ -182,9 +182,6 @@ class AngieMakesDesign_Widget_Jetpack_Testimonials extends AngieMakesDesign_Widg
 	 * @return void
 	 */
 	function widget( $args, $instance ) {
-		if ( $this->get_cached_widget( $args ) )
-			return;
-
 		extract( $args );
 
 		$o = $this->sanitize( $instance );
@@ -231,24 +228,22 @@ class AngieMakesDesign_Widget_Jetpack_Testimonials extends AngieMakesDesign_Widg
 					while ( $query->have_posts() ) {
 						$query->the_post();
 						$post_id = get_the_ID();
-						ob_start();
-						?>
-						<div class="testimonial-entry-wrapper" style="<?php echo implode( '', $testimonial_style ); ?>">
-							<div class="testimonial-entry">
-								<?php
+						$temp = '
+						<div class="testimonial-entry-wrapper" style="' . implode( '', $testimonial_style ) . '">
+							<div class="testimonial-entry">';
 								// Featured image
 								$class = ' no-testimonial-image';
 								if ( $image = $this->get_testimonial_thumbnail_link( $post_id ) ) {
-									echo $image;
+									$temp .= $image;
 									$class = ' has-testimonial-image';
 								}
-								?>
 
-								<div class="testimonial-entry-content-wrapper<?php echo $class; ?>">
+								$temp .= '
+								<div class="testimonial-entry-content-wrapper' . $class . '">
 
-									<div class="testimonial-entry-content"><?php the_excerpt(); ?></div>
+									<div class="testimonial-entry-content">' . get_the_excerpt() . '</div>';
 
-									<?php if ( $o['display_signature'] ) :
+									if ( $o['display_signature'] ) {
 										switch ( $o['signature_icon'] ) {
 											case 'short-dash' :
 												$icon = '&#8211; ';
@@ -266,16 +261,18 @@ class AngieMakesDesign_Widget_Jetpack_Testimonials extends AngieMakesDesign_Widg
 												$icon = '';
 												break;
 										}
-									?>
+
+										$temp .= '
 										<div class="testimonial-entry-signature">
-											<?php echo $icon; ?><span class="testimonial-signature"><?php the_title(); ?></span>
-										</div>
-									<?php endif; ?>
+											' . $icon . '<span class="testimonial-signature">' . get_the_title() . '</span>
+										</div>';
+									}
+						$temp .= '
 								</div><!-- close .testimonial-entry-content-wrapper -->
 							</div><!-- close .testimonial-entry -->
-						</div><!-- close .testimonial-entry-wrapper -->
-						<?php
-						$testimonials[ $column ][] = ob_get_clean();
+						</div><!-- close .testimonial-entry-wrapper -->';
+
+						$testimonials[ $column ][] = $temp;
 						$mod = $testimonial_index_number % $o['columns'];
 						if ( 0 === $mod ) {
 							$column++;
@@ -283,7 +280,6 @@ class AngieMakesDesign_Widget_Jetpack_Testimonials extends AngieMakesDesign_Widg
 						$testimonial_index_number++;
 					} // end of while loop
 
-					wp_reset_postdata();
 					?>
 				</div><!-- close .jetpack-testimonial-shortcode -->
 			<?php
@@ -291,9 +287,6 @@ class AngieMakesDesign_Widget_Jetpack_Testimonials extends AngieMakesDesign_Widg
 				$notice = '<p><em>'._e( 'Your Testimonial Archive currently has no entries. You can start creating them on your dashboard.', 'angiemakesdesign' ).'</p></em>';
 			}
 			?>
-
-		<?php
-		//ob_start(); ?>
 
 		<?php echo $before_widget; ?>
 
@@ -398,12 +391,7 @@ class AngieMakesDesign_Widget_Jetpack_Testimonials extends AngieMakesDesign_Widg
 
 		<?php echo $after_widget; ?>
 
-		<?php
-		$content = ob_get_clean();
-
-		echo apply_filters( $this->widget_id, $content );
-
-		$this->cache_widget( $args, $content );
+		<?php wp_reset_postdata();
 	}
 
 	/**
