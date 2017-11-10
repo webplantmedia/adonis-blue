@@ -11,6 +11,11 @@
 	border-bottom: 2px solid $color__border;
 }
 
+.grid-article-bottom-spacing {
+	@include rem('margin-bottom',70px);
+	border-bottom: 2px solid $color__border;
+}
+
 .infinite-wrap {
 	.lead-post {
 		.hentry {
@@ -93,6 +98,7 @@
 // Entry Title
 .search .site-main article,
 .archive .hentry,
+.grid .hentry,
 .blog .hentry {
 	.entry-title {
 		margin-top: 0;
@@ -349,15 +355,16 @@
 		border-bottom-width: 0;
 		
 		.entry-cat-meta {
-			@include rem('margin-bottom', 8px);
+			@include rem('margin-bottom', 2px);
 		}
 
 		.entry-title {
-			@include rem('margin-bottom', 15px);
+			@include rem('margin-bottom', 7px);
 		}
 
 		.entry-meta {
-			@include rem('margin-top', 15px);
+			@include rem('margin-top', 7px);
+			@include rem('font-size',$font__tiny-size);
 		}
 
 		*:last-child {
@@ -366,25 +373,14 @@
 	}
 }
 
-#master .all-posts {
-	overflow: hidden;
-	@include rem('margin-right', -20px);
-
+#master .grid {
 	.excerpt2 {
-		width: 50%;
-		float: left;
-		@include rem('padding-right', 20px);
-
-		&:nth-child(2n+1) {
-			clear: both;
-		}
-
 		.entry-title {
 			@include rem('font-size', 22px);
 		}
 		
 		.entry-image {
-			margin-bottom: 1em;
+			@include rem('margin-bottom', 10px);
 		}
 	}
 }

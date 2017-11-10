@@ -47,7 +47,11 @@
 		padding: 0;
 	}
 
-	
+	.infinite-loader,
+	#infinite-handle {
+		@include rem('margin-top',70px);
+		@include rem('margin-bottom',70px);
+	}
 
 	#infinite-footer .blog-credits a,
 	#infinite-footer .blog-info a {

@@ -27,7 +27,7 @@ $amd_default['top_header_background_offset'] = 520;
 $amd_default['default_button_style'] = 'button-2';
 
 // Blog
-$amd_default['blog_display'] = 'blog2';
+$amd_default['blog_display'] = 'blog1';
 $amd_default['archive_display'] = 'blog3';
 $amd_default['search_display'] = 'blog2';
 

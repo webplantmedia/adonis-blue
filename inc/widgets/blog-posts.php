@@ -176,32 +176,7 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Blog_Post' ) ) :
 
 						<?php while ( $post->have_posts() ) : $post->the_post(); ?>
 							<div class="grid__col grid__col--1-of-<?php echo $o['columns']; ?>">
-								<article id="post-<?php the_ID(); ?>" <?php post_class('excerpt no-top-bottom-margins'); ?>>
-									<?php if ( has_post_thumbnail() ) : ?>
-										<div class="entry-image">
-											<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'large' ); ?></a>
-										</div><!-- .entry-image -->
-									<?php endif; ?>
-
-									<header class="entry-header">
-										<?php if ( 'post' === get_post_type() ) : ?>
-											<div class="entry-cat-meta">
-												<?php angiemakesdesign_entry_header( ', ' ); ?>
-											</div><!-- .entry-meta -->
-										<?php endif; ?>
-
-										<?php
-										the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-
-										if ( 'post' === get_post_type() ) : ?>
-										<div class="entry-meta">
-											<?php angiemakesdesign_posted_on(); ?>
-										</div><!-- .entry-meta -->
-										<?php
-										endif; ?>
-									</header><!-- .entry-header -->
-
-								</article>
+								<?php get_template_part( 'template-parts/excerpt2' ); ?>
 							</div>
 						<?php endwhile; ?>
 

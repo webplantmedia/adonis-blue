@@ -53,6 +53,14 @@ Jetpack styling
   padding: 0;
 }
 
+#master .infinite-loader,
+#master #infinite-handle {
+  margin-top: 70px;
+  margin-top: 4.375rem;
+  margin-bottom: 70px;
+  margin-bottom: 4.375rem;
+}
+
 #master #infinite-footer .blog-credits a,
 #master #infinite-footer .blog-info a {
   color: #6d686c;

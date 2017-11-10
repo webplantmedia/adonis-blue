@@ -2618,36 +2618,6 @@ a img {
   color: inherit;
 }
 
-.angiemakesdesign_blog_posts .entry-image {
-  margin-bottom: 10px;
-  margin-bottom: 0.625rem;
-}
-
-.angiemakesdesign_blog_posts .entry-cat-meta {
-  font-size: 12px;
-  font-size: 0.75rem;
-  margin-bottom: 3px;
-  margin-bottom: 0.1875rem;
-}
-
-.angiemakesdesign_blog_posts .entry-title {
-  margin-top: 3px;
-  margin-top: 0.1875rem;
-  margin-bottom: 0px;
-  margin-bottom: 0rem;
-  text-align: center;
-  font-size: 20px;
-  font-size: 1.25rem;
-  font-weight: normal;
-}
-
-.angiemakesdesign_blog_posts .entry-meta {
-  margin-top: 7px;
-  margin-top: 0.4375rem;
-  font-size: 12px;
-  font-size: 0.75rem;
-}
-
 .angiemakesdesign_blog_posts .button-wrapper {
   text-align: center;
   margin-bottom: 0;
@@ -3084,6 +3054,12 @@ a img {
   border-bottom: 2px solid #ececec;
 }
 
+.grid-article-bottom-spacing {
+  margin-bottom: 70px;
+  margin-bottom: 4.375rem;
+  border-bottom: 2px solid #ececec;
+}
+
 .infinite-wrap .lead-post .hentry {
   padding-top: 70px;
   padding-top: 4.375rem;
@@ -3163,6 +3139,7 @@ a img {
 
 .search .site-main article .entry-title,
 .archive .hentry .entry-title,
+.grid .hentry .entry-title,
 .blog .hentry .entry-title {
   margin-top: 0;
   margin-bottom: 25px;
@@ -3177,6 +3154,8 @@ a img {
 .search .site-main article .entry-title a,
 .archive .hentry .entry-title,
 .archive .hentry .entry-title a,
+.grid .hentry .entry-title,
+.grid .hentry .entry-title a,
 .blog .hentry .entry-title,
 .blog .hentry .entry-title a {
   color: #444444;
@@ -3430,48 +3409,34 @@ a img {
 }
 
 #master .excerpt2 .entry-cat-meta {
-  margin-bottom: 8px;
-  margin-bottom: 0.5rem;
+  margin-bottom: 2px;
+  margin-bottom: 0.125rem;
 }
 
 #master .excerpt2 .entry-title {
-  margin-bottom: 15px;
-  margin-bottom: 0.9375rem;
+  margin-bottom: 7px;
+  margin-bottom: 0.4375rem;
 }
 
 #master .excerpt2 .entry-meta {
-  margin-top: 15px;
-  margin-top: 0.9375rem;
+  margin-top: 7px;
+  margin-top: 0.4375rem;
+  font-size: 12px;
+  font-size: 0.75rem;
 }
 
 #master .excerpt2 *:last-child {
   margin-bottom: 0;
 }
 
-#master .all-posts {
-  overflow: hidden;
-  margin-right: -20px;
-  margin-right: -1.25rem;
-}
-
-#master .all-posts .excerpt2 {
-  width: 50%;
-  float: left;
-  padding-right: 20px;
-  padding-right: 1.25rem;
-}
-
-#master .all-posts .excerpt2:nth-child(2n+1) {
-  clear: both;
-}
-
-#master .all-posts .excerpt2 .entry-title {
+#master .grid .excerpt2 .entry-title {
   font-size: 22px;
   font-size: 1.375rem;
 }
 
-#master .all-posts .excerpt2 .entry-image {
-  margin-bottom: 1em;
+#master .grid .excerpt2 .entry-image {
+  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
 }
 
 .entry-image {
