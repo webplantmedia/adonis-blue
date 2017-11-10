@@ -179,7 +179,7 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Blog_Post' ) ) :
 								<article id="post-<?php the_ID(); ?>" <?php post_class('excerpt no-top-bottom-margins'); ?>>
 									<?php if ( has_post_thumbnail() ) : ?>
 										<div class="entry-image">
-											<?php the_post_thumbnail( 'large' ); ?>
+											<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'large' ); ?></a>
 										</div><!-- .entry-image -->
 									<?php endif; ?>
 
