@@ -151,10 +151,6 @@ add_filter('the_content', 'angiemakesdesign_the_content', 11 );
  * @return int (Maybe) modified excerpt length.
  */
 function angiemakesdesign_custom_excerpt_length( $length ) {
-	/*if ( '' !== angiemakesdesign_get_thememod_value( 'excerpt-length' ) ) {
-		return absint( angiemakesdesign_get_thememod_value( 'excerpt-length' ) );
-	}*/
-
 	return 80;
 }
 add_filter( 'excerpt_length', 'angiemakesdesign_custom_excerpt_length', 999 );

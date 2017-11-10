@@ -90,6 +90,12 @@ button {
 		padding: 19px 59px;
 	}
 
+	.button.button-small {
+		padding: 8px 14px;
+		@include rem('font-size',$font__tiny-size);
+		text-transform: uppercase;
+	}
+
 	.button.alt:hover {
 		color: #fff;
 		background: #1c2220;

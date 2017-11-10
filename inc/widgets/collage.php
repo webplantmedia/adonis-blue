@@ -119,16 +119,16 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Collage' ) ) :
 							'description' => esc_html__( 'Leave blank to use default theme color.', 'angiemakesdesign' ),
 							'sanitize' => 'color',
 						),
-						'button_link' => array(
-							'type'  => 'text',
-							'std'   => '',
-							'label' => esc_html__( 'Button URL:', 'angiemakesdesign' ),
-							'sanitize' => 'text',
-						),
 						'button_text' => array(
 							'type'  => 'text',
 							'std'   => '',
 							'label' => esc_html__( 'Button Text:', 'angiemakesdesign' ),
+							'sanitize' => 'text',
+						),
+						'button_link' => array(
+							'type'  => 'text',
+							'std'   => '',
+							'label' => esc_html__( 'Button URL:', 'angiemakesdesign' ),
 							'sanitize' => 'text',
 						),
 						'button_style' => array(

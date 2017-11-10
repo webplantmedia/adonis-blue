@@ -68,16 +68,16 @@ class AngieMakesDesign_Widget_Callout extends AngieMakesDesign_Widget {
 				'description' => esc_html__( 'Leave blank to use default theme color.', 'angiemakesdesign' ),
 				'sanitize' => 'color',
 			),
-			'button_link' => array(
-				'type'  => 'text',
-				'std'   => 'https://angiemakes.com',
-				'label' => esc_html__( 'Button URL:', 'angiemakesdesign' ),
-				'sanitize' => 'text',
-			),
 			'button_text' => array(
 				'type'  => 'text',
 				'std'   => 'SHOP THEMES',
 				'label' => esc_html__( 'Button Text:', 'angiemakesdesign' ),
+				'sanitize' => 'text',
+			),
+			'button_link' => array(
+				'type'  => 'text',
+				'std'   => 'https://angiemakes.com',
+				'label' => esc_html__( 'Button URL:', 'angiemakesdesign' ),
 				'sanitize' => 'text',
 			),
 			'button_style' => array(

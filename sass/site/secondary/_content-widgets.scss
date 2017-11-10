@@ -309,3 +309,33 @@
 	}
 
 }
+
+// Static Content
+.angiemakesdesign_blog_posts {
+	.entry-image {
+		@include rem('margin-bottom',10px);
+	}
+
+	.entry-cat-meta {
+		@include rem('font-size',$font__tiny_size);
+		@include rem('margin-bottom',3px);
+	}
+	
+	.entry-title {
+		@include rem('margin-top',3px);
+		@include rem('margin-bottom',0px);
+		text-align: center;
+		@include rem('font-size',$font__large_size);
+		font-weight: normal;
+	}
+
+	.entry-meta {
+		@include rem('margin-top',7px);
+		@include rem('font-size',$font__tiny_size);
+	}
+
+	.button-wrapper {
+		text-align: center;
+		margin-bottom: 0;
+	}
+}

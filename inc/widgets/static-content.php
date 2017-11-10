@@ -248,8 +248,9 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Static_Content' ) ) :
 			</div>
 			<?php endif; ?>
 
-			<?php
-			echo  $after_widget;
+			<?php echo  $after_widget; ?>
+
+			<?php wp_reset_postdata();
 		}
 
 		/**

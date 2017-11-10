@@ -322,6 +322,10 @@ class AngieMakesDesign_Widget extends WP_Widget {
 				$value = $this->sanitize_background_size( $new_value );
 				break;
 
+			case 'post_ids' :
+				$value = $this->sanitize_post_ids( $new_value );
+				break;
+
 			default :
 				$value = $new_value;
 				break;
@@ -730,6 +734,57 @@ class AngieMakesDesign_Widget extends WP_Widget {
 		$g = hexdec( $g );
 		$b = hexdec( $b );
 		return array( 'red' => $r, 'green' => $g, 'blue' => $b );
+	}
+
+	/**
+	 * Accept only comma delimited numbers.
+	 *
+	 * @since 4.8.1
+	 * @access private
+	 *
+	 * @param string $post_ids
+	 * @return string
+	 */
+	private function sanitize_post_ids_array( $post_ids ) {
+		$post_ids = explode( ',', $post_ids );
+
+		if ( is_array( $post_ids ) && ! empty( $post_ids ) ) {
+			$post_ids_array = array();
+			foreach ( $post_ids as $key => $value ) {
+				$value = absint( $value );
+
+				if ( ! empty( $value ) ) {
+					$post_ids_array[] = absint( $value );
+				}
+			}
+
+			if ( ! empty( $post_ids_array ) ) {
+				return $post_ids_array;
+			}
+		}
+
+		return array();
+	}
+
+	/**
+	 * Sanitize comma delimited numbers into array format
+	 *
+	 * @since 4.8.1
+	 * @access public
+	 *
+	 * @param string $post_ids
+	 * @return array
+	 */
+	private function sanitize_post_ids( $post_ids ) {
+		$post_ids_array = $this->sanitize_post_ids_array( $post_ids );
+
+		$post_ids = implode( ',', $post_ids_array );
+
+		if ( ! empty( $post_ids ) ) {
+			return $post_ids;
+		}
+
+		return '';
 	}
 
 	function sanitize_background_size( $value ) {
