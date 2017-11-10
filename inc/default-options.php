@@ -32,7 +32,7 @@ $amd_default['archive_display'] = 'blog3';
 $amd_default['search_display'] = 'blog2';
 
 // Display Sidebar
-$amd_default['display_sidebar_blog'] = 1;
+$amd_default['display_sidebar_blog'] = 0;
 $amd_default['display_sidebar_post'] = 1;
 $amd_default['display_sidebar_shop'] = 1;
 $amd_default['display_sidebar_archive'] = 1;

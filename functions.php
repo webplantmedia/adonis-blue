@@ -103,7 +103,7 @@ add_action( 'after_setup_theme', 'angiemakesdesign_setup' );
  * @global int $content_width
  */
 function angiemakesdesign_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'angiemakesdesign_content_width', 640 );
+	$GLOBALS['content_width'] = apply_filters( 'angiemakesdesign_content_width', 700 );
 }
 add_action( 'after_setup_theme', 'angiemakesdesign_content_width', 0 );
 

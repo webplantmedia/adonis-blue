@@ -3,4 +3,4 @@ $size__site-gutter: 60px;
 $size__site-sidebar: 300px;
 $size__site-sidebar-with-padding: $size__site-sidebar + $size__site_gutter;
 $size__menu-collapse-width: 60em;
-$size__site-main-no-sidebar: $size__site-container - 20 - 20 - $size__site-sidebar;
+$size__site-main-no-sidebar: $size__site-container - 20 - 20 - $size__site-sidebar - $size__site-gutter;
