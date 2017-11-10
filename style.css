@@ -1929,6 +1929,7 @@ a img {
   font-size: 0.75rem;
   text-transform: uppercase;
   font-weight: bold;
+  color: #444444;
 }
 
 .post-navigation span.post-title {
@@ -2153,6 +2154,8 @@ a img {
 /*--------------------------------------------------------------
 # Clearings
 --------------------------------------------------------------*/
+.entry-author:before,
+.entry-author:after,
 .footer-container:before,
 .footer-container:after,
 .all-posts:before,
@@ -2178,6 +2181,7 @@ a img {
   table-layout: fixed;
 }
 
+.entry-author:after,
 .footer-container:after,
 .all-posts:after,
 .top-header:after,
@@ -3446,6 +3450,45 @@ a img {
 
 .entry-image img {
   vertical-align: top;
+}
+
+.entry-author {
+  margin-top: 70px;
+  margin-top: 4.375rem;
+  padding-bottom: 70px;
+  padding-bottom: 4.375rem;
+  border-bottom: 2px solid #ececec;
+}
+
+.entry-author .author-avatar {
+  margin-top: 5px;
+  float: left;
+}
+
+.entry-author .author-avatar img {
+  vertical-align: top;
+  border-radius: 100%;
+}
+
+.entry-author .author-heading {
+  margin-left: 70px;
+  overflow: hidden;
+}
+
+.entry-author .author-heading .author-title {
+  margin: 0;
+  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
+  font-size: 20px;
+  font-size: 1.25rem;
+}
+
+.entry-author .author-bio {
+  margin: 0;
+  margin-left: 70px;
+  overflow: hidden;
+  font-size: 16px;
+  font-size: 1rem;
 }
 
 #master .page-template-grid-accordion-page .accordion-item {

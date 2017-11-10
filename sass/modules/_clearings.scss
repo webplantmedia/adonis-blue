@@ -1,3 +1,5 @@
+.entry-author:before,
+.entry-author:after,
 .footer-container:before,
 .footer-container:after,
 .all-posts:before,
@@ -21,6 +23,7 @@
 	@include clearfix;
 }
 
+.entry-author:after,
 .footer-container:after,
 .all-posts:after,
 .top-header:after,

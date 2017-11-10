@@ -70,3 +70,8 @@ function angiemakesdesign_infinite_scroll_credit(){
     return $content;
 }
 add_filter('infinite_scroll_credit','angiemakesdesign_infinite_scroll_credit');
+
+function angiemakesdesign_author_bio_avatar_size() {
+    return 120; // in px
+}
+// add_filter( 'jetpack_author_bio_avatar_size', 'angiemakesdesign_author_bio_avatar_size' );

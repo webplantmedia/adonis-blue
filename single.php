@@ -17,6 +17,8 @@ get_header(); ?>
 
 			get_template_part( 'template-parts/content', get_post_type() );
 
+			if ( function_exists( 'jetpack_author_bio' ) ) jetpack_author_bio();
+
 			angiemakesdesign_featured_post_navigation();
 
 			// If comments are open or we have at least one comment, load up the comment template.
