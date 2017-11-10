@@ -295,6 +295,10 @@ function angiemakesdesign_display_sidebar() {
 		}
 	}
 
+	if ( is_search() ) {
+		return $amd['display_sidebar_search'];
+	}
+	
 	return false;
 }
 

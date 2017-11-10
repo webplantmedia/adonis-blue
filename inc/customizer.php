@@ -35,6 +35,8 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 	/**
 	 * Logo
 	 */
+	$section_id = 'title_tagline';
+
 	$setting_id = 'custom_logo_2x';
 	$wp_customize->add_setting( $setting_id, array(
 		'default' => $amd_default[ $setting_id ],
@@ -45,7 +47,7 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, $setting_id, array(
 		'label' => __( 'Retina Logo', 'angiemakesdesign' ),
 		'priority' => 8, // below the logo media selector
-		'section' => 'title_tagline',
+		'section' => $section_id,
 		'button_labels' => array(
 			'select'       => __( 'Select Retina Logo', 'angiemakesdesign' ),
 			'change'       => __( 'Change Retina Logo', 'angiemakesdesign' ),
@@ -66,7 +68,7 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'number',
 		'label' => __( 'Padding Top', 'angiemakesdesign' ),
-		'section' => 'title_tagline',
+		'section' => $section_id,
 	) );
 
 	$setting_id = 'heading_padding_bottom';
@@ -79,12 +81,14 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'number',
 		'label' => __( 'Padding Bottom', 'angiemakesdesign' ),
-		'section' => 'title_tagline',
+		'section' => $section_id,
 	) );
 
 	/**
 	 * Custom colors.
 	 */
+	$section_id = 'colors';
+
 	$setting_id = 'primary_color';
 	$wp_customize->add_setting( $setting_id, array(
 		'default' => $amd_default[ $setting_id ],
@@ -94,7 +98,7 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $setting_id, array(
 		'label' => __( 'Primary Color', 'angiemakesdesign' ),
-		'section' => 'colors',
+		'section' => $section_id,
 	) ) );
 
 	$setting_id = 'primary_hover_color';
@@ -106,7 +110,7 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $setting_id, array(
 		'label' => __( 'Primary Hover Color', 'angiemakesdesign' ),
-		'section' => 'colors',
+		'section' => $section_id,
 	) ) );
 
 	$setting_id = 'footer_background_color';
@@ -118,7 +122,7 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $setting_id, array(
 		'label' => __( 'Footer Background Color', 'angiemakesdesign' ),
-		'section' => 'colors',
+		'section' => $section_id,
 	) ) );
 
 	$setting_id = 'link_color';
@@ -130,7 +134,7 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $setting_id, array(
 		'label' => __( 'Link Color', 'angiemakesdesign' ),
-		'section' => 'colors',
+		'section' => $section_id,
 	) ) );
 
 	$setting_id = 'link_hover_color';
@@ -142,7 +146,7 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $setting_id, array(
 		'label' => __( 'Link Hover Color', 'angiemakesdesign' ),
-		'section' => 'colors',
+		'section' => $section_id,
 	) ) );
 
 	/**
@@ -156,7 +160,8 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 	/**
 	 * Top header.
 	 */
-	$wp_customize->add_section( 'top_header', array(
+	$section_id = 'theme_options_top_header';
+	$wp_customize->add_section( $section_id, array(
 		'title'    => __( 'Top Header', 'angiemakesdesign' ),
 		'panel'    => 'theme_options',
 	) );
@@ -172,20 +177,136 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 		'type' => 'range',
 		'label' => __( 'Top Header Background Offset', 'angiemakesdesign' ),
 		'description' => __( 'This changes the position of your top header background so you can center it perfectly with your top header menu.', 'angiemakesdesign' ),
-		'section' => 'top_header',
+		'section' => $section_id,
 		'input_attrs' => array(
 			'min' => 0,
 			'max' => 600,
 			'step' => 1,
 			'style' => 'width:100%;',
 		),
-		'sanitize_callback' => 'intval',
+	) );
+
+	/**
+	 * Body
+	 */
+	$section_id = 'theme_options_body';
+	$wp_customize->add_section( $section_id, array(
+		'title'    => __( 'Body', 'angiemakesdesign' ),
+		'panel'    => 'theme_options',
+	) );
+
+	$setting_id = 'default_button_style';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $amd_default[ $setting_id ],
+		'transport' => 'refresh',
+		'sanitize_callback' => 'sanitize_text_field',
+	) );
+
+	$wp_customize->add_control( $setting_id, array(
+		'type' => 'select',
+		'label' => __( 'Default Button Style', 'angiemakesdesign' ),
+		'description' => __( 'When you insert a link on its own line in the WP Editor, the theme turns it into a button. Choose the default style of your button to display in your post and pages.', 'angiemakesdesign' ),
+		'section' => $section_id,
+		'choices' => array(
+			'default' => 'Default Button',
+			'button-1' => 'Button Style 1',
+			'button-2' => 'Button Style 2',
+		),
+	) );
+
+	/**
+	 * Display Sidebar
+	 */
+	$section_id = 'theme_options_display_sidebar';
+	$wp_customize->add_section( $section_id, array(
+		'title'    => __( 'Display Sidebar', 'angiemakesdesign' ),
+		'panel'    => 'theme_options',
+		'description' => 'Check the pages where you want the sidebar to display.',
+	) );
+
+	$setting_id = 'display_sidebar_blog';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $amd_default[ $setting_id ],
+		'transport' => 'refresh',
+		'sanitize_callback' => 'angiemakesdesign_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( $setting_id, array(
+		'type' => 'checkbox',
+		'label' => __( 'Blog', 'angiemakesdesign' ),
+		'section' => $section_id,
+	) );
+
+	$setting_id = 'display_sidebar_post';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $amd_default[ $setting_id ],
+		'transport' => 'refresh',
+		'sanitize_callback' => 'angiemakesdesign_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( $setting_id, array(
+		'type' => 'checkbox',
+		'label' => __( 'Post', 'angiemakesdesign' ),
+		'section' => $section_id,
+	) );
+
+	$setting_id = 'display_sidebar_shop';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $amd_default[ $setting_id ],
+		'transport' => 'refresh',
+		'sanitize_callback' => 'angiemakesdesign_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( $setting_id, array(
+		'type' => 'checkbox',
+		'label' => __( 'Shop', 'angiemakesdesign' ),
+		'section' => $section_id,
+	) );
+
+	$setting_id = 'display_sidebar_archive';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $amd_default[ $setting_id ],
+		'transport' => 'refresh',
+		'sanitize_callback' => 'angiemakesdesign_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( $setting_id, array(
+		'type' => 'checkbox',
+		'label' => __( 'Archive', 'angiemakesdesign' ),
+		'section' => $section_id,
+	) );
+
+	$setting_id = 'display_sidebar_search';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $amd_default[ $setting_id ],
+		'transport' => 'refresh',
+		'sanitize_callback' => 'angiemakesdesign_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( $setting_id, array(
+		'type' => 'checkbox',
+		'label' => __( 'Search', 'angiemakesdesign' ),
+		'section' => $section_id,
+	) );
+
+	$setting_id = 'display_sidebar_shop_archive';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $amd_default[ $setting_id ],
+		'transport' => 'refresh',
+		'sanitize_callback' => 'angiemakesdesign_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( $setting_id, array(
+		'type' => 'checkbox',
+		'label' => __( 'Shop Archive', 'angiemakesdesign' ),
+		'section' => $section_id,
 	) );
 
 	/**
 	 * Labels
 	 */
-	$wp_customize->add_section( 'labels', array(
+	$section_id = 'theme_options_lables';
+	$wp_customize->add_section( $section_id, array(
 		'title'    => __( 'Labels', 'angiemakesdesign' ),
 		'panel'    => 'theme_options',
 	) );
@@ -200,7 +321,7 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'text',
 		'label' => __( 'Mobile Menu Label', 'angiemakesdesign' ),
-		'section' => 'labels',
+		'section' => $section_id,
 	) );
 
 	$setting_id = 'read_more_label';
@@ -213,7 +334,7 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'text',
 		'label' => __( 'Read More Label', 'angiemakesdesign' ),
-		'section' => 'labels',
+		'section' => $section_id,
 	) );
 }
 add_action( 'customize_register', 'angiemakesdesign_customize_register' );

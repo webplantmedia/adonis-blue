@@ -25,10 +25,13 @@ $amd_default['top_header_background_offset'] = 520;
 
 // Body
 $amd_default['default_button_style'] = 'button-2';
+
+// Display Sidebar
 $amd_default['display_sidebar_blog'] = 1;
 $amd_default['display_sidebar_post'] = 1;
 $amd_default['display_sidebar_shop'] = 1;
 $amd_default['display_sidebar_archive'] = 1;
+$amd_default['display_sidebar_search'] = 1;
 $amd_default['display_sidebar_shop_archive'] = 1;
 
 // Footer
