@@ -17,11 +17,9 @@ function angiemakesdesign_body_classes( $classes ) {
 		$classes[] = 'hfeed';
 	}
 
+	// Sidebar
 	if ( angiemakesdesign_display_sidebar() ) {
 		$classes[] = 'display-sidebar';
-	}
-	if ( angiemakesdesign_display_sidebar_footer() ) {
-		$classes[] = 'display-sidebar-footer';
 	}
 	else if ( angiemakesdesign_display_fullwidth() ) {
 		$classes[] = 'display-fullwidth';
@@ -30,6 +28,12 @@ function angiemakesdesign_body_classes( $classes ) {
 		$classes[] = 'no-sidebar';
 	}
 
+	// Footer
+	if ( angiemakesdesign_display_sidebar_footer() ) {
+		$classes[] = 'display-sidebar-footer';
+	}
+
+	// Widgetized Pages
 	if ( is_page_template( 'templates/front-page.php' ) ) {
 		$classes[] = 'widgetized-page';
 	}

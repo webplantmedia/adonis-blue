@@ -171,12 +171,18 @@ if ( ! function_exists( 'angiemakesdesign_featured_post_navigation' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'angiemakesdesign_site_info' ) ) :
-	function angiemakesdesign_site_info() {
+if ( ! function_exists( 'angiemakesdesign_get_site_info' ) ) :
+	function angiemakesdesign_get_site_info() {
 		global $amd;
 
 		$allowed_tags = angiemakesdesign_allowed_html();
-		echo wp_kses( $amd['site_info'], $allowed_tags );
+		return wp_kses( $amd['site_info'], $allowed_tags );
+	}
+endif;
+
+if ( ! function_exists( 'angiemakesdesign_site_info' ) ) :
+	function angiemakesdesign_site_info() {
+		echo angiemakesdesign_get_site_info();
 	}
 endif;
 

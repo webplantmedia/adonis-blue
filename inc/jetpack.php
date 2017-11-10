@@ -60,3 +60,13 @@ function angiemakesdesign_jetpack_enqueue() {
 	wp_enqueue_style( 'angiemakesdesign-jetpack', get_template_directory_uri() . '/css/jetpack.css', array( 'angiemakesdesign-style' ), ANGIEMAKESDESIGN_VERSION );
 }
 add_action( 'wp_enqueue_scripts', 'angiemakesdesign_jetpack_enqueue' );
+
+/**
+* Replace footer credits for JetPack Inifite Scroll
+**/
+function angiemakesdesign_infinite_scroll_credit(){
+    $content = angiemakesdesign_get_site_info();
+
+    return $content;
+}
+add_filter('infinite_scroll_credit','angiemakesdesign_infinite_scroll_credit');

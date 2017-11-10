@@ -53,4 +53,37 @@ Jetpack styling
   padding: 0;
 }
 
+#master #infinite-footer .blog-credits a,
+#master #infinite-footer .blog-info a {
+  color: #6d686c;
+  text-decoration: none;
+}
+
+#master #infinite-footer .blog-credits a:hover,
+#master #infinite-footer .blog-info a:hover {
+  color: #333333;
+  text-decoration: none;
+}
+
+#master #infinite-footer .blog-info a {
+  font-size: 14px;
+  font-size: 0.875rem;
+}
+
+#master #infinite-footer .blog-credits a {
+  font-size: 12px;
+  font-size: 0.75rem;
+}
+
+#master #infinite-footer .blog-credits {
+  color: #6d686c;
+  text-decoration: none;
+  font-size: 12px;
+  font-size: 0.75rem;
+}
+
+#master #infinite-footer .blog-credits .genericon {
+  vertical-align: middle;
+}
+
 /*# sourceMappingURL=jetpack.css.map */

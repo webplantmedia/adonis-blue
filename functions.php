@@ -331,11 +331,11 @@ function angiemakesdesign_display_sidebar_footer() {
 	$footer_2 = is_active_sidebar( 'footer-2' );
 	$footer_3 = is_active_sidebar( 'footer-3' );
 
-	if ( ! $footer_1 || ! $footer_2 || ! $footer_3 ) {
-		return false;
+	if ( $footer_1 || $footer_2 || $footer_3 ) {
+		return array( 1 => $footer_1, 2 => $footer_2, 3 => $footer_3 );
 	}
 	
-	return array( 1 => $footer_1, 2 => $footer_2, 3 => $footer_3 );
+	return false;
 }
 
 function angiemakesdesign_display_fullwidth() {

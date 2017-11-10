@@ -46,4 +46,35 @@
 		border-radius: 0;
 		padding: 0;
 	}
+
+	
+
+	#infinite-footer .blog-credits a,
+	#infinite-footer .blog-info a {
+		color: $color__text;
+		text-decoration: none;
+
+		&:hover {
+			color: $color__text-dark;
+			text-decoration: none;
+		}
+	}
+
+	#infinite-footer .blog-info a {
+		@include rem('font-size',$font__xsmall-size);
+	}
+
+	#infinite-footer .blog-credits a {
+		@include rem('font-size',$font__tiny-size);
+	}
+
+	#infinite-footer .blog-credits {
+		color: $color__text;
+		text-decoration: none;
+		@include rem('font-size',$font__tiny-size);
+
+		.genericon {
+			vertical-align: middle;
+		}
+	}
 }
