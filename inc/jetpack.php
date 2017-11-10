@@ -30,6 +30,8 @@ function angiemakesdesign_jetpack_setup() {
 
 	// Add theme support for Content Options.
 	add_theme_support( 'jetpack-content-options', array(
+		'author-bio'         => true,
+		'author-bio-default' => true,
 		'post-details' => array(
 			'stylesheet' => 'angiemakesdesign-style',
 			'date'       => '.posted-on,.entry-meta',

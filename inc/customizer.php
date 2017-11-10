@@ -215,6 +215,72 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 	) );
 
 	/**
+	 * Blog
+	 */
+	$section_id = 'theme_options_blog';
+	$wp_customize->add_section( $section_id, array(
+		'title'    => __( 'Blog', 'angiemakesdesign' ),
+		'panel'    => 'theme_options',
+	) );
+
+	$setting_id = 'blog_display';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $amd_default[ $setting_id ],
+		'transport' => 'refresh',
+		'sanitize_callback' => 'sanitize_text_field',
+	) );
+
+	$wp_customize->add_control( $setting_id, array(
+		'type' => 'select',
+		'label' => __( 'Blog Display', 'angiemakesdesign' ),
+		'section' => $section_id,
+		'choices' => array(
+			'blog1' => 'Lead Excerpt + Grid',
+			'blog4' => 'Grid',
+			'blog2' => 'Excerpt',
+			'blog3' => 'Content',
+		),
+	) );
+
+	$setting_id = 'archive_display';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $amd_default[ $setting_id ],
+		'transport' => 'refresh',
+		'sanitize_callback' => 'sanitize_text_field',
+	) );
+
+	$wp_customize->add_control( $setting_id, array(
+		'type' => 'select',
+		'label' => __( 'Archive Display', 'angiemakesdesign' ),
+		'section' => $section_id,
+		'choices' => array(
+			'blog1' => 'Lead Excerpt + Grid',
+			'blog4' => 'Grid',
+			'blog2' => 'Excerpt',
+			'blog3' => 'Content',
+		),
+	) );
+
+	$setting_id = 'search_display';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $amd_default[ $setting_id ],
+		'transport' => 'refresh',
+		'sanitize_callback' => 'sanitize_text_field',
+	) );
+
+	$wp_customize->add_control( $setting_id, array(
+		'type' => 'select',
+		'label' => __( 'Search Display', 'angiemakesdesign' ),
+		'section' => $section_id,
+		'choices' => array(
+			'blog1' => 'Lead Excerpt + Grid',
+			'blog4' => 'Grid',
+			'blog2' => 'Excerpt',
+			'blog3' => 'Content',
+		),
+	) );
+
+	/**
 	 * Display Sidebar
 	 */
 	$section_id = 'theme_options_display_sidebar';

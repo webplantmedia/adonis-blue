@@ -379,6 +379,20 @@ function angiemakesdesign_allowed_html() {
 	return apply_filters( 'angiemakesdesign_allowed_html', $expandedtags );
 }
 
+function angiemakesdesign_get_blog_part() {
+	global $amd;
+
+	if ( is_home() ) {
+		get_template_part( 'template-parts/' . $amd['blog_display'] );
+	}
+	else if ( is_archive() ) {
+		get_template_part( 'template-parts/' . $amd['archive_display'] );
+	}
+	else if ( is_search() ) {
+		get_template_part( 'template-parts/' . $amd['search_display'] );
+	}
+}
+
 /**
  * Query WooCommerce activation
  */
