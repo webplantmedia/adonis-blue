@@ -997,6 +997,7 @@ button {
   background: transparent;
 }
 
+#master #infinite-handle span button,
 #master .woocommerce #respond input#submit,
 #master .woocommerce-pagination ul span,
 #master .woocommerce-pagination ul a,
@@ -1044,6 +1045,8 @@ button {
   padding: 13px 30px;
 }
 
+#master #infinite-handle span button:focus,
+#master #infinite-handle span button:active,
 #master .woocommerce #respond input#submit:focus,
 #master .woocommerce #respond input#submit:active,
 #master .woocommerce-pagination ul a:focus,
@@ -1064,6 +1067,7 @@ button {
   background: #252323;
 }
 
+#master #infinite-handle span button:hover,
 #master .woocommerce #respond input#submit:active,
 #master .woocommerce-pagination ul a:hover,
 #master .comment-navigation .nav-links a:hover,
@@ -3080,6 +3084,12 @@ a img {
   border-bottom: 2px solid #ececec;
 }
 
+.infinite-wrap .lead-post .hentry {
+  padding-top: 70px;
+  padding-top: 4.375rem;
+  border-top: 2px solid #ececec;
+}
+
 .search .search-form-container {
   margin-top: 30px;
   margin-top: 1.875rem;
@@ -3110,7 +3120,7 @@ a img {
   margin-bottom: 4.375rem;
 }
 
-.site-main > *:last-child {
+#master .site-main > *:last-child {
   border-bottom-width: 0;
 }
 

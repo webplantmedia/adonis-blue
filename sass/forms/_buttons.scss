@@ -6,6 +6,7 @@ button {
 }
 
 #master {
+	#infinite-handle span button,
 	.woocommerce #respond input#submit,
 	.woocommerce-pagination ul span,
 	.woocommerce-pagination ul a,
@@ -54,6 +55,8 @@ button {
 		}
 	}
 
+	#infinite-handle span button:focus,
+	#infinite-handle span button:active,
 	.woocommerce #respond input#submit:focus,
 	.woocommerce #respond input#submit:active,
 	.woocommerce-pagination ul a:focus,
@@ -74,6 +77,7 @@ button {
 		background: #252323;
 	}
 
+	#infinite-handle span button:hover,
 	.woocommerce #respond input#submit:active,
 	.woocommerce-pagination ul a:hover,
 	.comment-navigation .nav-links a:hover,

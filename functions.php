@@ -279,14 +279,26 @@ function angiemakesdesign_display_sidebar() {
 	global $amd;
 
 	if ( is_single() && 'post' == get_post_type() ) {
+		if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+			return false;
+		}
+
 		return $amd['display_sidebar_post'];
 	}
 
 	if ( is_home() ) {
+		if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+			return false;
+		}
+
 		return $amd['display_sidebar_blog'];
 	}
 	
 	if ( angiemakesdesign_is_woocommerce_activated() ) {
+		if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+			return false;
+		}
+
 		if ( is_shop() ) {
 			return $amd['display_sidebar_shop'];
 		}
@@ -296,10 +308,34 @@ function angiemakesdesign_display_sidebar() {
 	}
 
 	if ( is_search() ) {
+		if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+			return false;
+		}
+
 		return $amd['display_sidebar_search'];
 	}
 	
+	if ( is_archive() ) {
+		if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+			return false;
+		}
+
+		return $amd['display_sidebar_archive'];
+	}
+	
 	return false;
+}
+
+function angiemakesdesign_display_sidebar_footer() {
+	$footer_1 = is_active_sidebar( 'footer-1' );
+	$footer_2 = is_active_sidebar( 'footer-2' );
+	$footer_3 = is_active_sidebar( 'footer-3' );
+
+	if ( ! $footer_1 || ! $footer_2 || ! $footer_3 ) {
+		return false;
+	}
+	
+	return array( 1 => $footer_1, 2 => $footer_2, 3 => $footer_3 );
 }
 
 function angiemakesdesign_display_fullwidth() {

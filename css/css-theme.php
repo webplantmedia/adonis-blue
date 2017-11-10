@@ -52,6 +52,9 @@ a:hover {
 	background-color: ' . $amd['footer_background_color'] . '; /*id:footer_background_color*/
 }
 
+#master #infinite-handle span button,
+#master #infinite-handle span button:active,
+#master #infinite-handle span button:focus,
 #master .woocommerce #respond input#submit,
 #master .woocommerce #respond input#submit:active,
 #master .woocommerce #respond input#submit:focus,
@@ -97,6 +100,7 @@ a:hover {
 	background-color: ' . $amd['primary_color'] . '; /*id:primary_color*/
 }
 
+#master #infinite-handle span button:hover,
 #master .woocommerce #respond input#submit:hover,
 #master .comment-reply-link:hover,
 #master .woocommerce-pagination ul span,

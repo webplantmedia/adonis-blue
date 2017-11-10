@@ -7,32 +7,28 @@
  * @package Angie_Makes_Design
  */
 
-$footer_1 = is_active_sidebar( 'sidebar-1' );
-$footer_2 = is_active_sidebar( 'sidebar-1' );
-$footer_3 = is_active_sidebar( 'sidebar-1' );
-$column = 1;
-
-if ( ! $footer_1 || ! $footer_2 || ! $footer_3 ) {
+if ( ! $footer = angiemakesdesign_display_sidebar_footer() ) {
 	return;
 }
+$column = 1;
 ?>
 
 <aside id="tertiary" class="footer-widget-area">
-	<?php if ( $footer_1 ) : ?>
+	<?php if ( $footer[1] ) : ?>
 		<div class="footer-column-<?php echo $column; ?>">
 			<?php dynamic_sidebar( 'footer-1' ); ?>
 		</div>
 	<?php endif; ?>
 	<?php $column++; ?>
 
-	<?php if ( $footer_2 ) : ?>
+	<?php if ( $footer[2] ) : ?>
 		<div class="footer-column-<?php echo $column; ?>">
 			<?php dynamic_sidebar( 'footer-2' ); ?>
 		</div>
 	<?php endif; ?>
 	<?php $column++; ?>
 
-	<?php if ( $footer_3 ) : ?>
+	<?php if ( $footer[3] ) : ?>
 		<div class="footer-column-<?php echo $column; ?>">
 			<?php dynamic_sidebar( 'footer-3' ); ?>
 		</div>

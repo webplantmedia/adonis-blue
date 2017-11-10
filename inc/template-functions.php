@@ -20,6 +20,9 @@ function angiemakesdesign_body_classes( $classes ) {
 	if ( angiemakesdesign_display_sidebar() ) {
 		$classes[] = 'display-sidebar';
 	}
+	if ( angiemakesdesign_display_sidebar_footer() ) {
+		$classes[] = 'display-sidebar-footer';
+	}
 	else if ( angiemakesdesign_display_fullwidth() ) {
 		$classes[] = 'display-fullwidth';
 	}

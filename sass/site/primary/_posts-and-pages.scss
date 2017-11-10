@@ -11,6 +11,15 @@
 	border-bottom: 2px solid $color__border;
 }
 
+.infinite-wrap {
+	.lead-post {
+		.hentry {
+			@include rem('padding-top',70px);
+			border-top: 2px solid $color__border;
+		}
+	}
+}
+
 .search .search-form-container {
 	@include rem('margin-top',30px);
 	@include rem('margin-bottom',70px);
@@ -37,7 +46,7 @@
 	@include rem('margin-bottom',70px);
 }
 
-.site-main {
+#master .site-main {
 	> *:last-child {
 		border-bottom-width: 0;
 	}

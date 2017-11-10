@@ -16,10 +16,15 @@
  */
 function angiemakesdesign_jetpack_setup() {
 	// Add theme support for Infinite Scroll.
+	$footer_widgets = false;
+	if ( angiemakesdesign_display_sidebar_footer() ) {
+		$footer_widgets = true;
+	}
 	add_theme_support( 'infinite-scroll', array(
 		'container' => 'main',
 		'render'    => 'angiemakesdesign_infinite_scroll_render',
 		'footer'    => 'page',
+		'footer_widgets' => $footer_widgets,
 	) );
 
 	// Add theme support for Responsive Videos.
@@ -48,17 +53,10 @@ add_action( 'after_setup_theme', 'angiemakesdesign_jetpack_setup' );
  * Custom render function for Infinite Scroll.
  */
 function angiemakesdesign_infinite_scroll_render() {
-	while ( have_posts() ) {
-		the_post();
-		if ( is_search() ) :
-			get_template_part( 'template-parts/content', 'search' );
-		else :
-			get_template_part( 'template-parts/content', get_post_format() );
-		endif;
-	}
+	angiemakesdesign_get_blog_part();
 }
 
 function angiemakesdesign_jetpack_enqueue() {
-		wp_enqueue_style( 'angiemakesdesign-jetpack', get_template_directory_uri() . '/css/jetpack.css', array( 'angiemakesdesign-style' ), ANGIEMAKESDESIGN_VERSION );
+	wp_enqueue_style( 'angiemakesdesign-jetpack', get_template_directory_uri() . '/css/jetpack.css', array( 'angiemakesdesign-style' ), ANGIEMAKESDESIGN_VERSION );
 }
 add_action( 'wp_enqueue_scripts', 'angiemakesdesign_jetpack_enqueue' );
