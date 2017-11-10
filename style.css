@@ -3375,6 +3375,20 @@ a img {
   margin-bottom: 5rem;
 }
 
+#master .entry-content ul li,
+#master .entry-content ol li,
+#master .page-content ul li,
+#master .page-content ol li {
+  margin-bottom: 0.5em;
+}
+
+#master .entry-content ul li:last-child,
+#master .entry-content ol li:last-child,
+#master .page-content ul li:last-child,
+#master .page-content ol li:last-child {
+  margin-bottom: 0;
+}
+
 #master .entry-content > *:first-child {
   margin-top: 0;
 }

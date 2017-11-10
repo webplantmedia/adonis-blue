@@ -276,16 +276,22 @@ function angiemakesdesign_display_header() {
 }
 
 function angiemakesdesign_display_sidebar() {
+	global $amd;
+
 	if ( is_single() && 'post' == get_post_type() ) {
-		return true;
+		return $amd['display_sidebar_post'];
+	}
+
+	if ( is_home() ) {
+		return $amd['display_sidebar_blog'];
 	}
 	
 	if ( angiemakesdesign_is_woocommerce_activated() ) {
 		if ( is_shop() ) {
-			return true;
+			return $amd['display_sidebar_shop'];
 		}
 		else if ( is_product_category() || is_product_taxonomy() ) {
-			return true;
+			return $amd['display_sidebar_shop_archive'];
 		}
 	}
 
@@ -293,6 +299,8 @@ function angiemakesdesign_display_sidebar() {
 }
 
 function angiemakesdesign_display_fullwidth() {
+	global $amd;
+
 	if ( angiemakesdesign_is_woocommerce_activated() ) {
 		if ( is_woocommerce() || is_cart() || is_checkout() ) {
 			return true;

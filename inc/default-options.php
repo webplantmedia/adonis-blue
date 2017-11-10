@@ -25,6 +25,11 @@ $amd_default['top_header_background_offset'] = 520;
 
 // Body
 $amd_default['default_button_style'] = 'button-2';
+$amd_default['display_sidebar_blog'] = 1;
+$amd_default['display_sidebar_post'] = 1;
+$amd_default['display_sidebar_shop'] = 1;
+$amd_default['display_sidebar_archive'] = 1;
+$amd_default['display_sidebar_shop_archive'] = 1;
 
 // Footer
 $amd_default['site_info'] = 'Site made with <i class="genericon genericon-heart"></i> by <a href="https://angiemakes.com/">Angie Makes</a>';
