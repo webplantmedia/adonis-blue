@@ -271,9 +271,41 @@
 
 // Static Content
 .angiemakesdesign_static_content {
+	position: relative;
+
 	.bg-image-cover {
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: center center;
 	}
+
+	.hentry {
+		.entry-footer {
+			position: absolute;
+			bottom: 10px;
+			left: 10px;
+			margin: 0;
+		}
+
+	}
+
+	.custom-color {
+		.hentry {
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6,
+			p,
+			a:not(.theme-generated-button),
+			a:not(.theme-generated-button):hover,
+			a:not(.theme-generated-button):focus,
+			a:not(.theme-generated-button):active,
+			a:not(.theme-generated-button):visited {
+				color: inherit;
+			}
+		}
+	}
+
 }

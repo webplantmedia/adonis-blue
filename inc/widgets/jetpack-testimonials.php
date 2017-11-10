@@ -288,105 +288,108 @@ class AngieMakesDesign_Widget_Jetpack_Testimonials extends AngieMakesDesign_Widg
 			}
 			?>
 
+		<?php $before_widget = str_replace( 'class="content-widget', 'class="content-widget full-width-bar', $before_widget ); ?>
 		<?php echo $before_widget; ?>
 
-			<div class="content-jetpack-testimonial full-width-bar" style="<?php echo implode( '', $style ); ?>">
-				<?php if ( ! empty( $o['title'] ) ) : ?>
-					<?php echo $before_title . $o['title'] . $after_title; ?>
-				<?php endif; ?>
+			<div class="content-jetpack-testimonial" style="<?php echo implode( '', $style ); ?>">
+				<div class="site-boundary">
+					<?php if ( ! empty( $o['title'] ) ) : ?>
+						<?php echo $before_title . $o['title'] . $after_title; ?>
+					<?php endif; ?>
 
-				<?php if ( ! empty( $testimonials ) ) : ?>
+					<?php if ( ! empty( $testimonials ) ) : ?>
 
-					<div class="testimonial-slider" data-sliderauto="<?php echo esc_attr( $o['slider_auto'] ); ?>" data-slidermode="<?php echo esc_attr( $o['slider_mode'] ); ?>" data-sliderpause="<?php echo esc_attr( $o['slider_pause'] ); ?>" data-sliderautohover="<?php echo esc_attr( $o['slider_autohover'] ) ?>" data-slidercontrols="<?php echo esc_attr( $o['slider_controls'] ) ?>" data-sliderpager="<?php echo esc_attr( $o['slider_pager'] ) ?>">
-						<?php foreach ( $testimonials as $slide ) :
-							$size = sizeof( $slide );
-							?>
-							<div class="testimonial-slide testimonial-slide-size-<?php echo $size; ?>">
-								<div class="grid">
-									<?php foreach ( $slide as $key => $testimonial ) : ?>
-										<?php if ( $size == 1 ) : ?>
-											<div class="grid__col grid__col--2-of-2 testimonial-position-<?php echo $key; ?>">
-												<?php echo $testimonial; ?>
-											</div>
-										<?php else : ?>
-											<div class="grid__col grid__col--1-of-2 testimonial-position-<?php echo $key; ?>">
-												<?php echo $testimonial; ?>
-											</div>
-										<?php endif; ?>
-									<?php endforeach; ?>
+						<div class="testimonial-slider" data-sliderauto="<?php echo esc_attr( $o['slider_auto'] ); ?>" data-slidermode="<?php echo esc_attr( $o['slider_mode'] ); ?>" data-sliderpause="<?php echo esc_attr( $o['slider_pause'] ); ?>" data-sliderautohover="<?php echo esc_attr( $o['slider_autohover'] ) ?>" data-slidercontrols="<?php echo esc_attr( $o['slider_controls'] ) ?>" data-sliderpager="<?php echo esc_attr( $o['slider_pager'] ) ?>">
+							<?php foreach ( $testimonials as $slide ) :
+								$size = sizeof( $slide );
+								?>
+								<div class="testimonial-slide testimonial-slide-size-<?php echo $size; ?>">
+									<div class="grid">
+										<?php foreach ( $slide as $key => $testimonial ) : ?>
+											<?php if ( $size == 1 ) : ?>
+												<div class="grid__col grid__col--2-of-2 testimonial-position-<?php echo $key; ?>">
+													<?php echo $testimonial; ?>
+												</div>
+											<?php else : ?>
+												<div class="grid__col grid__col--1-of-2 testimonial-position-<?php echo $key; ?>">
+													<?php echo $testimonial; ?>
+												</div>
+											<?php endif; ?>
+										<?php endforeach; ?>
+									</div>
 								</div>
-							</div>
-						<?php endforeach; ?>
-					</div>
+							<?php endforeach; ?>
+						</div>
 
-					<script type="text/javascript">
-						/* <![CDATA[ */
-						( function($) {
-							'use strict';
+						<script type="text/javascript">
+							/* <![CDATA[ */
+							( function($) {
+								'use strict';
 
-							$(document).ready(function(){
-								var $slider = $('#<?php echo $this->id; ?> .testimonial-slider');
-								var sliderauto = $slider.data('sliderauto');
-								var slidermode = $slider.data('slidermode');
-								var sliderpause = $slider.data('sliderpause');
-								var sliderautohover = $slider.data('sliderautohover');
-								var slidercontrols = $slider.data('slidercontrols');
-								var sliderpager = $slider.data('sliderpager');
+								$(document).ready(function(){
+									var $slider = $('#<?php echo $this->id; ?> .testimonial-slider');
+									var sliderauto = $slider.data('sliderauto');
+									var slidermode = $slider.data('slidermode');
+									var sliderpause = $slider.data('sliderpause');
+									var sliderautohover = $slider.data('sliderautohover');
+									var slidercontrols = $slider.data('slidercontrols');
+									var sliderpager = $slider.data('sliderpager');
 
-								slidermode = typeof slidermode === 'undefined' ? 'horizontal' : slidermode;
-								sliderpause = typeof sliderpause === 'undefined' ? 9000 : ( 1000 * sliderpause );
-								sliderauto = sliderauto == 1 ? true : false;
-								sliderautohover = sliderautohover == 1 ? true : false;
-								slidercontrols = slidercontrols == 1 ? true : false;
-								sliderpager = sliderpager == 1 ? true : false;
+									slidermode = typeof slidermode === 'undefined' ? 'horizontal' : slidermode;
+									sliderpause = typeof sliderpause === 'undefined' ? 9000 : ( 1000 * sliderpause );
+									sliderauto = sliderauto == 1 ? true : false;
+									sliderautohover = sliderautohover == 1 ? true : false;
+									slidercontrols = slidercontrols == 1 ? true : false;
+									sliderpager = sliderpager == 1 ? true : false;
 
-								$slider.bxSlider({
-									adaptiveHeight: true,
-									auto: false,
-									nextText: '<i class="genericon genericon-expand genericon-rotate-270"></i>',
-									prevText: '<i class="genericon genericon-expand genericon-rotate-90"></i>',
-									mode: slidermode,
-									pause: sliderpause,
-									autoHover: sliderautohover,
-									controls: slidercontrols,
-									pager: sliderpager,
-									onSliderLoad: function() {
-										if ( sliderauto ) {
-											var $el = $(this);
-											var $e = $el.find('.testimonial-entry-content-wrapper').first();
-											var check = $e.css('position');
-											if ( 'static' == check ) {
-												$slider.stopAuto();
+									$slider.bxSlider({
+										adaptiveHeight: true,
+										auto: false,
+										nextText: '<i class="genericon genericon-expand genericon-rotate-270"></i>',
+										prevText: '<i class="genericon genericon-expand genericon-rotate-90"></i>',
+										mode: slidermode,
+										pause: sliderpause,
+										autoHover: sliderautohover,
+										controls: slidercontrols,
+										pager: sliderpager,
+										onSliderLoad: function() {
+											if ( sliderauto ) {
+												var $el = $(this);
+												var $e = $el.find('.testimonial-entry-content-wrapper').first();
+												var check = $e.css('position');
+												if ( 'static' == check ) {
+													$slider.stopAuto();
+												}
+												else {
+													$slider.startAuto();
+												}
 											}
-											else {
-												$slider.startAuto();
+										},
+										onSliderResize: function() {
+											if ( sliderauto ) {
+												var $el = $(this);
+												var $e = $el.find('.testimonial-entry-content-wrapper').first();
+												var check = $e.css('position');
+												if ( 'static' == check ) {
+													$slider.stopAuto();
+												}
+												else {
+													$slider.startAuto();
+												}
 											}
 										}
-									},
-									onSliderResize: function() {
-										if ( sliderauto ) {
-											var $el = $(this);
-											var $e = $el.find('.testimonial-entry-content-wrapper').first();
-											var check = $e.css('position');
-											if ( 'static' == check ) {
-												$slider.stopAuto();
-											}
-											else {
-												$slider.startAuto();
-											}
-										}
-									}
+									});
 								});
-							});
-						} )( jQuery );
-						/* ]]> */
-					</script>
+							} )( jQuery );
+							/* ]]> */
+						</script>
 
-				<?php else : ?>
+					<?php else : ?>
 
-					<p><em><?php echo _e( 'Your Testimonial Archive currently has no entries. You can start creating them on your dashboard.', 'angiemakesdesign' ); ?></p></em>
+						<p><em><?php echo _e( 'Your Testimonial Archive currently has no entries. You can start creating them on your dashboard.', 'angiemakesdesign' ); ?></p></em>
 
-				<?php endif; ?>
+					<?php endif; ?>
+				</div><!-- .site-boundary -->
 			</div><!-- .content-jetpack-testimonial -->
 
 		<?php echo $after_widget; ?>

@@ -72,7 +72,7 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Static_Content' ) ) :
 				),
 				'padding_top' => array(
 					'type'  => 'number',
-					'std'   => 40,
+					'std'   => 80,
 					'step'  => 1,
 					'min'   => 0,
 					'max'   => 300,
@@ -81,11 +81,11 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Static_Content' ) ) :
 				),
 				'padding_bottom' => array(
 					'type'  => 'number',
-					'std'   => 40,
+					'std'   => 80,
 					'step'  => 1,
 					'min'   => 0,
 					'max'   => 300,
-					'label' => esc_html__( 'Top padding of widget:', 'angiemakesdesign' ),
+					'label' => esc_html__( 'Bottom padding of widget:', 'angiemakesdesign' ),
 					'sanitize' => 'number',
 				),
 				'margin_bottom' => array(
@@ -118,10 +118,9 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Static_Content' ) ) :
 
 			$post = new WP_Query( array( 'page_id' => $o['page'] ) );
 
-			echo  $before_widget;
-
 			$style = array();
 			$bg_style = array();
+			$fullwidth = false;
 			$classes[] = 'static-page-content';
 			$classes[] = 'no-top-bottom-margins';
 			
@@ -139,55 +138,108 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Static_Content' ) ) :
 
 			if ( '' !== $o['background_image'] ) {
 				$bg_style[] = 'background-image:url(' . esc_url( $o['background_image'] ) . ');';
-				$classes[] = 'full-width-bar';
+				$fullwidth = true;
 			}
 
 			if ( ! empty( $o['background_color'] ) ) {
 				$rgb = $this->hex2rgb( $o['background_color'] );
 				$opacity = absint( $o['background_opacity'] ) / 100;
-				$classes[] = 'full-width-bar';
+				$fullwidth = true;
 			}
 
 			// Allow site-wide customization of the 'Read more' link text.
 			$read_more = apply_filters( 'angiemakesdesign_read_more_text', esc_html__( 'Read more', 'angiemakesdesign' ) );
+
+			if ( $fullwidth ) {
+				$before_widget = str_replace( 'class="content-widget', 'class="content-widget full-width-bar', $before_widget );
+			}
+
+			echo  $before_widget;
 			?>
 
 			<style type="text/css">
 				<?php if ( ! empty( $o['background_color'] ) ) : ?>
-				#<?php echo esc_html( $this->id ) ?> .full-width-bar {
+				#<?php echo esc_html( $this->id ) ?> .static-page-content {
 					background-color: rgb(<?php echo $rgb['red']; ?>,<?php echo $rgb['green']; ?>,<?php echo $rgb['blue']; ?>);
 					background-color: rgba(<?php echo $rgb['red']; ?>,<?php echo $rgb['green']; ?>,<?php echo $rgb['blue']; ?>,<?php echo $opacity; ?>);
 				}
 				<?php endif; ?>
 				<?php if ( ! empty( $o['link_color'] ) ) : ?>
-				#<?php echo esc_html( $this->id ) ?> .entry-content a {
+				#<?php echo esc_html( $this->id ) ?> .entry-content a:not(.theme-generated-button):active,
+				#<?php echo esc_html( $this->id ) ?> .entry-content a:not(.theme-generated-button):focus,
+				#<?php echo esc_html( $this->id ) ?> .entry-content a:not(.theme-generated-button):visited,
+				#<?php echo esc_html( $this->id ) ?> .entry-content a:not(.theme-generated-button):hover,
+				#<?php echo esc_html( $this->id ) ?> .entry-content a:not(.theme-generated-button) {
 					color: <?php echo esc_html( $o['link_color'] ); ?>;
 				}
 				<?php endif; ?>
 				<?php if ( ! empty( $o['text_color'] ) ) : ?>
-				#<?php echo esc_html( $this->id ) ?> .full-width-bar,
-				.angiemakesdesign_static_content.widget .widget-title {
+				#<?php echo esc_html( $this->id ) ?> .entry-footer a,
+				#<?php echo esc_html( $this->id ) ?> .entry-footer a:hover,
+				#<?php echo esc_html( $this->id ) ?> .entry-footer a:visited,
+				#<?php echo esc_html( $this->id ) ?> .entry-footer a:focus,
+				#<?php echo esc_html( $this->id ) ?> .entry-footer a:active,
+				#<?php echo esc_html( $this->id ) ?> .entry-content h1,
+				#<?php echo esc_html( $this->id ) ?> .entry-content h2,
+				#<?php echo esc_html( $this->id ) ?> .entry-content h3,
+				#<?php echo esc_html( $this->id ) ?> .entry-content h4,
+				#<?php echo esc_html( $this->id ) ?> .entry-content h5,
+				#<?php echo esc_html( $this->id ) ?> .entry-content h6,
+				#<?php echo esc_html( $this->id ) ?> .entry-content p,
+				#<?php echo esc_html( $this->id ) ?> .entry-content,
+				#<?php echo esc_html( $this->id ) ?> .widget-title {
 					color: <?php echo esc_html( $o['text_color'] ); ?>;
 				}
 				<?php endif; ?>
 			</style>
 
 			<?php if ( ! empty( $bg_style ) ) : ?>
-			<div class="full-width-bar bg-image-cover" style="<?php echo implode( '', $bg_style ); ?>">
+			<div class="bg-image-cover" style="<?php echo implode( '', $bg_style ); ?>">
 			<?php endif; ?>
 
 				<div class="<?php echo implode( ' ', $classes ); ?>" style="<?php echo implode( '', $style ); ?>">
 
-					<?php if ( $post->have_posts() ) : ?>
-						<?php while ( $post->have_posts() ) : $post->the_post(); ?>
-							<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-								<?php if ( $o['title'] ) echo  $before_title . $o['title'] . $after_title; ?>
+					<?php if ( $fullwidth ) : ?>
+						<div class="site-boundary">
+					<?php endif; ?>
 
-								<div class="entry-content">
-									<?php the_content( $read_more ); ?>
-								</div>
-							</article>
-						<?php endwhile; ?>
+						<?php if ( $post->have_posts() ) : ?>
+							<?php while ( $post->have_posts() ) : $post->the_post(); ?>
+								<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+									<?php if ( $o['title'] ) echo  $before_title . $o['title'] . $after_title; ?>
+
+									<div class="entry-content">
+										<?php the_content( $read_more ); ?>
+									</div>
+
+									<?php if ( get_edit_post_link() ) : ?>
+										<footer class="entry-footer">
+											<?php
+												edit_post_link(
+													sprintf(
+														wp_kses(
+															/* translators: %s: Name of current post. Only visible to screen readers */
+															__( 'Edit <span class="screen-reader-text">%s</span>', 'angiemakesdesign' ),
+															array(
+																'span' => array(
+																	'class' => array(),
+																),
+															)
+														),
+														get_the_title()
+													),
+													'<span class="edit-link">',
+													'</span>'
+												);
+											?>
+										</footer><!-- .entry-footer -->
+									<?php endif; ?>
+								</article>
+							<?php endwhile; ?>
+						<?php endif; ?>
+
+					<?php if ( $fullwidth ) : ?>
+						</div><!-- .site-boundary -->
 					<?php endif; ?>
 
 				</div>

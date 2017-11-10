@@ -670,7 +670,7 @@ class AngieMakesDesign_Widget extends WP_Widget {
 					<label for="<?php echo $field_id; ?>"><?php echo esc_html( $setting['label'] ); ?></label>
 				</p>
 				<div class="color-picker-wrapper">
-					<input type="text" class="widefat color-picker" id="<?php echo esc_attr( $field_id ); ?>" name="<?php echo esc_attr( $field_name ); ?>" data-default-color="<?php echo $value; ?>" value="<?php echo $value; ?>" />
+					<input type="text" class="widefat color-picker" id="<?php echo esc_attr( $field_id ); ?>" name="<?php echo esc_attr( $field_name ); ?>" data-default-color="<?php echo $setting['std']; ?>" value="<?php echo $value; ?>" />
 					<script type="text/javascript">
 						/* <![CDATA[ */
 						( function( $ ){

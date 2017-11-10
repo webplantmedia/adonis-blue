@@ -2575,10 +2575,36 @@ a img {
   }
 }
 
+.angiemakesdesign_static_content {
+  position: relative;
+}
+
 .angiemakesdesign_static_content .bg-image-cover {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+}
+
+.angiemakesdesign_static_content .hentry .entry-footer {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  margin: 0;
+}
+
+.angiemakesdesign_static_content .custom-color .hentry h1,
+.angiemakesdesign_static_content .custom-color .hentry h2,
+.angiemakesdesign_static_content .custom-color .hentry h3,
+.angiemakesdesign_static_content .custom-color .hentry h4,
+.angiemakesdesign_static_content .custom-color .hentry h5,
+.angiemakesdesign_static_content .custom-color .hentry h6,
+.angiemakesdesign_static_content .custom-color .hentry p,
+.angiemakesdesign_static_content .custom-color .hentry a:not(.theme-generated-button),
+.angiemakesdesign_static_content .custom-color .hentry a:not(.theme-generated-button):hover,
+.angiemakesdesign_static_content .custom-color .hentry a:not(.theme-generated-button):focus,
+.angiemakesdesign_static_content .custom-color .hentry a:not(.theme-generated-button):active,
+.angiemakesdesign_static_content .custom-color .hentry a:not(.theme-generated-button):visited {
+  color: inherit;
 }
 
 /*--------------------------------------------------------------
@@ -2835,6 +2861,7 @@ a img {
 /*--------------------------------------------------------------
 # Layout
 --------------------------------------------------------------*/
+.widgetized-page .site-content .content-widget,
 .site-boundary {
   max-width: 1100px;
   max-width: 68.75rem;
@@ -2845,6 +2872,14 @@ a img {
   padding-left: 1.25rem;
   padding-right: 20px;
   padding-right: 1.25rem;
+}
+
+#master .widgetized-page .site-content .full-width-bar,
+#master .widgetized-page .site-content > .site-boundary {
+  max-width: none;
+  margin: 0;
+  display: block;
+  padding: 0;
 }
 
 .site-padding {
@@ -2861,7 +2896,7 @@ a img {
   padding-bottom: 3.125rem;
 }
 
-.ffull-width-bar {
+.break-to-full-width {
   margin-left: -9999rem;
   margin-right: -9999rem;
   /* add back negative margin value */

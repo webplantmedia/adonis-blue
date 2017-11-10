@@ -129,7 +129,7 @@ function angiemakesdesign_the_content( $output ) {
 			foreach ( $match as $html ) {
 				if ( ! preg_match( '/class\=\"|\'/', $html ) ) {
 					$search[] = $html;
-					$replace[] = str_replace( '<a', '<a class="button'.$button_class.'"', $html );
+					$replace[] = str_replace( '<a', '<a class="theme-generated-button button'.$button_class.'"', $html );
 				}
 			}
 		}

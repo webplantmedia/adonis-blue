@@ -116,7 +116,7 @@ class AngieMakesDesign_Widget_Callout extends AngieMakesDesign_Widget {
 				'step'  => 1,
 				'min'   => 0,
 				'max'   => 300,
-				'label' => esc_html__( 'Top padding of widget:', 'angiemakesdesign' ),
+				'label' => esc_html__( 'Bottom padding of widget:', 'angiemakesdesign' ),
 				'sanitize' => 'number',
 			),
 			'margin_bottom' => array(
@@ -181,14 +181,17 @@ class AngieMakesDesign_Widget_Callout extends AngieMakesDesign_Widget {
 			$style[] = 'padding-bottom:' . $o['padding_bottom'] . 'px;';
 		}
 
-		echo $before_widget; ?>
+		$before_widget = str_replace( 'class="content-widget', 'class="content-widget full-width-bar', $before_widget );
+		?>
+
+		<?php echo $before_widget; ?>
 
 		<?php if ( 'border' == $o['style'] ) : ?>
-			<div class="full-width-bar content-callout-border-wrap" style="<?php echo implode( '', $wrap_style ); ?>">
+			<div class="content-callout-border-wrap" style="<?php echo implode( '', $wrap_style ); ?>">
 		<?php endif; ?>
 
-				<div class="content-callout full-width-bar text-<?php echo $o['text_align']; ?>" style="<?php echo implode( '', $style ); ?>">
-					<div class="container">
+				<div class="content-callout text-<?php echo $o['text_align']; ?>" style="<?php echo implode( '', $style ); ?>">
+					<div class="site-boundary">
 						<div class="grid grid--no-gutter valign-<?php echo esc_attr( $o['vertical_align'] ); ?>">
 							<div class="grid__col grid__col--1-of-2 text-container<?php echo ( 'right' === $o['text_align'] ) ? ' grid__col--push-1-of-2' : ''; ?>"><?php echo $content; ?></div>
 

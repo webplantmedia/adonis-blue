@@ -1,3 +1,4 @@
+.widgetized-page .site-content .content-widget,
 .site-boundary {
 	@include rem('max-width', $size__site-container);
 	margin-left: auto;
@@ -5,6 +6,16 @@
 	display: block;
 	@include rem('padding-left', 20px);
 	@include rem('padding-right', 20px);
+}
+
+#master .widgetized-page {
+	.site-content .full-width-bar,
+	.site-content > .site-boundary {
+		max-width: none;
+		margin: 0;
+		display: block;
+		padding: 0;
+	}
 }
 
 .site-padding {
@@ -17,7 +28,7 @@
 	@include rem('padding-bottom', 50px);
 }
 
-.full-width-bar {
+.break-to-full-width {
 	margin-left: -9999rem;
 	margin-right: -9999rem;
 	/* add back negative margin value */
