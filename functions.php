@@ -183,8 +183,12 @@ add_action( 'wp_enqueue_scripts', 'angiemakesdesign_customizer_css_wrap', 20 );
  * Enqueue scripts and styles.
  */
 function angiemakesdesign_scripts() {
-	// Add custom fonts, used in the main stylesheet.
-	wp_enqueue_style( 'angiemakesdesign-fonts', angiemakesdesign_fonts_url(), array(), null );
+	global $amd;
+
+	if ( ! $amd['disable_google_fonts'] ) {
+		// Add custom fonts, used in the main stylesheet.
+		wp_enqueue_style( 'angiemakesdesign-fonts', angiemakesdesign_fonts_url(), array(), null );
+	}
 	
 	// Add genericons
 	wp_enqueue_style( 'genericons', get_parent_theme_file_uri() . '/fonts/genericons/genericons.css', array(), ANGIEMAKESDESIGN_VERSION );

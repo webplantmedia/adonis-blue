@@ -25,6 +25,7 @@ $amd_default['top_header_background_offset'] = 520;
 
 // Body
 $amd_default['default_button_style'] = 'button-2';
+$amd_default['disable_google_fonts'] = 0;
 
 // Blog
 $amd_default['blog_display'] = 'blog1';

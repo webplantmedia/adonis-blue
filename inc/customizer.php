@@ -214,6 +214,20 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 		),
 	) );
 
+	$setting_id = 'disable_google_fonts';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $amd_default[ $setting_id ],
+		'transport' => 'refresh',
+		'sanitize_callback' => 'angiemakesdesign_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( $setting_id, array(
+		'type' => 'checkbox',
+		'label' => __( 'Disable Google Fonts', 'angiemakesdesign' ),
+		'section' => $section_id,
+	) );
+
+
 	/**
 	 * Blog
 	 */
