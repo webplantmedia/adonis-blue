@@ -45,6 +45,11 @@ function angiemakesdesign_jetpack_setup() {
 			'author'     => '.byline',
 			'comment'    => '.comments-link',
 		),
+		'featured-images'    => array(
+			'archive'         => true,
+			'post'            => true,
+			'page'            => true,
+		),
 	) );
 }
 add_action( 'after_setup_theme', 'angiemakesdesign_jetpack_setup' );

@@ -145,6 +145,11 @@ endif;
 
 if ( ! function_exists( 'angiemakesdesign_featured_post_navigation' ) ) :
 	function angiemakesdesign_featured_post_navigation() {
+		// remove filter to keep featured images on post navigation.
+		if ( function_exists( 'jetpack_featured_images_remove_post_thumbnail' ) ) {
+			remove_filter( 'get_post_metadata', 'jetpack_featured_images_remove_post_thumbnail', true, 4 );
+		}
+
 		$prev_text = $next_text = '';
 
 		// Previous/next post navigation.
