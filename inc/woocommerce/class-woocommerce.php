@@ -21,6 +21,8 @@ if ( ! class_exists( 'AngieMakesDesign_WooCommerce' ) ) :
 		 */
 		public function __construct() {
 
+			add_action( 'wp', array( $this, 'disable_jetpack_infinite_scroll' ) );
+
 			add_filter( 'woocommerce_pagination_args', array( $this, 'woocommerce_pagination_args' ) );
 			add_filter( 'woocommerce_comment_pagination_args', array( $this, 'woocommerce_pagination_args' ) );
 			
@@ -132,6 +134,12 @@ if ( ! class_exists( 'AngieMakesDesign_WooCommerce' ) ) :
 			// add_filter( 'woocommerce_subcategory_count_html' , array( $this, 'angiemakesdesign_change_count_subcategory' ), 10, 2 );
 		}
 
+		function disable_jetpack_infinite_scroll() {
+			if ( is_woocommerce() ) {
+				remove_theme_support( 'infinite-scroll' );
+			}
+		}
+
 		function woocommerce_pagination_args( $args ) {
 			$args['prev_text'] = '<i class="genericon genericon-previous"></i>';
 			$args['next_text'] = '<i class="genericon genericon-next"></i>';
@@ -141,6 +149,7 @@ if ( ! class_exists( 'AngieMakesDesign_WooCommerce' ) ) :
 
 		function loop_shop_per_page( $cols ) {
 			$cols = 12;
+
 			return $cols;
 		}
 
