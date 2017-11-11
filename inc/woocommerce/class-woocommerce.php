@@ -272,7 +272,8 @@ if ( ! class_exists( 'AngieMakesDesign_WooCommerce' ) ) :
 			global $woocommerce;
 
 			$cart_subtotal    = $woocommerce->cart->get_cart_subtotal();
-			$link             = get_permalink( wc_get_page_id( 'shop' ));
+			$link             = wc_get_cart_url();
+			// $link             = get_permalink( wc_get_page_id( 'shop' ));
 			$cart_items_count = $woocommerce->cart->cart_contents_count;
 
 			$output = '';
@@ -298,7 +299,8 @@ if ( ! class_exists( 'AngieMakesDesign_WooCommerce' ) ) :
 			global $woocommerce;
 
 			$cart_subtotal    = $woocommerce->cart->get_cart_subtotal();
-			$link             = get_permalink( wc_get_page_id( 'shop' ));
+			$link             = wc_get_cart_url();
+			// $link             = get_permalink( wc_get_page_id( 'shop' ));
 			$cart_items_count = $woocommerce->cart->cart_contents_count;
 
 			$temp = "<a class='cart_dropdown_link' href='" . $link . "'><i class='genericon genericon-cart'></i><span class='alert-count'>" . $cart_items_count . "</span></a><!--<span class='cart_subtotal'>" . $cart_subtotal . "</span>-->";
