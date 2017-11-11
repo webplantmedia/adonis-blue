@@ -189,6 +189,27 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 	/**
 	 * Body
 	 */
+	$section_id = 'theme_options_Menu';
+	$wp_customize->add_section( $section_id, array(
+		'title'    => __( 'Menu', 'angiemakesdesign' ),
+		'panel'    => 'theme_options',
+	) );
+
+	$setting_id = 'show_menu_arrows';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $amd_default[ $setting_id ],
+		'transport' => 'refresh',
+		'sanitize_callback' => 'angiemakesdesign_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( $setting_id, array(
+		'type' => 'checkbox',
+		'label' => __( 'Show Menu Arrows', 'angiemakesdesign' ),
+		'section' => $section_id,
+	) );
+	/**
+	 * Body
+	 */
 	$section_id = 'theme_options_body';
 	$wp_customize->add_section( $section_id, array(
 		'title'    => __( 'Body', 'angiemakesdesign' ),
@@ -226,7 +247,6 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 		'label' => __( 'Disable Google Fonts', 'angiemakesdesign' ),
 		'section' => $section_id,
 	) );
-
 
 	/**
 	 * Blog

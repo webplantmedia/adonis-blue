@@ -102,9 +102,6 @@ if ( ! class_exists( 'AngieMakesDesign_WooCommerce' ) ) :
 			// Add quantity text at single product.
 			// add_action( 'woocommerce_after_add_to_cart_form', array( $this, 'angiemakesdesign_woo_add_qty' ), 10 );
 
-			// Change add to cart button.
-			// add_filter( 'woocommerce_product_add_to_cart_text' , array( $this, 'angiemakesdesign_woo_product_add_to_cart_text' ), 10 );
-
 			// move result count under title.
 			// remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
 			// add_action( 'woocommerce_archive_description', 'woocommerce_result_count', 20 );
@@ -404,30 +401,6 @@ if ( ! class_exists( 'AngieMakesDesign_WooCommerce' ) ) :
 			$output = "<span class='product-span'>" . esc_html__( 'qty', 'angiemakesdesign' ) . '</span>';
 
 			echo $output;
-		}
-
-		/**
-		 * Custom text button "Add to cart"
-		 */
-		function angiemakesdesign_woo_product_add_to_cart_text() {
-			global $product;
-			$product_type = $product->get_type();
-			switch ( $product_type ) {
-				case 'external':
-					return $product->get_button_text() ? $product->get_button_text() : __( 'Buy product', 'woocommerce' );
-				break;
-				case 'grouped':
-					return __( 'View products', 'woocommerce' );
-				break;
-				case 'simple':
-					return __( 'Add to cart', 'woocommerce' );
-				break;
-				case 'variable':
-					return __( 'Select options', 'woocommerce' );
-				break;
-				default:
-					return __( 'Read more', 'woocommerce' );
-			}
 		}
 
 		public function angiemakesdesign_store_notice( $notice ) {

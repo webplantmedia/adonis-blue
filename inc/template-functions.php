@@ -12,6 +12,8 @@
  * @return array
  */
 function angiemakesdesign_body_classes( $classes ) {
+	global $amd;
+
 	// Adds a class of hfeed to non-singular pages.
 	if ( ! is_singular() ) {
 		$classes[] = 'hfeed';
@@ -36,6 +38,11 @@ function angiemakesdesign_body_classes( $classes ) {
 	// Widgetized Pages
 	if ( is_page_template( 'templates/front-page.php' ) ) {
 		$classes[] = 'widgetized-page';
+	}
+
+	// Dropdown menu arrow
+	if ( $amd['show_menu_arrows'] ) {
+		$classes[] = 'show-menu-arrows';
 	}
 
 	return $classes;

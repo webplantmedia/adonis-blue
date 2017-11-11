@@ -23,6 +23,9 @@ $amd_default['link_hover_color'] = '#f6874d';
 // Top header
 $amd_default['top_header_background_offset'] = 520;
 
+// Menu
+$amd_default['show_menu_arrows'] = 1;
+
 // Body
 $amd_default['default_button_style'] = 'button-2';
 $amd_default['disable_google_fonts'] = 0;

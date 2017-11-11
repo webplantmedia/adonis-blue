@@ -148,6 +148,53 @@
 	}
 }
 
+@media screen and (min-width: ($size__menu-collapse-width + 1 )) {
+	.show-menu-arrows .main-menu {
+		ul {
+			ul {
+				li {
+					&.page_item_has_children > a,
+					&.menu-item-has-children > a {
+						position: relative;
+						padding-right: 3em;
+
+						> .genericon {
+							padding: 1em 1.2em 1em 0;
+							position: absolute;
+							top: 0;
+							right: 0;
+							bottom: 0;
+
+							&:before {
+								-webkit-transform: rotate(270deg);
+								-moz-transform: rotate(270deg);
+								-ms-transform: rotate(270deg);
+								-o-transform: rotate(270deg);
+								transform: rotate(270deg);
+								filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+							}
+						}
+					}
+				}
+			}
+			li {
+				&.page_item_has_children > a,
+				&.menu-item-has-children > a {
+					> .genericon {
+						&:before {
+							content: "\f431";
+							vertical-align: middle;
+							display: inline-block;
+							line-height: $font__line-height-body;
+							margin-left: 5px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
 /* Small menu. */
 @media screen and (max-width: $size__menu-collapse-width) {
 	#site-navigation {
