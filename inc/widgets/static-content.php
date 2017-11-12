@@ -39,19 +39,19 @@ if ( ! class_exists( 'Angie_Makes_Design_Widget_Static_Content' ) ) :
 				),
 				'background_image' => array(
 					'type'  => 'image',
-					'std'   => null,
+					'std'   => get_template_directory_uri() . '/img/widget-content-bg.jpg',
 					'label' => esc_html__( 'Background Image:', 'angie-makes-design' ),
 					'sanitize' => 'url',
 				),
 				'background_color' => array(
 					'type'  => 'colorpicker',
-					'std'   => '',
+					'std'   => '#ffffff',
 					'label' => esc_html__( 'Background Color:', 'angie-makes-design' ),
 					'sanitize' => 'color',
 				),
 				'background_opacity' => array(
 					'type'  => 'number',
-					'std'   => '100',
+					'std'   => '80',
 					'step'  => '10',
 					'min'   => '10',
 					'max'   => '100',

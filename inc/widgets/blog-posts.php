@@ -27,7 +27,7 @@ if ( ! class_exists( 'Angie_Makes_Design_Widget_Blog_Post' ) ) :
 			$this->settings           = array(
 				'title' => array(
 					'type'  => 'text',
-					'std'   => 'Blog',
+					'std'   => 'BLOG',
 					'label' => esc_html__( 'Title:', 'angie-makes-design' ),
 					'sanitize' => 'text',
 				),
@@ -54,7 +54,7 @@ if ( ! class_exists( 'Angie_Makes_Design_Widget_Blog_Post' ) ) :
 				),
 				'columns' => array(
 					'type'  => 'select',
-					'std'   => 2,
+					'std'   => 3,
 					'label' => __( 'Columns:', 'angie-makes-design' ),
 					'options' => array(
 						2 => __( '2 Columns', 'angie-makes-design' ),
@@ -70,7 +70,7 @@ if ( ! class_exists( 'Angie_Makes_Design_Widget_Blog_Post' ) ) :
 				),
 				'button_text' => array(
 					'type'  => 'text',
-					'std'   => 'See All',
+					'std'   => 'See All Posts',
 					'label' => esc_html__( 'Button Text:', 'angie-makes-design' ),
 					'sanitize' => 'text',
 				),
