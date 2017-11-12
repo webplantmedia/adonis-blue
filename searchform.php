@@ -19,7 +19,7 @@
 		</label>
 
 		<button type="submit" class="search-submit">
-			<i class="genericon genericon-search"></i>
+			<i class="genericons-neue genericons-neue-search"></i>
 			<span class="screen-reader-text"><?php esc_html_e( 'Search', 'angie-makes-design' ); ?></span>
 		</button>
 	</form>

@@ -270,7 +270,7 @@ class Angie_Makes_Design_Widget_Jetpack_Testimonials extends Angie_Makes_Design_
 												$icon = '&#8213; ';
 												break;
 											case 'heart' :
-												$icon = '<i class="genericon genericon-heart"></i>';
+												$icon = '<i class="genericons-neue genericons-neue-heart"></i>';
 												break;
 											default :
 												$icon = '';
@@ -360,8 +360,8 @@ class Angie_Makes_Design_Widget_Jetpack_Testimonials extends Angie_Makes_Design_
 									$slider.bxSlider({
 										adaptiveHeight: true,
 										auto: false,
-										nextText: '<i class="genericon genericon-expand genericon-rotate-270"></i>',
-										prevText: '<i class="genericon genericon-expand genericon-rotate-90"></i>',
+										nextText: '<i class="genericons-neue genericons-neue-expand genericons-neue-rotate-270"></i>',
+										prevText: '<i class="genericons-neue genericons-neue-expand genericons-neue-rotate-90"></i>',
 										mode: slidermode,
 										pause: sliderpause,
 										autoHover: sliderautohover,

@@ -43,10 +43,10 @@
 	};
 
 	var menuParent = $(container).find('.menu-item-has-children a, .page_item_has_children a');
-	menuParent.append('<i class="genericon"></i>');
-	var genericon = $(menuParent).find('i');
+	menuParent.append('<i class="genericons-neue"></i>');
+	var genericons_neue = $(menuParent).find('i');
 
-	$(genericon).click( function( event ) {
+	$(genericons_neue).click( function( event ) {
 		event.preventDefault();
 		$(this).parent().parent().toggleClass('focus');
 	} );

@@ -138,8 +138,8 @@ if ( ! class_exists( 'Angie_Makes_Design_WooCommerce' ) ) :
 		}
 
 		function woocommerce_pagination_args( $args ) {
-			$args['prev_text'] = '<i class="genericon genericon-previous"></i>';
-			$args['next_text'] = '<i class="genericon genericon-next"></i>';
+			$args['prev_text'] = '<i class="genericons-neue genericons-neue-previous"></i>';
+			$args['next_text'] = '<i class="genericons-neue genericons-neue-next"></i>';
 
 			return $args;
 		}
@@ -285,7 +285,7 @@ if ( ! class_exists( 'Angie_Makes_Design_WooCommerce' ) ) :
 			$output = '';
 			$output .= '<li class="cart">';
 			$output .= "<a class='cart_dropdown_link' href='" . esc_url( $link ) . "'>";
-			$output .= "<i class='genericon genericon-cart'></i>";
+			$output .= "<i class='genericons-neue genericons-neue-cart'></i>";
 			if ( 0 !== WC()->cart->get_cart_contents_count() ) {
 				$output .= "<span class='alert-count'>" . intval( $cart_items_count ) . '</span>';
 			}
@@ -309,7 +309,7 @@ if ( ! class_exists( 'Angie_Makes_Design_WooCommerce' ) ) :
 			// $link             = get_permalink( wc_get_page_id( 'shop' ));
 			$cart_items_count = $woocommerce->cart->cart_contents_count;
 
-			$temp = "<a class='cart_dropdown_link' href='" . $link . "'><i class='genericon genericon-cart'></i><span class='alert-count'>" . $cart_items_count . "</span></a><!--<span class='cart_subtotal'>" . $cart_subtotal . "</span>-->";
+			$temp = "<a class='cart_dropdown_link' href='" . $link . "'><i class='genericons-neue genericons-neue-cart'></i><span class='alert-count'>" . $cart_items_count . "</span></a><!--<span class='cart_subtotal'>" . $cart_subtotal . "</span>-->";
 
 			$fragments['a.cart_dropdown_link'] = $temp;
 

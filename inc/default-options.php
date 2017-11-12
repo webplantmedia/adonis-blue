@@ -44,7 +44,7 @@ $angie_makes_design_default['display_sidebar_search'] = 1;
 $angie_makes_design_default['display_sidebar_shop_archive'] = 1;
 
 // Footer
-$angie_makes_design_default['site_info'] = 'Site made with <i class="genericon genericon-heart"></i> by <a href="https://angiemakes.com/">Angie Makes</a>';
+$angie_makes_design_default['site_info'] = 'Site made with <i class="genericons-neue genericons-neue-heart"></i> by <a href="https://angiemakes.com/">Angie Makes</a>';
 
 // Labels
 $angie_makes_design_default['mobile_menu_label'] = 'Menu';

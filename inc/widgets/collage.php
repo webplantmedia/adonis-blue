@@ -291,8 +291,8 @@ if ( ! class_exists( 'Angie_Makes_Design_Widget_Collage' ) ) :
 
 						$slider.bxSlider({
 							auto: sliderauto,
-							nextText: '<i class="genericon genericon-expand genericon-rotate-270"></i>',
-							prevText: '<i class="genericon genericon-expand genericon-rotate-90"></i>',
+							nextText: '<i class="genericons-neue genericons-neue-expand genericons-neue-rotate-270"></i>',
+							prevText: '<i class="genericons-neue genericons-neue-expand genericons-neue-rotate-90"></i>',
 							mode: slidermode,
 							pause: sliderpause,
 							autoHover: sliderautohover,

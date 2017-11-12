@@ -95,7 +95,7 @@ function angie_makes_design_read_more_link( $output ) {
 		$class = ' no-excerpt';
 	}
 
-	return $output . sprintf( ' <a class="more-link%1$s" href="%2$s">%3$s<i class="genericon genericon-next"></i></a>',
+	return $output . sprintf( ' <a class="more-link%1$s" href="%2$s">%3$s<i class="genericons-neue genericons-neue-next"></i></a>',
 		$class,
 		get_permalink( get_the_ID() ),
 		esc_html( $angie_makes_design['read_more_label'] )

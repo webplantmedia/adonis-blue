@@ -191,7 +191,7 @@ function angie_makes_design_scripts() {
 	}
 	
 	// Add genericons
-	wp_enqueue_style( 'genericons', get_parent_theme_file_uri() . '/fonts/genericons/genericons.css', array(), ANGIE_MAKES_DESIGN_VERSION );
+	wp_enqueue_style( 'genericons-neue', get_parent_theme_file_uri() . '/fonts/genericons-neue/genericons-neue.css', array(), ANGIE_MAKES_DESIGN_VERSION );
 
 	wp_enqueue_style( 'angie-makes-design-style', get_stylesheet_uri() );
 

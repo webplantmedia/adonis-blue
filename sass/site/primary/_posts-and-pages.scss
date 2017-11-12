@@ -455,16 +455,23 @@
 				-ms-transition: -ms-transform .2s;
 				-o-transition: -o-transform .2s;
 				transition: transform .2s;
-				display: inline-block;
-				font-family: "Genericons";
-				font-style: normal;
-				font-weight: normal;
-				font-variant: normal;
-				text-decoration: inherit;
-				text-transform: none;
-				-moz-osx-font-smoothing: grayscale;
-				-webkit-font-smoothing: antialiased;
-				speak: none;
+
+				font-size: 16px;
+
+				font-family:"Genericons-Neue";
+				
+				display:inline-block;
+				vertical-align:top;
+				line-height:1;
+				font-weight:normal;
+				font-style:normal;
+				speak:none;
+				text-decoration:inherit;
+				text-transform:none;
+				text-rendering:auto;
+				-webkit-font-smoothing:antialiased;
+				-moz-osx-font-smoothing:grayscale;
+
 				content: "\f431";
 				-webkit-transform: rotate(-90deg);
 				-moz-transform: rotate(-90deg);

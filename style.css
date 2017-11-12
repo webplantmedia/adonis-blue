@@ -506,7 +506,7 @@ figure {
   /* Extra wide images within figure tags don't overflow the content area. */
 }
 
-.genericon {
+.genericons-neue {
   font-size: inherit;
 }
 
@@ -1179,22 +1179,18 @@ button {
 }
 
 #master body .fancy2-button:after {
-  font-size: 16px;
-  vertical-align: top;
-  text-align: center;
-  -moz-transition: color .1s ease-in 0;
-  -webkit-transition: color .1s ease-in 0;
+  font-family: "Genericons-Neue";
   display: inline-block;
-  font-family: "Genericons";
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
+  vertical-align: top;
   line-height: 1;
+  font-weight: normal;
+  font-style: normal;
+  speak: none;
   text-decoration: inherit;
   text-transform: none;
-  -moz-osx-font-smoothing: grayscale;
+  text-rendering: auto;
   -webkit-font-smoothing: antialiased;
-  speak: none;
+  -moz-osx-font-smoothing: grayscale;
   -webkit-transform: rotate(270deg);
   -moz-transform: rotate(270deg);
   -ms-transform: rotate(270deg);
@@ -1206,8 +1202,8 @@ button {
   color: #6d686c;
   background-color: #ffffff;
   border-radius: 100%;
-  font-size: 20px;
-  font-size: 1.25rem;
+  font-size: 15px;
+  font-size: 0.9375rem;
   vertical-align: middle;
   width: 26px;
   height: 26px;
@@ -1455,20 +1451,19 @@ button {
 
 #master input[type="radio"]:checked:before,
 #master input[type="checkbox"]:checked:before {
+  font-size: 16px;
+  font-family: "Genericons-Neue";
   display: inline-block;
-  font-family: "Genericons";
+  vertical-align: top;
+  line-height: 1;
   font-weight: normal;
   font-style: normal;
-  font-variant: normal;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  vertical-align: top;
+  speak: none;
   text-decoration: inherit;
   text-transform: none;
-  -webkit-transition: color 0.1s ease-in 0s;
-  -moz-transition: color 0.1s ease-in 0s;
-  speak: none;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 #master input[type="radio"]:checked:before {
@@ -1726,16 +1721,13 @@ a img {
     position: relative;
     padding-right: 3em;
   }
-  .show-menu-arrows .main-menu ul ul li.page_item_has_children > a > .genericon,
-  .show-menu-arrows .main-menu ul ul li.menu-item-has-children > a > .genericon {
-    padding: 1em 1.2em 1em 0;
+  .show-menu-arrows .main-menu ul ul li.page_item_has_children > a > .genericons-neue,
+  .show-menu-arrows .main-menu ul ul li.menu-item-has-children > a > .genericons-neue {
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
-  }
-  .show-menu-arrows .main-menu ul ul li.page_item_has_children > a > .genericon:before,
-  .show-menu-arrows .main-menu ul ul li.menu-item-has-children > a > .genericon:before {
+    margin: 0;
     -webkit-transform: rotate(270deg);
     -moz-transform: rotate(270deg);
     -ms-transform: rotate(270deg);
@@ -1743,13 +1735,15 @@ a img {
     transform: rotate(270deg);
     filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
   }
-  .show-menu-arrows .main-menu ul li.page_item_has_children > a > .genericon:before,
-  .show-menu-arrows .main-menu ul li.menu-item-has-children > a > .genericon:before {
-    content: "\f431";
-    vertical-align: middle;
+  .show-menu-arrows .main-menu ul li.page_item_has_children > a > .genericons-neue,
+  .show-menu-arrows .main-menu ul li.menu-item-has-children > a > .genericons-neue {
+    margin-left: 10px;
     display: inline-block;
     line-height: 1.8;
-    margin-left: 5px;
+  }
+  .show-menu-arrows .main-menu ul li.page_item_has_children > a > .genericons-neue:before,
+  .show-menu-arrows .main-menu ul li.menu-item-has-children > a > .genericons-neue:before {
+    content: "\f431";
   }
 }
 
@@ -1833,12 +1827,12 @@ a img {
   #site-navigation ul li.focus > ul {
     display: block;
   }
-  #site-navigation ul li.focus.page_item_has_children > a > .genericon:before,
-  #site-navigation ul li.focus.menu-item-has-children > a > .genericon:before {
+  #site-navigation ul li.focus.page_item_has_children > a > .genericons-neue:before,
+  #site-navigation ul li.focus.menu-item-has-children > a > .genericons-neue:before {
     content: "\f50e";
   }
-  #site-navigation ul li.page_item_has_children > a > .genericon,
-  #site-navigation ul li.menu-item-has-children > a > .genericon {
+  #site-navigation ul li.page_item_has_children > a > .genericons-neue,
+  #site-navigation ul li.menu-item-has-children > a > .genericons-neue {
     display: inline-block;
     position: absolute;
     top: 0;
@@ -1856,8 +1850,8 @@ a img {
     font-size: 18px;
     font-size: 1.125rem;
   }
-  #site-navigation ul li.page_item_has_children > a > .genericon:before,
-  #site-navigation ul li.menu-item-has-children > a > .genericon:before {
+  #site-navigation ul li.page_item_has_children > a > .genericons-neue:before,
+  #site-navigation ul li.menu-item-has-children > a > .genericons-neue:before {
     content: "\f510";
   }
   #site-navigation ul a {
@@ -2238,6 +2232,52 @@ a img {
   margin-bottom: 0;
 }
 
+/**
+ * Helper classes
+ */
+.genericons-neue-rotate-90 {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+}
+
+.genericons-neue-rotate-180 {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+}
+
+.genericons-neue-rotate-270 {
+  -webkit-transform: rotate(270deg);
+  -moz-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+  transform: rotate(270deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+
+.genericons-neue-flip-horizontal {
+  -webkit-transform: scale(-1, 1);
+  -moz-transform: scale(-1, 1);
+  -ms-transform: scale(-1, 1);
+  -o-transform: scale(-1, 1);
+  transform: scale(-1, 1);
+}
+
+.genericons-neue-flip-vertical {
+  -webkit-transform: scale(1, -1);
+  -moz-transform: scale(1, -1);
+  -ms-transform: scale(1, -1);
+  -o-transform: scale(1, -1);
+  transform: scale(1, -1);
+}
+
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
@@ -2538,7 +2578,7 @@ a img {
   font-weight: bold;
 }
 
-.content-jetpack-testimonial .testimonial-entry-signature .genericon {
+.content-jetpack-testimonial .testimonial-entry-signature .genericons-neue {
   line-height: 1.8;
   margin-right: 5px;
 }
@@ -3546,16 +3586,19 @@ a img {
   -ms-transition: -ms-transform .2s;
   -o-transition: -o-transform .2s;
   transition: transform .2s;
+  font-size: 16px;
+  font-family: "Genericons-Neue";
   display: inline-block;
-  font-family: "Genericons";
-  font-style: normal;
+  vertical-align: top;
+  line-height: 1;
   font-weight: normal;
-  font-variant: normal;
+  font-style: normal;
+  speak: none;
   text-decoration: inherit;
   text-transform: none;
-  -moz-osx-font-smoothing: grayscale;
+  text-rendering: auto;
   -webkit-font-smoothing: antialiased;
-  speak: none;
+  -moz-osx-font-smoothing: grayscale;
   content: "\f431";
   -webkit-transform: rotate(-90deg);
   -moz-transform: rotate(-90deg);
@@ -3958,7 +4001,7 @@ a img {
   color: #6d686c;
 }
 
-.site-info-wrapper .genericon {
+.site-info-wrapper .genericons-neue {
   line-height: inherit;
 }
 

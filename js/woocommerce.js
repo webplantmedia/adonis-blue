@@ -2,7 +2,7 @@
 	'use strict';
 
 	$(document).ready(function(){
-		$('div.quantity:not(.buttons_added), td.quantity:not(.buttons_added)').addClass('buttons_added').find('input[type="number"]').attr('type','text').wrap('<div class="quantity-inner">').parent().prepend('<button class="minus"><i class="genericon genericon-expand"></i></button>').append('<button class="plus"><i class="genericon genericon-collapse"></i></button>');
+		$('div.quantity:not(.buttons_added), td.quantity:not(.buttons_added)').addClass('buttons_added').find('input[type="number"]').attr('type','text').wrap('<div class="quantity-inner">').parent().prepend('<button class="minus"><i class="genericons-neue genericons-neue-expand"></i></button>').append('<button class="plus"><i class="genericons-neue genericons-neue-collapse"></i></button>');
 
 		$('.quantity.buttons_added').on('click', '.plus, .minus', function (e) {
 			e.preventDefault();

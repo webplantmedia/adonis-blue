@@ -158,21 +158,18 @@
 						position: relative;
 						padding-right: 3em;
 
-						> .genericon {
-							padding: 1em 1.2em 1em 0;
+						> .genericons-neue {
 							position: absolute;
 							top: 0;
 							right: 0;
 							bottom: 0;
-
-							&:before {
-								-webkit-transform: rotate(270deg);
-								-moz-transform: rotate(270deg);
-								-ms-transform: rotate(270deg);
-								-o-transform: rotate(270deg);
-								transform: rotate(270deg);
-								filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
-							}
+							margin: 0;
+							-webkit-transform: rotate(270deg);
+							-moz-transform: rotate(270deg);
+							-ms-transform: rotate(270deg);
+							-o-transform: rotate(270deg);
+							transform: rotate(270deg);
+							filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 						}
 					}
 				}
@@ -180,13 +177,13 @@
 			li {
 				&.page_item_has_children > a,
 				&.menu-item-has-children > a {
-					> .genericon {
+					> .genericons-neue {
+						margin-left: 10px;
+						display: inline-block;
+						line-height: $font__line-height-body;
+
 						&:before {
 							content: "\f431";
-							vertical-align: middle;
-							display: inline-block;
-							line-height: $font__line-height-body;
-							margin-left: 5px;
 						}
 					}
 				}
@@ -296,7 +293,7 @@
 
 					&.page_item_has_children > a,
 					&.menu-item-has-children > a {
-						> .genericon {
+						> .genericons-neue {
 							&:before {
 								content: "\f50e";
 							}
@@ -306,7 +303,7 @@
 
 				&.page_item_has_children > a,
 				&.menu-item-has-children > a {
-					> .genericon {
+					> .genericons-neue {
 						display: inline-block;
 						position: absolute;
 						top: 0;
