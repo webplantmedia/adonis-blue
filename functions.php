@@ -183,9 +183,9 @@ add_action( 'wp_enqueue_scripts', 'angie_makes_design_customizer_css_wrap', 20 )
  * Enqueue scripts and styles.
  */
 function angie_makes_design_scripts() {
-	global $amd;
+	global $angie_makes_design;
 
-	if ( ! $amd['disable_google_fonts'] ) {
+	if ( ! $angie_makes_design['disable_google_fonts'] ) {
 		// Add custom fonts, used in the main stylesheet.
 		wp_enqueue_style( 'angie-makes-design-fonts', angie_makes_design_fonts_url(), array(), null );
 	}
@@ -280,14 +280,14 @@ function angie_makes_design_display_header() {
 }
 
 function angie_makes_design_display_sidebar() {
-	global $amd;
+	global $angie_makes_design;
 
 	if ( is_single() && 'post' == get_post_type() ) {
 		if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 			return false;
 		}
 
-		return $amd['display_sidebar_post'];
+		return $angie_makes_design['display_sidebar_post'];
 	}
 
 	if ( is_home() ) {
@@ -295,7 +295,7 @@ function angie_makes_design_display_sidebar() {
 			return false;
 		}
 
-		return $amd['display_sidebar_blog'];
+		return $angie_makes_design['display_sidebar_blog'];
 	}
 	
 	if ( angie_makes_design_is_woocommerce_activated() ) {
@@ -304,10 +304,10 @@ function angie_makes_design_display_sidebar() {
 		}
 
 		if ( is_shop() ) {
-			return $amd['display_sidebar_shop'];
+			return $angie_makes_design['display_sidebar_shop'];
 		}
 		else if ( is_product_category() || is_product_taxonomy() ) {
-			return $amd['display_sidebar_shop_archive'];
+			return $angie_makes_design['display_sidebar_shop_archive'];
 		}
 	}
 
@@ -316,7 +316,7 @@ function angie_makes_design_display_sidebar() {
 			return false;
 		}
 
-		return $amd['display_sidebar_search'];
+		return $angie_makes_design['display_sidebar_search'];
 	}
 	
 	if ( is_archive() ) {
@@ -324,7 +324,7 @@ function angie_makes_design_display_sidebar() {
 			return false;
 		}
 
-		return $amd['display_sidebar_archive'];
+		return $angie_makes_design['display_sidebar_archive'];
 	}
 	
 	return false;
@@ -343,7 +343,7 @@ function angie_makes_design_display_sidebar_footer() {
 }
 
 function angie_makes_design_display_fullwidth() {
-	global $amd;
+	global $angie_makes_design;
 
 	if ( angie_makes_design_is_woocommerce_activated() ) {
 		if ( is_woocommerce() || is_cart() || is_checkout() ) {
@@ -420,16 +420,16 @@ function angie_makes_design_allowed_html() {
 }
 
 function angie_makes_design_get_blog_part() {
-	global $amd;
+	global $angie_makes_design;
 
 	if ( is_home() ) {
-		get_template_part( 'template-parts/' . $amd['blog_display'] );
+		get_template_part( 'template-parts/' . $angie_makes_design['blog_display'] );
 	}
 	else if ( is_archive() ) {
-		get_template_part( 'template-parts/' . $amd['archive_display'] );
+		get_template_part( 'template-parts/' . $angie_makes_design['archive_display'] );
 	}
 	else if ( is_search() ) {
-		get_template_part( 'template-parts/' . $amd['search_display'] );
+		get_template_part( 'template-parts/' . $angie_makes_design['search_display'] );
 	}
 }
 

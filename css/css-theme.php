@@ -1,13 +1,13 @@
 <?php
 function angie_makes_design_custom_css() {
-	global $amd;
+	global $angie_makes_design;
 
 	$css = '
 .entry-content a:visited,
 .entry-content a:focus,
 .entry-content a:active,
 .entry-content a {
-	color: ' . $amd['link_color'] . '; /*id:link_color*/
+	color: ' . $angie_makes_design['link_color'] . '; /*id:link_color*/
 }
 
 .entry-content a:hover,
@@ -28,28 +28,28 @@ function angie_makes_design_custom_css() {
 #master .post-navigation a:hover .post-title,
 #master .widget ul a:hover,
 a:hover {
-	color: ' . $amd['link_hover_color'] . '; /*id:link_hover_color*/
+	color: ' . $angie_makes_design['link_hover_color'] . '; /*id:link_hover_color*/
 }
 
 #master .woocommerce a.remove:hover {
-	color: ' . $amd['link_hover_color'] . ' !important; /*id:link_hover_color*/
+	color: ' . $angie_makes_design['link_hover_color'] . ' !important; /*id:link_hover_color*/
 }
 
 #master .entry-cat-meta span > a {
-	color: ' . $amd['primary_color'] . '; /*id:primary_color*/
+	color: ' . $angie_makes_design['primary_color'] . '; /*id:primary_color*/
 }
 
 #master .woocommerce div.product .woocommerce-tabs ul.tabs li.active a,
 #master .woocommerce div.product .woocommerce-tabs ul.tabs li a:hover {
-	border-color: ' . $amd['primary_color'] . '; /*id:primary_color*/
+	border-color: ' . $angie_makes_design['primary_color'] . '; /*id:primary_color*/
 }
 
 #master .entry-cat-meta span > a:hover {
-	color: ' . $amd['primary_hover_color'] . '; /*id:primary_hover_color*/
+	color: ' . $angie_makes_design['primary_hover_color'] . '; /*id:primary_hover_color*/
 }
 
 #master .site-footer.has-footer-widgets {
-	background-color: ' . $amd['footer_background_color'] . '; /*id:footer_background_color*/
+	background-color: ' . $angie_makes_design['footer_background_color'] . '; /*id:footer_background_color*/
 }
 
 #master #infinite-handle span button,
@@ -97,7 +97,7 @@ a:hover {
 #master input[type="button"]:active,
 #master input[type="reset"]:active,
 #master input[type="submit"]:active {
-	background-color: ' . $amd['primary_color'] . '; /*id:primary_color*/
+	background-color: ' . $angie_makes_design['primary_color'] . '; /*id:primary_color*/
 }
 
 #master #infinite-handle span button:hover,
@@ -116,33 +116,33 @@ a:hover {
 #master input[type="button"]:hover,
 #master input[type="reset"]:hover,
 #master input[type="submit"]:hover {
-	background-color: ' . $amd['primary_hover_color'] . '; /*id:primary_hover_color*/
+	background-color: ' . $angie_makes_design['primary_hover_color'] . '; /*id:primary_hover_color*/
 }
 
 .site-branding {
-	' . angie_makes_design_css_set_unit( 'padding-top', $amd['heading_padding_top'] ) . ' /*id:heading_padding_top*/
-	' . angie_makes_design_css_set_unit( 'padding-bottom', $amd['heading_padding_bottom'] ) . ' /*id:heading_padding_bottom*/
+	' . angie_makes_design_css_set_unit( 'padding-top', $angie_makes_design['heading_padding_top'] ) . ' /*id:heading_padding_top*/
+	' . angie_makes_design_css_set_unit( 'padding-bottom', $angie_makes_design['heading_padding_bottom'] ) . ' /*id:heading_padding_bottom*/
 }
 
 .site-header {
-	background-position: calc(50% + ' . $amd['top_header_background_offset'] . 'px) top; /*id:top_header_background_offset*/
+	background-position: calc(50% + ' . $angie_makes_design['top_header_background_offset'] . 'px) top; /*id:top_header_background_offset*/
 }
 
 @media screen and (max-width: 1050px) {
 	.site-header {
-		background-position: calc(50% + ' . ( $amd['top_header_background_offset'] - 25 ) . 'px) top; /*id:top_header_background_offset_1*/
+		background-position: calc(50% + ' . ( $angie_makes_design['top_header_background_offset'] - 25 ) . 'px) top; /*id:top_header_background_offset_1*/
 	}
 }
 
 @media screen and (max-width: 1000px) {
 	.site-header {
-		background-position: calc(50% + ' . ( $amd['top_header_background_offset'] - 50 ) . 'px) top; /*id:top_header_background_offset_2*/
+		background-position: calc(50% + ' . ( $angie_makes_design['top_header_background_offset'] - 50 ) . 'px) top; /*id:top_header_background_offset_2*/
 	}
 }
 
 @media screen and (max-width: 950px) {
 	.site-header {
-		background-position: calc(50% + ' . ( $amd['top_header_background_offset'] - 75 ) . 'px) top; /*id:top_header_background_offset_3*/
+		background-position: calc(50% + ' . ( $angie_makes_design['top_header_background_offset'] - 75 ) . 'px) top; /*id:top_header_background_offset_3*/
 	}
 }
 ';

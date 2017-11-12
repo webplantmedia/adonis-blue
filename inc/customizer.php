@@ -11,7 +11,7 @@
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
 function angie_makes_design_customize_register( $wp_customize ) {
-	global $amd_default;
+	global $angie_makes_design_default;
 
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
@@ -39,7 +39,7 @@ function angie_makes_design_customize_register( $wp_customize ) {
 
 	$setting_id = 'custom_logo_2x';
 	$wp_customize->add_setting( $setting_id, array(
-		'default' => $amd_default[ $setting_id ],
+		'default' => $angie_makes_design_default[ $setting_id ],
 		'transport' => 'postMessage',
 		'sanitize_callback' => 'esc_url_raw',
 	) );
@@ -60,7 +60,7 @@ function angie_makes_design_customize_register( $wp_customize ) {
 
 	$setting_id = 'heading_padding_top';
 	$wp_customize->add_setting( $setting_id, array(
-		'default' => $amd_default[ $setting_id ],
+		'default' => $angie_makes_design_default[ $setting_id ],
 		'transport' => 'postMessage',
 		'sanitize_callback' => 'absint',
 	) );
@@ -73,7 +73,7 @@ function angie_makes_design_customize_register( $wp_customize ) {
 
 	$setting_id = 'heading_padding_bottom';
 	$wp_customize->add_setting( $setting_id, array(
-		'default' => $amd_default[ $setting_id ],
+		'default' => $angie_makes_design_default[ $setting_id ],
 		'transport' => 'postMessage',
 		'sanitize_callback' => 'absint',
 	) );
@@ -91,7 +91,7 @@ function angie_makes_design_customize_register( $wp_customize ) {
 
 	$setting_id = 'primary_color';
 	$wp_customize->add_setting( $setting_id, array(
-		'default' => $amd_default[ $setting_id ],
+		'default' => $angie_makes_design_default[ $setting_id ],
 		'transport' => 'postMessage',
 		'sanitize_callback' => 'sanitize_hex_color',
 	) );
@@ -103,7 +103,7 @@ function angie_makes_design_customize_register( $wp_customize ) {
 
 	$setting_id = 'primary_hover_color';
 	$wp_customize->add_setting( $setting_id, array(
-		'default' => $amd_default[ $setting_id ],
+		'default' => $angie_makes_design_default[ $setting_id ],
 		'transport' => 'postMessage',
 		'sanitize_callback' => 'sanitize_hex_color',
 	) );
@@ -115,7 +115,7 @@ function angie_makes_design_customize_register( $wp_customize ) {
 
 	$setting_id = 'footer_background_color';
 	$wp_customize->add_setting( $setting_id, array(
-		'default' => $amd_default[ $setting_id ],
+		'default' => $angie_makes_design_default[ $setting_id ],
 		'transport' => 'postMessage',
 		'sanitize_callback' => 'sanitize_hex_color',
 	) );
@@ -127,7 +127,7 @@ function angie_makes_design_customize_register( $wp_customize ) {
 
 	$setting_id = 'link_color';
 	$wp_customize->add_setting( $setting_id, array(
-		'default' => $amd_default[ $setting_id ],
+		'default' => $angie_makes_design_default[ $setting_id ],
 		'transport' => 'postMessage',
 		'sanitize_callback' => 'sanitize_hex_color',
 	) );
@@ -139,7 +139,7 @@ function angie_makes_design_customize_register( $wp_customize ) {
 
 	$setting_id = 'link_hover_color';
 	$wp_customize->add_setting( $setting_id, array(
-		'default' => $amd_default[ $setting_id ],
+		'default' => $angie_makes_design_default[ $setting_id ],
 		'transport' => 'postMessage',
 		'sanitize_callback' => 'sanitize_hex_color',
 	) );
@@ -168,7 +168,7 @@ function angie_makes_design_customize_register( $wp_customize ) {
 
 	$setting_id = 'top_header_background_offset';
 	$wp_customize->add_setting( $setting_id, array(
-		'default' => $amd_default[ $setting_id ],
+		'default' => $angie_makes_design_default[ $setting_id ],
 		'transport' => 'postMessage',
 		'sanitize_callback' => 'absint',
 	) );
@@ -197,7 +197,7 @@ function angie_makes_design_customize_register( $wp_customize ) {
 
 	$setting_id = 'show_menu_arrows';
 	$wp_customize->add_setting( $setting_id, array(
-		'default' => $amd_default[ $setting_id ],
+		'default' => $angie_makes_design_default[ $setting_id ],
 		'transport' => 'refresh',
 		'sanitize_callback' => 'angie_makes_design_sanitize_checkbox',
 	) );
@@ -218,7 +218,7 @@ function angie_makes_design_customize_register( $wp_customize ) {
 
 	$setting_id = 'default_button_style';
 	$wp_customize->add_setting( $setting_id, array(
-		'default' => $amd_default[ $setting_id ],
+		'default' => $angie_makes_design_default[ $setting_id ],
 		'transport' => 'refresh',
 		'sanitize_callback' => 'sanitize_text_field',
 	) );
@@ -237,7 +237,7 @@ function angie_makes_design_customize_register( $wp_customize ) {
 
 	$setting_id = 'disable_google_fonts';
 	$wp_customize->add_setting( $setting_id, array(
-		'default' => $amd_default[ $setting_id ],
+		'default' => $angie_makes_design_default[ $setting_id ],
 		'transport' => 'refresh',
 		'sanitize_callback' => 'angie_makes_design_sanitize_checkbox',
 	) );
@@ -259,7 +259,7 @@ function angie_makes_design_customize_register( $wp_customize ) {
 
 	$setting_id = 'blog_display';
 	$wp_customize->add_setting( $setting_id, array(
-		'default' => $amd_default[ $setting_id ],
+		'default' => $angie_makes_design_default[ $setting_id ],
 		'transport' => 'refresh',
 		'sanitize_callback' => 'sanitize_text_field',
 	) );
@@ -278,7 +278,7 @@ function angie_makes_design_customize_register( $wp_customize ) {
 
 	$setting_id = 'archive_display';
 	$wp_customize->add_setting( $setting_id, array(
-		'default' => $amd_default[ $setting_id ],
+		'default' => $angie_makes_design_default[ $setting_id ],
 		'transport' => 'refresh',
 		'sanitize_callback' => 'sanitize_text_field',
 	) );
@@ -297,7 +297,7 @@ function angie_makes_design_customize_register( $wp_customize ) {
 
 	$setting_id = 'search_display';
 	$wp_customize->add_setting( $setting_id, array(
-		'default' => $amd_default[ $setting_id ],
+		'default' => $angie_makes_design_default[ $setting_id ],
 		'transport' => 'refresh',
 		'sanitize_callback' => 'sanitize_text_field',
 	) );
@@ -326,7 +326,7 @@ function angie_makes_design_customize_register( $wp_customize ) {
 
 	$setting_id = 'display_sidebar_blog';
 	$wp_customize->add_setting( $setting_id, array(
-		'default' => $amd_default[ $setting_id ],
+		'default' => $angie_makes_design_default[ $setting_id ],
 		'transport' => 'refresh',
 		'sanitize_callback' => 'angie_makes_design_sanitize_checkbox',
 	) );
@@ -339,7 +339,7 @@ function angie_makes_design_customize_register( $wp_customize ) {
 
 	$setting_id = 'display_sidebar_post';
 	$wp_customize->add_setting( $setting_id, array(
-		'default' => $amd_default[ $setting_id ],
+		'default' => $angie_makes_design_default[ $setting_id ],
 		'transport' => 'refresh',
 		'sanitize_callback' => 'angie_makes_design_sanitize_checkbox',
 	) );
@@ -352,7 +352,7 @@ function angie_makes_design_customize_register( $wp_customize ) {
 
 	$setting_id = 'display_sidebar_shop';
 	$wp_customize->add_setting( $setting_id, array(
-		'default' => $amd_default[ $setting_id ],
+		'default' => $angie_makes_design_default[ $setting_id ],
 		'transport' => 'refresh',
 		'sanitize_callback' => 'angie_makes_design_sanitize_checkbox',
 	) );
@@ -365,7 +365,7 @@ function angie_makes_design_customize_register( $wp_customize ) {
 
 	$setting_id = 'display_sidebar_archive';
 	$wp_customize->add_setting( $setting_id, array(
-		'default' => $amd_default[ $setting_id ],
+		'default' => $angie_makes_design_default[ $setting_id ],
 		'transport' => 'refresh',
 		'sanitize_callback' => 'angie_makes_design_sanitize_checkbox',
 	) );
@@ -378,7 +378,7 @@ function angie_makes_design_customize_register( $wp_customize ) {
 
 	$setting_id = 'display_sidebar_search';
 	$wp_customize->add_setting( $setting_id, array(
-		'default' => $amd_default[ $setting_id ],
+		'default' => $angie_makes_design_default[ $setting_id ],
 		'transport' => 'refresh',
 		'sanitize_callback' => 'angie_makes_design_sanitize_checkbox',
 	) );
@@ -391,7 +391,7 @@ function angie_makes_design_customize_register( $wp_customize ) {
 
 	$setting_id = 'display_sidebar_shop_archive';
 	$wp_customize->add_setting( $setting_id, array(
-		'default' => $amd_default[ $setting_id ],
+		'default' => $angie_makes_design_default[ $setting_id ],
 		'transport' => 'refresh',
 		'sanitize_callback' => 'angie_makes_design_sanitize_checkbox',
 	) );
@@ -413,7 +413,7 @@ function angie_makes_design_customize_register( $wp_customize ) {
 
 	$setting_id = 'mobile_menu_label';
 	$wp_customize->add_setting( $setting_id, array(
-		'default' => $amd_default[ $setting_id ],
+		'default' => $angie_makes_design_default[ $setting_id ],
 		'transport' => 'postMessage',
 		'sanitize_callback' => 'sanitize_text_field',
 	) );
@@ -426,7 +426,7 @@ function angie_makes_design_customize_register( $wp_customize ) {
 
 	$setting_id = 'read_more_label';
 	$wp_customize->add_setting( $setting_id, array(
-		'default' => $amd_default[ $setting_id ],
+		'default' => $angie_makes_design_default[ $setting_id ],
 		'transport' => 'postMessage',
 		'sanitize_callback' => 'sanitize_text_field',
 	) );

@@ -1,54 +1,54 @@
 <?php
 // Store user defined options
-$amd = array();
+$angie_makes_design = array();
 // Store default options;
-$amd_default = array();
+$angie_makes_design_default = array();
 
 // Title & Tagline
-$amd_default['custom_logo_2x'] = '';
-$amd_default['heading_padding_top'] = '40';
-$amd_default['heading_padding_bottom'] = '40';
+$angie_makes_design_default['custom_logo_2x'] = '';
+$angie_makes_design_default['heading_padding_top'] = '40';
+$angie_makes_design_default['heading_padding_bottom'] = '40';
 
 // Colors
-$amd_default['primary_color'] = '#fbd5c1';
-$amd_default['primary_hover_color'] = '#f6a378';
-$amd_default['footer_background_color'] = '#fef8f3';
-$amd_default['link_color'] = '#666666';
-$amd_default['link_hover_color'] = '#f6874d';
+$angie_makes_design_default['primary_color'] = '#fbd5c1';
+$angie_makes_design_default['primary_hover_color'] = '#f6a378';
+$angie_makes_design_default['footer_background_color'] = '#fef8f3';
+$angie_makes_design_default['link_color'] = '#666666';
+$angie_makes_design_default['link_hover_color'] = '#f6874d';
 
 /*
  * Theme Options
  */
 
 // Top header
-$amd_default['top_header_background_offset'] = 520;
+$angie_makes_design_default['top_header_background_offset'] = 520;
 
 // Menu
-$amd_default['show_menu_arrows'] = 1;
+$angie_makes_design_default['show_menu_arrows'] = 1;
 
 // Body
-$amd_default['default_button_style'] = 'button-2';
-$amd_default['disable_google_fonts'] = 0;
+$angie_makes_design_default['default_button_style'] = 'button-2';
+$angie_makes_design_default['disable_google_fonts'] = 0;
 
 // Blog
-$amd_default['blog_display'] = 'blog1';
-$amd_default['archive_display'] = 'blog3';
-$amd_default['search_display'] = 'blog2';
+$angie_makes_design_default['blog_display'] = 'blog1';
+$angie_makes_design_default['archive_display'] = 'blog3';
+$angie_makes_design_default['search_display'] = 'blog2';
 
 // Display Sidebar
-$amd_default['display_sidebar_blog'] = 1;
-$amd_default['display_sidebar_post'] = 1;
-$amd_default['display_sidebar_shop'] = 1;
-$amd_default['display_sidebar_archive'] = 1;
-$amd_default['display_sidebar_search'] = 1;
-$amd_default['display_sidebar_shop_archive'] = 1;
+$angie_makes_design_default['display_sidebar_blog'] = 1;
+$angie_makes_design_default['display_sidebar_post'] = 1;
+$angie_makes_design_default['display_sidebar_shop'] = 1;
+$angie_makes_design_default['display_sidebar_archive'] = 1;
+$angie_makes_design_default['display_sidebar_search'] = 1;
+$angie_makes_design_default['display_sidebar_shop_archive'] = 1;
 
 // Footer
-$amd_default['site_info'] = 'Site made with <i class="genericon genericon-heart"></i> by <a href="https://angiemakes.com/">Angie Makes</a>';
+$angie_makes_design_default['site_info'] = 'Site made with <i class="genericon genericon-heart"></i> by <a href="https://angiemakes.com/">Angie Makes</a>';
 
 // Labels
-$amd_default['mobile_menu_label'] = 'Menu';
-$amd_default['read_more_label'] = 'Continue Reading';
+$angie_makes_design_default['mobile_menu_label'] = 'Menu';
+$angie_makes_design_default['read_more_label'] = 'Continue Reading';
 
 /**
  * Set default options
@@ -59,11 +59,11 @@ $amd_default['read_more_label'] = 'Continue Reading';
  * Also, if we call get_theme_mod any sooner, then we can't live preview.
  */
 function angie_makes_design_default_options() {
-	global $amd_default;
-	global $amd;
+	global $angie_makes_design_default;
+	global $angie_makes_design;
 
-	foreach ( $amd_default as $key => $value ) {
-		$amd[ $key ] = get_theme_mod( $key, $value );
+	foreach ( $angie_makes_design_default as $key => $value ) {
+		$angie_makes_design[ $key ] = get_theme_mod( $key, $value );
 	}
 }
 add_action( 'wp_loaded', 'angie_makes_design_default_options' );

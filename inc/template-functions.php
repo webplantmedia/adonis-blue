@@ -12,7 +12,7 @@
  * @return array
  */
 function angie_makes_design_body_classes( $classes ) {
-	global $amd;
+	global $angie_makes_design;
 
 	// Adds a class of hfeed to non-singular pages.
 	if ( ! is_singular() ) {
@@ -41,7 +41,7 @@ function angie_makes_design_body_classes( $classes ) {
 	}
 
 	// Dropdown menu arrow
-	if ( $amd['show_menu_arrows'] ) {
+	if ( $angie_makes_design['show_menu_arrows'] ) {
 		$classes[] = 'show-menu-arrows';
 	}
 
@@ -63,9 +63,9 @@ add_action( 'wp_head', 'angie_makes_design_pingback_header' );
  * Add retina src image to custom logo
  */
 function angie_makes_design_get_custom_logo( $html, $blog_id ) {
-	global $amd;
+	global $angie_makes_design;
 
-	if ( $url = get_theme_mod( 'custom_logo_2x', $amd['custom_logo_2x'] ) ) {
+	if ( $url = get_theme_mod( 'custom_logo_2x', $angie_makes_design['custom_logo_2x'] ) ) {
 		$html = preg_replace( '/srcset=(\'|\").*?(\'|\")/', 'srcset="' . esc_url( $url ) . ' 2x"', $html );
 	}
 
@@ -83,7 +83,7 @@ add_filter( 'get_custom_logo', 'angie_makes_design_get_custom_logo', 10, 2 );
  * @return string Appended "Read More" link
  */
 function angie_makes_design_read_more_link( $output ) {
-	global $amd;
+	global $angie_makes_design;
 
 	if ( 'post' != get_post_type() ) {
 		return $output;
@@ -98,29 +98,29 @@ function angie_makes_design_read_more_link( $output ) {
 	return $output . sprintf( ' <a class="more-link%1$s" href="%2$s">%3$s<i class="genericon genericon-next"></i></a>',
 		$class,
 		get_permalink( get_the_ID() ),
-		esc_html__( $amd['read_more_label'], 'angie-makes-design' )
+		esc_html__( $angie_makes_design['read_more_label'], 'angie-makes-design' )
 	);
 }
 add_filter('the_excerpt', 'angie_makes_design_read_more_link');
 
 function angie_makes_design_read_more_text() {
-	global $amd;
+	global $angie_makes_design;
 
 	if ( 'post' != get_post_type() ) {
 		return '';
 	}
 
-	return esc_html__( $amd['read_more_label'], 'angie-makes-design' );
+	return esc_html__( $angie_makes_design['read_more_label'], 'angie-makes-design' );
 }
 add_filter('angie_makes_design_read_more_text', 'angie_makes_design_read_more_text');
 
 function angie_makes_design_the_content( $output ) {
-	global $amd;
+	global $angie_makes_design;
 
 	$search = array();
 	$replace = array();
 
-	switch ( $amd['default_button_style'] ) {
+	switch ( $angie_makes_design['default_button_style'] ) {
 		case 'button-1' :
 			$button_class = ' fancy-button';
 			break;

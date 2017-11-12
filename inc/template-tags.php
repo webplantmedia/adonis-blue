@@ -128,14 +128,14 @@ endif;
 
 if ( ! function_exists( 'angie_makes_design_mobile_menu_button' ) ) :
 	function angie_makes_design_mobile_menu_button() {
-		global $amd;
+		global $angie_makes_design;
 
 		?>
 		<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-			<?php if ( empty( $amd['mobile_menu_label'] ) ) : ?>
+			<?php if ( empty( $angie_makes_design['mobile_menu_label'] ) ) : ?>
 				<span class="menu-label menu-label-empty"></span>
 			<?php else : ?>
-				<span class="menu-label"><?php esc_html_e( $amd['mobile_menu_label'], 'angie-makes-design' ); ?></span>
+				<span class="menu-label"><?php esc_html_e( $angie_makes_design['mobile_menu_label'], 'angie-makes-design' ); ?></span>
 			<?php endif; ?>
 			<i class="genericon"></i>
 		</button>
@@ -178,10 +178,10 @@ endif;
 
 if ( ! function_exists( 'angie_makes_design_get_site_info' ) ) :
 	function angie_makes_design_get_site_info() {
-		global $amd;
+		global $angie_makes_design;
 
 		$allowed_tags = angie_makes_design_allowed_html();
-		return wp_kses( $amd['site_info'], $allowed_tags );
+		return wp_kses( $angie_makes_design['site_info'], $allowed_tags );
 	}
 endif;
 
