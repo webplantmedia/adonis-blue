@@ -2,45 +2,45 @@
 /**
  * Section: Blog Posts Widget
  *
- * @since AngieMakesDesign 1.0.0.
+ * @since Angie_Makes_Design 1.0.0.
  *
- * @package AngieMakesDesign
+ * @package Angie_Makes_Design
  */
 
-if ( ! class_exists( 'AngieMakesDesign_Widget_Blog_Post' ) ) :
+if ( ! class_exists( 'Angie_Makes_Design_Widget_Blog_Post' ) ) :
 	/**
 	 * Display static content from an specific page.
 	 *
-	 * @since AngieMakesDesign 1.0.0.
+	 * @since Angie_Makes_Design 1.0.0.
 	 *
-	 * @package AngieMakesDesign
+	 * @package Angie_Makes_Design
 	 */
-	class AngieMakesDesign_Widget_Blog_Post extends AngieMakesDesign_Widget {
+	class Angie_Makes_Design_Widget_Blog_Post extends Angie_Makes_Design_Widget {
 		/**
 		 * Constructor
 		 */
 		public function __construct() {
-			$this->widget_id          = 'angiemakesdesign_blog_posts';
-			$this->widget_cssclass    = 'angiemakesdesign_blog_posts';
-			$this->widget_description = esc_html__( 'Displays content from blog posts.', 'angiemakesdesign' );
-			$this->widget_name        = esc_html__( 'Angie Makes Design: Blog Posts', 'angiemakesdesign' );
+			$this->widget_id          = 'angie-makes-design-blog-posts';
+			$this->widget_cssclass    = 'angie-makes-design-blog-posts';
+			$this->widget_description = esc_html__( 'Displays content from blog posts.', 'angie-makes-design' );
+			$this->widget_name        = esc_html__( 'Angie Makes Design: Blog Posts', 'angie-makes-design' );
 			$this->settings           = array(
 				'title' => array(
 					'type'  => 'text',
 					'std'   => 'Blog',
-					'label' => esc_html__( 'Title:', 'angiemakesdesign' ),
+					'label' => esc_html__( 'Title:', 'angie-makes-design' ),
 					'sanitize' => 'text',
 				),
 				'post_ids' => array(
 					'type'  => 'text',
 					'std'   => '',
-					'label' => esc_html__( 'Post ID\'s:', 'angiemakesdesign' ),
+					'label' => esc_html__( 'Post ID\'s:', 'angie-makes-design' ),
 					'sanitize' => 'post_ids',
 				),
 				'category' => array(
 					'type'  => 'category',
 					'std'   => 0,
-					'label' => esc_html__( 'Category:', 'angiemakesdesign' ),
+					'label' => esc_html__( 'Category:', 'angie-makes-design' ),
 					'sanitize' => 'number',
 				),
 				'post_count' => array(
@@ -49,45 +49,45 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Blog_Post' ) ) :
 					'step'  => 1,
 					'min'   => 1,
 					'max'   => 100,
-					'label' => esc_html__( 'Number of Posts:', 'angiemakesdesign' ),
+					'label' => esc_html__( 'Number of Posts:', 'angie-makes-design' ),
 					'sanitize' => 'number',
 				),
 				'columns' => array(
 					'type'  => 'select',
 					'std'   => 2,
-					'label' => __( 'Columns:', 'angiemakesdesign' ),
+					'label' => __( 'Columns:', 'angie-makes-design' ),
 					'options' => array(
-						2 => __( '2 Columns', 'angiemakesdesign' ),
-						3 => __( '3 Columns', 'angiemakesdesign' ),
+						2 => __( '2 Columns', 'angie-makes-design' ),
+						3 => __( '3 Columns', 'angie-makes-design' ),
 					),
 					'sanitize' => 'number',
 				),
 				'random_order' => array(
 					'type'  => 'checkbox',
 					'std'   => 0,
-					'label' => __( 'Random order?', 'angiemakesdesign' ),
+					'label' => __( 'Random order?', 'angie-makes-design' ),
 					'sanitize' => 'checkbox',
 				),
 				'button_text' => array(
 					'type'  => 'text',
 					'std'   => 'See All',
-					'label' => esc_html__( 'Button Text:', 'angiemakesdesign' ),
+					'label' => esc_html__( 'Button Text:', 'angie-makes-design' ),
 					'sanitize' => 'text',
 				),
 				'button_link' => array(
 					'type'  => 'text',
 					'std'   => '',
-					'label' => esc_html__( 'Button Link:', 'angiemakesdesign' ),
+					'label' => esc_html__( 'Button Link:', 'angie-makes-design' ),
 					'sanitize' => 'text',
 				),
 				'button_style' => array(
 					'type'  => 'select',
 					'std'   => 'button-2',
-					'label' => __( 'Button Style:', 'angiemakesdesign' ),
+					'label' => __( 'Button Style:', 'angie-makes-design' ),
 					'options' => array(
-						'default' => __( 'Default Button', 'angiemakesdesign' ),
-						'button-1' => __( 'Image Button 1', 'angiemakesdesign' ),
-						'button-2' => __( 'Image Button 2', 'angiemakesdesign' ),
+						'default' => __( 'Default Button', 'angie-makes-design' ),
+						'button-1' => __( 'Image Button 1', 'angie-makes-design' ),
+						'button-2' => __( 'Image Button 2', 'angie-makes-design' ),
 					),
 					'sanitize' => 'text',
 				),
@@ -97,7 +97,7 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Blog_Post' ) ) :
 					'step'  => 1,
 					'min'   => 0,
 					'max'   => 300,
-					'label' => esc_html__( 'Bottom margin of widget:', 'angiemakesdesign' ),
+					'label' => esc_html__( 'Bottom margin of widget:', 'angie-makes-design' ),
 					'sanitize' => 'number',
 				),
 			);
@@ -151,7 +151,7 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Blog_Post' ) ) :
 			echo  $before_widget;
 
 			// Allow site-wide customization of the 'Read more' link text.
-			$read_more = apply_filters( 'angiemakesdesign_read_more_text', esc_html__( 'Read more', 'angiemakesdesign' ) );
+			$read_more = apply_filters( 'angie_makes_design_read_more_text', esc_html__( 'Read more', 'angie-makes-design' ) );
 			?>
 
 			<?php if ( $post->have_posts() ) : ?>
@@ -228,4 +228,4 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Blog_Post' ) ) :
 	}
 endif;
 
-add_action( 'widgets_init', array( 'AngieMakesDesign_Widget_Blog_Post', 'register' ) );
+add_action( 'widgets_init', array( 'Angie_Makes_Design_Widget_Blog_Post', 'register' ) );

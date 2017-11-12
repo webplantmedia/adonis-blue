@@ -25,7 +25,7 @@ get_header(); ?>
 				</header>
 			<?php endif; ?>
 
-			<?php angiemakesdesign_get_blog_part(); ?>
+			<?php angie_makes_design_get_blog_part(); ?>
 			<?php
 
 			the_posts_navigation();

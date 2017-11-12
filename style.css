@@ -8,7 +8,7 @@ Description: Pretty, Feminine WordPress Themes
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
-Text Domain: angiemakesdesign
+Text Domain: angie-makes-design
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 
 This theme, like WordPress, is licensed under the GPL.
@@ -2622,39 +2622,39 @@ a img {
   }
 }
 
-.angiemakesdesign_static_content {
+.angie-makes-design-static-content {
   position: relative;
 }
 
-.angiemakesdesign_static_content .bg-image-cover {
+.angie-makes-design-static-content .bg-image-cover {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
 }
 
-.angiemakesdesign_static_content .hentry .entry-footer {
+.angie-makes-design-static-content .hentry .entry-footer {
   position: absolute;
   bottom: 10px;
   left: 10px;
   margin: 0;
 }
 
-.angiemakesdesign_static_content .custom-color .hentry h1,
-.angiemakesdesign_static_content .custom-color .hentry h2,
-.angiemakesdesign_static_content .custom-color .hentry h3,
-.angiemakesdesign_static_content .custom-color .hentry h4,
-.angiemakesdesign_static_content .custom-color .hentry h5,
-.angiemakesdesign_static_content .custom-color .hentry h6,
-.angiemakesdesign_static_content .custom-color .hentry p,
-.angiemakesdesign_static_content .custom-color .hentry a:not(.theme-generated-button),
-.angiemakesdesign_static_content .custom-color .hentry a:not(.theme-generated-button):hover,
-.angiemakesdesign_static_content .custom-color .hentry a:not(.theme-generated-button):focus,
-.angiemakesdesign_static_content .custom-color .hentry a:not(.theme-generated-button):active,
-.angiemakesdesign_static_content .custom-color .hentry a:not(.theme-generated-button):visited {
+.angie-makes-design-static-content .custom-color .hentry h1,
+.angie-makes-design-static-content .custom-color .hentry h2,
+.angie-makes-design-static-content .custom-color .hentry h3,
+.angie-makes-design-static-content .custom-color .hentry h4,
+.angie-makes-design-static-content .custom-color .hentry h5,
+.angie-makes-design-static-content .custom-color .hentry h6,
+.angie-makes-design-static-content .custom-color .hentry p,
+.angie-makes-design-static-content .custom-color .hentry a:not(.theme-generated-button),
+.angie-makes-design-static-content .custom-color .hentry a:not(.theme-generated-button):hover,
+.angie-makes-design-static-content .custom-color .hentry a:not(.theme-generated-button):focus,
+.angie-makes-design-static-content .custom-color .hentry a:not(.theme-generated-button):active,
+.angie-makes-design-static-content .custom-color .hentry a:not(.theme-generated-button):visited {
   color: inherit;
 }
 
-.angiemakesdesign_blog_posts .button-wrapper {
+.angie-makes-design-blog-posts .button-wrapper {
   text-align: center;
   margin-bottom: 0;
 }
@@ -2662,24 +2662,24 @@ a img {
 /*--------------------------------------------------------------
 ## Collage Widget
 --------------------------------------------------------------*/
-#master .angiemakesdesign_widget_collage .collage .slide-inner .content-text * {
+#master .angie-makes-design-widget-collage .collage .slide-inner .content-text * {
   margin-top: 0;
 }
 
-#master .angiemakesdesign_widget_collage .collage a.slide-inner .content-text.no-custom-color *, #master .angiemakesdesign_widget_collage .collage a.slide-inner:hover .content-text.no-custom-color *, #master .angiemakesdesign_widget_collage .collage a.slide-inner:active .content-text.no-custom-color *, #master .angiemakesdesign_widget_collage .collage a.slide-inner:focus .content-text.no-custom-color *, #master .angiemakesdesign_widget_collage .collage a.slide-inner:visited .content-text.no-custom-color * {
+#master .angie-makes-design-widget-collage .collage a.slide-inner .content-text.no-custom-color *, #master .angie-makes-design-widget-collage .collage a.slide-inner:hover .content-text.no-custom-color *, #master .angie-makes-design-widget-collage .collage a.slide-inner:active .content-text.no-custom-color *, #master .angie-makes-design-widget-collage .collage a.slide-inner:focus .content-text.no-custom-color *, #master .angie-makes-design-widget-collage .collage a.slide-inner:visited .content-text.no-custom-color * {
   color: #444444;
 }
 
-#master .angiemakesdesign_widget_collage .collage a.slide-inner .content-text.custom-color *, #master .angiemakesdesign_widget_collage .collage a.slide-inner:hover .content-text.custom-color *, #master .angiemakesdesign_widget_collage .collage a.slide-inner:active .content-text.custom-color *, #master .angiemakesdesign_widget_collage .collage a.slide-inner:focus .content-text.custom-color *, #master .angiemakesdesign_widget_collage .collage a.slide-inner:visited .content-text.custom-color * {
+#master .angie-makes-design-widget-collage .collage a.slide-inner .content-text.custom-color *, #master .angie-makes-design-widget-collage .collage a.slide-inner:hover .content-text.custom-color *, #master .angie-makes-design-widget-collage .collage a.slide-inner:active .content-text.custom-color *, #master .angie-makes-design-widget-collage .collage a.slide-inner:focus .content-text.custom-color *, #master .angie-makes-design-widget-collage .collage a.slide-inner:visited .content-text.custom-color * {
   color: inherit;
 }
 
-.angiemakesdesign_widget_collage .collage {
+.angie-makes-design-widget-collage .collage {
   position: relative;
   height: 650px;
 }
 
-.angiemakesdesign_widget_collage .collage .slide-5 {
+.angie-makes-design-widget-collage .collage .slide-5 {
   position: absolute;
   width: 50%;
   height: 60%;
@@ -2687,12 +2687,12 @@ a img {
   left: 0;
 }
 
-.angiemakesdesign_widget_collage .collage .slide-5 .slide-gutter {
+.angie-makes-design-widget-collage .collage .slide-5 .slide-gutter {
   padding-right: 10px;
   padding-bottom: 10px;
 }
 
-.angiemakesdesign_widget_collage .collage .slide-4 {
+.angie-makes-design-widget-collage .collage .slide-4 {
   position: absolute;
   width: 50%;
   height: 40%;
@@ -2700,12 +2700,12 @@ a img {
   left: 0;
 }
 
-.angiemakesdesign_widget_collage .collage .slide-4 .slide-gutter {
+.angie-makes-design-widget-collage .collage .slide-4 .slide-gutter {
   padding-right: 10px;
   padding-top: 10px;
 }
 
-.angiemakesdesign_widget_collage .collage .slide-3 {
+.angie-makes-design-widget-collage .collage .slide-3 {
   position: absolute;
   width: 50%;
   height: 40%;
@@ -2713,12 +2713,12 @@ a img {
   right: 0;
 }
 
-.angiemakesdesign_widget_collage .collage .slide-3 .slide-gutter {
+.angie-makes-design-widget-collage .collage .slide-3 .slide-gutter {
   padding-left: 10px;
   padding-bottom: 10px;
 }
 
-.angiemakesdesign_widget_collage .collage .slide-2 {
+.angie-makes-design-widget-collage .collage .slide-2 {
   position: absolute;
   width: 25%;
   height: 60%;
@@ -2726,13 +2726,13 @@ a img {
   right: 25%;
 }
 
-.angiemakesdesign_widget_collage .collage .slide-2 .slide-gutter {
+.angie-makes-design-widget-collage .collage .slide-2 .slide-gutter {
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 10px;
 }
 
-.angiemakesdesign_widget_collage .collage .slide-1 {
+.angie-makes-design-widget-collage .collage .slide-1 {
   position: absolute;
   width: 25%;
   height: 60%;
@@ -2740,23 +2740,23 @@ a img {
   right: 0;
 }
 
-.angiemakesdesign_widget_collage .collage .slide-1 .slide-gutter {
+.angie-makes-design-widget-collage .collage .slide-1 .slide-gutter {
   padding-left: 10px;
   padding-top: 10px;
 }
 
-.angiemakesdesign_widget_collage .collage .slide {
+.angie-makes-design-widget-collage .collage .slide {
   overflow: hidden;
 }
 
-.angiemakesdesign_widget_collage .collage .slide .slide-inner {
+.angie-makes-design-widget-collage .collage .slide .slide-inner {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   position: relative;
 }
 
-.angiemakesdesign_widget_collage .collage .slide .slide-inner .content-wrapper {
+.angie-makes-design-widget-collage .collage .slide .slide-inner .content-wrapper {
   position: absolute;
   padding: 0 20px;
   text-align: center;
@@ -2772,140 +2772,140 @@ a img {
   transform: translateY(-50%);
 }
 
-.angiemakesdesign_widget_collage .collage .slide .slide-inner .content-wrapper .content-text + .button-text {
+.angie-makes-design-widget-collage .collage .slide .slide-inner .content-wrapper .content-text + .button-text {
   margin-top: 20px;
 }
 
-.angiemakesdesign_widget_collage .collage .slide .slide-inner .content-wrapper .content-text > *:first-child {
+.angie-makes-design-widget-collage .collage .slide .slide-inner .content-wrapper .content-text > *:first-child {
   margin-top: 0;
 }
 
-.angiemakesdesign_widget_collage .collage .slide .slide-inner .content-wrapper .content-text > *:last-child {
+.angie-makes-design-widget-collage .collage .slide .slide-inner .content-wrapper .content-text > *:last-child {
   margin-bottom: 0;
 }
 
-.angiemakesdesign_widget_collage .collage .carousel-item,
-.angiemakesdesign_widget_collage .collage .slide-overflow,
-.angiemakesdesign_widget_collage .collage .slide-gutter,
-.angiemakesdesign_widget_collage .collage .slide-inner {
+.angie-makes-design-widget-collage .collage .carousel-item,
+.angie-makes-design-widget-collage .collage .slide-overflow,
+.angie-makes-design-widget-collage .collage .slide-gutter,
+.angie-makes-design-widget-collage .collage .slide-inner {
   width: 100%;
   height: 100%;
   display: block;
 }
 
-.angiemakesdesign_widget_collage .collage .bx-wrapper,
-.angiemakesdesign_widget_collage .collage .bx-viewport {
+.angie-makes-design-widget-collage .collage .bx-wrapper,
+.angie-makes-design-widget-collage .collage .bx-viewport {
   width: 100%;
   height: 100% !important;
   display: block;
 }
 
-.angiemakesdesign_widget_collage .collage .slide-gutter {
+.angie-makes-design-widget-collage .collage .slide-gutter {
   box-sizing: border-box;
 }
 
-.angiemakesdesign_widget_collage .collage .slide-overflow {
+.angie-makes-design-widget-collage .collage .slide-overflow {
   overflow: hidden;
 }
 
 @media screen and (max-width: 991px) {
-  .angiemakesdesign_widget_collage .collage {
+  .angie-makes-design-widget-collage .collage {
     height: 1300px;
     max-width: 520px;
     margin-left: auto;
     margin-right: auto;
   }
-  .angiemakesdesign_widget_collage .collage .slide-5 {
+  .angie-makes-design-widget-collage .collage .slide-5 {
     width: 100%;
     height: 30%;
     top: 0;
     left: 0;
   }
-  .angiemakesdesign_widget_collage .collage .slide-5 .slide-gutter {
+  .angie-makes-design-widget-collage .collage .slide-5 .slide-gutter {
     padding-right: 0;
     padding-bottom: 10px;
   }
-  .angiemakesdesign_widget_collage .collage .slide-4 {
+  .angie-makes-design-widget-collage .collage .slide-4 {
     width: 100%;
     height: 20%;
     top: 30%;
     left: 0;
   }
-  .angiemakesdesign_widget_collage .collage .slide-4 .slide-gutter {
+  .angie-makes-design-widget-collage .collage .slide-4 .slide-gutter {
     padding-right: 0;
     padding-top: 10px;
     padding-bottom: 10px;
   }
-  .angiemakesdesign_widget_collage .collage .slide-3 {
+  .angie-makes-design-widget-collage .collage .slide-3 {
     width: 100%;
     height: 20%;
     top: 50%;
     right: 0;
   }
-  .angiemakesdesign_widget_collage .collage .slide-3 .slide-gutter {
+  .angie-makes-design-widget-collage .collage .slide-3 .slide-gutter {
     padding-top: 10px;
     padding-left: 0;
     padding-bottom: 10px;
   }
-  .angiemakesdesign_widget_collage .collage .slide-2 {
+  .angie-makes-design-widget-collage .collage .slide-2 {
     width: 50%;
     height: 30%;
     bottom: 0;
     left: 0;
     right: auto;
   }
-  .angiemakesdesign_widget_collage .collage .slide-2 .slide-gutter {
+  .angie-makes-design-widget-collage .collage .slide-2 .slide-gutter {
     padding-left: 0;
     padding-right: 10px;
     padding-top: 10px;
   }
-  .angiemakesdesign_widget_collage .collage .slide-1 {
+  .angie-makes-design-widget-collage .collage .slide-1 {
     width: 50%;
     height: 30%;
     bottom: 0;
     right: 0;
   }
-  .angiemakesdesign_widget_collage .collage .slide-1 .slide-gutter {
+  .angie-makes-design-widget-collage .collage .slide-1 .slide-gutter {
     padding-left: 10px;
     padding-top: 10px;
   }
 }
 
 @media screen and (max-width: 568px) {
-  #master .angiemakesdesign_widget_collage .collage {
+  #master .angie-makes-design-widget-collage .collage {
     height: 1500px;
   }
-  #master .angiemakesdesign_widget_collage .collage .slide {
+  #master .angie-makes-design-widget-collage .collage .slide {
     width: 100%;
     height: 20%;
   }
-  #master .angiemakesdesign_widget_collage .collage .slide .slide-gutter {
+  #master .angie-makes-design-widget-collage .collage .slide .slide-gutter {
     padding: 0;
   }
-  #master .angiemakesdesign_widget_collage .collage .slide-4,
-  #master .angiemakesdesign_widget_collage .collage .slide-3,
-  #master .angiemakesdesign_widget_collage .collage .slide-2,
-  #master .angiemakesdesign_widget_collage .collage .slide-1 {
+  #master .angie-makes-design-widget-collage .collage .slide-4,
+  #master .angie-makes-design-widget-collage .collage .slide-3,
+  #master .angie-makes-design-widget-collage .collage .slide-2,
+  #master .angie-makes-design-widget-collage .collage .slide-1 {
     left: 0;
     right: 0;
     bottom: auto;
   }
-  #master .angiemakesdesign_widget_collage .collage .slide-4 .slide-gutter,
-  #master .angiemakesdesign_widget_collage .collage .slide-3 .slide-gutter,
-  #master .angiemakesdesign_widget_collage .collage .slide-2 .slide-gutter,
-  #master .angiemakesdesign_widget_collage .collage .slide-1 .slide-gutter {
+  #master .angie-makes-design-widget-collage .collage .slide-4 .slide-gutter,
+  #master .angie-makes-design-widget-collage .collage .slide-3 .slide-gutter,
+  #master .angie-makes-design-widget-collage .collage .slide-2 .slide-gutter,
+  #master .angie-makes-design-widget-collage .collage .slide-1 .slide-gutter {
     padding: 20px 0 0 0;
   }
-  #master .angiemakesdesign_widget_collage .collage .slide-4 {
+  #master .angie-makes-design-widget-collage .collage .slide-4 {
     top: 20%;
   }
-  #master .angiemakesdesign_widget_collage .collage .slide-3 {
+  #master .angie-makes-design-widget-collage .collage .slide-3 {
     top: 40%;
   }
-  #master .angiemakesdesign_widget_collage .collage .slide-2 {
+  #master .angie-makes-design-widget-collage .collage .slide-2 {
     top: 60%;
   }
-  #master .angiemakesdesign_widget_collage .collage .slide-1 {
+  #master .angie-makes-design-widget-collage .collage .slide-1 {
     top: 80%;
   }
 }
@@ -2965,7 +2965,7 @@ a img {
   width: 100%;
 }
 
-.angiemakesdesign_static_content .hentry,
+.angie-makes-design-static-content .hentry,
 .no-sidebar .content-area {
   width: 700px;
   margin: 0 auto;
@@ -3018,7 +3018,7 @@ a img {
 }
 
 @media screen and (max-width: 700px) {
-  #master .angiemakesdesign_static_content .hentry,
+  #master .angie-makes-design-static-content .hentry,
   #master .content-area {
     width: 100%;
   }

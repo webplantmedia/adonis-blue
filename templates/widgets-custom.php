@@ -17,7 +17,7 @@ get_header(); ?>
 							the_content();
 
 							wp_link_pages( array(
-								'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'angiemakesdesign' ),
+								'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'angie-makes-design' ),
 								'after'  => '</div>',
 							) );
 						?>

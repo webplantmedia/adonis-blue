@@ -15,7 +15,7 @@ get_header(); ?>
 		<?php
 		if ( have_posts() ) : ?>
 
-			<?php angiemakesdesign_get_blog_part(); ?>
+			<?php angie_makes_design_get_blog_part(); ?>
 			<?php
 
 			the_posts_navigation();

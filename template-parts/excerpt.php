@@ -13,7 +13,7 @@
 	<header class="entry-header">
 		<?php if ( 'post' === get_post_type() ) : ?>
 			<div class="entry-cat-meta">
-				<?php angiemakesdesign_entry_header(); ?>
+				<?php angie_makes_design_entry_header(); ?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 
@@ -22,7 +22,7 @@
 
 		if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
-			<?php angiemakesdesign_posted_on(); ?>
+			<?php angie_makes_design_posted_on(); ?>
 		</div><!-- .entry-meta -->
 		<?php
 		endif; ?>

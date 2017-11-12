@@ -69,7 +69,7 @@ $column = 1;
 			<div class="site-info-wrapper">
 				<div class="site-boundary">
 					<div class="site-info">
-						<?php angiemakesdesign_site_info(); ?>
+						<?php angie_makes_design_site_info(); ?>
 					</div><!-- .site-info -->
 				</div><!-- .site-boundary -->
 			</div><!-- .site-info-wrapper -->

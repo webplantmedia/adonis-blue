@@ -1,5 +1,5 @@
 <?php
-function angiemakesdesign_custom_css() {
+function angie_makes_design_custom_css() {
 	global $amd;
 
 	$css = '
@@ -120,8 +120,8 @@ a:hover {
 }
 
 .site-branding {
-	' . angiemakesdesign_css_set_unit( 'padding-top', $amd['heading_padding_top'] ) . ' /*id:heading_padding_top*/
-	' . angiemakesdesign_css_set_unit( 'padding-bottom', $amd['heading_padding_bottom'] ) . ' /*id:heading_padding_bottom*/
+	' . angie_makes_design_css_set_unit( 'padding-top', $amd['heading_padding_top'] ) . ' /*id:heading_padding_top*/
+	' . angie_makes_design_css_set_unit( 'padding-bottom', $amd['heading_padding_bottom'] ) . ' /*id:heading_padding_bottom*/
 }
 
 .site-header {

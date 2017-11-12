@@ -10,7 +10,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php if ( angiemakesdesign_display_header() ) : ?>
+	<?php if ( angie_makes_design_display_header() ) : ?>
 		<header class="entry-header">
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 		</header><!-- .entry-header -->
@@ -18,7 +18,7 @@
 
 	<div class="entry-content">
 		<?php
-			$grid = angiemakesdesign_get_the_layout();
+			$grid = angie_makes_design_get_the_layout();
 			
 			$html = '';
 			foreach( $grid as $row ) {
@@ -48,7 +48,7 @@
 			echo $html;
 
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'angiemakesdesign' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'angie-makes-design' ),
 				'after'  => '</div>',
 			) );
 		?>
@@ -61,7 +61,7 @@
 					sprintf(
 						wp_kses(
 							/* translators: %s: Name of current post. Only visible to screen readers */
-							__( 'Edit <span class="screen-reader-text">%s</span>', 'angiemakesdesign' ),
+							__( 'Edit <span class="screen-reader-text">%s</span>', 'angie-makes-design' ),
 							array(
 								'span' => array(
 									'class' => array(),

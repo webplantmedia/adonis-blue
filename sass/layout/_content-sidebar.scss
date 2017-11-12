@@ -4,7 +4,7 @@
 	width: 100%;
 }
 
-.angiemakesdesign_static_content .hentry,
+.angie-makes-design-static-content .hentry,
 .no-sidebar .content-area {
 	width: $size__site-main-no-sidebar;
 	margin: 0 auto;
@@ -60,7 +60,7 @@
 
 @media screen and (max-width : $size__site-main-no-sidebar) {
 	#master {
-		.angiemakesdesign_static_content .hentry,
+		.angie-makes-design-static-content .hentry,
 		.content-area {
 			width: 100%;
 		}

@@ -2,102 +2,102 @@
 /**
  * Content collout widget for widgetized pages.
  *
- * @since AngieMakesDesign 1.0.0.
+ * @since Angie_Makes_Design 1.0.0.
  *
- * @package AngieMakesDesign
+ * @package Angie_Makes_Design
  */
-class AngieMakesDesign_Widget_Callout extends AngieMakesDesign_Widget {
+class Angie_Makes_Design_Widget_Callout extends Angie_Makes_Design_Widget {
 	/**
 	 * Constructor
 	 */
 	public function __construct() {
-		$this->widget_id          = 'angiemakesdesign_widget_callout';
-		$this->widget_description = esc_html__( 'Displays a callout.', 'angiemakesdesign' );
-		$this->widget_name        = esc_html__( 'Angie Makes Design: Callout', 'angiemakesdesign' );
+		$this->widget_id          = 'angie-makes-design-widget-callout';
+		$this->widget_description = esc_html__( 'Displays a callout.', 'angie-makes-design' );
+		$this->widget_name        = esc_html__( 'Angie Makes Design: Callout', 'angie-makes-design' );
 		$this->settings           = array(
 			'title' => array(
 				'type'  => 'text',
 				'std'   => '',
-				'label' => __( 'Title:', 'angiemakesdesign' ),
+				'label' => __( 'Title:', 'angie-makes-design' ),
 				'sanitize' => 'text',
 			),
 			'content' => array(
 				'type'  => 'textarea',
 				'std'   => '<h3>EASY-TO-USE, CUSTOMIZABLE WORDPRESS THEMES TO FIT YOUR UNIQUE STYLE.</h3>',
-				'label' => __( 'Content:', 'angiemakesdesign' ),
+				'label' => __( 'Content:', 'angie-makes-design' ),
 				'rows'  => 5,
 				'sanitize' => 'html',
 			),
 			'text_align' => array(
 				'type'  => 'select',
 				'std'   => 'left',
-				'label' => __( 'Text Align:', 'angiemakesdesign' ),
+				'label' => __( 'Text Align:', 'angie-makes-design' ),
 				'options' => array(
-					'left' => __( 'Left', 'angiemakesdesign' ),
-					'right' => __( 'Right', 'angiemakesdesign' ),
+					'left' => __( 'Left', 'angie-makes-design' ),
+					'right' => __( 'Right', 'angie-makes-design' ),
 				),
 				'sanitize' => 'text',
 			),
 			'vertical_align' => array(
 				'type'  => 'select',
 				'std'   => 'middle',
-				'label' => __( 'Vertical Alignment:', 'angiemakesdesign' ),
+				'label' => __( 'Vertical Alignment:', 'angie-makes-design' ),
 				'options' => array(
-					'top' => __( 'Top', 'angiemakesdesign' ),
-					'middle' => __( 'Middle', 'angiemakesdesign' ),
-					'bottom' => __( 'Bottom', 'angiemakesdesign' ),
+					'top' => __( 'Top', 'angie-makes-design' ),
+					'middle' => __( 'Middle', 'angie-makes-design' ),
+					'bottom' => __( 'Bottom', 'angie-makes-design' ),
 				),
 				'sanitize' => 'text',
 			),
 			'image' => array(
 				'type'  => 'image',
 				'std'   => get_template_directory_uri() . '/img/collage/gentry.jpg',
-				'label' => esc_html__( 'Image:', 'angiemakesdesign' ),
+				'label' => esc_html__( 'Image:', 'angie-makes-design' ),
 				'sanitize' => 'url',
 			),
 			'background_color' => array(
 				'type'  => 'colorpicker',
 				'std'   => '#fdf7f3',
-				'label' => __( 'Background Color:', 'angiemakesdesign' ),
+				'label' => __( 'Background Color:', 'angie-makes-design' ),
 				'sanitize' => 'color',
 			),
 			'text_color' => array(
 				'type'  => 'colorpicker',
 				'std'   => '',
-				'label' => __( 'Text Color:', 'angiemakesdesign' ),
-				'description' => esc_html__( 'Leave blank to use default theme color.', 'angiemakesdesign' ),
+				'label' => __( 'Text Color:', 'angie-makes-design' ),
+				'description' => esc_html__( 'Leave blank to use default theme color.', 'angie-makes-design' ),
 				'sanitize' => 'color',
 			),
 			'button_text' => array(
 				'type'  => 'text',
 				'std'   => 'SHOP THEMES',
-				'label' => esc_html__( 'Button Text:', 'angiemakesdesign' ),
+				'label' => esc_html__( 'Button Text:', 'angie-makes-design' ),
 				'sanitize' => 'text',
 			),
 			'button_link' => array(
 				'type'  => 'text',
 				'std'   => 'https://angiemakes.com',
-				'label' => esc_html__( 'Button URL:', 'angiemakesdesign' ),
+				'label' => esc_html__( 'Button URL:', 'angie-makes-design' ),
 				'sanitize' => 'text',
 			),
 			'button_style' => array(
 				'type'  => 'select',
 				'std'   => 'button-2',
-				'label' => __( 'Button Style:', 'angiemakesdesign' ),
+				'label' => __( 'Button Style:', 'angie-makes-design' ),
 				'options' => array(
-					'default' => __( 'Default Button', 'angiemakesdesign' ),
-					'button-1' => __( 'Image Button 1', 'angiemakesdesign' ),
-					'button-2' => __( 'Image Button 2', 'angiemakesdesign' ),
+					'default' => __( 'Default Button', 'angie-makes-design' ),
+					'button-1' => __( 'Image Button 1', 'angie-makes-design' ),
+					'button-2' => __( 'Image Button 2', 'angie-makes-design' ),
 				),
 				'sanitize' => 'text',
 			),
 			'style' => array(
 				'type'  => 'select',
 				'std'   => 'border',
-				'label' => __( 'Box Style:', 'angiemakesdesign' ),
+				'label' => __( 'Box Style:', 'angie-makes-design' ),
 				'options' => array(
-					'plain' => __( 'Plain', 'angiemakesdesign' ),
-					'border' => __( 'Border', 'angiemakesdesign' ),
+					'plain' => __( 'Plain', 'angie-makes-design' ),
+					'border' => __( 'Border', 'angie-makes-design' ),
 				),
 				'sanitize' => 'text',
 			),
@@ -107,7 +107,7 @@ class AngieMakesDesign_Widget_Callout extends AngieMakesDesign_Widget {
 				'step'  => 1,
 				'min'   => 0,
 				'max'   => 300,
-				'label' => esc_html__( 'Top padding of widget:', 'angiemakesdesign' ),
+				'label' => esc_html__( 'Top padding of widget:', 'angie-makes-design' ),
 				'sanitize' => 'number',
 			),
 			'padding_bottom' => array(
@@ -116,7 +116,7 @@ class AngieMakesDesign_Widget_Callout extends AngieMakesDesign_Widget {
 				'step'  => 1,
 				'min'   => 0,
 				'max'   => 300,
-				'label' => esc_html__( 'Bottom padding of widget:', 'angiemakesdesign' ),
+				'label' => esc_html__( 'Bottom padding of widget:', 'angie-makes-design' ),
 				'sanitize' => 'number',
 			),
 			'margin_bottom' => array(
@@ -125,20 +125,20 @@ class AngieMakesDesign_Widget_Callout extends AngieMakesDesign_Widget {
 				'step'  => 1,
 				'min'   => 0,
 				'max'   => 300,
-				'label' => esc_html__( 'Bottom margin of widget:', 'angiemakesdesign' ),
+				'label' => esc_html__( 'Bottom margin of widget:', 'angie-makes-design' ),
 				'sanitize' => 'number',
 			),
 		);
 
 		parent::__construct();
 
-		add_filter( 'angiemakesdesign_feature_callout_description', 'wptexturize' );
-		add_filter( 'angiemakesdesign_feature_callout_description', 'convert_smilies' );
-		add_filter( 'angiemakesdesign_feature_callout_description', 'convert_chars' );
-		add_filter( 'angiemakesdesign_feature_callout_description', 'wpautop' );
-		add_filter( 'angiemakesdesign_feature_callout_description', 'shortcode_unautop' );
-		add_filter( 'angiemakesdesign_feature_callout_description', 'prepend_attachment' );
-		add_filter( 'angiemakesdesign_feature_callout_description', 'do_shortcode' );
+		add_filter( 'angie_makes_design_feature_callout_description', 'wptexturize' );
+		add_filter( 'angie_makes_design_feature_callout_description', 'convert_smilies' );
+		add_filter( 'angie_makes_design_feature_callout_description', 'convert_chars' );
+		add_filter( 'angie_makes_design_feature_callout_description', 'wpautop' );
+		add_filter( 'angie_makes_design_feature_callout_description', 'shortcode_unautop' );
+		add_filter( 'angie_makes_design_feature_callout_description', 'prepend_attachment' );
+		add_filter( 'angie_makes_design_feature_callout_description', 'do_shortcode' );
 	}
 
 	/**
@@ -257,7 +257,7 @@ class AngieMakesDesign_Widget_Callout extends AngieMakesDesign_Widget {
 
 		$output .= '</div>';
 
-		$output  = apply_filters( 'angiemakesdesign_callout_description', $output );
+		$output  = apply_filters( 'angie_makes_design_callout_description', $output );
 
 		return $output;
 	}
@@ -272,4 +272,4 @@ class AngieMakesDesign_Widget_Callout extends AngieMakesDesign_Widget {
 	}
 }
 
-add_action( 'widgets_init', array( 'AngieMakesDesign_Widget_Callout', 'register' ) );
+add_action( 'widgets_init', array( 'Angie_Makes_Design_Widget_Callout', 'register' ) );

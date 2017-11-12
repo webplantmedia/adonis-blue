@@ -11,7 +11,7 @@
  * @param array $classes Classes for the body element.
  * @return array
  */
-function angiemakesdesign_body_classes( $classes ) {
+function angie_makes_design_body_classes( $classes ) {
 	global $amd;
 
 	// Adds a class of hfeed to non-singular pages.
@@ -20,10 +20,10 @@ function angiemakesdesign_body_classes( $classes ) {
 	}
 
 	// Sidebar
-	if ( angiemakesdesign_display_sidebar() ) {
+	if ( angie_makes_design_display_sidebar() ) {
 		$classes[] = 'display-sidebar';
 	}
-	else if ( angiemakesdesign_display_fullwidth() ) {
+	else if ( angie_makes_design_display_fullwidth() ) {
 		$classes[] = 'display-fullwidth';
 	}
 	else {
@@ -31,7 +31,7 @@ function angiemakesdesign_body_classes( $classes ) {
 	}
 
 	// Footer
-	if ( angiemakesdesign_display_sidebar_footer() ) {
+	if ( angie_makes_design_display_sidebar_footer() ) {
 		$classes[] = 'display-sidebar-footer';
 	}
 
@@ -47,22 +47,22 @@ function angiemakesdesign_body_classes( $classes ) {
 
 	return $classes;
 }
-add_filter( 'body_class', 'angiemakesdesign_body_classes' );
+add_filter( 'body_class', 'angie_makes_design_body_classes' );
 
 /**
  * Add a pingback url auto-discovery header for singularly identifiable articles.
  */
-function angiemakesdesign_pingback_header() {
+function angie_makes_design_pingback_header() {
 	if ( is_singular() && pings_open() ) {
 		echo '<link rel="pingback" href="', esc_url( get_bloginfo( 'pingback_url' ) ), '">';
 	}
 }
-add_action( 'wp_head', 'angiemakesdesign_pingback_header' );
+add_action( 'wp_head', 'angie_makes_design_pingback_header' );
 
 /**
  * Add retina src image to custom logo
  */
-function angiemakesdesign_get_custom_logo( $html, $blog_id ) {
+function angie_makes_design_get_custom_logo( $html, $blog_id ) {
 	global $amd;
 
 	if ( $url = get_theme_mod( 'custom_logo_2x', $amd['custom_logo_2x'] ) ) {
@@ -71,7 +71,7 @@ function angiemakesdesign_get_custom_logo( $html, $blog_id ) {
 
 	return $html;
 }
-add_filter( 'get_custom_logo', 'angiemakesdesign_get_custom_logo', 10, 2 );
+add_filter( 'get_custom_logo', 'angie_makes_design_get_custom_logo', 10, 2 );
 
 /**
  * Add "read more" link on all excerpts.
@@ -82,7 +82,7 @@ add_filter( 'get_custom_logo', 'angiemakesdesign_get_custom_logo', 10, 2 );
  * @param string $output
  * @return string Appended "Read More" link
  */
-function angiemakesdesign_read_more_link( $output ) {
+function angie_makes_design_read_more_link( $output ) {
 	global $amd;
 
 	if ( 'post' != get_post_type() ) {
@@ -98,23 +98,23 @@ function angiemakesdesign_read_more_link( $output ) {
 	return $output . sprintf( ' <a class="more-link%1$s" href="%2$s">%3$s<i class="genericon genericon-next"></i></a>',
 		$class,
 		get_permalink( get_the_ID() ),
-		esc_html__( $amd['read_more_label'], 'angiemakesdesign' )
+		esc_html__( $amd['read_more_label'], 'angie-makes-design' )
 	);
 }
-add_filter('the_excerpt', 'angiemakesdesign_read_more_link');
+add_filter('the_excerpt', 'angie_makes_design_read_more_link');
 
-function angiemakesdesign_read_more_text() {
+function angie_makes_design_read_more_text() {
 	global $amd;
 
 	if ( 'post' != get_post_type() ) {
 		return '';
 	}
 
-	return esc_html__( $amd['read_more_label'], 'angiemakesdesign' );
+	return esc_html__( $amd['read_more_label'], 'angie-makes-design' );
 }
-add_filter('angiemakesdesign_read_more_text', 'angiemakesdesign_read_more_text');
+add_filter('angie_makes_design_read_more_text', 'angie_makes_design_read_more_text');
 
-function angiemakesdesign_the_content( $output ) {
+function angie_makes_design_the_content( $output ) {
 	global $amd;
 
 	$search = array();
@@ -156,7 +156,7 @@ function angiemakesdesign_the_content( $output ) {
 	return $output;
 
 }
-add_filter('the_content', 'angiemakesdesign_the_content', 11 );
+add_filter('the_content', 'angie_makes_design_the_content', 11 );
 
 /**
  * Filter the except length to specified characters.
@@ -164,12 +164,12 @@ add_filter('the_content', 'angiemakesdesign_the_content', 11 );
  * @param int $length Excerpt length.
  * @return int (Maybe) modified excerpt length.
  */
-function angiemakesdesign_custom_excerpt_length( $length ) {
+function angie_makes_design_custom_excerpt_length( $length ) {
 	return 80;
 }
-add_filter( 'excerpt_length', 'angiemakesdesign_custom_excerpt_length', 999 );
+add_filter( 'excerpt_length', 'angie_makes_design_custom_excerpt_length', 999 );
 
-function angiemakesdesign_get_the_archive_title( $title ) {
+function angie_makes_design_get_the_archive_title( $title ) {
 	$pieces = explode( ': ', $title );
 
 	if ( sizeof( $pieces ) == 2 ) {
@@ -181,4 +181,4 @@ function angiemakesdesign_get_the_archive_title( $title ) {
 
 	return $title;
 }
-add_filter( 'get_the_archive_title', 'angiemakesdesign_get_the_archive_title', 11, 1 );
+add_filter( 'get_the_archive_title', 'angie_makes_design_get_the_archive_title', 11, 1 );

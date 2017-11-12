@@ -10,7 +10,7 @@
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
-function angiemakesdesign_customize_register( $wp_customize ) {
+function angie_makes_design_customize_register( $wp_customize ) {
 	global $amd_default;
 
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
@@ -20,15 +20,15 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 	if ( isset( $wp_customize->selective_refresh ) ) {
 		$wp_customize->selective_refresh->add_partial( 'blogname', array(
 			'selector'        => '.site-title a',
-			'render_callback' => 'angiemakesdesign_customize_partial_blogname',
+			'render_callback' => 'angie_makes_design_customize_partial_blogname',
 		) );
 		$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
 			'selector'        => '.site-description',
-			'render_callback' => 'angiemakesdesign_customize_partial_blogdescription',
+			'render_callback' => 'angie_makes_design_customize_partial_blogdescription',
 		) );
 		$wp_customize->selective_refresh->add_partial( 'custom_logo_2x', array(
 			'selector'        => '.site-logo',
-			'render_callback' => 'angiemakesdesign_customize_partial_custom_logo',
+			'render_callback' => 'angie_makes_design_customize_partial_custom_logo',
 		) );
 	}
 
@@ -45,17 +45,17 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, $setting_id, array(
-		'label' => __( 'Retina Logo', 'angiemakesdesign' ),
+		'label' => __( 'Retina Logo', 'angie-makes-design' ),
 		'priority' => 8, // below the logo media selector
 		'section' => $section_id,
 		'button_labels' => array(
-			'select'       => __( 'Select Retina Logo', 'angiemakesdesign' ),
-			'change'       => __( 'Change Retina Logo', 'angiemakesdesign' ),
-			'placeholder'  => __( 'No retina logo selected', 'angiemakesdesign' ),
-			'frame_title'  => __( 'Select Retina Logo', 'angiemakesdesign' ),
-			'frame_button' => __( 'Choose Retina Logo', 'angiemakesdesign' ),
+			'select'       => __( 'Select Retina Logo', 'angie-makes-design' ),
+			'change'       => __( 'Change Retina Logo', 'angie-makes-design' ),
+			'placeholder'  => __( 'No retina logo selected', 'angie-makes-design' ),
+			'frame_title'  => __( 'Select Retina Logo', 'angie-makes-design' ),
+			'frame_button' => __( 'Choose Retina Logo', 'angie-makes-design' ),
 		),
-		'description' => __( 'Select image twice the size as your original logo image for crisp display on retina screens.', 'angiemakesdesign' ),
+		'description' => __( 'Select image twice the size as your original logo image for crisp display on retina screens.', 'angie-makes-design' ),
 	) ) );
 
 	$setting_id = 'heading_padding_top';
@@ -67,7 +67,7 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'number',
-		'label' => __( 'Padding Top', 'angiemakesdesign' ),
+		'label' => __( 'Padding Top', 'angie-makes-design' ),
 		'section' => $section_id,
 	) );
 
@@ -80,7 +80,7 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'number',
-		'label' => __( 'Padding Bottom', 'angiemakesdesign' ),
+		'label' => __( 'Padding Bottom', 'angie-makes-design' ),
 		'section' => $section_id,
 	) );
 
@@ -97,7 +97,7 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $setting_id, array(
-		'label' => __( 'Primary Color', 'angiemakesdesign' ),
+		'label' => __( 'Primary Color', 'angie-makes-design' ),
 		'section' => $section_id,
 	) ) );
 
@@ -109,7 +109,7 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $setting_id, array(
-		'label' => __( 'Primary Hover Color', 'angiemakesdesign' ),
+		'label' => __( 'Primary Hover Color', 'angie-makes-design' ),
 		'section' => $section_id,
 	) ) );
 
@@ -121,7 +121,7 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $setting_id, array(
-		'label' => __( 'Footer Background Color', 'angiemakesdesign' ),
+		'label' => __( 'Footer Background Color', 'angie-makes-design' ),
 		'section' => $section_id,
 	) ) );
 
@@ -133,7 +133,7 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $setting_id, array(
-		'label' => __( 'Link Color', 'angiemakesdesign' ),
+		'label' => __( 'Link Color', 'angie-makes-design' ),
 		'section' => $section_id,
 	) ) );
 
@@ -145,7 +145,7 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $setting_id, array(
-		'label' => __( 'Link Hover Color', 'angiemakesdesign' ),
+		'label' => __( 'Link Hover Color', 'angie-makes-design' ),
 		'section' => $section_id,
 	) ) );
 
@@ -153,7 +153,7 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 	 * Theme options.
 	 */
 	$wp_customize->add_panel( 'theme_options', array(
-		'title'    => __( 'Theme Options', 'angiemakesdesign' ),
+		'title'    => __( 'Theme Options', 'angie-makes-design' ),
 		'priority' => 330, // Before Additional CSS.
 	) );
 
@@ -162,7 +162,7 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 	 */
 	$section_id = 'theme_options_top_header';
 	$wp_customize->add_section( $section_id, array(
-		'title'    => __( 'Top Header', 'angiemakesdesign' ),
+		'title'    => __( 'Top Header', 'angie-makes-design' ),
 		'panel'    => 'theme_options',
 	) );
 
@@ -175,8 +175,8 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'range',
-		'label' => __( 'Top Header Background Offset', 'angiemakesdesign' ),
-		'description' => __( 'This changes the position of your top header background so you can center it perfectly with your top header menu.', 'angiemakesdesign' ),
+		'label' => __( 'Top Header Background Offset', 'angie-makes-design' ),
+		'description' => __( 'This changes the position of your top header background so you can center it perfectly with your top header menu.', 'angie-makes-design' ),
 		'section' => $section_id,
 		'input_attrs' => array(
 			'min' => 0,
@@ -191,7 +191,7 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 	 */
 	$section_id = 'theme_options_Menu';
 	$wp_customize->add_section( $section_id, array(
-		'title'    => __( 'Menu', 'angiemakesdesign' ),
+		'title'    => __( 'Menu', 'angie-makes-design' ),
 		'panel'    => 'theme_options',
 	) );
 
@@ -199,12 +199,12 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( $setting_id, array(
 		'default' => $amd_default[ $setting_id ],
 		'transport' => 'refresh',
-		'sanitize_callback' => 'angiemakesdesign_sanitize_checkbox',
+		'sanitize_callback' => 'angie_makes_design_sanitize_checkbox',
 	) );
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'checkbox',
-		'label' => __( 'Show Menu Arrows', 'angiemakesdesign' ),
+		'label' => __( 'Show Menu Arrows', 'angie-makes-design' ),
 		'section' => $section_id,
 	) );
 	/**
@@ -212,7 +212,7 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 	 */
 	$section_id = 'theme_options_body';
 	$wp_customize->add_section( $section_id, array(
-		'title'    => __( 'Body', 'angiemakesdesign' ),
+		'title'    => __( 'Body', 'angie-makes-design' ),
 		'panel'    => 'theme_options',
 	) );
 
@@ -225,8 +225,8 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'select',
-		'label' => __( 'Default Button Style', 'angiemakesdesign' ),
-		'description' => __( 'When you insert a link on its own line in the WP Editor, the theme turns it into a button. Choose the default style of your button to display in your post and pages.', 'angiemakesdesign' ),
+		'label' => __( 'Default Button Style', 'angie-makes-design' ),
+		'description' => __( 'When you insert a link on its own line in the WP Editor, the theme turns it into a button. Choose the default style of your button to display in your post and pages.', 'angie-makes-design' ),
 		'section' => $section_id,
 		'choices' => array(
 			'default' => 'Default Button',
@@ -239,12 +239,12 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( $setting_id, array(
 		'default' => $amd_default[ $setting_id ],
 		'transport' => 'refresh',
-		'sanitize_callback' => 'angiemakesdesign_sanitize_checkbox',
+		'sanitize_callback' => 'angie_makes_design_sanitize_checkbox',
 	) );
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'checkbox',
-		'label' => __( 'Disable Google Fonts', 'angiemakesdesign' ),
+		'label' => __( 'Disable Google Fonts', 'angie-makes-design' ),
 		'section' => $section_id,
 	) );
 
@@ -253,7 +253,7 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 	 */
 	$section_id = 'theme_options_blog';
 	$wp_customize->add_section( $section_id, array(
-		'title'    => __( 'Blog', 'angiemakesdesign' ),
+		'title'    => __( 'Blog', 'angie-makes-design' ),
 		'panel'    => 'theme_options',
 	) );
 
@@ -266,7 +266,7 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'select',
-		'label' => __( 'Blog Display', 'angiemakesdesign' ),
+		'label' => __( 'Blog Display', 'angie-makes-design' ),
 		'section' => $section_id,
 		'choices' => array(
 			'blog1' => 'Lead Excerpt + Grid',
@@ -285,7 +285,7 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'select',
-		'label' => __( 'Archive Display', 'angiemakesdesign' ),
+		'label' => __( 'Archive Display', 'angie-makes-design' ),
 		'section' => $section_id,
 		'choices' => array(
 			'blog1' => 'Lead Excerpt + Grid',
@@ -304,7 +304,7 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'select',
-		'label' => __( 'Search Display', 'angiemakesdesign' ),
+		'label' => __( 'Search Display', 'angie-makes-design' ),
 		'section' => $section_id,
 		'choices' => array(
 			'blog1' => 'Lead Excerpt + Grid',
@@ -319,7 +319,7 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 	 */
 	$section_id = 'theme_options_display_sidebar';
 	$wp_customize->add_section( $section_id, array(
-		'title'    => __( 'Display Sidebar', 'angiemakesdesign' ),
+		'title'    => __( 'Display Sidebar', 'angie-makes-design' ),
 		'panel'    => 'theme_options',
 		'description' => 'Check the pages where you want the sidebar to display.',
 	) );
@@ -328,12 +328,12 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( $setting_id, array(
 		'default' => $amd_default[ $setting_id ],
 		'transport' => 'refresh',
-		'sanitize_callback' => 'angiemakesdesign_sanitize_checkbox',
+		'sanitize_callback' => 'angie_makes_design_sanitize_checkbox',
 	) );
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'checkbox',
-		'label' => __( 'Blog', 'angiemakesdesign' ),
+		'label' => __( 'Blog', 'angie-makes-design' ),
 		'section' => $section_id,
 	) );
 
@@ -341,12 +341,12 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( $setting_id, array(
 		'default' => $amd_default[ $setting_id ],
 		'transport' => 'refresh',
-		'sanitize_callback' => 'angiemakesdesign_sanitize_checkbox',
+		'sanitize_callback' => 'angie_makes_design_sanitize_checkbox',
 	) );
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'checkbox',
-		'label' => __( 'Post', 'angiemakesdesign' ),
+		'label' => __( 'Post', 'angie-makes-design' ),
 		'section' => $section_id,
 	) );
 
@@ -354,12 +354,12 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( $setting_id, array(
 		'default' => $amd_default[ $setting_id ],
 		'transport' => 'refresh',
-		'sanitize_callback' => 'angiemakesdesign_sanitize_checkbox',
+		'sanitize_callback' => 'angie_makes_design_sanitize_checkbox',
 	) );
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'checkbox',
-		'label' => __( 'Shop', 'angiemakesdesign' ),
+		'label' => __( 'Shop', 'angie-makes-design' ),
 		'section' => $section_id,
 	) );
 
@@ -367,12 +367,12 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( $setting_id, array(
 		'default' => $amd_default[ $setting_id ],
 		'transport' => 'refresh',
-		'sanitize_callback' => 'angiemakesdesign_sanitize_checkbox',
+		'sanitize_callback' => 'angie_makes_design_sanitize_checkbox',
 	) );
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'checkbox',
-		'label' => __( 'Archive', 'angiemakesdesign' ),
+		'label' => __( 'Archive', 'angie-makes-design' ),
 		'section' => $section_id,
 	) );
 
@@ -380,12 +380,12 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( $setting_id, array(
 		'default' => $amd_default[ $setting_id ],
 		'transport' => 'refresh',
-		'sanitize_callback' => 'angiemakesdesign_sanitize_checkbox',
+		'sanitize_callback' => 'angie_makes_design_sanitize_checkbox',
 	) );
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'checkbox',
-		'label' => __( 'Search', 'angiemakesdesign' ),
+		'label' => __( 'Search', 'angie-makes-design' ),
 		'section' => $section_id,
 	) );
 
@@ -393,12 +393,12 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( $setting_id, array(
 		'default' => $amd_default[ $setting_id ],
 		'transport' => 'refresh',
-		'sanitize_callback' => 'angiemakesdesign_sanitize_checkbox',
+		'sanitize_callback' => 'angie_makes_design_sanitize_checkbox',
 	) );
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'checkbox',
-		'label' => __( 'Shop Archive', 'angiemakesdesign' ),
+		'label' => __( 'Shop Archive', 'angie-makes-design' ),
 		'section' => $section_id,
 	) );
 
@@ -407,7 +407,7 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 	 */
 	$section_id = 'theme_options_lables';
 	$wp_customize->add_section( $section_id, array(
-		'title'    => __( 'Labels', 'angiemakesdesign' ),
+		'title'    => __( 'Labels', 'angie-makes-design' ),
 		'panel'    => 'theme_options',
 	) );
 
@@ -420,7 +420,7 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'text',
-		'label' => __( 'Mobile Menu Label', 'angiemakesdesign' ),
+		'label' => __( 'Mobile Menu Label', 'angie-makes-design' ),
 		'section' => $section_id,
 	) );
 
@@ -433,18 +433,18 @@ function angiemakesdesign_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'text',
-		'label' => __( 'Read More Label', 'angiemakesdesign' ),
+		'label' => __( 'Read More Label', 'angie-makes-design' ),
 		'section' => $section_id,
 	) );
 }
-add_action( 'customize_register', 'angiemakesdesign_customize_register' );
+add_action( 'customize_register', 'angie_makes_design_customize_register' );
 
 /**
  * Render the site title for the selective refresh partial.
  *
  * @return void
  */
-function angiemakesdesign_customize_partial_blogname() {
+function angie_makes_design_customize_partial_blogname() {
 	bloginfo( 'name' );
 }
 
@@ -453,7 +453,7 @@ function angiemakesdesign_customize_partial_blogname() {
  *
  * @return void
  */
-function angiemakesdesign_customize_partial_blogdescription() {
+function angie_makes_design_customize_partial_blogdescription() {
 	bloginfo( 'description' );
 }
 
@@ -462,24 +462,24 @@ function angiemakesdesign_customize_partial_blogdescription() {
  *
  * @return void
  */
-function angiemakesdesign_customize_partial_custom_logo() {
+function angie_makes_design_customize_partial_custom_logo() {
 	the_custom_logo();
 }
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
-function angiemakesdesign_customize_preview_js() {
-	wp_enqueue_script( 'angiemakesdesign-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
+function angie_makes_design_customize_preview_js() {
+	wp_enqueue_script( 'angie-makes-design-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
 }
-add_action( 'customize_preview_init', 'angiemakesdesign_customize_preview_js' );
+add_action( 'customize_preview_init', 'angie_makes_design_customize_preview_js' );
 
 /**
  * Sanitize the page layout options.
  *
  * @param string $input Page layout.
  */
-function angiemakesdesign_sanitize_checkbox( $input ) {
+function angie_makes_design_sanitize_checkbox( $input ) {
 	$valid = array( 0, 1 );
 
 	if ( in_array( $input, $valid ) ) {

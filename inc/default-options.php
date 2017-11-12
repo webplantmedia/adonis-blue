@@ -58,7 +58,7 @@ $amd_default['read_more_label'] = 'Continue Reading';
  *
  * Also, if we call get_theme_mod any sooner, then we can't live preview.
  */
-function angiemakesdesign_default_options() {
+function angie_makes_design_default_options() {
 	global $amd_default;
 	global $amd;
 
@@ -66,4 +66,4 @@ function angiemakesdesign_default_options() {
 		$amd[ $key ] = get_theme_mod( $key, $value );
 	}
 }
-add_action( 'wp_loaded', 'angiemakesdesign_default_options' );
+add_action( 'wp_loaded', 'angie_makes_design_default_options' );

@@ -7,7 +7,7 @@
  * @package Angie_Makes_Design
  */
 
-if ( ! angiemakesdesign_display_sidebar() ) {
+if ( ! angie_makes_design_display_sidebar() ) {
 	return;
 }
 ?>

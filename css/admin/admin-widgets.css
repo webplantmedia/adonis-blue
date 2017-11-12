@@ -279,10 +279,10 @@ html .widget-inner-container.ui-accordion .ui-accordion-header.ui-accordion-head
 .panel-delete-confirm .panel-delete-final {
 	display: inline;
 }
-#widgets-left div[id*="angiemakesdesign"].widget .widget-top {
+#widgets-left div[id*="angie-makes-design"].widget .widget-top {
 	background-color: #e3ecf9;
 	border-color: #b3cef5;
 }
-#widgets-left div[id*="angiemakesdesign"].widget .widget-top:hover {
+#widgets-left div[id*="angie-makes-design"].widget .widget-top:hover {
 	border-color: #5996ef;
 }

@@ -7,7 +7,7 @@
  * @package Angie_Makes_Design
  */
 
-if ( ! $footer = angiemakesdesign_display_sidebar_footer() ) {
+if ( ! $footer = angie_makes_design_display_sidebar_footer() ) {
 	return;
 }
 $column = 1;

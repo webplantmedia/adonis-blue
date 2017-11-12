@@ -27,5 +27,5 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 <?php
-wp_enqueue_script( 'angiemakesdesign-accordion' );
+wp_enqueue_script( 'angie-makes-design-accordion' );
 get_footer();

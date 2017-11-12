@@ -1,5 +1,5 @@
 <?php
-function angiemakesdesign_css_set_unit( $property, $pixel ) {
+function angie_makes_design_css_set_unit( $property, $pixel ) {
 	if ( ! is_int( $pixel ) && ! is_numeric( $pixel ) ) {
 		return $property . ": " . $pixel . ";";
 	}

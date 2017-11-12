@@ -22,7 +22,7 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'angiemakesdesign' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'angie-makes-design' ); ?></a>
 
 	<header id="masthead" class="site-header">
 		<?php get_template_part( 'template-parts/menu', 'top' ); ?>
@@ -52,7 +52,7 @@
 
 		<div id="site-navigation" class="main-navigation">
 			<div class="site-boundary">
-				<?php angiemakesdesign_mobile_menu_button(); ?>
+				<?php angie_makes_design_mobile_menu_button(); ?>
 
 				<?php get_template_part( 'template-parts/menu', 'mobile-cart' ); ?>
 				<nav class="main-menu in-menu-bar">
@@ -84,7 +84,7 @@
 		<header class="page-header">
 			<div class="site-boundary">
 				<h1 class="page-title">
-					<span class="archive-type"><?php echo esc_html__( 'Search Results for:', 'angiemakesdesign' ); ?></span>
+					<span class="archive-type"><?php echo esc_html__( 'Search Results for:', 'angie-makes-design' ); ?></span>
 					<span class="archive-title"><?php echo get_search_query(); ?></span>
 				</h1>
 			</div>

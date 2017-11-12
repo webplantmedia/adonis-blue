@@ -9,7 +9,7 @@
 ( function( $ ) {
 
 	function changeInlineCSS( id, value) {
-		var stylesheet = '#angiemakesdesign-style-inline-css';
+		var stylesheet = '#angie-makes-design-style-inline-css';
 		var $css = $('head ' + stylesheet);
 		if ( $css.length ) {
 			var css = $css.html();

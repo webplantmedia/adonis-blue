@@ -2,51 +2,51 @@
 /**
  * Section: Static Content Widget
  *
- * @since AngieMakesDesign 1.0.0.
+ * @since Angie_Makes_Design 1.0.0.
  *
- * @package AngieMakesDesign
+ * @package Angie_Makes_Design
  */
 
-if ( ! class_exists( 'AngieMakesDesign_Widget_Static_Content' ) ) :
+if ( ! class_exists( 'Angie_Makes_Design_Widget_Static_Content' ) ) :
 	/**
 	 * Display static content from an specific page.
 	 *
-	 * @since AngieMakesDesign 1.0.0.
+	 * @since Angie_Makes_Design 1.0.0.
 	 *
-	 * @package AngieMakesDesign
+	 * @package Angie_Makes_Design
 	 */
-	class AngieMakesDesign_Widget_Static_Content extends AngieMakesDesign_Widget {
+	class Angie_Makes_Design_Widget_Static_Content extends Angie_Makes_Design_Widget {
 		/**
 		 * Constructor
 		 */
 		public function __construct() {
-			$this->widget_id          = 'angiemakesdesign_static_content';
-			$this->widget_cssclass    = 'angiemakesdesign_static_content';
-			$this->widget_description = esc_html__( 'Displays content from a specific page.', 'angiemakesdesign' );
-			$this->widget_name        = esc_html__( 'Angie Makes Design: Static Content', 'angiemakesdesign' );
+			$this->widget_id          = 'angie-makes-design-static-content';
+			$this->widget_cssclass    = 'angie-makes-design-static-content';
+			$this->widget_description = esc_html__( 'Displays content from a specific page.', 'angie-makes-design' );
+			$this->widget_name        = esc_html__( 'Angie Makes Design: Static Content', 'angie-makes-design' );
 			$this->settings           = array(
 				'title' => array(
 					'type'  => 'text',
 					'std'   => '',
-					'label' => esc_html__( 'Title:', 'angiemakesdesign' ),
+					'label' => esc_html__( 'Title:', 'angie-makes-design' ),
 					'sanitize' => 'text',
 				),
 				'page' => array(
 					'type'  => 'page',
 					'std'   => '',
-					'label' => esc_html__( 'Select Page:', 'angiemakesdesign' ),
+					'label' => esc_html__( 'Select Page:', 'angie-makes-design' ),
 					'sanitize' => 'text',
 				),
 				'background_image' => array(
 					'type'  => 'image',
 					'std'   => null,
-					'label' => esc_html__( 'Background Image:', 'angiemakesdesign' ),
+					'label' => esc_html__( 'Background Image:', 'angie-makes-design' ),
 					'sanitize' => 'url',
 				),
 				'background_color' => array(
 					'type'  => 'colorpicker',
 					'std'   => '',
-					'label' => esc_html__( 'Background Color:', 'angiemakesdesign' ),
+					'label' => esc_html__( 'Background Color:', 'angie-makes-design' ),
 					'sanitize' => 'color',
 				),
 				'background_opacity' => array(
@@ -55,19 +55,19 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Static_Content' ) ) :
 					'step'  => '10',
 					'min'   => '10',
 					'max'   => '100',
-					'label' => esc_html__( 'Background Color Opacity:', 'angiemakesdesign' ),
+					'label' => esc_html__( 'Background Color Opacity:', 'angie-makes-design' ),
 					'sanitize' => 'absint',
 				),
 				'text_color' => array(
 					'type'  => 'colorpicker',
 					'std'   => '',
-					'label' => esc_html__( 'Text Color:', 'angiemakesdesign' ),
+					'label' => esc_html__( 'Text Color:', 'angie-makes-design' ),
 					'sanitize' => 'color',
 				),
 				'link_color' => array(
 					'type'  => 'colorpicker',
 					'std'   => '',
-					'label' => esc_html__( 'Link Color:', 'angiemakesdesign' ),
+					'label' => esc_html__( 'Link Color:', 'angie-makes-design' ),
 					'sanitize' => 'color',
 				),
 				'padding_top' => array(
@@ -76,7 +76,7 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Static_Content' ) ) :
 					'step'  => 1,
 					'min'   => 0,
 					'max'   => 300,
-					'label' => esc_html__( 'Top padding of widget:', 'angiemakesdesign' ),
+					'label' => esc_html__( 'Top padding of widget:', 'angie-makes-design' ),
 					'sanitize' => 'number',
 				),
 				'padding_bottom' => array(
@@ -85,7 +85,7 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Static_Content' ) ) :
 					'step'  => 1,
 					'min'   => 0,
 					'max'   => 300,
-					'label' => esc_html__( 'Bottom padding of widget:', 'angiemakesdesign' ),
+					'label' => esc_html__( 'Bottom padding of widget:', 'angie-makes-design' ),
 					'sanitize' => 'number',
 				),
 				'margin_bottom' => array(
@@ -94,7 +94,7 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Static_Content' ) ) :
 					'step'  => 1,
 					'min'   => 0,
 					'max'   => 300,
-					'label' => esc_html__( 'Bottom margin of widget:', 'angiemakesdesign' ),
+					'label' => esc_html__( 'Bottom margin of widget:', 'angie-makes-design' ),
 					'sanitize' => 'number',
 				),
 			);
@@ -148,7 +148,7 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Static_Content' ) ) :
 			}
 
 			// Allow site-wide customization of the 'Read more' link text.
-			$read_more = apply_filters( 'angiemakesdesign_read_more_text', esc_html__( 'Read more', 'angiemakesdesign' ) );
+			$read_more = apply_filters( 'angie_makes_design_read_more_text', esc_html__( 'Read more', 'angie-makes-design' ) );
 
 			if ( $fullwidth ) {
 				$before_widget = str_replace( 'class="content-widget', 'class="content-widget full-width-bar', $before_widget );
@@ -219,7 +219,7 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Static_Content' ) ) :
 													sprintf(
 														wp_kses(
 															/* translators: %s: Name of current post. Only visible to screen readers */
-															__( 'Edit <span class="screen-reader-text">%s</span>', 'angiemakesdesign' ),
+															__( 'Edit <span class="screen-reader-text">%s</span>', 'angie-makes-design' ),
 															array(
 																'span' => array(
 																	'class' => array(),
@@ -264,4 +264,4 @@ if ( ! class_exists( 'AngieMakesDesign_Widget_Static_Content' ) ) :
 	}
 endif;
 
-add_action( 'widgets_init', array( 'AngieMakesDesign_Widget_Static_Content', 'register' ) );
+add_action( 'widgets_init', array( 'Angie_Makes_Design_Widget_Static_Content', 'register' ) );

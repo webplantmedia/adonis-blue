@@ -14,33 +14,33 @@
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses angiemakesdesign_header_style()
+ * @uses angie_makes_design_header_style()
  */
-function angiemakesdesign_custom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( 'angiemakesdesign_custom_header_args', array(
+function angie_makes_design_custom_header_setup() {
+	add_theme_support( 'custom-header', apply_filters( 'angie_makes_design_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => '000000',
 		'flex-height'            => false,
-		'wp-head-callback'       => 'angiemakesdesign_header_style',
+		'wp-head-callback'       => 'angie_makes_design_header_style',
 	) ) );
 }
-add_action( 'after_setup_theme', 'angiemakesdesign_custom_header_setup' );
+add_action( 'after_setup_theme', 'angie_makes_design_custom_header_setup' );
 
 /*register_default_headers( array(
 	'header' => array(
 		'url'           => '%s/img/headers-bg.png',
 		'thumbnail_url' => '%s/img/headers-bg.png',
-		'description'   => __( 'Header', 'angiemakesdesign' )
+		'description'   => __( 'Header', 'angie-makes-design' )
 	),
 ) );*/
 
-if ( ! function_exists( 'angiemakesdesign_header_style' ) ) :
+if ( ! function_exists( 'angie_makes_design_header_style' ) ) :
 	/**
 	 * Styles the header image and text displayed on the blog.
 	 *
-	 * @see angiemakesdesign_custom_header_setup().
+	 * @see angie_makes_design_custom_header_setup().
 	 */
-	function angiemakesdesign_header_style() {
+	function angie_makes_design_header_style() {
 		$header_text_color = get_header_textcolor();
 
 		/*

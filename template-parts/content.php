@@ -13,7 +13,7 @@
 	<header class="entry-header">
 		<?php if ( 'post' === get_post_type() ) : ?>
 			<div class="entry-cat-meta">
-				<?php angiemakesdesign_entry_header(); ?>
+				<?php angie_makes_design_entry_header(); ?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 
@@ -26,7 +26,7 @@
 
 		if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
-			<?php angiemakesdesign_posted_on(); ?>
+			<?php angie_makes_design_posted_on(); ?>
 		</div><!-- .entry-meta -->
 		<?php
 		endif; ?>
@@ -43,7 +43,7 @@
 			the_content( sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Read More<i class="genericon genericon-next"></i><span class="screen-reader-text">"%s"</span>', 'angiemakesdesign' ),
+					__( 'Read More<i class="genericon genericon-next"></i><span class="screen-reader-text">"%s"</span>', 'angie-makes-design' ),
 					array(
 						'i' => array(
 							'class' => array(),
@@ -57,13 +57,13 @@
 			) );
 
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'angiemakesdesign' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'angie-makes-design' ),
 				'after'  => '</div>',
 			) );
 		?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php angiemakesdesign_entry_footer(); ?>
+		<?php angie_makes_design_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
