@@ -98,7 +98,7 @@ function angie_makes_design_read_more_link( $output ) {
 	return $output . sprintf( ' <a class="more-link%1$s" href="%2$s">%3$s<i class="genericon genericon-next"></i></a>',
 		$class,
 		get_permalink( get_the_ID() ),
-		esc_html__( $angie_makes_design['read_more_label'], 'angie-makes-design' )
+		esc_html( $angie_makes_design['read_more_label'] )
 	);
 }
 add_filter('the_excerpt', 'angie_makes_design_read_more_link');
@@ -110,7 +110,7 @@ function angie_makes_design_read_more_text() {
 		return '';
 	}
 
-	return esc_html__( $angie_makes_design['read_more_label'], 'angie-makes-design' );
+	return esc_html( $angie_makes_design['read_more_label'] );
 }
 add_filter('angie_makes_design_read_more_text', 'angie_makes_design_read_more_text');
 

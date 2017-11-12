@@ -135,7 +135,7 @@ if ( ! function_exists( 'angie_makes_design_mobile_menu_button' ) ) :
 			<?php if ( empty( $angie_makes_design['mobile_menu_label'] ) ) : ?>
 				<span class="menu-label menu-label-empty"></span>
 			<?php else : ?>
-				<span class="menu-label"><?php esc_html_e( $angie_makes_design['mobile_menu_label'], 'angie-makes-design' ); ?></span>
+				<span class="menu-label"><?php esc_html( $angie_makes_design['mobile_menu_label'] ); ?></span>
 			<?php endif; ?>
 			<i class="genericon"></i>
 		</button>

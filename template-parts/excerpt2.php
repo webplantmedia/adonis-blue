@@ -19,7 +19,7 @@
 	<header class="entry-header">
 		<?php if ( 'post' === get_post_type() ) : ?>
 			<div class="entry-cat-meta">
-				<?php angie_makes_design_entry_header( ' <span class="cat-bull-delim">•</span> ' ); ?>
+				<?php angie_makes_design_entry_header( '<span class="cat-bull-delim">&bull;</span> ' ); ?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 
