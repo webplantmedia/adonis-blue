@@ -110,8 +110,10 @@
 
 // Content Jetpack Testimonial
 .content-jetpack-testimonial {
-	border-top: 2px solid $color__border;
-	border-bottom: 2px solid $color__border;
+	&.box-style-border {
+		border-top: 2px solid $color__border;
+		border-bottom: 2px solid $color__border;
+	}
 
 	.testimonial-featured-image,
 	.testimonial-entry-content-wrapper {

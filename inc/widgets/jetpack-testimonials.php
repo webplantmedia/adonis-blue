@@ -81,6 +81,16 @@ class Angie_Makes_Design_Widget_Jetpack_Testimonials extends Angie_Makes_Design_
 				),
 				'sanitize' => 'text',
 			),
+			'style' => array(
+				'type'  => 'select',
+				'std'   => 'plain',
+				'label' => __( 'Box Style:', 'angie-makes-design' ),
+				'options' => array(
+					'plain' => __( 'Plain', 'angie-makes-design' ),
+					'border' => __( 'Border', 'angie-makes-design' ),
+				),
+				'sanitize' => 'text',
+			),
 			'padding_top' => array(
 				'type'  => 'number',
 				'std'   => 40,
@@ -188,6 +198,7 @@ class Angie_Makes_Design_Widget_Jetpack_Testimonials extends Angie_Makes_Design_
 
 		$style = array();
 		$testimonial_style = array();
+		$classes[] = 'content-jetpack-testimonial';
 
 		if ( ! empty( $o['margin_bottom'] ) ) {
 			$style[] = 'margin-bottom:' . $o['margin_bottom'] . 'px;';
@@ -199,6 +210,10 @@ class Angie_Makes_Design_Widget_Jetpack_Testimonials extends Angie_Makes_Design_
 
 		if ( ! empty( $o['padding_bottom'] ) ) {
 			$style[] = 'padding-bottom:' . $o['padding_bottom'] . 'px;';
+		}
+
+		if ( ! empty( $o['style'] ) ) {
+			$classes[] = 'box-style-' . $o['style'];
 		}
 
 		if ( ! empty( $o['height'] ) ) {
@@ -291,7 +306,7 @@ class Angie_Makes_Design_Widget_Jetpack_Testimonials extends Angie_Makes_Design_
 		<?php $before_widget = str_replace( 'class="content-widget', 'class="content-widget full-width-bar', $before_widget ); ?>
 		<?php echo $before_widget; ?>
 
-			<div class="content-jetpack-testimonial" style="<?php echo implode( '', $style ); ?>">
+			<div class="<?php echo implode( ' ', $classes ); ?>" style="<?php echo implode( '', $style ); ?>">
 				<div class="site-boundary">
 					<?php if ( ! empty( $o['title'] ) ) : ?>
 						<?php echo $before_title . $o['title'] . $after_title; ?>

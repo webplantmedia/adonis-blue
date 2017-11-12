@@ -2469,7 +2469,7 @@ a img {
   }
 }
 
-.content-jetpack-testimonial {
+.content-jetpack-testimonial.box-style-border {
   border-top: 2px solid #ececec;
   border-bottom: 2px solid #ececec;
 }
