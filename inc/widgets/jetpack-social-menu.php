@@ -92,7 +92,7 @@ if ( ! class_exists( 'Angie_Makes_Design_Widget_Jetpack_Social_Menu' ) ) :
 				}
 				<?php endif; ?>
 				<?php if ( ! empty( $o['link_hover_color'] ) ) : ?>
-				#<?php echo esc_html( $this->id ) ?> a:hover {
+				#master #<?php echo esc_html( $this->id ) ?> a:hover {
 					color: <?php echo esc_html( $o['link_hover_color'] ); ?>;
 				}
 				<?php endif; ?>
