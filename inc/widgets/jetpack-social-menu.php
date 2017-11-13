@@ -107,8 +107,7 @@ if ( ! class_exists( 'Angie_Makes_Design_Widget_Jetpack_Social_Menu' ) ) :
 			</div>
 
 			<?php echo  $after_widget; ?>
-
-			<?php wp_reset_postdata();
+			<?php
 		}
 
 		/**

@@ -160,3 +160,50 @@
 
 	@include rem('font-size',$font__medium-size);
 }
+
+// RSS Widget
+#master .angie-makes-design-image-banner {
+	.image-banner-text-position-middle {
+		a {
+			&:hover {
+				.widget-title {
+					color: $color__text-heading;
+				}
+			}
+		}
+	}
+}
+
+.angie-makes-design-image-banner {
+	.image-banner-wrapper {
+		position: relative;
+
+		a {
+			display: block;
+		}
+	}
+
+	.image-banner-text-position-below .widget-title {
+		padding-top: 20px;
+	}
+
+	.image-banner-text-position-above .widget-title {
+	}
+
+	.image-banner-text-position-middle {
+		.widget-title {
+			width: 100%;
+			margin: 0;
+			position: absolute;
+			top: 50%;
+			@include crossBrowser('transform',translateY(-50%));
+
+			span {
+				padding: .9em 1.2em;
+				background-color: $color__white;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+	}
+}

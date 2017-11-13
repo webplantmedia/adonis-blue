@@ -2508,6 +2508,40 @@ a:hover, a:active {
   margin-bottom: 0;
 }
 
+#master .angie-makes-design-image-banner .image-banner-text-position-middle a:hover .widget-title {
+  color: #444444;
+}
+
+.angie-makes-design-image-banner .image-banner-wrapper {
+  position: relative;
+}
+
+.angie-makes-design-image-banner .image-banner-wrapper a {
+  display: block;
+}
+
+.angie-makes-design-image-banner .image-banner-text-position-below .widget-title {
+  padding-top: 20px;
+}
+
+.angie-makes-design-image-banner .image-banner-text-position-middle .widget-title {
+  width: 100%;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.angie-makes-design-image-banner .image-banner-text-position-middle .widget-title span {
+  padding: .9em 1.2em;
+  background-color: #ffffff;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /*--------------------------------------------------------------
 ## Search Widget
 --------------------------------------------------------------*/

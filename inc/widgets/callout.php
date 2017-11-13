@@ -78,7 +78,7 @@ class Angie_Makes_Design_Widget_Callout extends Angie_Makes_Design_Widget {
 				'type'  => 'text',
 				'std'   => 'https://angiemakes.com',
 				'label' => esc_html__( 'Button URL:', 'angie-makes-design' ),
-				'sanitize' => 'text',
+				'sanitize' => 'url',
 			),
 			'button_style' => array(
 				'type'  => 'select',
