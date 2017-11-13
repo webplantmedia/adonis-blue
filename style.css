@@ -2371,11 +2371,13 @@ a:hover, a:active {
   margin-bottom: 28px;
   margin-bottom: 1.75rem;
   font-size: 18px;
+  font-size: 1.125rem;
   font-weight: bold;
   text-transform: initial;
   text-align: center;
   text-transform: uppercase;
   color: #444444;
+  letter-spacing: 2px;
 }
 
 .widget h3 {
@@ -2453,6 +2455,21 @@ a:hover, a:active {
 .footer-column-2 .widget.angie-makes-design-jetpack-social-menu.no-title:first-child {
   margin-top: 65px;
   margin-top: 4.0625rem;
+}
+
+.footer-column .widget,
+.footer-column .widgettitle,
+.footer-column .widget-title {
+  text-transform: uppercase;
+  color: #444444;
+}
+
+.footer-column textarea,
+.footer-column input,
+.footer-column .widget {
+  font-size: 18px;
+  font-size: 1.125rem;
+  letter-spacing: 2px;
 }
 
 .widget_rss {

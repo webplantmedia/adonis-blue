@@ -26,12 +26,13 @@
 	.widget-title {
 		margin-top: 0;
 		@include rem('margin-bottom',28px);
-		font-size: 18px;
+		@include rem('font-size',$font__main-size);
 		font-weight: bold;
 		text-transform: initial;
 		text-align: center;
 		text-transform: uppercase;
 		color: $color__text-heading;
+		letter-spacing: 2px;
 	}
 
 	h3 {
@@ -108,6 +109,21 @@
 
 	.widget.angie-makes-design-jetpack-social-menu.no-title:first-child {
 		@include rem('margin-top',65px);
+	}
+}
+
+.footer-column {
+	.widget,
+	.widgettitle,
+	.widget-title {
+		text-transform: uppercase;
+		color: $color__text-heading;
+	}
+	textarea,
+	input,
+	.widget {
+		@include rem('font-size',$font__main-size);
+		letter-spacing: 2px;
 	}
 }
 
