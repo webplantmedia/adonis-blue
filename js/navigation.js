@@ -49,8 +49,8 @@
 	$(menuParent).click( function( event ) {
 		$parent = $(this).parent();
 		if ( ! $parent.hasClass('focus') ) {
-			event.preventDefault();
 			$parent.toggleClass('focus');
+			return false;
 		}
 	} );
 
