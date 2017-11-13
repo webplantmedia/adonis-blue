@@ -42,14 +42,14 @@
 		}
 	};
 
-	var menuParent = $(container).find('.menu-item-has-children a, .page_item_has_children a');
-	menuParent.append('<i class="genericons-neue"></i>');
-	var genericons_neue = $(menuParent).find('i');
+	// var menuParent = $(container).find('.menu-item-has-children a, .page_item_has_children a');
+	// menuParent.append('<i class="genericons-neue"></i>');
+	// var genericons_neue = $(menuParent).find('i');
 
-	$(genericons_neue).click( function( event ) {
+	/* $(genericons_neue).click( function( event ) {
 		event.preventDefault();
 		$(this).parent().parent().toggleClass('focus');
-	} );
+	} ); */
 
 	/**
 	 * Toggles `focus` class to allow submenu access on tablets.

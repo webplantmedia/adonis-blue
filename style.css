@@ -1654,6 +1654,28 @@ a img {
   line-height: 1.8;
 }
 
+.main-menu ul .menu-item-has-children > a:after,
+.main-menu ul .page_item_has_children > a:after {
+  content: "\f431";
+  font-family: "Genericons-Neue";
+  display: inline-block;
+  vertical-align: middle;
+  line-height: inherit;
+  font-weight: normal;
+  font-style: normal;
+  speak: none;
+  text-decoration: inherit;
+  text-transform: none;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 12px;
+  font-size: 0.75rem;
+  margin-left: 10px;
+  display: inline-block;
+  line-height: 1.8;
+}
+
 .main-menu ul .current_page_item > a,
 .main-menu ul .current-menu-item > a,
 .main-menu ul .current_page_ancestor > a,
@@ -1721,28 +1743,32 @@ a img {
     position: relative;
     padding-right: 3em;
   }
-  .show-menu-arrows .main-menu ul ul li.page_item_has_children > a > .genericons-neue,
-  .show-menu-arrows .main-menu ul ul li.menu-item-has-children > a > .genericons-neue {
+  .show-menu-arrows .main-menu ul ul li.page_item_has_children > a:after,
+  .show-menu-arrows .main-menu ul ul li.menu-item-has-children > a:after {
     position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
+    top: 50%;
+    right: 1.4em;
     margin: 0;
-    -webkit-transform: rotate(270deg);
-    -moz-transform: rotate(270deg);
-    -ms-transform: rotate(270deg);
-    -o-transform: rotate(270deg);
-    transform: rotate(270deg);
-    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    -webkit-transform: translateY(-50%) rotate(270deg);
+    -moz-transform: translateY(-50%) rotate(270deg);
+    -ms-transform: translateY(-50%) rotate(270deg);
+    transform: translateY(-50%) rotate(270deg);
   }
-  .show-menu-arrows .main-menu ul li.page_item_has_children > a > .genericons-neue,
-  .show-menu-arrows .main-menu ul li.menu-item-has-children > a > .genericons-neue {
-    margin-left: 10px;
+  .show-menu-arrows .main-menu ul li.page_item_has_children > a,
+  .show-menu-arrows .main-menu ul li.menu-item-has-children > a {
+    padding-right: 2em;
+    position: relative;
+  }
+  .show-menu-arrows .main-menu ul li.page_item_has_children > a:after,
+  .show-menu-arrows .main-menu ul li.menu-item-has-children > a:after {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
     display: inline-block;
-    line-height: 1.8;
-  }
-  .show-menu-arrows .main-menu ul li.page_item_has_children > a > .genericons-neue:before,
-  .show-menu-arrows .main-menu ul li.menu-item-has-children > a > .genericons-neue:before {
+    line-height: 1;
     content: "\f431";
   }
 }
@@ -2412,7 +2438,7 @@ a img {
   padding: 0;
   border: none;
   background: none;
-  font-size: 35px;
+  font-size: 30px;
   line-height: 1;
 }
 

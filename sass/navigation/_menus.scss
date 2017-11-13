@@ -82,6 +82,35 @@
 			height: auto;
 			line-height: $font__line-height-body;
 		}
+		
+		.menu-item-has-children,
+		.page_item_has_children {
+			> a {
+				&:after {
+					content: "\f431";
+
+					font-family:"Genericons-Neue";
+					
+					display:inline-block;
+					vertical-align:middle;
+					line-height:inherit;
+					font-weight:normal;
+					font-style:normal;
+					speak:none;
+					text-decoration:inherit;
+					text-transform:none;
+					text-rendering:auto;
+					-webkit-font-smoothing:antialiased;
+					-moz-osx-font-smoothing:grayscale;
+
+					@include rem('font-size',$font__tiny-size);
+
+					margin-left: 10px;
+					display: inline-block;
+					line-height: $font__line-height-body;
+				}
+			}
+		}
 
 		.current_page_item > a,
 		.current-menu-item > a,
@@ -158,18 +187,12 @@
 						position: relative;
 						padding-right: 3em;
 
-						> .genericons-neue {
+						&:after {
 							position: absolute;
-							top: 0;
-							right: 0;
-							bottom: 0;
+							top: 50%;
+							right: 1.4em;
 							margin: 0;
-							-webkit-transform: rotate(270deg);
-							-moz-transform: rotate(270deg);
-							-ms-transform: rotate(270deg);
-							-o-transform: rotate(270deg);
-							transform: rotate(270deg);
-							filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+							@include crossBrowser('transform',translateY(-50%) rotate(270deg));
 						}
 					}
 				}
@@ -177,14 +200,16 @@
 			li {
 				&.page_item_has_children > a,
 				&.menu-item-has-children > a {
-					> .genericons-neue {
-						margin-left: 10px;
-						display: inline-block;
-						line-height: $font__line-height-body;
+					padding-right: 2em;
+					position: relative;
 
-						&:before {
-							content: "\f431";
-						}
+					&:after {
+						position: absolute;
+						top: 50%;
+						@include crossBrowser('transform',translateY(-50%));
+						display: inline-block;
+						line-height: 1;
+						content: "\f431";
 					}
 				}
 			}
