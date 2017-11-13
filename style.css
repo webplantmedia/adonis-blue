@@ -1654,28 +1654,6 @@ a img {
   line-height: 1.8;
 }
 
-.main-menu ul .menu-item-has-children > a:after,
-.main-menu ul .page_item_has_children > a:after {
-  content: "\f431";
-  font-family: "Genericons-Neue";
-  display: inline-block;
-  vertical-align: middle;
-  line-height: inherit;
-  font-weight: normal;
-  font-style: normal;
-  speak: none;
-  text-decoration: inherit;
-  text-transform: none;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-size: 12px;
-  font-size: 0.75rem;
-  margin-left: 10px;
-  display: inline-block;
-  line-height: 1.8;
-}
-
 .main-menu ul .current_page_item > a,
 .main-menu ul .current-menu-item > a,
 .main-menu ul .current_page_ancestor > a,
@@ -1721,12 +1699,12 @@ a img {
 
 #master #site-navigation .menu-toggle i {
   vertical-align: middle;
+  font-size: 24px;
+  font-size: 1.5rem;
 }
 
 #master #site-navigation .menu-toggle i:before {
   content: "\f419";
-  font-size: 24px;
-  font-size: 1.5rem;
 }
 
 #master #site-navigation .menu-toggle:hover {
@@ -1746,7 +1724,7 @@ a img {
   .show-menu-arrows .main-menu ul ul li.page_item_has_children > a:after,
   .show-menu-arrows .main-menu ul ul li.menu-item-has-children > a:after {
     position: absolute;
-    top: 50%;
+    top: 51%;
     right: 1.4em;
     margin: 0;
     -webkit-transform: translateY(-50%) rotate(270deg);
@@ -1761,6 +1739,21 @@ a img {
   }
   .show-menu-arrows .main-menu ul li.page_item_has_children > a:after,
   .show-menu-arrows .main-menu ul li.menu-item-has-children > a:after {
+    font-family: "Genericons-Neue";
+    display: inline-block;
+    vertical-align: middle;
+    line-height: inherit;
+    font-weight: normal;
+    font-style: normal;
+    speak: none;
+    text-decoration: inherit;
+    text-transform: none;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 12px;
+    font-size: 0.75rem;
+    margin-left: 10px;
     position: absolute;
     top: 50%;
     -webkit-transform: translateY(-50%);
@@ -1853,12 +1846,24 @@ a img {
   #site-navigation ul li.focus > ul {
     display: block;
   }
-  #site-navigation ul li.focus.page_item_has_children > a > .genericons-neue:before,
-  #site-navigation ul li.focus.menu-item-has-children > a > .genericons-neue:before {
+  #site-navigation ul li.focus.page_item_has_children > a:after,
+  #site-navigation ul li.focus.menu-item-has-children > a:after {
     content: "\f50e";
   }
-  #site-navigation ul li.page_item_has_children > a > .genericons-neue,
-  #site-navigation ul li.menu-item-has-children > a > .genericons-neue {
+  #site-navigation ul li.page_item_has_children > a:after,
+  #site-navigation ul li.menu-item-has-children > a:after {
+    font-family: "Genericons-Neue";
+    display: inline-block;
+    vertical-align: middle;
+    line-height: inherit;
+    font-weight: normal;
+    font-style: normal;
+    speak: none;
+    text-decoration: inherit;
+    text-transform: none;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     display: inline-block;
     position: absolute;
     top: 0;
@@ -1875,9 +1880,6 @@ a img {
     line-height: 28px;
     font-size: 18px;
     font-size: 1.125rem;
-  }
-  #site-navigation ul li.page_item_has_children > a > .genericons-neue:before,
-  #site-navigation ul li.menu-item-has-children > a > .genericons-neue:before {
     content: "\f510";
   }
   #site-navigation ul a {
@@ -1898,9 +1900,6 @@ a img {
     text-decoration: none;
     width: auto;
     height: auto;
-  }
-  #site-navigation ul a:before {
-    line-height: 28px;
   }
   #site-navigation ul a, #site-navigation ul a:hover, #site-navigation ul a:active, #site-navigation ul a:visited, #site-navigation ul a:focus {
     color: #6d686c;
@@ -2133,6 +2132,41 @@ a img {
 
 .top-header .menu a:hover {
   color: #6d686c;
+}
+
+@media screen and (min-width: 961px) {
+  .show-menu-arrows .top-header ul li.page_item_has_children > a,
+  .show-menu-arrows .top-header ul li.menu-item-has-children > a {
+    padding-right: 1.8em;
+    position: relative;
+  }
+  .show-menu-arrows .top-header ul li.page_item_has_children > a:after,
+  .show-menu-arrows .top-header ul li.menu-item-has-children > a:after {
+    font-family: "Genericons-Neue";
+    display: inline-block;
+    vertical-align: middle;
+    line-height: inherit;
+    font-weight: normal;
+    font-style: normal;
+    speak: none;
+    text-decoration: inherit;
+    text-transform: none;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 10px;
+    font-size: 0.625rem;
+    margin-left: 5px;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    display: inline-block;
+    line-height: 1;
+    content: "\f431";
+  }
 }
 
 @media screen and (max-width: 960px) {
