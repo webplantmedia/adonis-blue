@@ -7,6 +7,18 @@
 		text-transform: uppercase;
 	}
 
+	legend {
+		display: block;
+		@include rem('font-size',$font__small-size);
+		font-weight: bold;
+		text-transform: uppercase;
+		color: $color__gray;
+	}
+	
+	fieldset {
+		margin-bottom: 1.5em;
+	}
+
 	form label .input {
 		margin-top: 7px;
 	}

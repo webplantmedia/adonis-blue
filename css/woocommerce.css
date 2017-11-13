@@ -452,6 +452,54 @@ WooCommerce styling
   color: #5b5a5a;
 }
 
+#master .woocommerce-Address-title > *:first-child,
+#master .entry-content > .woocommerce > *:first-child {
+  margin-top: 0;
+}
+
+#master .woocommerce-Address-title > *:last-child,
+#master .entry-content > .woocommerce > *:last-child {
+  margin-bottom: 0;
+}
+
+#master .woocommerce-account .woocommerce-MyAccount-navigation ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#master .woocommerce-account .woocommerce-MyAccount-navigation ul li {
+  margin: 0;
+  border-bottom: 2px solid #ececec;
+  border-right: 2px solid #ececec;
+}
+
+#master .woocommerce-account .woocommerce-MyAccount-navigation ul li:first-child {
+  border-top: 2px solid #ececec;
+}
+
+#master .woocommerce-account .woocommerce-MyAccount-navigation ul li.is-active {
+  border-right: 0;
+}
+
+#master .woocommerce-account .woocommerce-MyAccount-navigation ul li a {
+  display: block;
+  padding: 1.5em 1.5em 1.5em 0;
+}
+
+#master .woocommerce-account .woocommerce-MyAccount-content {
+  padding: 1.5em 0 0 3em;
+  border-top: 2px solid #ececec;
+  width: 70%;
+}
+
+#master .woocommerce-account .woocommerce-MyAccount-content .woocommerce-error,
+#master .woocommerce-account .woocommerce-MyAccount-content .woocommerce-info,
+#master .woocommerce-account .woocommerce-MyAccount-content .woocommerce-message {
+  border-width: 0;
+  padding-right: 0;
+}
+
 #master .woocommerce-store-notice,
 #master p.demo_store {
   color: #ffffff;
@@ -686,6 +734,11 @@ WooCommerce styling
   border-left: 2px solid rgba(0, 0, 0, 0.1);
 }
 
+#master .woocommerce form .form-row {
+  padding: 0;
+  margin-bottom: 10px;
+}
+
 #master .woocommerce form .form-row .required {
   color: red;
 }
@@ -710,7 +763,8 @@ WooCommerce styling
 #master .woocommerce form.checkout_coupon,
 #master .woocommerce form.login,
 #master .woocommerce form.register {
-  border: 2px solid #ececec;
+  border: 0;
+  padding: 0;
   border-radius: 0;
 }
 
@@ -942,6 +996,12 @@ WooCommerce styling
   }
   #master .woocommerce .coupon input.button {
     width: 100% !important;
+  }
+  #master .woocommerce-account .woocommerce-MyAccount-content {
+    margin-top: 3em;
+    padding: 1.5em 0 0 0;
+    border-top: 0px solid #ececec;
+    width: 100%;
   }
 }
 
