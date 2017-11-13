@@ -43,10 +43,13 @@
 	};
 
 	var menuParent = $(container).find('.menu-item-has-children a, .page_item_has_children a');
-	// menuParent.append('<i class="genericons-neue"></i>');
-	// var genericons_neue = $(menuParent).find('i');
 
+	var menuToggleButton = $(container).find('.menu-toggle');
 	$(menuParent).click( function( event ) {
+		if ( ! $(menuToggleButton).is(':visible') ) {
+			return;
+		}
+
 		$parent = $(this).parent();
 		if ( ! $parent.hasClass('focus') ) {
 			$parent.toggleClass('focus');
