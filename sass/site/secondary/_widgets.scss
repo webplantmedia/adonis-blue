@@ -66,17 +66,81 @@
 		padding: 0;
 		list-style: none;
 
-		.children {
-			margin-top: 7px;
-			padding-left: 20px;
-		}
-
 		a {
 			color: $color__text;
 		}
+	}
+
+	li > ul,
+	li > ol {
+		margin-bottom: 0;
+		margin-left: 1.5em;
 	}
 }
 
 #tertiary .widget {
 	@include rem('margin-bottom',80px);
+}
+
+// Footer Column 2
+.footer-column-2 {
+	.widget_archive,
+	.widget_categories,
+	.widget_pages,
+	.widget_meta,
+	.widget_nav_menu {
+		ul {
+			text-align: center;
+
+			li > ul,
+			li > ol {
+				margin-left: 0;
+			}
+		}
+	}
+
+
+	.widget_tag_cloud {
+		.tagcloud {
+			text-align: center;
+		}
+	}
+
+	.widget.angie-makes-design-jetpack-social-menu.no-title:first-child {
+		@include rem('margin-top',65px);
+	}
+}
+
+// RSS Widget
+.widget_rss {
+	.rsswidget {
+		font-weight: bold;
+		display: block;
+	}
+	.rss-date {
+		@include rem('font-size',$font__tiny-size);
+		text-transform: uppercase;
+		color: $color__text-light;
+	}
+
+	cite {
+		margin-top: 0.5em;
+		text-align: right;
+		display: block;
+
+		&:before {
+			content: "—";
+			margin-right: 10px;
+		}
+	}
+
+	li {
+		margin-bottom: 1.5em;
+	}
+
+	li:last-child {
+		margin-bottom: 0;
+	}
+
+	@include rem('font-size',$font__medium-size);
 }

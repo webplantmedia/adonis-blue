@@ -1548,10 +1548,6 @@ a:hover, a:active {
   outline: none;
 }
 
-a img {
-  vertical-align: top;
-}
-
 .widget p > a,
 .entry-summary a,
 .entry-content a {
@@ -2414,18 +2410,85 @@ a img {
   list-style: none;
 }
 
-.widget ul .children {
-  margin-top: 7px;
-  padding-left: 20px;
-}
-
 .widget ul a {
   color: #6d686c;
+}
+
+.widget li > ul,
+.widget li > ol {
+  margin-bottom: 0;
+  margin-left: 1.5em;
 }
 
 #tertiary .widget {
   margin-bottom: 80px;
   margin-bottom: 5rem;
+}
+
+.footer-column-2 .widget_archive ul,
+.footer-column-2 .widget_categories ul,
+.footer-column-2 .widget_pages ul,
+.footer-column-2 .widget_meta ul,
+.footer-column-2 .widget_nav_menu ul {
+  text-align: center;
+}
+
+.footer-column-2 .widget_archive ul li > ul,
+.footer-column-2 .widget_archive ul li > ol,
+.footer-column-2 .widget_categories ul li > ul,
+.footer-column-2 .widget_categories ul li > ol,
+.footer-column-2 .widget_pages ul li > ul,
+.footer-column-2 .widget_pages ul li > ol,
+.footer-column-2 .widget_meta ul li > ul,
+.footer-column-2 .widget_meta ul li > ol,
+.footer-column-2 .widget_nav_menu ul li > ul,
+.footer-column-2 .widget_nav_menu ul li > ol {
+  margin-left: 0;
+}
+
+.footer-column-2 .widget_tag_cloud .tagcloud {
+  text-align: center;
+}
+
+.footer-column-2 .widget.angie-makes-design-jetpack-social-menu.no-title:first-child {
+  margin-top: 65px;
+  margin-top: 4.0625rem;
+}
+
+.widget_rss {
+  font-size: 16px;
+  font-size: 1rem;
+}
+
+.widget_rss .rsswidget {
+  font-weight: bold;
+  display: block;
+}
+
+.widget_rss .rss-date {
+  font-size: 12px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #959595;
+}
+
+.widget_rss cite {
+  margin-top: 0.5em;
+  text-align: right;
+  display: block;
+}
+
+.widget_rss cite:before {
+  content: "—";
+  margin-right: 10px;
+}
+
+.widget_rss li {
+  margin-bottom: 1.5em;
+}
+
+.widget_rss li:last-child {
+  margin-bottom: 0;
 }
 
 /*--------------------------------------------------------------
@@ -3512,6 +3575,11 @@ a img {
 #master .page-content ul li:last-child,
 #master .page-content ol li:last-child {
   margin-bottom: 0;
+}
+
+#master .entry-content a img,
+#master .page-content a img {
+  vertical-align: top;
 }
 
 #master .entry-content > *:first-child {

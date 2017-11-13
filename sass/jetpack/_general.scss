@@ -81,4 +81,40 @@
 			vertical-align: middle;
 		}
 	}
+
+	.widget {
+		.jetpack-social-menu-align-center {
+			.menu {
+				text-align: center;
+			}
+		}
+
+		.jetpack-social-menu-align-left {
+			.menu {
+				text-align: left;
+			}
+		}
+
+		.jetpack-social-menu-align-right {
+			.menu {
+				text-align: right;
+			}
+		}
+
+		.jetpack-social-navigation {
+			a {
+				@include rem('font-size',28px);
+			}
+			
+			.menu {
+				li {
+					margin-right: .5em;
+				}
+
+				li:last-child {
+					margin-right: 0;
+				}
+			}
+		}
+	}
 }
