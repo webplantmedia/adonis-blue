@@ -35,6 +35,7 @@ a:hover {
 	color: ' . $angie_makes_design['link_hover_color'] . ' !important; /*id:link_hover_color*/
 }
 
+#master .menu-toggle i,
 #master .entry-cat-meta span > a {
 	color: ' . $angie_makes_design['primary_color'] . '; /*id:primary_color*/
 }
