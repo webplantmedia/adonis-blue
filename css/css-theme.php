@@ -114,6 +114,7 @@ a:hover {
 #master .sd-social-icon .sd-content ul li a:hover,
 #master .button.alt:hover,
 #master .button:hover,
+#master .addresses .edit:hover,
 #master input[type="button"]:hover,
 #master input[type="reset"]:hover,
 #master input[type="submit"]:hover {
