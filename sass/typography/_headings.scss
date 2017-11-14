@@ -7,39 +7,38 @@ h6 {
 	clear: both;
 	margin: 0;
 	font-weight: bold;
-	line-height: 1.375;
-	letter-spacing: -0.02em;
+	line-height: $font__line-height-heading;
 }
 
 h1 {
-	font-size: 50px;
+	@include rem('font-size',$font__h1-size);
 	font-weight: 300;
 	margin: 67px 0 27px;
 }
 
 h2 {
-	font-size: 28px;
+	@include rem('font-size',$font__h2-size);
 	margin: 50px 0 60px;
 }
 
 h3 {
-	font-size: 22px;
+	@include rem('font-size',$font__h3-size);
 	margin: 50px 0 30px;
 }
 
 h4 {
-	font-size: 18px;
+	@include rem('font-size',$font__h4-size);
 	margin: 50px 0 30px;
 }
 
 h5 {
-	font-size: 15px;
+	@include rem('font-size',$font__h5-size);
 	text-transform: uppercase;
 	margin: 30px 0 20px;
 }
 
 h6 {
-	font-size: 13px;
+	@include rem('font-size',$font__h6-size);
 	text-transform: uppercase;
 	margin: 30px 0 20px;
 }

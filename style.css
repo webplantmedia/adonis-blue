@@ -303,38 +303,43 @@ h6 {
   margin: 0;
   font-weight: bold;
   line-height: 1.375;
-  letter-spacing: -0.02em;
 }
 
 h1 {
   font-size: 50px;
+  font-size: 3.125rem;
   font-weight: 300;
   margin: 67px 0 27px;
 }
 
 h2 {
   font-size: 28px;
+  font-size: 1.75rem;
   margin: 50px 0 60px;
 }
 
 h3 {
   font-size: 22px;
+  font-size: 1.375rem;
   margin: 50px 0 30px;
 }
 
 h4 {
   font-size: 18px;
+  font-size: 1.125rem;
   margin: 50px 0 30px;
 }
 
 h5 {
   font-size: 15px;
+  font-size: 0.9375rem;
   text-transform: uppercase;
   margin: 30px 0 20px;
 }
 
 h6 {
   font-size: 13px;
+  font-size: 0.8125rem;
   text-transform: uppercase;
   margin: 30px 0 20px;
 }
@@ -3560,6 +3565,52 @@ a:hover, a:active {
   content: "";
 }
 
+.entry-content > div,
+.page-content > div {
+  margin-bottom: 80px;
+  margin-bottom: 5rem;
+}
+
+.entry-content > div.grid,
+.page-content > div.grid {
+  margin-top: 80px;
+  margin-top: 5rem;
+  margin-bottom: 80px;
+  margin-bottom: 5rem;
+}
+
+.entry-content > div.grid h2,
+.page-content > div.grid h2 {
+  text-align: center;
+}
+
+.entry-content > hr,
+.page-content > hr {
+  margin-top: 80px;
+  margin-top: 5rem;
+  margin-bottom: 80px;
+  margin-bottom: 5rem;
+}
+
+.entry-content ul li,
+.entry-content ol li,
+.page-content ul li,
+.page-content ol li {
+  margin-bottom: 0.5em;
+}
+
+.entry-content ul li:last-child,
+.entry-content ol li:last-child,
+.page-content ul li:last-child,
+.page-content ol li:last-child {
+  margin-bottom: 0;
+}
+
+.entry-content a img,
+.page-content a img {
+  vertical-align: top;
+}
+
 #master .entry-content > *:first-child,
 #master .page-content > *:first-child {
   margin-top: 0;
@@ -3568,49 +3619,6 @@ a:hover, a:active {
 #master .entry-content > *:last-child,
 #master .page-content > *:last-child {
   margin-bottom: 0;
-}
-
-#master .entry-content > div,
-#master .page-content > div {
-  margin-bottom: 2.5em;
-}
-
-#master .entry-content > div.grid,
-#master .page-content > div.grid {
-  margin-bottom: 80px;
-  margin-bottom: 5rem;
-}
-
-#master .entry-content > div.grid h2,
-#master .page-content > div.grid h2 {
-  text-align: center;
-}
-
-#master .entry-content > hr,
-#master .page-content > hr {
-  margin-top: 80px;
-  margin-top: 5rem;
-  margin-bottom: 80px;
-  margin-bottom: 5rem;
-}
-
-#master .entry-content ul li,
-#master .entry-content ol li,
-#master .page-content ul li,
-#master .page-content ol li {
-  margin-bottom: 0.5em;
-}
-
-#master .entry-content ul li:last-child,
-#master .entry-content ol li:last-child,
-#master .page-content ul li:last-child,
-#master .page-content ol li:last-child {
-  margin-bottom: 0;
-}
-
-#master .entry-content a img,
-#master .page-content a img {
-  vertical-align: top;
 }
 
 #master .entry-content > *:first-child {
@@ -3738,18 +3746,17 @@ a:hover, a:active {
 }
 
 .page-template-grid-accordion-page .accordion-item h3:before {
-  vertical-align: top;
+  vertical-align: middle;
   text-align: center;
   -webkit-transition: -webkit-transform .2s;
   -moz-transition: -moz-transform .2s;
   -ms-transition: -ms-transform .2s;
   -o-transition: -o-transform .2s;
   transition: transform .2s;
-  font-size: 16px;
   font-family: "Genericons-Neue";
   display: inline-block;
   vertical-align: top;
-  line-height: 1;
+  line-height: 30.25px;
   font-weight: normal;
   font-style: normal;
   speak: none;
@@ -3768,6 +3775,8 @@ a:hover, a:active {
   position: absolute;
   left: 0;
   top: 0;
+  font-size: 16px;
+  font-size: 1rem;
 }
 
 .page-template-grid-accordion-page .accordion-item h3.accordion-item-open:before {

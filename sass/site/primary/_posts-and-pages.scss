@@ -281,20 +281,13 @@
 
 // Entry content
 // Page content
-#master .entry-content,
-#master .page-content {
-	& > *:first-child {
-		margin-top: 0;
-	}
-
-	& > *:last-child {
-		margin-bottom: 0;
-	}
-
+.entry-content,
+.page-content {
 	> div {
-		margin-bottom: 2.5em;
+		@include rem('margin-bottom',80px);
 
 		&.grid {
+			@include rem('margin-top',80px);
 			@include rem('margin-bottom',80px);
 
 			h2 {
@@ -321,6 +314,17 @@
 
 	a img {
 		vertical-align: top;
+	}
+}
+
+#master .entry-content,
+#master .page-content {
+	& > *:first-child {
+		margin-top: 0;
+	}
+
+	& > *:last-child {
+		margin-bottom: 0;
 	}
 }
 
@@ -452,7 +456,7 @@
 			font-weight: normal;
 
 			&:before {
-				vertical-align: top;
+				vertical-align: middle;
 				text-align: center;
 				-webkit-transition: -webkit-transform .2s;
 				-moz-transition: -moz-transform .2s;
@@ -460,13 +464,11 @@
 				-o-transition: -o-transform .2s;
 				transition: transform .2s;
 
-				font-size: 16px;
-
 				font-family:"Genericons-Neue";
 				
 				display:inline-block;
 				vertical-align:top;
-				line-height:1;
+				line-height: ($font__h3-size * $font__line-height-heading);
 				font-weight:normal;
 				font-style:normal;
 				speak:none;
@@ -483,9 +485,11 @@
 				-o-transform: rotate(-90deg);
 				transform: rotate(-90deg);
 				filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+
 				position: absolute;
 				left: 0;
 				top: 0;
+				@include rem('font-size',$font__medium-size);
 			}
 
 			&.accordion-item-open {
