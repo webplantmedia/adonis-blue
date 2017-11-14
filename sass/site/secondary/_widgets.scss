@@ -77,6 +77,17 @@
 		margin-bottom: 0;
 		margin-left: 1.5em;
 	}
+
+	form {
+		p {
+			margin-top: 0;
+			margin-bottom: 0.5em;
+		}
+
+		p:last-child {
+			margin-bottom: 0;
+		}
+	}
 }
 
 #tertiary .widget {
@@ -145,7 +156,7 @@
 		display: block;
 
 		&:before {
-			content: "—";
+			content: "\02014";
 			margin-right: 10px;
 		}
 	}

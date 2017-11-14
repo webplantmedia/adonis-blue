@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*
 Theme Name: Angie Makes Design
 Theme URI: https://angiemakes.com/
@@ -475,7 +474,7 @@ blockquote:before {
   left: -60px;
   font-size: 80px;
   font-size: 5rem;
-  content: "“";
+  content: "\0201C";
 }
 
 @media (max-width: 959px) {
@@ -577,46 +576,6 @@ table th {
 /*--------------------------------------------------------------
 # Grid
 --------------------------------------------------------------*/
-/*-----------------------------------*
-  $TOAST-GRID
-
-  An insane grid.
-  You'd be mad to use it.
-
-  Usage
-  =====
-
-  Assuming default values:
-
-  <div class="grid">
-    <div class="grid__col grid__col--1-of-2">
-      A half-width column.
-    </div>
-    <div class="grid__col grid__col--1-of-4 grid__col--pull-1-of-4">
-      A quarter, pulled left by its own width. You get this, right?
-    </div>
-  </div>
-
-
-  Customisation
-  =============
-
-  $toast-grid-namespace and $toast-grid-column-namespace
-  adjusts the class names for the grid. With
-  default values, grid wrappers have a class
-  of '.grid' and columns '.grid__col'.
-
-  $toast-col-groups(n) adjusts column divisions.
-  For example, $toast-col-groups(12) will produce
-  a 12-column grid. $col-groups(3,6,8)
-  will produce a 3-, 6-, and 8-column grid.
-
-  $toast-gutter-width is—you guessed it—the gutter
-  width. Accepts any unit.
-
-  That's it. Have fun.
-
-\*-----------------------------------*/
 .grid {
   list-style: none;
   margin-left: -50px;
@@ -2435,6 +2394,15 @@ a:hover, a:active {
   margin-left: 1.5em;
 }
 
+.widget form p {
+  margin-top: 0;
+  margin-bottom: 0.5em;
+}
+
+.widget form p:last-child {
+  margin-bottom: 0;
+}
+
 #tertiary .widget {
   margin-bottom: 80px;
   margin-bottom: 5rem;
@@ -2509,7 +2477,7 @@ a:hover, a:active {
 }
 
 .widget_rss cite:before {
-  content: "—";
+  content: "\02014";
   margin-right: 10px;
 }
 

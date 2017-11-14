@@ -34,7 +34,7 @@ blockquote:before {
 	top: -26px;
 	left: -60px;
 	@include rem('font-size',$font__quote_size);
-	content: "“";
+	content: "\0201C";
 }
 
 @media (max-width: 959px) {
