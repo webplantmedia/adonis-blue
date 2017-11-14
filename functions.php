@@ -107,6 +107,13 @@ function angie_makes_design_content_width() {
 }
 add_action( 'after_setup_theme', 'angie_makes_design_content_width', 0 );
 
+function angie_makes_design_content_width_check() {
+	if ( angie_makes_design_display_fullwidth() ) {
+		$GLOBALS['content_width'] = apply_filters( 'angie_makes_design_content_width', 1060 );
+	}
+}
+add_action( 'template_redirect', 'angie_makes_design_content_width_check' );
+
 /**
  * Register widget area.
  *

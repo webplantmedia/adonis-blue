@@ -32,7 +32,7 @@ $angie_makes_design_default['disable_google_fonts'] = 0;
 
 // Blog
 $angie_makes_design_default['blog_display'] = 'blog1';
-$angie_makes_design_default['archive_display'] = 'blog3';
+$angie_makes_design_default['archive_display'] = 'blog1';
 $angie_makes_design_default['search_display'] = 'blog2';
 
 // Display Sidebar

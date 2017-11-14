@@ -12,6 +12,11 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
+
+		<div class="term-description">
+			<?php echo term_description() ?>
+		</div>
+
 		<?php
 		if ( have_posts() ) : ?>
 

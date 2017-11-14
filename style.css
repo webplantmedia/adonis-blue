@@ -3800,15 +3800,11 @@ a:hover, a:active {
   padding-left: 1.875rem;
 }
 
-/*.page-template-widgets-front-page {
-	.site-content > .site-boundary {
-		> *:last-child {
-			> * {
-				border-bottom-width: 0;
-			}
-		}
-	}
-}*/
+.term-description {
+  font-size: 16px;
+  font-size: 1rem;
+}
+
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/

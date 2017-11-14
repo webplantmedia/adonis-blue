@@ -517,13 +517,7 @@
 	}
 
 }
-// Widgets Front Page Sidebar
-/*.page-template-widgets-front-page {
-	.site-content > .site-boundary {
-		> *:last-child {
-			> * {
-				border-bottom-width: 0;
-			}
-		}
-	}
-}*/
+// Archive
+.term-description {
+	@include rem('font-size',$font__medium-size);
+}
