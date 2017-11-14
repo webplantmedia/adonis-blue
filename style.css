@@ -1576,7 +1576,6 @@ a:hover, a:active {
 
 .main-menu ul ul li {
   background-color: #ffffff;
-  position: static;
   float: none;
 }
 
@@ -2396,7 +2395,7 @@ a:hover, a:active {
 
 .widget form p {
   margin-top: 0;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.7em;
 }
 
 .widget form p:last-child {
