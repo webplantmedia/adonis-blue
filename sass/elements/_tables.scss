@@ -8,6 +8,7 @@ table {
 		font-weight: bold;
 	}
 }
+.comment-content,
 .entry-content {
 	> table {
 		th,
@@ -20,6 +21,7 @@ table {
 }
 
 @media screen and (max-width: 600px) {
+	.comment-content,
 	.entry-content {
 		> table {
 			tr:nth-child(2n-1) {
