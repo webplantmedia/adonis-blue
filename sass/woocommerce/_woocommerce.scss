@@ -231,6 +231,20 @@
 			}
 		}
 	}
+	.woocommerce-shop-image-backdrop div.product div.images > .woocommerce-product-gallery__wrapper > .woocommerce-product-gallery__image:first-child a,
+	.woocommerce-shop-image-backdrop div.product div.images .flex-viewport .woocommerce-product-gallery__wrapper a,
+	.woocommerce-shop-image-backdrop ul.products li.product .woocommerce-product-image-wrapper {
+		display: block;
+		padding: 30px 30px 0 30px;
+		background-color: $color__light-gray;
+		overflow: hidden;
+	}
+	.woocommerce-shop-image-backdrop div.product div.images > .woocommerce-product-gallery__wrapper > .woocommerce-product-gallery__image:first-child a img,
+	.woocommerce-shop-image-backdrop div.product div.images .flex-viewport .woocommerce-product-gallery__wrapper a img,
+	.woocommerce-shop-image-backdrop ul.products li.product a img {
+		box-shadow: 0px 0px 10px 2px #dddddd;
+		margin: 0;
+	}
 	/*start*/
 	.woocommerce-store-notice,
 	p.demo_store {
@@ -448,23 +462,6 @@
 	.woocommerce ul.products li.product h3 {
 	}
 	.woocommerce ul.products li.product a {
-	}
-	.woocommerce-shop-image-backdrop div.product div.images .woocommerce-product-gallery__wrapper a {
-		display: block;
-		padding: 70px 70px 0 70px;
-		background-color: $color__light-gray;
-		overflow: hidden;
-	}
-	.woocommerce-shop-image-backdrop ul.products li.product .woocommerce-product-image-wrapper {
-		display: block;
-		padding: 30px 30px 0 30px;
-		background-color: $color__light-gray;
-		overflow: hidden;
-	}
-	.woocommerce-shop-image-backdrop div.product div.images .woocommerce-product-gallery__wrapper a img,
-	.woocommerce-shop-image-backdrop ul.products li.product a img {
-		box-shadow: 0px 0px 10px 2px #dddddd;
-		margin: 0;
 	}
 	.woocommerce ul.products li.product strong {
 	}
@@ -1568,6 +1565,8 @@
 		width: 48.1%;
 	}
 
+	#master .woocommerce-shop-image-backdrop div.product div.images > .woocommerce-product-gallery__wrapper > .woocommerce-product-gallery__image:first-child a,
+	#master .woocommerce-shop-image-backdrop div.product div.images .flex-viewport .woocommerce-product-gallery__wrapper a,
 	#master .woocommerce-shop-image-backdrop .woocommerce.columns-1 ul.products li.product .woocommerce-product-image-wrapper,
 	#master .woocommerce-shop-image-backdrop .woocommerce.columns-2 ul.products li.product .woocommerce-product-image-wrapper,
 	#master .woocommerce-shop-image-backdrop.woocommerce-shop-columns-2 ul.products li.product .woocommerce-product-image-wrapper {

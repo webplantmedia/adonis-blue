@@ -505,6 +505,22 @@ WooCommerce styling
   padding-right: 0;
 }
 
+#master .woocommerce-shop-image-backdrop div.product div.images > .woocommerce-product-gallery__wrapper > .woocommerce-product-gallery__image:first-child a,
+#master .woocommerce-shop-image-backdrop div.product div.images .flex-viewport .woocommerce-product-gallery__wrapper a,
+#master .woocommerce-shop-image-backdrop ul.products li.product .woocommerce-product-image-wrapper {
+  display: block;
+  padding: 30px 30px 0 30px;
+  background-color: #ececec;
+  overflow: hidden;
+}
+
+#master .woocommerce-shop-image-backdrop div.product div.images > .woocommerce-product-gallery__wrapper > .woocommerce-product-gallery__image:first-child a img,
+#master .woocommerce-shop-image-backdrop div.product div.images .flex-viewport .woocommerce-product-gallery__wrapper a img,
+#master .woocommerce-shop-image-backdrop ul.products li.product a img {
+  box-shadow: 0px 0px 10px 2px #dddddd;
+  margin: 0;
+}
+
 #master .woocommerce-store-notice,
 #master p.demo_store {
   color: #ffffff;
@@ -621,26 +637,6 @@ WooCommerce styling
   font-size: 12px;
   font-size: 0.75rem;
   text-transform: uppercase;
-}
-
-#master .woocommerce-shop-image-backdrop div.product div.images .woocommerce-product-gallery__wrapper a {
-  display: block;
-  padding: 70px 70px 0 70px;
-  background-color: #ececec;
-  overflow: hidden;
-}
-
-#master .woocommerce-shop-image-backdrop ul.products li.product .woocommerce-product-image-wrapper {
-  display: block;
-  padding: 30px 30px 0 30px;
-  background-color: #ececec;
-  overflow: hidden;
-}
-
-#master .woocommerce-shop-image-backdrop div.product div.images .woocommerce-product-gallery__wrapper a img,
-#master .woocommerce-shop-image-backdrop ul.products li.product a img {
-  box-shadow: 0px 0px 10px 2px #dddddd;
-  margin: 0;
 }
 
 #master .woocommerce ul.products li.product .price {
@@ -1009,6 +1005,8 @@ WooCommerce styling
   .woocommerce-shop-columns-2 ul.products li.product {
     width: 48.1%;
   }
+  #master .woocommerce-shop-image-backdrop div.product div.images > .woocommerce-product-gallery__wrapper > .woocommerce-product-gallery__image:first-child a,
+  #master .woocommerce-shop-image-backdrop div.product div.images .flex-viewport .woocommerce-product-gallery__wrapper a,
   #master .woocommerce-shop-image-backdrop .woocommerce.columns-1 ul.products li.product .woocommerce-product-image-wrapper,
   #master .woocommerce-shop-image-backdrop .woocommerce.columns-2 ul.products li.product .woocommerce-product-image-wrapper,
   #master .woocommerce-shop-image-backdrop.woocommerce-shop-columns-2 ul.products li.product .woocommerce-product-image-wrapper {

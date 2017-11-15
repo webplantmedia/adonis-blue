@@ -35,7 +35,7 @@ if ( ! class_exists( 'Angie_Makes_Design_WooCommerce' ) ) :
 
 			add_filter( 'get_the_archive_title', array( $this, 'get_the_archive_title' ), 10, 1 );
 
-			add_action( 'after_setup_theme', array( $this, 'woocommerce_setup' ) );
+			add_action( 'wp_loaded', array( $this, 'woocommerce_setup' ), 11 );
 
 			add_action( 'wp_enqueue_scripts', array( $this, 'woocommerce_enqueue' ) );
 
@@ -90,11 +90,21 @@ if ( ! class_exists( 'Angie_Makes_Design_WooCommerce' ) ) :
 		}
 
 		function woocommerce_setup() {
+			global $angie_makes_design;
+
 			// Declare WooCommerce support.
 			add_theme_support( 'woocommerce' );
-			add_theme_support( 'wc-product-gallery-zoom' );
-			add_theme_support( 'wc-product-gallery-lightbox' );
-			add_theme_support( 'wc-product-gallery-slider' );
+			if ( $angie_makes_design['shop_enable_gallery_zoom'] ) {
+				add_theme_support( 'wc-product-gallery-zoom' );
+			}
+
+			if ( $angie_makes_design['shop_enable_gallery_lightbox'] ) {
+				add_theme_support( 'wc-product-gallery-lightbox' );
+			}
+
+			if ( $angie_makes_design['shop_enable_gallery_slider'] ) {
+				add_theme_support( 'wc-product-gallery-slider' );
+			}
 		}
 
 		function loop_columns( $number_columns ) {
