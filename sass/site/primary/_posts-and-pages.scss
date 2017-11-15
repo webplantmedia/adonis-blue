@@ -517,7 +517,17 @@
 	}
 
 }
+
 // Archive
+.page-description,
 .term-description {
 	@include rem('margin-bottom',70px);
+
+	> *:first-child {
+		margin-top: 0;
+	}
+
+	> *:last-child {
+		margin-bottom: 0;
+	}
 }

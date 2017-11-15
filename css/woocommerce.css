@@ -342,6 +342,11 @@ WooCommerce styling
   text-align: center;
 }
 
+#master .woocommerce ul.products li.product:hover img,
+#master .woocommerce-page ul.products li.product:hover img {
+  box-shadow: 0px 0px 10px 5px #dddddd;
+}
+
 #master .woocommerce ul.products li.product .star-rating,
 #master .woocommerce-page ul.products li.product .star-rating {
   margin-left: auto;
@@ -616,6 +621,26 @@ WooCommerce styling
   font-size: 12px;
   font-size: 0.75rem;
   text-transform: uppercase;
+}
+
+#master .woocommerce-shop-image-backdrop div.product div.images .woocommerce-product-gallery__wrapper a {
+  display: block;
+  padding: 70px 70px 0 70px;
+  background-color: #ececec;
+  overflow: hidden;
+}
+
+#master .woocommerce-shop-image-backdrop ul.products li.product .woocommerce-product-image-wrapper {
+  display: block;
+  padding: 30px 30px 0 30px;
+  background-color: #ececec;
+  overflow: hidden;
+}
+
+#master .woocommerce-shop-image-backdrop div.product div.images .woocommerce-product-gallery__wrapper a img,
+#master .woocommerce-shop-image-backdrop ul.products li.product a img {
+  box-shadow: 0px 0px 10px 2px #dddddd;
+  margin: 0;
 }
 
 #master .woocommerce ul.products li.product .price {
@@ -981,8 +1006,20 @@ WooCommerce styling
 }
 
 @media screen and (min-width: 769px) {
-  .display-sidebar.woocommerce-page ul.products li.product {
+  .woocommerce-shop-columns-2 ul.products li.product {
+    width: 48.1%;
+  }
+  #master .woocommerce-shop-image-backdrop .woocommerce.columns-1 ul.products li.product .woocommerce-product-image-wrapper,
+  #master .woocommerce-shop-image-backdrop .woocommerce.columns-2 ul.products li.product .woocommerce-product-image-wrapper,
+  #master .woocommerce-shop-image-backdrop.woocommerce-shop-columns-2 ul.products li.product .woocommerce-product-image-wrapper {
+    padding: 70px 70px 0 70px;
+  }
+  .woocommerce-shop-columns-3 ul.products li.product {
     width: 30.8%;
+  }
+  #master .woocommerce-shop-image-backdrop .woocommerce.columns-3 ul.products li.product .woocommerce-product-image-wrapper,
+  #master .woocommerce-shop-image-backdrop.woocommerce-shop-columns-3 ul.products li.product .woocommerce-product-image-wrapper {
+    padding: 40px 40px 0 40px;
   }
 }
 

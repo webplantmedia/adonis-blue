@@ -45,6 +45,22 @@ function angie_makes_design_body_classes( $classes ) {
 		$classes[] = 'show-menu-arrows';
 	}
 
+	if ( angie_makes_design_is_woocommerce_activated() ) {
+		if ( is_shop() ) {
+			$classes[] = 'woocommerce-shop-columns-' . $angie_makes_design['shop_columns'];
+		}
+		else if ( is_product_category() || is_product_taxonomy() ) {
+			$classes[] = 'woocommerce-shop-columns-' . $angie_makes_design['shop_archive_columns'];
+		}
+		else if ( is_product() ) {
+			$classes[] = 'woocommerce-shop-columns-' . $angie_makes_design['shop_related_products_columns'];
+		}
+
+		if ( $angie_makes_design['shop_image_backdrop'] ) {
+			$classes[] = 'woocommerce-shop-image-backdrop';
+		}
+	}
+
 	return $classes;
 }
 add_filter( 'body_class', 'angie_makes_design_body_classes' );

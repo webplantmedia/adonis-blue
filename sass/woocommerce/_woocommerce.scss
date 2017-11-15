@@ -78,6 +78,12 @@
 	.woocommerce-page ul.products li.product {
 		text-align: center;
 		
+		&:hover {
+			img {
+				box-shadow: 0px 0px 10px 5px #dddddd;;
+			}
+		}
+
 		.star-rating {
 			margin-left: auto;
 			margin-right: auto;
@@ -443,7 +449,22 @@
 	}
 	.woocommerce ul.products li.product a {
 	}
-	.woocommerce ul.products li.product a img {
+	.woocommerce-shop-image-backdrop div.product div.images .woocommerce-product-gallery__wrapper a {
+		display: block;
+		padding: 70px 70px 0 70px;
+		background-color: $color__light-gray;
+		overflow: hidden;
+	}
+	.woocommerce-shop-image-backdrop ul.products li.product .woocommerce-product-image-wrapper {
+		display: block;
+		padding: 30px 30px 0 30px;
+		background-color: $color__light-gray;
+		overflow: hidden;
+	}
+	.woocommerce-shop-image-backdrop div.product div.images .woocommerce-product-gallery__wrapper a img,
+	.woocommerce-shop-image-backdrop ul.products li.product a img {
+		box-shadow: 0px 0px 10px 2px #dddddd;
+		margin: 0;
 	}
 	.woocommerce ul.products li.product strong {
 	}
@@ -1543,9 +1564,25 @@
 		
 }
 @media screen and (min-width: 769px) {
-	.display-sidebar.woocommerce-page ul.products li.product {
+	.woocommerce-shop-columns-2 ul.products li.product {
+		width: 48.1%;
+	}
+
+	#master .woocommerce-shop-image-backdrop .woocommerce.columns-1 ul.products li.product .woocommerce-product-image-wrapper,
+	#master .woocommerce-shop-image-backdrop .woocommerce.columns-2 ul.products li.product .woocommerce-product-image-wrapper,
+	#master .woocommerce-shop-image-backdrop.woocommerce-shop-columns-2 ul.products li.product .woocommerce-product-image-wrapper {
+		padding: 70px 70px 0 70px;
+	}
+
+	.woocommerce-shop-columns-3 ul.products li.product {
 		width: 30.8%;
 	}
+
+	#master .woocommerce-shop-image-backdrop .woocommerce.columns-3 ul.products li.product .woocommerce-product-image-wrapper,
+	#master .woocommerce-shop-image-backdrop.woocommerce-shop-columns-3 ul.products li.product .woocommerce-product-image-wrapper {
+		padding: 40px 40px 0 40px;
+	}
+
 }
 @media screen and (max-width: 768px) {
 	#master {

@@ -21,6 +21,8 @@ if ( ! class_exists( 'Angie_Makes_Design_WooCommerce' ) ) :
 		 */
 		public function __construct() {
 
+			add_filter( 'woocommerce_product_get_image', array( $this, 'woocommerce_product_get_image' ) );
+			
 			add_action( 'wp', array( $this, 'disable_jetpack_infinite_scroll' ) );
 
 			add_filter( 'woocommerce_pagination_args', array( $this, 'woocommerce_pagination_args' ) );
@@ -38,7 +40,7 @@ if ( ! class_exists( 'Angie_Makes_Design_WooCommerce' ) ) :
 
 			add_action( 'wp_enqueue_scripts', array( $this, 'woocommerce_enqueue' ) );
 
-			// add_filter( 'woocommerce_output_related_products_args', array( $this, 'related_products_args' ) );
+			add_filter( 'woocommerce_output_related_products_args', array( $this, 'related_products_args' ) );
 
 			remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
 			remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
@@ -131,6 +133,16 @@ if ( ! class_exists( 'Angie_Makes_Design_WooCommerce' ) ) :
 			// add_filter( 'woocommerce_subcategory_count_html' , array( $this, 'angie_makes_design_change_count_subcategory' ), 10, 2 );
 		}
 
+		function woocommerce_product_get_image( $image ) {
+			global $angie_makes_design;
+
+			if ( $angie_makes_design['shop_image_backdrop'] ) {
+				return '<span class="woocommerce-product-image-wrapper">' . $image . '</span>';
+			}
+
+			return $image;
+		}
+
 		function disable_jetpack_infinite_scroll() {
 			if ( is_woocommerce() ) {
 				remove_theme_support( 'infinite-scroll' );
@@ -159,11 +171,13 @@ if ( ! class_exists( 'Angie_Makes_Design_WooCommerce' ) ) :
 		}
 
 		function loop_columns( $number_columns ) {
-			if ( angie_makes_design_display_sidebar() ) {
-				return 3; // 3 products per row
+			global $angie_makes_design;
+
+			if ( is_product_category() || is_product_taxonomy() ) {
+				return $angie_makes_design['shop_archive_columns'];
 			}
 
-			return $number_columns;
+			return $angie_makes_design['shop_columns'];
 		}
 
 		function hide_title( $title ) {
@@ -255,9 +269,11 @@ if ( ! class_exists( 'Angie_Makes_Design_WooCommerce' ) ) :
 		 * @return  array $args related products args
 		 */
 		public function related_products_args( $args ) {
+			global $angie_makes_design;
+			
 			$args = apply_filters( 'angie_makes_design_related_products_args', array(
-				'posts_per_page' => 3,
-				'columns'        => 3,
+				'posts_per_page' => $angie_makes_design['shop_related_products_columns'],
+				'columns'        => $angie_makes_design['shop_related_products_columns'],
 			) );
 
 			return $args;
@@ -503,3 +519,49 @@ if ( ! class_exists( 'Angie_Makes_Design_WooCommerce' ) ) :
 endif;
 
 return new Angie_Makes_Design_WooCommerce();
+
+
+/**
+ * Show subcategory thumbnails.
+ *
+ * @param mixed $category Category.
+ * @subpackage	Loop
+ */
+function woocommerce_subcategory_thumbnail( $category ) {
+	global $angie_makes_design;
+
+	$small_thumbnail_size  	= apply_filters( 'subcategory_archive_thumbnail_size', 'shop_catalog' );
+	$dimensions    			= wc_get_image_size( $small_thumbnail_size );
+	$thumbnail_id  			= get_woocommerce_term_meta( $category->term_id, 'thumbnail_id', true );
+
+	if ( $thumbnail_id ) {
+		$image        = wp_get_attachment_image_src( $thumbnail_id, $small_thumbnail_size );
+		$image        = $image[0];
+		$image_srcset = function_exists( 'wp_get_attachment_image_srcset' ) ? wp_get_attachment_image_srcset( $thumbnail_id, $small_thumbnail_size ) : false;
+		$image_sizes  = function_exists( 'wp_get_attachment_image_sizes' ) ? wp_get_attachment_image_sizes( $thumbnail_id, $small_thumbnail_size ) : false;
+	} else {
+		$image        = wc_placeholder_img_src();
+		$image_srcset = $image_sizes = false;
+	}
+
+	if ( $image ) {
+		// Prevent esc_url from breaking spaces in urls for image embeds.
+		// Ref: https://core.trac.wordpress.org/ticket/23605.
+		$image = str_replace( ' ', '%20', $image );
+
+		if ( $angie_makes_design['shop_image_backdrop'] ) {
+			echo '<span class="woocommerce-product-image-wrapper">';
+		}
+
+		// Add responsive image markup if available.
+		if ( $image_srcset && $image_sizes ) {
+			echo '<img src="' . esc_url( $image ) . '" alt="' . esc_attr( $category->name ) . '" width="' . esc_attr( $dimensions['width'] ) . '" height="' . esc_attr( $dimensions['height'] ) . '" srcset="' . esc_attr( $image_srcset ) . '" sizes="' . esc_attr( $image_sizes ) . '" />';
+		} else {
+			echo '<img src="' . esc_url( $image ) . '" alt="' . esc_attr( $category->name ) . '" width="' . esc_attr( $dimensions['width'] ) . '" height="' . esc_attr( $dimensions['height'] ) . '" />';
+		}
+
+		if ( $angie_makes_design['shop_image_backdrop'] ) {
+			echo '</span>';
+		}
+	}
+}
