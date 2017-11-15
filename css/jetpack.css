@@ -11,6 +11,53 @@ Jetpack styling
   margin-bottom: 2.5rem;
 }
 
+#master #jp-relatedposts .jp-relatedposts-headline,
+#master #jp-relatedposts .jp-relatedposts-headline em {
+  font-size: 12px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #959595;
+}
+
+#master #jp-relatedposts .jp-relatedposts-headline em:before {
+  border-top: 2px solid #ececec;
+}
+
+#master #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-title a {
+  font-weight: bold;
+}
+
+#master #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post img.jp-relatedposts-post-img {
+  margin-bottom: 0.5em;
+}
+
+#master #jp-relatedposts .jp-relatedposts-items-visual h4.jp-relatedposts-post-title {
+  line-height: 1.375;
+  font-size: 14px;
+  font-size: 0.875rem;
+  margin-bottom: 0.5em;
+}
+
+#master #jp-relatedposts .jp-relatedposts-items p {
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 1.8;
+}
+
+#master #jp-relatedposts .jp-relatedposts-items p.jp-relatedposts-post-date,
+#master #jp-relatedposts .jp-relatedposts-items p.jp-relatedposts-post-context {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  line-height: 1.375;
+}
+
+#master #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post:hover .jp-relatedposts-post-title a {
+  text-decoration: none;
+}
+
 #master div.sharedaddy h3.sd-title {
   font-size: 12px;
   font-size: 0.75rem;
@@ -121,7 +168,7 @@ Jetpack styling
 
 #master .comment-subscription-form {
   margin-bottom: 0;
-  margin-top: 17px;
+  margin-top: 0;
 }
 
 /*# sourceMappingURL=jetpack.css.map */

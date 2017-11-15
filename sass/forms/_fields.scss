@@ -214,9 +214,9 @@
 		vertical-align: middle;
 		cursor: pointer;
 
-		-webkit-appearance: none;
-		-moz-appearance: none;
-		appearance: none;
+		-webkit-appearance: none !important;
+		-moz-appearance: none !important;
+		appearance: none !important;
 	}
 
 	input[type="radio"] {
@@ -308,11 +308,13 @@
 		display: inline-block;
 		margin-bottom: 0;
 		margin-left: 10px;
-		@include rem('font-size',$font__main-size);
-		font-weight: normal;
 		vertical-align: middle;
 		letter-spacing: 0;
-		text-transform: none;
+
+		@include rem('font-size',$font__small-size);
+		font-weight: bold;
+		text-transform: uppercase;
+		cursor: pointer;
 	}
 }
 

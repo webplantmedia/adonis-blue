@@ -4,6 +4,50 @@
 		@include rem('margin-bottom',40px);
 	}
 	
+	#jp-relatedposts .jp-relatedposts-headline {
+		&,
+		em {
+			@include rem('font-size',$font__tiny_size);
+			text-transform: uppercase;
+			font-weight: bold;
+			color: $color__text-light;
+		}
+
+		em:before {
+			border-top: 2px solid $color__border;
+		}
+	}
+
+	#jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-title a {
+		font-weight: bold;
+	}
+
+	#jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post img.jp-relatedposts-post-img {
+		margin-bottom: 0.5em;
+	}
+	#jp-relatedposts .jp-relatedposts-items-visual h4.jp-relatedposts-post-title {
+		line-height: $font__line-height-heading;
+		@include rem('font-size',$font__xsmall_size);
+		margin-bottom: 0.5em;
+	}
+
+	#jp-relatedposts .jp-relatedposts-items p {
+		@include rem('font-size',$font__xsmall_size);
+		line-height: $font__line-height-body;
+	}
+
+	#jp-relatedposts .jp-relatedposts-items p.jp-relatedposts-post-date,
+	#jp-relatedposts .jp-relatedposts-items p.jp-relatedposts-post-context {
+		text-transform: uppercase;
+		@include rem('font-size',$font__tiny_size);
+		font-weight: bold;
+		line-height: $font__line-height-heading;
+	}
+
+	#jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post:hover .jp-relatedposts-post-title a {
+		text-decoration: none;
+	}
+
 	div.sharedaddy h3.sd-title {
 		@include rem('font-size',$font__tiny_size);
 		text-transform: uppercase;
@@ -120,6 +164,6 @@
 
 	.comment-subscription-form {
 		margin-bottom: 0;
-		margin-top: 17px;
+		margin-top: 0;
 	}
 }

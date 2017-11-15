@@ -1389,9 +1389,9 @@ button {
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
 }
 
 #master input[type="radio"] {
@@ -1483,12 +1483,13 @@ button {
   display: inline-block;
   margin-bottom: 0;
   margin-left: 10px;
-  font-size: 18px;
-  font-size: 1.125rem;
-  font-weight: normal;
   vertical-align: middle;
   letter-spacing: 0;
-  text-transform: none;
+  font-size: 15px;
+  font-size: 0.9375rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
 }
 
 ::-webkit-input-placeholder {
@@ -4114,7 +4115,7 @@ a:hover, a:active {
 }
 
 .comment-form .form-submit {
-  margin-bottom: 0;
+  margin-bottom: 1em;
 }
 
 .comment-form input,
