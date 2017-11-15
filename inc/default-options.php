@@ -40,6 +40,7 @@ $angie_makes_design_default['shop_columns'] = 2;
 $angie_makes_design_default['shop_archive_columns'] = 3;
 $angie_makes_design_default['shop_related_products_columns'] = 2;
 $angie_makes_design_default['shop_image_backdrop'] = 1;
+$angie_makes_design_default['shop_hide_breadcrumbs'] = 0;
 
 // Display Sidebar
 $angie_makes_design_default['display_sidebar_blog'] = 1;

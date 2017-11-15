@@ -352,9 +352,11 @@
 		i {
 			margin-left: 5px;
 			@include rem('font-size',$font__xlarge_size);
-			vertical-align: text-bottom;
+			vertical-align: middle;
 			border-bottom-width: 0;
 			text-decoration: none;
+			line-height: 1;
+			padding-bottom: 3px;
 		}
 	}
 
