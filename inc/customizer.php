@@ -207,6 +207,7 @@ function angie_makes_design_customize_register( $wp_customize ) {
 		'label' => __( 'Show Menu Arrows', 'angie-makes-design' ),
 		'section' => $section_id,
 	) );
+
 	/**
 	 * Body
 	 */
@@ -315,6 +316,163 @@ function angie_makes_design_customize_register( $wp_customize ) {
 	) );
 
 	/**
+	 * Shop
+	 */
+	$section_id = 'theme_options_shop';
+	$wp_customize->add_section( $section_id, array(
+		'title'    => __( 'Shop', 'angie-makes-design' ),
+		'panel'    => 'theme_options',
+		'active_callback' => 'angie_makes_design_is_woocommerce_activated',
+	) );
+
+	$setting_id = 'shop_columns';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $angie_makes_design_default[ $setting_id ],
+		'transport' => 'refresh',
+		'sanitize_callback' => 'sanitize_text_field',
+	) );
+
+	$wp_customize->add_control( $setting_id, array(
+		'type' => 'select',
+		'label' => __( 'Shop Columns', 'angie-makes-design' ),
+		'section' => $section_id,
+		'choices' => array(
+			2 => '2',
+			3 => '3',
+			4 => '4',
+		),
+	) );
+
+	$setting_id = 'shop_archive_columns';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $angie_makes_design_default[ $setting_id ],
+		'transport' => 'refresh',
+		'sanitize_callback' => 'sanitize_text_field',
+	) );
+
+	$wp_customize->add_control( $setting_id, array(
+		'type' => 'select',
+		'label' => __( 'Shop Archive Columns', 'angie-makes-design' ),
+		'section' => $section_id,
+		'choices' => array(
+			2 => '2',
+			3 => '3',
+			4 => '4',
+		),
+	) );
+
+	$setting_id = 'shop_related_products_columns';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $angie_makes_design_default[ $setting_id ],
+		'transport' => 'refresh',
+		'sanitize_callback' => 'sanitize_text_field',
+	) );
+
+	$wp_customize->add_control( $setting_id, array(
+		'type' => 'select',
+		'label' => __( 'Shop Related Products Columns', 'angie-makes-design' ),
+		'section' => $section_id,
+		'choices' => array(
+			2 => '2',
+			3 => '3',
+			4 => '4',
+		),
+	) );
+
+	$setting_id = 'shop_image_backdrop';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $angie_makes_design_default[ $setting_id ],
+		'transport' => 'refresh',
+		'sanitize_callback' => 'angie_makes_design_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( $setting_id, array(
+		'type' => 'checkbox',
+		'label' => __( 'Display Product Image Backdrop', 'angie-makes-design' ),
+		'section' => $section_id,
+	) );
+
+	$setting_id = 'shop_hide_breadcrumbs';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $angie_makes_design_default[ $setting_id ],
+		'transport' => 'refresh',
+		'sanitize_callback' => 'angie_makes_design_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( $setting_id, array(
+		'type' => 'checkbox',
+		'label' => __( 'Hide Shop Breadcrumbs', 'angie-makes-design' ),
+		'section' => $section_id,
+	) );
+
+	$setting_id = 'shop_hide_stars';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $angie_makes_design_default[ $setting_id ],
+		'transport' => 'refresh',
+		'sanitize_callback' => 'angie_makes_design_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( $setting_id, array(
+		'type' => 'checkbox',
+		'label' => __( 'Hide Product Reviews From Shop Page', 'angie-makes-design' ),
+		'description' => __( 'This does not disable product reviews.', 'angie-makes-design' ),
+		'section' => $section_id,
+	) );
+
+	$setting_id = 'shop_product_hide_stars';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $angie_makes_design_default[ $setting_id ],
+		'transport' => 'refresh',
+		'sanitize_callback' => 'angie_makes_design_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( $setting_id, array(
+		'type' => 'checkbox',
+		'label' => __( 'Hide Product Reviews From Product Page', 'angie-makes-design' ),
+		'description' => __( 'This does not disable product reviews.', 'angie-makes-design' ),
+		'section' => $section_id,
+	) );
+
+	$setting_id = 'shop_disable_gallery_zoom';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $angie_makes_design_default[ $setting_id ],
+		'transport' => 'refresh',
+		'sanitize_callback' => 'angie_makes_design_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( $setting_id, array(
+		'type' => 'checkbox',
+		'label' => __( 'Disable Gallery Zoom', 'angie-makes-design' ),
+		'section' => $section_id,
+	) );
+
+	$setting_id = 'shop_disable_gallery_lightbox';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $angie_makes_design_default[ $setting_id ],
+		'transport' => 'refresh',
+		'sanitize_callback' => 'angie_makes_design_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( $setting_id, array(
+		'type' => 'checkbox',
+		'label' => __( 'Disable Gallery Lightbox', 'angie-makes-design' ),
+		'section' => $section_id,
+	) );
+
+	$setting_id = 'shop_disable_gallery_slider';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $angie_makes_design_default[ $setting_id ],
+		'transport' => 'refresh',
+		'sanitize_callback' => 'angie_makes_design_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( $setting_id, array(
+		'type' => 'checkbox',
+		'label' => __( 'Disable Gallery Slider', 'angie-makes-design' ),
+		'section' => $section_id,
+	) );
+
+	/**
 	 * Display Sidebar
 	 */
 	$section_id = 'theme_options_display_sidebar';
@@ -350,19 +508,6 @@ function angie_makes_design_customize_register( $wp_customize ) {
 		'section' => $section_id,
 	) );
 
-	$setting_id = 'display_sidebar_shop';
-	$wp_customize->add_setting( $setting_id, array(
-		'default' => $angie_makes_design_default[ $setting_id ],
-		'transport' => 'refresh',
-		'sanitize_callback' => 'angie_makes_design_sanitize_checkbox',
-	) );
-
-	$wp_customize->add_control( $setting_id, array(
-		'type' => 'checkbox',
-		'label' => __( 'Shop', 'angie-makes-design' ),
-		'section' => $section_id,
-	) );
-
 	$setting_id = 'display_sidebar_archive';
 	$wp_customize->add_setting( $setting_id, array(
 		'default' => $angie_makes_design_default[ $setting_id ],
@@ -389,11 +534,26 @@ function angie_makes_design_customize_register( $wp_customize ) {
 		'section' => $section_id,
 	) );
 
+	$setting_id = 'display_sidebar_shop';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $angie_makes_design_default[ $setting_id ],
+		'transport' => 'refresh',
+		'sanitize_callback' => 'angie_makes_design_sanitize_checkbox',
+		'active_callback' => 'angie_makes_design_is_woocommerce_activated',
+	) );
+
+	$wp_customize->add_control( $setting_id, array(
+		'type' => 'checkbox',
+		'label' => __( 'Shop', 'angie-makes-design' ),
+		'section' => $section_id,
+	) );
+
 	$setting_id = 'display_sidebar_shop_archive';
 	$wp_customize->add_setting( $setting_id, array(
 		'default' => $angie_makes_design_default[ $setting_id ],
 		'transport' => 'refresh',
 		'sanitize_callback' => 'angie_makes_design_sanitize_checkbox',
+		'active_callback' => 'angie_makes_design_is_woocommerce_activated',
 	) );
 
 	$wp_customize->add_control( $setting_id, array(

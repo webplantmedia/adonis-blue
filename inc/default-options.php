@@ -41,9 +41,11 @@ $angie_makes_design_default['shop_archive_columns'] = 3;
 $angie_makes_design_default['shop_related_products_columns'] = 2;
 $angie_makes_design_default['shop_image_backdrop'] = 1;
 $angie_makes_design_default['shop_hide_breadcrumbs'] = 0;
-$angie_makes_design_default['shop_enable_gallery_zoom'] = 0;
-$angie_makes_design_default['shop_enable_gallery_lightbox'] = 1;
-$angie_makes_design_default['shop_enable_gallery_slider'] = 0;
+$angie_makes_design_default['shop_hide_stars'] = 0;
+$angie_makes_design_default['shop_product_hide_stars'] = 0;
+$angie_makes_design_default['shop_disable_gallery_zoom'] = 0;
+$angie_makes_design_default['shop_disable_gallery_lightbox'] = 0;
+$angie_makes_design_default['shop_disable_gallery_slider'] = 0;
 
 // Display Sidebar
 $angie_makes_design_default['display_sidebar_blog'] = 1;
