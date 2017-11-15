@@ -682,7 +682,7 @@ WooCommerce styling
 
 #master .woocommerce #reviews #comments ol.commentlist li img.avatar {
   background: transparent;
-  border: 2px solid #ececec;
+  border: none;
   width: 60px;
 }
 
