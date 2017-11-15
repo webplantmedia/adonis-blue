@@ -3932,6 +3932,10 @@ a:hover, a:active {
   color: #959595;
 }
 
+.comment-list .pingback .comment-body .url:hover {
+  color: #6d686c;
+}
+
 .comment-list .pingback .comment-body .edit-link a {
   display: block;
   font-size: 12px;
@@ -3939,6 +3943,10 @@ a:hover, a:active {
   font-weight: bold;
   text-transform: uppercase;
   color: #959595;
+}
+
+.comment-list .pingback .comment-body .edit-link a:hover {
+  color: #6d686c;
 }
 
 .comment-metadata {

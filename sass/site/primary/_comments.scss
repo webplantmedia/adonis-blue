@@ -92,6 +92,10 @@
 	line-height: 2.16666667;
 	text-transform: uppercase;
 	color: $color__text-light;
+
+	&:hover {
+		color: $color__text;
+	}
 }
 
 .comment-list .pingback .comment-body .edit-link a {
@@ -100,6 +104,10 @@
 	font-weight: bold;
 	text-transform: uppercase;
 	color: $color__text-light;
+
+	&:hover {
+		color: $color__text;
+	}
 }
 
 .comment-metadata {
