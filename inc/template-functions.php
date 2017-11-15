@@ -49,7 +49,7 @@ function angie_makes_design_body_classes( $classes ) {
 		if ( is_shop() ) {
 			$classes[] = 'woocommerce-shop-columns-' . $angie_makes_design['shop_columns'];
 		}
-		else if ( is_product_category() || is_product_taxonomy() ) {
+		else if ( is_product_taxonomy() ) {
 			$classes[] = 'woocommerce-shop-columns-' . $angie_makes_design['shop_archive_columns'];
 		}
 		else if ( is_product() ) {

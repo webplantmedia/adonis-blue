@@ -313,7 +313,7 @@ function angie_makes_design_display_sidebar() {
 		if ( is_shop() ) {
 			return $angie_makes_design['display_sidebar_shop'];
 		}
-		else if ( is_product_category() || is_product_taxonomy() ) {
+		else if ( is_product_taxonomy() ) {
 			return $angie_makes_design['display_sidebar_shop_archive'];
 		}
 	}

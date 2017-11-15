@@ -146,6 +146,10 @@ if ( ! class_exists( 'Angie_Makes_Design_WooCommerce' ) ) :
 					add_filter( 'subcategory_archive_thumbnail_size', array( $this, 'return_shop_single_image_size' ) );
 				}
 			}
+			else {
+				add_filter( 'single_product_archive_thumbnail_size', array( $this, 'return_shop_single_image_size' ) );
+				add_filter( 'subcategory_archive_thumbnail_size', array( $this, 'return_shop_single_image_size' ) );
+			}
 		}
 
 		function return_shop_single_image_size() {
@@ -170,7 +174,7 @@ if ( ! class_exists( 'Angie_Makes_Design_WooCommerce' ) ) :
 			if ( is_shop() ) {
 				$title = woocommerce_page_title( false );
 			}
-			else if ( is_product_category() || is_product_taxonomy() ) {
+			else if ( is_product_taxonomy() ) {
 				$pieces = explode( ': ', $title );
 				if ( sizeof( $pieces ) == 2 ) {
 					$shop_page_id = wc_get_page_id( 'shop' );
