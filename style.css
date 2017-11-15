@@ -3801,8 +3801,8 @@ a:hover, a:active {
 }
 
 .term-description {
-  font-size: 16px;
-  font-size: 1rem;
+  margin-bottom: 70px;
+  margin-bottom: 4.375rem;
 }
 
 /*--------------------------------------------------------------

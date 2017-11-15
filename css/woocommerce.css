@@ -500,11 +500,6 @@ WooCommerce styling
   padding-right: 0;
 }
 
-#master .term-description {
-  font-size: 16px;
-  font-size: 1rem;
-}
-
 #master .woocommerce-store-notice,
 #master p.demo_store {
   color: #ffffff;
