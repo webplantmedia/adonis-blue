@@ -29,6 +29,7 @@ $angie_makes_design_default['show_menu_arrows'] = 1;
 // Body
 $angie_makes_design_default['default_button_style'] = 'button-2';
 $angie_makes_design_default['disable_google_fonts'] = 0;
+$angie_makes_design_default['page_image_header_height'] = 400;
 
 // Blog
 $angie_makes_design_default['blog_display'] = 'blog1';

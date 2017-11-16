@@ -147,6 +147,15 @@ a:hover {
 		background-position: calc(50% + ' . ( $angie_makes_design['top_header_background_offset'] - 75 ) . 'px) top; /*id:top_header_background_offset_3*/
 	}
 }
+@media (min-width: 800px) {
+	#master .page.has-post-thumbnail .page-image-header-background {
+		height: ' . $angie_makes_design['page_image_header_height'] . 'px; /*id:page_image_header_height*/
+	}
+
+	#master .page.has-post-thumbnail .site-content {
+		padding-top: ' . max( ( $angie_makes_design['page_image_header_height'] - 130 ), 0 ) . 'px; /*id:page_image_header_height_1*/
+	}
+}
 ';
 
 	return $css;

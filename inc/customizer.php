@@ -249,6 +249,29 @@ function angie_makes_design_customize_register( $wp_customize ) {
 		'section' => $section_id,
 	) );
 
+	$setting_id = 'page_image_header_height';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $angie_makes_design_default[ $setting_id ],
+		'transport' => 'postMessage',
+		'sanitize_callback' => 'absint',
+	) );
+
+	$wp_customize->add_control( $setting_id, array(
+		'section' => $section_id,
+		'type' => 'range',
+		'label' => __( 'Page Image Header Height', 'angie-makes-design' ),
+		'description' => __( 'This changes the height of your featured image in your page header area.', 'angie-makes-design' ),
+		'section' => $section_id,
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 800,
+			'step' => 5,
+			'style' => 'width:100%;',
+		),
+	) );
+
+
+
 	/**
 	 * Blog
 	 */
