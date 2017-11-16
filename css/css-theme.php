@@ -11,7 +11,7 @@ function angie_makes_design_custom_css() {
 }
 
 .entry-content a:hover,
-.page-template-grid-accordion-page .accordion-item h3:hover,
+.accordion-item h3:hover,
 #master a.more-link:hover,
 #master h1 a:hover,
 #master h2 a:hover,

@@ -3788,13 +3788,13 @@ a:hover, a:active {
   font-size: 1rem;
 }
 
-#master .page-template-grid-accordion-page .accordion-item {
+#master .accordion-item {
   margin: 0;
   margin-top: 40px;
   margin-top: 2.5rem;
 }
 
-.page-template-grid-accordion-page .accordion-item h3 {
+.accordion-item h3 {
   margin: 0;
   cursor: pointer;
   padding-left: 30px;
@@ -3803,7 +3803,7 @@ a:hover, a:active {
   font-weight: normal;
 }
 
-.page-template-grid-accordion-page .accordion-item h3:before {
+.accordion-item h3:before {
   vertical-align: middle;
   text-align: center;
   -webkit-transition: -webkit-transform .2s;
@@ -3837,7 +3837,7 @@ a:hover, a:active {
   font-size: 1rem;
 }
 
-.page-template-grid-accordion-page .accordion-item h3.accordion-item-open:before {
+.accordion-item h3.accordion-item-open:before {
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
@@ -3846,12 +3846,12 @@ a:hover, a:active {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0);
 }
 
-.page-template-grid-accordion-page .accordion-item .accordion-content {
+.accordion-item .accordion-content {
   height: 0;
   overflow: hidden;
 }
 
-.page-template-grid-accordion-page .accordion-item .accordion-content-inner {
+.accordion-item .accordion-content-inner {
   padding-top: 40px;
   padding-top: 2.5rem;
   padding-left: 30px;

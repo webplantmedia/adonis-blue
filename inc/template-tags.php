@@ -191,6 +191,105 @@ if ( ! function_exists( 'angie_makes_design_site_info' ) ) :
 	}
 endif;
 
+if ( ! function_exists( 'angie_makes_design_the_two_columns_content' ) ) :
+	function angie_makes_design_the_two_columns_content() {
+		$grid = angie_makes_design_get_the_two_columns();
+		
+		$html = '';
+		foreach( $grid as $row ) {
+			$size = sizeof( $row['columns'] );
+			if ( $size > 1 ) {
+				if ( is_array( $row ) && ! empty( $row ) ) {
+					$html .= '<div class="grid">';
+					foreach ( $row['columns'] as $column ) {
+						$html .= '<div class="grid__col grid__col--1-of-'.$size.' no-top-bottom-margins">';
+							$html .= wpautop( $column );
+						$html .= '</div>';
+					}
+					$html .= '</div>';
+				}
+			}
+			else {
+				if ( is_array( $row ) && ! empty( $row ) ) {
+					foreach ( $row['columns'] as $column ) {
+						$html .= $column;
+					}
+				}
+			}
+		}
+
+		$html = apply_filters( 'the_content', $html );
+		$html = str_replace( ']]>', ']]&gt;', $html );
+		echo $html;
+	}
+endif;
+
+if ( ! function_exists( 'angie_makes_design_the_grid_content' ) ) :
+	function angie_makes_design_the_grid_content() {
+		$grid = angie_makes_design_get_the_layout();
+		
+		$html = '';
+		foreach( $grid as $row ) {
+			$size = sizeof( $row['columns'] );
+			if ( $size > 1 ) {
+				if ( is_array( $row ) && ! empty( $row ) ) {
+					$html .= '<div class="grid">';
+					foreach ( $row['columns'] as $column ) {
+						$html .= '<div class="grid__col grid__col--1-of-'.$size.' no-top-bottom-margins">';
+							$html .= wpautop( $column );
+						$html .= '</div>';
+					}
+					$html .= '</div>';
+				}
+			}
+			else {
+				if ( is_array( $row ) && ! empty( $row ) ) {
+					foreach ( $row['columns'] as $column ) {
+						$html .= $column;
+					}
+				}
+			}
+		}
+
+		$html = apply_filters( 'the_content', $html );
+		$html = str_replace( ']]>', ']]&gt;', $html );
+		echo $html;
+	}
+endif;
+
+if ( ! function_exists( 'angie_makes_design_the_accordion_content' ) ) :
+	function angie_makes_design_the_accordion_content() {
+		$grid = angie_makes_design_get_the_layout();
+		
+		$html = '';
+		foreach( $grid as $row ) {
+			$size = sizeof( $row['columns'] );
+			if ( $size > 1 ) {
+				if ( is_array( $row ) && ! empty( $row ) ) {
+					$html .= '<div class="grid">';
+					foreach ( $row['columns'] as $column ) {
+						$html .= '<div class="grid__col grid__col--1-of-'.$size.' no-top-bottom-margins">';
+							$html .= angie_makes_design_the_accordion( $column );
+						$html .= '</div>';
+					}
+					$html .= '</div>';
+				}
+			}
+			else {
+				if ( is_array( $row ) && ! empty( $row ) ) {
+					foreach ( $row['columns'] as $column ) {
+						$html .= angie_makes_design_the_accordion( $column );
+					}
+				}
+			}
+		}
+
+		$html = apply_filters( 'the_content', $html );
+		$html = str_replace( ']]>', ']]&gt;', $html );
+		echo $html;
+	}
+endif;
+
 if ( ! function_exists( 'angie_makes_design_the_accordion' ) ) :
 	function angie_makes_design_the_accordion( $content ) {
 		$html = '';

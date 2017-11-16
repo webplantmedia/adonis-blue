@@ -286,6 +286,16 @@ function angie_makes_design_show_full_post() {
 	return true;
 }
 
+function angie_makes_design_display_sub_header() {
+	global $post;
+
+	if ( preg_match( '/^\s*\<h2/', $post->post_content ) ) {
+		return false;
+	}
+
+	return true;
+}
+
 function angie_makes_design_display_header() {
 	global $post;
 
