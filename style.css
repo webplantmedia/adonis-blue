@@ -3164,7 +3164,7 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 ## Content & Sidebar
 --------------------------------------------------------------*/
-.display-sidebar .content-area .site-main {
+.display-sidebar .content-area {
   float: left;
   margin: 0 -360px 0 0;
   width: 100%;
@@ -3172,7 +3172,7 @@ a:hover, a:active {
 
 .angie-makes-design-static-content .hentry,
 .no-sidebar .content-area .site-main {
-  width: 700px;
+  max-width: 700px;
   margin: 0 auto;
 }
 
@@ -3201,13 +3201,14 @@ a:hover, a:active {
 }
 
 @media screen and (max-width: 1024px) {
-  #master .content-area .site-main {
+  #master .content-area {
     float: none;
-    max-width: 700px;
-    margin: 0 auto;
+    width: 100%;
   }
   #master .site-main {
     margin: 0;
+    max-width: 700px;
+    margin: 0 auto;
   }
   #master .site-content .widget-area {
     float: none;
@@ -3219,13 +3220,6 @@ a:hover, a:active {
     margin: 0 auto;
     margin-top: 70px;
     margin-top: 4.375rem;
-  }
-}
-
-@media screen and (max-width: 700px) {
-  #master .angie-makes-design-static-content .hentry,
-  #master .content-area .site-main {
-    width: 100%;
   }
 }
 

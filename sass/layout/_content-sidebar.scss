@@ -1,4 +1,4 @@
-.display-sidebar .content-area .site-main {
+.display-sidebar .content-area {
 	float: left;
 	margin: 0 (-$size__site-sidebar-with-padding) 0 0;
 	width: 100%;
@@ -6,7 +6,7 @@
 
 .angie-makes-design-static-content .hentry,
 .no-sidebar .content-area .site-main {
-	width: $size__site-main-no-sidebar;
+	max-width: $size__site-main-no-sidebar;
 	margin: 0 auto;
 }
 
@@ -35,14 +35,15 @@
 
 @media screen and (max-width : 1024px) {
 	#master {
-		.content-area .site-main {
+		.content-area {
 			float: none;
-			max-width: $size__site-main-no-sidebar;
-			margin: 0 auto;
+			width: 100%;
 		}
 
 		.site-main {
 			margin: 0;
+			max-width: $size__site-main-no-sidebar;
+			margin: 0 auto;
 		}
 
 		.site-content .widget-area {
@@ -54,15 +55,6 @@
 			padding: 0;
 			margin: 0 auto;
 			@include rem('margin-top',70px);
-		}
-	}
-}
-
-@media screen and (max-width : $size__site-main-no-sidebar) {
-	#master {
-		.angie-makes-design-static-content .hentry,
-		.content-area .site-main {
-			width: 100%;
 		}
 	}
 }
