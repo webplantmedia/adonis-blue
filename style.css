@@ -4453,8 +4453,40 @@ object {
 /*--------------------------------------------------------------
 ## Galleries
 --------------------------------------------------------------*/
-.gallery {
+.gallery-columns-1 .gallery-item {
   margin-bottom: 1.5em;
+}
+
+.gallery-columns-4,
+.gallery-columns-3,
+.gallery-columns-2 {
+  margin-right: -20px;
+  margin-top: -20px;
+}
+
+.gallery-columns-4 .gallery-item,
+.gallery-columns-3 .gallery-item,
+.gallery-columns-2 .gallery-item {
+  margin-top: 20px;
+  padding-right: 20px;
+}
+
+.gallery-columns-9,
+.gallery-columns-8,
+.gallery-columns-7,
+.gallery-columns-6,
+.gallery-columns-5 {
+  margin-right: -10px;
+  margin-top: -10px;
+}
+
+.gallery-columns-9 .gallery-item,
+.gallery-columns-8 .gallery-item,
+.gallery-columns-7 .gallery-item,
+.gallery-columns-6 .gallery-item,
+.gallery-columns-5 .gallery-item {
+  margin-top: 10px;
+  padding-right: 10px;
 }
 
 .gallery-item {
@@ -4462,6 +4494,7 @@ object {
   text-align: center;
   vertical-align: top;
   width: 100%;
+  margin: 0;
 }
 
 .gallery-columns-2 .gallery-item {

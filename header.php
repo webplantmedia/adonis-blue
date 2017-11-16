@@ -91,7 +91,7 @@
 
 	<?php endif; ?>
 
-	<?php if ( is_page() && has_post_thumbnail() && angie_makes_design_jetpack_featured_image_display() ) : ?>
+	<?php if ( angie_makes_design_display_header_image() ) : ?>
 		<?php $url = get_the_post_thumbnail_url( get_the_ID(), 'full' ); ?>
 		<div class="page-image-header">
 			<div class="page-image-header-background" style="background-image:url('<?php echo $url; ?>');"></div>

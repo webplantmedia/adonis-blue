@@ -6,15 +6,19 @@
 		var $description = $('#template-instruction');
 
 		switch ( val ) {
-			case 'page-templates/accordion.php' :
-				msg = 'This accordion template will automatically parse h2 and h3 elements to create your accordion page. Insert h2 headings to divide accordions to different grid sections. Insert h3 heading and paragraph content to display an accordion title and accordion content.';
+			case 'templates/grid-accordion-page.php' :
+				msg = 'Insert H2, H5, and H6 headings to divider your grid into two, three, and four columns. Insert H3 heading and paragraph content to display an accordion title and accordion content.';
 				$description.html( msg ).show();
 				break;
-			case 'page-templates/two-columns.php' :
-				msg = 'Look for the <i class="mce-ico mce-i-layout_divider" style="color:inherit;padding:0 4px;"></i> icon in your WP editor toolbar, and insert the divider line in between your content. This template will create columns based on where you have inserted your divider line.';
+			case 'templates/two-columns-page.php' :
+				msg = 'Look for the <i class="mce-ico mce-i-hr" style="color:inherit;padding:0 4px;"></i> icon in your WP editor toolbar, and insert the divider line in between your content. This template will create two columns based on where you have inserted your divider line.';
 				$description.html( msg ).show();
 				break;
-			case 'page-templates/widgets-front-page.php' :
+			case 'templates/grid-page.php' :
+				msg = 'Insert H2, H5, and H6 headings to divider your grid into two, three, and four columns.';
+				$description.html( msg ).show();
+				break;
+			case 'templates/front-page.php' :
 				msg = 'Go to your widgets page, and look for your "Front Page" sidebar area. You will need to drag the blue "Content Widgets" to your Front Page sidebar area to build your content.';
 				$description.html( msg ).show();
 				break;
