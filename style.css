@@ -3164,14 +3164,14 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 ## Content & Sidebar
 --------------------------------------------------------------*/
-.display-sidebar .content-area {
+.display-sidebar .content-area .site-main {
   float: left;
   margin: 0 -360px 0 0;
   width: 100%;
 }
 
 .angie-makes-design-static-content .hentry,
-.no-sidebar .content-area {
+.no-sidebar .content-area .site-main {
   width: 700px;
   margin: 0 auto;
 }
@@ -3201,7 +3201,7 @@ a:hover, a:active {
 }
 
 @media screen and (max-width: 1024px) {
-  #master .content-area {
+  #master .content-area .site-main {
     float: none;
     max-width: 700px;
     margin: 0 auto;
@@ -3224,7 +3224,7 @@ a:hover, a:active {
 
 @media screen and (max-width: 700px) {
   #master .angie-makes-design-static-content .hentry,
-  #master .content-area {
+  #master .content-area .site-main {
     width: 100%;
   }
 }
@@ -3569,6 +3569,51 @@ a:hover, a:active {
 .entry-footer span:last-child:after {
   display: none;
   content: "";
+}
+
+.page.has-post-thumbnail .page-image-header {
+  margin: 0;
+}
+
+.page.has-post-thumbnail .page-image-header-background {
+  margin: 0;
+  height: 250px;
+  width: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+@media (min-width: 800px) {
+  .page.has-post-thumbnail.display-fullwidth .site-main {
+    max-width: 900px;
+    max-width: 56.25rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .page.has-post-thumbnail .page-image-header {
+    position: relative;
+  }
+  .page.has-post-thumbnail .page-image-header-background {
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 400px;
+    z-index: -1;
+  }
+  .page.has-post-thumbnail .site-content {
+    padding-top: 270px;
+    padding-top: 16.875rem;
+  }
+  .page.has-post-thumbnail .site-content .content-area {
+    background-color: #ffffff;
+  }
+  .page.has-post-thumbnail .site-content .content-area .site-main {
+    padding-top: 70px;
+    padding-top: 4.375rem;
+  }
 }
 
 .comment-content > div,

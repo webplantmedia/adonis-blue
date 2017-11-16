@@ -279,6 +279,60 @@
 	}
 }
 
+// Page content
+.page.has-post-thumbnail {
+	.page-image-header {
+		margin: 0;
+	}
+	.page-image-header-background {
+		margin: 0;
+		height: 250px;
+		width: 100%;
+		background-size: cover;
+		background-position: center center;
+		background-repeat: no-repeat;
+	}
+}
+
+@media (min-width: 800px) {
+	.page.has-post-thumbnail {
+		&.display-fullwidth {
+			.site-main {
+				@include rem('max-width',$size__site-main-full-width-featured-image);
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+
+		.page-image-header {
+			position: relative;
+		}
+
+		.page-image-header-background {
+			margin: 0;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			height: 400px;
+			z-index: -1;
+		}
+
+		.site-content {
+			@include rem('padding-top',270px);
+
+			.content-area {
+				background-color: $color__background-body;
+
+				.site-main {
+					@include rem('padding-top',70px);
+				}
+			}
+		}
+	}
+}
+
+
 // Entry content
 // Page content
 .comment-content,

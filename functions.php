@@ -109,7 +109,12 @@ add_action( 'after_setup_theme', 'angie_makes_design_content_width', 0 );
 
 function angie_makes_design_content_width_check() {
 	if ( angie_makes_design_display_fullwidth() ) {
-		$GLOBALS['content_width'] = apply_filters( 'angie_makes_design_content_width', 1060 );
+		if ( is_page() && has_post_thumbnail() && angie_makes_design_jetpack_featured_image_display() ) {
+			$GLOBALS['content_width'] = apply_filters( 'angie_makes_design_content_width', 900 );
+		}
+		else {
+			$GLOBALS['content_width'] = apply_filters( 'angie_makes_design_content_width', 1060 );
+		}
 	}
 }
 add_action( 'template_redirect', 'angie_makes_design_content_width_check' );

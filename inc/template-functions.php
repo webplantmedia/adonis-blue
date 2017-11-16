@@ -61,6 +61,10 @@ function angie_makes_design_body_classes( $classes ) {
 		}
 	}
 
+	if ( is_page() && has_post_thumbnail() && angie_makes_design_jetpack_featured_image_display() ) {
+		$classes[] = 'has-post-thumbnail';
+	}
+
 	return $classes;
 }
 add_filter( 'body_class', 'angie_makes_design_body_classes' );

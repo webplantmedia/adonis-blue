@@ -1,11 +1,11 @@
-.display-sidebar .content-area {
+.display-sidebar .content-area .site-main {
 	float: left;
 	margin: 0 (-$size__site-sidebar-with-padding) 0 0;
 	width: 100%;
 }
 
 .angie-makes-design-static-content .hentry,
-.no-sidebar .content-area {
+.no-sidebar .content-area .site-main {
 	width: $size__site-main-no-sidebar;
 	margin: 0 auto;
 }
@@ -35,7 +35,7 @@
 
 @media screen and (max-width : 1024px) {
 	#master {
-		.content-area {
+		.content-area .site-main {
 			float: none;
 			max-width: $size__site-main-no-sidebar;
 			margin: 0 auto;
@@ -61,7 +61,7 @@
 @media screen and (max-width : $size__site-main-no-sidebar) {
 	#master {
 		.angie-makes-design-static-content .hentry,
-		.content-area {
+		.content-area .site-main {
 			width: 100%;
 		}
 	}
