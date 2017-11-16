@@ -11,7 +11,7 @@
 				$description.html( msg ).show();
 				break;
 			case 'templates/two-columns-page.php' :
-				msg = 'Look for the <i class="mce-ico mce-i-hr" style="color:inherit;padding:0 4px;"></i> icon in your WP editor toolbar, and insert the divider line in between your content. This template will create two columns based on where you have inserted your divider line.';
+				msg = 'Look for the <i class="mce-ico mce-i-hr" style="color:inherit;padding:0 4px;"></i> icon in your WP editor toolbar, and insert the divider line in between your content. This template will create two columns based on where you have inserted your horizontal line.';
 				$description.html( msg ).show();
 				break;
 			case 'templates/grid-page.php' :

@@ -226,7 +226,7 @@ if ( ! function_exists( 'angie_makes_design_get_the_layout' ) ) :
 		$row = -1;
 		$column = 0;
 		$pushed = '';
-		$grid[ 0 ]['columns'][0] = '';
+		$grid[0]['columns'][0] = '';
 
 		$content = preg_replace( "/(\<h2.*?\<\/h2\>)/", "------\\1", $content );
 		$content = preg_replace( "/(\<h5.*?\<\/h5\>)/", "------\\1", $content );
@@ -301,6 +301,41 @@ if ( ! function_exists( 'angie_makes_design_get_the_layout' ) ) :
 				$pushed = '1col';
 
 			}
+		}
+
+		return $grid;
+	}
+endif;
+
+if ( ! function_exists( 'angie_makes_design_get_the_two_columns' ) ) :
+	function angie_makes_design_get_the_two_columns() {
+		$content = get_the_content();
+		$row = -1;
+		$column = 0;
+		$grid[0]['columns'][0] = '';
+
+		$content = preg_replace( "/(\<hr.*?\>)/", "------", $content );
+		$pieces = explode( '------', $content );
+
+		if ( empty( $pieces ) ) {
+			return $grid;
+		}
+
+		foreach ( $pieces as $key => $piece ) {
+			$piece = trim( $piece );
+
+			if ( empty( $piece ) ) {
+				continue;
+			}
+
+			if ( $row < 0 || sizeof( $grid[ $row ]['columns'] ) >= 2 ) {
+				$row++;
+				$column = 0;
+				$grid[ $row ]['size'] = 2;
+			}
+
+			$grid[ $row ]['columns'][ $column ] = $piece;
+			$column++;
 		}
 
 		return $grid;

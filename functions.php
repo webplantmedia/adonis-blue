@@ -380,6 +380,10 @@ function angie_makes_design_display_fullwidth() {
 		return true;
 	}
 
+	if ( is_page_template( 'templates/two-columns-page.php' ) ) {
+		return true;
+	}
+
 	return false;
 }
 
