@@ -44,6 +44,10 @@ switch ( $angie_makes_design['shop_product_page_template'] ) {
 		angie_makes_design_the_grid_content();
 		break;
 
+	case 'two-columns' :
+		angie_makes_design_the_two_columns_content();
+		break;
+
 	default :
 		the_content();
 		break;

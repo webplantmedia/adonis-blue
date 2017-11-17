@@ -393,7 +393,7 @@ function angie_makes_design_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'select',
-		'label' => __( 'Shop Related Products Columns', 'angie-makes-design' ),
+		'label' => __( 'Related Products Columns', 'angie-makes-design' ),
 		'section' => $section_id,
 		'choices' => array(
 			2 => '2',
@@ -674,7 +674,8 @@ function angie_makes_design_customize_partial_custom_logo() {
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function angie_makes_design_customize_preview_js() {
-	wp_enqueue_script( 'angie-makes-design-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
+	wp_enqueue_script( 'angie-makes-design-customizer', get_template_directory_uri() . '/js/admin/customizer.js', array( 'customize-preview' ), ANGIE_MAKES_DESIGN_VERSION, true );
+	wp_enqueue_script( 'angie-makes-design-admin-notifier', get_template_directory_uri() . '/js/admin/admin-notifier.js', array( 'customize-preview' ), ANGIE_MAKES_DESIGN_VERSION, true );
 }
 add_action( 'customize_preview_init', 'angie_makes_design_customize_preview_js' );
 
