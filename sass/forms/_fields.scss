@@ -30,6 +30,13 @@
 		font-weight: normal;
 		text-transform: none;
 	}
+	
+	form {
+		> p,
+		> div {
+			@include rem('margin-bottom',20px);
+		}
+	}
 
 	input[type="text"],
 	input[type="email"],

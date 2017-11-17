@@ -450,6 +450,8 @@ WooCommerce styling
 
 #master .woocommerce div.product .product_title {
   color: #5b5a5a;
+  font-size: 40px;
+  font-size: 2.5rem;
 }
 
 #master .woocommerce-Address-title > *:first-child,

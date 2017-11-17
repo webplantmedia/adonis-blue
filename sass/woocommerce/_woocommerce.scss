@@ -173,6 +173,7 @@
 	}
 	.woocommerce div.product .product_title {
 		color: $color__text-title;
+		@include rem('font-size',40px);
 	}
 	.woocommerce-Address-title,
 	.entry-content > .woocommerce {

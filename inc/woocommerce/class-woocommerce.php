@@ -58,6 +58,8 @@ if ( ! class_exists( 'Angie_Makes_Design_WooCommerce' ) ) :
 
 			// Add header for payment info.
 			add_action( 'woocommerce_review_order_before_payment', array( $this, 'before_shipping_title' ), 10 );
+
+			add_filter('woocommerce_short_description', 'angie_makes_design_the_content', 11 );
 		}
 
 		function woocommerce_product_get_image( $image ) {

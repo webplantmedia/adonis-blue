@@ -132,7 +132,12 @@ button {
 	}
 
 	.fancy-button {
-		background-image: url("img/button-bg.png");
+		&,
+		&:focus,
+		&:visited,
+		&:active {
+			background-image: url("img/button-bg.png");
+		}
 
 		&:before {
 			content: " ";
@@ -175,7 +180,12 @@ button {
 	}
 
 	.fancy2-button {
-		background-image: url("img/button2-bg.jpg");
+		&,
+		&:focus,
+		&:visited,
+		&:active {
+			background-image: url("img/button2-bg.jpg");
+		}
 
 		&:before {
 			content: " ";

@@ -411,9 +411,18 @@ pre {
   font-size: 18px;
   font-size: 1.125rem;
   line-height: 1.6;
-  margin-bottom: 1.6em;
+  margin-bottom: 2.5em;
   max-width: 100%;
   overflow: auto;
+  white-space: pre-wrap;
+  /* Since CSS 2.1 */
+  white-space: -moz-pre-wrap;
+  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;
+  /* Opera 4-6 */
+  white-space: -o-pre-wrap;
+  /* Opera 7 */
+  word-wrap: break-word;
   padding: 1.6em;
 }
 
@@ -518,7 +527,8 @@ figure {
 ## Lists
 --------------------------------------------------------------*/
 ul, ol {
-  margin: 0 0 2.5em 3em;
+  margin: 0 0 2.5em 0;
+  padding: 0 0 0 1.5em;
 }
 
 ul {
@@ -1090,7 +1100,7 @@ button {
   border-radius: 0;
 }
 
-#master body .fancy-button {
+#master body .fancy-button, #master body .fancy-button:focus, #master body .fancy-button:visited, #master body .fancy-button:active {
   background-image: url("img/button-bg.png");
 }
 
@@ -1135,7 +1145,7 @@ button {
   position: relative;
 }
 
-#master body .fancy2-button {
+#master body .fancy2-button, #master body .fancy2-button:focus, #master body .fancy2-button:visited, #master body .fancy2-button:active {
   background-image: url("img/button2-bg.jpg");
 }
 
@@ -1225,6 +1235,12 @@ button {
   font-size: 1.125rem;
   font-weight: normal;
   text-transform: none;
+}
+
+#master form > p,
+#master form > div {
+  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 
 #master input[type="text"],
@@ -3626,12 +3642,6 @@ a:hover, a:active {
   margin-top: 5rem;
   margin-bottom: 80px;
   margin-bottom: 5rem;
-}
-
-.comment-content > div.grid h2,
-.entry-content > div.grid h2,
-.page-content > div.grid h2 {
-  text-align: center;
 }
 
 .comment-content > hr,

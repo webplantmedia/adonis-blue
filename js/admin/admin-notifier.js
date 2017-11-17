@@ -8,7 +8,7 @@
 		switch ( val ) {
 			case 'grid-accordion' :
 			case 'templates/grid-accordion-page.php' :
-				msg = 'Insert H2, H5, and H6 headings to divide your grid into two, three, and four columns. Insert H3 heading and paragraph content to display an accordion title and accordion content.';
+				msg = 'Insert H2, H5, and H6 headings to divide your grid into two, three, and four columns. Insert H3 heading and paragraph content to display an accordion title and accordion content. Look for the <i class="mce-ico mce-i-hr" style="color:inherit;padding:0 4px;"></i> icon in your WP editor toolbar, and insert the horizontal line to break a column.';
 				$description.html( msg ).show();
 				break;
 			case 'two-columns' :
@@ -18,7 +18,7 @@
 				break;
 			case 'grid' :
 			case 'templates/grid-page.php' :
-				msg = 'Insert H2, H5, and H6 headings to divider your grid into two, three, and four columns.';
+				msg = 'Insert H2, H5, and H6 headings to divider your grid into two, three, and four columns. Look for the <i class="mce-ico mce-i-hr" style="color:inherit;padding:0 4px;"></i> icon in your WP editor toolbar, and insert the horizontal line to break a column.';
 				$description.html( msg ).show();
 				break;
 			case 'templates/front-page.php' :

@@ -29,9 +29,14 @@ pre {
 	font-family: $font__pre;
 	@include rem('font-size',$font__main-size);
 	line-height: $font__line-height-pre;
-	margin-bottom: 1.6em;
+	margin-bottom: 2.5em;
 	max-width: 100%;
 	overflow: auto;
+	white-space: pre-wrap;       /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;
 	padding: 1.6em;
 }
 
