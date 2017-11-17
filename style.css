@@ -303,6 +303,7 @@ h6 {
   margin: 0;
   font-weight: bold;
   line-height: 1.375;
+  letter-spacing: 0.125em;
 }
 
 h1 {
@@ -374,7 +375,7 @@ h6 a:active,
 h6 a:focus,
 h6 a:visited,
 h6 a {
-  color: #444444;
+  color: #666666;
 }
 
 /*--------------------------------------------------------------
@@ -2376,8 +2377,7 @@ a:hover, a:active {
   text-transform: initial;
   text-align: center;
   text-transform: uppercase;
-  color: #444444;
-  letter-spacing: 2px;
+  color: #666666;
 }
 
 .widget h3 {
@@ -2470,7 +2470,7 @@ a:hover, a:active {
 .footer-column .widgettitle,
 .footer-column .widget-title {
   text-transform: uppercase;
-  color: #444444;
+  color: #666666;
 }
 
 .footer-column textarea,
@@ -2478,7 +2478,7 @@ a:hover, a:active {
 .footer-column .widget {
   font-size: 18px;
   font-size: 1.125rem;
-  letter-spacing: 2px;
+  letter-spacing: 0.125em;
 }
 
 .widget_rss {
@@ -2518,7 +2518,7 @@ a:hover, a:active {
 }
 
 #master .angie-makes-design-image-banner .image-banner-text-position-middle a:hover .widget-title {
-  color: #444444;
+  color: #666666;
 }
 
 .angie-makes-design-image-banner .image-banner-wrapper {
@@ -2890,7 +2890,7 @@ a:hover, a:active {
 }
 
 #master .angie-makes-design-widget-collage .collage a.slide-inner .content-text.no-custom-color *, #master .angie-makes-design-widget-collage .collage a.slide-inner:hover .content-text.no-custom-color *, #master .angie-makes-design-widget-collage .collage a.slide-inner:active .content-text.no-custom-color *, #master .angie-makes-design-widget-collage .collage a.slide-inner:focus .content-text.no-custom-color *, #master .angie-makes-design-widget-collage .collage a.slide-inner:visited .content-text.no-custom-color * {
-  color: #444444;
+  color: #666666;
 }
 
 #master .angie-makes-design-widget-collage .collage a.slide-inner .content-text.custom-color *, #master .angie-makes-design-widget-collage .collage a.slide-inner:hover .content-text.custom-color *, #master .angie-makes-design-widget-collage .collage a.slide-inner:active .content-text.custom-color *, #master .angie-makes-design-widget-collage .collage a.slide-inner:focus .content-text.custom-color *, #master .angie-makes-design-widget-collage .collage a.slide-inner:visited .content-text.custom-color * {
@@ -3272,7 +3272,7 @@ a:hover, a:active {
 .site-branding .site-title a {
   display: block;
   text-decoration: none;
-  color: #444444;
+  color: #666666;
 }
 
 .site-branding .site-description {
@@ -3411,7 +3411,7 @@ a:hover, a:active {
 .grid .hentry .entry-title a,
 .blog .hentry .entry-title,
 .blog .hentry .entry-title a {
-  color: #444444;
+  color: #666666;
 }
 
 .single .post.hentry .entry-title {

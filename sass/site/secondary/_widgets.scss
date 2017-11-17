@@ -32,7 +32,6 @@
 		text-align: center;
 		text-transform: uppercase;
 		color: $color__text-heading;
-		letter-spacing: 2px;
 	}
 
 	h3 {
@@ -134,7 +133,7 @@
 	input,
 	.widget {
 		@include rem('font-size',$font__main-size);
-		letter-spacing: 2px;
+		letter-spacing: 0.125em;
 	}
 }
 
