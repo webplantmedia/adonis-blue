@@ -322,8 +322,13 @@ class Angie_Makes_Design_Widget extends WP_Widget {
 				$value = $this->sanitize_background_size( $new_value );
 				break;
 
+			case 'ids' :
 			case 'post_ids' :
-				$value = $this->sanitize_post_ids( $new_value );
+				$value = $this->sanitize_ids( $new_value );
+				break;
+
+			case 'slugs' :
+				$value = $this->sanitize_slugs( $new_value );
 				break;
 
 			default :
@@ -745,7 +750,7 @@ class Angie_Makes_Design_Widget extends WP_Widget {
 	 * @param string $post_ids
 	 * @return string
 	 */
-	private function sanitize_post_ids_array( $post_ids ) {
+	private function sanitize_ids_array( $post_ids ) {
 		$post_ids = explode( ',', $post_ids );
 
 		if ( is_array( $post_ids ) && ! empty( $post_ids ) ) {
@@ -754,7 +759,7 @@ class Angie_Makes_Design_Widget extends WP_Widget {
 				$value = absint( $value );
 
 				if ( ! empty( $value ) ) {
-					$post_ids_array[] = absint( $value );
+					$post_ids_array[] = $value;
 				}
 			}
 
@@ -766,17 +771,41 @@ class Angie_Makes_Design_Widget extends WP_Widget {
 		return array();
 	}
 
-	/**
-	 * Sanitize comma delimited numbers into array format
-	 *
-	 * @since 4.8.1
-	 * @access public
-	 *
-	 * @param string $post_ids
-	 * @return array
-	 */
-	private function sanitize_post_ids( $post_ids ) {
-		$post_ids_array = $this->sanitize_post_ids_array( $post_ids );
+	private function sanitize_ids( $post_ids ) {
+		$post_ids_array = $this->sanitize_ids_array( $post_ids );
+
+		$post_ids = implode( ',', $post_ids_array );
+
+		if ( ! empty( $post_ids ) ) {
+			return $post_ids;
+		}
+
+		return '';
+	}
+
+	private function sanitize_slugs_array( $post_ids ) {
+		$post_ids = explode( ',', $post_ids );
+
+		if ( is_array( $post_ids ) && ! empty( $post_ids ) ) {
+			$post_ids_array = array();
+			foreach ( $post_ids as $key => $value ) {
+				$value = sanitize_title( $value );
+
+				if ( ! empty( $value ) ) {
+					$post_ids_array[] = $value;
+				}
+			}
+
+			if ( ! empty( $post_ids_array ) ) {
+				return $post_ids_array;
+			}
+		}
+
+		return array();
+	}
+
+	private function sanitize_slugs( $post_ids ) {
+		$post_ids_array = $this->sanitize_slugs_array( $post_ids );
 
 		$post_ids = implode( ',', $post_ids_array );
 

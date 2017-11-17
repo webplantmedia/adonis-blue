@@ -286,3 +286,6 @@ html .widget-inner-container.ui-accordion .ui-accordion-header.ui-accordion-head
 #widgets-left div[id*="angie-makes-design"].widget .widget-top:hover {
 	border-color: #5996ef;
 }
+.widget-content .description {
+	display: block;
+}
