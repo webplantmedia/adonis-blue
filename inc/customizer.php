@@ -676,6 +676,7 @@ function angie_makes_design_customize_partial_custom_logo() {
 function angie_makes_design_customize_preview_js() {
 	wp_enqueue_script( 'angie-makes-design-customizer', get_template_directory_uri() . '/js/admin/customizer.js', array( 'customize-preview' ), ANGIE_MAKES_DESIGN_VERSION, true );
 	wp_enqueue_script( 'angie-makes-design-admin-notifier', get_template_directory_uri() . '/js/admin/admin-notifier.js', array( 'customize-preview' ), ANGIE_MAKES_DESIGN_VERSION, true );
+	wp_enqueue_style( 'angie-makes-design-customizer-style', get_parent_theme_file_uri() . '/css/admin/customizer.css', array(), ANGIE_MAKES_DESIGN_VERSION );
 }
 add_action( 'customize_preview_init', 'angie_makes_design_customize_preview_js' );
 
