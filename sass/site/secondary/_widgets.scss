@@ -133,7 +133,7 @@
 	input,
 	.widget {
 		@include rem('font-size',$font__main-size);
-		letter-spacing: 0.125em;
+		letter-spacing: 0.07em;
 	}
 }
 

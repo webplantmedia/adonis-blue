@@ -76,11 +76,6 @@ function angie_makes_design_infinite_scroll_credit(){
 }
 add_filter('infinite_scroll_credit','angie_makes_design_infinite_scroll_credit');
 
-function angie_makes_design_author_bio_avatar_size() {
-    return 120; // in px
-}
-// add_filter( 'jetpack_author_bio_avatar_size', 'angie_makes_design_author_bio_avatar_size' );
-
 /**
  * Show/Hide Featured Image outside of the loop.
  */

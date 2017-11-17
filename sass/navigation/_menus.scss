@@ -57,7 +57,6 @@
 				@include rem('font-size',$font__small-size);
 				text-transform: none;
 				@include rem('min-width',200px);
-
 			}
 		}
 
@@ -80,13 +79,13 @@
 			width: auto;
 			height: auto;
 			line-height: $font__line-height-body;
+			letter-spacing: 0.07em;
 		}
 		
 		.current_page_item > a,
 		.current-menu-item > a,
 		.current_page_ancestor > a,
 		.current-menu-ancestor > a {
-			background-color: $color__border;
 		}
 	}
 	

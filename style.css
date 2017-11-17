@@ -303,7 +303,7 @@ h6 {
   margin: 0;
   font-weight: bold;
   line-height: 1.375;
-  letter-spacing: 0.125em;
+  letter-spacing: 0.07em;
 }
 
 h1 {
@@ -1647,13 +1647,7 @@ a:hover, a:active {
   width: auto;
   height: auto;
   line-height: 1.8;
-}
-
-.main-menu ul .current_page_item > a,
-.main-menu ul .current-menu-item > a,
-.main-menu ul .current_page_ancestor > a,
-.main-menu ul .current-menu-ancestor > a {
-  background-color: #ececec;
+  letter-spacing: 0.07em;
 }
 
 .main-menu a, .main-menu a:focus, .main-menu a:active, .main-menu a:visited {
@@ -2081,6 +2075,7 @@ a:hover, a:active {
   width: auto;
   height: auto;
   font-weight: bold;
+  letter-spacing: 0.07em;
 }
 
 .top-header .jetpack-social-navigation .menu > li > a,
@@ -2478,7 +2473,7 @@ a:hover, a:active {
 .footer-column .widget {
   font-size: 18px;
   font-size: 1.125rem;
-  letter-spacing: 0.125em;
+  letter-spacing: 0.07em;
 }
 
 .widget_rss {
@@ -2829,18 +2824,18 @@ a:hover, a:active {
 }
 
 @media (max-width: 480px) {
-  #master .content-jetpack-testimonial .testimonial-featured-image,
-  #master .content-jetpack-testimonial .testimonial-entry-content-wrapper {
+  #master #page .content-jetpack-testimonial .testimonial-featured-image,
+  #master #page .content-jetpack-testimonial .testimonial-entry-content-wrapper {
     margin: 0;
     padding: 0;
     display: block;
   }
-  #master .content-jetpack-testimonial .testimonial-featured-image {
+  #master #page .content-jetpack-testimonial .testimonial-featured-image {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px;
   }
-  #master .content-jetpack-testimonial .testimonial-entry-content-wrapper {
+  #master #page .content-jetpack-testimonial .testimonial-entry-content-wrapper {
     width: 100%;
   }
 }
@@ -2885,6 +2880,11 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 ## Collage Widget
 --------------------------------------------------------------*/
+.site-content > .site-boundary > .angie-makes-design-widget-collage:first-child {
+  margin-top: -30px;
+  margin-top: -1.875rem;
+}
+
 #master .angie-makes-design-widget-collage .collage .slide-inner .content-text * {
   margin-top: 0;
 }
