@@ -23,7 +23,7 @@ class Angie_Makes_Design_Widget_WooCommerce_Products extends Angie_Makes_Design_
 			),
 			'limit' => array(
 				'type'  => 'number',
-				'std'   => -1,
+				'std'   => 4,
 				'step'  => 1,
 				'min'   => -1,
 				'label' => __( 'Limit:', 'angie-makes-design' ),
@@ -32,7 +32,7 @@ class Angie_Makes_Design_Widget_WooCommerce_Products extends Angie_Makes_Design_
 			),
 			'columns' => array(
 				'type'  => 'select',
-				'std'   => '2',
+				'std'   => '4',
 				'label' => __( 'Columns:', 'angie-makes-design' ),
 				'options' => array(
 					'2' => __( '2', 'angie-makes-design' ),
@@ -72,7 +72,7 @@ class Angie_Makes_Design_Widget_WooCommerce_Products extends Angie_Makes_Design_
 			),
 			'order' => array(
 				'type'  => 'select',
-				'std'   => 'asc',
+				'std'   => 'desc',
 				'label' => __( 'Order:', 'angie-makes-design' ),
 				'options' => array(
 					'asc' => __( 'ASC', 'angie-makes-design' ),
