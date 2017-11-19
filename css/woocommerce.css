@@ -631,7 +631,7 @@ WooCommerce styling
   line-height: 1;
   padding: 5px 10px;
   min-height: 0;
-  border-radius: 3px;
+  border-radius: 0px;
   background-color: green;
   color: #ffffff;
   font-size: 12px;
@@ -706,7 +706,7 @@ WooCommerce styling
 
 #master .woocommerce #reviews #comments ol.commentlist #respond {
   border: 2px solid #ececec;
-  border-radius: 3px;
+  border-radius: 0px;
 }
 
 #master .woocommerce a:hover .star-rating,

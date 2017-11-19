@@ -20,7 +20,7 @@ button {
 		display: inline-block;
 		padding: 16px 24px;
 		border: none;
-		border-radius: 3px;
+		border-radius: $button__radius;
 		color: #fff;
 		background-color: #000000;
 		@include rem('font-size',$font__main-size);

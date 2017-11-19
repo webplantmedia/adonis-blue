@@ -414,7 +414,7 @@
 	display: inline-block;
 	margin-top: 0;
 	padding: 5px 10px;
-	border-radius: 3px;
+	border-radius: $button__radius;
 	color: #fff;
 	@include rem('font-size',$font__tiny-size);
 	font-weight: bold;

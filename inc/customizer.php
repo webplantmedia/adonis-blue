@@ -438,7 +438,6 @@ function angie_makes_design_customize_register( $wp_customize ) {
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'checkbox',
 		'label' => __( 'Hide Product Reviews From Shop Page', 'angie-makes-design' ),
-		'description' => __( 'This does not disable product reviews.', 'angie-makes-design' ),
 		'section' => $section_id,
 	) );
 
@@ -452,7 +451,32 @@ function angie_makes_design_customize_register( $wp_customize ) {
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'checkbox',
 		'label' => __( 'Hide Product Reviews From Product Page', 'angie-makes-design' ),
-		'description' => __( 'This does not disable product reviews.', 'angie-makes-design' ),
+		'section' => $section_id,
+	) );
+
+	$setting_id = 'shop_hide_result_count';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $angie_makes_design_default[ $setting_id ],
+		'transport' => 'refresh',
+		'sanitize_callback' => 'angie_makes_design_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( $setting_id, array(
+		'type' => 'checkbox',
+		'label' => __( 'Hide Result Count String From Shop Page', 'angie-makes-design' ),
+		'section' => $section_id,
+	) );
+
+	$setting_id = 'shop_hide_catalog_ordering';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $angie_makes_design_default[ $setting_id ],
+		'transport' => 'refresh',
+		'sanitize_callback' => 'angie_makes_design_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( $setting_id, array(
+		'type' => 'checkbox',
+		'label' => __( 'Hide Ordering Dropdown From Shop Page', 'angie-makes-design' ),
 		'section' => $section_id,
 	) );
 

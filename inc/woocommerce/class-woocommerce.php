@@ -125,6 +125,14 @@ if ( ! class_exists( 'Angie_Makes_Design_WooCommerce' ) ) :
 			if ( $angie_makes_design['shop_hide_breadcrumbs'] ) {
 				remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
 			}
+
+			if ( $angie_makes_design['shop_hide_result_count'] ) {
+				remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
+			}
+
+			if ( $angie_makes_design['shop_hide_catalog_ordering'] ) {
+				remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
+			}
 		}
 
 		function check_image_size() {

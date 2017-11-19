@@ -45,10 +45,10 @@ a:hover {
 	border-color: ' . $angie_makes_design['primary_color'] . '; /*id:primary_color*/
 }
 
-#master .current_page_item > a,
-#master .current-menu-item > a,
-#master .current_page_ancestor > a,
-#master .current-menu-ancestor > a,
+#master .main-menu .current_page_item > a,
+#master .main-menu .current-menu-item > a,
+#master .main-menu .current_page_ancestor > a,
+#master .main-menu .current-menu-ancestor > a,
 #master .entry-cat-meta span > a:hover {
 	color: ' . $angie_makes_design['primary_hover_color'] . '; /*id:primary_hover_color*/
 }
