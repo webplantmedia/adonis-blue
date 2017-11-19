@@ -1,5 +1,5 @@
 p {
-	margin: 0 0 2.5em 0;
+	margin: 0 0 2em 0;
 }
 
 dfn, cite, em, i {
@@ -21,7 +21,7 @@ blockquote {
 
 
 address {
-	margin: 0 0 2.5em;
+	margin: 0 0 2em;
 }
 
 pre {
@@ -29,7 +29,7 @@ pre {
 	font-family: $font__pre;
 	@include rem('font-size',$font__main-size);
 	line-height: $font__line-height-pre;
-	margin-bottom: 2.5em;
+	margin-bottom: 2em;
 	max-width: 100%;
 	overflow: auto;
 	white-space: pre-wrap;       /* Since CSS 2.1 */

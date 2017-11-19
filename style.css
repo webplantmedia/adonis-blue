@@ -307,21 +307,21 @@ h6 {
 }
 
 h1 {
-  font-size: 50px;
-  font-size: 3.125rem;
-  font-weight: 300;
-  margin: 67px 0 27px;
+  font-size: 25px;
+  font-size: 1.5625rem;
+  font-weight: normal;
+  margin: 50px 0 30px;
 }
 
 h2 {
-  font-size: 28px;
-  font-size: 1.75rem;
-  margin: 50px 0 60px;
+  font-size: 22px;
+  font-size: 1.375rem;
+  margin: 50px 0 30px;
 }
 
 h3 {
-  font-size: 22px;
-  font-size: 1.375rem;
+  font-size: 20px;
+  font-size: 1.25rem;
   margin: 50px 0 30px;
 }
 
@@ -382,7 +382,7 @@ h6 a {
 ## Copy
 --------------------------------------------------------------*/
 p {
-  margin: 0 0 2.5em 0;
+  margin: 0 0 2em 0;
 }
 
 dfn, cite, em, i {
@@ -403,7 +403,7 @@ blockquote {
 }
 
 address {
-  margin: 0 0 2.5em;
+  margin: 0 0 2em;
 }
 
 pre {
@@ -412,7 +412,7 @@ pre {
   font-size: 18px;
   font-size: 1.125rem;
   line-height: 1.6;
-  margin-bottom: 2.5em;
+  margin-bottom: 2em;
   max-width: 100%;
   overflow: auto;
   white-space: pre-wrap;
@@ -528,7 +528,7 @@ figure {
 ## Lists
 --------------------------------------------------------------*/
 ul, ol {
-  margin: 0 0 2.5em 0;
+  margin: 0 0 2em 0;
   padding: 0 0 0 1.5em;
 }
 
@@ -551,14 +551,14 @@ dt {
 }
 
 dd {
-  margin: 0 1.5em 2.5em;
+  margin: 0 1.5em 2em;
 }
 
 /*--------------------------------------------------------------
 ## Tables
 --------------------------------------------------------------*/
 table {
-  margin: 0 0 2.5em;
+  margin: 0 0 2em;
   width: 100%;
 }
 
@@ -3377,15 +3377,15 @@ a:hover, a:active {
 }
 
 .single .entry-header {
-  margin-bottom: 80px;
-  margin-bottom: 5rem;
+  margin-bottom: 40px;
+  margin-bottom: 2.5rem;
 }
 
 .search .site-main article .entry-header,
 .archive .hentry .entry-header,
 .blog .hentry .entry-header {
-  margin-bottom: 50px;
-  margin-bottom: 3.125rem;
+  margin-bottom: 40px;
+  margin-bottom: 2.5rem;
 }
 
 .page-header h1,
@@ -3402,11 +3402,10 @@ a:hover, a:active {
 .grid .hentry .entry-title,
 .blog .hentry .entry-title {
   margin-top: 0;
-  margin-bottom: 25px;
-  font-size: 35px;
-  font-size: 2.1875rem;
+  margin-bottom: 15px;
+  font-size: 25px;
+  font-size: 1.5625rem;
   font-weight: normal;
-  line-height: 1.25;
   text-align: center;
 }
 
@@ -3492,8 +3491,8 @@ a:hover, a:active {
   font-size: 0.5rem;
   text-transform: uppercase;
   font-weight: bold;
-  margin-bottom: 23px;
-  margin-bottom: 1.4375rem;
+  margin-bottom: 8px;
+  margin-bottom: 0.5rem;
   vertical-align: middle;
 }
 
@@ -3545,8 +3544,8 @@ a:hover, a:active {
   font-size: 0.875rem;
   text-transform: uppercase;
   font-weight: normal;
-  margin-top: 35px;
-  margin-top: 2.1875rem;
+  margin-top: 15px;
+  margin-top: 0.9375rem;
   color: #959595;
 }
 
@@ -3638,26 +3637,26 @@ a:hover, a:active {
 .comment-content > div,
 .entry-content > div,
 .page-content > div {
-  margin-bottom: 80px;
-  margin-bottom: 5rem;
+  margin-bottom: 40px;
+  margin-bottom: 2.5rem;
 }
 
 .comment-content > div.grid,
 .entry-content > div.grid,
 .page-content > div.grid {
-  margin-top: 80px;
-  margin-top: 5rem;
-  margin-bottom: 80px;
-  margin-bottom: 5rem;
+  margin-top: 40px;
+  margin-top: 2.5rem;
+  margin-bottom: 40px;
+  margin-bottom: 2.5rem;
 }
 
 .comment-content > hr,
 .entry-content > hr,
 .page-content > hr {
-  margin-top: 80px;
-  margin-top: 5rem;
-  margin-bottom: 80px;
-  margin-bottom: 5rem;
+  margin-top: 50px;
+  margin-top: 3.125rem;
+  margin-bottom: 50px;
+  margin-bottom: 3.125rem;
 }
 
 .comment-content ul li,
@@ -3759,7 +3758,7 @@ a:hover, a:active {
 
 .entry-image {
   text-align: center;
-  margin-bottom: 2.5em;
+  margin-bottom: 2em;
 }
 
 .entry-image img {
@@ -3831,7 +3830,7 @@ a:hover, a:active {
   font-family: "Genericons-Neue";
   display: inline-block;
   vertical-align: top;
-  line-height: 30.25px;
+  line-height: 27.5px;
   font-weight: normal;
   font-style: normal;
   speak: none;
@@ -4080,10 +4079,10 @@ a:hover, a:active {
 }
 
 #master .comment-content > hr {
-  margin-top: 40px;
-  margin-top: 2.5rem;
-  margin-bottom: 40px;
-  margin-bottom: 2.5rem;
+  margin-top: 50px;
+  margin-top: 3.125rem;
+  margin-bottom: 50px;
+  margin-bottom: 3.125rem;
 }
 
 #master .comment-content blockquote {
@@ -4324,7 +4323,7 @@ a:hover, a:active {
 }
 
 .no-comments {
-  margin-top: 2.5em;
+  margin-top: 2em;
 }
 
 /*--------------------------------------------------------------
