@@ -341,8 +341,8 @@
 		@include rem('margin-bottom',40px);
 
 		&.grid {
-			@include rem('margin-top',40px);
-			@include rem('margin-bottom',40px);
+			@include rem('margin-top',50px);
+			@include rem('margin-bottom',50px);
 		}
 	}
 
