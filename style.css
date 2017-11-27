@@ -3804,6 +3804,10 @@ a:hover, a:active {
   font-size: 1rem;
 }
 
+.entry-author .author-bio p {
+  margin-bottom: 1em;
+}
+
 #master .accordion-item {
   margin: 0;
   margin-top: 40px;
