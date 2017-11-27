@@ -1,15 +1,24 @@
 #master {
+	#jp-relatedposts {
+		margin: 0;
+		padding: 0;
+		@include rem('margin-top',70px);
+		@include rem('padding-bottom',54px); // - 1em
+		border-bottom: 2px solid $color__border;
+	}
 	#jp-relatedposts .jp-relatedposts-headline {
+		margin: 0 0 30px;
+		display: block;
+		float: none;
+
 		&,
 		em {
-			@include rem('font-size',$font__tiny_size);
-			text-transform: uppercase;
-			font-weight: bold;
-			color: $color__text-light;
+			@include rem('font-size',$font__h3-size);
+			text-align: center;
 		}
 
 		em:before {
-			border-top: 2px solid $color__border;
+			display: none;
 		}
 	}
 

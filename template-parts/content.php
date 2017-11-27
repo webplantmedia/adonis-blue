@@ -70,12 +70,7 @@
 		<?php
 		if ( function_exists( 'sharing_display' ) ) {
 			if ( 'post' === get_post_type() ) {
-				$share = sharing_display( '', false );
-				if ( ! empty( $share ) ) {
-					?>
-					<?php echo $share; ?>
-					<?php
-				}
+				sharing_display( '', true );
 			}
 		}
 		?>

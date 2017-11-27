@@ -125,14 +125,14 @@ add_action( 'loop_start', 'angie_makes_design_jptweak_remove_share' );
 remove_filter( 'get_the_author_description', 'wpautop' );
 
 
-function angie_makes_design_jetpack_sharing_headline_html( $html, $label ) {
-	if ( is_single() && 'post' === get_post_type() ) {
+function angie_makes_design_jetpack_sharing_headline_html( $html, $label, $type ) {
+	if ( is_single() && 'post' === get_post_type() && 'sharing' == $type ) {
 		$html .= angie_makes_design_get_comment_display( $label );
 	}
 
 	return $html;
 }
-add_filter( 'jetpack_sharing_headline_html', 'angie_makes_design_jetpack_sharing_headline_html', 10, 2 );
+add_filter( 'jetpack_sharing_headline_html', 'angie_makes_design_jetpack_sharing_headline_html', 10, 3 );
 
 function angie_makes_design_get_comment_display( $label ) {
 	$html = '';
