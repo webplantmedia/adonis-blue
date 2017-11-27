@@ -465,6 +465,7 @@
 			@include rem('font-size',$font__tiny_size);
 			text-transform: uppercase;
 			font-weight: bold;
+			letter-spacing: 0.07em;
 		}
 
 		&.post-title {

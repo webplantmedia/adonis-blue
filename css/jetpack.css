@@ -4,13 +4,6 @@ Jetpack styling
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
-#master .sharedaddy {
-  margin-top: 40px;
-  margin-top: 2.5rem;
-  margin-bottom: 40px;
-  margin-bottom: 2.5rem;
-}
-
 #master #jp-relatedposts .jp-relatedposts-headline,
 #master #jp-relatedposts .jp-relatedposts-headline em {
   font-size: 12px;
@@ -58,6 +51,15 @@ Jetpack styling
   text-decoration: none;
 }
 
+#master div.sharedaddy .comment-display {
+  display: none;
+  font-size: 12px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #959595;
+}
+
 #master div.sharedaddy h3.sd-title {
   font-size: 12px;
   font-size: 0.75rem;
@@ -70,8 +72,20 @@ Jetpack styling
   border-top: 2px solid #ececec;
 }
 
+#master .sd-content {
+  margin-bottom: -5px;
+}
+
+#master .sd-content .share-end {
+  display: none;
+}
+
 #master .sd-content ul {
   margin: 0 !important;
+}
+
+#master .sd-social-icon .sd-content ul li[class*="share-"] a.sd-button {
+  margin-top: 0;
 }
 
 #master .sd-social-icon .sd-content ul li a {
@@ -170,6 +184,38 @@ Jetpack styling
 #master .comment-subscription-form {
   margin-bottom: 0;
   margin-top: 0;
+}
+
+@media (min-width: 700px) {
+  #master .single-post .sharedaddy {
+    margin-top: 0px;
+    margin-top: 0rem;
+    margin-bottom: -60px;
+    margin-bottom: -3.75rem;
+    margin-right: -5px;
+  }
+  #master .single-post .entry-footer-meta .comments-link {
+    display: none;
+  }
+  #master div.sharedaddy .comment-display .genericons-neue {
+    margin-right: 0.5em;
+  }
+  #master div.sharedaddy .sd-content,
+  #master div.sharedaddy .comment-display {
+    display: inline-block;
+    width: 50%;
+  }
+  #master div.sharedaddy .comment-display span,
+  #master div.sharedaddy .comment-display a {
+    position: relative;
+    top: 0.15em;
+  }
+  #master div.sharedaddy .sd-content {
+    text-align: right;
+  }
+  #master div.sharedaddy h3.sd-title {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=jetpack.css.map */

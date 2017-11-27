@@ -36,7 +36,7 @@ function angie_makes_design_jetpack_setup() {
 	// Add theme support for Content Options.
 	add_theme_support( 'jetpack-content-options', array(
 		'author-bio'         => true,
-		'author-bio-default' => false,
+		'author-bio-default' => true,
 		'post-details' => array(
 			'stylesheet' => 'angie-makes-design-style',
 			'date'       => '.posted-on,.entry-meta',
@@ -113,3 +113,50 @@ function angie_makes_design_jetpackme_remove_rp() {
     }
 }
 add_filter( 'wp', 'angie_makes_design_jetpackme_remove_rp', 20 );
+
+function angie_makes_design_jptweak_remove_share() {
+	if ( is_single() && 'post' === get_post_type() ) {
+		remove_filter( 'the_content', 'sharing_display', 19 );
+		remove_filter( 'the_excerpt', 'sharing_display', 19 );
+	}
+}
+add_action( 'loop_start', 'angie_makes_design_jptweak_remove_share' );
+
+remove_filter( 'get_the_author_description', 'wpautop' );
+
+
+function angie_makes_design_jetpack_sharing_headline_html( $html, $label ) {
+	if ( is_single() && 'post' === get_post_type() ) {
+		$html .= angie_makes_design_get_comment_display( $label );
+	}
+
+	return $html;
+}
+add_filter( 'jetpack_sharing_headline_html', 'angie_makes_design_jetpack_sharing_headline_html', 10, 2 );
+
+function angie_makes_design_get_comment_display( $label ) {
+	$html = '';
+
+	$html .= '<div class="sd-title comment-display">';
+
+		if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+
+			$num_comments = get_comments_number(); // get_comments_number returns only a numeric value
+
+			if ( $num_comments == 0 ) {
+				$comments = __('leave a Comment');
+			} elseif ( $num_comments > 1 ) {
+				$comments = $num_comments . __(' Comments');
+			} else {
+				$comments = __('1 Comment');
+			}
+			$html .= '<a href="' . get_comments_link() .'"><i class="genericons-neue genericons-neue-comment"></i>'. $comments.'</a>';
+		}
+		else {
+			$html .= '<span>' . $label . '</span>';
+		}
+
+	$html .= '</div>';
+
+	return $html;
+}

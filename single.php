@@ -19,6 +19,10 @@ get_header(); ?>
 
 			if ( function_exists( 'jetpack_author_bio' ) ) jetpack_author_bio();
 
+			if ( class_exists( 'Jetpack_RelatedPosts' ) ) {
+				echo do_shortcode( '[jetpack-related-posts]' );
+			}
+
 			angie_makes_design_featured_post_navigation();
 
 			// If comments are open or we have at least one comment, load up the comment template.

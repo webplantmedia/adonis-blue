@@ -64,6 +64,20 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php angie_makes_design_entry_footer(); ?>
+		<div class="entry-footer-meta">
+			<?php angie_makes_design_entry_footer(); ?>
+		</div>
+		<?php
+		if ( function_exists( 'sharing_display' ) ) {
+			if ( 'post' === get_post_type() ) {
+				$share = sharing_display( '', false );
+				if ( ! empty( $share ) ) {
+					?>
+					<?php echo $share; ?>
+					<?php
+				}
+			}
+		}
+		?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

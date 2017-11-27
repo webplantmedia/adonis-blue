@@ -1,9 +1,4 @@
 #master {
-	.sharedaddy {
-		@include rem('margin-top',40px);
-		@include rem('margin-bottom',40px);
-	}
-	
 	#jp-relatedposts .jp-relatedposts-headline {
 		&,
 		em {
@@ -48,6 +43,14 @@
 		text-decoration: none;
 	}
 
+	div.sharedaddy .comment-display {
+		display: none;
+		@include rem('font-size',$font__tiny_size);
+		text-transform: uppercase;
+		font-weight: bold;
+		color: $color__text-light;
+	}
+
 	div.sharedaddy h3.sd-title {
 		@include rem('font-size',$font__tiny_size);
 		text-transform: uppercase;
@@ -59,8 +62,20 @@
 		}
 	}
 
+	.sd-content {
+		margin-bottom: -5px;
+
+		.share-end {
+			display: none;
+		}
+	}
+
 	.sd-content ul {
 		margin: 0 !important;
+	}
+
+	.sd-social-icon .sd-content ul li[class*="share-"] a.sd-button {
+		margin-top: 0;
 	}
 
 	.sd-social-icon {
@@ -166,5 +181,42 @@
 	.comment-subscription-form {
 		margin-bottom: 0;
 		margin-top: 0;
+	}
+}
+@media (min-width: 700px) {
+	#master {
+		.single-post .sharedaddy {
+			@include rem('margin-top',0px);
+			@include rem('margin-bottom',-60px);
+			margin-right: -5px;
+		}
+
+		.single-post .entry-footer-meta .comments-link {
+			display: none;
+		}
+
+		div.sharedaddy .comment-display .genericons-neue {
+			margin-right: 0.5em;
+		}
+
+		div.sharedaddy .sd-content,
+		div.sharedaddy .comment-display {
+			display: inline-block;
+			width: 50%;
+		}
+
+		div.sharedaddy .comment-display span,
+		div.sharedaddy .comment-display a {
+			position: relative;
+			top: 0.15em;
+		}
+
+		div.sharedaddy .sd-content {
+			text-align: right;
+		}
+
+		div.sharedaddy h3.sd-title{
+			display: none;
+		}
 	}
 }

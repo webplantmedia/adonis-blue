@@ -90,20 +90,9 @@ if ( ! function_exists( 'angie_makes_design_entry_footer' ) ) :
 
 		if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 			echo '<span class="comments-link">';
-			comments_popup_link(
-				sprintf(
-					wp_kses(
-						/* translators: %s: post title */
-						__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'angie-makes-design' ),
-						array(
-							'span' => array(
-								'class' => array(),
-							),
-						)
-					),
-					get_the_title()
-				)
-			);
+				comments_popup_link(
+					__( 'Leave a Comment', 'angie-makes-design' )
+				);
 			echo '</span>';
 		}
 
