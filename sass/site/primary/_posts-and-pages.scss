@@ -216,6 +216,10 @@
 			color: $color__white;
 		}
 	}
+	
+	a {
+		letter-spacing: 0.07em;
+	}
 }
 
 // Entry meta
@@ -226,6 +230,7 @@
 	font-weight: normal;
 	@include rem('margin-top',15px);
 	color: $color__text-light;
+	letter-spacing: 0.07em;
 	
 	a {
 		&,
