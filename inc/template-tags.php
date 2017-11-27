@@ -88,7 +88,7 @@ if ( ! function_exists( 'angie_makes_design_entry_footer' ) ) :
 			}
 		}
 
-		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+		if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 			echo '<span class="comments-link">';
 			comments_popup_link(
 				sprintf(

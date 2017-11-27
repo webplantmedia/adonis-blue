@@ -36,7 +36,7 @@ function angie_makes_design_jetpack_setup() {
 	// Add theme support for Content Options.
 	add_theme_support( 'jetpack-content-options', array(
 		'author-bio'         => true,
-		'author-bio-default' => true,
+		'author-bio-default' => false,
 		'post-details' => array(
 			'stylesheet' => 'angie-makes-design-style',
 			'date'       => '.posted-on,.entry-meta',
@@ -104,3 +104,12 @@ function angie_makes_design_jetpack_featured_image_display() {
         }
     }
 }
+
+function angie_makes_design_jetpackme_remove_rp() {
+    if ( class_exists( 'Jetpack_RelatedPosts' ) ) {
+        $jprp = Jetpack_RelatedPosts::init();
+        $callback = array( $jprp, 'filter_add_target_to_dom' );
+        remove_filter( 'the_content', $callback, 40 );
+    }
+}
+add_filter( 'wp', 'angie_makes_design_jetpackme_remove_rp', 20 );
