@@ -163,5 +163,21 @@ a:hover {
 }
 ';
 
+if ( $angie_makes_design['thumb_grid_max_height'] > 0 ) {
+$css .= '
+#master .excerpt2 .entry-image {
+	max-height: ' . $angie_makes_design['thumb_grid_max_height'] . 'px; /*id:thumb_grid_max_height*/
+}
+';
+}
+
+if ( $angie_makes_design['thumb_excerpt_max_height'] > 0 ) {
+$css .= '
+#master .excerpt .entry-image {
+	max-height: ' . $angie_makes_design['thumb_excerpt_max_height'] . 'px; /*id:thumb_excerpt_max_height*/
+}
+';
+}
+
 	return $css;
 }

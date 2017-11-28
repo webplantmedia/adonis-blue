@@ -222,15 +222,20 @@ Jetpack styling
   #master .single-post .entry-footer div.sharedaddy .sd-content,
   #master .single-post .entry-footer div.sharedaddy .comment-display {
     display: inline-block;
-    width: 50%;
   }
-  #master .single-post .entry-footer div.sharedaddy .comment-display span,
-  #master .single-post .entry-footer div.sharedaddy .comment-display a {
+  #master .single-post .entry-footer div.sharedaddy .comment-display {
+    width: 30%;
+  }
+  #master .single-post .entry-footer div.sharedaddy .sd-social-icon-text .comment-display span,
+  #master .single-post .entry-footer div.sharedaddy .sd-social-icon-text .comment-display a,
+  #master .single-post .entry-footer div.sharedaddy .sd-social-icon .comment-display span,
+  #master .single-post .entry-footer div.sharedaddy .sd-social-icon .comment-display a {
     position: relative;
     top: 0.15em;
   }
   #master .single-post .entry-footer div.sharedaddy .sd-content {
     text-align: right;
+    width: 70%;
   }
   #master .single-post .entry-footer div.sharedaddy h3.sd-title {
     display: none;

@@ -473,6 +473,7 @@
 .entry-image {
 	text-align: center;
 	margin-bottom: 2em;
+	overflow: hidden; // for max height cutoff
 
 	img {
 		vertical-align: top;
@@ -514,6 +515,10 @@
 		
 		p {
 			margin-bottom: 1em;
+		}
+
+		.author-link {
+			display: none;
 		}
 	}
 }

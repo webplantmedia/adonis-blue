@@ -3794,6 +3794,7 @@ a:hover, a:active {
 .entry-image {
   text-align: center;
   margin-bottom: 2em;
+  overflow: hidden;
 }
 
 .entry-image img {
@@ -3841,6 +3842,10 @@ a:hover, a:active {
 
 .entry-author .author-bio p {
   margin-bottom: 1em;
+}
+
+.entry-author .author-bio .author-link {
+  display: none;
 }
 
 #master .accordion-item {

@@ -35,6 +35,8 @@ $angie_makes_design_default['page_image_header_height'] = 400;
 $angie_makes_design_default['blog_display'] = 'blog1';
 $angie_makes_design_default['archive_display'] = 'blog1';
 $angie_makes_design_default['search_display'] = 'blog2';
+$angie_makes_design_default['thumb_excerpt_max_height'] = 0;
+$angie_makes_design_default['thumb_grid_max_height'] = 0;
 
 // Shop
 $angie_makes_design_default['shop_columns'] = 2;

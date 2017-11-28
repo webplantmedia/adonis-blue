@@ -338,6 +338,44 @@ function angie_makes_design_customize_register( $wp_customize ) {
 		),
 	) );
 
+	$setting_id = 'thumb_excerpt_max_height';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $angie_makes_design_default[ $setting_id ],
+		'transport' => 'postMessage',
+		'sanitize_callback' => 'absint',
+	) );
+
+	$wp_customize->add_control( $setting_id, array(
+		'section' => $section_id,
+		'type' => 'number',
+		'label' => __( 'Thumb Excerpt Max Height', 'angie-makes-design' ),
+		'description' => __( 'If you have long featured images in your excerpts, set a max-height on your image. Enter 0 for no max-height', 'angie-makes-design' ),
+		'section' => $section_id,
+		'input_attrs' => array(
+			'min' => 0,
+			'step' => 5,
+		),
+	) );
+
+	$setting_id = 'thumb_grid_max_height';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $angie_makes_design_default[ $setting_id ],
+		'transport' => 'postMessage',
+		'sanitize_callback' => 'absint',
+	) );
+
+	$wp_customize->add_control( $setting_id, array(
+		'section' => $section_id,
+		'type' => 'number',
+		'label' => __( 'Thumb Grid Max Height', 'angie-makes-design' ),
+		'description' => __( 'If you have long featured images in your grid, set a max-height on your image. Enter 0 for no max-height', 'angie-makes-design' ),
+		'section' => $section_id,
+		'input_attrs' => array(
+			'min' => 0,
+			'step' => 5,
+		),
+	) );
+
 	/**
 	 * Shop
 	 */

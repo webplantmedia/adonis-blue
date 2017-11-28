@@ -216,17 +216,26 @@
 			div.sharedaddy .sd-content,
 			div.sharedaddy .comment-display {
 				display: inline-block;
-				width: 50%;
 			}
 
-			div.sharedaddy .comment-display span,
-			div.sharedaddy .comment-display a {
-				position: relative;
-				top: 0.15em;
+			div.sharedaddy .comment-display {
+				width: 30%;
+			}
+
+			div.sharedaddy {
+				.sd-social-icon-text,
+				.sd-social-icon {
+					.comment-display span,
+					.comment-display a {
+						position: relative;
+						top: 0.15em;
+					}
+				}
 			}
 
 			div.sharedaddy .sd-content {
 				text-align: right;
+				width: 70%;
 			}
 
 			div.sharedaddy h3.sd-title{
