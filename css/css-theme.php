@@ -57,6 +57,7 @@ a:hover {
 	background-color: ' . $angie_makes_design['footer_background_color'] . '; /*id:footer_background_color*/
 }
 
+#master #secondary .widget .widget-title,
 #master #infinite-handle span button,
 #master #infinite-handle span button:active,
 #master #infinite-handle span button:focus,
