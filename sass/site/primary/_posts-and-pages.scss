@@ -150,7 +150,6 @@
 		.archive-type {
 			font-style: italic;
 			@include rem('font-size',$font__main-size);
-			color: $color__gray;
 			display: block;
 			font-weight: bold;
 		}

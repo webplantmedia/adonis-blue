@@ -126,6 +126,16 @@ a:hover {
 	background-color: ' . $angie_makes_design['primary_hover_color'] . '; /*id:primary_hover_color*/
 }
 
+.search .page-header,
+.archive .page-header {
+	background-color: ' . $angie_makes_design['category_background_color'] . '; /*id:category_background_color*/
+}
+
+.search .page-header,
+.archive .page-header {
+	border-color: ' . $angie_makes_design['category_background_color'] . '; /*id:category_background_color*/
+}
+
 .site-branding {
 	' . angie_makes_design_css_set_unit( 'padding-top', $angie_makes_design['heading_padding_top'] ) . ' /*id:heading_padding_top*/
 	' . angie_makes_design_css_set_unit( 'padding-bottom', $angie_makes_design['heading_padding_bottom'] ) . ' /*id:heading_padding_bottom*/
