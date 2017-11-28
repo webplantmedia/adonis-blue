@@ -204,7 +204,12 @@ function angie_makes_design_scripts() {
 
 	if ( ! $angie_makes_design['disable_google_fonts'] ) {
 		// Add custom fonts, used in the main stylesheet.
-		wp_enqueue_style( 'angie-makes-design-fonts', angie_makes_design_fonts_url(), array(), null );
+		wp_enqueue_style( 'angie-makes-design-google-fonts', angie_makes_design_fonts_url(), array(), null );
+	}
+	
+	if ( ! $angie_makes_design['disable_custom_fonts'] ) {
+		// Add custom fonts, used in the main stylesheet.
+		wp_enqueue_style( 'angie-makes-design-custom-fonts', get_parent_theme_file_uri() . '/fonts/lovefern/lovefern.css', array(), null );
 	}
 	
 	// Add genericons

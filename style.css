@@ -3450,10 +3450,10 @@ a:hover, a:active {
 .search .page-header,
 .archive .page-header {
   text-align: center;
-  padding-top: 50px;
-  padding-top: 3.125rem;
-  padding-bottom: 50px;
-  padding-bottom: 3.125rem;
+  padding-top: 40px;
+  padding-top: 2.5rem;
+  padding-bottom: 30px;
+  padding-bottom: 1.875rem;
   border-bottom: 2px solid #ececec;
   background-color: #f7f7f7;
 }
@@ -3462,34 +3462,36 @@ a:hover, a:active {
 .archive .page-header .page-title {
   margin: 0;
   text-transform: uppercase;
-  font-size: 40px;
-  font-size: 2.5rem;
+  font-size: 30px;
+  font-size: 1.875rem;
+}
+
+.search .page-header .page-title .archive-title,
+.archive .page-header .page-title .archive-title {
+  display: block;
 }
 
 .search .page-header .page-title .archive-type,
 .archive .page-header .page-title .archive-type {
-  font-style: italic;
-  font-size: 18px;
-  font-size: 1.125rem;
-  display: block;
-  font-weight: bold;
+  font-family: "lovefernregular", cursive;
+  font-size: 60px;
+  font-size: 3.75rem;
+  margin-top: 10px;
+  margin-top: 0.625rem;
+  line-height: 1;
+  display: inline-block;
+  font-weight: normal;
+  text-transform: lowercase;
+  letter-spacing: normal;
+  padding: 0.1em 0.7em;
+  background-image: url("img/button-bg-light.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
 }
 
-.search .page-header .archive-description,
-.archive .page-header .archive-description {
-  font-size: 15px;
-  font-size: 0.9375rem;
-  color: #cccccc;
-}
-
-.search .page-header .archive-description > *:first-child,
-.archive .page-header .archive-description > *:first-child {
-  margin-top: 0;
-}
-
-.search .page-header .archive-description > *:last-child,
-.archive .page-header .archive-description > *:last-child {
-  margin-bottom: 0;
+#master .archive-title-light .page-header .page-title {
+  color: #ffffff;
 }
 
 .entry-cat-meta {

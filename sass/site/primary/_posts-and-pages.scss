@@ -137,35 +137,41 @@
 .search .page-header,
 .archive .page-header {
 	text-align: center;
-	@include rem('padding-top',50px);
-	@include rem('padding-bottom',50px);
+	@include rem('padding-top',40px);
+	@include rem('padding-bottom',30px);
 	border-bottom: 2px solid $color__border;
 	background-color: $color__lightest-gray;
 
 	.page-title {
 		margin: 0;
 		text-transform: uppercase;
-		@include rem('font-size',40px);
+		@include rem('font-size',30px);
+
+		.archive-title {
+			display: block;
+		}
 
 		.archive-type {
-			font-style: italic;
-			@include rem('font-size',$font__main-size);
-			display: block;
-			font-weight: bold;
+			font-family: $font__accent;
+			@include rem('font-size',60px);
+			@include rem('margin-top',10px);
+			line-height: 1;
+			display: inline-block;
+			font-weight: normal;
+			text-transform: lowercase;
+			letter-spacing: normal;
+			padding: 0.1em 0.7em;
+			background-image: url("img/button-bg-light.png");
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 100% 100%;
 		}
 	}
+}
 
-	.archive-description {
-		@include rem('font-size',$font__small-size);
-		color: $color__gray;
-
-		> *:first-child {
-			margin-top: 0;
-		}
-
-		> *:last-child {
-			margin-bottom: 0;
-		}
+#master .archive-title-light .page-header {
+	.page-title {
+		color: $color__white;
 	}
 }
 

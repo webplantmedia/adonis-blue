@@ -12,7 +12,8 @@ $angie_makes_design_default['heading_padding_bottom'] = '40';
 // Colors
 $angie_makes_design_default['primary_color'] = '#fbd5c1';
 $angie_makes_design_default['primary_hover_color'] = '#f6a378';
-$angie_makes_design_default['category_background_color'] = '#fbd5c1';
+$angie_makes_design_default['archive_background_color'] = '#fbd5c1';
+$angie_makes_design_default['archive_title_light'] = 0;
 $angie_makes_design_default['footer_background_color'] = '#fef8f3';
 $angie_makes_design_default['link_color'] = '#666666';
 $angie_makes_design_default['link_hover_color'] = '#f6874d';
@@ -30,6 +31,7 @@ $angie_makes_design_default['show_menu_arrows'] = 1;
 // Body
 $angie_makes_design_default['default_button_style'] = 'button-2';
 $angie_makes_design_default['disable_google_fonts'] = 0;
+$angie_makes_design_default['disable_custom_fonts'] = 0;
 $angie_makes_design_default['page_image_header_height'] = 400;
 
 // Blog

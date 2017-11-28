@@ -128,12 +128,12 @@ a:hover {
 
 .search .page-header,
 .archive .page-header {
-	background-color: ' . $angie_makes_design['category_background_color'] . '; /*id:category_background_color*/
+	background-color: ' . $angie_makes_design['archive_background_color'] . '; /*id:category_background_color*/
 }
 
 .search .page-header,
 .archive .page-header {
-	border-color: ' . $angie_makes_design['category_background_color'] . '; /*id:category_background_color*/
+	border-color: ' . $angie_makes_design['archive_background_color'] . '; /*id:category_background_color*/
 }
 
 .site-branding {
