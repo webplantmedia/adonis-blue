@@ -65,6 +65,11 @@ Jetpack styling
   text-decoration: none;
 }
 
+#master .sharedaddy {
+  margin-top: 40px;
+  margin-top: 2.5rem;
+}
+
 #master div.sharedaddy .comment-display {
   display: none;
   font-size: 12px;
@@ -201,33 +206,33 @@ Jetpack styling
 }
 
 @media (min-width: 700px) {
-  #master .single-post .sharedaddy {
+  #master .single-post .entry-footer .sharedaddy {
     margin-top: 0px;
     margin-top: 0rem;
     margin-bottom: -60px;
     margin-bottom: -3.75rem;
     margin-right: -5px;
   }
-  #master .single-post .entry-footer-meta .comments-link {
+  #master .single-post .entry-footer .entry-footer-meta .comments-link {
     display: none;
   }
-  #master div.sharedaddy .comment-display .genericons-neue {
+  #master .single-post .entry-footer div.sharedaddy .comment-display .genericons-neue {
     margin-right: 0.5em;
   }
-  #master div.sharedaddy .sd-content,
-  #master div.sharedaddy .comment-display {
+  #master .single-post .entry-footer div.sharedaddy .sd-content,
+  #master .single-post .entry-footer div.sharedaddy .comment-display {
     display: inline-block;
     width: 50%;
   }
-  #master div.sharedaddy .comment-display span,
-  #master div.sharedaddy .comment-display a {
+  #master .single-post .entry-footer div.sharedaddy .comment-display span,
+  #master .single-post .entry-footer div.sharedaddy .comment-display a {
     position: relative;
     top: 0.15em;
   }
-  #master div.sharedaddy .sd-content {
+  #master .single-post .entry-footer div.sharedaddy .sd-content {
     text-align: right;
   }
-  #master div.sharedaddy h3.sd-title {
+  #master .single-post .entry-footer div.sharedaddy h3.sd-title {
     display: none;
   }
 }

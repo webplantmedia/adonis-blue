@@ -52,6 +52,10 @@
 		text-decoration: none;
 	}
 
+	.sharedaddy {
+		@include rem('margin-top',40px);
+	}
+
 	div.sharedaddy .comment-display {
 		display: none;
 		@include rem('font-size',$font__tiny_size);
@@ -194,38 +198,40 @@
 }
 @media (min-width: 700px) {
 	#master {
-		.single-post .sharedaddy {
-			@include rem('margin-top',0px);
-			@include rem('margin-bottom',-60px);
-			margin-right: -5px;
-		}
+		.single-post .entry-footer {
+			.sharedaddy {
+				@include rem('margin-top',0px);
+				@include rem('margin-bottom',-60px);
+				margin-right: -5px;
+			}
 
-		.single-post .entry-footer-meta .comments-link {
-			display: none;
-		}
+			.entry-footer-meta .comments-link {
+				display: none;
+			}
 
-		div.sharedaddy .comment-display .genericons-neue {
-			margin-right: 0.5em;
-		}
+			div.sharedaddy .comment-display .genericons-neue {
+				margin-right: 0.5em;
+			}
 
-		div.sharedaddy .sd-content,
-		div.sharedaddy .comment-display {
-			display: inline-block;
-			width: 50%;
-		}
+			div.sharedaddy .sd-content,
+			div.sharedaddy .comment-display {
+				display: inline-block;
+				width: 50%;
+			}
 
-		div.sharedaddy .comment-display span,
-		div.sharedaddy .comment-display a {
-			position: relative;
-			top: 0.15em;
-		}
+			div.sharedaddy .comment-display span,
+			div.sharedaddy .comment-display a {
+				position: relative;
+				top: 0.15em;
+			}
 
-		div.sharedaddy .sd-content {
-			text-align: right;
-		}
+			div.sharedaddy .sd-content {
+				text-align: right;
+			}
 
-		div.sharedaddy h3.sd-title{
-			display: none;
+			div.sharedaddy h3.sd-title{
+				display: none;
+			}
 		}
 	}
 }
