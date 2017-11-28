@@ -1620,6 +1620,7 @@ a:hover, a:active {
   white-space: nowrap;
   font-size: 12px;
   font-size: 0.75rem;
+  line-height: 1.8;
   text-transform: uppercase;
   font-weight: bold;
   min-width: 200px;
@@ -1653,7 +1654,7 @@ a:hover, a:active {
   font-size: 1rem;
   width: auto;
   height: auto;
-  line-height: 1.8;
+  line-height: 28px;
   letter-spacing: 0.07em;
 }
 

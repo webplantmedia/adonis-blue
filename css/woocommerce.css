@@ -43,8 +43,8 @@ WooCommerce styling
 .cart-menu ul.menu li.cart i:before {
   font-size: 30px;
   font-size: 1.875rem;
-  line-height: 50px;
-  line-height: 3.125rem;
+  line-height: 50.4px;
+  line-height: 3.15rem;
 }
 
 .cart-menu ul.menu li.cart .alert-count {
@@ -60,10 +60,9 @@ WooCommerce styling
 .cart-menu ul.menu li.cart ul.woo-sub-menu {
   width: 400px;
   margin: 0;
-  padding: 30px;
-  padding: 1.875rem;
+  padding: 0;
   background-color: #ffffff;
-  border-top: 0;
+  border-top: 2px solid #bab8b9;
   border-bottom: 2px solid #ececec;
   float: left;
   list-style: none;
@@ -73,8 +72,8 @@ WooCommerce styling
   top: -20px;
   top: -1.25rem;
   left: -999em;
+  top: 100%;
   z-index: 99999;
-  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.08);
 }
 
 .cart-menu ul.menu li.cart:hover a.cart_dropdown_link {
@@ -85,6 +84,13 @@ WooCommerce styling
   left: auto;
   right: -20px;
   right: -1.25rem;
+}
+
+.cart-menu ul.menu li.cart .widget_shopping_cart_content {
+  border-left: 2px solid #ececec;
+  border-right: 2px solid #ececec;
+  padding: 30px;
+  padding: 1.875rem;
 }
 
 .cart-menu ul.menu li.cart .widget_shopping_cart_content > *:first-child {

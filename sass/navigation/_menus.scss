@@ -58,6 +58,7 @@
 				padding-bottom: 1em;
 				white-space: nowrap;
 				@include rem('font-size',$font__tiny-size);
+				line-height: $font__line-height-body;
 				text-transform: uppercase;
 				font-weight: bold;
 				@include rem('min-width',200px);
@@ -93,7 +94,7 @@
 			@include rem('font-size',$font__medium-size);
 			width: auto;
 			height: auto;
-			line-height: $font__line-height-body;
+			line-height: $font__line-height-menu-bar;
 			letter-spacing: 0.07em;
 		}
 		
@@ -354,7 +355,7 @@
 						@include rem('padding-top',20px);
 						@include rem('padding-bottom',20px);
 						text-align: right;
-						line-height: $font__line-height-mobile-menu;
+						line-height: $font__line-height-menu-bar;
 						@include rem('font-size',$font__main-size);
 						content: "\f510";
 					}
@@ -369,7 +370,7 @@
 				@include rem('padding-right',20px);
 				@include rem('padding-top',20px);
 				@include rem('padding-bottom',20px);
-				line-height: $font__line-height-mobile-menu;
+				line-height: $font__line-height-menu-bar;
 				display: block;
 				text-decoration: none;
 				width: auto;
