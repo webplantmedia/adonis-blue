@@ -71,7 +71,7 @@ $font__line-height-heading: 1.375;
 $font__line-height-top-menu: 36px;
 $font__line-height-menu-bar: 28px; // need to do pixels so cart icon height can be accurately calculated across browsers.
 
-$font__line-height-menu-icon: $font__line-height-menu-bar + (16px * 1.4); // base size * top bottom menu padding
+$font__line-height-menu-icon: $font__line-height-menu-bar + (12px + 12px); // base size * top bottom menu padding
 $font__line-height-pagination-icon: floor($font__main-size + 32px); // top and bottom button padding
 
 $button__height: floor($font__main-size + 32px);

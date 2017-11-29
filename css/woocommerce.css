@@ -43,8 +43,8 @@ WooCommerce styling
 .cart-menu ul.menu li.cart i:before {
   font-size: 30px;
   font-size: 1.875rem;
-  line-height: 50.4px;
-  line-height: 3.15rem;
+  line-height: 52px;
+  line-height: 3.25rem;
 }
 
 .cart-menu ul.menu li.cart .alert-count {
