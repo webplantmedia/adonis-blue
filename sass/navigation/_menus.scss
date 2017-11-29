@@ -447,6 +447,10 @@
 			}
 		}
 	}
+
+	.top-header + .site-branding {
+		@include rem('margin-top',$font__line-height-top-menu);
+	}
 }
 
 .posts-navigation,

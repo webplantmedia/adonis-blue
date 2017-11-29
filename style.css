@@ -1989,6 +1989,10 @@ a:hover, a:active {
   #master #site-navigation.toggled .menu-toggle i:before {
     content: "\f406";
   }
+  .top-header + .site-branding {
+    margin-top: 36px;
+    margin-top: 2.25rem;
+  }
 }
 
 .site-main .posts-navigation, .site-main
