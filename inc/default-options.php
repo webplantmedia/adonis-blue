@@ -54,6 +54,7 @@ $angie_makes_design_default['shop_product_hide_stars'] = 0;
 $angie_makes_design_default['shop_disable_gallery_zoom'] = 0;
 $angie_makes_design_default['shop_disable_gallery_lightbox'] = 0;
 $angie_makes_design_default['shop_disable_gallery_slider'] = 0;
+$angie_makes_design_default['shop_truncate_titles'] = 1;
 $angie_makes_design_default['shop_product_page_template'] = 'grid-accordion';
 
 // Display Sidebar

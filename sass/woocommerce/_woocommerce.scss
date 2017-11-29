@@ -462,6 +462,13 @@
 	.woocommerce ul.products li.product h3 {
 		margin-top: 16px;
 	}
+	.woocommerce-shop-truncate-titles ul.products li.product .woocommerce-loop-category__title,
+	.woocommerce-shop-truncate-titles ul.products li.product .woocommerce-loop-product__title,
+	.woocommerce-shop-truncate-titles ul.products li.product h3 {
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
 	.woocommerce ul.products li.product a {
 	}
 	.woocommerce ul.products li.product a img {

@@ -650,6 +650,14 @@ WooCommerce styling
   margin-top: 16px;
 }
 
+#master .woocommerce-shop-truncate-titles ul.products li.product .woocommerce-loop-category__title,
+#master .woocommerce-shop-truncate-titles ul.products li.product .woocommerce-loop-product__title,
+#master .woocommerce-shop-truncate-titles ul.products li.product h3 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 #master .woocommerce ul.products li.product a img {
   margin: 0;
 }

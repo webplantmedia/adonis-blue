@@ -50,6 +50,11 @@ function angie_makes_design_body_classes( $classes ) {
 		$classes[] = 'archive-title-light';
 	}
 
+	// Dropdown menu arrow
+	if ( $angie_makes_design['shop_truncate_titles'] ) {
+		$classes[] = 'woocommerce-shop-truncate-titles';
+	}
+
 	if ( angie_makes_design_is_woocommerce_activated() ) {
 		if ( is_shop() ) {
 			$classes[] = 'woocommerce-shop-columns-' . $angie_makes_design['shop_columns'];
@@ -198,11 +203,10 @@ function angie_makes_design_get_the_archive_title( $title ) {
 	$pieces = explode( ': ', $title );
 
 	if ( sizeof( $pieces ) == 2 ) {
-		$pieces = array_reverse( $pieces );
-		$title = '<span class="archive-title">' . implode( '</span><span class="archive-type">', $pieces ) . '</span>';
+		$title = '<span class="archive-type">' . implode( '</span><span class="archive-title">', $pieces ) . '</span>';
 	}
 	else {
-		$title = '<span class="archive-title">' . $title . '</span>';
+		$title = '<span class="archive-type">' . $title . '</span>';
 	}
 
 	return $title;

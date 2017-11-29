@@ -3475,6 +3475,8 @@ a:hover, a:active {
 .search .page-header .page-title .archive-title,
 .archive .page-header .page-title .archive-title {
   display: block;
+  padding-bottom: 10px;
+  padding-bottom: 0.625rem;
 }
 
 .search .page-header .page-title .archive-type,
@@ -3482,8 +3484,8 @@ a:hover, a:active {
   font-family: "lovefernregular", cursive;
   font-size: 60px;
   font-size: 3.75rem;
-  margin-top: 10px;
-  margin-top: 0.625rem;
+  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
   line-height: 1;
   display: inline-block;
   font-weight: normal;

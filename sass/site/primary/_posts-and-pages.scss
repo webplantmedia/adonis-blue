@@ -149,12 +149,13 @@
 
 		.archive-title {
 			display: block;
+			@include rem('padding-bottom',10px);
 		}
 
 		.archive-type {
 			font-family: $font__accent;
 			@include rem('font-size',60px);
-			@include rem('margin-top',10px);
+			@include rem('margin-bottom',10px);
 			line-height: 1;
 			display: inline-block;
 			font-weight: normal;

@@ -543,6 +543,20 @@ function angie_makes_design_customize_register( $wp_customize ) {
 		'section' => $section_id,
 	) );
 
+	$setting_id = 'shop_truncate_titles';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $angie_makes_design_default[ $setting_id ],
+		'transport' => 'refresh',
+		'sanitize_callback' => 'angie_makes_design_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( $setting_id, array(
+		'type' => 'checkbox',
+		'label' => __( 'Truncate Product Titles', 'angie-makes-design' ),
+		'description' => __( 'This will cause product titles to appear in one line.', 'angie-makes-design' ),
+		'section' => $section_id,
+	) );
+
 	$setting_id = 'shop_disable_gallery_zoom';
 	$wp_customize->add_setting( $setting_id, array(
 		'default' => $angie_makes_design_default[ $setting_id ],
