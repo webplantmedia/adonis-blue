@@ -233,6 +233,10 @@ function angie_makes_design_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	if ( defined( 'WAFP_VERSION' ) ) {
+		wp_enqueue_style( 'angie-makes-design-affiliate-royale', get_parent_theme_file_uri() . '/css/affiliate-royale.css', array(), ANGIE_MAKES_DESIGN_VERSION );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'angie_makes_design_scripts' );
 
