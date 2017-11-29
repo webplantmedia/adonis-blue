@@ -155,7 +155,7 @@
 	wp.customize( 'page_image_header_height', function( value ) {
 		value.bind( function( to ) {
 			changeInlineCSS( 'page_image_header_height', to + 'px' );
-			changeInlineCSS( 'page_image_header_height_1', Math.max( ( to - 130 ), 0 ) + 'px' );
+			changeInlineCSS( 'page_image_header_height_1', Math.max( ( to - 100 ), 0 ) + 'px' );
 		} );
 	} );
 	wp.customize( 'mobile_menu_label', function( value ) {
