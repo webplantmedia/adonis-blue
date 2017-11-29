@@ -293,11 +293,11 @@
 	}
 
 	.entry-footer-meta {
-		span:after {
+		> span:before {
 			content: " | ";
 
 		}
-		span:last-child:after {
+		> span:first-child:before {
 			display: none;
 			content: "";
 		}

@@ -3619,11 +3619,11 @@ a:hover, a:active {
   color: #6d686c;
 }
 
-.entry-footer .entry-footer-meta span:after {
+.entry-footer .entry-footer-meta > span:before {
   content: " | ";
 }
 
-.entry-footer .entry-footer-meta span:last-child:after {
+.entry-footer .entry-footer-meta > span:first-child:before {
   display: none;
   content: "";
 }
