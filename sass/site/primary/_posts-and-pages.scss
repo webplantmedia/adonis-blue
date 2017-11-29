@@ -138,8 +138,8 @@
 .archive .page-header {
 	text-align: center;
 	@include rem('padding-top',40px);
-	@include rem('padding-bottom',30px);
-	border-bottom: 2px solid $color__border;
+	@include rem('padding-bottom',40px);
+	// border-bottom: 2px solid $color__border;
 	background-color: $color__lightest-gray;
 
 	.page-title {

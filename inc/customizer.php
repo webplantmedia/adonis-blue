@@ -113,6 +113,31 @@ function angie_makes_design_customize_register( $wp_customize ) {
 		'section' => $section_id,
 	) ) );
 
+	$setting_id = 'archive_background_color';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $angie_makes_design_default[ $setting_id ],
+		'transport' => 'postMessage',
+		'sanitize_callback' => 'sanitize_hex_color',
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $setting_id, array(
+		'label' => __( 'Archive Background Color', 'angie-makes-design' ),
+		'section' => $section_id,
+	) ) );
+
+	$setting_id = 'archive_title_light';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $angie_makes_design_default[ $setting_id ],
+		'transport' => 'refresh',
+		'sanitize_callback' => 'angie_makes_design_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( $setting_id, array(
+		'type' => 'checkbox',
+		'label' => __( 'Display White Archive Title?', 'angie-makes-design' ),
+		'section' => $section_id,
+	) );
+
 	$setting_id = 'footer_background_color';
 	$wp_customize->add_setting( $setting_id, array(
 		'default' => $angie_makes_design_default[ $setting_id ],

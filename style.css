@@ -3452,9 +3452,8 @@ a:hover, a:active {
   text-align: center;
   padding-top: 40px;
   padding-top: 2.5rem;
-  padding-bottom: 30px;
-  padding-bottom: 1.875rem;
-  border-bottom: 2px solid #ececec;
+  padding-bottom: 40px;
+  padding-bottom: 2.5rem;
   background-color: #f7f7f7;
 }
 

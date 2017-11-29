@@ -93,6 +93,11 @@
 			changeInlineCSS( 'footer_background_color', to );
 		} );
 	} );
+	wp.customize( 'archive_background_color', function( value ) {
+		value.bind( function( to ) {
+			changeInlineCSS( 'archive_background_color', to );
+		} );
+	} );
 	wp.customize( 'thumb_excerpt_max_height', function( value ) {
 		value.bind( function( to ) {
 			var selectors = '#master .excerpt .entry-image';
