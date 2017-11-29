@@ -163,7 +163,7 @@ a:hover {
 	}
 
 	#master .page.has-post-thumbnail .site-content {
-		padding-top: ' . max( ( $angie_makes_design['page_image_header_height'] - 130 ), 0 ) . 'px; /*id:page_image_header_height_1*/
+		padding-top: ' . max( ( $angie_makes_design['page_image_header_height'] - 100 ), 0 ) . 'px; /*id:page_image_header_height_1*/
 	}
 }
 ';

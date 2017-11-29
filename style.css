@@ -3718,8 +3718,8 @@ a:hover, a:active {
     z-index: -1;
   }
   .page.has-post-thumbnail .site-content {
-    padding-top: 270px;
-    padding-top: 16.875rem;
+    padding-top: 300px;
+    padding-top: 18.75rem;
   }
   .page.has-post-thumbnail .site-content .content-area {
     background-color: #ffffff;
