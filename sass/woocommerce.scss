@@ -15,14 +15,14 @@ WooCommerce styling
 /*--------------------------------------------------------------
 # Menu
 --------------------------------------------------------------*/
-@import "woocommerce/menu";
+@import "plugins/woocommerce/menu";
 
 /*--------------------------------------------------------------
 ## Cart Content
 --------------------------------------------------------------*/
-@import "woocommerce/cart-content";
+@import "plugins/woocommerce/cart-content";
 
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
-@import "woocommerce/woocommerce";
+@import "plugins/woocommerce/woocommerce";

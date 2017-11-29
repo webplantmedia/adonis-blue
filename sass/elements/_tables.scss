@@ -11,6 +11,12 @@ table {
 .comment-content,
 .entry-content {
 	> table {
+		border-top: 2px solid $color__border;
+
+		th {
+			background-color: $color__lightest-gray;
+		}
+
 		th,
 		td {
 			padding: 20px 12px;
@@ -24,7 +30,7 @@ table {
 	.comment-content,
 	.entry-content {
 		> table {
-			tr:nth-child(2n-1) {
+			tr:nth-child(2n) {
 				background-color: $color__lightest-gray;
 			}
 			th {

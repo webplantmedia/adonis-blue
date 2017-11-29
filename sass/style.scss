@@ -57,6 +57,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 # Media
 	## Captions
 	## Galleries
+# Plugins
 --------------------------------------------------------------*/
 @import "variables-site/variables-site";
 @import "mixins/mixins-master";
@@ -224,3 +225,9 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 ## Galleries
 --------------------------------------------------------------*/
 @import "media/galleries";
+
+/*--------------------------------------------------------------
+# Plugins
+--------------------------------------------------------------*/
+/* Affiliate Royale */
+@import "plugins/affiliate-royale";

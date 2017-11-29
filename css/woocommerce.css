@@ -492,6 +492,7 @@ WooCommerce styling
 #master .woocommerce-account .woocommerce-MyAccount-navigation ul li a {
   display: block;
   padding: 1.5em 1.5em 1.5em 0;
+  text-decoration: none;
 }
 
 #master .woocommerce-account .woocommerce-MyAccount-content {

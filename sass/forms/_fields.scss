@@ -36,6 +36,24 @@
 		> div {
 			@include rem('margin-bottom',20px);
 		}
+
+		table {
+			tr {
+				padding: 0;
+				margin: 0;
+
+				&:last-child {
+					td {
+						padding-bottom: 0;
+					}
+				}
+			}
+			td {
+				padding: 0;
+				margin: 0;
+				@include rem('padding-bottom',20px);
+			}
+		}
 	}
 
 	input[type="text"],
@@ -244,6 +262,7 @@
 	}
 
 	label > input[type="checkbox"] + span,
+	input[type="checkbox"] + span,
 	input[type="checkbox"] + label {
 		margin-left: 10px;
 	}
@@ -310,6 +329,8 @@
 		content: "";
 	}
 
+	input[type="radio"] + span,
+	input[type="checkbox"] + span,
 	input[type="radio"] + label,
 	input[type="checkbox"] + label {
 		display: inline-block;
