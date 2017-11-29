@@ -1840,6 +1840,10 @@ a:hover, a:active {
   #site-navigation .top-mobile-header #top-right-menu a:focus {
     color: #959595;
   }
+  #site-navigation .top-mobile-header .jetpack-social-navigation-genericons a:before {
+    line-height: inherit;
+    height: auto;
+  }
   #site-navigation ul {
     border-width: 0;
     float: none;
