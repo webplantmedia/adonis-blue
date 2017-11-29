@@ -69,9 +69,7 @@
 		</div>
 		<?php
 		if ( function_exists( 'sharing_display' ) ) {
-			if ( 'post' === get_post_type() ) {
-				sharing_display( '', true );
-			}
+			sharing_display( '', true );
 		}
 		?>
 	</footer><!-- .entry-footer -->

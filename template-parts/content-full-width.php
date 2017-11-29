@@ -61,9 +61,14 @@
 						),
 						get_the_title()
 					),
-					'<span class="edit-link">',
-					'</span>'
+					'<div class="entry-footer-meta"><span class="edit-link">',
+					'</span></div>'
 				);
+			?>
+			<?php
+			if ( function_exists( 'sharing_display' ) ) {
+				sharing_display( '', true );
+			}
 			?>
 		</footer><!-- .entry-footer -->
 	<?php endif; ?>

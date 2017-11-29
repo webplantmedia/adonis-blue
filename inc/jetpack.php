@@ -115,9 +115,10 @@ function angie_makes_design_jetpackme_remove_rp() {
 add_filter( 'wp', 'angie_makes_design_jetpackme_remove_rp', 20 );
 
 function angie_makes_design_jptweak_remove_share() {
-	if ( is_single() && 'post' === get_post_type() ) {
-		remove_filter( 'the_content', 'sharing_display', 19 );
-		remove_filter( 'the_excerpt', 'sharing_display', 19 );
+	if ( ( is_single() && 'post' === get_post_type() )
+		|| ( is_page() && 'page' === get_post_type() ) ) {
+			remove_filter( 'the_content', 'sharing_display', 19 );
+			remove_filter( 'the_excerpt', 'sharing_display', 19 );
 	}
 }
 add_action( 'loop_start', 'angie_makes_design_jptweak_remove_share' );

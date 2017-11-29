@@ -256,11 +256,7 @@
 .entry-footer {
 	> div {
 		@include rem('margin-top',40px);
-		@include rem('margin-bottom',70px);
-
-		&.sharedaddy {
-			@include rem('margin-top',70px);
-		}
+		@include rem('margin-bottom',40px);
 	}
 
 	> *:last-child {
@@ -305,6 +301,13 @@
 			display: none;
 			content: "";
 		}
+	}
+}
+
+.single-post .entry-footer {
+	> div {
+		@include rem('margin-top',40px);
+		@include rem('margin-bottom',70px);
 	}
 }
 

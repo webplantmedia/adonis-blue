@@ -3583,13 +3583,8 @@ a:hover, a:active {
 .entry-footer > div {
   margin-top: 40px;
   margin-top: 2.5rem;
-  margin-bottom: 70px;
-  margin-bottom: 4.375rem;
-}
-
-.entry-footer > div.sharedaddy {
-  margin-top: 70px;
-  margin-top: 4.375rem;
+  margin-bottom: 40px;
+  margin-bottom: 2.5rem;
 }
 
 .entry-footer > *:last-child {
@@ -3631,6 +3626,13 @@ a:hover, a:active {
 .entry-footer .entry-footer-meta span:last-child:after {
   display: none;
   content: "";
+}
+
+.single-post .entry-footer > div {
+  margin-top: 40px;
+  margin-top: 2.5rem;
+  margin-bottom: 70px;
+  margin-bottom: 4.375rem;
 }
 
 .page.has-post-thumbnail .page-image-header {
