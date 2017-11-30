@@ -266,6 +266,12 @@ WooCommerce styling
   padding: 13px 27px;
 }
 
+#master .woocommerce .quantity.buttons_added .quantity-inner {
+  border: 2px solid #ececec;
+  padding: 0 0.8em;
+  display: inline-block;
+}
+
 #master .woocommerce .quantity.buttons_added .quantity-inner > * {
   display: inline-block;
   vertical-align: middle;
@@ -273,14 +279,13 @@ WooCommerce styling
 
 #master .woocommerce .summary .quantity {
   float: left;
-  margin-right: 40px;
-  font-size: 15px;
+  margin-right: 20px;
   color: black;
 }
 
 #master .woocommerce .quantity input {
   width: 60px;
-  height: 44px;
+  height: 40px;
   font-size: 24px;
   font-size: 1.5rem;
   font-weight: normal;
@@ -529,6 +534,11 @@ WooCommerce styling
   box-shadow: 0px 0px 10px 5px #dddddd;
 }
 
+#master .woocommerce.single-product .upsells.products h2,
+#master .woocommerce.single-product .related.products h2 {
+  text-align: center;
+}
+
 #master .woocommerce-store-notice,
 #master p.demo_store {
   color: #ffffff;
@@ -584,15 +594,18 @@ WooCommerce styling
 
 #master .woocommerce div.product .woocommerce-tabs ul.tabs li {
   border-width: 0;
+  border-top: 2px solid #ececec;
   border-radius: 0;
   background-color: transparent;
   padding: 0;
   margin: 0;
+  margin-right: 5px;
 }
 
 #master .woocommerce div.product .woocommerce-tabs ul.tabs li a {
-  padding: 0 0 5px 0;
-  margin-right: 30px;
+  padding: 0.7em 1.2em;
+  border-left: 2px solid #ececec;
+  border-right: 2px solid #ececec;
   text-transform: uppercase;
   font-size: 16px;
   font-size: 1rem;
@@ -603,15 +616,8 @@ WooCommerce styling
   margin-right: 0;
 }
 
-#master .woocommerce div.product .woocommerce-tabs ul.tabs li a:hover {
-  border-bottom-width: 2px;
-  border-bottom-style: solid;
-  color: #6d686c;
-}
-
-#master .woocommerce div.product .woocommerce-tabs ul.tabs li.active a {
-  border-bottom-width: 2px;
-  border-bottom-style: solid;
+#master .woocommerce div.product .woocommerce-tabs ul.tabs li.active {
+  background-color: #ffffff;
 }
 
 #master .woocommerce div.product .woocommerce-tabs ul.tabs li.active::before {
@@ -628,7 +634,8 @@ WooCommerce styling
 }
 
 #master .woocommerce div.product .woocommerce-tabs ul.tabs::before {
-  border-bottom-width: 0;
+  border-bottom-width: 2px;
+  border-color: #ececec;
 }
 
 #master .woocommerce div.product .woocommerce-tabs .woocommerce-Reviews #comments .woocommerce-Reviews-title {
@@ -1063,5 +1070,21 @@ WooCommerce styling
     padding: 1.5em 0 0 0;
     border-top: 0px solid #ececec;
     width: 100%;
+  }
+  #master .woocommerce div.product .woocommerce-tabs ul.tabs li {
+    margin: 0;
+    display: block;
+    border: 2px solid #ececec;
+    border-top-width: 0;
+  }
+  #master .woocommerce div.product .woocommerce-tabs ul.tabs li.active {
+    border-right-width: 0;
+  }
+  #master .woocommerce div.product .woocommerce-tabs ul.tabs li:first-child {
+    border-top-width: 2px;
+  }
+  #master .woocommerce div.product .woocommerce-tabs ul.tabs li a {
+    display: block;
+    border-width: 0;
   }
 }

@@ -40,9 +40,7 @@ a:hover {
 	color: ' . $angie_makes_design['primary_color'] . '; /*id:primary_color*/
 }
 
-#master .wc-shortcodes-box-inverse,
-#master .woocommerce div.product .woocommerce-tabs ul.tabs li.active a,
-#master .woocommerce div.product .woocommerce-tabs ul.tabs li a:hover {
+#master .wc-shortcodes-box-inverse {
 	border-color: ' . $angie_makes_design['primary_color'] . '; /*id:primary_color*/
 }
 

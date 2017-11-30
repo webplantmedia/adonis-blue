@@ -6,19 +6,23 @@
 	.woocommerce .summary .single_add_to_cart_button {
 		padding: 13px 27px;
 	}
+	.woocommerce .quantity.buttons_added .quantity-inner {
+		border: 2px solid $color__border;
+		padding: 0 0.8em;
+		display: inline-block;
+	}
 	.woocommerce .quantity.buttons_added .quantity-inner > * {
 		display: inline-block;
 		vertical-align: middle;
 	}
 	.woocommerce .summary .quantity {
 		float: left;
-		margin-right: 40px;
-		font-size: 15px;
+		margin-right: 20px;
 		color: $color__black;
 	}
 	.woocommerce .quantity input {
 		width: 60px;
-		height: 44px;
+		height: 40px;
 		@include rem('font-size',$font__super-size);
 		font-weight: normal;
 		padding: 0;
@@ -246,6 +250,10 @@
 			}
 		}
 	}
+	.woocommerce.single-product .upsells.products h2,
+	.woocommerce.single-product .related.products h2 {
+		text-align: center;
+	}
 	/*start*/
 	.woocommerce-store-notice,
 	p.demo_store {
@@ -333,14 +341,17 @@
 	}
 	.woocommerce div.product .woocommerce-tabs ul.tabs li {
 		border-width: 0;
+		border-top: 2px solid $color__border;
 		border-radius: 0;
 		background-color: transparent;
 		padding: 0;
 		margin: 0;
+		margin-right: 5px;
 	}
 	.woocommerce div.product .woocommerce-tabs ul.tabs li a {
-		padding: 0 0 5px 0;
-		margin-right: 30px;
+		padding: 0.7em 1.2em;
+		border-left: 2px solid $color__border;
+		border-right: 2px solid $color__border;
 		text-transform: uppercase;
 		@include rem('font-size',$font__medium-size);
 		color: $color__text;
@@ -349,15 +360,11 @@
 		margin-right: 0;
 	}
 	.woocommerce div.product .woocommerce-tabs ul.tabs li a:hover {
-		border-bottom-width: 2px;
-		border-bottom-style: solid;
-		color: $color__text;
 	}
 	.woocommerce div.product .woocommerce-tabs ul.tabs li.active {
+		background-color: $color__background-body;
 	}
 	.woocommerce div.product .woocommerce-tabs ul.tabs li.active a {
-		border-bottom-width: 2px;
-		border-bottom-style: solid;
 	}
 	.woocommerce div.product .woocommerce-tabs ul.tabs li.active::before {
 		display: none;
@@ -374,7 +381,8 @@
 	.woocommerce div.product .woocommerce-tabs ul.tabs li::after {
 	}
 	.woocommerce div.product .woocommerce-tabs ul.tabs::before {
-		border-bottom-width: 0;
+		border-bottom-width: 2px;
+		border-color: $color__border;
 	}
 	.woocommerce div.product .woocommerce-tabs .panel {
 	}
@@ -1613,6 +1621,25 @@
 				padding: 1.5em 0 0 0;
 				border-top: 0px solid $color__border;
 				width: 100%;
+			}
+		}
+		.woocommerce div.product .woocommerce-tabs ul.tabs li {
+			margin: 0;
+			display: block;
+			border: 2px solid $color__border;
+			border-top-width: 0;
+
+			&.active {
+				border-right-width: 0;
+			}
+
+			&:first-child {
+				border-top-width: 2px;
+			}
+
+			a {
+				display: block;
+				border-width: 0;
 			}
 		}
 	}
