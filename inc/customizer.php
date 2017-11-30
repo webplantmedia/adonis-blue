@@ -517,6 +517,19 @@ function angie_makes_design_customize_register( $wp_customize ) {
 		'section' => $section_id,
 	) );
 
+	$setting_id = 'shop_product_hide_meta';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $angie_makes_design_default[ $setting_id ],
+		'transport' => 'refresh',
+		'sanitize_callback' => 'angie_makes_design_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( $setting_id, array(
+		'type' => 'checkbox',
+		'label' => __( 'Hide Product Meta From Product Page', 'angie-makes-design' ),
+		'section' => $section_id,
+	) );
+
 	$setting_id = 'shop_hide_result_count';
 	$wp_customize->add_setting( $setting_id, array(
 		'default' => $angie_makes_design_default[ $setting_id ],

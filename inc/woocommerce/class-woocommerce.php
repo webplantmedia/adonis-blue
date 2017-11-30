@@ -133,6 +133,11 @@ if ( ! class_exists( 'Angie_Makes_Design_WooCommerce' ) ) :
 			if ( $angie_makes_design['shop_hide_catalog_ordering'] ) {
 				remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
 			}
+
+			if ( $angie_makes_design['shop_product_hide_meta'] ) {
+				remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+			}
+			
 		}
 
 		function check_image_size() {

@@ -189,6 +189,8 @@ WooCommerce styling
   padding: 0;
   padding-bottom: 20px;
   padding-bottom: 1.25rem;
+  padding-left: 40px;
+  padding-left: 2.5rem;
 }
 
 #master .woocommerce ul.cart_list li:last-child,
