@@ -219,37 +219,6 @@
 		}
 	}
 }
-/* Shortcodes - Post Slider */
-#master #page .wc-shortcodes-posts-template-slider2 .wc-shortcodes-read-more {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	margin-top: 0;
-}
-#master .wc-shortcodes-post-slider-wrapper .bx-prev,
-#master .wc-shortcodes-post-slider-wrapper .bx-next {
-	padding: 0;
-	width: 50px;
-	height: 50px;
-	margin-top: -25px;
-	border-radius: 999em;
-}
-#master .wc-shortcodes-post-slider-wrapper .bx-controls-direction i {
-	display: none;
-}
-#master .wc-shortcodes-post-slider-wrapper .bx-prev {
-	background-image: url("img/slide-arrow-left.png") !important;
-	background-position: center center;
-	background-repeat: no-repeat;
-	left: 0;
-}
-#master .wc-shortcodes-post-slider-wrapper .bx-next {
-	background-image: url("img/slide-arrow-right.png") !important;
-	background-position: center center;
-	background-repeat: no-repeat;
-	right: 0;
-}
 /* WC Shortcodes - Progress Bars */
 #master .wc-shortcodes-skillbar *,
 #master .wc-shortcodes-skillbar {
