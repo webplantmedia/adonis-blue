@@ -10,7 +10,7 @@
 /**
  * The current version of the theme.
  */
-define( 'ANGIE_MAKES_DESIGN_VERSION', '1.1' );
+define( 'ANGIE_MAKES_DESIGN_VERSION', '1.3' );
 
 if ( ! function_exists( 'angie_makes_design_setup' ) ) :
 	/**
