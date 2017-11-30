@@ -115,6 +115,21 @@ if ( ! function_exists( 'angie_makes_design_entry_footer' ) ) :
 	}
 endif;
 
+if ( ! function_exists( 'angie_makes_design_the_term_description' ) ) :
+	function angie_makes_design_the_term_description() {
+		$description = term_description();
+		?>
+
+		<?php if ( ! empty( $description ) ) : ?>
+			<div class="term-description">
+				<?php echo $description; ?>
+			</div>
+		<?php endif; ?>
+
+		<?php
+	}
+endif;
+
 if ( ! function_exists( 'angie_makes_design_mobile_menu_button' ) ) :
 	function angie_makes_design_mobile_menu_button() {
 		global $angie_makes_design;

@@ -12,10 +12,7 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
-
-		<div class="term-description">
-			<?php echo term_description() ?>
-		</div>
+		<?php angie_makes_design_the_term_description() ?>
 
 		<?php
 		if ( have_posts() ) : ?>
