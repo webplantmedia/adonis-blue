@@ -988,6 +988,7 @@ button {
   background: transparent;
 }
 
+#master .wc-shortcodes-button,
 #master #infinite-handle span button,
 #master .woocommerce #respond input#submit,
 #master .woocommerce-pagination ul span,
@@ -1036,6 +1037,8 @@ button {
   padding: 13px 30px;
 }
 
+#master .wc-shortcodes-button:active,
+#master .wc-shortcodes-button:focus,
 #master #infinite-handle span button:focus,
 #master #infinite-handle span button:active,
 #master .woocommerce #respond input#submit:focus,
@@ -1058,6 +1061,7 @@ button {
   background: #252323;
 }
 
+#master .wc-shortcodes-button:hover,
 #master #infinite-handle span button:hover,
 #master .woocommerce #respond input#submit:active,
 #master .woocommerce-pagination ul a:hover,

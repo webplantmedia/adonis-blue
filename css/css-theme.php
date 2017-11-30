@@ -40,6 +40,7 @@ a:hover {
 	color: ' . $angie_makes_design['primary_color'] . '; /*id:primary_color*/
 }
 
+#master .wc-shortcodes-box-inverse,
 #master .woocommerce div.product .woocommerce-tabs ul.tabs li.active a,
 #master .woocommerce div.product .woocommerce-tabs ul.tabs li a:hover {
 	border-color: ' . $angie_makes_design['primary_color'] . '; /*id:primary_color*/
@@ -57,6 +58,10 @@ a:hover {
 	background-color: ' . $angie_makes_design['footer_background_color'] . '; /*id:footer_background_color*/
 }
 
+#master .wc-shortcodes-box-primary,
+#master .wc-shortcodes-button,
+#master .wc-shortcodes-button:active,
+#master .wc-shortcodes-button:focus,
 #master #secondary .widget .widget-title,
 #master #infinite-handle span button,
 #master #infinite-handle span button:active,
@@ -106,6 +111,7 @@ a:hover {
 	background-color: ' . $angie_makes_design['primary_color'] . '; /*id:primary_color*/
 }
 
+#master .wc-shortcodes-button:hover,
 #master #infinite-handle span button:hover,
 #master .woocommerce #respond input#submit:hover,
 #master .comment-reply-link:hover,
@@ -170,6 +176,7 @@ a:hover {
 
 if ( $angie_makes_design['thumb_grid_max_height'] > 0 ) {
 $css .= '
+#master .wc-shortcodes-entry-thumbnail,
 #master .excerpt2 .entry-image {
 	max-height: ' . $angie_makes_design['thumb_grid_max_height'] . 'px; /*id:thumb_grid_max_height*/
 }
