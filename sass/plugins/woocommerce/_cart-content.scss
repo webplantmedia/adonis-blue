@@ -26,12 +26,17 @@
 		background-color: transparent;
 	}
 
+	.widget_shopping_cart_content ul.product_list_widget {
+		li {
+			@include rem('padding-left',40px);
+		}
+	}
+
 	ul.cart_list,
 	ul.product_list_widget {
 		li {
 			padding: 0;
 			@include rem('padding-bottom',20px);
-			@include rem('padding-left',40px);
 
 			&:last-child {
 				padding-bottom: 0;
