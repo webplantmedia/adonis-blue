@@ -1379,8 +1379,7 @@
 	.woocommerce-cart #payment div.payment_box textarea,
 	.woocommerce-checkout #payment div.payment_box input.input-text,
 	.woocommerce-checkout #payment div.payment_box textarea {
-		// border-color: #c7c1c6;
-		// border-top-color: #bbb3b9
+		border-color: $color__border;
 	}
 	#add_payment_method #payment div.payment_box::-webkit-input-placeholder,
 	.woocommerce-cart #payment div.payment_box::-webkit-input-placeholder,

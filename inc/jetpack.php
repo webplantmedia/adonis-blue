@@ -40,9 +40,9 @@ function angie_makes_design_jetpack_setup() {
 		'post-details' => array(
 			'stylesheet' => 'angie-makes-design-style',
 			'date'       => '.posted-on,.entry-meta',
-			'categories' => '.cat-links,.entry-cat-meta',
-			'tags'       => '.tags-links',
-			'author'     => '.byline',
+			'categories' => '.cat-links,.entry-cat-meta,.tags-links:before',
+			'tags'       => '.tags-links,.tags-links + span:before',
+			'author'     => '.byline,.cat-links:before',
 			'comment'    => '.comments-link',
 		),
 		'featured-images'    => array(

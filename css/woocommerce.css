@@ -169,6 +169,7 @@ WooCommerce styling
 #master .woocommerce.widget_shopping_cart .cart_list li a {
   font-size: 16px;
   font-size: 1rem;
+  line-height: 1.375;
 }
 
 #master .woocommerce .widget_shopping_cart .cart_list li a.remove,
@@ -1019,6 +1020,15 @@ WooCommerce styling
 #master .woocommerce-checkout #payment div.payment_box:after,
 #master .woocommerce-checkout #payment div.payment_box:before {
   display: none;
+}
+
+#master #add_payment_method #payment div.payment_box input.input-text,
+#master #add_payment_method #payment div.payment_box textarea,
+#master .woocommerce-cart #payment div.payment_box input.input-text,
+#master .woocommerce-cart #payment div.payment_box textarea,
+#master .woocommerce-checkout #payment div.payment_box input.input-text,
+#master .woocommerce-checkout #payment div.payment_box textarea {
+  border-color: #ececec;
 }
 
 #master #add_payment_method #payment div.payment_box p,

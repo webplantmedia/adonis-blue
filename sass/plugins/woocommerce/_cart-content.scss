@@ -11,6 +11,7 @@
 	&.widget_shopping_cart .cart_list li {
 		a {
 			@include rem('font-size',$font__medium-size);
+			line-height: $font__line-height-heading;
 
 			&.remove {
 				top: -3px;
