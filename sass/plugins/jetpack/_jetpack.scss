@@ -8,13 +8,20 @@
 	}
 	#jp-relatedposts .jp-relatedposts-headline {
 		margin: 0 0 30px;
+		padding: 0;
 		display: block;
 		float: none;
+		color: $color__white;
+		text-align: center;
 
-		&,
 		em {
-			@include rem('font-size',$font__h3-size);
+			margin: 0;
+			@include rem('font-size',$font__small-size);
+			text-transform: uppercase;
 			text-align: center;
+			font-weight: bold;
+			display: inline-block;
+			padding: 0.7em 1.5em;
 		}
 
 		em:before {

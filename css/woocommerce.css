@@ -76,10 +76,6 @@ WooCommerce styling
   z-index: 99999;
 }
 
-.cart-menu ul.menu li.cart:hover a.cart_dropdown_link {
-  z-index: 999999;
-}
-
 .cart-menu ul.menu li.cart:hover ul.woo-sub-menu {
   left: auto;
   right: -20px;
