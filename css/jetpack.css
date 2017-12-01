@@ -88,7 +88,12 @@ Jetpack styling
 }
 
 #master div.sharedaddy h3.sd-title:before {
+  display: none;
   border-top: 2px solid #ececec;
+}
+
+#master .jetpack-hide-share-count .share-count {
+  display: none;
 }
 
 #master .sd-content {

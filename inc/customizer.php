@@ -212,11 +212,11 @@ function angie_makes_design_customize_register( $wp_customize ) {
 	) );
 
 	/**
-	 * Body
+	 * Site
 	 */
-	$section_id = 'theme_options_Menu';
+	$section_id = 'theme_options_site';
 	$wp_customize->add_section( $section_id, array(
-		'title'    => __( 'Menu', 'angie-makes-design' ),
+		'title'    => __( 'Site', 'angie-makes-design' ),
 		'panel'    => 'theme_options',
 	) );
 
@@ -231,15 +231,6 @@ function angie_makes_design_customize_register( $wp_customize ) {
 		'type' => 'checkbox',
 		'label' => __( 'Show Menu Arrows', 'angie-makes-design' ),
 		'section' => $section_id,
-	) );
-
-	/**
-	 * Body
-	 */
-	$section_id = 'theme_options_body';
-	$wp_customize->add_section( $section_id, array(
-		'title'    => __( 'Body', 'angie-makes-design' ),
-		'panel'    => 'theme_options',
 	) );
 
 	$setting_id = 'default_button_style';
@@ -399,6 +390,43 @@ function angie_makes_design_customize_register( $wp_customize ) {
 			'min' => 0,
 			'step' => 5,
 		),
+	) );
+
+	$setting_id = 'blog_single_hide_post_navigation';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $angie_makes_design_default[ $setting_id ],
+		'transport' => 'refresh',
+		'sanitize_callback' => 'angie_makes_design_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( $setting_id, array(
+		'type' => 'checkbox',
+		'label' => __( 'Hide Post Navigation', 'angie-makes-design' ),
+		'description' => __( 'Hide the post navigation buttons at the bottom of each post.', 'angie-makes-design' ),
+		'section' => $section_id,
+	) );
+
+	/**
+	 * Jetpack
+	 */
+	$section_id = 'theme_options_jetpack';
+	$wp_customize->add_section( $section_id, array(
+		'title'    => __( 'Jetpack', 'angie-makes-design' ),
+		'panel'    => 'theme_options',
+		'active_callback' => 'angie_makes_design_is_jetpack_activated',
+	) );
+
+	$setting_id = 'jetpack_hide_share_count';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $angie_makes_design_default[ $setting_id ],
+		'transport' => 'refresh',
+		'sanitize_callback' => 'angie_makes_design_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( $setting_id, array(
+		'type' => 'checkbox',
+		'label' => __( 'Hide Share Button Count', 'angie-makes-design' ),
+		'section' => $section_id,
 	) );
 
 	/**

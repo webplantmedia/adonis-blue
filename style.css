@@ -3633,15 +3633,24 @@ a:hover, a:active {
   color: #6d686c;
 }
 
+#master .entry-footer > *:first-child {
+  margin-top: 0;
+}
+
+#master .entry-footer > *:last-child {
+  margin-bottom: 0;
+}
+
+.entry-footer {
+  margin-top: 40px;
+  margin-top: 2.5rem;
+}
+
 .entry-footer > div {
   margin-top: 40px;
   margin-top: 2.5rem;
   margin-bottom: 40px;
   margin-bottom: 2.5rem;
-}
-
-.entry-footer > *:last-child {
-  margin-bottom: 0;
 }
 
 .entry-footer .comment-display,
@@ -3679,13 +3688,6 @@ a:hover, a:active {
 .entry-footer .entry-footer-meta > span:first-child:before {
   display: none;
   content: "";
-}
-
-.single-post .entry-footer > div {
-  margin-top: 40px;
-  margin-top: 2.5rem;
-  margin-bottom: 70px;
-  margin-bottom: 4.375rem;
 }
 
 .page.has-post-thumbnail .page-image-header {

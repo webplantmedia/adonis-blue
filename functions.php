@@ -495,6 +495,17 @@ function angie_makes_design_is_woocommerce_activated() {
 }
 
 /**
+ * Check Jetpack activation
+ */
+function angie_makes_design_is_jetpack_activated() {
+	if ( defined( 'JETPACK__VERSION' ) ) {
+		return true;
+	}
+
+	return false;
+}
+
+/**
  * Default options.
  */
 require get_template_directory() . '/inc/default-options.php';
@@ -534,7 +545,7 @@ require get_template_directory() . '/inc/customizer.php';
 /**
  * Load Jetpack compatibility file.
  */
-if ( defined( 'JETPACK__VERSION' ) ) {
+if ( angie_makes_design_is_jetpack_activated() ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 

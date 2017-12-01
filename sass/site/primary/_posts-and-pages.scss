@@ -253,14 +253,21 @@
 	}
 }
 
+#master .entry-footer {
+	> *:first-child {
+		margin-top: 0;
+	}
+	> *:last-child {
+		margin-bottom: 0;
+	}
+}
+
 .entry-footer {
+	@include rem('margin-top',40px);
+
 	> div {
 		@include rem('margin-top',40px);
 		@include rem('margin-bottom',40px);
-	}
-
-	> *:last-child {
-		margin-bottom: 0;
 	}
 
 	.comment-display,
@@ -301,13 +308,6 @@
 			display: none;
 			content: "";
 		}
-	}
-}
-
-.single-post .entry-footer {
-	> div {
-		@include rem('margin-top',40px);
-		@include rem('margin-bottom',70px);
 	}
 }
 

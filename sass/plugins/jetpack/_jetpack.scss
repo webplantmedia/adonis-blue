@@ -71,8 +71,13 @@
 		color: $color__text-light;
 
 		&:before {
+			display: none;
 			border-top: 2px solid $color__border;
 		}
+	}
+
+	.jetpack-hide-share-count .share-count {
+		display: none;
 	}
 
 	.sd-content {

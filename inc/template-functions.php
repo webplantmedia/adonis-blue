@@ -40,19 +40,20 @@ function angie_makes_design_body_classes( $classes ) {
 		$classes[] = 'widgetized-page';
 	}
 
-	// Dropdown menu arrow
 	if ( $angie_makes_design['show_menu_arrows'] ) {
 		$classes[] = 'show-menu-arrows';
 	}
 
-	// Dropdown menu arrow
 	if ( $angie_makes_design['archive_title_light'] ) {
 		$classes[] = 'archive-title-light';
 	}
 
-	// Dropdown menu arrow
 	if ( $angie_makes_design['shop_truncate_titles'] ) {
 		$classes[] = 'woocommerce-shop-truncate-titles';
+	}
+
+	if ( $angie_makes_design['jetpack_hide_share_count'] ) {
+		$classes[] = 'jetpack-hide-share-count';
 	}
 
 	if ( angie_makes_design_is_woocommerce_activated() ) {

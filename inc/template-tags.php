@@ -149,6 +149,13 @@ endif;
 
 if ( ! function_exists( 'angie_makes_design_featured_post_navigation' ) ) :
 	function angie_makes_design_featured_post_navigation() {
+		global $angie_makes_design;
+
+
+		if ( $angie_makes_design['blog_single_hide_post_navigation'] ) {
+			return;
+		}
+
 		// remove filter to keep featured images on post navigation.
 		if ( function_exists( 'jetpack_featured_images_remove_post_thumbnail' ) ) {
 			remove_filter( 'get_post_metadata', 'jetpack_featured_images_remove_post_thumbnail', true, 4 );
