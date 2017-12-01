@@ -1326,7 +1326,7 @@
 		text-transform: uppercase;
 		font-weight: bold;
 		@include rem('font-size',$font__medium-size);
-		display: inline;
+		// display: inline; // causes problem with credit card fields in WooCommerce
 		cursor: pointer;
 	}
 	#add_payment_method #payment ul.payment_methods li input,
