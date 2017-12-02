@@ -28,11 +28,12 @@ $angie_makes_design_default['top_header_background_offset'] = 520;
 // Menu
 $angie_makes_design_default['show_menu_arrows'] = 1;
 
-// Body
+// Site
 $angie_makes_design_default['default_button_style'] = 'button-2';
 $angie_makes_design_default['disable_google_fonts'] = 0;
 $angie_makes_design_default['disable_custom_fonts'] = 0;
 $angie_makes_design_default['page_image_header_height'] = 400;
+$angie_makes_design_default['check_for_updates'] = 1;
 
 // Blog
 $angie_makes_design_default['blog_display'] = 'blog1';

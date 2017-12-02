@@ -552,3 +552,8 @@ if ( angie_makes_design_is_jetpack_activated() ) {
 if ( angie_makes_design_is_woocommerce_activated() ) {
 	require get_parent_theme_file_path() . '/inc/woocommerce/class-woocommerce.php';
 }
+
+/*
+ * Check for theme update.
+ */
+require get_parent_theme_file_path() . '/inc/upgrade.php';
