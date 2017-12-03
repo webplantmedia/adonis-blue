@@ -286,6 +286,18 @@ function angie_makes_design_customize_register( $wp_customize ) {
 		),
 	) );
 
+	$setting_id = 'check_for_updates';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $angie_makes_design_default[ $setting_id ],
+		'transport' => 'postMessage',
+		'sanitize_callback' => 'angie_makes_design_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( $setting_id, array(
+		'type' => 'checkbox',
+		'label' => __( 'Check For Theme Update', 'angie-makes-design' ),
+		'section' => $section_id,
+	) );
 
 
 	/**
