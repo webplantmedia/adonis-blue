@@ -68,36 +68,26 @@ if ( ! class_exists( 'Angie_Makes_Design_Upgrade' ) ) :
 
 			// If transient has expired, do a fresh update check.
 			if ( ! $theme_update ) {
-				pr($theme_update);
-				// Put slug of current theme into request.
-				$request['active'] = get_option( 'stylesheet' );
-
 				$installed_theme = wp_get_theme();
 				$parent_theme_folder_name = $installed_theme->get_template();
 				$installed_theme = wp_get_theme( $parent_theme_folder_name );
+
+				$template = $installed_theme->get_template();
+				$stylesheet = $installed_theme->get_stylesheet();
+				$version = $installed_theme->get('Version');
 				
-				$themes[ $installed_theme->get_template() ] = array(
-					'Name'       => $installed_theme->get('Name'),
-					'Title'      => $installed_theme->get('Name'),
-					'Version'    => $installed_theme->get('Version'),
-					'Author'     => $installed_theme->get('Author'),
-					'Author URI' => $installed_theme->get('AuthorURI'),
-					'Template'   => $installed_theme->get_template(),
-					'Stylesheet' => $installed_theme->get_stylesheet(),
-				);
-
-				$request['themes'] = $themes;
-
-				$url     = 'http://api.webplantmedia.com/themes/update-check/1.1/';
+				$url = 'https://api.webplantmedia.com/themes/update-check/1.2/';
 				$options = apply_filters(
 					'angie_makes_design_update_remote_post_options',
 					array(
 						'user-agent'	=> 'WordPress/' . $wp_version . '; ' . get_bloginfo( 'url' ),
 						'body' => array(
-							'user-agent'      => "WordPress/$wp_version;",
-							'php_version'     => phpversion(),
-							'wp_version'      => $wp_version,
-							'themes'          => wp_json_encode( $request ),
+							'php_version'    => phpversion(),
+							'wp_version'     => $wp_version,
+							'uri'            => home_url(),
+							'version'        => $version,
+							'template'       => $template,
+							'stylesheet'     => $stylesheet,
 						),
 					)
 				);
@@ -111,7 +101,7 @@ if ( ! class_exists( 'Angie_Makes_Design_Upgrade' ) ) :
 				$response_body = json_decode( wp_remote_retrieve_body( $response ), true );
 
 				if ( empty( $response_body ) || ! is_array( $response_body ) ) {
-					$theme_update = array( $this->template_name => array( 'new_version' => $themes[ $this->template_name ]['Version'] ) );
+					$theme_update = array( $template => array( 'new_version' => $version ) );
 					set_transient( $this->template_name . '-update', $theme_update, HOUR_IN_SECONDS );
 					return array();
 				}
@@ -151,7 +141,7 @@ if ( ! class_exists( 'Angie_Makes_Design_Upgrade' ) ) :
 
 			$theme_update = $this->update_check();
 
-			if ( $theme_update && isset( $theme_update[ $this->template_name ] ) ) {
+			if ( $theme_update && isset( $theme_update[ $this->template_name ] ) && isset( $theme_update[ $this->template_name ]['package'] ) ) {
 				$value->response[ $this->template_name ] = $theme_update[ $this->template_name ];
 			}
 
