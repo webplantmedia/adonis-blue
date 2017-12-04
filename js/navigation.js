@@ -42,9 +42,10 @@
 		}
 	};
 
-	var menuParent = $(container).find('.menu-item-has-children a, .page_item_has_children a');
+	var menuParent = $(container).find('.menu-item-has-children > a, .page_item_has_children > a');
 
 	var menuToggleButton = $(container).find('.menu-toggle');
+
 	$(menuParent).click( function( event ) {
 		if ( ! $(menuToggleButton).is(':visible') ) {
 			return;
