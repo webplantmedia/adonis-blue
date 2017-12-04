@@ -311,12 +311,10 @@
 				a,
 				&:hover > a,
 				&.focus > a {
-					background-color: $color__background-body;
 				}
 
 				&.current_page_item > a,
 				&.current-menu-item > a {
-					background-color: $color__border;
 				}
 
 				&:last-child > a {

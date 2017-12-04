@@ -1882,15 +1882,6 @@ a:hover, a:active {
     float: none;
     display: block;
   }
-  #site-navigation ul li a,
-  #site-navigation ul li:hover > a,
-  #site-navigation ul li.focus > a {
-    background-color: #ffffff;
-  }
-  #site-navigation ul li.current_page_item > a,
-  #site-navigation ul li.current-menu-item > a {
-    background-color: #ececec;
-  }
   #site-navigation ul li:last-child > a {
     border-bottom: 2px solid #ececec;
   }
