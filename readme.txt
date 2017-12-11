@@ -1,4 +1,4 @@
-=== Angie Makes Design ===
+=== Crimson Rose ===
 
 Contributors: automattic
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
@@ -9,7 +9,7 @@ Stable tag: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
-A starter theme called Angie Makes Design.
+A starter theme called Crimson Rose.
 
 == Description ==
 
@@ -25,7 +25,7 @@ Pretty, Feminine WordPress Themes
 
 = Does this theme support any plugins? =
 
-Angie Makes Design includes support for Infinite Scroll in Jetpack.
+Crimson Rose includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 

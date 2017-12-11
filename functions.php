@@ -1,6 +1,6 @@
 <?php
 /**
- * Angie Makes Design functions and definitions
+ * Crimson Rose functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
@@ -24,7 +24,7 @@ if ( ! function_exists( 'crimson_rose_setup' ) ) :
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on Angie Makes Design, use a find and replace
+		 * If you're building a theme based on Crimson Rose, use a find and replace
 		 * to change 'crimson-rose' to the name of your theme in all the template files.
 		 */
 		load_theme_textdomain( 'crimson-rose', get_template_directory() . '/languages' );

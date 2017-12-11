@@ -23,7 +23,7 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Static_Content' ) ) :
 			$this->widget_id          = 'crimson-rose-static-content';
 			$this->widget_cssclass    = 'crimson-rose-static-content';
 			$this->widget_description = esc_html__( 'Displays content from a specific page.', 'crimson-rose' );
-			$this->widget_name        = esc_html__( 'Angie Makes Design: Static Content', 'crimson-rose' );
+			$this->widget_name        = esc_html__( 'Crimson Rose: Static Content', 'crimson-rose' );
 			$this->settings           = array(
 				'title' => array(
 					'type'  => 'text',

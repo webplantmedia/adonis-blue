@@ -1,6 +1,6 @@
 <?php
 /**
- * Angie Makes Design Theme Customizer
+ * Crimson Rose Theme Customizer
  *
  * @package Crimson_Rose
  */

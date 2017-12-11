@@ -13,7 +13,7 @@ class Crimson_Rose_Widget_Jetpack_Testimonials extends Crimson_Rose_Widget {
 	public function __construct() {
 		$this->widget_id          = 'crimson-rose-widget-jetpack-testimonials';
 		$this->widget_description = esc_html__( 'Displays Jetpack Testimonials.', 'crimson-rose' );
-		$this->widget_name        = esc_html__( 'Angie Makes Design: Jetpack Testimonials', 'crimson-rose' );
+		$this->widget_name        = esc_html__( 'Crimson Rose: Jetpack Testimonials', 'crimson-rose' );
 		$this->settings           = array(
 			'title' => array(
 				'type'  => 'text',

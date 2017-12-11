@@ -23,7 +23,7 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Image_Banner_Widget' ) ) :
 			$this->widget_id          = 'crimson-rose-image-banner';
 			$this->widget_cssclass    = 'crimson-rose-image-banner';
 			$this->widget_description = esc_html__( 'Display an image banner in your footer or sidebar.', 'crimson-rose' );
-			$this->widget_name        = esc_html__( 'Angie Makes Design: Image Banner', 'crimson-rose' );
+			$this->widget_name        = esc_html__( 'Crimson Rose: Image Banner', 'crimson-rose' );
 			$this->settings           = array(
 				'title' => array(
 					'type'  => 'text',

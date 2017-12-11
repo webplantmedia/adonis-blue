@@ -13,7 +13,7 @@ class Crimson_Rose_Widget_Callout extends Crimson_Rose_Widget {
 	public function __construct() {
 		$this->widget_id          = 'crimson-rose-widget-callout';
 		$this->widget_description = esc_html__( 'Displays a callout.', 'crimson-rose' );
-		$this->widget_name        = esc_html__( 'Angie Makes Design: Callout', 'crimson-rose' );
+		$this->widget_name        = esc_html__( 'Crimson Rose: Callout', 'crimson-rose' );
 		$this->settings           = array(
 			'title' => array(
 				'type'  => 'text',

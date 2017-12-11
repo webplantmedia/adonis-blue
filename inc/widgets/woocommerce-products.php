@@ -13,7 +13,7 @@ class Crimson_Rose_Widget_WooCommerce_Products extends Crimson_Rose_Widget {
 	public function __construct() {
 		$this->widget_id          = 'crimson-rose-widget-woocommerce-products';
 		$this->widget_description = esc_html__( 'Displays WooCommerce Products.', 'crimson-rose' );
-		$this->widget_name        = esc_html__( 'Angie Makes Design: WooCommerce Products', 'crimson-rose' );
+		$this->widget_name        = esc_html__( 'Crimson Rose: WooCommerce Products', 'crimson-rose' );
 		$this->settings           = array(
 			'title' => array(
 				'type'  => 'text',

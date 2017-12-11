@@ -23,7 +23,7 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Jetpack_Social_Menu' ) ) :
 			$this->widget_id          = 'crimson-rose-jetpack-social-menu';
 			$this->widget_cssclass    = 'crimson-rose-jetpack-social-menu';
 			$this->widget_description = esc_html__( 'Displays Jetpack\'s social menu in your footer or sidebar.', 'crimson-rose' );
-			$this->widget_name        = esc_html__( 'Angie Makes Design: Jetpack Social Menu', 'crimson-rose' );
+			$this->widget_name        = esc_html__( 'Crimson Rose: Jetpack Social Menu', 'crimson-rose' );
 			$this->settings           = array(
 				'title' => array(
 					'type'  => 'text',

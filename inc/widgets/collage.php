@@ -23,7 +23,7 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Collage' ) ) :
 			$this->widget_id          = 'crimson-rose-widget-collage';
 			$this->widget_cssclass    = 'crimson-rose-widget-collage';
 			$this->widget_description = esc_html__( 'Displays collage', 'crimson-rose' );
-			$this->widget_name        = esc_html__( 'Angie Makes Design: Collage', 'crimson-rose' );
+			$this->widget_name        = esc_html__( 'Crimson Rose: Collage', 'crimson-rose' );
 			$this->settings           = array(
 				'panels' => array(
 					array(

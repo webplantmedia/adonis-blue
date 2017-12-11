@@ -23,7 +23,7 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Blog_Post' ) ) :
 			$this->widget_id          = 'crimson-rose-blog-posts';
 			$this->widget_cssclass    = 'crimson-rose-blog-posts';
 			$this->widget_description = esc_html__( 'Displays content from blog posts.', 'crimson-rose' );
-			$this->widget_name        = esc_html__( 'Angie Makes Design: Blog Posts', 'crimson-rose' );
+			$this->widget_name        = esc_html__( 'Crimson Rose: Blog Posts', 'crimson-rose' );
 			$this->settings           = array(
 				'title' => array(
 					'type'  => 'text',
