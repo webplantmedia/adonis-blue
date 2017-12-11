@@ -2,7 +2,7 @@
 /**
  * Template Name: Grid Page
  *
- * @package Angie_Makes_Design
+ * @package Crimson_Rose
  */
 
 get_header(); ?>

@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Angie_Makes_Design
+ * @package Crimson_Rose
  */
 
 $footer_1 = is_active_sidebar( 'footer-1' );
@@ -69,7 +69,7 @@ $column = 1;
 			<div class="site-info-wrapper">
 				<div class="site-boundary">
 					<div class="site-info">
-						<?php angie_makes_design_site_info(); ?>
+						<?php crimson_rose_site_info(); ?>
 					</div><!-- .site-info -->
 				</div><!-- .site-boundary -->
 			</div><!-- .site-info-wrapper -->

@@ -26,7 +26,7 @@ $heading = esc_html( apply_filters( 'woocommerce_product_description_heading', _
 
 ?>
 
-<?php if ( $heading && angie_makes_design_display_sub_header() ) : ?>
+<?php if ( $heading && crimson_rose_display_sub_header() ) : ?>
   <h2><?php echo $heading; ?></h2>
 <?php endif; ?>
 
@@ -36,16 +36,16 @@ global $angie_makes_design;
 
 switch ( $angie_makes_design['shop_product_page_template'] ) {
 	case 'grid-accordion' :
-		angie_makes_design_the_accordion_content();
-		wp_enqueue_script( 'angie-makes-design-accordion' );
+		crimson_rose_the_accordion_content();
+		wp_enqueue_script( 'crimson-rose-accordion' );
 		break;
 
 	case 'grid' :
-		angie_makes_design_the_grid_content();
+		crimson_rose_the_grid_content();
 		break;
 
 	case 'two-columns' :
-		angie_makes_design_the_two_columns_content();
+		crimson_rose_the_two_columns_content();
 		break;
 
 	default :

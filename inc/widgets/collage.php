@@ -2,40 +2,40 @@
 /**
  * Section: Featured Slides Widget
  *
- * @since Angie_Makes_Design 1.0.0.
+ * @since Crimson_Rose 1.0.0.
  *
- * @package Angie_Makes_Design
+ * @package Crimson_Rose
  */
 
-if ( ! class_exists( 'Angie_Makes_Design_Widget_Collage' ) ) :
+if ( ! class_exists( 'Crimson_Rose_Widget_Collage' ) ) :
 	/**
 	 * Display Featured Slide Item for section
 	 *
-	 * @since Angie_Makes_Design 1.0.0.
+	 * @since Crimson_Rose 1.0.0.
 	 *
-	 * @package Angie_Makes_Design
+	 * @package Crimson_Rose
 	 */
-	class Angie_Makes_Design_Widget_Collage extends Angie_Makes_Design_Widget {
+	class Crimson_Rose_Widget_Collage extends Crimson_Rose_Widget {
 		/**
 		 * Constructor
 		 */
 		public function __construct() {
-			$this->widget_id          = 'angie-makes-design-widget-collage';
-			$this->widget_cssclass    = 'angie-makes-design-widget-collage';
-			$this->widget_description = esc_html__( 'Displays collage', 'angie-makes-design' );
-			$this->widget_name        = esc_html__( 'Angie Makes Design: Collage', 'angie-makes-design' );
+			$this->widget_id          = 'crimson-rose-widget-collage';
+			$this->widget_cssclass    = 'crimson-rose-widget-collage';
+			$this->widget_description = esc_html__( 'Displays collage', 'crimson-rose' );
+			$this->widget_name        = esc_html__( 'Angie Makes Design: Collage', 'crimson-rose' );
 			$this->settings           = array(
 				'panels' => array(
 					array(
-						'title' => esc_html__( 'Slider Settings', 'angie-makes-design' ),
+						'title' => esc_html__( 'Slider Settings', 'crimson-rose' ),
 						'fields' => array(
 							'slider_mode' => array(
 								'type'  => 'select',
 								'std'   => 'horizontal',
-								'label' => esc_html__( 'Transition Effect:', 'angie-makes-design' ),
+								'label' => esc_html__( 'Transition Effect:', 'crimson-rose' ),
 								'options' => array(
-									'horizontal' => esc_html__( 'Slide', 'angie-makes-design' ),
-									'fade' => esc_html__( 'Fade', 'angie-makes-design' ),
+									'horizontal' => esc_html__( 'Slide', 'crimson-rose' ),
+									'fade' => esc_html__( 'Fade', 'crimson-rose' ),
 								),
 								'sanitize' => 'text',
 							),
@@ -45,31 +45,31 @@ if ( ! class_exists( 'Angie_Makes_Design_Widget_Collage' ) ) :
 								'step'  => 1,
 								'min'   => 1,
 								'max'   => 100,
-								'label' => esc_html__( 'Speed of the slideshow change in seconds:', 'angie-makes-design' ),
+								'label' => esc_html__( 'Speed of the slideshow change in seconds:', 'crimson-rose' ),
 								'sanitize' => 'number',
 							),
 							'slider_auto' => array(
 								'type'  => 'checkbox',
 								'std'   => 1,
-								'label' => esc_html__( 'Auto start slider transitions?', 'angie-makes-design' ),
+								'label' => esc_html__( 'Auto start slider transitions?', 'crimson-rose' ),
 								'sanitize' => 'checkbox',
 							),
 							'slider_autohover' => array(
 								'type'  => 'checkbox',
 								'std'   => 1,
-								'label' => esc_html__( 'Pause slideshow when hovering?', 'angie-makes-design' ),
+								'label' => esc_html__( 'Pause slideshow when hovering?', 'crimson-rose' ),
 								'sanitize' => 'checkbox',
 							),
 							'slider_controls' => array(
 								'type'  => 'checkbox',
 								'std'   => 1,
-								'label' => esc_html__( 'Show slide control?', 'angie-makes-design' ),
+								'label' => esc_html__( 'Show slide control?', 'crimson-rose' ),
 								'sanitize' => 'checkbox',
 							),
 							'slider_pager' => array(
 								'type'  => 'checkbox',
 								'std'   => 1,
-								'label' => esc_html__( 'Show slide pagination?', 'angie-makes-design' ),
+								'label' => esc_html__( 'Show slide pagination?', 'crimson-rose' ),
 								'sanitize' => 'checkbox',
 							),
 							'margin_bottom' => array(
@@ -78,67 +78,67 @@ if ( ! class_exists( 'Angie_Makes_Design_Widget_Collage' ) ) :
 								'step'  => 1,
 								'min'   => 0,
 								'max'   => 300,
-								'label' => esc_html__( 'Bottom margin of widget:', 'angie-makes-design' ),
+								'label' => esc_html__( 'Bottom margin of widget:', 'crimson-rose' ),
 								'sanitize' => 'number',
 							),
 						),
 					),
 				),
 				'repeater' => array(
-					'title' => esc_html__( 'Slide', 'angie-makes-design' ),
+					'title' => esc_html__( 'Slide', 'crimson-rose' ),
 					'fields' => array(
 						'background_color' => array(
 							'type'  => 'colorpicker',
 							'std'   => '#ffece3',
-							'label' => esc_html__( 'Background Color:', 'angie-makes-design' ),
+							'label' => esc_html__( 'Background Color:', 'crimson-rose' ),
 							'sanitize' => 'color',
 						),
 						'background_image' => array(
 							'type'  => 'image',
 							'std'   => null,
-							'label' => esc_html__( 'Background Image:', 'angie-makes-design' ),
+							'label' => esc_html__( 'Background Image:', 'crimson-rose' ),
 							'sanitize' => 'url',
 						),
 						'background_size' => array(
 							'type'  => 'select',
 							'std'   => 'cover',
-							'label' => esc_html__( 'Background Size:', 'angie-makes-design' ),
+							'label' => esc_html__( 'Background Size:', 'crimson-rose' ),
 							'options' => $this->options_background_size(),
 							'sanitize' => 'background_size',
 						),
 						'content_text' => array(
 							'type'  => 'textarea',
 							'std'   => '',
-							'label' => esc_html__( 'Content:', 'angie-makes-design' ),
+							'label' => esc_html__( 'Content:', 'crimson-rose' ),
 							'sanitize' => 'html',
 						),
 						'text_color' => array(
 							'type'  => 'colorpicker',
 							'std'   => '',
-							'label' => esc_html__( 'Text Color:', 'angie-makes-design' ),
-							'description' => esc_html__( 'Leave blank to use default theme color.', 'angie-makes-design' ),
+							'label' => esc_html__( 'Text Color:', 'crimson-rose' ),
+							'description' => esc_html__( 'Leave blank to use default theme color.', 'crimson-rose' ),
 							'sanitize' => 'color',
 						),
 						'button_text' => array(
 							'type'  => 'text',
 							'std'   => '',
-							'label' => esc_html__( 'Button Text:', 'angie-makes-design' ),
+							'label' => esc_html__( 'Button Text:', 'crimson-rose' ),
 							'sanitize' => 'text',
 						),
 						'button_link' => array(
 							'type'  => 'text',
 							'std'   => '',
-							'label' => esc_html__( 'Button URL:', 'angie-makes-design' ),
+							'label' => esc_html__( 'Button URL:', 'crimson-rose' ),
 							'sanitize' => 'text',
 						),
 						'button_style' => array(
 							'type'  => 'select',
 							'std'   => 'button-1',
-							'label' => __( 'Button Style:', 'angie-makes-design' ),
+							'label' => __( 'Button Style:', 'crimson-rose' ),
 							'options' => array(
-								'default' => __( 'Default Button', 'angie-makes-design' ),
-								'button-1' => __( 'Image Button 1', 'angie-makes-design' ),
-								'button-2' => __( 'Image Button 2', 'angie-makes-design' ),
+								'default' => __( 'Default Button', 'crimson-rose' ),
+								'button-1' => __( 'Image Button 1', 'crimson-rose' ),
+								'button-2' => __( 'Image Button 2', 'crimson-rose' ),
 							),
 							'sanitize' => 'text',
 						),
@@ -215,7 +215,7 @@ if ( ! class_exists( 'Angie_Makes_Design_Widget_Collage' ) ) :
 		 * @return void
 		 */
 		function widget( $args, $instance ) {
-			wp_enqueue_script( 'angie-makes-design-bxslider' );
+			wp_enqueue_script( 'crimson-rose-bxslider' );
 
 			$o = $this->sanitize( $instance );
 
@@ -402,4 +402,4 @@ if ( ! class_exists( 'Angie_Makes_Design_Widget_Collage' ) ) :
 	}
 endif;
 
-add_action( 'widgets_init', array( 'Angie_Makes_Design_Widget_Collage', 'register' ) );
+add_action( 'widgets_init', array( 'Crimson_Rose_Widget_Collage', 'register' ) );

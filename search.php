@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
- * @package Angie_Makes_Design
+ * @package Crimson_Rose
  */
 
 get_header(); ?>
@@ -15,7 +15,7 @@ get_header(); ?>
 		<?php
 		if ( have_posts() ) : ?>
 
-			<?php angie_makes_design_get_blog_part(); ?>
+			<?php crimson_rose_get_blog_part(); ?>
 			<?php
 
 			the_posts_navigation();

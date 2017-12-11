@@ -1,7 +1,7 @@
-<?php if ( angie_makes_design_is_woocommerce_activated() ) : ?>
+<?php if ( crimson_rose_is_woocommerce_activated() ) : ?>
 	<nav class="cart-menu in-menu-bar">
 		<ul class="menu">
-			<?php do_action( 'angie_makes_design_cart' ); ?>
+			<?php do_action( 'crimson_rose_cart' ); ?>
 		</ul>
 	</nav>
 <?php endif; ?>

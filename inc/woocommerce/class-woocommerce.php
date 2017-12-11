@@ -1,8 +1,8 @@
 <?php
 /**
- * Angie_Makes_Design WooCommerce Class.
+ * Crimson_Rose WooCommerce Class.
  *
- * @package  Angie_Makes_Design
+ * @package  Crimson_Rose
  * @since    1.0.0
  */
 
@@ -10,11 +10,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! class_exists( 'Angie_Makes_Design_WooCommerce' ) ) :
+if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 	/**
-	 * The Angie_Makes_Design WooCommerce Integration class.
+	 * The Crimson_Rose WooCommerce Integration class.
 	 */
-	class Angie_Makes_Design_WooCommerce {
+	class Crimson_Rose_WooCommerce {
 
 		/**
 		 * Setup class.
@@ -50,7 +50,7 @@ if ( ! class_exists( 'Angie_Makes_Design_WooCommerce' ) ) :
 			add_action( 'woocommerce_before_main_content', array( $this, 'output_content_wrapper' ), 10 );
 			add_action( 'woocommerce_after_main_content', array( $this, 'output_content_wrapper_end' ), 10 );
 
-			add_action( 'angie_makes_design_cart', array( $this, 'woocommerce_cart_dropdown' ), 10 );
+			add_action( 'crimson_rose_cart', array( $this, 'woocommerce_cart_dropdown' ), 10 );
 
 			add_filter( 'woocommerce_add_to_cart_fragments', array( $this, 'woocommerce_header_cart_fragments' ) );
 
@@ -59,7 +59,7 @@ if ( ! class_exists( 'Angie_Makes_Design_WooCommerce' ) ) :
 			// Add header for payment info.
 			add_action( 'woocommerce_review_order_before_payment', array( $this, 'before_shipping_title' ), 10 );
 
-			add_filter('woocommerce_short_description', 'angie_makes_design_the_content', 11 );
+			add_filter('woocommerce_short_description', 'crimson_rose_the_content', 11 );
 		}
 
 		function woocommerce_product_get_image( $image ) {
@@ -218,12 +218,12 @@ if ( ! class_exists( 'Angie_Makes_Design_WooCommerce' ) ) :
 			// wp_dequeue_style( 'woocommerce-smallscreen' );
 			// wp_dequeue_style( 'woocommerce-layout' );
 
-			wp_enqueue_style( 'angie-makes-design-woocommerce', get_template_directory_uri() . '/css/woocommerce.css', array( 'angie-makes-design-style' ), ANGIE_MAKES_DESIGN_VERSION );
+			wp_enqueue_style( 'crimson-rose-woocommerce', get_template_directory_uri() . '/css/woocommerce.css', array( 'crimson-rose-style' ), CRIMSON_ROSE_VERSION );
 
-			wp_enqueue_script( 'angie-makes-design-woocommerce', get_template_directory_uri() . '/js/woocommerce.js', array(), ANGIE_MAKES_DESIGN_VERSION, true );
+			wp_enqueue_script( 'crimson-rose-woocommerce', get_template_directory_uri() . '/js/woocommerce.js', array(), CRIMSON_ROSE_VERSION, true );
 
 			// RTL Support.
-			// wp_style_add_data( 'angie-makes-design-woocommerce', 'rtl', 'replace' );
+			// wp_style_add_data( 'crimson-rose-woocommerce', 'rtl', 'replace' );
 
 			// if ( is_single() && is_product() ) {
 				// wp_dequeue_style( 'woocommerce_admin_styles' );
@@ -240,7 +240,7 @@ if ( ! class_exists( 'Angie_Makes_Design_WooCommerce' ) ) :
 		public function related_products_args( $args ) {
 			global $angie_makes_design;
 			
-			$args = apply_filters( 'angie_makes_design_related_products_args', array(
+			$args = apply_filters( 'crimson_rose_related_products_args', array(
 				'posts_per_page' => $angie_makes_design['shop_related_products_columns'],
 				'columns'        => $angie_makes_design['shop_related_products_columns'],
 			) );
@@ -305,7 +305,7 @@ if ( ! class_exists( 'Angie_Makes_Design_WooCommerce' ) ) :
 			global $woocommerce;
 			$cart_items_count = $woocommerce->cart->cart_contents_count;
 
-			$output = "<h3 class='widget-sub-title'>" . $cart_items_count . ' ' . esc_html__( 'items in your cart', 'angie-makes-design' ) . "</h3>";
+			$output = "<h3 class='widget-sub-title'>" . $cart_items_count . ' ' . esc_html__( 'items in your cart', 'crimson-rose' ) . "</h3>";
 
 			echo $output;
 		}
@@ -314,12 +314,12 @@ if ( ! class_exists( 'Angie_Makes_Design_WooCommerce' ) ) :
 		 *  Add header for payment info
 		 */
 		function before_shipping_title() {
-			echo '<h3 id="payment_method_heading">' . esc_html__( 'Payment info', 'angie-makes-design' ) . '</h3>';
+			echo '<h3 id="payment_method_heading">' . esc_html__( 'Payment info', 'crimson-rose' ) . '</h3>';
 		}
 	}
 endif;
 
-return new Angie_Makes_Design_WooCommerce();
+return new Crimson_Rose_WooCommerce();
 
 
 /**

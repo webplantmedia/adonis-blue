@@ -4,10 +4,10 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Angie_Makes_Design
+ * @package Crimson_Rose
  */
 
-if ( ! angie_makes_design_display_sidebar() ) {
+if ( ! crimson_rose_display_sidebar() ) {
 	return;
 }
 ?>

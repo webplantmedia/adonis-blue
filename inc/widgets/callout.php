@@ -2,102 +2,102 @@
 /**
  * Content collout widget for widgetized pages.
  *
- * @since Angie_Makes_Design 1.0.0.
+ * @since Crimson_Rose 1.0.0.
  *
- * @package Angie_Makes_Design
+ * @package Crimson_Rose
  */
-class Angie_Makes_Design_Widget_Callout extends Angie_Makes_Design_Widget {
+class Crimson_Rose_Widget_Callout extends Crimson_Rose_Widget {
 	/**
 	 * Constructor
 	 */
 	public function __construct() {
-		$this->widget_id          = 'angie-makes-design-widget-callout';
-		$this->widget_description = esc_html__( 'Displays a callout.', 'angie-makes-design' );
-		$this->widget_name        = esc_html__( 'Angie Makes Design: Callout', 'angie-makes-design' );
+		$this->widget_id          = 'crimson-rose-widget-callout';
+		$this->widget_description = esc_html__( 'Displays a callout.', 'crimson-rose' );
+		$this->widget_name        = esc_html__( 'Angie Makes Design: Callout', 'crimson-rose' );
 		$this->settings           = array(
 			'title' => array(
 				'type'  => 'text',
 				'std'   => '',
-				'label' => __( 'Title:', 'angie-makes-design' ),
+				'label' => __( 'Title:', 'crimson-rose' ),
 				'sanitize' => 'text',
 			),
 			'content' => array(
 				'type'  => 'textarea',
 				'std'   => '<h3>EASY-TO-USE, CUSTOMIZABLE WORDPRESS THEMES TO FIT YOUR UNIQUE STYLE.</h3>',
-				'label' => __( 'Content:', 'angie-makes-design' ),
+				'label' => __( 'Content:', 'crimson-rose' ),
 				'rows'  => 5,
 				'sanitize' => 'html',
 			),
 			'text_align' => array(
 				'type'  => 'select',
 				'std'   => 'left',
-				'label' => __( 'Text Align:', 'angie-makes-design' ),
+				'label' => __( 'Text Align:', 'crimson-rose' ),
 				'options' => array(
-					'left' => __( 'Left', 'angie-makes-design' ),
-					'right' => __( 'Right', 'angie-makes-design' ),
+					'left' => __( 'Left', 'crimson-rose' ),
+					'right' => __( 'Right', 'crimson-rose' ),
 				),
 				'sanitize' => 'text',
 			),
 			'vertical_align' => array(
 				'type'  => 'select',
 				'std'   => 'middle',
-				'label' => __( 'Vertical Alignment:', 'angie-makes-design' ),
+				'label' => __( 'Vertical Alignment:', 'crimson-rose' ),
 				'options' => array(
-					'top' => __( 'Top', 'angie-makes-design' ),
-					'middle' => __( 'Middle', 'angie-makes-design' ),
-					'bottom' => __( 'Bottom', 'angie-makes-design' ),
+					'top' => __( 'Top', 'crimson-rose' ),
+					'middle' => __( 'Middle', 'crimson-rose' ),
+					'bottom' => __( 'Bottom', 'crimson-rose' ),
 				),
 				'sanitize' => 'text',
 			),
 			'image' => array(
 				'type'  => 'image',
 				'std'   => get_template_directory_uri() . '/img/collage/gentry.jpg',
-				'label' => esc_html__( 'Image:', 'angie-makes-design' ),
+				'label' => esc_html__( 'Image:', 'crimson-rose' ),
 				'sanitize' => 'url',
 			),
 			'background_color' => array(
 				'type'  => 'colorpicker',
 				'std'   => '#fdf7f3',
-				'label' => __( 'Background Color:', 'angie-makes-design' ),
+				'label' => __( 'Background Color:', 'crimson-rose' ),
 				'sanitize' => 'color',
 			),
 			'text_color' => array(
 				'type'  => 'colorpicker',
 				'std'   => '',
-				'label' => __( 'Text Color:', 'angie-makes-design' ),
-				'description' => esc_html__( 'Leave blank to use default theme color.', 'angie-makes-design' ),
+				'label' => __( 'Text Color:', 'crimson-rose' ),
+				'description' => esc_html__( 'Leave blank to use default theme color.', 'crimson-rose' ),
 				'sanitize' => 'color',
 			),
 			'button_text' => array(
 				'type'  => 'text',
 				'std'   => 'SHOP THEMES',
-				'label' => esc_html__( 'Button Text:', 'angie-makes-design' ),
+				'label' => esc_html__( 'Button Text:', 'crimson-rose' ),
 				'sanitize' => 'text',
 			),
 			'button_link' => array(
 				'type'  => 'text',
 				'std'   => 'https://angiemakes.com',
-				'label' => esc_html__( 'Button URL:', 'angie-makes-design' ),
+				'label' => esc_html__( 'Button URL:', 'crimson-rose' ),
 				'sanitize' => 'url',
 			),
 			'button_style' => array(
 				'type'  => 'select',
 				'std'   => 'button-2',
-				'label' => __( 'Button Style:', 'angie-makes-design' ),
+				'label' => __( 'Button Style:', 'crimson-rose' ),
 				'options' => array(
-					'default' => __( 'Default Button', 'angie-makes-design' ),
-					'button-1' => __( 'Image Button 1', 'angie-makes-design' ),
-					'button-2' => __( 'Image Button 2', 'angie-makes-design' ),
+					'default' => __( 'Default Button', 'crimson-rose' ),
+					'button-1' => __( 'Image Button 1', 'crimson-rose' ),
+					'button-2' => __( 'Image Button 2', 'crimson-rose' ),
 				),
 				'sanitize' => 'text',
 			),
 			'style' => array(
 				'type'  => 'select',
 				'std'   => 'border',
-				'label' => __( 'Box Style:', 'angie-makes-design' ),
+				'label' => __( 'Box Style:', 'crimson-rose' ),
 				'options' => array(
-					'plain' => __( 'Plain', 'angie-makes-design' ),
-					'border' => __( 'Border', 'angie-makes-design' ),
+					'plain' => __( 'Plain', 'crimson-rose' ),
+					'border' => __( 'Border', 'crimson-rose' ),
 				),
 				'sanitize' => 'text',
 			),
@@ -107,7 +107,7 @@ class Angie_Makes_Design_Widget_Callout extends Angie_Makes_Design_Widget {
 				'step'  => 1,
 				'min'   => 0,
 				'max'   => 300,
-				'label' => esc_html__( 'Top padding of widget:', 'angie-makes-design' ),
+				'label' => esc_html__( 'Top padding of widget:', 'crimson-rose' ),
 				'sanitize' => 'number',
 			),
 			'padding_bottom' => array(
@@ -116,7 +116,7 @@ class Angie_Makes_Design_Widget_Callout extends Angie_Makes_Design_Widget {
 				'step'  => 1,
 				'min'   => 0,
 				'max'   => 300,
-				'label' => esc_html__( 'Bottom padding of widget:', 'angie-makes-design' ),
+				'label' => esc_html__( 'Bottom padding of widget:', 'crimson-rose' ),
 				'sanitize' => 'number',
 			),
 			'margin_bottom' => array(
@@ -125,20 +125,20 @@ class Angie_Makes_Design_Widget_Callout extends Angie_Makes_Design_Widget {
 				'step'  => 1,
 				'min'   => 0,
 				'max'   => 300,
-				'label' => esc_html__( 'Bottom margin of widget:', 'angie-makes-design' ),
+				'label' => esc_html__( 'Bottom margin of widget:', 'crimson-rose' ),
 				'sanitize' => 'number',
 			),
 		);
 
 		parent::__construct();
 
-		add_filter( 'angie_makes_design_feature_callout_description', 'wptexturize' );
-		add_filter( 'angie_makes_design_feature_callout_description', 'convert_smilies' );
-		add_filter( 'angie_makes_design_feature_callout_description', 'convert_chars' );
-		add_filter( 'angie_makes_design_feature_callout_description', 'wpautop' );
-		add_filter( 'angie_makes_design_feature_callout_description', 'shortcode_unautop' );
-		add_filter( 'angie_makes_design_feature_callout_description', 'prepend_attachment' );
-		add_filter( 'angie_makes_design_feature_callout_description', 'do_shortcode' );
+		add_filter( 'crimson_rose_feature_callout_description', 'wptexturize' );
+		add_filter( 'crimson_rose_feature_callout_description', 'convert_smilies' );
+		add_filter( 'crimson_rose_feature_callout_description', 'convert_chars' );
+		add_filter( 'crimson_rose_feature_callout_description', 'wpautop' );
+		add_filter( 'crimson_rose_feature_callout_description', 'shortcode_unautop' );
+		add_filter( 'crimson_rose_feature_callout_description', 'prepend_attachment' );
+		add_filter( 'crimson_rose_feature_callout_description', 'do_shortcode' );
 	}
 
 	/**
@@ -257,7 +257,7 @@ class Angie_Makes_Design_Widget_Callout extends Angie_Makes_Design_Widget {
 
 		$output .= '</div>';
 
-		$output  = apply_filters( 'angie_makes_design_callout_description', $output );
+		$output  = apply_filters( 'crimson_rose_callout_description', $output );
 
 		return $output;
 	}
@@ -272,4 +272,4 @@ class Angie_Makes_Design_Widget_Callout extends Angie_Makes_Design_Widget {
 	}
 }
 
-add_action( 'widgets_init', array( 'Angie_Makes_Design_Widget_Callout', 'register' ) );
+add_action( 'widgets_init', array( 'Crimson_Rose_Widget_Callout', 'register' ) );

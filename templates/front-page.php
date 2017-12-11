@@ -2,7 +2,7 @@
 /**
  * Template Name: Front Page Sidebar
  *
- * @package Angie_Makes_Design
+ * @package Crimson_Rose
  */
 
 get_header(); ?>

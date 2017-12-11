@@ -2,7 +2,7 @@
 /**
  * Custom search form.
  *
- * @package Angie_Makes_Design
+ * @package Crimson_Rose
  */
 
 ?>
@@ -12,15 +12,15 @@
 		<label>
 			<span class="screen-reader-text">
 				<?php /* Translators: this string is a label for a search input that is only visible to screen readers. */
-				esc_html_e( 'Search for:', 'angie-makes-design' ); ?>
+				esc_html_e( 'Search for:', 'crimson-rose' ); ?>
 			</span>
 
-			<input type="search" class="search-field" placeholder="<?php esc_html_e( 'Type keyword', 'angie-makes-design' ); ?>" title="<?php esc_attr_e( 'Press Enter to submit your search', 'angie-makes-design' ) ?>" value="<?php echo esc_attr( get_search_query() ); ?>" name="s">
+			<input type="search" class="search-field" placeholder="<?php esc_html_e( 'Type keyword', 'crimson-rose' ); ?>" title="<?php esc_attr_e( 'Press Enter to submit your search', 'crimson-rose' ) ?>" value="<?php echo esc_attr( get_search_query() ); ?>" name="s">
 		</label>
 
 		<button type="submit" class="search-submit">
 			<i class="genericons-neue genericons-neue-search"></i>
-			<span class="screen-reader-text"><?php esc_html_e( 'Search', 'angie-makes-design' ); ?></span>
+			<span class="screen-reader-text"><?php esc_html_e( 'Search', 'crimson-rose' ); ?></span>
 		</button>
 	</form>
 </div>

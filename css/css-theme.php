@@ -1,5 +1,5 @@
 <?php
-function angie_makes_design_custom_css() {
+function crimson_rose_custom_css() {
 	global $angie_makes_design;
 
 	$css = '
@@ -137,8 +137,8 @@ a:hover {
 }
 
 .site-branding {
-	' . angie_makes_design_css_set_unit( 'padding-top', $angie_makes_design['heading_padding_top'] ) . ' /*id:heading_padding_top*/
-	' . angie_makes_design_css_set_unit( 'padding-bottom', $angie_makes_design['heading_padding_bottom'] ) . ' /*id:heading_padding_bottom*/
+	' . crimson_rose_css_set_unit( 'padding-top', $angie_makes_design['heading_padding_top'] ) . ' /*id:heading_padding_top*/
+	' . crimson_rose_css_set_unit( 'padding-bottom', $angie_makes_design['heading_padding_bottom'] ) . ' /*id:heading_padding_bottom*/
 }
 
 .site-header {

@@ -15,12 +15,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! class_exists( 'Angie_Makes_Design_Upgrade' ) ) :
+if ( ! class_exists( 'Crimson_Rose_Upgrade' ) ) :
 	/**
-	 * The Angie_Makes_Design WooCommerce Integration class.
+	 * The Crimson_Rose WooCommerce Integration class.
 	 */
-	class Angie_Makes_Design_Upgrade {
-		private $template_name = 'angie-makes-design';
+	class Crimson_Rose_Upgrade {
+		private $template_name = 'crimson-rose';
 
 		public function __construct() {
 			add_filter( 'site_transient_update_themes', array( $this, 'update_push' ), 10, 1 ); //most active one
@@ -37,7 +37,7 @@ if ( ! class_exists( 'Angie_Makes_Design_Upgrade' ) ) :
 		 *
 		 * If so, the external server passes serialized data back to this function, which gets unserialized and returned for use.
 		 *
-		 * Applies `angie_makes_design_update_remote_post_options` filter.
+		 * Applies `crimson_rose_update_remote_post_options` filter.
 		 *
 		 * Ping occurs at a maximum of once every 24 hours.
 		 *
@@ -46,7 +46,7 @@ if ( ! class_exists( 'Angie_Makes_Design_Upgrade' ) ) :
 		 * @global string $wp_version WordPress version string.
 		 *
 		 * @return array Unserialized data, or empty array if updates are disabled or
-		 *               theme does not support `angie-makes-design-auto-updates`.
+		 *               theme does not support `crimson-rose-auto-updates`.
 		 */
 		public function update_check() {
 			global $angie_makes_design;
@@ -78,7 +78,7 @@ if ( ! class_exists( 'Angie_Makes_Design_Upgrade' ) ) :
 				
 				$url = 'https://api.webplantmedia.com/themes/update-check/1.2/';
 				$options = apply_filters(
-					'angie_makes_design_update_remote_post_options',
+					'crimson_rose_update_remote_post_options',
 					array(
 						'user-agent'	=> 'WordPress/' . $wp_version . '; ' . get_bloginfo( 'url' ),
 						'body' => array(
@@ -122,7 +122,7 @@ if ( ! class_exists( 'Angie_Makes_Design_Upgrade' ) ) :
 		 *
 		 * This function filters the value that is returned when WordPress tries to pull theme update transient data.
 		 *
-		 * It uses `angie_makes_design_update_check()` to check to see if we need to do an update, and if so, adds the proper array to the
+		 * It uses `crimson_rose_update_check()` to check to see if we need to do an update, and if so, adds the proper array to the
 		 * `$value->response` object. WordPress handles the rest.
 		 *
 		 * @since 1.1.0
@@ -158,7 +158,7 @@ if ( ! class_exists( 'Angie_Makes_Design_Upgrade' ) ) :
 		 *
 		 * @since 1.1.0
 		 *
-		 * @see angie_makes_design_update_nag()
+		 * @see crimson_rose_update_nag()
 		 */
 		public function clear_update_transient() {
 			delete_transient( $this->template_name . '-update' );
@@ -166,4 +166,4 @@ if ( ! class_exists( 'Angie_Makes_Design_Upgrade' ) ) :
 	}
 endif;
 
-return new Angie_Makes_Design_Upgrade();
+return new Crimson_Rose_Upgrade();

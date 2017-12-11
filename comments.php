@@ -7,7 +7,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Angie_Makes_Design
+ * @package Crimson_Rose
  */
 
 /*
@@ -31,13 +31,13 @@ if ( post_password_required() ) {
 			if ( 1 === $comment_count ) {
 				printf(
 					/* translators: 1: title. */
-					esc_html_e( 'One thought on &ldquo;%1$s&rdquo;', 'angie-makes-design' ),
+					esc_html_e( 'One thought on &ldquo;%1$s&rdquo;', 'crimson-rose' ),
 					'<span>' . get_the_title() . '</span>'
 				);
 			} else {
 				printf( // WPCS: XSS OK.
 					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $comment_count, 'comments title', 'angie-makes-design' ) ),
+					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $comment_count, 'comments title', 'crimson-rose' ) ),
 					number_format_i18n( $comment_count ),
 					'<span>' . get_the_title() . '</span>'
 				);
@@ -59,7 +59,7 @@ if ( post_password_required() ) {
 
 		// If comments are closed and there are comments, let's leave a little note, shall we?
 		if ( ! comments_open() ) : ?>
-			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'angie-makes-design' ); ?></p>
+			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'crimson-rose' ); ?></p>
 		<?php
 		endif;
 

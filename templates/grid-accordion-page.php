@@ -2,7 +2,7 @@
 /**
  * Template Name: Grid Accordion Page
  *
- * @package Angie_Makes_Design
+ * @package Crimson_Rose
  */
 
 get_header(); ?>
@@ -27,5 +27,5 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 <?php
-wp_enqueue_script( 'angie-makes-design-accordion' );
+wp_enqueue_script( 'crimson-rose-accordion' );
 get_footer();

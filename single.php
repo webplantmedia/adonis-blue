@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package Angie_Makes_Design
+ * @package Crimson_Rose
  */
 
 get_header(); ?>
@@ -23,7 +23,7 @@ get_header(); ?>
 				echo do_shortcode( '[jetpack-related-posts]' );
 			}
 
-			angie_makes_design_featured_post_navigation();
+			crimson_rose_featured_post_navigation();
 
 			// If comments are open or we have at least one comment, load up the comment template.
 			if ( comments_open() || get_comments_number() ) :

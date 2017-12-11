@@ -4,10 +4,10 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Angie_Makes_Design
+ * @package Crimson_Rose
  */
 
-if ( ! $footer = angie_makes_design_display_sidebar_footer() ) {
+if ( ! $footer = crimson_rose_display_sidebar_footer() ) {
 	return;
 }
 $column = 1;

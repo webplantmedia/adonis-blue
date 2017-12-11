@@ -1,5 +1,5 @@
 <?php
-function angie_makes_design_css_set_unit( $property, $pixel ) {
+function crimson_rose_css_set_unit( $property, $pixel ) {
 	if ( ! is_int( $pixel ) && ! is_numeric( $pixel ) ) {
 		return $property . ": " . $pixel . ";";
 	}

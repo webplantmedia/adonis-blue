@@ -2,45 +2,45 @@
 /**
  * Section: Blog Posts Widget
  *
- * @since Angie_Makes_Design 1.0.0.
+ * @since Crimson_Rose 1.0.0.
  *
- * @package Angie_Makes_Design
+ * @package Crimson_Rose
  */
 
-if ( ! class_exists( 'Angie_Makes_Design_Widget_Blog_Post' ) ) :
+if ( ! class_exists( 'Crimson_Rose_Widget_Blog_Post' ) ) :
 	/**
 	 * Display static content from an specific page.
 	 *
-	 * @since Angie_Makes_Design 1.0.0.
+	 * @since Crimson_Rose 1.0.0.
 	 *
-	 * @package Angie_Makes_Design
+	 * @package Crimson_Rose
 	 */
-	class Angie_Makes_Design_Widget_Blog_Post extends Angie_Makes_Design_Widget {
+	class Crimson_Rose_Widget_Blog_Post extends Crimson_Rose_Widget {
 		/**
 		 * Constructor
 		 */
 		public function __construct() {
-			$this->widget_id          = 'angie-makes-design-blog-posts';
-			$this->widget_cssclass    = 'angie-makes-design-blog-posts';
-			$this->widget_description = esc_html__( 'Displays content from blog posts.', 'angie-makes-design' );
-			$this->widget_name        = esc_html__( 'Angie Makes Design: Blog Posts', 'angie-makes-design' );
+			$this->widget_id          = 'crimson-rose-blog-posts';
+			$this->widget_cssclass    = 'crimson-rose-blog-posts';
+			$this->widget_description = esc_html__( 'Displays content from blog posts.', 'crimson-rose' );
+			$this->widget_name        = esc_html__( 'Angie Makes Design: Blog Posts', 'crimson-rose' );
 			$this->settings           = array(
 				'title' => array(
 					'type'  => 'text',
 					'std'   => 'BLOG',
-					'label' => esc_html__( 'Title:', 'angie-makes-design' ),
+					'label' => esc_html__( 'Title:', 'crimson-rose' ),
 					'sanitize' => 'text',
 				),
 				'post_ids' => array(
 					'type'  => 'text',
 					'std'   => '',
-					'label' => esc_html__( 'Post ID\'s:', 'angie-makes-design' ),
+					'label' => esc_html__( 'Post ID\'s:', 'crimson-rose' ),
 					'sanitize' => 'post_ids',
 				),
 				'category' => array(
 					'type'  => 'category',
 					'std'   => 0,
-					'label' => esc_html__( 'Category:', 'angie-makes-design' ),
+					'label' => esc_html__( 'Category:', 'crimson-rose' ),
 					'sanitize' => 'number',
 				),
 				'post_count' => array(
@@ -49,45 +49,45 @@ if ( ! class_exists( 'Angie_Makes_Design_Widget_Blog_Post' ) ) :
 					'step'  => 1,
 					'min'   => 1,
 					'max'   => 100,
-					'label' => esc_html__( 'Number of Posts:', 'angie-makes-design' ),
+					'label' => esc_html__( 'Number of Posts:', 'crimson-rose' ),
 					'sanitize' => 'number',
 				),
 				'columns' => array(
 					'type'  => 'select',
 					'std'   => 3,
-					'label' => __( 'Columns:', 'angie-makes-design' ),
+					'label' => __( 'Columns:', 'crimson-rose' ),
 					'options' => array(
-						2 => __( '2 Columns', 'angie-makes-design' ),
-						3 => __( '3 Columns', 'angie-makes-design' ),
+						2 => __( '2 Columns', 'crimson-rose' ),
+						3 => __( '3 Columns', 'crimson-rose' ),
 					),
 					'sanitize' => 'number',
 				),
 				'random_order' => array(
 					'type'  => 'checkbox',
 					'std'   => 0,
-					'label' => __( 'Random order?', 'angie-makes-design' ),
+					'label' => __( 'Random order?', 'crimson-rose' ),
 					'sanitize' => 'checkbox',
 				),
 				'button_text' => array(
 					'type'  => 'text',
 					'std'   => 'See All Posts',
-					'label' => esc_html__( 'Button Text:', 'angie-makes-design' ),
+					'label' => esc_html__( 'Button Text:', 'crimson-rose' ),
 					'sanitize' => 'text',
 				),
 				'button_link' => array(
 					'type'  => 'text',
 					'std'   => '',
-					'label' => esc_html__( 'Button Link:', 'angie-makes-design' ),
+					'label' => esc_html__( 'Button Link:', 'crimson-rose' ),
 					'sanitize' => 'text',
 				),
 				'button_style' => array(
 					'type'  => 'select',
 					'std'   => 'button-2',
-					'label' => __( 'Button Style:', 'angie-makes-design' ),
+					'label' => __( 'Button Style:', 'crimson-rose' ),
 					'options' => array(
-						'default' => __( 'Default Button', 'angie-makes-design' ),
-						'button-1' => __( 'Image Button 1', 'angie-makes-design' ),
-						'button-2' => __( 'Image Button 2', 'angie-makes-design' ),
+						'default' => __( 'Default Button', 'crimson-rose' ),
+						'button-1' => __( 'Image Button 1', 'crimson-rose' ),
+						'button-2' => __( 'Image Button 2', 'crimson-rose' ),
 					),
 					'sanitize' => 'text',
 				),
@@ -97,7 +97,7 @@ if ( ! class_exists( 'Angie_Makes_Design_Widget_Blog_Post' ) ) :
 					'step'  => 1,
 					'min'   => 0,
 					'max'   => 300,
-					'label' => esc_html__( 'Bottom margin of widget:', 'angie-makes-design' ),
+					'label' => esc_html__( 'Bottom margin of widget:', 'crimson-rose' ),
 					'sanitize' => 'number',
 				),
 			);
@@ -151,7 +151,7 @@ if ( ! class_exists( 'Angie_Makes_Design_Widget_Blog_Post' ) ) :
 			echo  $before_widget;
 
 			// Allow site-wide customization of the 'Read more' link text.
-			$read_more = apply_filters( 'angie_makes_design_read_more_text', esc_html__( 'Read more', 'angie-makes-design' ) );
+			$read_more = apply_filters( 'crimson_rose_read_more_text', esc_html__( 'Read more', 'crimson-rose' ) );
 			?>
 
 			<?php if ( $post->have_posts() ) : ?>
@@ -228,4 +228,4 @@ if ( ! class_exists( 'Angie_Makes_Design_Widget_Blog_Post' ) ) :
 	}
 endif;
 
-add_action( 'widgets_init', array( 'Angie_Makes_Design_Widget_Blog_Post', 'register' ) );
+add_action( 'widgets_init', array( 'Crimson_Rose_Widget_Blog_Post', 'register' ) );

@@ -9,7 +9,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Angie_Makes_Design
+ * @package Crimson_Rose
  */
 
 get_header(); ?>
@@ -25,7 +25,7 @@ get_header(); ?>
 				</header>
 			<?php endif; ?>
 
-			<?php angie_makes_design_get_blog_part(); ?>
+			<?php crimson_rose_get_blog_part(); ?>
 			<?php
 
 			the_posts_navigation();

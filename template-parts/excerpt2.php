@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Angie_Makes_Design
+ * @package Crimson_Rose
  */
 
 ?>
@@ -19,7 +19,7 @@
 	<header class="entry-header">
 		<?php if ( 'post' === get_post_type() ) : ?>
 			<div class="entry-cat-meta">
-				<?php angie_makes_design_entry_header( '<span class="cat-bull-delim">&bull;</span> ' ); ?>
+				<?php crimson_rose_entry_header( '<span class="cat-bull-delim">&bull;</span> ' ); ?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 
@@ -28,7 +28,7 @@
 
 		if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
-			<?php angie_makes_design_posted_on(); ?>
+			<?php crimson_rose_posted_on(); ?>
 		</div><!-- .entry-meta -->
 		<?php
 		endif; ?>

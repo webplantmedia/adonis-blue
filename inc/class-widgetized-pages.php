@@ -1,11 +1,11 @@
 <?php
 
-class Angie_Makes_Design_Widgetized_Pages {
+class Crimson_Rose_Widgetized_Pages {
 
 	private $transient;
 
 	public function __construct() {
-		$this->transient = 'angie_makes_design_widgetized_pages';
+		$this->transient = 'crimson_rose_widgetized_pages';
 
 		add_action( 'save_post', array( $this, 'flush_cache' ) );
 		add_action( 'widgets_init', array( $this, 'register_widget_areas' ), 99 );
@@ -20,8 +20,8 @@ class Angie_Makes_Design_Widgetized_Pages {
 
 		foreach ( $pages as $page ) {
 			register_sidebar( array(
-				'name'          => sprintf( __( 'Page: %s', 'angie-makes-design' ), get_the_title( $page ) ),
-				'description'   => sprintf( __( 'Widgets that appear on the "%s" page.', 'angie-makes-design' ), get_the_title( $page ) ),
+				'name'          => sprintf( __( 'Page: %s', 'crimson-rose' ), get_the_title( $page ) ),
+				'description'   => sprintf( __( 'Widgets that appear on the "%s" page.', 'crimson-rose' ), get_the_title( $page ) ),
 				'id'            => 'widget-area-page-' . $page,
 				'before_widget' => '<section id="%1$s" class="content-widget %2$s">',
 				'after_widget'  => '</section>',
@@ -63,4 +63,4 @@ class Angie_Makes_Design_Widgetized_Pages {
 	}
 }
 
-$angie_makes_design_widgetized_pages = new Angie_Makes_Design_Widgetized_Pages;
+$crimson_rose_widgetized_pages = new Crimson_Rose_Widgetized_Pages;

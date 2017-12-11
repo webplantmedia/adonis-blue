@@ -2,51 +2,51 @@
 /**
  * Content collout widget for widgetized pages.
  *
- * @since Angie_Makes_Design 1.0.0.
+ * @since Crimson_Rose 1.0.0.
  *
- * @package Angie_Makes_Design
+ * @package Crimson_Rose
  */
-class Angie_Makes_Design_Widget_Jetpack_Testimonials extends Angie_Makes_Design_Widget {
+class Crimson_Rose_Widget_Jetpack_Testimonials extends Crimson_Rose_Widget {
 	/**
 	 * Constructor
 	 */
 	public function __construct() {
-		$this->widget_id          = 'angie-makes-design-widget-jetpack-testimonials';
-		$this->widget_description = esc_html__( 'Displays Jetpack Testimonials.', 'angie-makes-design' );
-		$this->widget_name        = esc_html__( 'Angie Makes Design: Jetpack Testimonials', 'angie-makes-design' );
+		$this->widget_id          = 'crimson-rose-widget-jetpack-testimonials';
+		$this->widget_description = esc_html__( 'Displays Jetpack Testimonials.', 'crimson-rose' );
+		$this->widget_name        = esc_html__( 'Angie Makes Design: Jetpack Testimonials', 'crimson-rose' );
 		$this->settings           = array(
 			'title' => array(
 				'type'  => 'text',
 				'std'   => 'THOUSANDS OF HAPPY CUSTOMERS AND COUNTING',
-				'label' => __( 'Title:', 'angie-makes-design' ),
+				'label' => __( 'Title:', 'crimson-rose' ),
 				'sanitize' => 'text',
 			),
 			'display_signature' => array(
 				'type'  => 'checkbox',
 				'std'   => 1,
-				'label' => __( 'Display Signature:', 'angie-makes-design' ),
+				'label' => __( 'Display Signature:', 'crimson-rose' ),
 				'sanitize' => 'checkbox',
 			),
 			'signature_icon' => array(
 				'type'  => 'select',
 				'std'   => 'heart',
-				'label' => __( 'Icon to display before signature:', 'angie-makes-design' ),
+				'label' => __( 'Icon to display before signature:', 'crimson-rose' ),
 				'options' => array(
-					'short-dash' => __( 'Short Dash', 'angie-makes-design' ),
-					'medium-dash' => __( 'Medium Dash', 'angie-makes-design' ),
-					'long-dash' => __( 'Long Dash', 'angie-makes-design' ),
-					'heart' => __( 'Heart', 'angie-makes-design' ),
-					'' => __( 'None', 'angie-makes-design' ),
+					'short-dash' => __( 'Short Dash', 'crimson-rose' ),
+					'medium-dash' => __( 'Medium Dash', 'crimson-rose' ),
+					'long-dash' => __( 'Long Dash', 'crimson-rose' ),
+					'heart' => __( 'Heart', 'crimson-rose' ),
+					'' => __( 'None', 'crimson-rose' ),
 				),
 				'sanitize' => 'text',
 			),
 			'columns' => array(
 				'type'  => 'select',
 				'std'   => '2',
-				'label' => __( 'Columns:', 'angie-makes-design' ),
+				'label' => __( 'Columns:', 'crimson-rose' ),
 				'options' => array(
-					'1' => __( '1', 'angie-makes-design' ),
-					'2' => __( '2', 'angie-makes-design' ),
+					'1' => __( '1', 'crimson-rose' ),
+					'2' => __( '2', 'crimson-rose' ),
 				),
 				'sanitize' => 'text',
 			),
@@ -55,39 +55,39 @@ class Angie_Makes_Design_Widget_Jetpack_Testimonials extends Angie_Makes_Design_
 				'std'   => 0,
 				'step'  => 1,
 				'min'   => 0,
-				'label' => __( 'Number of testimonials to display:', 'angie-makes-design' ),
-				'description' => esc_html__( 'Set to zero to display all.', 'angie-makes-design' ),
+				'label' => __( 'Number of testimonials to display:', 'crimson-rose' ),
+				'description' => esc_html__( 'Set to zero to display all.', 'crimson-rose' ),
 				'sanitize' => 'number',
 			),
 			'order' => array(
 				'type'  => 'select',
 				'std'   => 'asc',
-				'label' => __( 'Order:', 'angie-makes-design' ),
+				'label' => __( 'Order:', 'crimson-rose' ),
 				'options' => array(
-					'asc' => __( 'ASC', 'angie-makes-design' ),
-					'desc' => __( 'DESC', 'angie-makes-design' ),
+					'asc' => __( 'ASC', 'crimson-rose' ),
+					'desc' => __( 'DESC', 'crimson-rose' ),
 				),
 				'sanitize' => 'text',
 			),
 			'orderby' => array(
 				'type'  => 'select',
 				'std'   => 'date',
-				'label' => __( 'Order By:', 'angie-makes-design' ),
+				'label' => __( 'Order By:', 'crimson-rose' ),
 				'options' => array(
-					'date' => __( 'Date', 'angie-makes-design' ),
-					'title' => __( 'Title', 'angie-makes-design' ),
-					'author' => __( 'Author', 'angie-makes-design' ),
-					'rand' => __( 'Random', 'angie-makes-design' ),
+					'date' => __( 'Date', 'crimson-rose' ),
+					'title' => __( 'Title', 'crimson-rose' ),
+					'author' => __( 'Author', 'crimson-rose' ),
+					'rand' => __( 'Random', 'crimson-rose' ),
 				),
 				'sanitize' => 'text',
 			),
 			'style' => array(
 				'type'  => 'select',
 				'std'   => 'plain',
-				'label' => __( 'Box Style:', 'angie-makes-design' ),
+				'label' => __( 'Box Style:', 'crimson-rose' ),
 				'options' => array(
-					'plain' => __( 'Plain', 'angie-makes-design' ),
-					'border' => __( 'Border', 'angie-makes-design' ),
+					'plain' => __( 'Plain', 'crimson-rose' ),
+					'border' => __( 'Border', 'crimson-rose' ),
 				),
 				'sanitize' => 'text',
 			),
@@ -97,7 +97,7 @@ class Angie_Makes_Design_Widget_Jetpack_Testimonials extends Angie_Makes_Design_
 				'step'  => 1,
 				'min'   => 0,
 				'max'   => 1000,
-				'label' => esc_html__( 'Height of testimonials:', 'angie-makes-design' ),
+				'label' => esc_html__( 'Height of testimonials:', 'crimson-rose' ),
 				'sanitize' => 'number',
 			),
 			'padding_top' => array(
@@ -106,7 +106,7 @@ class Angie_Makes_Design_Widget_Jetpack_Testimonials extends Angie_Makes_Design_
 				'step'  => 1,
 				'min'   => 0,
 				'max'   => 300,
-				'label' => esc_html__( 'Top padding of widget:', 'angie-makes-design' ),
+				'label' => esc_html__( 'Top padding of widget:', 'crimson-rose' ),
 				'sanitize' => 'number',
 			),
 			'padding_bottom' => array(
@@ -115,7 +115,7 @@ class Angie_Makes_Design_Widget_Jetpack_Testimonials extends Angie_Makes_Design_
 				'step'  => 1,
 				'min'   => 0,
 				'max'   => 300,
-				'label' => esc_html__( 'Bottom padding of widget:', 'angie-makes-design' ),
+				'label' => esc_html__( 'Bottom padding of widget:', 'crimson-rose' ),
 				'sanitize' => 'number',
 			),
 			'margin_bottom' => array(
@@ -124,20 +124,20 @@ class Angie_Makes_Design_Widget_Jetpack_Testimonials extends Angie_Makes_Design_
 				'step'  => 1,
 				'min'   => 0,
 				'max'   => 300,
-				'label' => esc_html__( 'Bottom margin of widget:', 'angie-makes-design' ),
+				'label' => esc_html__( 'Bottom margin of widget:', 'crimson-rose' ),
 				'sanitize' => 'number',
 			),
 			'panels' => array(
 				array(
-					'title' => esc_html__( 'Slider Settings', 'angie-makes-design' ),
+					'title' => esc_html__( 'Slider Settings', 'crimson-rose' ),
 					'fields' => array(
 						'slider_mode' => array(
 							'type'  => 'select',
 							'std'   => 'horizontal',
-							'label' => esc_html__( 'Transition Effect:', 'angie-makes-design' ),
+							'label' => esc_html__( 'Transition Effect:', 'crimson-rose' ),
 							'options' => array(
-								'horizontal' => esc_html__( 'Slide', 'angie-makes-design' ),
-								'fade' => esc_html__( 'Fade', 'angie-makes-design' ),
+								'horizontal' => esc_html__( 'Slide', 'crimson-rose' ),
+								'fade' => esc_html__( 'Fade', 'crimson-rose' ),
 							),
 							'sanitize' => 'text',
 						),
@@ -147,31 +147,31 @@ class Angie_Makes_Design_Widget_Jetpack_Testimonials extends Angie_Makes_Design_
 							'step'  => 1,
 							'min'   => 1,
 							'max'   => 100,
-							'label' => esc_html__( 'Speed of the slideshow change in seconds:', 'angie-makes-design' ),
+							'label' => esc_html__( 'Speed of the slideshow change in seconds:', 'crimson-rose' ),
 							'sanitize' => 'number',
 						),
 						'slider_auto' => array(
 							'type'  => 'checkbox',
 							'std'   => 1,
-							'label' => esc_html__( 'Auto start slider transitions?', 'angie-makes-design' ),
+							'label' => esc_html__( 'Auto start slider transitions?', 'crimson-rose' ),
 							'sanitize' => 'checkbox',
 						),
 						'slider_autohover' => array(
 							'type'  => 'checkbox',
 							'std'   => 1,
-							'label' => esc_html__( 'Pause slideshow when hovering?', 'angie-makes-design' ),
+							'label' => esc_html__( 'Pause slideshow when hovering?', 'crimson-rose' ),
 							'sanitize' => 'checkbox',
 						),
 						'slider_controls' => array(
 							'type'  => 'checkbox',
 							'std'   => 1,
-							'label' => esc_html__( 'Show slide control?', 'angie-makes-design' ),
+							'label' => esc_html__( 'Show slide control?', 'crimson-rose' ),
 							'sanitize' => 'checkbox',
 						),
 						'slider_pager' => array(
 							'type'  => 'checkbox',
 							'std'   => 1,
-							'label' => esc_html__( 'Show slide pagination?', 'angie-makes-design' ),
+							'label' => esc_html__( 'Show slide pagination?', 'crimson-rose' ),
 							'sanitize' => 'checkbox',
 						),
 					),
@@ -299,7 +299,7 @@ class Angie_Makes_Design_Widget_Jetpack_Testimonials extends Angie_Makes_Design_
 				</div><!-- close .jetpack-testimonial-shortcode -->
 			<?php
 			} else {
-				$notice = '<p><em>'._e( 'Your Testimonial Archive currently has no entries. You can start creating them on your dashboard.', 'angie-makes-design' ).'</p></em>';
+				$notice = '<p><em>'._e( 'Your Testimonial Archive currently has no entries. You can start creating them on your dashboard.', 'crimson-rose' ).'</p></em>';
 			}
 			?>
 
@@ -401,7 +401,7 @@ class Angie_Makes_Design_Widget_Jetpack_Testimonials extends Angie_Makes_Design_
 
 					<?php else : ?>
 
-						<p><em><?php echo _e( 'Your Testimonial Archive currently has no entries. You can start creating them on your dashboard.', 'angie-makes-design' ); ?></p></em>
+						<p><em><?php echo _e( 'Your Testimonial Archive currently has no entries. You can start creating them on your dashboard.', 'crimson-rose' ); ?></p></em>
 
 					<?php endif; ?>
 				</div><!-- .site-boundary -->
@@ -442,4 +442,4 @@ class Angie_Makes_Design_Widget_Jetpack_Testimonials extends Angie_Makes_Design_
 	}
 }
 
-add_action( 'widgets_init', array( 'Angie_Makes_Design_Widget_Jetpack_Testimonials', 'register' ) );
+add_action( 'widgets_init', array( 'Crimson_Rose_Widget_Jetpack_Testimonials', 'register' ) );

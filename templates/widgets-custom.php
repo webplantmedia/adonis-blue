@@ -1,6 +1,6 @@
 <?php
 /**
- * @package Angie_Makes_Design
+ * @package Crimson_Rose
  */
 
 get_header(); ?>
@@ -17,7 +17,7 @@ get_header(); ?>
 							the_content();
 
 							wp_link_pages( array(
-								'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'angie-makes-design' ),
+								'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'crimson-rose' ),
 								'after'  => '</div>',
 							) );
 						?>

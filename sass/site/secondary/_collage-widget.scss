@@ -1,8 +1,8 @@
-.site-content > .site-boundary > .angie-makes-design-widget-collage:first-child {
+.site-content > .site-boundary > .crimson-rose-widget-collage:first-child {
 	@include rem('margin-top',-30px);
 }
 
-#master .angie-makes-design-widget-collage {
+#master .crimson-rose-widget-collage {
 	.collage {
 
 		.slide-inner {
@@ -38,7 +38,7 @@
 	}
 }
 
-.angie-makes-design-widget-collage {
+.crimson-rose-widget-collage {
 	.collage {
 		position: relative;
 		height: 650px;
@@ -173,7 +173,7 @@
 }
 
 @media screen and (max-width : 991px) {
-	.angie-makes-design-widget-collage {
+	.crimson-rose-widget-collage {
 		.collage {
 			height: 1300px;
 			max-width: 520px;
@@ -248,7 +248,7 @@
 }
 
 @media screen and (max-width : 568px) {
-	#master .angie-makes-design-widget-collage {
+	#master .crimson-rose-widget-collage {
 		.collage {
 			height: 1500px;
 

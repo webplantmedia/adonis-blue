@@ -2,13 +2,13 @@
 /**
  * Widget base class.
  *
- * @package Angie_Makes_Design
+ * @package Crimson_Rose
  */
 
 /**
  * Widget base
  */
-class Angie_Makes_Design_Widget extends WP_Widget {
+class Crimson_Rose_Widget extends WP_Widget {
 
 	public $widget_description;
 	public $widget_id;
@@ -48,21 +48,21 @@ class Angie_Makes_Design_Widget extends WP_Widget {
 			return;
 		}
 		wp_enqueue_style( 'wp-color-picker' );
-		wp_enqueue_style( 'angie-makes-design-admin-widgets', get_parent_theme_file_uri() . '/css/admin/admin-widgets.css', array(), ANGIE_MAKES_DESIGN_VERSION );
+		wp_enqueue_style( 'crimson-rose-admin-widgets', get_parent_theme_file_uri() . '/css/admin/admin-widgets.css', array(), CRIMSON_ROSE_VERSION );
 
 		wp_enqueue_script( 'wp-color-picker' );
 		wp_enqueue_script( 'jquery-ui' );
 		wp_enqueue_script( 'jquery-ui-autocomplete' );
 		wp_enqueue_script( 'jquery-ui-accordion' );
 
-		wp_enqueue_script( 'angie-makes-design-admin-widgets', get_template_directory_uri() . '/js/admin/admin-widgets.js', array(), ANGIE_MAKES_DESIGN_VERSION, true );
+		wp_enqueue_script( 'crimson-rose-admin-widgets', get_template_directory_uri() . '/js/admin/admin-widgets.js', array(), CRIMSON_ROSE_VERSION, true );
 	}
 
 	/**
 	 * get_cached_widget function.
 	 */
 	function get_cached_widget( $args ) {
-		if ( apply_filters( 'angie_makes_design_disable_widget_cache', false ) ) {
+		if ( apply_filters( 'crimson_rose_disable_widget_cache', false ) ) {
 			return false;
 		}
 
@@ -279,7 +279,7 @@ class Angie_Makes_Design_Widget extends WP_Widget {
 		 * @param array     $expandedtags    The list of allowed tags and attributes.
 		 * @param string    $string          The text string being sanitized.
 		 */
-		return apply_filters( 'angie_makes_design_allowed_html', $expandedtags );
+		return apply_filters( 'crimson_rose_allowed_html', $expandedtags );
 	}
 
 	function sanitize_instance( $setting, $new_value ) {
@@ -486,7 +486,7 @@ class Angie_Makes_Design_Widget extends WP_Widget {
 		?>
 		</div>
 		<input type="hidden" id="widget-panel-repeater-count" value="<?php echo $panel_count; ?>" />
-		<a href="#" class="button-secondary widget-panel-repeater" onclick="widgetPanelRepeater( '<?php echo $this->id; ?>' ); return false;"><?php esc_html_e( 'Add New Item', 'angie-makes-design' ); ?></a>
+		<a href="#" class="button-secondary widget-panel-repeater" onclick="widgetPanelRepeater( '<?php echo $this->id; ?>' ); return false;"><?php esc_html_e( 'Add New Item', 'crimson-rose' ); ?></a>
 		<?php
 	}
 
@@ -508,9 +508,9 @@ class Angie_Makes_Design_Widget extends WP_Widget {
 			<a onclick="widgetPanelMoveDown( this ); return false;" href="#" class="dashicons-before dashicons-arrow-down-alt2 panel-move panel-move-down panel-button"></a>
 			<a onclick="widgetPanelDelete( this ); return false;" href="#" class="dashicons-before dashicons-no panel-delete panel-button"></a>
 			<span class="panel-delete-final">
-				<?php echo esc_html__( 'Delete Slide?', 'angie-makes-design' ); ?>
-				<a href="#" onclick="widgetPanelDeleteYes( this ); return false;"><?php echo esc_html__( 'Yes', 'angie-makes-design' ); ?></a>
-				<a href="#" onclick="widgetPanelDeleteNo( this ); return false;"><?php echo esc_html__( 'No', 'angie-makes-design' ); ?></a>
+				<?php echo esc_html__( 'Delete Slide?', 'crimson-rose' ); ?>
+				<a href="#" onclick="widgetPanelDeleteYes( this ); return false;"><?php echo esc_html__( 'Yes', 'crimson-rose' ); ?></a>
+				<a href="#" onclick="widgetPanelDeleteNo( this ); return false;"><?php echo esc_html__( 'No', 'crimson-rose' ); ?></a>
 			</span>
 
 			<?php endif; ?>
@@ -551,7 +551,7 @@ class Angie_Makes_Design_Widget extends WP_Widget {
 
 			case 'image' :
 				wp_enqueue_media();
-				wp_enqueue_script( 'angie-makes-design-widget-image', get_template_directory_uri() . '/js/admin/admin-image.js', array( 'jquery' ), '', true );
+				wp_enqueue_script( 'crimson-rose-widget-image', get_template_directory_uri() . '/js/admin/admin-image.js', array( 'jquery' ), '', true );
 				$id_prefix = $this->get_field_id( '' );
 			?>
 				<p style="margin-bottom: 0;">
@@ -569,8 +569,8 @@ class Angie_Makes_Design_Widget extends WP_Widget {
 					</div>
 
 					<input type="text" class="widefat image-sel-value" id="<?php echo esc_attr( $field_id ); ?>" name="<?php echo $field_name; ?>"value="<?php echo $value; ?>" placeholder="http://" style="margin-bottom:5px;" />
-					<a href="#" class="button-secondary image-sel-add" onclick="imageWidget.uploader( this ); return false;"><?php esc_html_e( 'Choose Image', 'angie-makes-design' ); ?></a>
-					<a href="#" style="display:inline-block;margin:5px 0 0 3px;<?php if ( empty( $value ) ) echo 'display:none;'; ?>" class="image-sel-remove" onclick="imageWidget.remove( this ); return false;"><?php esc_html_e( 'Remove', 'angie-makes-design' ); ?></a>
+					<a href="#" class="button-secondary image-sel-add" onclick="imageWidget.uploader( this ); return false;"><?php esc_html_e( 'Choose Image', 'crimson-rose' ); ?></a>
+					<a href="#" style="display:inline-block;margin:5px 0 0 3px;<?php if ( empty( $value ) ) echo 'display:none;'; ?>" class="image-sel-remove" onclick="imageWidget.remove( this ); return false;"><?php esc_html_e( 'Remove', 'crimson-rose' ); ?></a>
 				</div>
 				<?php if ( isset( $setting['description'] ) ) : ?>
 					<span class="description"><?php echo esc_html( $setting['description'] ); ?></span>
@@ -703,7 +703,7 @@ class Angie_Makes_Design_Widget extends WP_Widget {
 				$categories_dropdown = wp_dropdown_categories( array(
 					'name'            => $this->get_field_name( 'category' ),
 					'selected'        => $value,
-					'show_option_all' => esc_html__( 'All Categories', 'angie-makes-design' ),
+					'show_option_all' => esc_html__( 'All Categories', 'crimson-rose' ),
 					'show_count'      => true,
 					'orderby'         => 'slug',
 					'hierarchical'    => true,
@@ -719,7 +719,7 @@ class Angie_Makes_Design_Widget extends WP_Widget {
 			break;
 
 			default :
-				do_action( 'angie_makes_design_widget_type_' . $setting['type'], $this, $key, $setting, $instance );
+				do_action( 'crimson_rose_widget_type_' . $setting['type'], $this, $key, $setting, $instance );
 			break;
 		}
 	}
@@ -828,12 +828,12 @@ class Angie_Makes_Design_Widget extends WP_Widget {
 
 	function options_background_size() {
 		return array(
-			'cover' => __( 'Cover', 'angie-makes-design' ),
-			'contain' => __( 'Contain', 'angie-makes-design' ),
-			'stretch' => __( 'Stretch', 'angie-makes-design' ),
-			'fit-width' => __( 'Fit Width', 'angie-makes-design' ),
-			'fit-height' => __( 'Fit Height', 'angie-makes-design' ),
-			'auto' => __( 'Auto', 'angie-makes-design' ),
+			'cover' => __( 'Cover', 'crimson-rose' ),
+			'contain' => __( 'Contain', 'crimson-rose' ),
+			'stretch' => __( 'Stretch', 'crimson-rose' ),
+			'fit-width' => __( 'Fit Width', 'crimson-rose' ),
+			'fit-height' => __( 'Fit Height', 'crimson-rose' ),
+			'auto' => __( 'Auto', 'crimson-rose' ),
 		);
 	}
 

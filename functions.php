@@ -4,15 +4,15 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package Angie_Makes_Design
+ * @package Crimson_Rose
  */
 
 /**
  * The current version of the theme.
  */
-define( 'ANGIE_MAKES_DESIGN_VERSION', '1.9' );
+define( 'CRIMSON_ROSE_VERSION', '1.9' );
 
-if ( ! function_exists( 'angie_makes_design_setup' ) ) :
+if ( ! function_exists( 'crimson_rose_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -20,14 +20,14 @@ if ( ! function_exists( 'angie_makes_design_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function angie_makes_design_setup() {
+	function crimson_rose_setup() {
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
 		 * If you're building a theme based on Angie Makes Design, use a find and replace
-		 * to change 'angie-makes-design' to the name of your theme in all the template files.
+		 * to change 'crimson-rose' to the name of your theme in all the template files.
 		 */
-		load_theme_textdomain( 'angie-makes-design', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'crimson-rose', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -49,12 +49,12 @@ if ( ! function_exists( 'angie_makes_design_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'angie-makes-design' ),
-			'menu-2' => esc_html__( 'Top Header Right', 'angie-makes-design' ),
-			'menu-3' => esc_html__( 'Top Header Left', 'angie-makes-design' ),
+			'menu-1' => esc_html__( 'Primary', 'crimson-rose' ),
+			'menu-2' => esc_html__( 'Top Header Right', 'crimson-rose' ),
+			'menu-3' => esc_html__( 'Top Header Left', 'crimson-rose' ),
 		) );
 
-		$google_request = str_replace( ',', '%2C', angie_makes_design_fonts_url() );
+		$google_request = str_replace( ',', '%2C', crimson_rose_fonts_url() );
 
 		// This theme styles the visual editor with editor-style.css to match the theme style.
 		add_editor_style( array( 'css/admin/editor-style.css', $google_request ) );
@@ -72,7 +72,7 @@ if ( ! function_exists( 'angie_makes_design_setup' ) ) :
 		) );
 
 		// Set up the WordPress core custom background feature.
-		/*add_theme_support( 'custom-background', apply_filters( 'angie_makes_design_custom_background_args', array(
+		/*add_theme_support( 'custom-background', apply_filters( 'crimson_rose_custom_background_args', array(
 			'default-color' => false,
 			'default-image' => '',
 		) ) );*/
@@ -93,7 +93,7 @@ if ( ! function_exists( 'angie_makes_design_setup' ) ) :
 		) );
 	}
 endif;
-add_action( 'after_setup_theme', 'angie_makes_design_setup' );
+add_action( 'after_setup_theme', 'crimson_rose_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -102,38 +102,38 @@ add_action( 'after_setup_theme', 'angie_makes_design_setup' );
  *
  * @global int $content_width
  */
-function angie_makes_design_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'angie_makes_design_content_width', 700 );
+function crimson_rose_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'crimson_rose_content_width', 700 );
 }
-add_action( 'after_setup_theme', 'angie_makes_design_content_width', 0 );
+add_action( 'after_setup_theme', 'crimson_rose_content_width', 0 );
 
-function angie_makes_design_content_width_check() {
-	if ( angie_makes_design_display_fullwidth() ) {
-		if ( angie_makes_design_display_header_image() ) {
-			$GLOBALS['content_width'] = apply_filters( 'angie_makes_design_content_width', 900 );
+function crimson_rose_content_width_check() {
+	if ( crimson_rose_display_fullwidth() ) {
+		if ( crimson_rose_display_header_image() ) {
+			$GLOBALS['content_width'] = apply_filters( 'crimson_rose_content_width', 900 );
 		}
 		else {
-			$GLOBALS['content_width'] = apply_filters( 'angie_makes_design_content_width', 1060 );
+			$GLOBALS['content_width'] = apply_filters( 'crimson_rose_content_width', 1060 );
 		}
 	}
 }
-add_action( 'template_redirect', 'angie_makes_design_content_width_check' );
+add_action( 'template_redirect', 'crimson_rose_content_width_check' );
 
-function angie_makes_design_admin_enqueue_scripts() {
-	wp_enqueue_script( 'angie-makes-design-admin-notifier', get_template_directory_uri() . '/js/admin/admin-notifier.js', array( 'jquery' ), ANGIE_MAKES_DESIGN_VERSION, true );
+function crimson_rose_admin_enqueue_scripts() {
+	wp_enqueue_script( 'crimson-rose-admin-notifier', get_template_directory_uri() . '/js/admin/admin-notifier.js', array( 'jquery' ), CRIMSON_ROSE_VERSION, true );
 }
-add_action( 'admin_enqueue_scripts', 'angie_makes_design_admin_enqueue_scripts' );
+add_action( 'admin_enqueue_scripts', 'crimson_rose_admin_enqueue_scripts' );
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function angie_makes_design_widgets_init() {
+function crimson_rose_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'angie-makes-design' ),
+		'name'          => esc_html__( 'Sidebar', 'crimson-rose' ),
 		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'angie-makes-design' ),
+		'description'   => esc_html__( 'Add widgets here.', 'crimson-rose' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -141,9 +141,9 @@ function angie_makes_design_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => esc_html__( 'Footer 1', 'angie-makes-design' ),
+		'name'          => esc_html__( 'Footer 1', 'crimson-rose' ),
 		'id'            => 'footer-1',
-		'description'   => esc_html__( 'Add widgets here.', 'angie-makes-design' ),
+		'description'   => esc_html__( 'Add widgets here.', 'crimson-rose' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -151,9 +151,9 @@ function angie_makes_design_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => esc_html__( 'Footer 2', 'angie-makes-design' ),
+		'name'          => esc_html__( 'Footer 2', 'crimson-rose' ),
 		'id'            => 'footer-2',
-		'description'   => esc_html__( 'Add widgets here.', 'angie-makes-design' ),
+		'description'   => esc_html__( 'Add widgets here.', 'crimson-rose' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -161,9 +161,9 @@ function angie_makes_design_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => esc_html__( 'Footer 3', 'angie-makes-design' ),
+		'name'          => esc_html__( 'Footer 3', 'crimson-rose' ),
 		'id'            => 'footer-3',
-		'description'   => esc_html__( 'Add widgets here.', 'angie-makes-design' ),
+		'description'   => esc_html__( 'Add widgets here.', 'crimson-rose' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -171,83 +171,83 @@ function angie_makes_design_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => esc_html__( 'Front Page', 'angie-makes-design' ),
+		'name'          => esc_html__( 'Front Page', 'crimson-rose' ),
 		'id'            => 'front-page',
-		'description'   => esc_html__( 'Add widgets here.', 'angie-makes-design' ),
+		'description'   => esc_html__( 'Add widgets here.', 'crimson-rose' ),
 		'before_widget' => '<section id="%1$s" class="content-widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title content-widget-title">',
 		'after_title'   => '</h2>',
 	) );
 }
-add_action( 'widgets_init', 'angie_makes_design_widgets_init' );
+add_action( 'widgets_init', 'crimson_rose_widgets_init' );
 
 /**
  * Display customizer CSS.
  */
-function angie_makes_design_customizer_css_wrap() {
+function crimson_rose_customizer_css_wrap() {
 	require get_template_directory() . '/css/mixins.php';
 	require get_template_directory() . '/css/css-theme.php';
 
 	$out = '/* WP Customizer start */' . PHP_EOL;
-	$out .= angie_makes_design_custom_css();
+	$out .= crimson_rose_custom_css();
 	$out .= PHP_EOL . '/* WP Customizer end */';
-	wp_add_inline_style( 'angie-makes-design-style', $out );
+	wp_add_inline_style( 'crimson-rose-style', $out );
 }
-add_action( 'wp_enqueue_scripts', 'angie_makes_design_customizer_css_wrap', 20 );
+add_action( 'wp_enqueue_scripts', 'crimson_rose_customizer_css_wrap', 20 );
 
 /**
  * Enqueue scripts and styles.
  */
-function angie_makes_design_scripts() {
+function crimson_rose_scripts() {
 	global $angie_makes_design;
 
 	if ( ! $angie_makes_design['disable_google_fonts'] ) {
 		// Add custom fonts, used in the main stylesheet.
-		wp_enqueue_style( 'angie-makes-design-google-fonts', angie_makes_design_fonts_url(), array(), null );
+		wp_enqueue_style( 'crimson-rose-google-fonts', crimson_rose_fonts_url(), array(), null );
 	}
 	
 	if ( ! $angie_makes_design['disable_custom_fonts'] ) {
 		// Add custom fonts, used in the main stylesheet.
-		wp_enqueue_style( 'angie-makes-design-custom-fonts', get_parent_theme_file_uri() . '/fonts/lovefern/lovefern.css', array(), null );
+		wp_enqueue_style( 'crimson-rose-custom-fonts', get_parent_theme_file_uri() . '/fonts/lovefern/lovefern.css', array(), null );
 	}
 	
 	// Add genericons
-	wp_enqueue_style( 'genericons-neue', get_parent_theme_file_uri() . '/fonts/genericons-neue/genericons-neue.css', array(), ANGIE_MAKES_DESIGN_VERSION );
+	wp_enqueue_style( 'genericons-neue', get_parent_theme_file_uri() . '/fonts/genericons-neue/genericons-neue.css', array(), CRIMSON_ROSE_VERSION );
 
-	wp_enqueue_style( 'angie-makes-design-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'crimson-rose-style', get_stylesheet_uri() );
 
 	// Add bxslider style
-	wp_enqueue_style( 'angie-makes-design-bxslider', get_parent_theme_file_uri() . '/inc/vendors/bxslider/css/jquery.bxslider.css', array(), ANGIE_MAKES_DESIGN_VERSION );
+	wp_enqueue_style( 'crimson-rose-bxslider', get_parent_theme_file_uri() . '/inc/vendors/bxslider/css/jquery.bxslider.css', array(), CRIMSON_ROSE_VERSION );
 
 	// Register bxslider
-	wp_register_script( 'angie-makes-design-bxslider', get_template_directory_uri() . '/inc/vendors/bxslider/js/jquery.bxslider.js', array( 'jquery' ), '4.2.12', true );
+	wp_register_script( 'crimson-rose-bxslider', get_template_directory_uri() . '/inc/vendors/bxslider/js/jquery.bxslider.js', array( 'jquery' ), '4.2.12', true );
 
 	// Register accordion
-	wp_register_script( 'angie-makes-design-accordion', get_template_directory_uri() . '/js/accordion.js', array(), ANGIE_MAKES_DESIGN_VERSION, true );
+	wp_register_script( 'crimson-rose-accordion', get_template_directory_uri() . '/js/accordion.js', array(), CRIMSON_ROSE_VERSION, true );
 
-	wp_enqueue_script( 'angie-makes-design-navigation', get_template_directory_uri() . '/js/navigation.js', array(), ANGIE_MAKES_DESIGN_VERSION, true );
+	wp_enqueue_script( 'crimson-rose-navigation', get_template_directory_uri() . '/js/navigation.js', array(), CRIMSON_ROSE_VERSION, true );
 
-	wp_enqueue_script( 'angie-makes-design-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), ANGIE_MAKES_DESIGN_VERSION, true );
+	wp_enqueue_script( 'crimson-rose-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), CRIMSON_ROSE_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
 	if ( defined( 'WAFP_VERSION' ) ) {
-		wp_enqueue_style( 'angie-makes-design-affiliate-royale', get_parent_theme_file_uri() . '/css/affiliate-royale.css', array(), ANGIE_MAKES_DESIGN_VERSION );
+		wp_enqueue_style( 'crimson-rose-affiliate-royale', get_parent_theme_file_uri() . '/css/affiliate-royale.css', array(), CRIMSON_ROSE_VERSION );
 	}
 
 	if ( defined( 'WC_SHORTCODES_VERSION' ) ) {
-		wp_enqueue_style( 'angie-makes-design-wc-shortcodes', get_parent_theme_file_uri() . '/css/wc-shortcodes.css', array(), ANGIE_MAKES_DESIGN_VERSION );
+		wp_enqueue_style( 'crimson-rose-wc-shortcodes', get_parent_theme_file_uri() . '/css/wc-shortcodes.css', array(), CRIMSON_ROSE_VERSION );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'angie_makes_design_scripts' );
+add_action( 'wp_enqueue_scripts', 'crimson_rose_scripts' );
 
 /**
  * Register custom fonts.
  */
-function angie_makes_design_fonts_url() {
+function crimson_rose_fonts_url() {
 	$fonts_url = '';
 
 	/*
@@ -255,7 +255,7 @@ function angie_makes_design_fonts_url() {
 	 * supported by Libre Franklin, translate this to 'off'. Do not translate
 	 * into your own language.
 	 */
-	$libre_franklin = _x( 'on', 'Lato font: on or off', 'angie-makes-design' );
+	$libre_franklin = _x( 'on', 'Lato font: on or off', 'crimson-rose' );
 
 	if ( 'off' !== $libre_franklin ) {
 		$font_families = array();
@@ -276,8 +276,8 @@ function angie_makes_design_fonts_url() {
 /**
  * Add preconnect for Google Fonts.
  */
-function angie_makes_design_resource_hints( $urls, $relation_type ) {
-	if ( wp_style_is( 'angie-makes-design-fonts', 'queue' ) && 'preconnect' === $relation_type ) {
+function crimson_rose_resource_hints( $urls, $relation_type ) {
+	if ( wp_style_is( 'crimson-rose-fonts', 'queue' ) && 'preconnect' === $relation_type ) {
 		$urls[] = array(
 			'href' => 'https://fonts.gstatic.com',
 			'crossorigin',
@@ -286,9 +286,9 @@ function angie_makes_design_resource_hints( $urls, $relation_type ) {
 
 	return $urls;
 }
-add_filter( 'wp_resource_hints', 'angie_makes_design_resource_hints', 10, 2 );
+add_filter( 'wp_resource_hints', 'crimson_rose_resource_hints', 10, 2 );
 
-function angie_makes_design_show_full_post() {
+function crimson_rose_show_full_post() {
 	global $paged;
 
 	// should only show on first page
@@ -299,7 +299,7 @@ function angie_makes_design_show_full_post() {
 	return true;
 }
 
-function angie_makes_design_display_sub_header() {
+function crimson_rose_display_sub_header() {
 	global $post;
 
 	if ( preg_match( '/^\s*\<h2/', $post->post_content ) ) {
@@ -309,7 +309,7 @@ function angie_makes_design_display_sub_header() {
 	return true;
 }
 
-function angie_makes_design_display_header() {
+function crimson_rose_display_header() {
 	global $post;
 
 	if ( preg_match( '/^\s*\<h1/', $post->post_content ) ) {
@@ -319,7 +319,7 @@ function angie_makes_design_display_header() {
 	return true;
 }
 
-function angie_makes_design_display_sidebar() {
+function crimson_rose_display_sidebar() {
 	global $angie_makes_design;
 
 	if ( is_single() && 'post' == get_post_type() ) {
@@ -338,7 +338,7 @@ function angie_makes_design_display_sidebar() {
 		return $angie_makes_design['display_sidebar_blog'];
 	}
 	
-	if ( angie_makes_design_is_woocommerce_activated() ) {
+	if ( crimson_rose_is_woocommerce_activated() ) {
 		if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 			return false;
 		}
@@ -370,7 +370,7 @@ function angie_makes_design_display_sidebar() {
 	return false;
 }
 
-function angie_makes_design_display_sidebar_footer() {
+function crimson_rose_display_sidebar_footer() {
 	$footer_1 = is_active_sidebar( 'footer-1' );
 	$footer_2 = is_active_sidebar( 'footer-2' );
 	$footer_3 = is_active_sidebar( 'footer-3' );
@@ -382,10 +382,10 @@ function angie_makes_design_display_sidebar_footer() {
 	return false;
 }
 
-function angie_makes_design_display_fullwidth() {
+function crimson_rose_display_fullwidth() {
 	global $angie_makes_design;
 
-	if ( angie_makes_design_is_woocommerce_activated() ) {
+	if ( crimson_rose_is_woocommerce_activated() ) {
 		if ( is_woocommerce() || is_cart() || is_checkout() ) {
 			return true;
 		}
@@ -417,7 +417,7 @@ function angie_makes_design_display_fullwidth() {
  *
  * @return mixed|void
  */
-function angie_makes_design_allowed_html() {
+function crimson_rose_allowed_html() {
 	$expandedtags = wp_kses_allowed_html();
 
 	// Paragraph.
@@ -460,10 +460,10 @@ function angie_makes_design_allowed_html() {
 	 * @param array     $expandedtags    The list of allowed tags and attributes.
 	 * @param string    $string          The text string being sanitized.
 	 */
-	return apply_filters( 'angie_makes_design_allowed_html', $expandedtags );
+	return apply_filters( 'crimson_rose_allowed_html', $expandedtags );
 }
 
-function angie_makes_design_get_blog_part() {
+function crimson_rose_get_blog_part() {
 	global $angie_makes_design;
 
 	if ( is_home() ) {
@@ -477,8 +477,8 @@ function angie_makes_design_get_blog_part() {
 	}
 }
 
-function angie_makes_design_display_header_image() {
-	if ( is_page() && has_post_thumbnail() && angie_makes_design_jetpack_featured_image_display() ) {
+function crimson_rose_display_header_image() {
+	if ( is_page() && has_post_thumbnail() && crimson_rose_jetpack_featured_image_display() ) {
 		if ( ! is_page_template( 'templates/front-page.php' ) ) {
 			return true;
 		}
@@ -490,14 +490,14 @@ function angie_makes_design_display_header_image() {
 /**
  * Query WooCommerce activation
  */
-function angie_makes_design_is_woocommerce_activated() {
+function crimson_rose_is_woocommerce_activated() {
 	return class_exists( 'woocommerce' ) ? true : false;
 }
 
 /**
  * Check Jetpack activation
  */
-function angie_makes_design_is_jetpack_activated() {
+function crimson_rose_is_jetpack_activated() {
 	if ( defined( 'JETPACK__VERSION' ) ) {
 		return true;
 	}
@@ -545,11 +545,11 @@ require get_template_directory() . '/inc/customizer.php';
 /**
  * Load Jetpack compatibility file.
  */
-if ( angie_makes_design_is_jetpack_activated() ) {
+if ( crimson_rose_is_jetpack_activated() ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
-if ( angie_makes_design_is_woocommerce_activated() ) {
+if ( crimson_rose_is_woocommerce_activated() ) {
 	require get_parent_theme_file_path() . '/inc/woocommerce/class-woocommerce.php';
 }
 

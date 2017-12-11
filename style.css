@@ -7,7 +7,7 @@ Description: Pretty, Feminine WordPress Themes
 Version: 1.9
 License: GNU General Public License v2 or later
 License URI: LICENSE
-Text Domain: angie-makes-design
+Text Domain: crimson-rose
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 
 This theme, like WordPress, is licensed under the GPL.
@@ -2522,7 +2522,7 @@ a:hover, a:active {
   text-align: center;
 }
 
-.footer-column-2 .widget.angie-makes-design-jetpack-social-menu.no-title:first-child {
+.footer-column-2 .widget.crimson-rose-jetpack-social-menu.no-title:first-child {
   margin-top: 65px;
   margin-top: 4.0625rem;
 }
@@ -2578,23 +2578,23 @@ a:hover, a:active {
   margin-bottom: 0;
 }
 
-#master .angie-makes-design-image-banner .image-banner-text-position-middle a:hover .widget-title {
+#master .crimson-rose-image-banner .image-banner-text-position-middle a:hover .widget-title {
   color: #666666;
 }
 
-.angie-makes-design-image-banner .image-banner-wrapper {
+.crimson-rose-image-banner .image-banner-wrapper {
   position: relative;
 }
 
-.angie-makes-design-image-banner .image-banner-wrapper a {
+.crimson-rose-image-banner .image-banner-wrapper a {
   display: block;
 }
 
-.angie-makes-design-image-banner .image-banner-text-position-below .widget-title {
+.crimson-rose-image-banner .image-banner-text-position-below .widget-title {
   padding-top: 20px;
 }
 
-.angie-makes-design-image-banner .image-banner-text-position-middle .widget-title {
+.crimson-rose-image-banner .image-banner-text-position-middle .widget-title {
   width: 100%;
   margin: 0;
   position: absolute;
@@ -2605,7 +2605,7 @@ a:hover, a:active {
   transform: translateY(-50%);
 }
 
-.angie-makes-design-image-banner .image-banner-text-position-middle .widget-title span {
+.crimson-rose-image-banner .image-banner-text-position-middle .widget-title span {
   padding: .9em 1.2em;
   background-color: #ffffff;
   margin-left: auto;
@@ -2906,39 +2906,39 @@ a:hover, a:active {
   }
 }
 
-.angie-makes-design-static-content {
+.crimson-rose-static-content {
   position: relative;
 }
 
-.angie-makes-design-static-content .bg-image-cover {
+.crimson-rose-static-content .bg-image-cover {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
 }
 
-.angie-makes-design-static-content .hentry .entry-footer {
+.crimson-rose-static-content .hentry .entry-footer {
   position: absolute;
   bottom: 20px;
   left: 20px;
   margin: 0;
 }
 
-.angie-makes-design-static-content .custom-color .hentry h1,
-.angie-makes-design-static-content .custom-color .hentry h2,
-.angie-makes-design-static-content .custom-color .hentry h3,
-.angie-makes-design-static-content .custom-color .hentry h4,
-.angie-makes-design-static-content .custom-color .hentry h5,
-.angie-makes-design-static-content .custom-color .hentry h6,
-.angie-makes-design-static-content .custom-color .hentry p,
-.angie-makes-design-static-content .custom-color .hentry a:not(.theme-generated-button),
-.angie-makes-design-static-content .custom-color .hentry a:not(.theme-generated-button):hover,
-.angie-makes-design-static-content .custom-color .hentry a:not(.theme-generated-button):focus,
-.angie-makes-design-static-content .custom-color .hentry a:not(.theme-generated-button):active,
-.angie-makes-design-static-content .custom-color .hentry a:not(.theme-generated-button):visited {
+.crimson-rose-static-content .custom-color .hentry h1,
+.crimson-rose-static-content .custom-color .hentry h2,
+.crimson-rose-static-content .custom-color .hentry h3,
+.crimson-rose-static-content .custom-color .hentry h4,
+.crimson-rose-static-content .custom-color .hentry h5,
+.crimson-rose-static-content .custom-color .hentry h6,
+.crimson-rose-static-content .custom-color .hentry p,
+.crimson-rose-static-content .custom-color .hentry a:not(.theme-generated-button),
+.crimson-rose-static-content .custom-color .hentry a:not(.theme-generated-button):hover,
+.crimson-rose-static-content .custom-color .hentry a:not(.theme-generated-button):focus,
+.crimson-rose-static-content .custom-color .hentry a:not(.theme-generated-button):active,
+.crimson-rose-static-content .custom-color .hentry a:not(.theme-generated-button):visited {
   color: inherit;
 }
 
-.angie-makes-design-blog-posts .button-wrapper {
+.crimson-rose-blog-posts .button-wrapper {
   text-align: center;
   margin-bottom: 0;
 }
@@ -2946,29 +2946,29 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 ## Collage Widget
 --------------------------------------------------------------*/
-.site-content > .site-boundary > .angie-makes-design-widget-collage:first-child {
+.site-content > .site-boundary > .crimson-rose-widget-collage:first-child {
   margin-top: -30px;
   margin-top: -1.875rem;
 }
 
-#master .angie-makes-design-widget-collage .collage .slide-inner .content-text * {
+#master .crimson-rose-widget-collage .collage .slide-inner .content-text * {
   margin-top: 0;
 }
 
-#master .angie-makes-design-widget-collage .collage a.slide-inner .content-text.no-custom-color *, #master .angie-makes-design-widget-collage .collage a.slide-inner:hover .content-text.no-custom-color *, #master .angie-makes-design-widget-collage .collage a.slide-inner:active .content-text.no-custom-color *, #master .angie-makes-design-widget-collage .collage a.slide-inner:focus .content-text.no-custom-color *, #master .angie-makes-design-widget-collage .collage a.slide-inner:visited .content-text.no-custom-color * {
+#master .crimson-rose-widget-collage .collage a.slide-inner .content-text.no-custom-color *, #master .crimson-rose-widget-collage .collage a.slide-inner:hover .content-text.no-custom-color *, #master .crimson-rose-widget-collage .collage a.slide-inner:active .content-text.no-custom-color *, #master .crimson-rose-widget-collage .collage a.slide-inner:focus .content-text.no-custom-color *, #master .crimson-rose-widget-collage .collage a.slide-inner:visited .content-text.no-custom-color * {
   color: #666666;
 }
 
-#master .angie-makes-design-widget-collage .collage a.slide-inner .content-text.custom-color *, #master .angie-makes-design-widget-collage .collage a.slide-inner:hover .content-text.custom-color *, #master .angie-makes-design-widget-collage .collage a.slide-inner:active .content-text.custom-color *, #master .angie-makes-design-widget-collage .collage a.slide-inner:focus .content-text.custom-color *, #master .angie-makes-design-widget-collage .collage a.slide-inner:visited .content-text.custom-color * {
+#master .crimson-rose-widget-collage .collage a.slide-inner .content-text.custom-color *, #master .crimson-rose-widget-collage .collage a.slide-inner:hover .content-text.custom-color *, #master .crimson-rose-widget-collage .collage a.slide-inner:active .content-text.custom-color *, #master .crimson-rose-widget-collage .collage a.slide-inner:focus .content-text.custom-color *, #master .crimson-rose-widget-collage .collage a.slide-inner:visited .content-text.custom-color * {
   color: inherit;
 }
 
-.angie-makes-design-widget-collage .collage {
+.crimson-rose-widget-collage .collage {
   position: relative;
   height: 650px;
 }
 
-.angie-makes-design-widget-collage .collage .slide-5 {
+.crimson-rose-widget-collage .collage .slide-5 {
   position: absolute;
   width: 50%;
   height: 60%;
@@ -2976,12 +2976,12 @@ a:hover, a:active {
   left: 0;
 }
 
-.angie-makes-design-widget-collage .collage .slide-5 .slide-gutter {
+.crimson-rose-widget-collage .collage .slide-5 .slide-gutter {
   padding-right: 10px;
   padding-bottom: 10px;
 }
 
-.angie-makes-design-widget-collage .collage .slide-4 {
+.crimson-rose-widget-collage .collage .slide-4 {
   position: absolute;
   width: 50%;
   height: 40%;
@@ -2989,12 +2989,12 @@ a:hover, a:active {
   left: 0;
 }
 
-.angie-makes-design-widget-collage .collage .slide-4 .slide-gutter {
+.crimson-rose-widget-collage .collage .slide-4 .slide-gutter {
   padding-right: 10px;
   padding-top: 10px;
 }
 
-.angie-makes-design-widget-collage .collage .slide-3 {
+.crimson-rose-widget-collage .collage .slide-3 {
   position: absolute;
   width: 50%;
   height: 40%;
@@ -3002,12 +3002,12 @@ a:hover, a:active {
   right: 0;
 }
 
-.angie-makes-design-widget-collage .collage .slide-3 .slide-gutter {
+.crimson-rose-widget-collage .collage .slide-3 .slide-gutter {
   padding-left: 10px;
   padding-bottom: 10px;
 }
 
-.angie-makes-design-widget-collage .collage .slide-2 {
+.crimson-rose-widget-collage .collage .slide-2 {
   position: absolute;
   width: 25%;
   height: 60%;
@@ -3015,13 +3015,13 @@ a:hover, a:active {
   right: 25%;
 }
 
-.angie-makes-design-widget-collage .collage .slide-2 .slide-gutter {
+.crimson-rose-widget-collage .collage .slide-2 .slide-gutter {
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 10px;
 }
 
-.angie-makes-design-widget-collage .collage .slide-1 {
+.crimson-rose-widget-collage .collage .slide-1 {
   position: absolute;
   width: 25%;
   height: 60%;
@@ -3029,23 +3029,23 @@ a:hover, a:active {
   right: 0;
 }
 
-.angie-makes-design-widget-collage .collage .slide-1 .slide-gutter {
+.crimson-rose-widget-collage .collage .slide-1 .slide-gutter {
   padding-left: 10px;
   padding-top: 10px;
 }
 
-.angie-makes-design-widget-collage .collage .slide {
+.crimson-rose-widget-collage .collage .slide {
   overflow: hidden;
 }
 
-.angie-makes-design-widget-collage .collage .slide .slide-inner {
+.crimson-rose-widget-collage .collage .slide .slide-inner {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   position: relative;
 }
 
-.angie-makes-design-widget-collage .collage .slide .slide-inner .content-wrapper {
+.crimson-rose-widget-collage .collage .slide .slide-inner .content-wrapper {
   position: absolute;
   padding: 0 20px;
   text-align: center;
@@ -3061,140 +3061,140 @@ a:hover, a:active {
   transform: translateY(-50%);
 }
 
-.angie-makes-design-widget-collage .collage .slide .slide-inner .content-wrapper .content-text + .button-text {
+.crimson-rose-widget-collage .collage .slide .slide-inner .content-wrapper .content-text + .button-text {
   margin-top: 20px;
 }
 
-.angie-makes-design-widget-collage .collage .slide .slide-inner .content-wrapper .content-text > *:first-child {
+.crimson-rose-widget-collage .collage .slide .slide-inner .content-wrapper .content-text > *:first-child {
   margin-top: 0;
 }
 
-.angie-makes-design-widget-collage .collage .slide .slide-inner .content-wrapper .content-text > *:last-child {
+.crimson-rose-widget-collage .collage .slide .slide-inner .content-wrapper .content-text > *:last-child {
   margin-bottom: 0;
 }
 
-.angie-makes-design-widget-collage .collage .carousel-item,
-.angie-makes-design-widget-collage .collage .slide-overflow,
-.angie-makes-design-widget-collage .collage .slide-gutter,
-.angie-makes-design-widget-collage .collage .slide-inner {
+.crimson-rose-widget-collage .collage .carousel-item,
+.crimson-rose-widget-collage .collage .slide-overflow,
+.crimson-rose-widget-collage .collage .slide-gutter,
+.crimson-rose-widget-collage .collage .slide-inner {
   width: 100%;
   height: 100%;
   display: block;
 }
 
-.angie-makes-design-widget-collage .collage .bx2-wrapper,
-.angie-makes-design-widget-collage .collage .bx2-viewport {
+.crimson-rose-widget-collage .collage .bx2-wrapper,
+.crimson-rose-widget-collage .collage .bx2-viewport {
   width: 100%;
   height: 100% !important;
   display: block;
 }
 
-.angie-makes-design-widget-collage .collage .slide-gutter {
+.crimson-rose-widget-collage .collage .slide-gutter {
   box-sizing: border-box;
 }
 
-.angie-makes-design-widget-collage .collage .slide-overflow {
+.crimson-rose-widget-collage .collage .slide-overflow {
   overflow: hidden;
 }
 
 @media screen and (max-width: 991px) {
-  .angie-makes-design-widget-collage .collage {
+  .crimson-rose-widget-collage .collage {
     height: 1300px;
     max-width: 520px;
     margin-left: auto;
     margin-right: auto;
   }
-  .angie-makes-design-widget-collage .collage .slide-5 {
+  .crimson-rose-widget-collage .collage .slide-5 {
     width: 100%;
     height: 30%;
     top: 0;
     left: 0;
   }
-  .angie-makes-design-widget-collage .collage .slide-5 .slide-gutter {
+  .crimson-rose-widget-collage .collage .slide-5 .slide-gutter {
     padding-right: 0;
     padding-bottom: 10px;
   }
-  .angie-makes-design-widget-collage .collage .slide-4 {
+  .crimson-rose-widget-collage .collage .slide-4 {
     width: 100%;
     height: 20%;
     top: 30%;
     left: 0;
   }
-  .angie-makes-design-widget-collage .collage .slide-4 .slide-gutter {
+  .crimson-rose-widget-collage .collage .slide-4 .slide-gutter {
     padding-right: 0;
     padding-top: 10px;
     padding-bottom: 10px;
   }
-  .angie-makes-design-widget-collage .collage .slide-3 {
+  .crimson-rose-widget-collage .collage .slide-3 {
     width: 100%;
     height: 20%;
     top: 50%;
     right: 0;
   }
-  .angie-makes-design-widget-collage .collage .slide-3 .slide-gutter {
+  .crimson-rose-widget-collage .collage .slide-3 .slide-gutter {
     padding-top: 10px;
     padding-left: 0;
     padding-bottom: 10px;
   }
-  .angie-makes-design-widget-collage .collage .slide-2 {
+  .crimson-rose-widget-collage .collage .slide-2 {
     width: 50%;
     height: 30%;
     bottom: 0;
     left: 0;
     right: auto;
   }
-  .angie-makes-design-widget-collage .collage .slide-2 .slide-gutter {
+  .crimson-rose-widget-collage .collage .slide-2 .slide-gutter {
     padding-left: 0;
     padding-right: 10px;
     padding-top: 10px;
   }
-  .angie-makes-design-widget-collage .collage .slide-1 {
+  .crimson-rose-widget-collage .collage .slide-1 {
     width: 50%;
     height: 30%;
     bottom: 0;
     right: 0;
   }
-  .angie-makes-design-widget-collage .collage .slide-1 .slide-gutter {
+  .crimson-rose-widget-collage .collage .slide-1 .slide-gutter {
     padding-left: 10px;
     padding-top: 10px;
   }
 }
 
 @media screen and (max-width: 568px) {
-  #master .angie-makes-design-widget-collage .collage {
+  #master .crimson-rose-widget-collage .collage {
     height: 1500px;
   }
-  #master .angie-makes-design-widget-collage .collage .slide {
+  #master .crimson-rose-widget-collage .collage .slide {
     width: 100%;
     height: 20%;
   }
-  #master .angie-makes-design-widget-collage .collage .slide .slide-gutter {
+  #master .crimson-rose-widget-collage .collage .slide .slide-gutter {
     padding: 0;
   }
-  #master .angie-makes-design-widget-collage .collage .slide-4,
-  #master .angie-makes-design-widget-collage .collage .slide-3,
-  #master .angie-makes-design-widget-collage .collage .slide-2,
-  #master .angie-makes-design-widget-collage .collage .slide-1 {
+  #master .crimson-rose-widget-collage .collage .slide-4,
+  #master .crimson-rose-widget-collage .collage .slide-3,
+  #master .crimson-rose-widget-collage .collage .slide-2,
+  #master .crimson-rose-widget-collage .collage .slide-1 {
     left: 0;
     right: 0;
     bottom: auto;
   }
-  #master .angie-makes-design-widget-collage .collage .slide-4 .slide-gutter,
-  #master .angie-makes-design-widget-collage .collage .slide-3 .slide-gutter,
-  #master .angie-makes-design-widget-collage .collage .slide-2 .slide-gutter,
-  #master .angie-makes-design-widget-collage .collage .slide-1 .slide-gutter {
+  #master .crimson-rose-widget-collage .collage .slide-4 .slide-gutter,
+  #master .crimson-rose-widget-collage .collage .slide-3 .slide-gutter,
+  #master .crimson-rose-widget-collage .collage .slide-2 .slide-gutter,
+  #master .crimson-rose-widget-collage .collage .slide-1 .slide-gutter {
     padding: 20px 0 0 0;
   }
-  #master .angie-makes-design-widget-collage .collage .slide-4 {
+  #master .crimson-rose-widget-collage .collage .slide-4 {
     top: 20%;
   }
-  #master .angie-makes-design-widget-collage .collage .slide-3 {
+  #master .crimson-rose-widget-collage .collage .slide-3 {
     top: 40%;
   }
-  #master .angie-makes-design-widget-collage .collage .slide-2 {
+  #master .crimson-rose-widget-collage .collage .slide-2 {
     top: 60%;
   }
-  #master .angie-makes-design-widget-collage .collage .slide-1 {
+  #master .crimson-rose-widget-collage .collage .slide-1 {
     top: 80%;
   }
 }
@@ -3254,7 +3254,7 @@ a:hover, a:active {
   width: 100%;
 }
 
-.angie-makes-design-static-content .hentry,
+.crimson-rose-static-content .hentry,
 .no-sidebar .content-area .site-main {
   max-width: 700px;
   margin: 0 auto;

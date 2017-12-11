@@ -4,13 +4,13 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Angie_Makes_Design
+ * @package Crimson_Rose
  */
 
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php if ( angie_makes_design_display_header() ) : ?>
+	<?php if ( crimson_rose_display_header() ) : ?>
 		<header class="entry-header">
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 		</header><!-- .entry-header -->
@@ -21,7 +21,7 @@
 			the_content();
 
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'angie-makes-design' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'crimson-rose' ),
 				'after'  => '</div>',
 			) );
 		?>
@@ -34,7 +34,7 @@
 					sprintf(
 						wp_kses(
 							/* translators: %s: Name of current post. Only visible to screen readers */
-							__( 'Edit <span class="screen-reader-text">%s</span>', 'angie-makes-design' ),
+							__( 'Edit <span class="screen-reader-text">%s</span>', 'crimson-rose' ),
 							array(
 								'span' => array(
 									'class' => array(),

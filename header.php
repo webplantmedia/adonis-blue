@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Angie_Makes_Design
+ * @package Crimson_Rose
  */
 
 ?>
@@ -22,7 +22,7 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'angie-makes-design' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'crimson-rose' ); ?></a>
 
 	<header id="masthead" class="site-header">
 		<?php get_template_part( 'template-parts/menu', 'top' ); ?>
@@ -52,7 +52,7 @@
 
 		<div id="site-navigation" class="main-navigation">
 			<div class="site-boundary">
-				<?php angie_makes_design_mobile_menu_button(); ?>
+				<?php crimson_rose_mobile_menu_button(); ?>
 
 				<?php get_template_part( 'template-parts/menu', 'mobile-cart' ); ?>
 				<nav class="main-menu in-menu-bar">
@@ -83,7 +83,7 @@
 		<header class="page-header">
 			<div class="site-boundary">
 				<h1 class="page-title">
-					<span class="archive-type"><?php echo esc_html__( 'Search Results for:', 'angie-makes-design' ); ?></span>
+					<span class="archive-type"><?php echo esc_html__( 'Search Results for:', 'crimson-rose' ); ?></span>
 					<span class="archive-title"><?php echo get_search_query(); ?></span>
 				</h1>
 			</div>
@@ -91,7 +91,7 @@
 
 	<?php endif; ?>
 
-	<?php if ( angie_makes_design_display_header_image() ) : ?>
+	<?php if ( crimson_rose_display_header_image() ) : ?>
 		<?php $url = get_the_post_thumbnail_url( get_the_ID(), 'full' ); ?>
 		<div class="page-image-header">
 			<div class="page-image-header-background" style="background-image:url('<?php echo $url; ?>');"></div>

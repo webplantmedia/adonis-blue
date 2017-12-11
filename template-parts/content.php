@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Angie_Makes_Design
+ * @package Crimson_Rose
  */
 
 ?>
@@ -13,7 +13,7 @@
 	<header class="entry-header">
 		<?php if ( 'post' === get_post_type() ) : ?>
 			<div class="entry-cat-meta">
-				<?php angie_makes_design_entry_header(); ?>
+				<?php crimson_rose_entry_header(); ?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 
@@ -26,7 +26,7 @@
 
 		if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
-			<?php angie_makes_design_posted_on(); ?>
+			<?php crimson_rose_posted_on(); ?>
 		</div><!-- .entry-meta -->
 		<?php
 		endif; ?>
@@ -43,7 +43,7 @@
 			the_content( sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Read More<i class="genericons-neue genericons-neue-next"></i><span class="screen-reader-text">"%s"</span>', 'angie-makes-design' ),
+					__( 'Read More<i class="genericons-neue genericons-neue-next"></i><span class="screen-reader-text">"%s"</span>', 'crimson-rose' ),
 					array(
 						'i' => array(
 							'class' => array(),
@@ -57,7 +57,7 @@
 			) );
 
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'angie-makes-design' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'crimson-rose' ),
 				'after'  => '</div>',
 			) );
 		?>
@@ -65,7 +65,7 @@
 
 	<footer class="entry-footer">
 		<div class="entry-footer-meta">
-			<?php angie_makes_design_entry_footer(); ?>
+			<?php crimson_rose_entry_footer(); ?>
 		</div>
 		<?php
 		if ( function_exists( 'sharing_display' ) ) {
