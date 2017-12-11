@@ -12,7 +12,7 @@
  * @return array
  */
 function crimson_rose_body_classes( $classes ) {
-	global $angie_makes_design;
+	global $crimson_rose;
 
 	// Adds a class of hfeed to non-singular pages.
 	if ( ! is_singular() ) {
@@ -40,34 +40,34 @@ function crimson_rose_body_classes( $classes ) {
 		$classes[] = 'widgetized-page';
 	}
 
-	if ( $angie_makes_design['show_menu_arrows'] ) {
+	if ( $crimson_rose['show_menu_arrows'] ) {
 		$classes[] = 'show-menu-arrows';
 	}
 
-	if ( $angie_makes_design['archive_title_light'] ) {
+	if ( $crimson_rose['archive_title_light'] ) {
 		$classes[] = 'archive-title-light';
 	}
 
-	if ( $angie_makes_design['shop_truncate_titles'] ) {
+	if ( $crimson_rose['shop_truncate_titles'] ) {
 		$classes[] = 'woocommerce-shop-truncate-titles';
 	}
 
-	if ( $angie_makes_design['jetpack_hide_share_count'] ) {
+	if ( $crimson_rose['jetpack_hide_share_count'] ) {
 		$classes[] = 'jetpack-hide-share-count';
 	}
 
 	if ( crimson_rose_is_woocommerce_activated() ) {
 		if ( is_shop() ) {
-			$classes[] = 'woocommerce-shop-columns-' . $angie_makes_design['shop_columns'];
+			$classes[] = 'woocommerce-shop-columns-' . $crimson_rose['shop_columns'];
 		}
 		else if ( is_product_taxonomy() ) {
-			$classes[] = 'woocommerce-shop-columns-' . $angie_makes_design['shop_archive_columns'];
+			$classes[] = 'woocommerce-shop-columns-' . $crimson_rose['shop_archive_columns'];
 		}
 		else if ( is_product() ) {
-			$classes[] = 'woocommerce-shop-columns-' . $angie_makes_design['shop_related_products_columns'];
+			$classes[] = 'woocommerce-shop-columns-' . $crimson_rose['shop_related_products_columns'];
 		}
 
-		if ( $angie_makes_design['shop_image_backdrop'] ) {
+		if ( $crimson_rose['shop_image_backdrop'] ) {
 			$classes[] = 'woocommerce-shop-image-backdrop';
 		}
 	}
@@ -94,9 +94,9 @@ add_action( 'wp_head', 'crimson_rose_pingback_header' );
  * Add retina src image to custom logo
  */
 function crimson_rose_get_custom_logo( $html, $blog_id ) {
-	global $angie_makes_design;
+	global $crimson_rose;
 
-	if ( $url = get_theme_mod( 'custom_logo_2x', $angie_makes_design['custom_logo_2x'] ) ) {
+	if ( $url = get_theme_mod( 'custom_logo_2x', $crimson_rose['custom_logo_2x'] ) ) {
 		$html = preg_replace( '/srcset=(\'|\").*?(\'|\")/', 'srcset="' . esc_url( $url ) . ' 2x"', $html );
 	}
 
@@ -114,7 +114,7 @@ add_filter( 'get_custom_logo', 'crimson_rose_get_custom_logo', 10, 2 );
  * @return string Appended "Read More" link
  */
 function crimson_rose_read_more_link( $output ) {
-	global $angie_makes_design;
+	global $crimson_rose;
 
 	if ( 'post' != get_post_type() ) {
 		return $output;
@@ -129,29 +129,29 @@ function crimson_rose_read_more_link( $output ) {
 	return $output . sprintf( ' <a class="more-link%1$s" href="%2$s">%3$s<i class="genericons-neue genericons-neue-next"></i></a>',
 		$class,
 		get_permalink( get_the_ID() ),
-		esc_html( $angie_makes_design['read_more_label'] )
+		esc_html( $crimson_rose['read_more_label'] )
 	);
 }
 add_filter('the_excerpt', 'crimson_rose_read_more_link');
 
 function crimson_rose_read_more_text() {
-	global $angie_makes_design;
+	global $crimson_rose;
 
 	if ( 'post' != get_post_type() ) {
 		return '';
 	}
 
-	return esc_html( $angie_makes_design['read_more_label'] );
+	return esc_html( $crimson_rose['read_more_label'] );
 }
 add_filter('crimson_rose_read_more_text', 'crimson_rose_read_more_text');
 
 function crimson_rose_the_content( $output ) {
-	global $angie_makes_design;
+	global $crimson_rose;
 
 	$search = array();
 	$replace = array();
 
-	switch ( $angie_makes_design['default_button_style'] ) {
+	switch ( $crimson_rose['default_button_style'] ) {
 		case 'button-1' :
 			$button_class = ' fancy-button';
 			break;

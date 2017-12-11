@@ -49,7 +49,7 @@ if ( ! class_exists( 'Crimson_Rose_Upgrade' ) ) :
 		 *               theme does not support `crimson-rose-auto-updates`.
 		 */
 		public function update_check() {
-			global $angie_makes_design;
+			global $crimson_rose;
 
 			// Use cache.
 			static $theme_update = null;
@@ -57,7 +57,7 @@ if ( ! class_exists( 'Crimson_Rose_Upgrade' ) ) :
 			global $wp_version;
 
 			// If updates are disabled.
-			if ( ! $angie_makes_design['check_for_updates'] ) {
+			if ( ! $crimson_rose['check_for_updates'] ) {
 				return array();
 			}
 

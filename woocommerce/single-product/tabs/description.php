@@ -32,9 +32,9 @@ $heading = esc_html( apply_filters( 'woocommerce_product_description_heading', _
 
 
 <?php
-global $angie_makes_design;
+global $crimson_rose;
 
-switch ( $angie_makes_design['shop_product_page_template'] ) {
+switch ( $crimson_rose['shop_product_page_template'] ) {
 	case 'grid-accordion' :
 		crimson_rose_the_accordion_content();
 		wp_enqueue_script( 'crimson-rose-accordion' );

@@ -132,14 +132,14 @@ endif;
 
 if ( ! function_exists( 'crimson_rose_mobile_menu_button' ) ) :
 	function crimson_rose_mobile_menu_button() {
-		global $angie_makes_design;
+		global $crimson_rose;
 
 		?>
 		<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-			<?php if ( empty( $angie_makes_design['mobile_menu_label'] ) ) : ?>
+			<?php if ( empty( $crimson_rose['mobile_menu_label'] ) ) : ?>
 				<span class="menu-label menu-label-empty"></span>
 			<?php else : ?>
-				<span class="menu-label"><?php echo esc_html( $angie_makes_design['mobile_menu_label'] ); ?></span>
+				<span class="menu-label"><?php echo esc_html( $crimson_rose['mobile_menu_label'] ); ?></span>
 			<?php endif; ?>
 			<i class="genericons-neue"></i>
 		</button>
@@ -149,10 +149,10 @@ endif;
 
 if ( ! function_exists( 'crimson_rose_featured_post_navigation' ) ) :
 	function crimson_rose_featured_post_navigation() {
-		global $angie_makes_design;
+		global $crimson_rose;
 
 
-		if ( $angie_makes_design['blog_single_hide_post_navigation'] ) {
+		if ( $crimson_rose['blog_single_hide_post_navigation'] ) {
 			return;
 		}
 
@@ -189,10 +189,10 @@ endif;
 
 if ( ! function_exists( 'crimson_rose_get_site_info' ) ) :
 	function crimson_rose_get_site_info() {
-		global $angie_makes_design;
+		global $crimson_rose;
 
 		$allowed_tags = crimson_rose_allowed_html();
-		return wp_kses( $angie_makes_design['site_info'], $allowed_tags );
+		return wp_kses( $crimson_rose['site_info'], $allowed_tags );
 	}
 endif;
 

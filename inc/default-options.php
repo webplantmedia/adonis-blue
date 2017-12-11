@@ -1,6 +1,6 @@
 <?php
 // Store user defined options
-$angie_makes_design = array();
+$crimson_rose = array();
 // Store default options;
 $crimson_rose_default = array();
 
@@ -86,10 +86,10 @@ $crimson_rose_default['read_more_label'] = 'Continue Reading';
  */
 function crimson_rose_default_options() {
 	global $crimson_rose_default;
-	global $angie_makes_design;
+	global $crimson_rose;
 
 	foreach ( $crimson_rose_default as $key => $value ) {
-		$angie_makes_design[ $key ] = get_theme_mod( $key, $value );
+		$crimson_rose[ $key ] = get_theme_mod( $key, $value );
 	}
 }
 add_action( 'wp_loaded', 'crimson_rose_default_options' );
