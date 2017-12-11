@@ -96,8 +96,13 @@ add_action( 'wp_head', 'crimson_rose_pingback_header' );
 function crimson_rose_get_custom_logo( $html, $blog_id ) {
 	global $crimson_rose;
 
-	if ( $url = get_theme_mod( 'custom_logo_2x', $crimson_rose['custom_logo_2x'] ) ) {
-		$html = preg_replace( '/srcset=(\'|\").*?(\'|\")/', 'srcset="' . esc_url( $url ) . ' 2x"', $html );
+	if ( ! empty( $crimson_rose['custom_logo_2x'] ) ) {
+		if ( preg_match( '/srcset=(\'|\").*?(\'|\")/', $html ) ) {
+			$html = preg_replace( '/srcset=(\'|\").*?(\'|\")/', 'srcset="' . esc_url( $crimson_rose['custom_logo_2x'] ) . ' 2x"', $html );
+		}
+		else {
+			$html = preg_replace( '/(src=(\'|\").*?(\'|\"))/', '\\1 srcset="' . esc_url( $crimson_rose['custom_logo_2x'] ) . ' 2x"', $html );
+		}
 	}
 
 	return $html;
