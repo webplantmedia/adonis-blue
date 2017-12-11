@@ -137,7 +137,7 @@ Jetpack styling
   border-width: 0;
   box-shadow: none;
   font-weight: bold;
-  border-radius: 0px;
+  border-radius: 3px;
 }
 
 #master #infinite-handle span {

@@ -1,23 +1,23 @@
 #secondary .widget {
-	@include rem('margin-bottom',82px);
+	@include rem('margin-bottom',40px);
 
-	.widget-title {
-		padding: 0.7em 0.5em;
-		color: $color__white;
-		@include rem('font-size',$font__small-size);
+	// .widget-title {
+		// padding: 0.7em 0.5em;
+		// color: $color__white;
+		// @include rem('font-size',$font__small-size);
+	// }
+
+	&:before {
+		height: 5px;
+		background-color: #cccccc;
+		width: 55px;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		@include rem('margin-bottom',40px);
+		vertical-align: top;
+		content: " ";
 	}
-
-	/* &:before { */
-		// height: 5px;
-		// background-color: #cccccc;
-		// width: 55px;
-		// display: block;
-		// margin-left: auto;
-		// margin-right: auto;
-		// @include rem('margin-bottom',40px);
-		// vertical-align: top;
-		// content: " ";
-	/* } */
 }
 
 .widget {

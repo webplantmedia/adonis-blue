@@ -61,7 +61,6 @@ a:hover {
 #master .wc-shortcodes-button:active,
 #master .wc-shortcodes-button:focus,
 #master #jp-relatedposts .jp-relatedposts-headline em,
-#master #secondary .widget .widget-title,
 #master #infinite-handle span button,
 #master #infinite-handle span button:active,
 #master #infinite-handle span button:focus,

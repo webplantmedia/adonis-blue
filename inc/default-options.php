@@ -6,11 +6,11 @@ $crimson_rose_default = array();
 
 // Title & Tagline
 $crimson_rose_default['custom_logo_2x'] = '';
-$crimson_rose_default['heading_padding_top'] = '40';
-$crimson_rose_default['heading_padding_bottom'] = '40';
+$crimson_rose_default['heading_padding_top'] = '50';
+$crimson_rose_default['heading_padding_bottom'] = '70';
 
 // Colors
-$crimson_rose_default['primary_color'] = '#fbd5c1';
+$crimson_rose_default['primary_color'] = '#3a8323';
 $crimson_rose_default['primary_hover_color'] = '#f6a378';
 $crimson_rose_default['archive_background_color'] = '#fbd5c1';
 $crimson_rose_default['archive_title_light'] = 0;

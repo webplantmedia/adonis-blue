@@ -21,14 +21,12 @@
 
 			ul {
 				border-top: 2px solid $color__border;
-				border-left: 2px solid $color__border;
-				border-right: 2px solid $color__border;
 				float: left;
 				position: absolute;
 				top: 100%;
 				left: -999em;
 				z-index: 99999;
-				// box-shadow: 0 1px 10px rgba(0, 0, 0, 0.08);
+				box-shadow: 0 1px 10px rgba(0, 0, 0, 0.08);
 
 				a {
 					padding-top: .5em;

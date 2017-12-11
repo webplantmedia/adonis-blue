@@ -28,12 +28,11 @@
 			top: 100%;
 			left: -999em;
 			z-index: 99999;
-			// box-shadow: 0 1px 10px rgba(0, 0, 0, 0.08);
+			box-shadow: 0 1px 10px rgba(0, 0, 0, 0.08);
 
 			ul {
 				left: -999em;
 				top: 0;
-				margin-left: -2px;
 				margin-top: -2px;
 				border-top-color: $color__border;
 			}
@@ -53,14 +52,12 @@
 
 			a {
 				border-bottom: 2px solid $color__border;
-				border-left: 2px solid $color__border;
-				border-right: 2px solid $color__border;
 				padding-top: 1em;
 				padding-bottom: 1em;
-				@include rem('font-size',$font__tiny-size);
-				line-height: $font__line-height-body;
-				text-transform: uppercase;
-				font-weight: bold;
+				@include rem('font-size',$font__xsmall-size);
+				line-height: $font__line-height-heading;
+				text-transform: none;
+				font-weight: normal;
 				@include rem('min-width',200px);
 
 				&,
