@@ -266,17 +266,6 @@ WooCommerce styling
   padding: 13px 27px;
 }
 
-#master .woocommerce .quantity.buttons_added .quantity-inner {
-  border: 2px solid #ececec;
-  padding: 0 0.8em;
-  display: inline-block;
-}
-
-#master .woocommerce .quantity.buttons_added .quantity-inner > * {
-  display: inline-block;
-  vertical-align: middle;
-}
-
 #master .woocommerce .summary .quantity {
   float: left;
   margin-right: 20px;

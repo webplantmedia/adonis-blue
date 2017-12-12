@@ -1,7 +1,5 @@
 .site-header {
-	background-position: center top;
-	background-repeat: no-repeat;
-	background-image: url("img/top-right-header-bg.png");
+	@include background-2x( 'img/top-right-header-bg', 'png', 400px, auto, center top, no-repeat );
 }
 
 .site-branding {

@@ -73,9 +73,9 @@
 	input[type="color"],
 	textarea {
 		border: 2px solid $color__form-border;
-		-webkit-border-radius: 0;
-		-moz-border-radius: 0;
-		border-radius: 0;
+		-webkit-border-radius: $input__radius;
+		-moz-border-radius: $input__radius;
+		border-radius: $input__radius;
 		outline: none;
 		background: #fff;
 		@include rem('font-size',$font__main-size);

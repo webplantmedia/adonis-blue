@@ -6,15 +6,6 @@
 	.woocommerce .summary .single_add_to_cart_button {
 		padding: 13px 27px;
 	}
-	.woocommerce .quantity.buttons_added .quantity-inner {
-		border: 2px solid $color__border;
-		padding: 0 0.8em;
-		display: inline-block;
-	}
-	.woocommerce .quantity.buttons_added .quantity-inner > * {
-		display: inline-block;
-		vertical-align: middle;
-	}
 	.woocommerce .summary .quantity {
 		float: left;
 		margin-right: 20px;

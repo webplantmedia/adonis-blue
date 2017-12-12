@@ -12,9 +12,9 @@ $crimson_rose_default['heading_padding_bottom'] = '70';
 // Colors
 $crimson_rose_default['primary_color'] = '#3a8323';
 $crimson_rose_default['primary_hover_color'] = '#f6a378';
-$crimson_rose_default['archive_background_color'] = '#fbd5c1';
+$crimson_rose_default['archive_background_color'] = '#eef3ec';
 $crimson_rose_default['archive_title_light'] = 0;
-$crimson_rose_default['footer_background_color'] = '#fef8f3';
+$crimson_rose_default['footer_background_color'] = '#f7faf3';
 $crimson_rose_default['link_color'] = '#666666';
 $crimson_rose_default['link_hover_color'] = '#f6874d';
 
@@ -23,7 +23,7 @@ $crimson_rose_default['link_hover_color'] = '#f6874d';
  */
 
 // Top header
-$crimson_rose_default['top_header_background_offset'] = 520;
+$crimson_rose_default['top_header_background_offset'] = 460;
 
 // Menu
 $crimson_rose_default['show_menu_arrows'] = 1;

@@ -1291,9 +1291,9 @@ button {
 #master input[type="color"],
 #master textarea {
   border: 2px solid #ececec;
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
   outline: none;
   background: #fff;
   font-size: 18px;
@@ -3312,9 +3312,16 @@ a:hover, a:active {
 # Header
 --------------------------------------------------------------*/
 .site-header {
+  background-image: url("img/top-right-header-bg.png");
+  background-size: 400px auto;
   background-position: center top;
   background-repeat: no-repeat;
-  background-image: url("img/top-right-header-bg.png");
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
+  .site-header {
+    background-image: url("img/top-right-header-bg-2x.png");
+  }
 }
 
 .site-branding {
@@ -3536,11 +3543,6 @@ a:hover, a:active {
   font-weight: normal;
   text-transform: lowercase;
   letter-spacing: normal;
-  padding: 0.1em 0.7em;
-  background-image: url("img/button-bg-light.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100% 100%;
 }
 
 #master .archive-title-light .page-header .page-title {
@@ -4435,7 +4437,7 @@ a:hover, a:active {
   background-repeat: repeat-x;
   min-height: 126px;
   position: relative;
-  background-image: url("img/footer-bg.png");
+  background-image: url("img/footer-bg-2.png");
 }
 
 .site-info-wrapper {
