@@ -1,9 +1,11 @@
 .site-footer {
-	background-position: bottom center;
-	background-repeat: repeat-x;
 	min-height: 126px;
 	position: relative;
-	background-image: url("img/footer-bg-2.png");
+	background-image: url("img/footer-bg.png");
+	background-size: 417px auto;
+	background-position: bottom -110px center;
+	background-repeat: repeat-x;
+	@include background-2x('img/footer-bg','png');
 }
 
 .site-info-wrapper {

@@ -56,6 +56,10 @@ function crimson_rose_body_classes( $classes ) {
 		$classes[] = 'jetpack-hide-share-count';
 	}
 
+	if ( $crimson_rose['background_image_color'] ) {
+		$classes[] = 'background-image-color-' . $crimson_rose['background_image_color'];
+	}
+
 	if ( crimson_rose_is_woocommerce_activated() ) {
 		if ( is_shop() ) {
 			$classes[] = 'woocommerce-shop-columns-' . $crimson_rose['shop_columns'];

@@ -89,6 +89,37 @@ function crimson_rose_customize_register( $wp_customize ) {
 	 */
 	$section_id = 'colors';
 
+	$setting_id = 'background_image_color';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $crimson_rose_default[ $setting_id ],
+		'transport' => 'refresh',
+		'sanitize_callback' => 'sanitize_text_field',
+	) );
+
+	$wp_customize->add_control( $setting_id, array(
+		'type' => 'select',
+		'label' => __( 'Background Image Color', 'crimson-rose' ),
+		'description' => __( 'Control the color of the watercolor background image in the header and footer.', 'crimson-rose' ),
+		'section' => $section_id,
+		'choices' => array(
+			'none' => 'No Image',
+			'cyan' => 'Cyan',
+			'azure' => 'Azure',
+			'blue' => 'Blue',
+			'violet' => 'Violet',
+			'magenta' => 'Magenta',
+			'rose' => 'Rose',
+			'red' => 'Red',
+			'orange' => 'Orange',
+			'yellow' => 'Yellow',
+			'chartreuse-green' => 'Chartreuse Green',
+			'dark-green' => 'Dark Green',
+			'spring-green' => 'Spring Green',
+			'soft-pink' => 'Soft Pink',
+			'gray' => 'Gray',
+		),
+	) );
+
 	$setting_id = 'primary_color';
 	$wp_customize->add_setting( $setting_id, array(
 		'default' => $crimson_rose_default[ $setting_id ],
