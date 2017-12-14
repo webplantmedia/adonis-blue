@@ -75,6 +75,7 @@
 .site-branding {
 	@include rem('padding-top',40px);
 	@include rem('padding-bottom',40px);
+	line-height: $font__line-height-heading;
 
 	.site-logo {
 		text-align: center;
@@ -86,6 +87,8 @@
 		margin: 0;
 		// @include rem('margin-bottom',10px);
 		@include rem('font-size',40px);
+		text-transform: uppercase;
+
 
 		a {
 			display: block;
@@ -95,8 +98,23 @@
 	}
 
 	.site-description {
+		font-family: $font__accent;
 		text-align: center;
 		margin: 0;
+		text-transform: lowercase;
+		@include rem('font-size',28px);
+	}
+}
+
+@media screen and (max-width: 600px) {
+	#master .site-branding {
+		.site-title {
+			@include rem('font-size',25px);
+		}
+
+		.site-description {
+			@include rem('font-size',22px);
+		}
 	}
 }
 

@@ -3462,6 +3462,7 @@ a:hover, a:active {
   padding-top: 2.5rem;
   padding-bottom: 40px;
   padding-bottom: 2.5rem;
+  line-height: 1.375;
 }
 
 .site-branding .site-logo {
@@ -3474,6 +3475,7 @@ a:hover, a:active {
   margin: 0;
   font-size: 40px;
   font-size: 2.5rem;
+  text-transform: uppercase;
 }
 
 .site-branding .site-title a {
@@ -3483,8 +3485,23 @@ a:hover, a:active {
 }
 
 .site-branding .site-description {
+  font-family: "Mrs Saint Delafield", cursive;
   text-align: center;
   margin: 0;
+  text-transform: lowercase;
+  font-size: 28px;
+  font-size: 1.75rem;
+}
+
+@media screen and (max-width: 600px) {
+  #master .site-branding .site-title {
+    font-size: 25px;
+    font-size: 1.5625rem;
+  }
+  #master .site-branding .site-description {
+    font-size: 22px;
+    font-size: 1.375rem;
+  }
 }
 
 @media screen and (max-width: 960px) {
