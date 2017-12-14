@@ -56,8 +56,12 @@ function crimson_rose_body_classes( $classes ) {
 		$classes[] = 'jetpack-hide-share-count';
 	}
 
-	if ( $crimson_rose['background_image_color'] ) {
-		$classes[] = 'background-image-color-' . $crimson_rose['background_image_color'];
+	if ( $crimson_rose['header_background_image_color'] ) {
+		$classes[] = 'header-background-image-color-' . $crimson_rose['header_background_image_color'];
+	}
+
+	if ( $crimson_rose['footer_background_image_color'] ) {
+		$classes[] = 'footer-background-image-color-' . $crimson_rose['footer_background_image_color'];
 	}
 
 	if ( crimson_rose_is_woocommerce_activated() ) {

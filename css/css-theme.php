@@ -172,6 +172,21 @@ a:hover {
 }
 ';
 
+if ( $crimson_rose['footer_image_bottom_offset'] > 0 ) {
+$css .= '
+.site-footer {
+	background-position: bottom -' . $crimson_rose['footer_image_bottom_offset'] . 'px center; /*id:footer_image_bottom_offset*/
+}
+';
+}
+else {
+$css .= '
+.site-footer {
+	background-position: bottom center; /*id:footer_image_bottom_offset*/
+}
+';
+}
+
 if ( $crimson_rose['thumb_grid_max_height'] > 0 ) {
 $css .= '
 #master .wc-shortcodes-entry-thumbnail,

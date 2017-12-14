@@ -152,6 +152,15 @@
 			changeInlineCSS( 'top_header_background_offset_3', 'calc(50% + ' + ( to - 75 ) + 'px) top' );
 		} );
 	} );
+	wp.customize( 'footer_image_bottom_offset', function( value ) {
+		value.bind( function( to ) {
+			var val = 'bottom center';
+			if ( to > 0 ) {
+				val = 'bottom -' + to + 'px center';
+			}
+			changeInlineCSS( 'footer_image_bottom_offset', val );
+		} );
+	} );
 	wp.customize( 'page_image_header_height', function( value ) {
 		value.bind( function( to ) {
 			changeInlineCSS( 'page_image_header_height', to + 'px' );

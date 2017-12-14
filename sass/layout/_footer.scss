@@ -2,10 +2,65 @@
 	min-height: 126px;
 	position: relative;
 	background-image: url("img/footer-bg.png");
-	background-size: 417px auto;
-	background-position: bottom -110px center;
+	background-size: 735px auto;
+	background-position: bottom center;
 	background-repeat: repeat-x;
-	@include background-2x('img/footer-bg','png');
+}
+
+.footer-background-image-color-cyan .site-footer {
+	@include background-2x('img/footer-bg-cyan','png');
+}
+
+.footer-background-image-color-azure .site-footer {
+	@include background-2x('img/footer-bg-azure','png');
+}
+
+.footer-background-image-color-blue .site-footer {
+	@include background-2x('img/footer-bg-blue','png');
+}
+
+.footer-background-image-color-violet .site-footer {
+	@include background-2x('img/footer-bg-violet','png');
+}
+
+.footer-background-image-color-magenta .site-footer {
+	@include background-2x('img/footer-bg-magenta','png');
+}
+
+.footer-background-image-color-rose .site-footer {
+	@include background-2x('img/footer-bg-rose','png');
+}
+
+.footer-background-image-color-red .site-footer {
+	@include background-2x('img/footer-bg-red','png');
+}
+
+.footer-background-image-color-orange .site-footer {
+	@include background-2x('img/footer-bg-orange','png');
+}
+
+.footer-background-image-color-yellow .site-footer {
+	@include background-2x('img/footer-bg-yellow','png');
+}
+
+.footer-background-image-color-chartreuse-green .site-footer {
+	@include background-2x('img/footer-bg-chartreuse-green','png');
+}
+
+.footer-background-image-color-dark-green .site-footer {
+	@include background-2x('img/footer-bg-dark-green','png');
+}
+
+.footer-background-image-color-spring-green .site-footer {
+	@include background-2x('img/footer-bg-spring-green','png');
+}
+
+.footer-background-image-color-soft-pink .site-footer {
+	@include background-2x('img/footer-bg-soft-pink','png');
+}
+
+.footer-background-image-color-gray .site-footer {
+	@include background-2x('img/footer-bg-gray','png');
 }
 
 .site-info-wrapper {

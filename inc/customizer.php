@@ -89,7 +89,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 	 */
 	$section_id = 'colors';
 
-	$setting_id = 'background_image_color';
+	$setting_id = 'header_background_image_color';
 	$wp_customize->add_setting( $setting_id, array(
 		'default' => $crimson_rose_default[ $setting_id ],
 		'transport' => 'refresh',
@@ -98,8 +98,8 @@ function crimson_rose_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'select',
-		'label' => __( 'Background Image Color', 'crimson-rose' ),
-		'description' => __( 'Control the color of the watercolor background image in the header and footer.', 'crimson-rose' ),
+		'label' => __( 'Header Background Image Color', 'crimson-rose' ),
+		'description' => __( 'Control the color of the watercolor background image in the header.', 'crimson-rose' ),
 		'section' => $section_id,
 		'choices' => array(
 			'none' => 'No Image',
@@ -180,6 +180,37 @@ function crimson_rose_customize_register( $wp_customize ) {
 		'label' => __( 'Footer Background Color', 'crimson-rose' ),
 		'section' => $section_id,
 	) ) );
+
+	$setting_id = 'footer_background_image_color';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $crimson_rose_default[ $setting_id ],
+		'transport' => 'refresh',
+		'sanitize_callback' => 'sanitize_text_field',
+	) );
+
+	$wp_customize->add_control( $setting_id, array(
+		'type' => 'select',
+		'label' => __( 'Footer Background Image Color', 'crimson-rose' ),
+		'description' => __( 'Control the color of the watercolor background image in the footer.', 'crimson-rose' ),
+		'section' => $section_id,
+		'choices' => array(
+			'none' => 'No Image',
+			'cyan' => 'Cyan',
+			'azure' => 'Azure',
+			'blue' => 'Blue',
+			'violet' => 'Violet',
+			'magenta' => 'Magenta',
+			'rose' => 'Rose',
+			'red' => 'Red',
+			'orange' => 'Orange',
+			'yellow' => 'Yellow',
+			'chartreuse-green' => 'Chartreuse Green',
+			'dark-green' => 'Dark Green',
+			'spring-green' => 'Spring Green',
+			'soft-pink' => 'Soft Pink',
+			'gray' => 'Gray',
+		),
+	) );
 
 	$setting_id = 'link_color';
 	$wp_customize->add_setting( $setting_id, array(
@@ -825,6 +856,36 @@ function crimson_rose_customize_register( $wp_customize ) {
 		'label' => __( 'Read More Label', 'crimson-rose' ),
 		'section' => $section_id,
 	) );
+
+	/**
+	 * Footer.
+	 */
+	$section_id = 'theme_options_footer';
+	$wp_customize->add_section( $section_id, array(
+		'title'    => __( 'Footer', 'crimson-rose' ),
+		'panel'    => 'theme_options',
+	) );
+
+	$setting_id = 'footer_image_bottom_offset';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $crimson_rose_default[ $setting_id ],
+		'transport' => 'postMessage',
+		'sanitize_callback' => 'absint',
+	) );
+
+	$wp_customize->add_control( $setting_id, array(
+		'type' => 'range',
+		'label' => __( 'Footer Image Bottom Offset', 'crimson-rose' ),
+		'description' => __( 'This changes the position of your footer background so you can center it perfectly with your footer text.', 'crimson-rose' ),
+		'section' => $section_id,
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 85,
+			'step' => 1,
+			'style' => 'width:100%;',
+		),
+	) );
+
 }
 add_action( 'customize_register', 'crimson_rose_customize_register' );
 

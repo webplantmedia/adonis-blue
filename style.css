@@ -3317,142 +3317,142 @@ a:hover, a:active {
   background-repeat: no-repeat;
 }
 
-.background-image-color-cyan .site-header {
+.header-background-image-color-cyan .site-header {
   background-image: url("img/top-right-header-bg-cyan.png");
 }
 
 @media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
-  .background-image-color-cyan .site-header {
+  .header-background-image-color-cyan .site-header {
     background-image: url("img/top-right-header-bg-cyan-2x.png");
   }
 }
 
-.background-image-color-azure .site-header {
+.header-background-image-color-azure .site-header {
   background-image: url("img/top-right-header-bg-azure.png");
 }
 
 @media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
-  .background-image-color-azure .site-header {
+  .header-background-image-color-azure .site-header {
     background-image: url("img/top-right-header-bg-azure-2x.png");
   }
 }
 
-.background-image-color-blue .site-header {
+.header-background-image-color-blue .site-header {
   background-image: url("img/top-right-header-bg-blue.png");
 }
 
 @media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
-  .background-image-color-blue .site-header {
+  .header-background-image-color-blue .site-header {
     background-image: url("img/top-right-header-bg-blue-2x.png");
   }
 }
 
-.background-image-color-violet .site-header {
+.header-background-image-color-violet .site-header {
   background-image: url("img/top-right-header-bg-violet.png");
 }
 
 @media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
-  .background-image-color-violet .site-header {
+  .header-background-image-color-violet .site-header {
     background-image: url("img/top-right-header-bg-violet-2x.png");
   }
 }
 
-.background-image-color-magenta .site-header {
+.header-background-image-color-magenta .site-header {
   background-image: url("img/top-right-header-bg-magenta.png");
 }
 
 @media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
-  .background-image-color-magenta .site-header {
+  .header-background-image-color-magenta .site-header {
     background-image: url("img/top-right-header-bg-magenta-2x.png");
   }
 }
 
-.background-image-color-rose .site-header {
+.header-background-image-color-rose .site-header {
   background-image: url("img/top-right-header-bg-rose.png");
 }
 
 @media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
-  .background-image-color-rose .site-header {
+  .header-background-image-color-rose .site-header {
     background-image: url("img/top-right-header-bg-rose-2x.png");
   }
 }
 
-.background-image-color-red .site-header {
+.header-background-image-color-red .site-header {
   background-image: url("img/top-right-header-bg-red.png");
 }
 
 @media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
-  .background-image-color-red .site-header {
+  .header-background-image-color-red .site-header {
     background-image: url("img/top-right-header-bg-red-2x.png");
   }
 }
 
-.background-image-color-orange .site-header {
+.header-background-image-color-orange .site-header {
   background-image: url("img/top-right-header-bg-orange.png");
 }
 
 @media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
-  .background-image-color-orange .site-header {
+  .header-background-image-color-orange .site-header {
     background-image: url("img/top-right-header-bg-orange-2x.png");
   }
 }
 
-.background-image-color-yellow .site-header {
+.header-background-image-color-yellow .site-header {
   background-image: url("img/top-right-header-bg-yellow.png");
 }
 
 @media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
-  .background-image-color-yellow .site-header {
+  .header-background-image-color-yellow .site-header {
     background-image: url("img/top-right-header-bg-yellow-2x.png");
   }
 }
 
-.background-image-color-chartreuse-green .site-header {
+.header-background-image-color-chartreuse-green .site-header {
   background-image: url("img/top-right-header-bg-chartreuse-green.png");
 }
 
 @media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
-  .background-image-color-chartreuse-green .site-header {
+  .header-background-image-color-chartreuse-green .site-header {
     background-image: url("img/top-right-header-bg-chartreuse-green-2x.png");
   }
 }
 
-.background-image-color-dark-green .site-header {
+.header-background-image-color-dark-green .site-header {
   background-image: url("img/top-right-header-bg-dark-green.png");
 }
 
 @media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
-  .background-image-color-dark-green .site-header {
+  .header-background-image-color-dark-green .site-header {
     background-image: url("img/top-right-header-bg-dark-green-2x.png");
   }
 }
 
-.background-image-color-spring-green .site-header {
+.header-background-image-color-spring-green .site-header {
   background-image: url("img/top-right-header-bg-spring-green.png");
 }
 
 @media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
-  .background-image-color-spring-green .site-header {
+  .header-background-image-color-spring-green .site-header {
     background-image: url("img/top-right-header-bg-spring-green-2x.png");
   }
 }
 
-.background-image-color-soft-pink .site-header {
+.header-background-image-color-soft-pink .site-header {
   background-image: url("img/top-right-header-bg-soft-pink.png");
 }
 
 @media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
-  .background-image-color-soft-pink .site-header {
+  .header-background-image-color-soft-pink .site-header {
     background-image: url("img/top-right-header-bg-soft-pink-2x.png");
   }
 }
 
-.background-image-color-gray .site-header {
+.header-background-image-color-gray .site-header {
   background-image: url("img/top-right-header-bg-gray.png");
 }
 
 @media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
-  .background-image-color-gray .site-header {
+  .header-background-image-color-gray .site-header {
     background-image: url("img/top-right-header-bg-gray-2x.png");
   }
 }
@@ -4569,15 +4569,148 @@ a:hover, a:active {
   min-height: 126px;
   position: relative;
   background-image: url("img/footer-bg.png");
-  background-size: 417px auto;
-  background-position: bottom -110px center;
+  background-size: 735px auto;
+  background-position: bottom center;
   background-repeat: repeat-x;
-  background-image: url("img/footer-bg.png");
+}
+
+.footer-background-image-color-cyan .site-footer {
+  background-image: url("img/footer-bg-cyan.png");
 }
 
 @media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
-  .site-footer {
-    background-image: url("img/footer-bg-2x.png");
+  .footer-background-image-color-cyan .site-footer {
+    background-image: url("img/footer-bg-cyan-2x.png");
+  }
+}
+
+.footer-background-image-color-azure .site-footer {
+  background-image: url("img/footer-bg-azure.png");
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
+  .footer-background-image-color-azure .site-footer {
+    background-image: url("img/footer-bg-azure-2x.png");
+  }
+}
+
+.footer-background-image-color-blue .site-footer {
+  background-image: url("img/footer-bg-blue.png");
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
+  .footer-background-image-color-blue .site-footer {
+    background-image: url("img/footer-bg-blue-2x.png");
+  }
+}
+
+.footer-background-image-color-violet .site-footer {
+  background-image: url("img/footer-bg-violet.png");
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
+  .footer-background-image-color-violet .site-footer {
+    background-image: url("img/footer-bg-violet-2x.png");
+  }
+}
+
+.footer-background-image-color-magenta .site-footer {
+  background-image: url("img/footer-bg-magenta.png");
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
+  .footer-background-image-color-magenta .site-footer {
+    background-image: url("img/footer-bg-magenta-2x.png");
+  }
+}
+
+.footer-background-image-color-rose .site-footer {
+  background-image: url("img/footer-bg-rose.png");
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
+  .footer-background-image-color-rose .site-footer {
+    background-image: url("img/footer-bg-rose-2x.png");
+  }
+}
+
+.footer-background-image-color-red .site-footer {
+  background-image: url("img/footer-bg-red.png");
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
+  .footer-background-image-color-red .site-footer {
+    background-image: url("img/footer-bg-red-2x.png");
+  }
+}
+
+.footer-background-image-color-orange .site-footer {
+  background-image: url("img/footer-bg-orange.png");
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
+  .footer-background-image-color-orange .site-footer {
+    background-image: url("img/footer-bg-orange-2x.png");
+  }
+}
+
+.footer-background-image-color-yellow .site-footer {
+  background-image: url("img/footer-bg-yellow.png");
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
+  .footer-background-image-color-yellow .site-footer {
+    background-image: url("img/footer-bg-yellow-2x.png");
+  }
+}
+
+.footer-background-image-color-chartreuse-green .site-footer {
+  background-image: url("img/footer-bg-chartreuse-green.png");
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
+  .footer-background-image-color-chartreuse-green .site-footer {
+    background-image: url("img/footer-bg-chartreuse-green-2x.png");
+  }
+}
+
+.footer-background-image-color-dark-green .site-footer {
+  background-image: url("img/footer-bg-dark-green.png");
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
+  .footer-background-image-color-dark-green .site-footer {
+    background-image: url("img/footer-bg-dark-green-2x.png");
+  }
+}
+
+.footer-background-image-color-spring-green .site-footer {
+  background-image: url("img/footer-bg-spring-green.png");
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
+  .footer-background-image-color-spring-green .site-footer {
+    background-image: url("img/footer-bg-spring-green-2x.png");
+  }
+}
+
+.footer-background-image-color-soft-pink .site-footer {
+  background-image: url("img/footer-bg-soft-pink.png");
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
+  .footer-background-image-color-soft-pink .site-footer {
+    background-image: url("img/footer-bg-soft-pink-2x.png");
+  }
+}
+
+.footer-background-image-color-gray .site-footer {
+  background-image: url("img/footer-bg-gray.png");
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
+  .footer-background-image-color-gray .site-footer {
+    background-image: url("img/footer-bg-gray-2x.png");
   }
 }
 
