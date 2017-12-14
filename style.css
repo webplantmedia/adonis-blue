@@ -3476,12 +3476,12 @@ a:hover, a:active {
   font-size: 40px;
   font-size: 2.5rem;
   text-transform: uppercase;
+  letter-spacing: 0.07em;
 }
 
 .site-branding .site-title a {
-  display: block;
+  display: inline-block;
   text-decoration: none;
-  color: #666666;
 }
 
 .site-branding .site-description {
@@ -3491,6 +3491,10 @@ a:hover, a:active {
   text-transform: lowercase;
   font-size: 28px;
   font-size: 1.75rem;
+}
+
+#master .site-branding .site-title a, #master .site-branding .site-title a:hover {
+  color: #666666;
 }
 
 @media screen and (max-width: 600px) {

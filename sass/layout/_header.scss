@@ -88,12 +88,11 @@
 		// @include rem('margin-bottom',10px);
 		@include rem('font-size',40px);
 		text-transform: uppercase;
-
+		letter-spacing: 0.07em;
 
 		a {
-			display: block;
+			display: inline-block;
 			text-decoration: none;
-			color: $color__text-heading;
 		}
 	}
 
@@ -103,6 +102,15 @@
 		margin: 0;
 		text-transform: lowercase;
 		@include rem('font-size',28px);
+	}
+}
+
+#master .site-branding {
+	.site-title a {
+		&,
+		&:hover {
+			color: $color__text-heading;
+		}
 	}
 }
 

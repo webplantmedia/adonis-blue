@@ -7,18 +7,18 @@ $crimson_rose_default = array();
 // Title & Tagline
 $crimson_rose_default['custom_logo_2x'] = '';
 $crimson_rose_default['heading_padding_top'] = '50';
-$crimson_rose_default['heading_padding_bottom'] = '70';
+$crimson_rose_default['heading_padding_bottom'] = '50';
 
 // Colors
-$crimson_rose_default['header_background_image_color'] = 'dark-green';
-$crimson_rose_default['primary_color'] = '#3a8323';
-$crimson_rose_default['primary_hover_color'] = '#f6a378';
-$crimson_rose_default['archive_background_color'] = '#eef3ec';
+$crimson_rose_default['header_background_image_color'] = 'red';
+$crimson_rose_default['primary_color'] = '#faabae';
+$crimson_rose_default['primary_hover_color'] = '#f67171';
+$crimson_rose_default['archive_background_color'] = '#fcf7f7';
 $crimson_rose_default['archive_title_light'] = 0;
-$crimson_rose_default['footer_background_color'] = '#f8faf7';
-$crimson_rose_default['footer_background_image_color'] = 'dark-green';
+$crimson_rose_default['footer_background_color'] = '#fcf7f7';
+$crimson_rose_default['footer_background_image_color'] = 'red';
 $crimson_rose_default['link_color'] = '#666666';
-$crimson_rose_default['link_hover_color'] = '#f6874d';
+$crimson_rose_default['link_hover_color'] = '#f67171';
 
 /*
  * Theme Options

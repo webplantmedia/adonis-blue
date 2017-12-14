@@ -126,6 +126,12 @@
 			border-radius: $button__radius;
 		}
 	}
+
+	.sd-social-icon .sd-content ul li[class*="share-"] a:hover,
+	.sd-social-icon .sd-content ul li[class*="share-"] div.option a:hover {
+		opacity: 1;
+	}
+
 	#infinite-handle span {
 		background: none;
 		border-radius: 0;

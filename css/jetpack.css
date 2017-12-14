@@ -140,6 +140,11 @@ Jetpack styling
   border-radius: 3px;
 }
 
+#master .sd-social-icon .sd-content ul li[class*="share-"] a:hover,
+#master .sd-social-icon .sd-content ul li[class*="share-"] div.option a:hover {
+  opacity: 1;
+}
+
 #master #infinite-handle span {
   background: none;
   border-radius: 0;
