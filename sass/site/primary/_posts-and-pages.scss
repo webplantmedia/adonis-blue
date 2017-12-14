@@ -154,13 +154,15 @@
 
 		.archive-type {
 			font-family: $font__accent;
-			@include rem('font-size',60px);
-			@include rem('margin-bottom',10px);
+			@include rem('font-size',45px);
 			line-height: 1;
 			display: inline-block;
 			font-weight: normal;
 			text-transform: lowercase;
 			letter-spacing: normal;
+		}
+		.archive-type + .archive-title {
+			@include rem('margin-top',10px);
 		}
 	}
 }

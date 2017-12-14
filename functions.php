@@ -202,14 +202,14 @@ add_action( 'wp_enqueue_scripts', 'crimson_rose_customizer_css_wrap', 20 );
 function crimson_rose_scripts() {
 	global $crimson_rose;
 
-	if ( ! $crimson_rose['disable_google_fonts'] ) {
+	if ( ! $crimson_rose['disable_body_font'] ) {
 		// Add custom fonts, used in the main stylesheet.
-		wp_enqueue_style( 'crimson-rose-google-fonts', crimson_rose_fonts_url(), array(), null );
+		wp_enqueue_style( 'crimson-rose-body-font', get_parent_theme_file_uri() . '/fonts/body.css', array(), null );
 	}
 	
-	if ( ! $crimson_rose['disable_custom_fonts'] ) {
+	if ( ! $crimson_rose['disable_accent_font'] ) {
 		// Add custom fonts, used in the main stylesheet.
-		wp_enqueue_style( 'crimson-rose-custom-fonts', get_parent_theme_file_uri() . '/fonts/lovefern/lovefern.css', array(), null );
+		wp_enqueue_style( 'crimson-rose-accent-font', get_parent_theme_file_uri() . '/fonts/accent.css', array(), null );
 	}
 	
 	// Add genericons
