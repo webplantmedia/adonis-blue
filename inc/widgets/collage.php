@@ -119,6 +119,31 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Collage' ) ) :
 							'description' => esc_html__( 'Leave blank to use default theme color.', 'crimson-rose' ),
 							'sanitize' => 'color',
 						),
+						'text_background_color' => array(
+							'type'  => 'colorpicker',
+							'std'   => '',
+							'label' => esc_html__( 'Text Background Color:', 'crimson-rose' ),
+							'description' => esc_html__( 'Leave blank to use default theme color.', 'crimson-rose' ),
+							'sanitize' => 'color',
+						),
+						'text_background_opacity' => array(
+							'type'  => 'number',
+							'std'   => '80',
+							'step'  => '10',
+							'min'   => '10',
+							'max'   => '100',
+							'label' => esc_html__( 'Text Background Color Opacity:', 'crimson-rose' ),
+							'sanitize' => 'absint',
+						),
+						'max_width' => array(
+							'type'  => 'number',
+							'std'   => '400',
+							'step'  => '1',
+							'min'   => '0',
+							'label' => esc_html__( 'Max Width of Content Box:', 'crimson-rose' ),
+							'description' => esc_html__( 'Leave blank to set max width to none.', 'crimson-rose' ),
+							'sanitize' => 'number_blank',
+						),
 						'button_text' => array(
 							'type'  => 'text',
 							'std'   => '',
@@ -133,7 +158,7 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Collage' ) ) :
 						),
 						'button_style' => array(
 							'type'  => 'select',
-							'std'   => 'button-1',
+							'std'   => 'default',
 							'label' => __( 'Button Style:', 'crimson-rose' ),
 							'options' => array(
 								'default' => __( 'Default Button', 'crimson-rose' ),
@@ -146,56 +171,87 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Collage' ) ) :
 					'default' => array(
 						array(
 							'background_color' => '#ffede4',
-							'background_image' => get_template_directory_uri() . '/img/collage/hallie.jpg',
-							'background_size' => 'contain',
-							'content_text' => '',
+							'background_image' => get_template_directory_uri() . '/img/collage/pexels-photo-122734.jpeg',
+							'background_size' => 'cover',
+							'content_text' => '<h3>ORDER ONLINE FOR YOUR WEDDING</h3>',
 							'text_color' => '',
-							'button_link' => 'https://angiemakes.com',
-							'button_text' => '',
+							'text_background_color' => '#ffffff',
+							'text_background_opacity' => '70',
+							'max_width' => '300',
+							'button_link' => get_home_url(),
+							'button_text' => 'Order Now',
+							'button_style' => 'default',
 						),
 						array(
-							'background_color' => '#fdf8f3',
-							'background_image' => get_template_directory_uri() . '/img/collage/gentry.jpg',
-							'background_size' => 'contain',
-							'content_text' => '',
+							'background_color' => '#ffffff',
+							'background_image' => get_template_directory_uri() . '/img/collage/pexels-photo-169193.jpeg',
+							'background_size' => 'cover',
+							'content_text' => '<h3>FLOWERS FOR YOUR WEDDING</h3>',
 							'text_color' => '',
-							'button_link' => 'http://dev.angiemakes.com',
-							'button_text' => '',
+							'text_background_color' => '#ffffff',
+							'text_background_opacity' => '70',
+							'max_width' => '300',
+							'button_link' => get_home_url(),
+							'button_text' => 'Shop Now',
 						),
 						array(
 							'background_color' => '#fdf3ec',
-							'background_image' => get_template_directory_uri() . '/img/collage/bghome.jpg',
-							'background_size' => 'stretch',
-							'content_text' => '<h3>WORDPRESS THEMES + GRAPHICS TO ROCK YOUR BRAND AND STYLE YOUR LIFE</h3>',
+							'background_image' => get_template_directory_uri() . '/img/collage/pexels-photo-395132.jpeg',
+							'background_size' => 'cover',
+							'content_text' => '<h3>SIGN UP FOR OUR WORKSHOP</h3>',
 							'text_color' => '',
-							'button_link' => 'http://dev.angiemakes.com',
+							'text_background_color' => '#ffffff',
+							'text_background_opacity' => '70',
+							'max_width' => '300',
+							'button_link' => get_home_url(),
+							'button_text' => 'Join Now',
+						),
+						array(
+							'background_color' => '#fcf7f7',
+							'background_image' => get_template_directory_uri() . '/img/collage/roses-bouquet-congratulations-arrangement-68570.jpg',
+							'background_size' => 'cover',
+							'content_text' => '<h3>SEE OUR SEASONAL FLOWER ARRANGEMENTS</h3>',
+							'text_color' => '',
+							'text_background_color' => '',
+							'text_background_opacity' => '70',
+							'max_width' => '350',
+							'button_link' => get_home_url(),
 							'button_text' => '',
 						),
 						array(
-							'background_color' => '#fdf7f3',
-							'background_image' => '',
+							'background_color' => '#ffffff',
+							'background_image' => get_template_directory_uri() . '/img/collage/pexels-photo-529927.jpeg',
 							'background_size' => 'cover',
-							'content_text' => '<h3>FEMININE<br />WORDPRESS THEMES</h3>',
+							'content_text' => '<h3>CUSTOM ORDERS</h3>',
 							'text_color' => '',
-							'button_link' => 'http://dev.angiemakes.com',
-							'button_text' => 'Shop',
+							'text_background_color' => '',
+							'text_background_opacity' => '70',
+							'max_width' => '',
+							'button_link' => get_home_url(),
+							'button_text' => '',
 						),
 						array(
-							'background_color' => '#ffede4',
-							'background_image' => get_template_directory_uri() . '/img/collage/fonts-bg.jpg',
-							'background_size' => 'auto',
+							'background_color' => '#fde2e2',
+							'background_image' => get_template_directory_uri() . '/img/collage/gifts.png',
+							'background_size' => 'fit-width',
 							'content_text' => '',
 							'text_color' => '',
-							'button_link' => 'http://dev.angiemakes.com',
+							'text_background_color' => '',
+							'text_background_opacity' => '70',
+							'max_width' => '',
+							'button_link' => get_home_url(),
 							'button_text' => '',
 						),
 						array(
 							'background_color' => '#fffdfc',
-							'background_image' => get_template_directory_uri() . '/img/collage/homegreen.jpg',
-							'background_size' => 'stretch',
-							'content_text' => '<h3>24 HOUR<br />INSTALLATION</h3>',
+							'background_image' => get_template_directory_uri() . '/img/collage/pexels-photo-226145.jpeg',
+							'background_size' => 'cover',
+							'content_text' => '<h3>CHECK DELIVERY AREA</h3>',
 							'text_color' => '',
-							'button_link' => 'http://dev.angiemakes.com',
+							'text_background_color' => '#ffffff',
+							'text_background_opacity' => '100',
+							'max_width' => '',
+							'button_link' => get_home_url(),
 							'button_text' => '',
 						),
 					),
@@ -314,7 +370,7 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Collage' ) ) :
 			$classes[] = 'slide-inner';
 			$attr = array();
 			$style = array();
-			$text_style = '';
+			$text_style = array();
 			$text_class = '';
 
 			if ( ! empty( $slide_setting['button_link'] ) ) {
@@ -340,12 +396,28 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Collage' ) ) :
 			}
 
 			if ( ! empty( $slide_setting['text_color'] ) ) {
-				$text_style = 'color:' . esc_attr( $slide_setting['text_color'] ) . ';';
-				$text_class = ' custom-color';
+				$text_style[] = 'color:' . esc_attr( $slide_setting['text_color'] ) . ';';
+				$text_class .= ' custom-color';
 			}
 			else {
-				$text_class = ' no-custom-color';
+				$text_class .= ' no-custom-color';
 			}
+
+			if ( ! empty( $slide_setting['text_background_color'] ) ) {
+				$rgb = $this->hex2rgb( $slide_setting['text_background_color'] );
+				$opacity = absint( $slide_setting['text_background_opacity'] ) / 100;
+				$text_style[] = 'background-color: rgb(' . $rgb['red'] . ',' . $rgb['green'] . ',' . $rgb['blue'] . ');';
+				$text_style[] = 'background-color: rgba(' . $rgb['red'] . ',' . $rgb['green'] . ',' . $rgb['blue'] . ',' . $opacity . ');';
+				$text_class .= ' text-background-color';
+			}
+			else {
+				$text_class .= ' no-text-background-color';
+			}
+
+			if ( ! empty( $slide_setting['max_width'] ) ) {
+				$text_style[] = 'max-width:' . $slide_setting['max_width'] . 'px;';
+			}
+
 
 			if ( ! empty( $style ) ) {
 				$attr[] = 'style="' . implode( '', $style ) . '"';
@@ -358,9 +430,9 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Collage' ) ) :
 
 			<<?php echo $tag; ?> <?php echo implode( ' ', $attr ); ?>>
 					
-				<div class="content-wrapper">
+				<div class="content-wrapper<?php echo $text_class; ?>" style="<?php echo implode( '', $text_style ); ?>">
 					<?php if ( ! empty( $slide_setting['content_text'] ) ) : ?>
-						<div class="content-text<?php echo $text_class; ?>" style="<?php echo $text_style; ?>">
+						<div class="content-text">
 							<?php echo $slide_setting['content_text']; ?>
 						</div>
 					<?php endif; ?>

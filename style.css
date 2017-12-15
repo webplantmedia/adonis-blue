@@ -2956,11 +2956,11 @@ a:hover, a:active {
   margin-top: 0;
 }
 
-#master .crimson-rose-widget-collage .collage a.slide-inner .content-text.no-custom-color *, #master .crimson-rose-widget-collage .collage a.slide-inner:hover .content-text.no-custom-color *, #master .crimson-rose-widget-collage .collage a.slide-inner:active .content-text.no-custom-color *, #master .crimson-rose-widget-collage .collage a.slide-inner:focus .content-text.no-custom-color *, #master .crimson-rose-widget-collage .collage a.slide-inner:visited .content-text.no-custom-color * {
+#master .crimson-rose-widget-collage .collage .slide-inner .no-custom-color .content-text *, #master .crimson-rose-widget-collage .collage .slide-inner:hover .no-custom-color .content-text *, #master .crimson-rose-widget-collage .collage .slide-inner:active .no-custom-color .content-text *, #master .crimson-rose-widget-collage .collage .slide-inner:focus .no-custom-color .content-text *, #master .crimson-rose-widget-collage .collage .slide-inner:visited .no-custom-color .content-text * {
   color: #666666;
 }
 
-#master .crimson-rose-widget-collage .collage a.slide-inner .content-text.custom-color *, #master .crimson-rose-widget-collage .collage a.slide-inner:hover .content-text.custom-color *, #master .crimson-rose-widget-collage .collage a.slide-inner:active .content-text.custom-color *, #master .crimson-rose-widget-collage .collage a.slide-inner:focus .content-text.custom-color *, #master .crimson-rose-widget-collage .collage a.slide-inner:visited .content-text.custom-color * {
+#master .crimson-rose-widget-collage .collage .slide-inner .custom-color .content-text *, #master .crimson-rose-widget-collage .collage .slide-inner:hover .custom-color .content-text *, #master .crimson-rose-widget-collage .collage .slide-inner:active .custom-color .content-text *, #master .crimson-rose-widget-collage .collage .slide-inner:focus .custom-color .content-text *, #master .crimson-rose-widget-collage .collage .slide-inner:visited .custom-color .content-text * {
   color: inherit;
 }
 
@@ -3048,18 +3048,22 @@ a:hover, a:active {
 
 .crimson-rose-widget-collage .collage .slide .slide-inner .content-wrapper {
   position: absolute;
-  padding: 0 20px;
+  padding: 20px;
   text-align: center;
   top: 50%;
   right: 0;
   left: 0;
   width: 100%;
-  max-width: 400px;
+  max-width: none;
   margin: 0 auto;
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+}
+
+.crimson-rose-widget-collage .collage .slide .slide-inner .content-wrapper.text-background-color {
+  padding: 30px;
 }
 
 .crimson-rose-widget-collage .collage .slide .slide-inner .content-wrapper .content-text + .button-text {
@@ -3168,6 +3172,9 @@ a:hover, a:active {
   #master .crimson-rose-widget-collage .collage .slide {
     width: 100%;
     height: 20%;
+  }
+  #master .crimson-rose-widget-collage .collage .slide .slide-inner .content-wrapper.text-background-color {
+    padding: 20px;
   }
   #master .crimson-rose-widget-collage .collage .slide .slide-gutter {
     padding: 0;

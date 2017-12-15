@@ -306,8 +306,21 @@ class Crimson_Rose_Widget extends WP_Widget {
 				$value = sanitize_text_field( $new_value );
 				break;
 
+			case 'absint' :
+				$value = absint( $new_value );
+				break;
+
 			case 'number' :
 				$value = intval( $new_value );
+				break;
+
+			case 'number_blank' :
+				if ( $new_value === '' ) {
+					$value = '';
+				}
+				else {
+					$value = intval( $new_value );
+				}
 				break;
 
 			case 'color' :
