@@ -1,8 +1,8 @@
-.site-content > .site-boundary > .crimson-rose-widget-collage:first-child {
+.site-content > .site-boundary > .crimson-rose-content-widget-collage:first-child {
 	@include rem('margin-top',-30px);
 }
 
-#master .crimson-rose-widget-collage {
+#master .crimson-rose-content-widget-collage {
 	.collage {
 
 		.slide-inner {
@@ -38,7 +38,7 @@
 	}
 }
 
-.crimson-rose-widget-collage {
+.crimson-rose-content-widget-collage {
 	.collage {
 		position: relative;
 		height: 650px;
@@ -177,7 +177,7 @@
 }
 
 @media screen and (max-width : 991px) {
-	.crimson-rose-widget-collage {
+	.crimson-rose-content-widget-collage {
 		.collage {
 			height: 1300px;
 			max-width: 520px;
@@ -252,7 +252,7 @@
 }
 
 @media screen and (max-width : 568px) {
-	#master .crimson-rose-widget-collage {
+	#master .crimson-rose-content-widget-collage {
 		.collage {
 			height: 1500px;
 

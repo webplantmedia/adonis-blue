@@ -20,8 +20,7 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Collage' ) ) :
 		 * Constructor
 		 */
 		public function __construct() {
-			$this->widget_id          = 'crimson-rose-widget-collage';
-			$this->widget_cssclass    = 'crimson-rose-widget-collage';
+			$this->widget_id          = 'crimson-rose-content-widget-collage';
 			$this->widget_description = esc_html__( 'Displays collage', 'crimson-rose' );
 			$this->widget_name        = esc_html__( 'Crimson Rose: Collage', 'crimson-rose' );
 			$this->settings           = array(
@@ -186,7 +185,7 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Collage' ) ) :
 							'background_color' => '#ffffff',
 							'background_image' => get_template_directory_uri() . '/img/widgets/pexels-photo-169193.jpeg',
 							'background_size' => 'cover',
-							'content_text' => '<h3>GET FLOWERS DELIVERED TO YOU</h3>',
+							'content_text' => '<h3>FLOWERS DELIVERED TO YOUR LOCATION</h3>',
 							'text_color' => '',
 							'text_background_color' => '#ffffff',
 							'text_background_opacity' => '70',

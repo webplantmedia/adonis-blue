@@ -2914,29 +2914,29 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 ## Collage Widget
 --------------------------------------------------------------*/
-.site-content > .site-boundary > .crimson-rose-widget-collage:first-child {
+.site-content > .site-boundary > .crimson-rose-content-widget-collage:first-child {
   margin-top: -30px;
   margin-top: -1.875rem;
 }
 
-#master .crimson-rose-widget-collage .collage .slide-inner .content-text * {
+#master .crimson-rose-content-widget-collage .collage .slide-inner .content-text * {
   margin-top: 0;
 }
 
-#master .crimson-rose-widget-collage .collage .slide-inner .no-custom-color .content-text *, #master .crimson-rose-widget-collage .collage .slide-inner:hover .no-custom-color .content-text *, #master .crimson-rose-widget-collage .collage .slide-inner:active .no-custom-color .content-text *, #master .crimson-rose-widget-collage .collage .slide-inner:focus .no-custom-color .content-text *, #master .crimson-rose-widget-collage .collage .slide-inner:visited .no-custom-color .content-text * {
+#master .crimson-rose-content-widget-collage .collage .slide-inner .no-custom-color .content-text *, #master .crimson-rose-content-widget-collage .collage .slide-inner:hover .no-custom-color .content-text *, #master .crimson-rose-content-widget-collage .collage .slide-inner:active .no-custom-color .content-text *, #master .crimson-rose-content-widget-collage .collage .slide-inner:focus .no-custom-color .content-text *, #master .crimson-rose-content-widget-collage .collage .slide-inner:visited .no-custom-color .content-text * {
   color: #666666;
 }
 
-#master .crimson-rose-widget-collage .collage .slide-inner .custom-color .content-text *, #master .crimson-rose-widget-collage .collage .slide-inner:hover .custom-color .content-text *, #master .crimson-rose-widget-collage .collage .slide-inner:active .custom-color .content-text *, #master .crimson-rose-widget-collage .collage .slide-inner:focus .custom-color .content-text *, #master .crimson-rose-widget-collage .collage .slide-inner:visited .custom-color .content-text * {
+#master .crimson-rose-content-widget-collage .collage .slide-inner .custom-color .content-text *, #master .crimson-rose-content-widget-collage .collage .slide-inner:hover .custom-color .content-text *, #master .crimson-rose-content-widget-collage .collage .slide-inner:active .custom-color .content-text *, #master .crimson-rose-content-widget-collage .collage .slide-inner:focus .custom-color .content-text *, #master .crimson-rose-content-widget-collage .collage .slide-inner:visited .custom-color .content-text * {
   color: inherit;
 }
 
-.crimson-rose-widget-collage .collage {
+.crimson-rose-content-widget-collage .collage {
   position: relative;
   height: 650px;
 }
 
-.crimson-rose-widget-collage .collage .slide-5 {
+.crimson-rose-content-widget-collage .collage .slide-5 {
   position: absolute;
   width: 50%;
   height: 60%;
@@ -2944,12 +2944,12 @@ a:hover, a:active {
   left: 0;
 }
 
-.crimson-rose-widget-collage .collage .slide-5 .slide-gutter {
+.crimson-rose-content-widget-collage .collage .slide-5 .slide-gutter {
   padding-right: 10px;
   padding-bottom: 10px;
 }
 
-.crimson-rose-widget-collage .collage .slide-4 {
+.crimson-rose-content-widget-collage .collage .slide-4 {
   position: absolute;
   width: 50%;
   height: 40%;
@@ -2957,12 +2957,12 @@ a:hover, a:active {
   left: 0;
 }
 
-.crimson-rose-widget-collage .collage .slide-4 .slide-gutter {
+.crimson-rose-content-widget-collage .collage .slide-4 .slide-gutter {
   padding-right: 10px;
   padding-top: 10px;
 }
 
-.crimson-rose-widget-collage .collage .slide-3 {
+.crimson-rose-content-widget-collage .collage .slide-3 {
   position: absolute;
   width: 50%;
   height: 40%;
@@ -2970,12 +2970,12 @@ a:hover, a:active {
   right: 0;
 }
 
-.crimson-rose-widget-collage .collage .slide-3 .slide-gutter {
+.crimson-rose-content-widget-collage .collage .slide-3 .slide-gutter {
   padding-left: 10px;
   padding-bottom: 10px;
 }
 
-.crimson-rose-widget-collage .collage .slide-2 {
+.crimson-rose-content-widget-collage .collage .slide-2 {
   position: absolute;
   width: 25%;
   height: 60%;
@@ -2983,13 +2983,13 @@ a:hover, a:active {
   right: 25%;
 }
 
-.crimson-rose-widget-collage .collage .slide-2 .slide-gutter {
+.crimson-rose-content-widget-collage .collage .slide-2 .slide-gutter {
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 10px;
 }
 
-.crimson-rose-widget-collage .collage .slide-1 {
+.crimson-rose-content-widget-collage .collage .slide-1 {
   position: absolute;
   width: 25%;
   height: 60%;
@@ -2997,23 +2997,23 @@ a:hover, a:active {
   right: 0;
 }
 
-.crimson-rose-widget-collage .collage .slide-1 .slide-gutter {
+.crimson-rose-content-widget-collage .collage .slide-1 .slide-gutter {
   padding-left: 10px;
   padding-top: 10px;
 }
 
-.crimson-rose-widget-collage .collage .slide {
+.crimson-rose-content-widget-collage .collage .slide {
   overflow: hidden;
 }
 
-.crimson-rose-widget-collage .collage .slide .slide-inner {
+.crimson-rose-content-widget-collage .collage .slide .slide-inner {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   position: relative;
 }
 
-.crimson-rose-widget-collage .collage .slide .slide-inner .content-wrapper {
+.crimson-rose-content-widget-collage .collage .slide .slide-inner .content-wrapper {
   position: absolute;
   padding: 20px;
   text-align: center;
@@ -3029,147 +3029,147 @@ a:hover, a:active {
   transform: translateY(-50%);
 }
 
-.crimson-rose-widget-collage .collage .slide .slide-inner .content-wrapper.text-background-color {
+.crimson-rose-content-widget-collage .collage .slide .slide-inner .content-wrapper.text-background-color {
   padding: 30px;
 }
 
-.crimson-rose-widget-collage .collage .slide .slide-inner .content-wrapper .content-text + .button-text {
+.crimson-rose-content-widget-collage .collage .slide .slide-inner .content-wrapper .content-text + .button-text {
   margin-top: 20px;
 }
 
-.crimson-rose-widget-collage .collage .slide .slide-inner .content-wrapper .content-text > *:first-child {
+.crimson-rose-content-widget-collage .collage .slide .slide-inner .content-wrapper .content-text > *:first-child {
   margin-top: 0;
 }
 
-.crimson-rose-widget-collage .collage .slide .slide-inner .content-wrapper .content-text > *:last-child {
+.crimson-rose-content-widget-collage .collage .slide .slide-inner .content-wrapper .content-text > *:last-child {
   margin-bottom: 0;
 }
 
-.crimson-rose-widget-collage .collage .carousel-item,
-.crimson-rose-widget-collage .collage .slide-overflow,
-.crimson-rose-widget-collage .collage .slide-gutter,
-.crimson-rose-widget-collage .collage .slide-inner {
+.crimson-rose-content-widget-collage .collage .carousel-item,
+.crimson-rose-content-widget-collage .collage .slide-overflow,
+.crimson-rose-content-widget-collage .collage .slide-gutter,
+.crimson-rose-content-widget-collage .collage .slide-inner {
   width: 100%;
   height: 100%;
   display: block;
 }
 
-.crimson-rose-widget-collage .collage .bx2-wrapper,
-.crimson-rose-widget-collage .collage .bx2-viewport {
+.crimson-rose-content-widget-collage .collage .bx2-wrapper,
+.crimson-rose-content-widget-collage .collage .bx2-viewport {
   width: 100%;
   height: 100% !important;
   display: block;
 }
 
-.crimson-rose-widget-collage .collage .slide-gutter {
+.crimson-rose-content-widget-collage .collage .slide-gutter {
   box-sizing: border-box;
 }
 
-.crimson-rose-widget-collage .collage .slide-overflow {
+.crimson-rose-content-widget-collage .collage .slide-overflow {
   overflow: hidden;
 }
 
 @media screen and (max-width: 991px) {
-  .crimson-rose-widget-collage .collage {
+  .crimson-rose-content-widget-collage .collage {
     height: 1300px;
     max-width: 520px;
     margin-left: auto;
     margin-right: auto;
   }
-  .crimson-rose-widget-collage .collage .slide-5 {
+  .crimson-rose-content-widget-collage .collage .slide-5 {
     width: 100%;
     height: 30%;
     top: 0;
     left: 0;
   }
-  .crimson-rose-widget-collage .collage .slide-5 .slide-gutter {
+  .crimson-rose-content-widget-collage .collage .slide-5 .slide-gutter {
     padding-right: 0;
     padding-bottom: 10px;
   }
-  .crimson-rose-widget-collage .collage .slide-4 {
+  .crimson-rose-content-widget-collage .collage .slide-4 {
     width: 100%;
     height: 20%;
     top: 30%;
     left: 0;
   }
-  .crimson-rose-widget-collage .collage .slide-4 .slide-gutter {
+  .crimson-rose-content-widget-collage .collage .slide-4 .slide-gutter {
     padding-right: 0;
     padding-top: 10px;
     padding-bottom: 10px;
   }
-  .crimson-rose-widget-collage .collage .slide-3 {
+  .crimson-rose-content-widget-collage .collage .slide-3 {
     width: 100%;
     height: 20%;
     top: 50%;
     right: 0;
   }
-  .crimson-rose-widget-collage .collage .slide-3 .slide-gutter {
+  .crimson-rose-content-widget-collage .collage .slide-3 .slide-gutter {
     padding-top: 10px;
     padding-left: 0;
     padding-bottom: 10px;
   }
-  .crimson-rose-widget-collage .collage .slide-2 {
+  .crimson-rose-content-widget-collage .collage .slide-2 {
     width: 50%;
     height: 30%;
     bottom: 0;
     left: 0;
     right: auto;
   }
-  .crimson-rose-widget-collage .collage .slide-2 .slide-gutter {
+  .crimson-rose-content-widget-collage .collage .slide-2 .slide-gutter {
     padding-left: 0;
     padding-right: 10px;
     padding-top: 10px;
   }
-  .crimson-rose-widget-collage .collage .slide-1 {
+  .crimson-rose-content-widget-collage .collage .slide-1 {
     width: 50%;
     height: 30%;
     bottom: 0;
     right: 0;
   }
-  .crimson-rose-widget-collage .collage .slide-1 .slide-gutter {
+  .crimson-rose-content-widget-collage .collage .slide-1 .slide-gutter {
     padding-left: 10px;
     padding-top: 10px;
   }
 }
 
 @media screen and (max-width: 568px) {
-  #master .crimson-rose-widget-collage .collage {
+  #master .crimson-rose-content-widget-collage .collage {
     height: 1500px;
   }
-  #master .crimson-rose-widget-collage .collage .slide {
+  #master .crimson-rose-content-widget-collage .collage .slide {
     width: 100%;
     height: 20%;
   }
-  #master .crimson-rose-widget-collage .collage .slide .slide-inner .content-wrapper.text-background-color {
+  #master .crimson-rose-content-widget-collage .collage .slide .slide-inner .content-wrapper.text-background-color {
     padding: 20px;
   }
-  #master .crimson-rose-widget-collage .collage .slide .slide-gutter {
+  #master .crimson-rose-content-widget-collage .collage .slide .slide-gutter {
     padding: 0;
   }
-  #master .crimson-rose-widget-collage .collage .slide-4,
-  #master .crimson-rose-widget-collage .collage .slide-3,
-  #master .crimson-rose-widget-collage .collage .slide-2,
-  #master .crimson-rose-widget-collage .collage .slide-1 {
+  #master .crimson-rose-content-widget-collage .collage .slide-4,
+  #master .crimson-rose-content-widget-collage .collage .slide-3,
+  #master .crimson-rose-content-widget-collage .collage .slide-2,
+  #master .crimson-rose-content-widget-collage .collage .slide-1 {
     left: 0;
     right: 0;
     bottom: auto;
   }
-  #master .crimson-rose-widget-collage .collage .slide-4 .slide-gutter,
-  #master .crimson-rose-widget-collage .collage .slide-3 .slide-gutter,
-  #master .crimson-rose-widget-collage .collage .slide-2 .slide-gutter,
-  #master .crimson-rose-widget-collage .collage .slide-1 .slide-gutter {
+  #master .crimson-rose-content-widget-collage .collage .slide-4 .slide-gutter,
+  #master .crimson-rose-content-widget-collage .collage .slide-3 .slide-gutter,
+  #master .crimson-rose-content-widget-collage .collage .slide-2 .slide-gutter,
+  #master .crimson-rose-content-widget-collage .collage .slide-1 .slide-gutter {
     padding: 20px 0 0 0;
   }
-  #master .crimson-rose-widget-collage .collage .slide-4 {
+  #master .crimson-rose-content-widget-collage .collage .slide-4 {
     top: 20%;
   }
-  #master .crimson-rose-widget-collage .collage .slide-3 {
+  #master .crimson-rose-content-widget-collage .collage .slide-3 {
     top: 40%;
   }
-  #master .crimson-rose-widget-collage .collage .slide-2 {
+  #master .crimson-rose-content-widget-collage .collage .slide-2 {
     top: 60%;
   }
-  #master .crimson-rose-widget-collage .collage .slide-1 {
+  #master .crimson-rose-content-widget-collage .collage .slide-1 {
     top: 80%;
   }
 }
