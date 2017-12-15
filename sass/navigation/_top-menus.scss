@@ -73,7 +73,6 @@
 
 	.top-right-header-menu {
 		float: right;
-		padding-left: 1em;
 	}
 
 	.jetpack-social-navigation {
@@ -88,6 +87,14 @@
 				@include rem('line-height',$font__line-height-top-menu);
 				@include rem('font-size',$font__main-size);
 			}
+		}
+	}
+
+	.top-right-header > nav {
+		padding-left: 1em;
+
+		&:last-child {
+			padding-left: 0;
 		}
 	}
 	

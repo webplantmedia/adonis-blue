@@ -2163,7 +2163,6 @@ a:hover, a:active {
 
 .top-header .top-right-header-menu {
   float: right;
-  padding-left: 1em;
 }
 
 .top-header .jetpack-social-navigation {
@@ -2181,6 +2180,14 @@ a:hover, a:active {
   line-height: 2.25rem;
   font-size: 18px;
   font-size: 1.125rem;
+}
+
+.top-header .top-right-header > nav {
+  padding-left: 1em;
+}
+
+.top-header .top-right-header > nav:last-child {
+  padding-left: 0;
 }
 
 .top-header a, .top-header a:focus, .top-header a:active, .top-header a:visited {

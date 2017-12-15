@@ -30,6 +30,12 @@ if ( ! has_nav_menu( 'menu-3' ) && ! has_nav_menu( 'menu-2' ) && ! has_nav_menu(
 			<?php endif; ?>
 		</div>
 		<div class="top-right-header">
+			<?php
+			if ( function_exists( 'jetpack_social_menu' ) ) {
+				jetpack_social_menu();
+			}
+			?>
+
 			<?php if ( has_nav_menu( 'menu-2' ) ) : ?>
 				<nav id="top-right-navigation" class="top-right-header-menu header-menu" role="navigation">
 					<?php wp_nav_menu( array(
@@ -43,12 +49,6 @@ if ( ! has_nav_menu( 'menu-3' ) && ! has_nav_menu( 'menu-2' ) && ! has_nav_menu(
 					?>
 				</nav>
 			<?php endif; ?>
-
-			<?php
-			if ( function_exists( 'jetpack_social_menu' ) ) {
-				jetpack_social_menu();
-			}
-			?>
 		</div>
 	</div>
 </div>
