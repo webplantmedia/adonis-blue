@@ -6,12 +6,12 @@
  *
  * @package Crimson_Rose
  */
-class Crimson_Rose_Widget_Jetpack_Testimonials extends Crimson_Rose_Widget {
+class Crimson_Rose_Content_Widget_Jetpack_Testimonials extends Crimson_Rose_Widget {
 	/**
 	 * Constructor
 	 */
 	public function __construct() {
-		$this->widget_id          = 'crimson-rose-widget-jetpack-testimonials';
+		$this->widget_id          = 'crimson-rose-content-widget-jetpack-testimonials';
 		$this->widget_description = esc_html__( 'Displays Jetpack Testimonials.', 'crimson-rose' );
 		$this->widget_name        = esc_html__( 'Crimson Rose: Jetpack Testimonials', 'crimson-rose' );
 		$this->settings           = array(
@@ -442,4 +442,4 @@ class Crimson_Rose_Widget_Jetpack_Testimonials extends Crimson_Rose_Widget {
 	}
 }
 
-add_action( 'widgets_init', array( 'Crimson_Rose_Widget_Jetpack_Testimonials', 'register' ) );
+add_action( 'widgets_init', array( 'Crimson_Rose_Content_Widget_Jetpack_Testimonials', 'register' ) );

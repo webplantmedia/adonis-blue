@@ -7,7 +7,7 @@
  * @package Crimson_Rose
  */
 
-if ( ! class_exists( 'Crimson_Rose_Widget_Blog_Post' ) ) :
+if ( ! class_exists( 'Crimson_Rose_Content_Widget_Blog_Post' ) ) :
 	/**
 	 * Display static content from an specific page.
 	 *
@@ -15,13 +15,12 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Blog_Post' ) ) :
 	 *
 	 * @package Crimson_Rose
 	 */
-	class Crimson_Rose_Widget_Blog_Post extends Crimson_Rose_Widget {
+	class Crimson_Rose_Content_Widget_Blog_Post extends Crimson_Rose_Widget {
 		/**
 		 * Constructor
 		 */
 		public function __construct() {
-			$this->widget_id          = 'crimson-rose-blog-posts';
-			$this->widget_cssclass    = 'crimson-rose-blog-posts';
+			$this->widget_id          = 'crimson-rose-content-widget-blog-posts';
 			$this->widget_description = esc_html__( 'Displays content from blog posts.', 'crimson-rose' );
 			$this->widget_name        = esc_html__( 'Crimson Rose: Blog Posts', 'crimson-rose' );
 			$this->settings           = array(
@@ -228,4 +227,4 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Blog_Post' ) ) :
 	}
 endif;
 
-add_action( 'widgets_init', array( 'Crimson_Rose_Widget_Blog_Post', 'register' ) );
+add_action( 'widgets_init', array( 'Crimson_Rose_Content_Widget_Blog_Post', 'register' ) );

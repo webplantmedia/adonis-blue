@@ -6,12 +6,12 @@
  *
  * @package Crimson_Rose
  */
-class Crimson_Rose_Widget_Callout extends Crimson_Rose_Widget {
+class Crimson_Rose_Content_Widget_Callout extends Crimson_Rose_Widget {
 	/**
 	 * Constructor
 	 */
 	public function __construct() {
-		$this->widget_id          = 'crimson-rose-widget-callout';
+		$this->widget_id          = 'crimson-rose-content-widget-callout';
 		$this->widget_description = esc_html__( 'Displays a callout.', 'crimson-rose' );
 		$this->widget_name        = esc_html__( 'Crimson Rose: Callout', 'crimson-rose' );
 		$this->settings           = array(
@@ -272,4 +272,4 @@ class Crimson_Rose_Widget_Callout extends Crimson_Rose_Widget {
 	}
 }
 
-add_action( 'widgets_init', array( 'Crimson_Rose_Widget_Callout', 'register' ) );
+add_action( 'widgets_init', array( 'Crimson_Rose_Content_Widget_Callout', 'register' ) );

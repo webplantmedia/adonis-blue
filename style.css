@@ -2874,39 +2874,39 @@ a:hover, a:active {
   }
 }
 
-.crimson-rose-static-content {
+.crimson-rose-content-widget-static-content {
   position: relative;
 }
 
-.crimson-rose-static-content .bg-image-cover {
+.crimson-rose-content-widget-static-content .bg-image-cover {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
 }
 
-.crimson-rose-static-content .hentry .entry-footer {
+.crimson-rose-content-widget-static-content .hentry .entry-footer {
   position: absolute;
   bottom: 20px;
   left: 20px;
   margin: 0;
 }
 
-.crimson-rose-static-content .custom-color .hentry h1,
-.crimson-rose-static-content .custom-color .hentry h2,
-.crimson-rose-static-content .custom-color .hentry h3,
-.crimson-rose-static-content .custom-color .hentry h4,
-.crimson-rose-static-content .custom-color .hentry h5,
-.crimson-rose-static-content .custom-color .hentry h6,
-.crimson-rose-static-content .custom-color .hentry p,
-.crimson-rose-static-content .custom-color .hentry a:not(.theme-generated-button),
-.crimson-rose-static-content .custom-color .hentry a:not(.theme-generated-button):hover,
-.crimson-rose-static-content .custom-color .hentry a:not(.theme-generated-button):focus,
-.crimson-rose-static-content .custom-color .hentry a:not(.theme-generated-button):active,
-.crimson-rose-static-content .custom-color .hentry a:not(.theme-generated-button):visited {
+.crimson-rose-content-widget-static-content .custom-color .hentry h1,
+.crimson-rose-content-widget-static-content .custom-color .hentry h2,
+.crimson-rose-content-widget-static-content .custom-color .hentry h3,
+.crimson-rose-content-widget-static-content .custom-color .hentry h4,
+.crimson-rose-content-widget-static-content .custom-color .hentry h5,
+.crimson-rose-content-widget-static-content .custom-color .hentry h6,
+.crimson-rose-content-widget-static-content .custom-color .hentry p,
+.crimson-rose-content-widget-static-content .custom-color .hentry a:not(.theme-generated-button),
+.crimson-rose-content-widget-static-content .custom-color .hentry a:not(.theme-generated-button):hover,
+.crimson-rose-content-widget-static-content .custom-color .hentry a:not(.theme-generated-button):focus,
+.crimson-rose-content-widget-static-content .custom-color .hentry a:not(.theme-generated-button):active,
+.crimson-rose-content-widget-static-content .custom-color .hentry a:not(.theme-generated-button):visited {
   color: inherit;
 }
 
-.crimson-rose-blog-posts .button-wrapper {
+.crimson-rose-content-widget-blog-posts .button-wrapper {
   text-align: center;
   margin-bottom: 0;
 }
@@ -3229,7 +3229,7 @@ a:hover, a:active {
   width: 100%;
 }
 
-.crimson-rose-static-content .hentry,
+.crimson-rose-content-widget-static-content .hentry,
 .no-sidebar .content-area .site-main {
   max-width: 700px;
   margin: 0 auto;

@@ -7,7 +7,7 @@
  * @package Crimson_Rose
  */
 
-if ( ! class_exists( 'Crimson_Rose_Widget_Static_Content' ) ) :
+if ( ! class_exists( 'Crimson_Rose_Content_Widget_Static_Content' ) ) :
 	/**
 	 * Display static content from an specific page.
 	 *
@@ -15,13 +15,12 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Static_Content' ) ) :
 	 *
 	 * @package Crimson_Rose
 	 */
-	class Crimson_Rose_Widget_Static_Content extends Crimson_Rose_Widget {
+	class Crimson_Rose_Content_Widget_Static_Content extends Crimson_Rose_Widget {
 		/**
 		 * Constructor
 		 */
 		public function __construct() {
-			$this->widget_id          = 'crimson-rose-static-content';
-			$this->widget_cssclass    = 'crimson-rose-static-content';
+			$this->widget_id          = 'crimson-rose-content-widget-static-content';
 			$this->widget_description = esc_html__( 'Displays content from a specific page.', 'crimson-rose' );
 			$this->widget_name        = esc_html__( 'Crimson Rose: Static Content', 'crimson-rose' );
 			$this->settings           = array(
@@ -268,4 +267,4 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Static_Content' ) ) :
 	}
 endif;
 
-add_action( 'widgets_init', array( 'Crimson_Rose_Widget_Static_Content', 'register' ) );
+add_action( 'widgets_init', array( 'Crimson_Rose_Content_Widget_Static_Content', 'register' ) );

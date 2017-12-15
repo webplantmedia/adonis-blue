@@ -6,12 +6,12 @@
  *
  * @package Crimson_Rose
  */
-class Crimson_Rose_Widget_WooCommerce_Products extends Crimson_Rose_Widget {
+class Crimson_Rose_Content_Widget_WooCommerce_Products extends Crimson_Rose_Widget {
 	/**
 	 * Constructor
 	 */
 	public function __construct() {
-		$this->widget_id          = 'crimson-rose-widget-woocommerce-products';
+		$this->widget_id          = 'crimson-rose-content-widget-woocommerce-products';
 		$this->widget_description = esc_html__( 'Displays WooCommerce Products.', 'crimson-rose' );
 		$this->widget_name        = esc_html__( 'Crimson Rose: WooCommerce Products', 'crimson-rose' );
 		$this->settings           = array(
@@ -251,4 +251,4 @@ class Crimson_Rose_Widget_WooCommerce_Products extends Crimson_Rose_Widget {
 	}
 }
 
-add_action( 'widgets_init', array( 'Crimson_Rose_Widget_WooCommerce_Products', 'register' ) );
+add_action( 'widgets_init', array( 'Crimson_Rose_Content_Widget_WooCommerce_Products', 'register' ) );

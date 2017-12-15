@@ -7,7 +7,7 @@
  * @package Crimson_Rose
  */
 
-if ( ! class_exists( 'Crimson_Rose_Widget_Collage' ) ) :
+if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 	/**
 	 * Display Featured Slide Item for section
 	 *
@@ -15,7 +15,7 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Collage' ) ) :
 	 *
 	 * @package Crimson_Rose
 	 */
-	class Crimson_Rose_Widget_Collage extends Crimson_Rose_Widget {
+	class Crimson_Rose_Content_Widget_Collage extends Crimson_Rose_Widget {
 		/**
 		 * Constructor
 		 */
@@ -473,4 +473,4 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Collage' ) ) :
 	}
 endif;
 
-add_action( 'widgets_init', array( 'Crimson_Rose_Widget_Collage', 'register' ) );
+add_action( 'widgets_init', array( 'Crimson_Rose_Content_Widget_Collage', 'register' ) );
