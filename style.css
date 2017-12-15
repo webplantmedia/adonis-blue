@@ -574,8 +574,8 @@ table th {
   border-top: 2px solid #ececec;
 }
 
-.comment-content > table th,
-.entry-content > table th {
+.comment-content > table thead th,
+.entry-content > table thead th {
   background-color: #f7f7f7;
 }
 
@@ -1101,30 +1101,15 @@ button {
 #master body .fancy-button:active,
 #master body .fancy-button:hover,
 #master body .fancy-button {
-  background-color: transparent;
   border-width: 0;
   color: #6d686c;
   text-transform: uppercase;
   font-weight: normal;
   font-size: 20px;
   font-size: 1.25rem;
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
   padding: 24px 30px;
   cursor: pointer;
   border-radius: 0;
-}
-
-#master body .fancy-button, #master body .fancy-button:focus, #master body .fancy-button:visited, #master body .fancy-button:active {
-  background-image: url("img/button-bg.png");
-}
-
-#master body .fancy-button:before {
-  content: " ";
-  position: absolute;
-  clip: rect(1px, 1px, 1px, 1px);
-  background-repeat: no-repeat;
-  background-position: -9999px -9999px;
 }
 
 #master body .fancy-button:after {
@@ -1132,25 +1117,17 @@ button {
   margin-left: 10px;
 }
 
-#master body .fancy-button:before,
-#master body .fancy-button:hover {
-  background-image: url("img/button-bg-dark.png");
-}
-
 #master body .fancy2-button:focus,
 #master body .fancy2-button:visited,
 #master body .fancy2-button:active,
 #master body .fancy2-button:hover,
 #master body .fancy2-button {
-  background-color: transparent;
   border-width: 0;
   color: #6d686c;
   text-transform: uppercase;
   font-weight: normal;
   font-size: 20px;
   font-size: 1.25rem;
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
   padding: 24px 30px;
   padding-right: 71px;
   cursor: pointer;
@@ -1158,18 +1135,6 @@ button {
   color: #ffffff;
   font-weight: bold;
   position: relative;
-}
-
-#master body .fancy2-button, #master body .fancy2-button:focus, #master body .fancy2-button:visited, #master body .fancy2-button:active {
-  background-image: url("img/button2-bg.jpg");
-}
-
-#master body .fancy2-button:before {
-  content: " ";
-  position: absolute;
-  clip: rect(1px, 1px, 1px, 1px);
-  background-repeat: no-repeat;
-  background-position: -9999px -9999px;
 }
 
 #master body .fancy2-button:after {
@@ -1207,11 +1172,6 @@ button {
   right: 30px;
   top: 50%;
   margin-top: -13px;
-}
-
-#master body .fancy2-button:before,
-#master body .fancy2-button:hover {
-  background-image: url("img/button2-bg-dark.jpg");
 }
 
 /*--------------------------------------------------------------

@@ -17,7 +17,7 @@ class Crimson_Rose_Widget_WooCommerce_Products extends Crimson_Rose_Widget {
 		$this->settings           = array(
 			'title' => array(
 				'type'  => 'text',
-				'std'   => 'SHOP',
+				'std'   => 'NEW PRODUCTS',
 				'label' => __( 'Title:', 'crimson-rose' ),
 				'sanitize' => 'text',
 			),

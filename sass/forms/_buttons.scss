@@ -122,14 +122,14 @@ button {
 	.fancy-button:active,
 	.fancy-button:hover,
 	.fancy-button {
-		background-color: transparent;
+		// background-color: transparent;
 		border-width: 0;
 		color: $color__text;
 		text-transform: uppercase;
 		font-weight: normal;
 		@include rem('font-size',$font__large-size);
-		background-size: 100% 100%;
-		background-repeat: no-repeat;
+		// background-size: 100% 100%;
+		// background-repeat: no-repeat;
 		padding: 24px 30px;
 		cursor: pointer;
 		border-radius: 0;
@@ -140,15 +140,15 @@ button {
 		&:focus,
 		&:visited,
 		&:active {
-			background-image: url("img/button-bg.png");
+			// background-image: url("img/button-bg.png");
 		}
 
 		&:before {
-			content: " ";
-			position: absolute;
-			clip: rect(1px, 1px, 1px, 1px);
-			background-repeat: no-repeat;
-			background-position: -9999px -9999px;
+			// content: " ";
+			// position: absolute;
+			// clip: rect(1px, 1px, 1px, 1px);
+			// background-repeat: no-repeat;
+			// background-position: -9999px -9999px;
 		}
 		&:after {
 			content: ">>";
@@ -158,7 +158,7 @@ button {
 
 	.fancy-button:before,
 	.fancy-button:hover {
-		background-image: url("img/button-bg-dark.png");
+		// background-image: url("img/button-bg-dark.png");
 	}
 
 	.fancy2-button:focus,
@@ -166,14 +166,14 @@ button {
 	.fancy2-button:active,
 	.fancy2-button:hover,
 	.fancy2-button {
-		background-color: transparent;
+		// background-color: transparent;
 		border-width: 0;
 		color: $color__text;
 		text-transform: uppercase;
 		font-weight: normal;
 		@include rem('font-size',$font__large-size);
-		background-size: 100% 100%;
-		background-repeat: no-repeat;
+		// background-size: 100% 100%;
+		// background-repeat: no-repeat;
 		padding: 24px 30px;
 		padding-right: 71px;
 		cursor: pointer;
@@ -188,15 +188,15 @@ button {
 		&:focus,
 		&:visited,
 		&:active {
-			background-image: url("img/button2-bg.jpg");
+			// background-image: url("img/button2-bg.jpg");
 		}
 
 		&:before {
-			content: " ";
-			position: absolute;
-			clip: rect(1px, 1px, 1px, 1px);
-			background-repeat: no-repeat;
-			background-position: -9999px -9999px;
+			// content: " ";
+			// position: absolute;
+			// clip: rect(1px, 1px, 1px, 1px);
+			// background-repeat: no-repeat;
+			// background-position: -9999px -9999px;
 		}
 
 		&:after {
@@ -242,6 +242,6 @@ button {
 
 	.fancy2-button:before,
 	.fancy2-button:hover {
-		background-image: url("img/button2-bg-dark.jpg");
+		// background-image: url("img/button2-bg-dark.jpg");
 	}
 }

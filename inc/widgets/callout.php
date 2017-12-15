@@ -23,7 +23,7 @@ class Crimson_Rose_Widget_Callout extends Crimson_Rose_Widget {
 			),
 			'content' => array(
 				'type'  => 'textarea',
-				'std'   => '<h3>EASY-TO-USE, CUSTOMIZABLE WORDPRESS THEMES TO FIT YOUR UNIQUE STYLE.</h3>',
+				'std'   => '<h3>SEE OUR LARGE SELECTION OF BEAUTIFUL, FRESH CUT FLOWERS, DELIVERED TO YOUR DOOR.</h3>',
 				'label' => __( 'Content:', 'crimson-rose' ),
 				'rows'  => 5,
 				'sanitize' => 'html',
@@ -70,7 +70,7 @@ class Crimson_Rose_Widget_Callout extends Crimson_Rose_Widget {
 			),
 			'button_text' => array(
 				'type'  => 'text',
-				'std'   => 'SHOP THEMES',
+				'std'   => 'SHOP FLOWERS',
 				'label' => esc_html__( 'Button Text:', 'crimson-rose' ),
 				'sanitize' => 'text',
 			),
