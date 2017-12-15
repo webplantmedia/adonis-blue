@@ -116,6 +116,10 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Static_Content' ) ) :
 
 			extract( $args );
 
+			if ( empty( $o['page'] ) ) {
+				return;
+			}
+
 			$post = new WP_Query( array( 'page_id' => $o['page'] ) );
 
 			$style = array();
