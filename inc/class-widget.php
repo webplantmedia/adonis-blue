@@ -109,15 +109,15 @@ class Crimson_Rose_Widget extends WP_Widget {
 	}
 
 	function sanitize( $instance ) {
-		$new_instance = $instance;
-
 		if ( ! $this->settings ) {
 			return $instance;
 		}
 
-		if ( isset( $new_instance['repeater'] ) && is_array( $new_instance['repeater'] ) ) {
-			$repeater_instances = $new_instance['repeater'];
-			unset( $new_instance['repeater'] );
+		if ( isset( $instance['repeater'] ) && is_array( $instance['repeater'] ) ) {
+			$repeater_instances = $instance['repeater'];
+			unset( $instance['repeater'] );
+			// turn on to test default widget settings
+			$repeater_instances = $this->settings['repeater']['default'];
 		}
 		else {
 			if ( isset( $this->settings['repeater']['default'] ) ) {
@@ -132,7 +132,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 			if ( $key == 'panels' ) {
 				foreach ( $setting as $panel ) {
 					foreach ( $panel['fields'] as $panel_field_key => $panel_field_setting ) {
-						$value = $this->default_sanitize_value( $panel_field_key, $new_instance, $panel_field_setting );
+						$value = $this->default_sanitize_value( $panel_field_key, $instance, $panel_field_setting );
 						$instance[ $panel_field_key ] = $this->sanitize_instance( $panel_field_setting, $value );
 					}
 				}
@@ -146,7 +146,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 				}
 			}
 			else {
-				$value = $this->default_sanitize_value( $key, $new_instance, $setting );
+				$value = $this->default_sanitize_value( $key, $instance, $setting );
 				$instance[ $key ] = $this->sanitize_instance( $setting, $value );
 			}
 		}
