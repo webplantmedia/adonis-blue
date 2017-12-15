@@ -138,7 +138,7 @@ class Crimson_Rose_Widget_WooCommerce_Products extends Crimson_Rose_Widget {
 			),
 			'margin_bottom' => array(
 				'type'  => 'number',
-				'std'   => 80,
+				'std'   => 40,
 				'step'  => 1,
 				'min'   => 0,
 				'max'   => 300,

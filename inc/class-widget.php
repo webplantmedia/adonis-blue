@@ -117,7 +117,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 			$repeater_instances = $instance['repeater'];
 			unset( $instance['repeater'] );
 			// turn on to test default widget settings
-			$repeater_instances = $this->settings['repeater']['default'];
+			// $repeater_instances = $this->settings['repeater']['default'];
 		}
 		else {
 			if ( isset( $this->settings['repeater']['default'] ) ) {
@@ -147,7 +147,8 @@ class Crimson_Rose_Widget extends WP_Widget {
 			}
 			else {
 				$value = $this->default_sanitize_value( $key, $instance, $setting );
-				$value = $setting['std'];
+				// turn on to test default widget settings
+				// $value = $setting['std'];
 				$instance[ $key ] = $this->sanitize_instance( $setting, $value );
 			}
 		}
