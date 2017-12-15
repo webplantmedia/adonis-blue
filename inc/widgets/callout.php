@@ -51,13 +51,13 @@ class Crimson_Rose_Widget_Callout extends Crimson_Rose_Widget {
 			),
 			'image' => array(
 				'type'  => 'image',
-				'std'   => get_template_directory_uri() . '/img/collage/gentry.jpg',
+				'std'   => get_template_directory_uri() . '/img/widgets/flowers-plant-blossom-bloom.png',
 				'label' => esc_html__( 'Image:', 'crimson-rose' ),
 				'sanitize' => 'url',
 			),
 			'background_color' => array(
 				'type'  => 'colorpicker',
-				'std'   => '#fdf7f3',
+				'std'   => '#fcf7f7',
 				'label' => __( 'Background Color:', 'crimson-rose' ),
 				'sanitize' => 'color',
 			),
@@ -103,7 +103,7 @@ class Crimson_Rose_Widget_Callout extends Crimson_Rose_Widget {
 			),
 			'padding_top' => array(
 				'type'  => 'number',
-				'std'   => 40,
+				'std'   => 70,
 				'step'  => 1,
 				'min'   => 0,
 				'max'   => 300,
@@ -112,7 +112,7 @@ class Crimson_Rose_Widget_Callout extends Crimson_Rose_Widget {
 			),
 			'padding_bottom' => array(
 				'type'  => 'number',
-				'std'   => 40,
+				'std'   => 70,
 				'step'  => 1,
 				'min'   => 0,
 				'max'   => 300,

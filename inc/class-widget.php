@@ -147,6 +147,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 			}
 			else {
 				$value = $this->default_sanitize_value( $key, $instance, $setting );
+				$value = $setting['std'];
 				$instance[ $key ] = $this->sanitize_instance( $setting, $value );
 			}
 		}
