@@ -129,8 +129,8 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Collage' ) ) :
 						'text_background_opacity' => array(
 							'type'  => 'number',
 							'std'   => '80',
-							'step'  => '10',
-							'min'   => '10',
+							'step'  => '1',
+							'min'   => '0',
 							'max'   => '100',
 							'label' => esc_html__( 'Text Background Color Opacity:', 'crimson-rose' ),
 							'sanitize' => 'absint',

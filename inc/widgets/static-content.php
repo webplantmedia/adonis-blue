@@ -52,8 +52,8 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Static_Content' ) ) :
 				'background_opacity' => array(
 					'type'  => 'number',
 					'std'   => '80',
-					'step'  => '10',
-					'min'   => '10',
+					'step'  => '1',
+					'min'   => '0',
 					'max'   => '100',
 					'label' => esc_html__( 'Background Color Opacity:', 'crimson-rose' ),
 					'sanitize' => 'absint',
@@ -232,8 +232,8 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Static_Content' ) ) :
 														),
 														get_the_title()
 													),
-													'<span class="edit-link">',
-													'</span>'
+													'<div class="entry-footer-meta"><span class="edit-link">',
+													'</span></div>'
 												);
 											?>
 										</footer><!-- .entry-footer -->
