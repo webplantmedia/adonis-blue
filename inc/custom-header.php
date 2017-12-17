@@ -17,10 +17,10 @@
  * @uses crimson_rose_header_style()
  */
 function crimson_rose_custom_header_setup() {
+	global $crimson_rose_default;
+
 	add_theme_support( 'custom-header', apply_filters( 'crimson_rose_custom_header_args', array(
-		'default-image'          => '',
-		'default-text-color'     => '000000',
-		'flex-height'            => false,
+		'default-text-color'     => $crimson_rose_default['header_text_color'],
 		'wp-head-callback'       => 'crimson_rose_header_style',
 	) ) );
 }

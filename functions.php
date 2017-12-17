@@ -90,6 +90,7 @@ if ( ! function_exists( 'crimson_rose_setup' ) ) :
 			'width'       => 400,
 			'flex-width'  => true,
 			'flex-height' => true,
+			'header-text' => array( 'site-title', 'site-description' ),
 		) );
 	}
 endif;
@@ -513,7 +514,7 @@ require get_template_directory() . '/inc/default-options.php';
 /**
  * Implement the Custom Header feature.
  */
-require get_template_directory() . '/inc/custom-header.php';
+// require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.

@@ -89,7 +89,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 	 */
 	$section_id = 'colors';
 
-	$setting_id = 'header_textcolor';
+	/* $setting_id = 'header_textcolor';
 	$wp_customize->add_setting( $setting_id, array(
 		'default'   => '#000000',
 		'transport' => 'postMessage',
@@ -99,7 +99,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $setting_id, array(
 		'label' => __( 'Header Text Color', 'crimson-rose' ),
 		'section' => $section_id,
-	) ) );
+	) ) ); */
 
 	$setting_id = 'header_background_image_color';
 	$wp_customize->add_setting( $setting_id, array(
