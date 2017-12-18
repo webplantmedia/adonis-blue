@@ -25,30 +25,32 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'crimson-rose' ); ?></a>
 
 	<header id="masthead" class="site-header">
-		<?php get_template_part( 'template-parts/menu', 'top' ); ?>
+		<div class="site-header-inner">
+			<?php get_template_part( 'template-parts/menu', 'top' ); ?>
 
-		<div class="site-branding">
-			<div class="site-boundary">
-				<?php if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) : ?>
-					<div class="site-logo">
-						<?php the_custom_logo(); ?>
-					</div>
-				<?php endif; ?>
+			<div class="site-branding">
+				<div class="site-boundary">
+					<?php if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) : ?>
+						<div class="site-logo">
+							<?php the_custom_logo(); ?>
+						</div>
+					<?php endif; ?>
 
-				<?php if ( is_front_page() && is_home() ) : ?>
-					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php else : ?>
-					<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-				endif;
+					<?php if ( is_front_page() && is_home() ) : ?>
+						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<?php else : ?>
+						<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+					<?php
+					endif;
 
-				$description = get_bloginfo( 'description', 'display' );
-				if ( $description || is_customize_preview() ) : ?>
-					<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-				<?php
-				endif; ?>
-			</div><!-- .site-boundary -->
-		</div><!-- .site-branding -->
+					$description = get_bloginfo( 'description', 'display' );
+					if ( $description || is_customize_preview() ) : ?>
+						<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+					<?php
+					endif; ?>
+				</div><!-- .site-boundary -->
+			</div><!-- .site-branding -->
+		</div><!-- .site-header-inner -->
 
 		<div id="site-navigation" class="main-navigation">
 			<div class="site-boundary">

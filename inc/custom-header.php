@@ -20,19 +20,20 @@ function crimson_rose_custom_header_setup() {
 	global $crimson_rose_default;
 
 	add_theme_support( 'custom-header', apply_filters( 'crimson_rose_custom_header_args', array(
-		'default-text-color'     => $crimson_rose_default['header_text_color'],
+		'default-image'      => get_parent_theme_file_uri( '/img/widget-content-bg.jpg' ),
+		'default-text-color'     => $crimson_rose_default['header_textcolor'],
 		'wp-head-callback'       => 'crimson_rose_header_style',
 	) ) );
 }
 add_action( 'after_setup_theme', 'crimson_rose_custom_header_setup' );
 
-/*register_default_headers( array(
-	'header' => array(
-		'url'           => '%s/img/headers-bg.png',
-		'thumbnail_url' => '%s/img/headers-bg.png',
-		'description'   => __( 'Header', 'crimson-rose' )
+register_default_headers( array(
+	'default-image' => array(
+		'url'           => '%s/img/widget-content-bg.jpg',
+		'thumbnail_url' => '%s/img/widget-content-bg.jpg',
+		'description'   => __( 'Default Header Image', 'crimson-rose' )
 	),
-) );*/
+) );
 
 if ( ! function_exists( 'crimson_rose_header_style' ) ) :
 	/**
@@ -53,7 +54,7 @@ if ( ! function_exists( 'crimson_rose_header_style' ) ) :
 
 		// If we get this far, we have custom styles. Let's do this.
 		?>
-		<style type="text/css">
+		<style id="crimson-rose-custom-header-styles" type="text/css">
 		<?php
 		// Has the text been hidden?
 		if ( ! display_header_text() ) :

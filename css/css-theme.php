@@ -140,24 +140,24 @@ a:hover {
 	' . crimson_rose_css_set_unit( 'padding-bottom', $crimson_rose['heading_padding_bottom'] ) . ' /*id:heading_padding_bottom*/
 }
 
-.site-header {
+.site-header-inner {
 	background-position: calc(50% + ' . $crimson_rose['top_header_background_offset'] . 'px) top; /*id:top_header_background_offset*/
 }
 
 @media screen and (max-width: 1050px) {
-	.site-header {
+	.site-header-inner {
 		background-position: calc(50% + ' . ( $crimson_rose['top_header_background_offset'] - 25 ) . 'px) top; /*id:top_header_background_offset_1*/
 	}
 }
 
 @media screen and (max-width: 1000px) {
-	.site-header {
+	.site-header-inner {
 		background-position: calc(50% + ' . ( $crimson_rose['top_header_background_offset'] - 50 ) . 'px) top; /*id:top_header_background_offset_2*/
 	}
 }
 
 @media screen and (max-width: 950px) {
-	.site-header {
+	.site-header-inner {
 		background-position: calc(50% + ' . ( $crimson_rose['top_header_background_offset'] - 75 ) . 'px) top; /*id:top_header_background_offset_3*/
 	}
 }

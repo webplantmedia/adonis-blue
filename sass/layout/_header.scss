@@ -1,81 +1,111 @@
 .site-header {
+	position: relative;
+}
+
+.site-header-inner {
 	background-size: 400px auto;
 	background-position: center top;
 	background-repeat: no-repeat;
 }
 
-.header-background-image-color-cyan .site-header {
+.header-background-image-color-cyan .site-header-inner {
 	@include background-2x('img/top-right-header-bg-cyan','png');
 }
 
-.header-background-image-color-azure .site-header {
+.header-background-image-color-azure .site-header-inner {
 	@include background-2x('img/top-right-header-bg-azure','png');
 }
 
 
-.header-background-image-color-blue .site-header {
+.header-background-image-color-blue .site-header-inner {
 	@include background-2x('img/top-right-header-bg-blue','png');
 }
 
 
-.header-background-image-color-violet .site-header {
+.header-background-image-color-violet .site-header-inner {
 	@include background-2x('img/top-right-header-bg-violet','png');
 }
 
 
-.header-background-image-color-magenta .site-header {
+.header-background-image-color-magenta .site-header-inner {
 	@include background-2x('img/top-right-header-bg-magenta','png');
 }
 
 
-.header-background-image-color-rose .site-header {
+.header-background-image-color-rose .site-header-inner {
 	@include background-2x('img/top-right-header-bg-rose','png');
 }
 
 
-.header-background-image-color-red .site-header {
+.header-background-image-color-red .site-header-inner {
 	@include background-2x('img/top-right-header-bg-red','png');
 }
 
 
-.header-background-image-color-orange .site-header {
+.header-background-image-color-orange .site-header-inner {
 	@include background-2x('img/top-right-header-bg-orange','png');
 }
 
 
-.header-background-image-color-yellow .site-header {
+.header-background-image-color-yellow .site-header-inner {
 	@include background-2x('img/top-right-header-bg-yellow','png');
 }
 
 
-.header-background-image-color-chartreuse-green .site-header {
+.header-background-image-color-chartreuse-green .site-header-inner {
 	@include background-2x('img/top-right-header-bg-chartreuse-green','png');
 }
 
 
-.header-background-image-color-dark-green .site-header {
+.header-background-image-color-dark-green .site-header-inner {
 	@include background-2x('img/top-right-header-bg-dark-green','png');
 }
 
 
-.header-background-image-color-spring-green .site-header {
+.header-background-image-color-spring-green .site-header-inner {
 	@include background-2x('img/top-right-header-bg-spring-green','png');
 }
 
 
-.header-background-image-color-soft-pink .site-header {
+.header-background-image-color-soft-pink .site-header-inner {
 	@include background-2x('img/top-right-header-bg-soft-pink','png');
 }
 
 
-.header-background-image-color-gray .site-header {
+.header-background-image-color-gray .site-header-inner {
 	@include background-2x('img/top-right-header-bg-gray','png');
+}
+
+.custom-header-media {
+	overflow: hidden;
+	width: 100%;
+	bottom: 0;
+	height: auto;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	right: 0;
+
+	img {
+		height: 100%;
+		left: 0;
+		-o-object-fit: cover;
+		object-fit: cover;
+		top: 0;
+		-ms-transform: none;
+		-moz-transform: none;
+		-webkit-transform: none;
+		transform: none;
+		width: 100%;
+	}
 }
 
 .site-branding {
 	@include rem('padding-top',40px);
 	@include rem('padding-bottom',40px);
 	line-height: $font__line-height-heading;
+	position: relative; // causes logo to show over header image
 
 	.site-logo {
 		text-align: center;
@@ -127,7 +157,7 @@
 }
 
 @media screen and (max-width: $size__menu-collapse-width) {
-	#masthead.site-header {
+	#master .site-header-inner {
 		background-image: none;
 	}
 }

@@ -10,7 +10,7 @@ $crimson_rose_default['heading_padding_top'] = '50';
 $crimson_rose_default['heading_padding_bottom'] = '50';
 
 // Colors
-// $crimson_rose_default['header_text_color'] = '#333333'; // CSS displayed in inc/custom-header.php
+// $crimson_rose_default['header_textcolor'] = '#333333'; // CSS displayed in inc/custom-header.php
 $crimson_rose_default['header_background_image_color'] = 'red';
 $crimson_rose_default['primary_color'] = '#de8699';
 $crimson_rose_default['primary_hover_color'] = '#d66c83';
