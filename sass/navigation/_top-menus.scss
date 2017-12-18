@@ -29,7 +29,7 @@
 				box-shadow: 0 1px 10px rgba(0, 0, 0, 0.08);
 
 				li {
-					background-color: $color__background-body;
+					background-color: $color__background-body; /* should be same as main background */
 				}
 
 				a {
