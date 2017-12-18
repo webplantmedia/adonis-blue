@@ -2077,6 +2077,7 @@ a:hover, a:active {
 .top-header .jetpack-social-navigation ul ul li,
 .top-header .header-menu ul ul li {
   background-color: #ffffff;
+  /* should be same as main background */
 }
 
 .top-header .jetpack-social-navigation ul ul a,
