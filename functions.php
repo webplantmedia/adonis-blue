@@ -92,6 +92,8 @@ if ( ! function_exists( 'crimson_rose_setup' ) ) :
 			'flex-height' => true,
 			'header-text' => array( 'site-title', 'site-description' ),
 		) );
+
+		add_theme_support( 'custom-background' );
 	}
 endif;
 add_action( 'after_setup_theme', 'crimson_rose_setup' );

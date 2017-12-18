@@ -1,3 +1,7 @@
+#page {
+	background: $color__background-body;
+}
+
 .widgetized-page .site-content .content-widget,
 .site-boundary {
 	@include rem('max-width', $size__site-container);
@@ -34,4 +38,10 @@
 	/* add back negative margin value */
 	padding-left: 9999rem;
 	padding-right: 9999rem;
+}
+
+.site-structure-box #page {
+	@include rem('max-width', $size__box-container);
+	margin-left: auto;
+	margin-right: auto;
 }

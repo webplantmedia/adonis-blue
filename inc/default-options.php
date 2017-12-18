@@ -38,6 +38,7 @@ $crimson_rose_default['disable_accent_font'] = 0;
 $crimson_rose_default['page_image_header_height'] = 400;
 $crimson_rose_default['check_for_updates'] = 1;
 $crimson_rose_default['footer_image_bottom_offset'] = 30;
+$crimson_rose_default['site_structure'] = 'full-width';
 
 // Blog
 $crimson_rose_default['blog_display'] = 'blog1';

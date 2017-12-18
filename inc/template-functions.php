@@ -64,6 +64,10 @@ function crimson_rose_body_classes( $classes ) {
 		$classes[] = 'footer-background-image-color-' . $crimson_rose['footer_background_image_color'];
 	}
 
+	if ( $crimson_rose['site_structure'] ) {
+		$classes[] = 'site-structure-' . $crimson_rose['site_structure'];
+	}
+
 	if ( crimson_rose_is_woocommerce_activated() ) {
 		if ( is_shop() ) {
 			$classes[] = 'woocommerce-shop-columns-' . $crimson_rose['shop_columns'];

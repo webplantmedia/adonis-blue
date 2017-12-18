@@ -466,6 +466,10 @@ body {
   /* Fallback for when there is no custom background color defined. */
 }
 
+body.site-structure-box {
+  background: #f9bebe;
+}
+
 html, body {
   overflow-x: hidden;
 }
@@ -3177,6 +3181,10 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 # Layout
 --------------------------------------------------------------*/
+#page {
+  background: #ffffff;
+}
+
 .widgetized-page .site-content .content-widget,
 .site-boundary {
   max-width: 1100px;
@@ -3218,6 +3226,13 @@ a:hover, a:active {
   /* add back negative margin value */
   padding-left: 9999rem;
   padding-right: 9999rem;
+}
+
+.site-structure-box #page {
+  max-width: 1140px;
+  max-width: 71.25rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /*--------------------------------------------------------------
