@@ -115,11 +115,10 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Static_Content' ) ) :
 
 			extract( $args );
 
-			if ( empty( $o['page'] ) ) {
-				return;
+			$post = null;
+			if ( ! empty( $o['page'] ) ) {
+				$post = new WP_Query( array( 'page_id' => $o['page'] ) );
 			}
-
-			$post = new WP_Query( array( 'page_id' => $o['page'] ) );
 
 			$style = array();
 			$bg_style = array();
@@ -206,7 +205,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Static_Content' ) ) :
 						<div class="site-boundary">
 					<?php endif; ?>
 
-						<?php if ( $post->have_posts() ) : ?>
+						<?php if ( $post && $post->have_posts() ) : ?>
 							<?php while ( $post->have_posts() ) : $post->the_post(); ?>
 								<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 									<?php if ( $o['title'] ) echo  $before_title . $o['title'] . $after_title; ?>
@@ -239,6 +238,13 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Static_Content' ) ) :
 									<?php endif; ?>
 								</article>
 							<?php endwhile; ?>
+						<?php else : ?>
+							<article>
+								<?php echo  $before_title . __( 'Static Content Widget', 'crimson-rose' ) . $after_title; ?>
+								<div class="entry-content">
+									<center><?php echo __( 'Select a page in your widget settings for content to display.', 'crimson-rose' ); ?></center>
+								</div>
+							</article>
 						<?php endif; ?>
 
 					<?php if ( $fullwidth ) : ?>

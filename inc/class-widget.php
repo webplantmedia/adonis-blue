@@ -29,10 +29,6 @@ class Crimson_Rose_Widget extends WP_Widget {
 
 		parent::__construct( $this->widget_id, $this->widget_name, $widget_ops, $this->control_ops );
 
-		add_action( 'save_post',    array( $this, 'flush_widget_cache' ) );
-		add_action( 'deleted_post', array( $this, 'flush_widget_cache' ) );
-		add_action( 'switch_theme', array( $this, 'flush_widget_cache' ) );
-
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 	}
 
@@ -56,56 +52,6 @@ class Crimson_Rose_Widget extends WP_Widget {
 		wp_enqueue_script( 'jquery-ui-accordion' );
 
 		wp_enqueue_script( 'crimson-rose-admin-widgets', get_template_directory_uri() . '/js/admin/admin-widgets.js', array(), CRIMSON_ROSE_VERSION, true );
-	}
-
-	/**
-	 * get_cached_widget function.
-	 */
-	function get_cached_widget( $args ) {
-		if ( apply_filters( 'crimson_rose_disable_widget_cache', false ) ) {
-			return false;
-		}
-
-		global $post;
-
-		if ( isset( $post->ID ) ) {
-			$args['widget_id'] = $args['widget_id'] . '-' . $post->ID;
-		}
-
-		$cache = wp_cache_get( $this->widget_id, 'widget' );
-
-		if ( ! is_array( $cache ) ) {
-			$cache = array();
-		}
-
-		if ( isset( $cache[ $args['widget_id'] ] ) ) {
-			echo $cache[ $args['widget_id'] ];
-			return true;
-		}
-
-		return false;
-	}
-
-	/**
-	 * Cache the widget.
-	 */
-	public function cache_widget( $args, $content ) {
-		if ( ! isset( $args['widget_id'] ) ) {
-			$args['widget_id'] = rand( 0, 100 );
-		}
-
-		$cache[ $args['widget_id'] ] = $content;
-
-		wp_cache_set( $this->widget_id, $cache, 'widget' );
-	}
-
-	/**
-	 * Flush the cache.
-	 *
-	 * @return void
-	 */
-	public function flush_widget_cache() {
-		wp_cache_delete( $this->widget_id, 'widget' );
 	}
 
 	function sanitize( $instance ) {
@@ -232,8 +178,6 @@ class Crimson_Rose_Widget extends WP_Widget {
 				$instance[ $key ] = $this->sanitize_instance( $setting, $value );
 			}
 		}
-
-		$this->flush_widget_cache();
 
 		return $instance;
 	}
