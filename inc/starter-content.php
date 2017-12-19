@@ -15,13 +15,13 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec mollis. Quisque 
 Insert your contact form shortcode here.
 <hr />
 
-<img class="alignnone" src="' . get_template_directory_uri() . '/img/starter-content/pexels-photo-424670.jpeg" />
+<img class="alignnone" src="' . get_template_directory_uri() . '/img/starter-content/contact.jpeg" />
 ';
 
 $our_story = '
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna. Praesent sit amet ligula id orci venenatis auctor. Phasellus porttitor, metus non tincidunt dapibus, orci pede pretium neque, sit amet adipiscing ipsum lectus et libero. Aenean bibendum. Curabitur mattis quam id urna. Vivamus dui. Donec nonummy lacinia lorem. Cras risus arcu, sodales ac, ultrices ac, mollis quis, justo. Sed a libero. Quisque risus erat, posuere at, tristique non, lacinia quis, eros.
 
-<img class="alignnone" src="' . get_template_directory_uri() . '/img/starter-content/pexels-photo-190335.jpeg" />
+<img class="alignnone" src="' . get_template_directory_uri() . '/img/starter-content/our-story-2.jpeg" />
 
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna. Praesent sit amet ligula id orci venenatis auctor. Phasellus porttitor, metus non tincidunt dapibus, orci pede pretium neque, sit amet adipiscing ipsum lectus et libero. Aenean bibendum. Curabitur mattis quam id urna. Vivamus dui. Donec nonummy lacinia lorem. Cras risus arcu, sodales ac, ultrices ac, mollis quis, justo. Sed a libero. Quisque risus erat, posuere at, tristique non, lacinia quis, eros.
 ';
@@ -30,50 +30,46 @@ $faq = '
 <h2>General Questions</h2>
 <h3>Lorem ipsum dolor sit adipiscing elit?</h3>
 Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna.
-<h3>Lorem ipsum dolor sit adipiscing elit?</h3>
+<h3>Quisque convallis libero?</h3>
 Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna.
-<h3>Lorem ipsum dolor sit adipiscing elit?</h3>
+<h3>Aliquam elit ante, malesuada id?</h3>
 Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna.
-<h3>Lorem ipsum dolor sit adipiscing elit?</h3>
+<h3>Quisque convallis libero in sapien elit ante, malesuada id?</h3>
 Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna.
-<h3>Lorem ipsum dolor sit adipiscing elit?</h3>
+<h3>Et adipiscing orci velit quis magna?</h3>
 Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna.
 <h2>Sales Questions</h2>
 <h3>Lorem ipsum dolor sit adipiscing elit?</h3>
 Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna.
-<h3>Lorem ipsum dolor sit adipiscing elit?</h3>
+<h3>Quisque convallis libero?</h3>
 Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna.
-<h3>Lorem ipsum dolor sit adipiscing elit?</h3>
+<h3>Aliquam elit ante, malesuada id?</h3>
 Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna.
-<h3>Lorem ipsum dolor sit adipiscing elit?</h3>
+<h3>Quisque convallis libero in sapien elit ante, malesuada id?</h3>
 Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna.
-<h3>Lorem ipsum dolor sit adipiscing elit?</h3>
+<h3>Et adipiscing orci velit quis magna?</h3>
 Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna.
 <h2>Product Questions</h2>
 <h3>Lorem ipsum dolor sit adipiscing elit?</h3>
 Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna.
-<h3>Lorem ipsum dolor sit adipiscing elit?</h3>
+<h3>Quisque convallis libero?</h3>
 Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna.
-<h3>Lorem ipsum dolor sit adipiscing elit?</h3>
+<h3>Aliquam elit ante, malesuada id?</h3>
 Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna.
-<h3>Lorem ipsum dolor sit adipiscing elit?</h3>
+<h3>Quisque convallis libero in sapien elit ante, malesuada id?</h3>
 Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna.
-<h3>Lorem ipsum dolor sit adipiscing elit?</h3>
-Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna.
-<h3>Lorem ipsum dolor sit adipiscing elit?</h3>
+<h3>Et adipiscing orci velit quis magna?</h3>
 Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna.
 <h2>Other Questions</h2>
 <h3>Lorem ipsum dolor sit adipiscing elit?</h3>
 Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna.
-<h3>Lorem ipsum dolor sit adipiscing elit?</h3>
+<h3>Quisque convallis libero?</h3>
 Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna.
-<h3>Lorem ipsum dolor sit adipiscing elit?</h3>
+<h3>Aliquam elit ante, malesuada id?</h3>
 Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna.
-<h3>Lorem ipsum dolor sit adipiscing elit?</h3>
+<h3>Quisque convallis libero in sapien elit ante, malesuada id?</h3>
 Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna.
-<h3>Lorem ipsum dolor sit adipiscing elit?</h3>
-Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna.
-<h3>Lorem ipsum dolor sit adipiscing elit?</h3>
+<h3>Et adipiscing orci velit quis magna?</h3>
 Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna.
 ';
 
@@ -88,27 +84,27 @@ Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam eli
 <hr />
 
 <h5 style="text-align: center;">Showcase 1</h5>
-<img class="alignnone" src="' . get_template_directory_uri() . '/img/starter-content/showcase1.jpeg" />
+<img class="alignnone" src="' . get_template_directory_uri() . '/img/starter-content/showcase-1.jpeg" />
 
 Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio.
 <h5 style="text-align: center;">Showcase 2</h5>
-<img class="alignnone" src="' . get_template_directory_uri() . '/img/starter-content/showcase2.jpeg" />
+<img class="alignnone" src="' . get_template_directory_uri() . '/img/starter-content/showcase-2.jpeg" />
 
 Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio.
 <h5 style="text-align: center;">Showcase 3</h5>
-<img class="alignnone" src="' . get_template_directory_uri() . '/img/starter-content/showcase3.jpeg" />
+<img class="alignnone" src="' . get_template_directory_uri() . '/img/starter-content/showcase-3.jpeg" />
 
 Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio.
 <h5 style="text-align: center;">Showcase 4</h5>
-<img class="alignnone" src="' . get_template_directory_uri() . '/img/starter-content/showcase4.jpeg" />
+<img class="alignnone" src="' . get_template_directory_uri() . '/img/starter-content/showcase-4.jpeg" />
 
 Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio.
 <h5 style="text-align: center;">Showcase 5</h5>
-<img class="alignnone" src="' . get_template_directory_uri() . '/img/starter-content/showcase5.jpeg" />
+<img class="alignnone" src="' . get_template_directory_uri() . '/img/starter-content/showcase-5.jpeg" />
 
 Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio.
 <h5 style="text-align: center;">Showcase 6</h5>
-<img class="alignnone" src="' . get_template_directory_uri() . '/img/starter-content/showcase6.jpeg" />
+<img class="alignnone" src="' . get_template_directory_uri() . '/img/starter-content/showcase-6.jpeg" />
 
 Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio.
 
@@ -129,6 +125,7 @@ Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam eli
 <p style="text-align: center;">So what are you waiting for?! Go to our shop today. You won\'t regret it.</p>
 <p style="text-align: center;"><a href="' . get_home_url() . '">SHOP</a></p>
 ';
+
 	// Define and register starter content to showcase the theme on new sites.
 	$starter_content['widgets']['sidebar-1'] = array(
 		'search',
@@ -145,11 +142,16 @@ Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam eli
 		),
 	);
 
-	$starter_content['widgets']['footer-2'] = array(
-		'crimson-rose-jetpack-social-menu' => array(
-			'crimson-rose-jetpack-social-menu',
-			array(),
-		),
+	$starter_content['widgets']['footer-2']['text_business_info'] = array(
+		'title' => _x( 'Find Us', 'Theme starter content' ),
+		'text' => '<center>' . join( '', array(
+			'<strong>' . _x( 'Address', 'Theme starter content' ) . "</strong>\n",
+			_x( '123 Main Street', 'Theme starter content' ) . "\n" . _x( 'New York, NY 10001', 'Theme starter content' ) . "\n\n",
+			'<strong>' . _x( 'Hours', 'Theme starter content' ) . "</strong>\n",
+			_x( 'Mon&mdash;Fri: 9:00AM&ndash;5:00PM', 'Theme starter content' ) . "\n" . _x( 'Sat &amp; Sun: 11:00AM&ndash;3:00PM', 'Theme starter content' )
+		) ) . '</center>',
+		'filter' => true,
+		'visual' => true,
 	);
 
 	$starter_content['widgets']['footer-3'] = array(
@@ -158,6 +160,15 @@ Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam eli
 			'dropdown' => '1',
 		),
 	);
+
+	if ( crimson_rose_is_jetpack_activated() ) {
+		$starter_content['widgets']['footer-3']['crimson-rose-jetpack-social-menu'] = array(
+			'crimson-rose-jetpack-social-menu',
+			array(
+				'title' => 'Connect With Me',
+			),
+		);
+	}
 
 	$starter_content['widgets']['front-page']['crimson-rose-content-widget-collage'] = array(
 		'crimson-rose-content-widget-collage',
@@ -181,6 +192,11 @@ Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam eli
 
 	$starter_content['widgets']['front-page']['crimson-rose-content-widget-blog-posts'] = array(
 		'crimson-rose-content-widget-blog-posts',
+		array(),
+	);
+
+	$starter_content['widgets']['front-page']['crimson-rose-content-widget-jetpack-testimonials'] = array(
+		'crimson-rose-content-widget-jetpack-testimonials',
 		array(),
 	);
 
@@ -209,7 +225,7 @@ Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam eli
 			'post_content' => $faq,
 		),
 		'our-story' => array(
-			'thumbnail' => '{{image-flowers}}',
+			'thumbnail' => '{{image-demo-1}}',
 			'post_type' => 'page',
 			'post_title' => _x( 'Our Story', 'Theme starter content', 'crimson-rose' ),
 			'post_content' => $our_story,
@@ -217,21 +233,41 @@ Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam eli
 	);
 
 	$starter_content['attachments'] = array(
-		'image-flowers' => array(
-			'post_title' => _x( 'Flowers', 'Theme starter content', 'crimson-rose' ),
-			'file' => 'img/starter-content/pexels-photo-415490.jpeg',
+		'image-demo-1' => array(
+			'post_title' => _x( 'Demo Image 1', 'Theme starter content', 'crimson-rose' ),
+			'file' => 'img/starter-content/our-story.jpeg',
 		),
-		'image-espresso' => array(
-			'post_title' => _x( 'Espresso', 'Theme starter content', 'crimson-rose' ),
-			'file' => 'assets/images/espresso.jpg', // URL relative to the template directory.
+		'image-demo-2' => array(
+			'post_title' => _x( 'Demo Image 2', 'Theme starter content', 'crimson-rose' ),
+			'file' => 'img/starter-content/our-story-2.jpeg',
 		),
-		'image-sandwich' => array(
-			'post_title' => _x( 'Sandwich', 'Theme starter content', 'crimson-rose' ),
-			'file' => 'assets/images/sandwich.jpg',
+		'image-demo-3' => array(
+			'post_title' => _x( 'Demo Image 3', 'Theme starter content', 'crimson-rose' ),
+			'file' => 'img/starter-content/contact.jpeg',
 		),
-		'image-coffee' => array(
-			'post_title' => _x( 'Coffee', 'Theme starter content', 'crimson-rose' ),
-			'file' => 'assets/images/coffee.jpg',
+		'image-demo-4' => array(
+			'post_title' => _x( 'Demo Image 4', 'Theme starter content', 'crimson-rose' ),
+			'file' => 'img/starter-content/showcase1.jpeg',
+		),
+		'image-demo-5' => array(
+			'post_title' => _x( 'Demo Image 5', 'Theme starter content', 'crimson-rose' ),
+			'file' => 'img/starter-content/showcase2.jpeg',
+		),
+		'image-demo-6' => array(
+			'post_title' => _x( 'Demo Image 6', 'Theme starter content', 'crimson-rose' ),
+			'file' => 'img/starter-content/showcase3.jpeg',
+		),
+		'image-demo-7' => array(
+			'post_title' => _x( 'Demo Image 7', 'Theme starter content', 'crimson-rose' ),
+			'file' => 'img/starter-content/showcase4.jpeg',
+		),
+		'image-demo-8' => array(
+			'post_title' => _x( 'Demo Image 8', 'Theme starter content', 'crimson-rose' ),
+			'file' => 'img/starter-content/showcase5.jpeg',
+		),
+		'image-demo-9' => array(
+			'post_title' => _x( 'Demo Image 9', 'Theme starter content', 'crimson-rose' ),
+			'file' => 'img/starter-content/showcase6.jpeg',
 		),
 	);
 
@@ -256,6 +292,7 @@ Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam eli
 				'object' => 'page',
 				'object_id' => '{{our-story}}',
 			),
+			'page_contact',
 			'page_blog',
 		),
 	);
@@ -263,10 +300,13 @@ Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam eli
 	$starter_content['nav_menus']['menu-2'] = array(
 		'name' => _x( 'Top Left Menu', 'Theme starter content', 'crimson-rose' ),
 		'items' => array(
-			'link_home', // Note that the core "home" page is actually a link in case a static front page is not used.
-			'page_about',
 			'page_blog',
-			'page_contact',
+			'page_about',
+			'page_faq' => array(
+				'type' => 'post_type',
+				'object' => 'page',
+				'object_id' => '{{faq}}',
+			),
 		),
 	);
 
@@ -277,15 +317,17 @@ Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam eli
 		),
 	);
 
-	$starter_content['nav_menus']['jetpack-social-menu'] = array(
-		'name' => _x( 'Social Links Menu', 'Theme starter content', 'crimson-rose' ),
-		'items' => array(
-			'link_pinterest',
-			'link_facebook',
-			'link_twitter',
-			'link_instagram',
-		),
-	);
+	if ( crimson_rose_is_jetpack_activated() ) {
+		$starter_content['nav_menus']['jetpack-social-menu'] = array(
+			'name' => _x( 'Social Links Menu', 'Theme starter content', 'crimson-rose' ),
+			'items' => array(
+				'link_pinterest',
+				'link_facebook',
+				'link_twitter',
+				'link_instagram',
+			),
+		);
+	}
 
 	/**
 	 * Filters Twenty Seventeen array of starter content.
