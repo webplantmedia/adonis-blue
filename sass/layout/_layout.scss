@@ -30,6 +30,7 @@
 .site-content {
 	@include rem('padding-top', 50px);
 	@include rem('padding-bottom', 50px);
+	position: relative; // makes the header stay behind the content.
 }
 
 .break-to-full-width {
