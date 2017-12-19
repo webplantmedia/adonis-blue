@@ -225,83 +225,75 @@ class Crimson_Rose_Content_Widget_Jetpack_Testimonials extends Crimson_Rose_Widg
 		$options['orderby'] = $this->settings['orderby']['std'];
 
 		$options['post_type'] = 'jetpack-testimonial'; // Force this post type
+
 		$query = new WP_Query( $options );
 
 		$testimonial_index_number = 1;
 		$column = 0;
 		$testimonials = array();
 		$notice = '';
+		?>
 
-			// If we have testimonials, create the html
-			if ( $query->have_posts() ) {
+		<?php if ( $query->have_posts() ) : ?>
+			<?php  // open .jetpack-testimonial-shortcode
 
-				?>
-				<div class="jetpack-testimonial-shortcode column-<?php echo esc_attr( $o['columns'] ); ?>">
-					<?php  // open .jetpack-testimonial-shortcode
+			// Construct the loop...
+			while ( $query->have_posts() ) {
+				$query->the_post();
+				$post_id = get_the_ID();
+				$temp = '
+				<div class="testimonial-entry-wrapper" style="' . implode( '', $testimonial_style ) . '">
+					<div class="testimonial-entry">';
+						// Featured image
+						$class = ' no-testimonial-image';
+						if ( $image = $this->get_testimonial_thumbnail_link( $post_id ) ) {
+							$temp .= $image;
+							$class = ' has-testimonial-image';
+						}
 
-					// Construct the loop...
-					while ( $query->have_posts() ) {
-						$query->the_post();
-						$post_id = get_the_ID();
-						$temp = '
-						<div class="testimonial-entry-wrapper" style="' . implode( '', $testimonial_style ) . '">
-							<div class="testimonial-entry">';
-								// Featured image
-								$class = ' no-testimonial-image';
-								if ( $image = $this->get_testimonial_thumbnail_link( $post_id ) ) {
-									$temp .= $image;
-									$class = ' has-testimonial-image';
+						$temp .= '
+						<div class="testimonial-entry-content-wrapper' . $class . '">
+
+							<div class="testimonial-entry-content">' . get_the_excerpt() . '</div>';
+
+							if ( $o['display_signature'] ) {
+								switch ( $o['signature_icon'] ) {
+									case 'short-dash' :
+										$icon = '&#8211; ';
+										break;
+									case 'medium-dash' :
+										$icon = '&#8212; ';
+										break;
+									case 'long-dash' :
+										$icon = '&#8213; ';
+										break;
+									case 'heart' :
+										$icon = '<i class="genericons-neue genericons-neue-heart"></i>';
+										break;
+									default :
+										$icon = '';
+										break;
 								}
 
 								$temp .= '
-								<div class="testimonial-entry-content-wrapper' . $class . '">
+								<div class="testimonial-entry-signature">
+									' . $icon . '<span class="testimonial-signature">' . get_the_title() . '</span>
+								</div>';
+							}
+				$temp .= '
+						</div><!-- close .testimonial-entry-content-wrapper -->
+					</div><!-- close .testimonial-entry -->
+				</div><!-- close .testimonial-entry-wrapper -->';
 
-									<div class="testimonial-entry-content">' . get_the_excerpt() . '</div>';
-
-									if ( $o['display_signature'] ) {
-										switch ( $o['signature_icon'] ) {
-											case 'short-dash' :
-												$icon = '&#8211; ';
-												break;
-											case 'medium-dash' :
-												$icon = '&#8212; ';
-												break;
-											case 'long-dash' :
-												$icon = '&#8213; ';
-												break;
-											case 'heart' :
-												$icon = '<i class="genericons-neue genericons-neue-heart"></i>';
-												break;
-											default :
-												$icon = '';
-												break;
-										}
-
-										$temp .= '
-										<div class="testimonial-entry-signature">
-											' . $icon . '<span class="testimonial-signature">' . get_the_title() . '</span>
-										</div>';
-									}
-						$temp .= '
-								</div><!-- close .testimonial-entry-content-wrapper -->
-							</div><!-- close .testimonial-entry -->
-						</div><!-- close .testimonial-entry-wrapper -->';
-
-						$testimonials[ $column ][] = $temp;
-						$mod = $testimonial_index_number % $o['columns'];
-						if ( 0 === $mod ) {
-							$column++;
-						}
-						$testimonial_index_number++;
-					} // end of while loop
-
-					?>
-				</div><!-- close .jetpack-testimonial-shortcode -->
-			<?php
-			} else {
-				$notice = '<p><em>'._e( 'Your Testimonial Archive currently has no entries. You can start creating them on your dashboard.', 'crimson-rose' ).'</p></em>';
-			}
+				$testimonials[ $column ][] = $temp;
+				$mod = $testimonial_index_number % $o['columns'];
+				if ( 0 === $mod ) {
+					$column++;
+				}
+				$testimonial_index_number++;
+			} // end of while loop
 			?>
+		<?php endif; ?>
 
 		<?php $before_widget = str_replace( 'class="content-widget', 'class="content-widget full-width-bar', $before_widget ); ?>
 		<?php echo $before_widget; ?>
@@ -401,7 +393,7 @@ class Crimson_Rose_Content_Widget_Jetpack_Testimonials extends Crimson_Rose_Widg
 
 					<?php else : ?>
 
-						<p><em><?php echo _e( 'Your Testimonial Archive currently has no entries. You can start creating them on your dashboard.', 'crimson-rose' ); ?></p></em>
+						<p><center><em><?php echo _e( 'Your Testimonial Archive currently has no entries. You can start creating them on your dashboard.', 'crimson-rose' ); ?></em></center></p>
 
 					<?php endif; ?>
 				</div><!-- .site-boundary -->
