@@ -15,10 +15,10 @@ if ( ! has_nav_menu( 'menu-3' ) && ! has_nav_menu( 'menu-2' ) && ! has_nav_menu(
 <div class="top-header">
 	<div class="site-boundary">
 		<div class="top-left-header">
-			<?php if ( has_nav_menu( 'menu-3' ) ) : ?>
+			<?php if ( has_nav_menu( 'menu-2' ) ) : ?>
 				<nav id="top-left-navigation" class="top-left-header-menu header-menu" role="navigation">
 					<?php wp_nav_menu( array(
-						'theme_location' => 'menu-3',
+						'theme_location' => 'menu-2',
 						'depth'          => 2,
 						'fallback_cb'    => false,
 						'container'      => 'ul',
@@ -36,11 +36,11 @@ if ( ! has_nav_menu( 'menu-3' ) && ! has_nav_menu( 'menu-2' ) && ! has_nav_menu(
 			}
 			?>
 
-			<?php if ( has_nav_menu( 'menu-2' ) ) : ?>
+			<?php if ( has_nav_menu( 'menu-3' ) ) : ?>
 				<nav id="top-right-navigation" class="top-right-header-menu header-menu" role="navigation">
 					<?php wp_nav_menu( array(
-						'theme_location' => 'menu-2',
-						'depth'          => -1,
+						'theme_location' => 'menu-3',
+						'depth'          => 2,
 						'fallback_cb'    => false,
 						'container'      => 'ul',
 						'menu_id'        => 'top-right-menu',

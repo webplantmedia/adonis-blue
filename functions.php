@@ -50,8 +50,8 @@ if ( ! function_exists( 'crimson_rose_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'menu-1' => esc_html__( 'Primary', 'crimson-rose' ),
-			'menu-2' => esc_html__( 'Top Header Right', 'crimson-rose' ),
-			'menu-3' => esc_html__( 'Top Header Left', 'crimson-rose' ),
+			'menu-2' => esc_html__( 'Top Header Left', 'crimson-rose' ),
+			'menu-3' => esc_html__( 'Top Header Right', 'crimson-rose' ),
 		) );
 
 		$google_request = str_replace( ',', '%2C', crimson_rose_fonts_url() );

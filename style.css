@@ -3226,6 +3226,7 @@ a:hover, a:active {
   padding-top: 3.125rem;
   padding-bottom: 50px;
   padding-bottom: 3.125rem;
+  position: relative;
 }
 
 .break-to-full-width {
@@ -3899,7 +3900,6 @@ a:hover, a:active {
     left: 0;
     right: 0;
     height: 400px;
-    z-index: -1;
   }
   .page.has-post-thumbnail .site-content {
     padding-top: 300px;
