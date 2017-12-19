@@ -102,4 +102,9 @@
 			}
 		}
 	}( container, menu ) );
+
+	// Prevent action of dropdowns with href="#"
+	$('.menu').find( 'a[href="#"]' ).click( function( event ) {
+		return false;
+	});
 } )( jQuery );
