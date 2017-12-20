@@ -108,6 +108,11 @@ add_action( 'wp_head', 'crimson_rose_pingback_header' );
 function crimson_rose_get_custom_logo( $html, $blog_id ) {
 	global $crimson_rose;
 
+	if ( is_customize_preview() ) {
+		// fixes obscure bug when admin panel is ssl and front end is not ssl.
+		$crimson_rose['custom_logo_2x'] = preg_replace( '/^https?:/', '', $crimson_rose['custom_logo_2x'] );
+	}
+
 	if ( ! empty( $crimson_rose['custom_logo_2x'] ) ) {
 		if ( preg_match( '/srcset=(\'|\").*?(\'|\")/', $html ) ) {
 			$html = preg_replace( '/srcset=(\'|\").*?(\'|\")/', 'srcset="' . esc_url( $crimson_rose['custom_logo_2x'] ) . ' 2x"', $html );
