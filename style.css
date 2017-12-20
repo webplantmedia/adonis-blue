@@ -4,7 +4,7 @@ Theme URI: https://webplantmedia.com/
 Author: Web Plant Media
 Author URI: https://webplantmedia.com
 Description: Easy To Use, Fast To Install, Small Business WordPress Themes
-Version: 1.1
+Version: 1.10
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: crimson-rose
@@ -2559,10 +2559,6 @@ a:hover, a:active {
 
 #master .crimson-rose-image-banner .image-banner-title-position-middle a:hover .widget-title {
   color: #666666;
-}
-
-.crimson-rose-image-banner .image-banner-wrapper {
-  position: relative;
 }
 
 .crimson-rose-image-banner .image-banner-wrapper > a {
