@@ -74,6 +74,7 @@ WooCommerce styling
   left: -999em;
   top: 100%;
   z-index: 99999;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.08);
 }
 
 .cart-menu ul.menu li.cart:hover ul.woo-sub-menu {
@@ -83,8 +84,6 @@ WooCommerce styling
 }
 
 .cart-menu ul.menu li.cart .widget_shopping_cart_content {
-  border-left: 2px solid #ececec;
-  border-right: 2px solid #ececec;
   padding: 30px;
   padding: 1.875rem;
 }

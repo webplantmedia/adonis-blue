@@ -165,7 +165,7 @@ Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam eli
 		$starter_content['widgets']['footer-3']['crimson-rose-jetpack-social-menu'] = array(
 			'crimson-rose-jetpack-social-menu',
 			array(
-				'title' => 'Connect With Me',
+				'title' => 'Connect',
 			),
 		);
 	}
@@ -302,6 +302,7 @@ Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam eli
 		'items' => array(
 			'page_blog',
 			'page_about',
+			'page_contact',
 			'page_faq' => array(
 				'type' => 'post_type',
 				'object' => 'page',
@@ -324,7 +325,6 @@ Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam eli
 				'link_pinterest',
 				'link_facebook',
 				'link_twitter',
-				'link_instagram',
 			),
 		);
 	}

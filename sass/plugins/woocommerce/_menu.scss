@@ -55,7 +55,7 @@
 				left: -999em;
 				top: 100%;
 				z-index: 99999;
-				// box-shadow: 0 1px 10px rgba(0, 0, 0, 0.08);
+				box-shadow: 0 1px 10px rgba(0, 0, 0, 0.08);
 			}
 			
 			&:hover {
@@ -71,8 +71,6 @@
 			}
 
 			.widget_shopping_cart_content {
-				border-left: 2px solid $color__border;
-				border-right: 2px solid $color__border;
 				@include rem('padding',30px);
 
 				> *:first-child {

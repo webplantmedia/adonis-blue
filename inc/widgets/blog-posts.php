@@ -92,7 +92,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Blog_Post' ) ) :
 				),
 				'margin_bottom' => array(
 					'type'  => 'number',
-					'std'   => 40,
+					'std'   => 80,
 					'step'  => 1,
 					'min'   => 0,
 					'max'   => 300,
