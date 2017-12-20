@@ -128,8 +128,16 @@ Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam eli
 
 	// Define and register starter content to showcase the theme on new sites.
 	$starter_content['widgets']['sidebar-1'] = array(
+		'crimson-rose-image-banner' => array(
+			'crimson-rose-image-banner',
+			array(),
+		),
 		'search',
 		'text_about',
+		'categories' => array(
+			'title' => _x( 'Categories', 'Theme starter content', 'crimson-rose' ),
+			'dropdown' => '1',
+		),
 	);
 
 	$starter_content['widgets']['footer-1'] = array(
@@ -138,7 +146,14 @@ Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam eli
 		),
 		'crimson-rose-image-banner' => array(
 			'crimson-rose-image-banner',
-			array(),
+			array(
+				'title' => 'ENJOY YOURSELF!',
+				'image' => get_template_directory_uri() . '/img/starter-content/hearts.png',
+				'image_2x' => '',
+				'text_position' => 'below',
+				'description' => '',
+
+			),
 		),
 	);
 
