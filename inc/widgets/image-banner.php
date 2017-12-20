@@ -50,7 +50,7 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Image_Banner_Widget' ) ) :
 				),
 				'link' => array(
 					'type'  => 'text',
-					'std'   => 'https://angiemakes.com',
+					'std'   => get_home_url(),
 					'label' => esc_html__( 'Link:', 'crimson-rose' ),
 					'sanitize' => 'url',
 				),
