@@ -2557,7 +2557,7 @@ a:hover, a:active {
   margin-bottom: 0;
 }
 
-#master .crimson-rose-image-banner .image-banner-text-position-middle a:hover .widget-title {
+#master .crimson-rose-image-banner .image-banner-title-position-middle a:hover .widget-title {
   color: #666666;
 }
 
@@ -2565,15 +2565,18 @@ a:hover, a:active {
   position: relative;
 }
 
-.crimson-rose-image-banner .image-banner-wrapper a {
+.crimson-rose-image-banner .image-banner-wrapper > a {
+  position: relative;
   display: block;
 }
 
-.crimson-rose-image-banner .image-banner-text-position-below .widget-title {
+.crimson-rose-image-banner .image-banner-title-position-below .widget-title {
   padding-top: 20px;
+  margin: 0;
 }
 
-.crimson-rose-image-banner .image-banner-text-position-middle .widget-title {
+.crimson-rose-image-banner .image-banner-title-position-middle .widget-title {
+  padding: 0;
   width: 100%;
   margin: 0;
   position: absolute;
@@ -2584,11 +2587,37 @@ a:hover, a:active {
   transform: translateY(-50%);
 }
 
-.crimson-rose-image-banner .image-banner-text-position-middle .widget-title span {
+.crimson-rose-image-banner .image-banner-title-position-middle .widget-title span {
   padding: .9em 1.2em;
   background-color: #ffffff;
   margin-left: auto;
   margin-right: auto;
+}
+
+.crimson-rose-image-banner .image-banner-style-round img {
+  border-radius: 100%;
+}
+
+.crimson-rose-image-banner .image-banner-description {
+  margin-top: 1em;
+  font-size: 16px;
+  font-size: 1rem;
+}
+
+.crimson-rose-image-banner .image-banner-description > *:last-child {
+  margin-bottom: 0;
+}
+
+.crimson-rose-image-banner .image-banner-text-align-center .image-banner-description {
+  text-align: center;
+}
+
+.crimson-rose-image-banner .image-banner-text-align-left .image-banner-description {
+  text-align: left;
+}
+
+.crimson-rose-image-banner .image-banner-text-align-right .image-banner-description {
+  text-align: right;
 }
 
 /*--------------------------------------------------------------
