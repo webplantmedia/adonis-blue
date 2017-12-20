@@ -393,7 +393,11 @@ class Crimson_Rose_Content_Widget_Jetpack_Testimonials extends Crimson_Rose_Widg
 
 					<?php else : ?>
 
-						<p><center><em><?php echo _e( 'Your Testimonial Archive currently has no entries. You can start creating them on your dashboard.', 'crimson-rose' ); ?></em></center></p>
+						<?php if ( ! crimson_rose_is_jetpack_activated() ) : ?>
+							<?php $notice = __( 'Activate Jetpack and enable testimonials. ', 'crimson-rose' ); ?>
+						<?php endif; ?>
+
+						<p><center><em><?php echo $notice . __( 'Your Testimonial Archive currently has no entries. You can start creating them on your dashboard.', 'crimson-rose' ); ?></em></center></p>
 
 					<?php endif; ?>
 				</div><!-- .site-boundary -->
