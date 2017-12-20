@@ -237,38 +237,6 @@ Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam eli
 			'post_title' => _x( 'Demo Image 1', 'Theme starter content', 'crimson-rose' ),
 			'file' => 'img/starter-content/our-story.jpeg',
 		),
-		'image-demo-2' => array(
-			'post_title' => _x( 'Demo Image 2', 'Theme starter content', 'crimson-rose' ),
-			'file' => 'img/starter-content/our-story-2.jpeg',
-		),
-		'image-demo-3' => array(
-			'post_title' => _x( 'Demo Image 3', 'Theme starter content', 'crimson-rose' ),
-			'file' => 'img/starter-content/contact.jpeg',
-		),
-		'image-demo-4' => array(
-			'post_title' => _x( 'Demo Image 4', 'Theme starter content', 'crimson-rose' ),
-			'file' => 'img/starter-content/showcase1.jpeg',
-		),
-		'image-demo-5' => array(
-			'post_title' => _x( 'Demo Image 5', 'Theme starter content', 'crimson-rose' ),
-			'file' => 'img/starter-content/showcase2.jpeg',
-		),
-		'image-demo-6' => array(
-			'post_title' => _x( 'Demo Image 6', 'Theme starter content', 'crimson-rose' ),
-			'file' => 'img/starter-content/showcase3.jpeg',
-		),
-		'image-demo-7' => array(
-			'post_title' => _x( 'Demo Image 7', 'Theme starter content', 'crimson-rose' ),
-			'file' => 'img/starter-content/showcase4.jpeg',
-		),
-		'image-demo-8' => array(
-			'post_title' => _x( 'Demo Image 8', 'Theme starter content', 'crimson-rose' ),
-			'file' => 'img/starter-content/showcase5.jpeg',
-		),
-		'image-demo-9' => array(
-			'post_title' => _x( 'Demo Image 9', 'Theme starter content', 'crimson-rose' ),
-			'file' => 'img/starter-content/showcase6.jpeg',
-		),
 	);
 
 	$starter_content['options'] = array(
