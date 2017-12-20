@@ -10,7 +10,7 @@
 /**
  * The current version of the theme.
  */
-define( 'CRIMSON_ROSE_VERSION', '1.9' );
+define( 'CRIMSON_ROSE_VERSION', '1.10' );
 
 if ( ! function_exists( 'crimson_rose_setup' ) ) :
 	/**
@@ -589,6 +589,11 @@ if ( crimson_rose_is_jetpack_activated() ) {
 if ( crimson_rose_is_woocommerce_activated() ) {
 	require get_parent_theme_file_path() . '/inc/woocommerce/class-woocommerce.php';
 }
+
+/*
+ * Check for recommended plugins.
+ */
+require get_parent_theme_file_path() . '/inc/recommended-plugins.php';
 
 /*
  * Check for theme update.
