@@ -10,7 +10,7 @@
 /**
  * The current version of the theme.
  */
-define( 'CRIMSON_ROSE_VERSION', '1.13' );
+define( 'CRIMSON_ROSE_VERSION', '1.14' );
 
 if ( ! function_exists( 'crimson_rose_setup' ) ) :
 	/**
@@ -52,7 +52,7 @@ if ( ! function_exists( 'crimson_rose_setup' ) ) :
 			'menu-1' => esc_html__( 'Primary', 'crimson-rose' ),
 			'menu-2' => esc_html__( 'Top Header Left', 'crimson-rose' ),
 			'menu-3' => esc_html__( 'Top Header Right', 'crimson-rose' ),
-			'social' => __( 'Social Links Menu', 'crimson-rose' ),
+			'social' => __( 'Social Menu', 'crimson-rose' ),
 		) );
 
 		$google_request = str_replace( ',', '%2C', crimson_rose_fonts_url() );
