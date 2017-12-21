@@ -130,7 +130,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Blog_Post' ) ) :
 			}
 
 			if ( ! empty( $o['post_ids'] ) ) {
-				$post_args['post__in'] = $o['post_ids'];
+				$post_args['post__in'] = explode( ',', $o['post_ids'] );
 				$post_args['orderby'] = 'post__in';
 			}
 
@@ -153,8 +153,6 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Blog_Post' ) ) :
 			$read_more = apply_filters( 'crimson_rose_read_more_text', esc_html__( 'Read more', 'crimson-rose' ) );
 			?>
 
-			<?php if ( $post->have_posts() ) : ?>
-
 			<div class="container" style="<?php echo implode( '', $style ); ?>">
 
 				<?php
@@ -170,40 +168,46 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Blog_Post' ) ) :
 				}
 				?>
 
-				<div id="posts-container" class="<?php echo $container_class; ?>">
-					<div class='grid'>
+				<?php if ( $post->have_posts() ) : ?>
 
-						<?php while ( $post->have_posts() ) : $post->the_post(); ?>
-							<div class="grid__col grid__col--1-of-<?php echo $o['columns']; ?>">
-								<?php get_template_part( 'template-parts/excerpt2' ); ?>
-							</div>
-						<?php endwhile; ?>
+					<div id="posts-container" class="<?php echo $container_class; ?>">
+						<div class='grid'>
 
+							<?php while ( $post->have_posts() ) : $post->the_post(); ?>
+								<div class="grid__col grid__col--1-of-<?php echo $o['columns']; ?>">
+									<?php get_template_part( 'template-parts/excerpt2' ); ?>
+								</div>
+							<?php endwhile; ?>
+
+						</div>
 					</div>
-				</div>
 
-				<?php if ( '' !== $o['button_text'] ) : ?>
-					<?php
-					switch ( $o['button_style'] ) {
-						case 'button-1' :
-							$button_class = ' fancy-button';
-							break;
-						case 'button-2' :
-							$button_class = ' fancy2-button';
-							break;
-						default :
-							$button_class = '';
-							break;
-					}
-					?>
-					<p class="button-wrapper">
-						<a class="button<?php echo $button_class; ?>" href="<?php echo $o['button_link']; ?>"><?php echo $o['button_text']; ?></a>
-					</p>
+					<?php if ( '' !== $o['button_text'] ) : ?>
+						<?php
+						switch ( $o['button_style'] ) {
+							case 'button-1' :
+								$button_class = ' fancy-button';
+								break;
+							case 'button-2' :
+								$button_class = ' fancy2-button';
+								break;
+							default :
+								$button_class = '';
+								break;
+						}
+						?>
+						<p class="button-wrapper">
+							<a class="button<?php echo $button_class; ?>" href="<?php echo $o['button_link']; ?>"><?php echo $o['button_text']; ?></a>
+						</p>
+					<?php endif; ?>
+
+				<?php else : ?>
+
+					<p><center><em><?php echo __( 'No blog posts found.', 'crimson-rose' ); ?></em></center></p>
+
 				<?php endif; ?>
 
 			</div>
-
-			<?php endif; ?>
 
 			<?php echo $after_widget; ?>
 

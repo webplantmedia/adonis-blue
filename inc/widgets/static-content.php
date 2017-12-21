@@ -242,7 +242,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Static_Content' ) ) :
 							<article>
 								<?php echo  $before_title . __( 'Static Content Widget', 'crimson-rose' ) . $after_title; ?>
 								<div class="entry-content">
-									<center><?php echo __( 'Select a page in your widget settings for content to display.', 'crimson-rose' ); ?></center>
+									<center><em><?php echo __( 'Select a page in your widget settings for content to display.', 'crimson-rose' ); ?></em></center>
 								</div>
 							</article>
 						<?php endif; ?>

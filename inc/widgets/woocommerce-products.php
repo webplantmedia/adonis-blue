@@ -234,7 +234,11 @@ class Crimson_Rose_Content_Widget_WooCommerce_Products extends Crimson_Rose_Widg
 					<?php echo $before_title . $o['title'] . $after_title; ?>
 				<?php endif; ?>
 
-				<?php echo do_shortcode( $shortcode ); ?>
+				<?php if ( ! crimson_rose_is_woocommerce_activated() ) : ?>
+					<p><center><em><?php echo __( 'Activate WooCommerce and begin adding products.', 'crimson-rose' ); ?></em></center></p>
+				<?php else : ?>
+					<?php echo do_shortcode( $shortcode ); ?>
+				<?php endif; ?>
 			</div><!-- .content-woocommerce-products -->
 
 		<?php echo $after_widget; ?>
