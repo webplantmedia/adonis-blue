@@ -176,14 +176,12 @@ Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam eli
 		),
 	);
 
-	if ( crimson_rose_is_jetpack_activated() ) {
-		$starter_content['widgets']['footer-3']['crimson-rose-jetpack-social-menu'] = array(
-			'crimson-rose-jetpack-social-menu',
-			array(
-				'title' => 'Connect',
-			),
-		);
-	}
+	$starter_content['widgets']['footer-3']['crimson-rose-jetpack-social-menu'] = array(
+		'crimson-rose-jetpack-social-menu',
+		array(
+			'title' => 'Connect',
+		),
+	);
 
 	$starter_content['widgets']['front-page']['crimson-rose-content-widget-collage'] = array(
 		'crimson-rose-content-widget-collage',
@@ -301,16 +299,14 @@ Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam eli
 		),
 	);
 
-	if ( crimson_rose_is_jetpack_activated() ) {
-		$starter_content['nav_menus']['jetpack-social-menu'] = array(
-			'name' => _x( 'Social Links Menu', 'Theme starter content', 'crimson-rose' ),
-			'items' => array(
-				'link_pinterest',
-				'link_facebook',
-				'link_twitter',
-			),
-		);
-	}
+	$starter_content['nav_menus']['jetpack-social-menu'] = array(
+		'name' => _x( 'Social Links Menu', 'Theme starter content', 'crimson-rose' ),
+		'items' => array(
+			'link_pinterest',
+			'link_facebook',
+			'link_twitter',
+		),
+	);
 
 	/**
 	 * Filters Twenty Seventeen array of starter content.
