@@ -103,7 +103,11 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Jetpack_Social_Menu' ) ) :
 			<?php endif; ?>
 
 			<div class="jetpack-social-menu-wrapper jetpack-social-menu-align-<?php echo $o['align']; ?>">
-				<?php jetpack_social_menu(); ?>
+				<?php if ( function_exists( 'jetpack_social_menu' ) ) : ?>
+					<?php jetpack_social_menu(); ?>
+				<?php else : ?>
+					<p><center><em><?php echo __( 'This social icons widget requires Jetpack.', 'crimson-rose' ); ?></em></center></p>
+				<?php endif; ?>
 			</div>
 
 			<?php echo  $after_widget; ?>
