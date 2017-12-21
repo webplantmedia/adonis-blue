@@ -7,7 +7,7 @@
 		float: right;
 	}
 
-	.jetpack-social-navigation,
+	.social-navigation,
 	.header-menu {
 		@include rem('font-size',$font__tiny-size);
 
@@ -79,23 +79,23 @@
 		float: right;
 	}
 
-	.jetpack-social-navigation {
+	.social-navigation {
 		float: right;
 
 		a {
 			font-weight: normal;
-			padding-left: 0.3em;
-			padding-right: 0.3em;
+			padding-left: 0.2em;
+			padding-right: 0.2em;
 
 			&:before {
 				@include rem('line-height',$font__line-height-top-menu);
-				@include rem('font-size',$font__main-size);
+				@include rem('font-size',($font__main-size+3));
 			}
 		}
 	}
 
 	.top-right-header > nav {
-		padding-left: 1em;
+		@include rem('padding-left',10px);
 
 		&:last-child {
 			padding-left: 0;

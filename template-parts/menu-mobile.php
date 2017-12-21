@@ -42,8 +42,19 @@ if ( ! has_nav_menu( 'menu-3' ) && ! has_nav_menu( 'menu-2' ) && ! has_nav_menu(
 	<?php endif; ?>
 
 	<?php
-	if ( function_exists( 'jetpack_social_menu' ) ) {
-		jetpack_social_menu();
-	}
-	?>
+	if ( has_nav_menu( 'social' ) ) : ?>
+		<nav class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Footer Social Links Menu', 'crimson-rose' ); ?>">
+			<?php
+				wp_nav_menu( array(
+					'theme_location' => 'social',
+					'depth'          => 1,
+					'fallback_cb'    => false,
+					'container'      => 'ul',
+					'menu_class'     => 'menu social-links-menu',
+					'link_before'    => '<span class="screen-reader-text">',
+					'link_after'     => '</span>',
+				) );
+			?>
+		</nav><!-- .social-navigation -->
+	<?php endif; ?>
 </div>

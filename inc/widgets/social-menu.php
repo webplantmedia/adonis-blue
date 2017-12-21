@@ -1,13 +1,13 @@
 <?php
 /**
- * Section: Jetpack Social Menu Widget
+ * Social Menu Widget
  *
  * @since Crimson_Rose 1.0.0.
  *
  * @package Crimson_Rose
  */
 
-if ( ! class_exists( 'Crimson_Rose_Widget_Jetpack_Social_Menu' ) ) :
+if ( ! class_exists( 'Crimson_Rose_Widget_Social_Menu' ) ) :
 	/**
 	 * Display static content from an specific page.
 	 *
@@ -15,15 +15,15 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Jetpack_Social_Menu' ) ) :
 	 *
 	 * @package Crimson_Rose
 	 */
-	class Crimson_Rose_Widget_Jetpack_Social_Menu extends Crimson_Rose_Widget {
+	class Crimson_Rose_Widget_Social_Menu extends Crimson_Rose_Widget {
 		/**
 		 * Constructor
 		 */
 		public function __construct() {
-			$this->widget_id          = 'crimson-rose-jetpack-social-menu';
-			$this->widget_cssclass    = 'crimson-rose-jetpack-social-menu';
-			$this->widget_description = esc_html__( 'Displays Jetpack\'s social menu in your footer or sidebar.', 'crimson-rose' );
-			$this->widget_name        = esc_html__( 'Crimson Rose: Jetpack Social Menu', 'crimson-rose' );
+			$this->widget_id          = 'crimson-rose-social-menu';
+			$this->widget_cssclass    = 'crimson-rose-social-menu';
+			$this->widget_description = esc_html__( 'Displays social menu in your footer or sidebar.', 'crimson-rose' );
+			$this->widget_name        = esc_html__( 'Crimson Rose: Social Menu', 'crimson-rose' );
 			$this->settings           = array(
 				'title' => array(
 					'type'  => 'text',
@@ -102,11 +102,21 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Jetpack_Social_Menu' ) ) :
 				<?php echo $before_title . $o['title'] . $after_title; ?>
 			<?php endif; ?>
 
-			<div class="jetpack-social-menu-wrapper jetpack-social-menu-align-<?php echo $o['align']; ?>">
-				<?php if ( function_exists( 'jetpack_social_menu' ) ) : ?>
-					<?php jetpack_social_menu(); ?>
-				<?php else : ?>
-					<p><center><em><?php echo __( 'This social icons widget requires Jetpack.', 'crimson-rose' ); ?></em></center></p>
+			<div class="social-menu-wrapper social-menu-align-<?php echo $o['align']; ?>">
+				<?php if ( has_nav_menu( 'social' ) ) : ?>
+					<nav class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Footer Social Links Menu', 'crimson-rose' ); ?>">
+						<?php
+							wp_nav_menu( array(
+								'theme_location' => 'social',
+								'depth'          => 1,
+								'fallback_cb'    => false,
+								'container'      => 'ul',
+								'menu_class'     => 'menu social-links-menu',
+								'link_before'    => '<span class="screen-reader-text">',
+								'link_after'     => '</span>',
+							) );
+						?>
+					</nav><!-- .social-navigation -->
 				<?php endif; ?>
 			</div>
 
@@ -125,6 +135,4 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Jetpack_Social_Menu' ) ) :
 	}
 endif;
 
-if ( function_exists( 'jetpack_social_menu' ) ) {
-	add_action( 'widgets_init', array( 'Crimson_Rose_Widget_Jetpack_Social_Menu', 'register' ) );
-}
+add_action( 'widgets_init', array( 'Crimson_Rose_Widget_Social_Menu', 'register' ) );

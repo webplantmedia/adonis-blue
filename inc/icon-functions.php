@@ -73,13 +73,19 @@ function crimson_rose_get_icon( $args = array() ) {
 function crimson_rose_nav_menu_social_icons( $item_output, $item, $depth, $args ) {
 	// Get supported social icons.
 	$social_icons = crimson_rose_social_links_icons();
+	$known = false;
 
 	// Change SVG icon inside social links menu if there is supported URL.
 	if ( 'social' === $args->theme_location ) {
 		foreach ( $social_icons as $attr => $value ) {
 			if ( false !== strpos( $item_output, $attr ) ) {
 				$item_output = str_replace( '<a ', '<a class="social-logo social-logo__' . esc_attr( $value ) . '" ', $item_output );
+				$known = true;
 			}
+		}
+
+		if ( ! $known ) {
+			$item_output = str_replace( '<a ', '<a class="social-logo social-logo__share" ', $item_output );
 		}
 	}
 
@@ -88,42 +94,70 @@ function crimson_rose_nav_menu_social_icons( $item_output, $item, $depth, $args 
 add_filter( 'walker_nav_menu_start_el', 'crimson_rose_nav_menu_social_icons', 10, 4 );
 
 /**
- * Add dropdown icon if menu item has children.
- *
- * @param  string  $title The menu item's title.
- * @param  WP_Post $item  The current menu item.
- * @param  array   $args  An array of wp_nav_menu() arguments.
- * @param  int     $depth Depth of menu item. Used for padding.
- * @return string  $title The menu item's title with dropdown icon.
- */
-function crimson_rose_dropdown_icon_to_menu_link( $title, $item, $args, $depth ) {
-	if ( 'top' === $args->theme_location ) {
-		foreach ( $item->classes as $value ) {
-			if ( 'menu-item-has-children' === $value || 'page_item_has_children' === $value ) {
-				$title = $title . crimson_rose_get_icon( array( 'icon' => 'angle-down' ) );
-			}
-		}
-	}
-
-	return $title;
-}
-add_filter( 'nav_menu_item_title', 'crimson_rose_dropdown_icon_to_menu_link', 10, 4 );
-
-/**
  * Returns an array of supported social links (URL and icon name).
  *
  * @return array $social_links_icons
  */
 function crimson_rose_social_links_icons() {
 	// Supported social links icons.
+
+	/* 
+	amazon
+	behance
+	blogger-alt
+	blogger
+	codepen
+	dribbble
+	dropbox
+	eventbrite
+	facebook
+	feed
+	flickr
+	foursquare
+	ghost
+	github
+	google-alt
+	google-plus-alt
+	google-plus
+	google
+	instagram
+	linkedin
+	mail
+	medium
+	path-alt
+	path
+	pinterest-alt
+	pinterest
+	pocket
+	polldaddy
+	print
+	reddit
+	share
+	skype
+	spotify
+	squarespace
+	stumbleupon
+	telegram
+	tumblr-alt
+	tumblr
+	twitch
+	twitter-alt
+	twitter
+	vimeo
+	whatsapp
+	wordpress
+	xanga
+	youtube
+	 */
+
 	$social_links_icons = array(
+		'amazon.com'      => 'amazon',
 		'behance.net'     => 'behance',
+		'blogger.com'     => 'blogger',
 		'codepen.io'      => 'codepen',
-		'deviantart.com'  => 'deviantart',
-		'digg.com'        => 'digg',
-		'docker.com'      => 'dockerhub',
 		'dribbble.com'    => 'dribbble',
 		'dropbox.com'     => 'dropbox',
+		'eventbrite.com'  => 'eventbrite',
 		'facebook.com'    => 'facebook',
 		'flickr.com'      => 'flickr',
 		'foursquare.com'  => 'foursquare',
@@ -131,28 +165,28 @@ function crimson_rose_social_links_icons() {
 		'github.com'      => 'github',
 		'instagram.com'   => 'instagram',
 		'linkedin.com'    => 'linkedin',
-		'mailto:'         => 'envelope-o',
+		'mailto:'         => 'mail',
 		'medium.com'      => 'medium',
-		'pinterest.com'   => 'pinterest-p',
+		'path.com'        => 'path',
+		'pinterest.com'   => 'pinterest',
 		'pscp.tv'         => 'periscope',
-		'getpocket.com'   => 'get-pocket',
-		'reddit.com'      => 'reddit-alien',
+		'getpocket.com'   => 'pocket',
+		'polldaddy.com'   => 'polldaddy',
+		'reddit.com'      => 'reddit',
 		'skype.com'       => 'skype',
 		'skype:'          => 'skype',
-		'slideshare.net'  => 'slideshare',
-		'snapchat.com'    => 'snapchat-ghost',
-		'soundcloud.com'  => 'soundcloud',
 		'spotify.com'     => 'spotify',
+		'snapchat.com'    => 'ghost',
 		'stumbleupon.com' => 'stumbleupon',
+		'telegram.org'    => 'telegram',
 		'tumblr.com'      => 'tumblr',
 		'twitch.tv'       => 'twitch',
-		'twitter.com'     => 'twitter',
+		'twitter.com'     => 'twitter-alt',
 		'vimeo.com'       => 'vimeo',
-		'vine.co'         => 'vine',
-		'vk.com'          => 'vk',
+		'whatsapp.com'    => 'whatsapp',
 		'wordpress.org'   => 'wordpress',
 		'wordpress.com'   => 'wordpress',
-		'yelp.com'        => 'yelp',
+		'xanga.com'       => 'xanga',
 		'youtube.com'     => 'youtube',
 	);
 

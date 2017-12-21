@@ -123,7 +123,7 @@
 		}
 	}
 
-	.widget.crimson-rose-jetpack-social-menu.no-title:first-child {
+	.widget.crimson-rose-social-menu.no-title:first-child {
 		@include rem('margin-top',65px);
 	}
 }
@@ -255,3 +255,58 @@
 	}
 }
 
+.widget.crimson-rose-social-menu {
+	.social-menu-align-center {
+		.menu {
+			text-align: center;
+
+			li {
+				margin-left: .2em;
+				margin-right: .2em;
+			}
+		}
+	}
+
+	.social-menu-align-left {
+		.menu {
+			text-align: left;
+
+			li {
+				margin-right: .4em;
+			}
+
+			li:last-child {
+				margin-right: 0;
+			}
+
+		}
+	}
+
+	.social-menu-align-right {
+		.menu {
+			text-align: right;
+
+			li {
+				margin-left: .4em;
+			}
+
+			li:first-child {
+				margin-left: 0;
+			}
+		}
+	}
+
+	.social-navigation {
+		a {
+			display: block;
+			@include rem('font-size',32px);
+		}
+		
+		.menu {
+			li {
+				display: inline-block;
+			}
+		}
+	}
+
+}

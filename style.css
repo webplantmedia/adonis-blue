@@ -1804,7 +1804,7 @@ a:hover, a:active {
   #site-navigation .top-mobile-header #top-right-menu a:focus {
     color: #959595;
   }
-  #site-navigation .top-mobile-header .jetpack-social-navigation-genericons a:before {
+  #site-navigation .top-mobile-header .social-navigation a:before {
     line-height: inherit;
     height: auto;
   }
@@ -2047,13 +2047,13 @@ a:hover, a:active {
   float: right;
 }
 
-.top-header .jetpack-social-navigation,
+.top-header .social-navigation,
 .top-header .header-menu {
   font-size: 12px;
   font-size: 0.75rem;
 }
 
-.top-header .jetpack-social-navigation ul,
+.top-header .social-navigation ul,
 .top-header .header-menu ul {
   display: inline-block;
   list-style: none;
@@ -2063,7 +2063,7 @@ a:hover, a:active {
   text-align: left;
 }
 
-.top-header .jetpack-social-navigation ul ul,
+.top-header .social-navigation ul ul,
 .top-header .header-menu ul ul {
   border-top: 2px solid #ececec;
   float: left;
@@ -2074,13 +2074,13 @@ a:hover, a:active {
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.08);
 }
 
-.top-header .jetpack-social-navigation ul ul li,
+.top-header .social-navigation ul ul li,
 .top-header .header-menu ul ul li {
   background-color: #ffffff;
   /* should be same as main background */
 }
 
-.top-header .jetpack-social-navigation ul ul a,
+.top-header .social-navigation ul ul a,
 .top-header .header-menu ul ul a {
   padding-top: .5em;
   padding-bottom: .5em;
@@ -2089,18 +2089,18 @@ a:hover, a:active {
   min-width: 9.375rem;
 }
 
-.top-header .jetpack-social-navigation ul li:hover > ul,
+.top-header .social-navigation ul li:hover > ul,
 .top-header .header-menu ul li:hover > ul {
   left: 0;
 }
 
-.top-header .jetpack-social-navigation li,
+.top-header .social-navigation li,
 .top-header .header-menu li {
   float: left;
   position: relative;
 }
 
-.top-header .jetpack-social-navigation a,
+.top-header .social-navigation a,
 .top-header .header-menu a {
   display: block;
   text-decoration: none;
@@ -2114,18 +2114,18 @@ a:hover, a:active {
   letter-spacing: 0.07em;
 }
 
-.top-header .jetpack-social-navigation .menu > li > a,
+.top-header .social-navigation .menu > li > a,
 .top-header .header-menu .menu > li > a {
   line-height: 36px;
   line-height: 2.25rem;
 }
 
-.top-header .jetpack-social-navigation .menu > li:last-child a,
+.top-header .social-navigation .menu > li:last-child a,
 .top-header .header-menu .menu > li:last-child a {
   padding-right: 0;
 }
 
-.top-header .jetpack-social-navigation .menu > li:first-child a,
+.top-header .social-navigation .menu > li:first-child a,
 .top-header .header-menu .menu > li:first-child a {
   padding-left: 0;
 }
@@ -2134,25 +2134,26 @@ a:hover, a:active {
   float: right;
 }
 
-.top-header .jetpack-social-navigation {
+.top-header .social-navigation {
   float: right;
 }
 
-.top-header .jetpack-social-navigation a {
+.top-header .social-navigation a {
   font-weight: normal;
-  padding-left: 0.3em;
-  padding-right: 0.3em;
+  padding-left: 0.2em;
+  padding-right: 0.2em;
 }
 
-.top-header .jetpack-social-navigation a:before {
+.top-header .social-navigation a:before {
   line-height: 36px;
   line-height: 2.25rem;
-  font-size: 18px;
-  font-size: 1.125rem;
+  font-size: 21px;
+  font-size: 1.3125rem;
 }
 
 .top-header .top-right-header > nav {
-  padding-left: 1em;
+  padding-left: 10px;
+  padding-left: 0.625rem;
 }
 
 .top-header .top-right-header > nav:last-child {
@@ -2502,7 +2503,7 @@ a:hover, a:active {
   text-align: center;
 }
 
-.footer-column-2 .widget.crimson-rose-jetpack-social-menu.no-title:first-child {
+.footer-column-2 .widget.crimson-rose-social-menu.no-title:first-child {
   margin-top: 65px;
   margin-top: 4.0625rem;
 }
@@ -2614,6 +2615,49 @@ a:hover, a:active {
 
 .crimson-rose-image-banner .image-banner-text-align-right .image-banner-description {
   text-align: right;
+}
+
+.widget.crimson-rose-social-menu .social-menu-align-center .menu {
+  text-align: center;
+}
+
+.widget.crimson-rose-social-menu .social-menu-align-center .menu li {
+  margin-left: .2em;
+  margin-right: .2em;
+}
+
+.widget.crimson-rose-social-menu .social-menu-align-left .menu {
+  text-align: left;
+}
+
+.widget.crimson-rose-social-menu .social-menu-align-left .menu li {
+  margin-right: .4em;
+}
+
+.widget.crimson-rose-social-menu .social-menu-align-left .menu li:last-child {
+  margin-right: 0;
+}
+
+.widget.crimson-rose-social-menu .social-menu-align-right .menu {
+  text-align: right;
+}
+
+.widget.crimson-rose-social-menu .social-menu-align-right .menu li {
+  margin-left: .4em;
+}
+
+.widget.crimson-rose-social-menu .social-menu-align-right .menu li:first-child {
+  margin-left: 0;
+}
+
+.widget.crimson-rose-social-menu .social-navigation a {
+  display: block;
+  font-size: 32px;
+  font-size: 2rem;
+}
+
+.widget.crimson-rose-social-menu .social-navigation .menu li {
+  display: inline-block;
 }
 
 /*--------------------------------------------------------------

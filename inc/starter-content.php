@@ -176,8 +176,8 @@ Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam eli
 		),
 	);
 
-	$starter_content['widgets']['footer-3']['crimson-rose-jetpack-social-menu'] = array(
-		'crimson-rose-jetpack-social-menu',
+	$starter_content['widgets']['footer-3']['crimson-rose-social-menu'] = array(
+		'crimson-rose-social-menu',
 		array(
 			'title' => 'Connect',
 		),
@@ -299,7 +299,7 @@ Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam eli
 		),
 	);
 
-	$starter_content['nav_menus']['jetpack-social-menu'] = array(
+	$starter_content['nav_menus']['social'] = array(
 		'name' => _x( 'Social Links Menu', 'Theme starter content', 'crimson-rose' ),
 		'items' => array(
 			'link_pinterest',

@@ -192,31 +192,6 @@ Jetpack styling
   vertical-align: middle;
 }
 
-#master .widget .jetpack-social-menu-align-center .menu {
-  text-align: center;
-}
-
-#master .widget .jetpack-social-menu-align-left .menu {
-  text-align: left;
-}
-
-#master .widget .jetpack-social-menu-align-right .menu {
-  text-align: right;
-}
-
-#master .widget .jetpack-social-navigation a {
-  font-size: 28px;
-  font-size: 1.75rem;
-}
-
-#master .widget .jetpack-social-navigation .menu li {
-  margin-right: .5em;
-}
-
-#master .widget .jetpack-social-navigation .menu li:last-child {
-  margin-right: 0;
-}
-
 #master .comment-subscription-form {
   margin-bottom: 0;
   margin-top: 0;
