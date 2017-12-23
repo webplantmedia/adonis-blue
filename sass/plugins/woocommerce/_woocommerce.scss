@@ -436,7 +436,6 @@
 		padding: 5px 10px;
 		min-height: 0;
 		border-radius: $button__radius;
-		background-color: $color__green;
 		color: $color__white;
 		@include rem('font-size',$font__tiny-size);
 		text-transform: uppercase;

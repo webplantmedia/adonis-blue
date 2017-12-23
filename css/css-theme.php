@@ -56,6 +56,7 @@ a:hover {
 	background-color: ' . $crimson_rose['footer_background_color'] . '; /*id:footer_background_color*/
 }
 
+#master .onsale,
 #master .wc-shortcodes-box-primary,
 #master .wc-shortcodes-button,
 #master .wc-shortcodes-button:active,
