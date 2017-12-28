@@ -2,6 +2,15 @@ p {
 	margin: 0 0 2em 0;
 }
 
+p,
+span,
+td,
+th,
+a {
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;
+}
+
 dfn, cite, em, i {
 	font-style: italic;
 }

@@ -9,6 +9,8 @@ h6 {
 	font-weight: bold;
 	line-height: $font__line-height-heading;
 	letter-spacing: 0.07em;
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;
 }
 
 h1 {
