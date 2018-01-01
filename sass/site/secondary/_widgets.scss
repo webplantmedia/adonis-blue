@@ -189,6 +189,7 @@
 	}
 }
 
+// Image Banner
 .crimson-rose-image-banner {
 	.image-banner-wrapper {
 		> a {
@@ -309,4 +310,9 @@
 		}
 	}
 
+}
+
+// Calendar
+.widget_calendar td {
+    text-align: center;
 }
