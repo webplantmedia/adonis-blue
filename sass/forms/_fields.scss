@@ -93,7 +93,8 @@
 		-moz-border-radius: 0;
 		border-radius: 0;
 		background-color: #fff;
-		background-image: url(./img/select_caret.png);
+		@include background-2x('img/select-caret','png');
+		background-size: 15px 9px;
 		background-repeat: no-repeat;
 		background-position: 94% center;
 		background-position: calc(100% - 20px) center;
