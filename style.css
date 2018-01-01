@@ -1287,7 +1287,8 @@ button {
   -moz-border-radius: 0;
   border-radius: 0;
   background-color: #fff;
-  background-image: url(./img/select_caret.png);
+  background-image: url("img/select-caret.png");
+  background-size: 15px 9px;
   background-repeat: no-repeat;
   background-position: 94% center;
   background-position: calc(100% - 20px) center;
@@ -1299,6 +1300,14 @@ button {
   -moz-appearance: none;
   appearance: none;
   outline: 0;
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
+  #master select,
+  #master .select2-container .select2-selection--single,
+  #master .select2-choice {
+    background-image: url("img/select-caret-2x.png");
+  }
 }
 
 #master .select2-selection__rendered {
@@ -2669,6 +2678,10 @@ a:hover, a:active {
 
 .widget.crimson-rose-social-menu .social-navigation .menu li {
   display: inline-block;
+}
+
+.widget_calendar td {
+  text-align: center;
 }
 
 /*--------------------------------------------------------------

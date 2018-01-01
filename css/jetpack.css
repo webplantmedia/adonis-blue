@@ -197,6 +197,11 @@ Jetpack styling
   margin-top: 0;
 }
 
+#master .slideshow-window {
+  border: 0;
+  border-radius: 0;
+}
+
 @media (min-width: 700px) {
   #master .single-post .entry-footer .sharedaddy {
     margin-top: 0px;
