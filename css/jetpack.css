@@ -238,3 +238,68 @@ Jetpack styling
     display: none;
   }
 }
+
+#master .widget_authors ul ul li {
+  line-height: 1.375;
+  margin-top: 0.7em;
+}
+
+#master .jetpack_subscription_widget #subscribe-text {
+  font-size: 16px;
+  font-size: 1rem;
+}
+
+#master .widget_contact_info .confit-address,
+#master .widget_contact_info .confit-phone,
+#master .widget_contact_info .confit-email,
+#master .widget_contact_info .confit-hours {
+  padding-left: 25px;
+  padding-left: 1.5625rem;
+  font-size: 16px;
+  font-size: 1rem;
+  position: relative;
+  line-height: 1.375;
+  margin-top: 0.7em;
+}
+
+#master .widget_contact_info .confit-address:before,
+#master .widget_contact_info .confit-phone:before,
+#master .widget_contact_info .confit-email:before,
+#master .widget_contact_info .confit-hours:before {
+  font-family: "Genericons-Neue";
+  display: inline-block;
+  vertical-align: top;
+  line-height: inherit;
+  font-weight: normal;
+  font-style: normal;
+  speak: none;
+  text-decoration: inherit;
+  text-transform: none;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: absolute;
+  left: 0;
+  top: 1px;
+}
+
+#master .widget_contact_info iframe + div {
+  margin-top: 0;
+}
+
+#master .widget_contact_info .confit-address:before {
+  content: "\f417";
+}
+
+#master .widget_contact_info .confit-phone:before {
+  content: "\f437";
+}
+
+#master .widget_contact_info .confit-email:before {
+  content: "\f410";
+  top: 2px;
+}
+
+#master .widget_contact_info .confit-hours:before {
+  content: "\f303";
+}

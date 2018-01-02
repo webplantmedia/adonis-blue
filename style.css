@@ -1002,6 +1002,7 @@ button {
   background: transparent;
 }
 
+#master #eu-cookie-law input,
 #master .wc-shortcodes-button,
 #master #infinite-handle span button,
 #master .woocommerce #respond input#submit,
@@ -1051,6 +1052,8 @@ button {
   padding: 13px 30px;
 }
 
+#master #eu-cookie-law input:active,
+#master #eu-cookie-law input:focus,
 #master .wc-shortcodes-button:active,
 #master .wc-shortcodes-button:focus,
 #master #infinite-handle span button:focus,
@@ -1075,6 +1078,7 @@ button {
   background: #252323;
 }
 
+#master #eu-cookie-law input:hover,
 #master .wc-shortcodes-button:hover,
 #master #infinite-handle span button:hover,
 #master .woocommerce #respond input#submit:active,
@@ -1093,6 +1097,7 @@ button {
   padding: 19px 59px;
 }
 
+#master #eu-cookie-law input,
 #master .button.button-small {
   padding: 8px 14px;
   font-size: 12px;
@@ -1275,6 +1280,7 @@ button {
   font-size: 1.125rem;
   font-weight: normal;
   text-transform: none;
+  box-shadow: none;
 }
 
 #master select,
@@ -1300,6 +1306,7 @@ button {
   -moz-appearance: none;
   appearance: none;
   outline: 0;
+  box-shadow: none;
 }
 
 @media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
@@ -2420,6 +2427,8 @@ a:hover, a:active {
 
 .widget {
   margin: 0;
+  font-size: 16px;
+  font-size: 1rem;
   /* Make sure select elements fit in widgets. */
   /* Make sure select elements fit in widgets. */
 }
@@ -2682,6 +2691,39 @@ a:hover, a:active {
 
 .widget_calendar td {
   text-align: center;
+}
+
+#master .widget_recent_comments .recentcomments {
+  padding-left: 25px;
+  padding-left: 1.5625rem;
+  position: relative;
+  line-height: 1.375;
+  margin-top: 0.7em;
+}
+
+#master .widget_recent_comments .recentcomments:first-child {
+  margin-top: 0;
+}
+
+#master .widget_recent_comments .recentcomments:before {
+  font-family: "Genericons-Neue";
+  display: inline-block;
+  vertical-align: top;
+  line-height: inherit;
+  font-weight: normal;
+  font-style: normal;
+  speak: none;
+  text-decoration: inherit;
+  text-transform: none;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: absolute;
+  left: 0;
+}
+
+#master .widget_recent_comments .recentcomments:before {
+  content: "\f300";
 }
 
 /*--------------------------------------------------------------
@@ -4999,15 +5041,15 @@ object {
 .gallery-columns-4,
 .gallery-columns-3,
 .gallery-columns-2 {
-  margin-right: -20px;
-  margin-top: -20px;
+  margin-right: -4px;
+  margin-top: -4px;
 }
 
 .gallery-columns-4 .gallery-item,
 .gallery-columns-3 .gallery-item,
 .gallery-columns-2 .gallery-item {
-  margin-top: 20px;
-  padding-right: 20px;
+  margin-top: 4px;
+  padding-right: 4px;
 }
 
 .gallery-columns-9,
@@ -5015,8 +5057,8 @@ object {
 .gallery-columns-7,
 .gallery-columns-6,
 .gallery-columns-5 {
-  margin-right: -10px;
-  margin-top: -10px;
+  margin-right: -4px;
+  margin-top: -4px;
 }
 
 .gallery-columns-9 .gallery-item,
@@ -5024,8 +5066,8 @@ object {
 .gallery-columns-7 .gallery-item,
 .gallery-columns-6 .gallery-item,
 .gallery-columns-5 .gallery-item {
-  margin-top: 10px;
-  padding-right: 10px;
+  margin-top: 4px;
+  padding-right: 4px;
 }
 
 .gallery-item {
@@ -5034,6 +5076,14 @@ object {
   vertical-align: top;
   width: 100%;
   margin: 0;
+}
+
+.gallery-item a {
+  display: block;
+}
+
+.gallery-item a img {
+  vertical-align: top;
 }
 
 .gallery-columns-2 .gallery-item {
