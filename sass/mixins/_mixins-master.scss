@@ -59,7 +59,7 @@
   content: #{"\"\\"}#{$icon-code + "\""};
 }
 
-@mixin genericons-neue($icon: "") {
+@mixin genericons-neue() {
 	font-family:"Genericons-Neue";
 	
 	display:inline-block;

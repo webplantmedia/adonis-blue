@@ -833,16 +833,23 @@
 			@include rem('font-size',$font__medium-size);
 		}
 
+		.reviewer,
 		.star-rating,
 		li > .woocommerce-Price-amount {
 			margin-left: 74px; // 64px + 10px
 			display: block;
 		}
-	}
-	.widget_top_rated_products {
+
 		.star-rating {
 			margin-top: 5px;
 			margin-bottom: 5px;
+		}
+	}
+	.widget_product_search {
+		.woocommerce-product-search {
+			.search-field {
+				@include rem('margin-bottom',20px);
+			}
 		}
 	}
 	.woocommerce ul.cart_list li,
