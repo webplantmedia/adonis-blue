@@ -23,7 +23,6 @@
 .widget {
 	margin: 0;
 	@include rem('font-size',$font__medium-size);
-	// line-height: $font__line-height-sidebar;
 
 	/* Make sure select elements fit in widgets. */
 	select {
@@ -114,6 +113,13 @@
 			li > ul,
 			li > ol {
 				margin-left: 0;
+			}
+
+			li {
+				&:before {
+					content: "";
+					display: none;
+				}
 			}
 		}
 	}
@@ -319,16 +325,59 @@
     text-align: center;
 }
 
-// Comments
+// UL & LI
+#master .widget_authors ul ul li,
+.widget_product_categories ul li,
+.widget_pages ul li,
+.widget_nav_menu ul li,
+.widget_meta ul li,
+.widget_archive ul li,
 #master .widget_recent_comments .recentcomments {
-	@include rem('padding-left',25px);
-	position: relative;
 	line-height: $font__line-height-heading;
 	margin-top: 0.7em;
 
 	&:first-child {
 		margin-top: 0;
 	}
+
+	ul {
+		margin-top: 0.7em;
+	}
+}
+
+#master .widget_authors ul ul li,
+.widget_product_categories ul li,
+.widget_pages ul li,
+.widget_nav_menu ul li,
+.widget_meta ul li,
+.widget_archive ul li {
+	position: relative;
+	@include rem('padding-left',20px);
+
+	&:before {
+		@include genericons-neue;
+		position: absolute;
+		left: 0;
+		top: 1px;
+
+		-webkit-transform: rotate(270deg);
+		-moz-transform: rotate(270deg);
+		-ms-transform: rotate(270deg);
+		-o-transform: rotate(270deg);
+		transform: rotate(270deg);
+		filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+
+		content: "\f431"; 
+
+		line-height: $font__line-height-sidebar;
+		@include rem('font-size',$font__tiny-size);
+	}
+}
+
+// Comments
+#master .widget_recent_comments .recentcomments {
+	position: relative;
+	@include rem('padding-left',20px);
 
 	&:before {
 		@include genericons-neue;

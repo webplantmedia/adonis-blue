@@ -50,7 +50,7 @@
 	#jp-relatedposts .jp-relatedposts-items p.jp-relatedposts-post-date,
 	#jp-relatedposts .jp-relatedposts-items p.jp-relatedposts-post-context {
 		text-transform: uppercase;
-		@include rem('font-size',$font__tiny_size);
+		@include rem('font-size',$font__tiny-size);
 		font-weight: bold;
 		line-height: $font__line-height-heading;
 	}
@@ -65,14 +65,14 @@
 
 	div.sharedaddy .comment-display {
 		display: none;
-		@include rem('font-size',$font__tiny_size);
+		@include rem('font-size',$font__tiny-size);
 		text-transform: uppercase;
 		font-weight: bold;
 		color: $color__text-light;
 	}
 
 	div.sharedaddy h3.sd-title {
-		@include rem('font-size',$font__tiny_size);
+		@include rem('font-size',$font__tiny-size);
 		text-transform: uppercase;
 		font-weight: bold;
 		color: $color__text-light;
@@ -117,7 +117,7 @@
 	.sd-social-icon-text {
 		.sd-content ul li a {
 			color: $color__white !important;
-			@include rem('font-size',$font__tiny_size);
+			@include rem('font-size',$font__tiny-size);
 			font-family: $font__main;
 			line-height: $font__line-height-body;
 			border-width: 0;
@@ -233,8 +233,7 @@
 }
 
 // Jetpack Authors
-#master .widget_authors ul ul li {
-	line-height: $font__line-height-heading;
+#master .widget_authors ul ul {
 	margin-top: 0.7em;
 }
 
@@ -281,5 +280,63 @@
 	}
 	.confit-hours:before {
 		content: "\f303";
+	}
+}
+
+// Flickr
+.widget_flickr {
+	.flickr-wrapper {
+		text-align: center;
+	}
+
+	.flickr-images {
+		a {
+			display: block;
+		}
+
+		img {
+			margin: 2px;
+			padding: 0;
+			vertical-align: top;
+		}
+	}
+	
+	.flickr-more {
+		display: inline-block;
+		margin-top: 1.5em;
+	}
+}
+
+// Google Plus Badge
+.widget_googleplus_badge {
+	text-align: center;
+}
+
+// Gravatar Profile
+.widget-grofile {
+	text-align: center;
+
+	.grofile-meta {
+		> :first-child {
+			margin-top: 0;
+		}
+	}
+	.grofile-thumbnail {
+		border-radius: 100%;
+	}
+}
+
+// Countdown
+.milestone-widget {
+	.milestone-countdown {
+		color: $color__text;
+	}
+	.milestone-countdown,
+	.milestone-message {
+		border-color: $color__border;
+	}
+
+	.milestone-header {
+		color: $color__white;
 	}
 }

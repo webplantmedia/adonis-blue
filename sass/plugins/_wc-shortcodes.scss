@@ -198,7 +198,7 @@
 // Entry meta
 .wc-shortcodes-footer-entry-meta {
 	text-align: center;
-	@include rem('font-size',$font__tiny_size);
+	@include rem('font-size',$font__tiny-size);
 	text-transform: uppercase;
 	font-weight: normal;
 	@include rem('margin-top',15px);

@@ -6,6 +6,8 @@ button {
 }
 
 #master {
+	.grofile-full-link,
+	.flickr-more,
 	#eu-cookie-law input,
 	.wc-shortcodes-button,
 	#infinite-handle span button,
@@ -57,6 +59,10 @@ button {
 		}
 	}
 
+	.grofile-full-link:active,
+	.grofile-full-link:focus,
+	.flickr-more:active,
+	.flickr-more:focus,
 	#eu-cookie-law input:active,
 	#eu-cookie-law input:focus,
 	.wc-shortcodes-button:active,
@@ -83,6 +89,8 @@ button {
 		background: #252323;
 	}
 
+	.grofile-full-link:hover,
+	.flickr-more:hover,
 	#eu-cookie-law input:hover,
 	.wc-shortcodes-button:hover,
 	#infinite-handle span button:hover,
@@ -102,6 +110,8 @@ button {
 		padding: 19px 59px;
 	}
 
+	.grofile-full-link,
+	.flickr-more,
 	#eu-cookie-law input,
 	.button.button-small {
 		padding: 8px 14px;

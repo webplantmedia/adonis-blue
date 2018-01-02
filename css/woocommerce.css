@@ -770,6 +770,47 @@ WooCommerce styling
   vertical-align: middle;
 }
 
+#master .woocommerce ul.cart_list a > img,
+#master .woocommerce ul.product_list_widget a > img {
+  overflow: hidden;
+  float: left;
+}
+
+#master .woocommerce ul.cart_list li > span,
+#master .woocommerce ul.cart_list li > del,
+#master .woocommerce ul.cart_list li > ins,
+#master .woocommerce ul.product_list_widget li > span,
+#master .woocommerce ul.product_list_widget li > del,
+#master .woocommerce ul.product_list_widget li > ins {
+  font-weight: bold;
+  font-size: 12px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+#master .woocommerce ul.cart_list li > a,
+#master .woocommerce ul.cart_list .product-title,
+#master .woocommerce ul.product_list_widget li > a,
+#master .woocommerce ul.product_list_widget .product-title {
+  line-height: 1.375;
+  font-size: 16px;
+  font-size: 1rem;
+}
+
+#master .woocommerce ul.cart_list .star-rating,
+#master .woocommerce ul.cart_list li > .woocommerce-Price-amount,
+#master .woocommerce ul.product_list_widget .star-rating,
+#master .woocommerce ul.product_list_widget li > .woocommerce-Price-amount {
+  margin-left: 74px;
+  display: block;
+}
+
+#master .widget_top_rated_products .star-rating {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
 #master .woocommerce ul.cart_list li dl,
 #master .woocommerce ul.product_list_widget li dl {
   border-left: 2px solid rgba(0, 0, 0, 0.1);

@@ -56,6 +56,9 @@ a:hover {
 	background-color: ' . $crimson_rose['footer_background_color'] . '; /*id:footer_background_color*/
 }
 
+#master .milestone-header,
+#master .grofile-full-link,
+#master .flickr-more,
 #master #eu-cookie-law input,
 #master .onsale,
 #master .wc-shortcodes-box-primary,
@@ -111,6 +114,8 @@ a:hover {
 	background-color: ' . $crimson_rose['primary_color'] . '; /*id:primary_color*/
 }
 
+#master .grofile-full-link:hover,
+#master .flickr-more:hover,
 #master #eu-cookie-law input:hover,
 #master .wc-shortcodes-button:hover,
 #master #infinite-handle span button:hover,

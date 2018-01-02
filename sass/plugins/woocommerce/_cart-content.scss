@@ -83,7 +83,7 @@
 
 	.woocommerce-mini-cart__total {
 		font-weight: bold;
-		@include rem('font-size',$font__tiny_size);
+		@include rem('font-size',$font__tiny-size);
 		text-transform: uppercase;
 		@include rem('margin-top',20px);
 		@include rem('margin-bottom',20px);
@@ -91,7 +91,7 @@
 	
 	.woocommerce-mini-cart-item .quantity {
 		font-weight: bold;
-		@include rem('font-size',$font__tiny_size);
+		@include rem('font-size',$font__tiny-size);
 		text-transform: uppercase;
 		display: block;
 	}
