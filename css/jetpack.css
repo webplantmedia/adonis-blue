@@ -239,8 +239,7 @@ Jetpack styling
   }
 }
 
-#master .widget_authors ul ul li {
-  line-height: 1.375;
+#master .widget_authors ul ul {
   margin-top: 0.7em;
 }
 
@@ -302,4 +301,52 @@ Jetpack styling
 
 #master .widget_contact_info .confit-hours:before {
   content: "\f303";
+}
+
+.widget_flickr .flickr-wrapper {
+  text-align: center;
+}
+
+.widget_flickr .flickr-images a {
+  display: block;
+}
+
+.widget_flickr .flickr-images img {
+  margin: 2px;
+  padding: 0;
+  vertical-align: top;
+}
+
+.widget_flickr .flickr-more {
+  display: inline-block;
+  margin-top: 1.5em;
+}
+
+.widget_googleplus_badge {
+  text-align: center;
+}
+
+.widget-grofile {
+  text-align: center;
+}
+
+.widget-grofile .grofile-meta > :first-child {
+  margin-top: 0;
+}
+
+.widget-grofile .grofile-thumbnail {
+  border-radius: 100%;
+}
+
+.milestone-widget .milestone-countdown {
+  color: #6d686c;
+}
+
+.milestone-widget .milestone-countdown,
+.milestone-widget .milestone-message {
+  border-color: #ececec;
+}
+
+.milestone-widget .milestone-header {
+  color: #ffffff;
 }

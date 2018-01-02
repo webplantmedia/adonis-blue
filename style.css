@@ -1002,6 +1002,8 @@ button {
   background: transparent;
 }
 
+#master .grofile-full-link,
+#master .flickr-more,
 #master #eu-cookie-law input,
 #master .wc-shortcodes-button,
 #master #infinite-handle span button,
@@ -1052,6 +1054,10 @@ button {
   padding: 13px 30px;
 }
 
+#master .grofile-full-link:active,
+#master .grofile-full-link:focus,
+#master .flickr-more:active,
+#master .flickr-more:focus,
 #master #eu-cookie-law input:active,
 #master #eu-cookie-law input:focus,
 #master .wc-shortcodes-button:active,
@@ -1078,6 +1084,8 @@ button {
   background: #252323;
 }
 
+#master .grofile-full-link:hover,
+#master .flickr-more:hover,
 #master #eu-cookie-law input:hover,
 #master .wc-shortcodes-button:hover,
 #master #infinite-handle span button:hover,
@@ -1097,6 +1105,8 @@ button {
   padding: 19px 59px;
 }
 
+#master .grofile-full-link,
+#master .flickr-more,
 #master #eu-cookie-law input,
 #master .button.button-small {
   padding: 8px 14px;
@@ -2528,6 +2538,15 @@ a:hover, a:active {
   margin-left: 0;
 }
 
+.footer-column-2 .widget_archive ul li:before,
+.footer-column-2 .widget_categories ul li:before,
+.footer-column-2 .widget_pages ul li:before,
+.footer-column-2 .widget_meta ul li:before,
+.footer-column-2 .widget_nav_menu ul li:before {
+  content: "";
+  display: none;
+}
+
 .footer-column-2 .widget_tag_cloud .tagcloud {
   text-align: center;
 }
@@ -2693,16 +2712,85 @@ a:hover, a:active {
   text-align: center;
 }
 
+#master .widget_authors ul ul li,
+.widget_product_categories ul li,
+.widget_pages ul li,
+.widget_nav_menu ul li,
+.widget_meta ul li,
+.widget_archive ul li,
 #master .widget_recent_comments .recentcomments {
-  padding-left: 25px;
-  padding-left: 1.5625rem;
-  position: relative;
   line-height: 1.375;
   margin-top: 0.7em;
 }
 
+#master .widget_authors ul ul li:first-child,
+.widget_product_categories ul li:first-child,
+.widget_pages ul li:first-child,
+.widget_nav_menu ul li:first-child,
+.widget_meta ul li:first-child,
+.widget_archive ul li:first-child,
 #master .widget_recent_comments .recentcomments:first-child {
   margin-top: 0;
+}
+
+#master .widget_authors ul ul li ul,
+.widget_product_categories ul li ul,
+.widget_pages ul li ul,
+.widget_nav_menu ul li ul,
+.widget_meta ul li ul,
+.widget_archive ul li ul,
+#master .widget_recent_comments .recentcomments ul {
+  margin-top: 0.7em;
+}
+
+#master .widget_authors ul ul li,
+.widget_product_categories ul li,
+.widget_pages ul li,
+.widget_nav_menu ul li,
+.widget_meta ul li,
+.widget_archive ul li {
+  position: relative;
+  padding-left: 20px;
+  padding-left: 1.25rem;
+}
+
+#master .widget_authors ul ul li:before,
+.widget_product_categories ul li:before,
+.widget_pages ul li:before,
+.widget_nav_menu ul li:before,
+.widget_meta ul li:before,
+.widget_archive ul li:before {
+  font-family: "Genericons-Neue";
+  display: inline-block;
+  vertical-align: top;
+  line-height: inherit;
+  font-weight: normal;
+  font-style: normal;
+  speak: none;
+  text-decoration: inherit;
+  text-transform: none;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: absolute;
+  left: 0;
+  top: 1px;
+  -webkit-transform: rotate(270deg);
+  -moz-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+  transform: rotate(270deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+  content: "\f431";
+  line-height: 22px;
+  font-size: 12px;
+  font-size: 0.75rem;
+}
+
+#master .widget_recent_comments .recentcomments {
+  position: relative;
+  padding-left: 20px;
+  padding-left: 1.25rem;
 }
 
 #master .widget_recent_comments .recentcomments:before {
