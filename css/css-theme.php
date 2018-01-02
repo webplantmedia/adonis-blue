@@ -56,6 +56,7 @@ a:hover {
 	background-color: ' . $crimson_rose['footer_background_color'] . '; /*id:footer_background_color*/
 }
 
+#master #eu-cookie-law input,
 #master .onsale,
 #master .wc-shortcodes-box-primary,
 #master .wc-shortcodes-button,
@@ -110,6 +111,7 @@ a:hover {
 	background-color: ' . $crimson_rose['primary_color'] . '; /*id:primary_color*/
 }
 
+#master #eu-cookie-law input:hover,
 #master .wc-shortcodes-button:hover,
 #master #infinite-handle span button:hover,
 #master .woocommerce #respond input#submit:hover,

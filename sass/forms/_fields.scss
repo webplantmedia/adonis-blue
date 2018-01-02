@@ -81,6 +81,7 @@
 		@include rem('font-size',$font__main-size);
 		font-weight: normal;
 		text-transform: none;
+		box-shadow: none;
 	}
 
 	select,
@@ -107,6 +108,7 @@
 		appearance: none;
 
 		outline: 0;
+		box-shadow: none;
 	}
 
 	.select2-selection__rendered {

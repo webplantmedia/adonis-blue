@@ -231,3 +231,55 @@
 		}
 	}
 }
+
+// Jetpack Authors
+#master .widget_authors ul ul li {
+	line-height: $font__line-height-heading;
+	margin-top: 0.7em;
+}
+
+// Jetpack Subscribe
+#master .jetpack_subscription_widget {
+	#subscribe-text {
+		@include rem('font-size',$font__medium-size);
+	}
+}
+
+// Maps & Contact Info
+#master .widget_contact_info {
+	.confit-address,
+	.confit-phone,
+	.confit-email,
+	.confit-hours {
+		@include rem('padding-left',25px);
+		@include rem('font-size',$font__medium-size);
+		position: relative;
+		line-height: $font__line-height-heading;
+		margin-top: 0.7em;
+
+		&:before {
+			@include genericons-neue;
+			position: absolute;
+			left: 0;
+			top: 1px;
+		}
+	}
+
+	iframe + div {
+		margin-top: 0;
+	}
+
+	.confit-address:before {
+		content: "\f417";
+	}
+	.confit-phone:before {
+		content: "\f437";
+	}
+	.confit-email:before {
+		content: "\f410";
+		top: 2px;
+	}
+	.confit-hours:before {
+		content: "\f303";
+	}
+}

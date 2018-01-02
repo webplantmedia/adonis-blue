@@ -6,6 +6,7 @@ button {
 }
 
 #master {
+	#eu-cookie-law input,
 	.wc-shortcodes-button,
 	#infinite-handle span button,
 	.woocommerce #respond input#submit,
@@ -56,6 +57,8 @@ button {
 		}
 	}
 
+	#eu-cookie-law input:active,
+	#eu-cookie-law input:focus,
 	.wc-shortcodes-button:active,
 	.wc-shortcodes-button:focus,
 	#infinite-handle span button:focus,
@@ -80,6 +83,7 @@ button {
 		background: #252323;
 	}
 
+	#eu-cookie-law input:hover,
 	.wc-shortcodes-button:hover,
 	#infinite-handle span button:hover,
 	.woocommerce #respond input#submit:active,
@@ -98,6 +102,7 @@ button {
 		padding: 19px 59px;
 	}
 
+	#eu-cookie-law input,
 	.button.button-small {
 		padding: 8px 14px;
 		@include rem('font-size',$font__tiny-size);

@@ -22,6 +22,8 @@
 
 .widget {
 	margin: 0;
+	@include rem('font-size',$font__medium-size);
+	// line-height: $font__line-height-sidebar;
 
 	/* Make sure select elements fit in widgets. */
 	select {
@@ -315,4 +317,26 @@
 // Calendar
 .widget_calendar td {
     text-align: center;
+}
+
+// Comments
+#master .widget_recent_comments .recentcomments {
+	@include rem('padding-left',25px);
+	position: relative;
+	line-height: $font__line-height-heading;
+	margin-top: 0.7em;
+
+	&:first-child {
+		margin-top: 0;
+	}
+
+	&:before {
+		@include genericons-neue;
+		position: absolute;
+		left: 0;
+	}
+}
+
+#master .widget_recent_comments .recentcomments:before {
+	content: "\f300";
 }

@@ -54,3 +54,23 @@
     background-image: url("#{$at2x_path}"); 
   }
 }
+
+@mixin variable-icon-font($icon-code) {
+  content: #{"\"\\"}#{$icon-code + "\""};
+}
+
+@mixin genericons-neue($icon: "") {
+	font-family:"Genericons-Neue";
+	
+	display:inline-block;
+	vertical-align:top;
+	line-height:inherit;
+	font-weight:normal;
+	font-style:normal;
+	speak:none;
+	text-decoration:inherit;
+	text-transform:none;
+	text-rendering:auto;
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+}
