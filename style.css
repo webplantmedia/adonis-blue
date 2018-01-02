@@ -2712,6 +2712,7 @@ a:hover, a:active {
   text-align: center;
 }
 
+.widget_recent_entries ul li,
 #master .widget_authors ul ul li,
 .widget_product_categories ul li,
 .widget_pages ul li,
@@ -2723,6 +2724,7 @@ a:hover, a:active {
   margin-top: 0.7em;
 }
 
+.widget_recent_entries ul li:first-child,
 #master .widget_authors ul ul li:first-child,
 .widget_product_categories ul li:first-child,
 .widget_pages ul li:first-child,
@@ -2733,6 +2735,7 @@ a:hover, a:active {
   margin-top: 0;
 }
 
+.widget_recent_entries ul li ul,
 #master .widget_authors ul ul li ul,
 .widget_product_categories ul li ul,
 .widget_pages ul li ul,
@@ -2743,6 +2746,7 @@ a:hover, a:active {
   margin-top: 0.7em;
 }
 
+.widget_recent_entries ul li,
 #master .widget_authors ul ul li,
 .widget_product_categories ul li,
 .widget_pages ul li,
@@ -2754,6 +2758,7 @@ a:hover, a:active {
   padding-left: 1.25rem;
 }
 
+.widget_recent_entries ul li:before,
 #master .widget_authors ul ul li:before,
 .widget_product_categories ul li:before,
 .widget_pages ul li:before,
@@ -2828,19 +2833,6 @@ a:hover, a:active {
 #master .search-form .search-field {
   width: 100%;
   padding-right: 53px;
-}
-
-#master .search-form .search-submit {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 53px;
-  height: 100%;
-  padding: 0;
-  border: none;
-  background: none;
-  font-size: 35px;
-  line-height: 1;
 }
 
 #master .search-form .search-submit:hover,
