@@ -116,6 +116,8 @@
 			}
 
 			li {
+				padding: 0;
+
 				&:before {
 					content: "";
 					display: none;
@@ -326,6 +328,7 @@
 }
 
 // UL & LI
+.widget_rss_links ul li,
 .widget_recent_entries ul li,
 #master .widget_authors ul ul li,
 .widget_product_categories ul li,
@@ -346,6 +349,7 @@
 	}
 }
 
+.widget_rss_links ul li,
 .widget_recent_entries ul li,
 #master .widget_authors ul ul li,
 .widget_product_categories ul li,
