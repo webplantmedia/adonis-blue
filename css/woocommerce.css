@@ -812,6 +812,8 @@ WooCommerce styling
 #master .woocommerce ul.product_list_widget .star-rating {
   margin-top: 5px;
   margin-bottom: 5px;
+  font-size: 0.8em;
+  width: 5.6em;
 }
 
 #master .widget_product_search .woocommerce-product-search .search-field {

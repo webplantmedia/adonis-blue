@@ -2538,6 +2538,14 @@ a:hover, a:active {
   margin-left: 0;
 }
 
+.footer-column-2 .widget_archive ul li,
+.footer-column-2 .widget_categories ul li,
+.footer-column-2 .widget_pages ul li,
+.footer-column-2 .widget_meta ul li,
+.footer-column-2 .widget_nav_menu ul li {
+  padding: 0;
+}
+
 .footer-column-2 .widget_archive ul li:before,
 .footer-column-2 .widget_categories ul li:before,
 .footer-column-2 .widget_pages ul li:before,
@@ -2712,6 +2720,7 @@ a:hover, a:active {
   text-align: center;
 }
 
+.widget_rss_links ul li,
 .widget_recent_entries ul li,
 #master .widget_authors ul ul li,
 .widget_product_categories ul li,
@@ -2724,6 +2733,7 @@ a:hover, a:active {
   margin-top: 0.7em;
 }
 
+.widget_rss_links ul li:first-child,
 .widget_recent_entries ul li:first-child,
 #master .widget_authors ul ul li:first-child,
 .widget_product_categories ul li:first-child,
@@ -2735,6 +2745,7 @@ a:hover, a:active {
   margin-top: 0;
 }
 
+.widget_rss_links ul li ul,
 .widget_recent_entries ul li ul,
 #master .widget_authors ul ul li ul,
 .widget_product_categories ul li ul,
@@ -2746,6 +2757,7 @@ a:hover, a:active {
   margin-top: 0.7em;
 }
 
+.widget_rss_links ul li,
 .widget_recent_entries ul li,
 #master .widget_authors ul ul li,
 .widget_product_categories ul li,
@@ -2758,6 +2770,7 @@ a:hover, a:active {
   padding-left: 1.25rem;
 }
 
+.widget_rss_links ul li:before,
 .widget_recent_entries ul li:before,
 #master .widget_authors ul ul li:before,
 .widget_product_categories ul li:before,
