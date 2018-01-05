@@ -520,7 +520,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 				<div class="image-sel-container" style="margin-top: 3px;">
 					<div class="image-sel-preview">
 						<style type="text/css">
-							.image-sel-preview img { max-width: 100%; border: 1px solid #e5e5e5; padding: 2px; margin-bottom: 5px;  }
+							.image-sel-preview img { max-width: 100%; border: 1px solid #e5e5e5; padding: 2px; margin-bottom: 5px; height: auto; }
 						</style>
 						<?php if ( ! empty( $value ) ) : ?>
 						<img src="<?php echo esc_url( $value ); ?>" alt="">
