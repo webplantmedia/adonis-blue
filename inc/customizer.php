@@ -336,6 +336,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'checkbox',
 		'label' => __( 'Disable Body Font', 'crimson-rose' ),
+		'description' => __( 'If you are using a Google Font plugin, then you can disable the load of the body font.', 'crimson-rose' ),
 		'section' => $section_id,
 	) );
 
@@ -349,6 +350,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'checkbox',
 		'label' => __( 'Disable Accent Font', 'crimson-rose' ),
+		'description' => __( 'The accent font is a cursive font used in places such as your archive title. If you are using a Google Font plugin, then you can disable the load of this accent font.', 'crimson-rose' ),
 		'section' => $section_id,
 	) );
 
@@ -396,6 +398,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'select',
 		'label' => __( 'Site Structure', 'crimson-rose' ),
+		'description' => __( 'Choose between full width or box layout. The background image options can only be seen when using a box layout.', 'crimson-rose' ),
 		'section' => $section_id,
 		'choices' => array(
 			'full-width' => 'Full Width',
@@ -620,6 +623,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'checkbox',
 		'label' => __( 'Display Product Image Backdrop', 'crimson-rose' ),
+		'description' => __( 'Add a light gray backdrop with a dropshadow for your product images. Visually helpful for images with light colored backgrounds.', 'crimson-rose' ),
 		'section' => $section_id,
 	) );
 
@@ -646,32 +650,6 @@ function crimson_rose_customize_register( $wp_customize ) {
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'checkbox',
 		'label' => __( 'Hide Product Reviews From Shop Page', 'crimson-rose' ),
-		'section' => $section_id,
-	) );
-
-	$setting_id = 'shop_product_hide_stars';
-	$wp_customize->add_setting( $setting_id, array(
-		'default' => $crimson_rose_default[ $setting_id ],
-		'transport' => 'refresh',
-		'sanitize_callback' => 'crimson_rose_sanitize_checkbox',
-	) );
-
-	$wp_customize->add_control( $setting_id, array(
-		'type' => 'checkbox',
-		'label' => __( 'Hide Product Reviews From Product Page', 'crimson-rose' ),
-		'section' => $section_id,
-	) );
-
-	$setting_id = 'shop_product_hide_meta';
-	$wp_customize->add_setting( $setting_id, array(
-		'default' => $crimson_rose_default[ $setting_id ],
-		'transport' => 'refresh',
-		'sanitize_callback' => 'crimson_rose_sanitize_checkbox',
-	) );
-
-	$wp_customize->add_control( $setting_id, array(
-		'type' => 'checkbox',
-		'label' => __( 'Hide Product Meta From Product Page', 'crimson-rose' ),
 		'section' => $section_id,
 	) );
 
@@ -715,6 +693,32 @@ function crimson_rose_customize_register( $wp_customize ) {
 		'section' => $section_id,
 	) );
 
+	$setting_id = 'shop_product_hide_stars';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $crimson_rose_default[ $setting_id ],
+		'transport' => 'refresh',
+		'sanitize_callback' => 'crimson_rose_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( $setting_id, array(
+		'type' => 'checkbox',
+		'label' => __( 'Hide Product Reviews From Product Page', 'crimson-rose' ),
+		'section' => $section_id,
+	) );
+
+	$setting_id = 'shop_product_hide_meta';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $crimson_rose_default[ $setting_id ],
+		'transport' => 'refresh',
+		'sanitize_callback' => 'crimson_rose_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( $setting_id, array(
+		'type' => 'checkbox',
+		'label' => __( 'Hide Product Meta From Product Page', 'crimson-rose' ),
+		'section' => $section_id,
+	) );
+
 	$setting_id = 'shop_disable_gallery_zoom';
 	$wp_customize->add_setting( $setting_id, array(
 		'default' => $crimson_rose_default[ $setting_id ],
@@ -724,7 +728,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'checkbox',
-		'label' => __( 'Disable Gallery Zoom', 'crimson-rose' ),
+		'label' => __( 'Disable Gallery Zoom on Product Page', 'crimson-rose' ),
 		'section' => $section_id,
 	) );
 
@@ -737,7 +741,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'checkbox',
-		'label' => __( 'Disable Gallery Lightbox', 'crimson-rose' ),
+		'label' => __( 'Disable Gallery Lightbox on Product Page', 'crimson-rose' ),
 		'section' => $section_id,
 	) );
 
@@ -750,7 +754,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'checkbox',
-		'label' => __( 'Disable Gallery Slider', 'crimson-rose' ),
+		'label' => __( 'Disable Gallery Slider on Product Page', 'crimson-rose' ),
 		'section' => $section_id,
 	) );
 
