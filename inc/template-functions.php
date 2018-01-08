@@ -138,7 +138,7 @@ add_filter( 'get_custom_logo', 'crimson_rose_get_custom_logo', 10, 2 );
 function crimson_rose_read_more_link( $output ) {
 	global $crimson_rose;
 
-	if ( 'post' != get_post_type() ) {
+	if ( ! is_home() && ! is_archive() && ! is_search() ) {
 		return $output;
 	}
 

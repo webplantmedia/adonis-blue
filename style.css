@@ -4392,6 +4392,8 @@ a:hover, a:active {
 
 .page-description,
 .term-description {
+  font-size: 16px;
+  font-size: 1rem;
   margin-bottom: 70px;
   margin-bottom: 4.375rem;
 }
