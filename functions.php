@@ -542,6 +542,13 @@ function crimson_rose_is_jetpack_activated() {
 }
 
 /**
+ * Check One Click Demo Import (ocdi) activation
+ */
+function crimson_rose_is_ocdi_activated() {
+	return class_exists( 'OCDI_Plugin' ) ? true : false;
+}
+
+/**
  * Default options.
  */
 require get_template_directory() . '/inc/default-options.php';
@@ -608,3 +615,10 @@ require get_parent_theme_file_path() . '/inc/recommended-plugins.php';
  * Check for theme update.
  */
 require get_parent_theme_file_path() . '/inc/upgrade.php';
+
+/*
+ * One Click Demo Import
+ */
+if ( crimson_rose_is_ocdi_activated() ) {
+	require get_parent_theme_file_path() . '/inc/one-click-demo-import.php';
+}

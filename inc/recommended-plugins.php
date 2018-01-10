@@ -76,6 +76,12 @@ function crimson_rose_register_required_plugins() {
 			'slug'      => 'contact-form-7',
 			'required'  => false,
 		),
+
+		array(
+			'name'      => 'One Click Demo Import',
+			'slug'      => 'one-click-demo-import',
+			'required'  => false,
+		),
 	);
 
 	/*
