@@ -84,14 +84,14 @@ function crimson_rose_update_widget_nav_menu( $sidebar_id, $menu_term_id ) {
 
 function crimson_rose_ocdi_after_import_setup() {
     // Assign menus to their locations.
-    $menu_1 = get_term_by( 'slug', 'primary-menu', 'nav_menu' );
+    $menu_1 = get_term_by( 'slug', 'menu-1', 'nav_menu' );
 
 	if ( ! $menu_1 ) {
-		$menu_1 = get_term_by( 'slug', 'main-menu', 'nav_menu' );
+		$menu_1 = get_term_by( 'slug', 'primary-menu', 'nav_menu' );
 	}
 
 	if ( ! $menu_1 ) {
-		$menu_1 = get_term_by( 'slug', 'menu-1', 'nav_menu' );
+		$menu_1 = get_term_by( 'slug', 'main-menu', 'nav_menu' );
 	}
 
 	if ( isset( $menu_1->term_id ) ) {
