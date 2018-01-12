@@ -3,15 +3,9 @@ function crimson_rose_ocdi_import_files() {
     return array(
         array(
             'import_file_name'           => 'Full Demo Import',
-            'import_file_url'            => 'http://api.webplantmedia.com/demo/crimson-rose/crimson-rose.wordpress.blank.xml',
-            'import_widget_file_url'     => 'http://api.webplantmedia.com/demo/crimson-rose/crimson-rose.webplantmedia.com-widgets.wie',
-			'import_customizer_file_url' => 'http://api.webplantmedia.com/demo/crimson-rose/crimson-rose-export.dat',
-        ),
-        array(
-            'import_file_name'           => 'Widgets Only Import',
-            'import_file_url'            => 'http://api.webplantmedia.com/demo/crimson-rose/crimson-rose.wordpress.blank.xml',
-            'import_widget_file_url'     => 'http://api.webplantmedia.com/demo/crimson-rose/crimson-rose.webplantmedia.com-widgets.wie',
-			'import_notice'              => 'Only front page slider widgets, sidebar widgets, and footer widgets will be imported.',
+            'import_file_url'            => 'http://api.webplantmedia.com/demo/crimson-rose/crimson-rose.wordpress.xml',
+            'import_widget_file_url'     => 'http://api.webplantmedia.com/demo/crimson-rose/crimson-rose-widgets.wie',
+			'import_customizer_file_url' => 'http://api.webplantmedia.com/demo/crimson-rose/crimson-rose-customizer.dat',
         ),
     );
 }
@@ -23,11 +17,12 @@ function crimson_rose_ocdi_before_widgets_import( $selected_import ) {
 		'footer-1',
 		'footer-2',
 		'footer-3',
+		'sidebar-1',
 	);
 
-	if ( $selected_import['import_file_name'] == 'Full Demo Import' ) {
-		array_unshift( $clear_sidebars, 'sidebar-1' );
-	}
+	// if ( $selected_import['import_file_name'] == 'Full Demo Import' ) {
+		// array_unshift( $clear_sidebars, 'sidebar-1' );
+	// }
 
 	$sidebars_widgets = get_option( 'sidebars_widgets' );
 
@@ -83,49 +78,43 @@ function crimson_rose_update_widget_nav_menu( $sidebar_id, $menu_term_id ) {
 }
 
 function crimson_rose_ocdi_after_import_setup() {
+	$menus = array();
+
     // Assign menus to their locations.
-    $menu_1 = get_term_by( 'slug', 'menu-1', 'nav_menu' );
+    $menu_1 = get_term_by( 'name', 'Primary', 'nav_menu' );
 
 	if ( ! $menu_1 ) {
-		$menu_1 = get_term_by( 'slug', 'primary-menu', 'nav_menu' );
+		$menu_1 = get_term_by( 'name', 'Primary Menu', 'nav_menu' );
 	}
 
 	if ( ! $menu_1 ) {
-		$menu_1 = get_term_by( 'slug', 'main-menu', 'nav_menu' );
+		$menu_1 = get_term_by( 'name', 'Main Menu', 'nav_menu' );
 	}
 
 	if ( isset( $menu_1->term_id ) ) {
-		set_theme_mod( 'nav_menu_locations', array(
-				'menu-1' => $menu_1->term_id,
-			)
-		);
+		$menus['menu-1'] = $menu_1->term_id;
 	}
 
-	$menu_2 = get_term_by( 'slug', 'menu-2', 'nav_menu' );
+	$menu_2 = get_term_by( 'name', 'Top Left Menu', 'nav_menu' );
 
 	if ( isset( $menu_2->term_id ) ) {
-		set_theme_mod( 'nav_menu_locations', array(
-				'menu-2' => $menu_2->term_id,
-			)
-		);
+		$menus['menu-2'] = $menu_2->term_id;
 	}
 
-	$menu_3 = get_term_by( 'slug', 'menu-3', 'nav_menu' );
+	$menu_3 = get_term_by( 'name', 'Top Right Menu', 'nav_menu' );
 
-	if ( isset( $menu_2->term_id ) ) {
-		set_theme_mod( 'nav_menu_locations', array(
-				'menu-3' => $menu_3->term_id,
-			)
-		);
+	if ( isset( $menu_3->term_id ) ) {
+		$menus['menu-3'] = $menu_3->term_id;
 	}
 
-	$social_menu = get_term_by( 'slug', 'social', 'nav_menu' );
+	$social_menu = get_term_by( 'name', 'Social Links Menu', 'nav_menu' );
 
 	if ( isset( $social_menu->term_id ) ) {
-		set_theme_mod( 'nav_menu_locations', array(
-				'social' => $social_menu->term_id,
-			)
-		);
+		$menus['social'] = $social_menu->term_id;
+	}
+
+	if ( ! empty( $menus ) ) {
+		set_theme_mod( 'nav_menu_locations', $menus );
 	}
 
 	// update custom menu widget with correct menu
@@ -155,6 +144,16 @@ function crimson_rose_ocdi_after_import_setup() {
 		if ( isset( $blog_page_id->ID ) ) {
 			update_option( 'page_for_posts', $blog_page_id->ID );
 		}
+	}
+
+	if ( 'post' === get_post_type( 1 ) ) {
+		// set sample page to draft
+		$my_post = array(
+			'ID' => 1,
+			'post_status' => 'draft',
+		);
+
+		wp_update_post( $my_post );
 	}
 }
 add_action( 'pt-ocdi/after_import', 'crimson_rose_ocdi_after_import_setup' );

@@ -7,7 +7,7 @@
  * @package Crimson_Rose
  */
 
-if ( ! has_nav_menu( 'menu-3' ) && ! has_nav_menu( 'menu-2' ) && ! has_nav_menu( 'jetpack-social-menu' ) ) {
+if ( ! has_nav_menu( 'menu-3' ) && ! has_nav_menu( 'menu-2' ) && ! has_nav_menu( 'social' ) ) {
 	return;
 }
 
