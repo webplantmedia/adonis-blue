@@ -147,9 +147,19 @@ function crimson_rose_ocdi_after_import_setup() {
 	}
 
 	if ( 'post' === get_post_type( 1 ) ) {
-		// set sample page to draft
+		// set sample post to draft
 		$my_post = array(
 			'ID' => 1,
+			'post_status' => 'draft',
+		);
+
+		wp_update_post( $my_post );
+	}
+
+	if ( 'post' === get_post_type( 2 ) ) {
+		// set sample page to draft
+		$my_post = array(
+			'ID' => 2,
 			'post_status' => 'draft',
 		);
 
