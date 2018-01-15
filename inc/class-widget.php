@@ -643,8 +643,10 @@ class Crimson_Rose_Widget extends WP_Widget {
 						/* <![CDATA[ */
 						( function( $ ){
 							$( document ).ready( function() {
-								$('#widgets-right #<?php echo $field_id; ?>').wpColorPicker().focus( function() {
-									$(this).trigger( 'change' );
+								$('#widgets-right #<?php echo $field_id; ?>').wpColorPicker({
+									change: _.throttle( function() { // For Customizer
+										$(this).trigger( 'change' );
+									}, 3000 )
 								});
 							} );
 						}( jQuery ) );
