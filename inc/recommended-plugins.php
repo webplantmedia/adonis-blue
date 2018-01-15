@@ -78,6 +78,12 @@ function crimson_rose_register_required_plugins() {
 		),
 
 		array(
+			'name'      => 'MailChimp',
+			'slug'      => 'mailchimp-for-wp',
+			'required'  => false,
+		),
+
+		array(
 			'name'      => 'One Click Demo Import',
 			'slug'      => 'one-click-demo-import',
 			'required'  => false,
