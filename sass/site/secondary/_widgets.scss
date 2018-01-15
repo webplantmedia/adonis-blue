@@ -1,5 +1,6 @@
 #secondary .widget {
 	@include rem('margin-bottom',40px);
+	@include rem('font-size',$font__medium-size);
 
 	// .widget-title {
 		// padding: 0.7em 0.5em;
@@ -22,7 +23,6 @@
 
 .widget {
 	margin: 0;
-	@include rem('font-size',$font__medium-size);
 
 	/* Make sure select elements fit in widgets. */
 	select {
