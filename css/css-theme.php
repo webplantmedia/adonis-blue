@@ -212,5 +212,40 @@ $css .= '
 ';
 }
 
+if ( is_404() ) {
+$css .= '
+#master .has-custom-404-page .page-cover-bg .cover {
+	background-color: ' . $crimson_rose['404_cover_color'] . '; /*id:404_cover_color*/
+	opacity: ' . ( $crimson_rose['404_cover_opacity'] / 100 ) . '; /*id:404_cover_opacity*/
+}
+';
+
+if ( $crimson_rose['404_text_white'] ) {
+$css .= '
+#master .has-custom-404-page .entry-footer a,
+#master .has-custom-404-page .entry-footer a:hover,
+#master .has-custom-404-page .entry-footer a:visited,
+#master .has-custom-404-page .entry-footer a:focus,
+#master .has-custom-404-page .entry-footer a:active,
+#master .has-custom-404-page .entry-content a:not(.theme-generated-button):active,
+#master .has-custom-404-page .entry-content a:not(.theme-generated-button):focus,
+#master .has-custom-404-page .entry-content a:not(.theme-generated-button):visited,
+#master .has-custom-404-page .entry-content a:not(.theme-generated-button):hover,
+#master .has-custom-404-page .entry-content a:not(.theme-generated-button),
+#master .has-custom-404-page .entry-content h1,
+#master .has-custom-404-page .entry-content h2,
+#master .has-custom-404-page .entry-content h3,
+#master .has-custom-404-page .entry-content h4,
+#master .has-custom-404-page .entry-content h5,
+#master .has-custom-404-page .entry-content h6,
+#master .has-custom-404-page .entry-content p,
+#master .has-custom-404-page .entry-content,
+#master .has-custom-404-page .entry-title {
+	color: #ffffff;
+}
+';
+}
+}
+
 	return $css;
 }

@@ -98,6 +98,16 @@
 			changeInlineCSS( 'archive_background_color', to );
 		} );
 	} );
+	wp.customize( '404_cover_color', function( value ) {
+		value.bind( function( to ) {
+			changeInlineCSS( '404_cover_color', to );
+		} );
+	} );
+	wp.customize( '404_cover_opacity', function( value ) {
+		value.bind( function( to ) {
+			changeInlineCSS( '404_cover_opacity', ( to / 100 ) );
+		} );
+	} );
 	wp.customize( 'thumb_excerpt_max_height', function( value ) {
 		value.bind( function( to ) {
 			var selectors = '#master .excerpt .entry-image';

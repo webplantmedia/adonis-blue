@@ -933,6 +933,75 @@ function crimson_rose_customize_register( $wp_customize ) {
 		),
 	) );
 
+	/**
+	 * 404 Error Page
+	 */
+	$section_id = 'theme_options_404';
+	$wp_customize->add_section( $section_id, array(
+		'title'    => __( '404 Error Page', 'crimson-rose' ),
+		'panel'    => 'theme_options',
+	) );
+
+	$setting_id = '404_custom_page';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $crimson_rose_default[ $setting_id ],
+		'transport' => 'refresh',
+		'sanitize_callback' => 'absint',
+	) );
+
+	$wp_customize->add_control( $setting_id, array(
+		'type' => 'input',
+		'label' => __( 'Select 404 Page', 'crimson-rose' ),
+		'description' => __( 'Set the page\'s featured image for the background image to display.', 'crimson-rose' ),
+		'type' => 'dropdown-pages',
+		'allow_addition' => true,
+		'section' => $section_id,
+	) );
+
+	$setting_id = '404_cover_opacity';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $crimson_rose_default[ $setting_id ],
+		'transport' => 'postMessage',
+		'sanitize_callback' => 'absint',
+	) );
+
+	$wp_customize->add_control( $setting_id, array(
+		'type' => 'range',
+		'label' => __( 'Page Cover Opacity', 'crimson-rose' ),
+		'description' => __( 'Set opacity for 404 Page Cover\'s featured image.', 'crimson-rose' ),
+		'section' => $section_id,
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 100,
+			'step' => 1,
+			'style' => 'width:100%;',
+		),
+	) );
+
+	$setting_id = '404_cover_color';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $crimson_rose_default[ $setting_id ],
+		'transport' => 'postMessage',
+		'sanitize_callback' => 'sanitize_hex_color',
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $setting_id, array(
+		'label' => __( 'Page Cover Color', 'crimson-rose' ),
+		'section' => $section_id,
+	) ) );
+
+	$setting_id = '404_text_white';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $crimson_rose_default[ $setting_id ],
+		'transport' => 'refresh',
+		'sanitize_callback' => 'crimson_rose_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( $setting_id, array(
+		'type' => 'checkbox',
+		'label' => __( 'Display White Text?', 'crimson-rose' ),
+		'section' => $section_id,
+	) );
 }
 add_action( 'customize_register', 'crimson_rose_customize_register' );
 

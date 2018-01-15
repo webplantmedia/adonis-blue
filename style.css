@@ -4408,6 +4408,55 @@ a:hover, a:active {
   margin-bottom: 0;
 }
 
+#master .has-custom-404-page .site-content {
+  position: relative;
+  padding: 0;
+  padding-top: 200px;
+  padding-top: 12.5rem;
+  padding-bottom: 240px;
+  padding-bottom: 15rem;
+}
+
+#master .has-custom-404-page .site-content .site-boundary {
+  max-width: none;
+}
+
+#master .has-custom-404-page .page-cover-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-position: center center;
+  background-size: cover;
+}
+
+#master .has-custom-404-page .page-cover-bg .cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+#master .has-custom-404-page .hentry {
+  margin: 0;
+}
+
+#master .has-custom-404-page .error-404.has-background {
+  position: relative;
+}
+
+#master .has-custom-404-page .error-404.has-background .entry-footer {
+  margin: 0;
+}
+
+#master .has-custom-404-page .error-404.has-background .entry-footer .post-edit-link {
+  position: absolute;
+  top: 102%;
+  left: 0;
+}
+
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/

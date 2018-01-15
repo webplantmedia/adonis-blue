@@ -7,7 +7,72 @@
  * @package Crimson_Rose
  */
 
-get_header(); ?>
+global $crimson_rose;
+get_header();
+
+$error_page_id = $crimson_rose['404_custom_page'];
+?>
+
+<?php if ( 0 !== $error_page_id ) : ?>
+
+	<?php
+	$post = get_post( $error_page_id );
+	setup_postdata($post);
+	$error_thumbnail = get_the_post_thumbnail_url( $error_page_id, 'full' );
+	$error_cover_opacity = $crimson_rose['404_cover_opacity'] / 100;
+	$error_cover_color = $crimson_rose['404_cover_color'];
+	?>
+
+	<div class="page-cover-bg" style="background-image:url('<?php echo esc_url( $error_thumbnail ) ?>');">
+		<span class="cover"></span>
+	</div>
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main">
+
+			<section id="post-<?php the_ID(); ?>" <?php post_class("error-404 not-found has-background"); ?>>
+				<?php if ( crimson_rose_display_header() ) : ?>
+					<header class="entry-header">
+						<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+					</header><!-- .entry-header -->
+				<?php endif; ?>
+
+				<div class="entry-content">
+					<?php remove_filter( 'the_content', 'sharing_display',19 ); ?>
+					<?php remove_filter( 'the_excerpt', 'sharing_display',19 ); ?>
+					<?php the_content(); ?>
+				</div><!-- .entry-content -->
+
+				<?php if ( get_edit_post_link() ) : ?>
+					<footer class="entry-footer">
+						<?php
+							edit_post_link(
+								sprintf(
+									wp_kses(
+										/* translators: %s: Name of current post. Only visible to screen readers */
+										__( 'Edit <span class="screen-reader-text">%s</span>', 'crimson-rose' ),
+										array(
+											'span' => array(
+												'class' => array(),
+											),
+										)
+									),
+									get_the_title()
+								),
+								'<div class="entry-footer-meta"><span class="edit-link">',
+								'</span></div>'
+							);
+						?>
+					</footer><!-- .entry-footer -->
+				<?php endif; ?>
+			</section><!-- #post-<?php the_ID(); ?> -->
+
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+	<?php wp_reset_postdata(); ?>
+
+<?php else: ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
@@ -22,7 +87,6 @@ get_header(); ?>
 
 					<?php
 						get_search_form();
-
 						the_widget( 'WP_Widget_Recent_Posts' );
 					?>
 
@@ -55,6 +119,8 @@ get_header(); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
+
+<?php endif; ?>
 
 <?php
 get_footer();

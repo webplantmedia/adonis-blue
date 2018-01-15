@@ -88,6 +88,12 @@ function crimson_rose_body_classes( $classes ) {
 		$classes[] = 'has-post-thumbnail';
 	}
 
+	if ( is_404() ) {
+		if ( 0 !== $crimson_rose['404_custom_page'] ) {
+			$classes[] = 'has-custom-404-page';
+		}
+	}
+
 	return $classes;
 }
 add_filter( 'body_class', 'crimson_rose_body_classes' );

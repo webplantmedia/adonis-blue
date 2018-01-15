@@ -81,6 +81,12 @@ $crimson_rose_default['site_info'] = 'Site crafted with <i class="genericons-neu
 $crimson_rose_default['mobile_menu_label'] = 'Menu';
 $crimson_rose_default['read_more_label'] = 'Continue Reading';
 
+// 404 Page
+$crimson_rose_default['404_custom_page'] = 0;
+$crimson_rose_default['404_cover_opacity'] = 80;
+$crimson_rose_default['404_cover_color'] = '#ffffff';
+$crimson_rose_default['404_text_white'] = 0;
+
 /**
  * Set default options
  *
