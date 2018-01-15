@@ -2420,6 +2420,8 @@ a:hover, a:active {
 #secondary .widget {
   margin-bottom: 40px;
   margin-bottom: 2.5rem;
+  font-size: 16px;
+  font-size: 1rem;
 }
 
 #secondary .widget:before {
@@ -2437,8 +2439,6 @@ a:hover, a:active {
 
 .widget {
   margin: 0;
-  font-size: 16px;
-  font-size: 1rem;
   /* Make sure select elements fit in widgets. */
   /* Make sure select elements fit in widgets. */
 }
