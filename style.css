@@ -1132,9 +1132,9 @@ button {
 #master body .fancy-button:hover,
 #master body .fancy-button {
   border-width: 0;
-  color: #6d686c;
+  color: #ffffff;
   text-transform: uppercase;
-  font-weight: normal;
+  font-weight: bold;
   font-size: 20px;
   font-size: 1.25rem;
   padding: 24px 30px;
@@ -1153,9 +1153,7 @@ button {
 #master body .fancy2-button:hover,
 #master body .fancy2-button {
   border-width: 0;
-  color: #6d686c;
   text-transform: uppercase;
-  font-weight: normal;
   font-size: 20px;
   font-size: 1.25rem;
   padding: 24px 30px;
@@ -2905,6 +2903,10 @@ a:hover, a:active {
   vertical-align: bottom;
 }
 
+.content-callout .content-callout__content .content-callout__text {
+  line-height: 1.375;
+}
+
 .content-callout .content-callout__content .content-callout__text.custom-color * {
   color: inherit;
 }
@@ -3156,6 +3158,10 @@ a:hover, a:active {
 .site-content > .site-boundary > .crimson-rose-content-widget-collage:first-child {
   margin-top: -30px;
   margin-top: -1.875rem;
+}
+
+#master .crimson-rose-content-widget-collage .collage .slide-inner .content-text {
+  line-height: 1.375;
 }
 
 #master .crimson-rose-content-widget-collage .collage .slide-inner .content-text * {

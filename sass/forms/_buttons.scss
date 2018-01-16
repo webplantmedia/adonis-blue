@@ -139,9 +139,9 @@ button {
 	.fancy-button {
 		// background-color: transparent;
 		border-width: 0;
-		color: $color__text;
+		color: $color__white;
 		text-transform: uppercase;
-		font-weight: normal;
+		font-weight: bold;
 		@include rem('font-size',$font__large-size);
 		// background-size: 100% 100%;
 		// background-repeat: no-repeat;
@@ -183,9 +183,7 @@ button {
 	.fancy2-button {
 		// background-color: transparent;
 		border-width: 0;
-		color: $color__text;
 		text-transform: uppercase;
-		font-weight: normal;
 		@include rem('font-size',$font__large-size);
 		// background-size: 100% 100%;
 		// background-repeat: no-repeat;

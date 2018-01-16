@@ -189,6 +189,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 		$expandedtags['span'] = array();
 		$expandedtags['p'] = array();
 		$expandedtags['br'] = array();
+		$expandedtags['i'] = array();
 
 		// H1 - H6.
 		$expandedtags['h1'] = array();

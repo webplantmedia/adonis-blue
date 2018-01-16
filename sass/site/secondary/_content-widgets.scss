@@ -37,6 +37,8 @@
 
 	.content-callout__content {
 		.content-callout__text {
+			line-height: $font__line-height-heading;
+
 			&.custom-color {
 				* {
 					color: inherit;
