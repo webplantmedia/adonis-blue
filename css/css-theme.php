@@ -35,6 +35,7 @@ a:hover {
 	color: ' . $crimson_rose['link_hover_color'] . ' !important; /*id:link_hover_color*/
 }
 
+#master .content-callout__content .content-callout__text ul li:before,
 #master .menu-toggle i,
 #master .entry-cat-meta span > a {
 	color: ' . $crimson_rose['primary_color'] . '; /*id:primary_color*/

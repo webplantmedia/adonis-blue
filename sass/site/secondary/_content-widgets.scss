@@ -52,6 +52,27 @@
 			*:last-child {
 				margin-bottom: 0;
 			}
+
+			ul {
+				li {
+					margin-top: 0.5em;
+					padding-left: 1.5em;
+					position: relative;
+
+					&:first-child {
+						margin-top: 0;
+					}
+
+					&:before {
+						position: absolute;
+						left: 0;
+						top: 1px;
+
+						@include genericons-neue;
+						content: "\f418";
+					}
+				}
+			}
 		}
 
 		.button-text {

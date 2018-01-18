@@ -2919,6 +2919,35 @@ a:hover, a:active {
   margin-bottom: 0;
 }
 
+.content-callout .content-callout__content .content-callout__text ul li {
+  margin-top: 0.5em;
+  padding-left: 1.5em;
+  position: relative;
+}
+
+.content-callout .content-callout__content .content-callout__text ul li:first-child {
+  margin-top: 0;
+}
+
+.content-callout .content-callout__content .content-callout__text ul li:before {
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-family: "Genericons-Neue";
+  display: inline-block;
+  vertical-align: top;
+  line-height: inherit;
+  font-weight: normal;
+  font-style: normal;
+  speak: none;
+  text-decoration: inherit;
+  text-transform: none;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\f418";
+}
+
 .content-callout .content-callout__content .button-text {
   margin-top: 40px;
   margin-top: 2.5rem;
