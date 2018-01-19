@@ -4192,6 +4192,20 @@ a:hover, a:active {
   margin-bottom: 3.125rem;
 }
 
+@media (max-width: 700px) {
+  .comment-content > div.grid .grid__col,
+  .entry-content > div.grid .grid__col,
+  .page-content > div.grid .grid__col {
+    margin-bottom: 50px;
+    margin-bottom: 3.125rem;
+  }
+  .comment-content > div.grid .grid__col:last-child,
+  .entry-content > div.grid .grid__col:last-child,
+  .page-content > div.grid .grid__col:last-child {
+    margin-bottom: 0;
+  }
+}
+
 .comment-content > hr,
 .entry-content > hr,
 .page-content > hr {
