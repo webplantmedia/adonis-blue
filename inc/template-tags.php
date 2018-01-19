@@ -338,6 +338,7 @@ if ( ! function_exists( 'crimson_rose_get_the_layout' ) ) :
 		$pushed = '';
 		$grid[0]['columns'][0] = '';
 
+		$content = preg_replace( "/(\<h1.*?\<\/h1\>)/", "------\\1------", $content );
 		$content = preg_replace( "/(\<h2.*?\<\/h2\>)/", "------\\1", $content );
 		$content = preg_replace( "/(\<h5.*?\<\/h5\>)/", "------\\1", $content );
 		$content = preg_replace( "/(\<h6.*?\<\/h6\>)/", "------\\1", $content );
@@ -388,17 +389,6 @@ if ( ! function_exists( 'crimson_rose_get_the_layout' ) ) :
 				$column++;
 				$pushed = '4cols';
 			}
-			else if ( preg_match( '/\<hr/', $piece ) ) {
-				if ( ( $pushed != '1col' ) || ( sizeof( $grid[ $row ]['columns'] ) >= 1 ) ) {
-					$row++;
-					$column = 0;
-					$grid[ $row ]['size'] = 1;
-				}
-
-				$grid[ $row ]['columns'][ $column ] = $piece;
-				$column++;
-				$pushed = '1col';
-			}
 			else {
 				if ( ( $pushed != '1col' ) || ( sizeof( $grid[ $row ]['columns'] ) >= 1 ) ) {
 					$row++;
@@ -422,8 +412,10 @@ if ( ! function_exists( 'crimson_rose_get_the_two_columns' ) ) :
 		$content = get_the_content();
 		$row = -1;
 		$column = 0;
+		$pushed = '';
 		$grid[0]['columns'][0] = '';
 
+		$content = preg_replace( "/(\<h1.*?\<\/h1\>)/", "------\\1------", $content );
 		$content = preg_replace( "/(\<hr.*?\>)/", "------", $content );
 		$pieces = explode( '------', $content );
 
@@ -438,14 +430,28 @@ if ( ! function_exists( 'crimson_rose_get_the_two_columns' ) ) :
 				continue;
 			}
 
-			if ( $row < 0 || sizeof( $grid[ $row ]['columns'] ) >= 2 ) {
-				$row++;
-				$column = 0;
-				$grid[ $row ]['size'] = 2;
-			}
+			if ( preg_match( '/\<h1/', $piece ) ) {
+				if ( ( $pushed != '1col' ) || ( sizeof( $grid[ $row ]['columns'] ) >= 1 ) ) {
+					$row++;
+					$column = 0;
+					$grid[ $row ]['size'] = 1;
+				}
 
-			$grid[ $row ]['columns'][ $column ] = $piece;
-			$column++;
+				$grid[ $row ]['columns'][ $column ] = $piece;
+				$column++;
+				$pushed = '1col';
+			}
+			else {
+				if ( $pushed != '2cols' || ( sizeof( $grid[ $row ]['columns'] ) >= 2 ) ) {
+					$row++;
+					$column = 0;
+					$grid[ $row ]['size'] = 2;
+				}
+
+				$grid[ $row ]['columns'][ $column ] = $piece;
+				$column++;
+				$pushed = '2cols';
+			}
 		}
 
 		return $grid;
