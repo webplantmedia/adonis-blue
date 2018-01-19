@@ -79,7 +79,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 				foreach ( $setting as $panel ) {
 					foreach ( $panel['fields'] as $panel_field_key => $panel_field_setting ) {
 						$value = $this->default_sanitize_value( $panel_field_key, $instance, $panel_field_setting );
-						$instance[ $panel_field_key ] = $this->sanitize_instance( $panel_field_setting, $value );
+						$instance[ $panel_field_key ] = $this->sanitize_instance( $panel_field_setting, $value, 'display' );
 					}
 				}
 			}
@@ -87,7 +87,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 				foreach ( $repeater_instances as $repeater_count => $repeater_instance ) {
 					foreach ( $setting['fields'] as $repeater_field_key => $repeater_field_setting ) {
 						$value = $this->default_sanitize_value( $repeater_field_key, $repeater_instance, $repeater_field_setting );
-						$instance['repeater'][ $repeater_count ][ $repeater_field_key ] = $this->sanitize_instance( $repeater_field_setting, $value );
+						$instance['repeater'][ $repeater_count ][ $repeater_field_key ] = $this->sanitize_instance( $repeater_field_setting, $value, 'display' );
 					}
 				}
 			}
@@ -95,7 +95,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 				$value = $this->default_sanitize_value( $key, $instance, $setting );
 				// turn on to test default widget settings
 				// $value = $setting['std'];
-				$instance[ $key ] = $this->sanitize_instance( $setting, $value );
+				$instance[ $key ] = $this->sanitize_instance( $setting, $value, 'display' );
 			}
 		}
 
@@ -231,7 +231,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 		return apply_filters( 'crimson_rose_allowed_html', $expandedtags );
 	}
 
-	function sanitize_instance( $setting, $new_value ) {
+	function sanitize_instance( $setting, $new_value, $action = 'update' ) {
 		if ( ! isset( $setting['sanitize'] ) ) {
 			return $new_value;
 		}
@@ -278,6 +278,10 @@ class Crimson_Rose_Widget extends WP_Widget {
 
 			case 'url' :
 				$value = esc_url_raw( $new_value );
+
+				if ( $action == 'display' ) {
+					$value = $this->sanitize_url_for_customizer( $new_value );
+				}
 				break;
 
 			case 'background_size' :
@@ -778,6 +782,15 @@ class Crimson_Rose_Widget extends WP_Widget {
 		}
 
 		return '';
+	}
+
+	function sanitize_url_for_customizer( $value ) {
+		if ( is_customize_preview() ) {
+			// fixes obscure bug when admin panel is ssl and front end is not ssl.
+			$value = preg_replace( '/^https?:/', '', $value );
+		}
+
+		return $value;
 	}
 
 	function sanitize_background_size( $value ) {
