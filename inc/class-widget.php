@@ -785,7 +785,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 	}
 
 	function sanitize_url_for_customizer( $value ) {
-		if ( is_customize_preview() ) {
+		if ( is_customize_preview() || is_preview() ) {
 			// fixes obscure bug when admin panel is ssl and front end is not ssl.
 			$value = preg_replace( '/^https?:/', '', $value );
 		}
