@@ -30,6 +30,53 @@ class Crimson_Rose_Widget extends WP_Widget {
 		parent::__construct( $this->widget_id, $this->widget_name, $widget_ops, $this->control_ops );
 
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
+		add_action( 'wp_ajax_crimson_rose_post_lookup', array( &$this, 'post_lookup_callback' ) );
+	}
+
+	public function post_lookup_callback() {
+		global $wpdb; //get access to the WordPress database object variable
+
+		//get names of all businesses
+		$request = '%' . $wpdb->esc_like( stripslashes( sanitize_text_field( $_POST['request'] ) ) ) . '%'; //escape for use in LIKE statement
+		$post_type = stripslashes( sanitize_text_field( $_POST['post_type'] ) );
+
+		$sql = "
+			select
+				ID,
+				post_title
+			from
+				$wpdb->posts
+			where
+				post_title like %s
+				and post_type='%s'
+				and post_status='publish'
+			order by
+				post_title ASC
+			limit
+				0,30
+		";
+
+		$sql = $wpdb->prepare($sql, $request, $post_type);
+
+		$results = $wpdb->get_results($sql);
+
+		//copy the business titles to a simple array
+		$titles = array();
+		$i = 0;
+		foreach( $results as $r ) {
+			$titles[ $i ][ 'label' ] = $r->post_title . " (" . $r->ID . ")";
+			$titles[ $i ][ 'value' ] = $r->ID;
+			$i++;
+		}
+
+		if ( empty( $titles ) ) {
+			$titles[0]['label'] = "No results found in post type \"$post_type\".";
+			$titles[0]['value'] = "0";
+		}
+			
+		echo json_encode($titles); //encode into JSON format and output
+
+		die(); //stop "0" from being output
 	}
 
 	/**
@@ -52,6 +99,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 		wp_enqueue_script( 'jquery-ui-accordion' );
 
 		wp_enqueue_script( 'crimson-rose-admin-widgets', get_template_directory_uri() . '/js/admin/admin-widgets.js', array(), CRIMSON_ROSE_VERSION, true );
+		wp_enqueue_script( 'crimson-rose-post-select', get_template_directory_uri() . '/js/admin/admin-post-select.js', array(), CRIMSON_ROSE_VERSION, true );
 	}
 
 	function sanitize( $instance ) {
@@ -608,6 +656,25 @@ class Crimson_Rose_Widget extends WP_Widget {
 				<?php if ( isset( $setting['description'] ) ) : ?>
 					<span class="description"><?php echo esc_html( $setting['description'] ); ?></span>
 				<?php endif; ?>
+				<?php
+			break;
+
+			case 'post':
+				?>
+				<p>
+					<label for="<?php echo $field_id; ?>"><?php echo esc_html( $setting['label'] ); ?></label>
+					<input class="widefat post-autocomplete-select" id="<?php echo esc_attr( $field_id ); ?>" data-autocomplete-type="multi" data-autocomplete-taxonomy="" data-autocomplete-lookup="post" name="<?php echo esc_attr( $field_name ); ?>" type="text" value="<?php echo esc_attr( $value ); ?>" />
+					<?php if ( isset( $setting['description'] ) ) : ?>
+						<span class="description"><?php echo esc_html( $setting['description'] ); ?></span>
+					<?php endif; ?>
+				</p>
+				<script type="text/javascript">
+					/* <![CDATA[ */
+					jQuery(document).ready(function($){
+						$('#<?php echo esc_attr( $field_id ); ?>').postAutoCompleteSelect();
+					});
+					/* ]]> */
+				</script>
 				<?php
 			break;
 
