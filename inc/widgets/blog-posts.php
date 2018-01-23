@@ -90,15 +90,6 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Blog_Post' ) ) :
 					),
 					'sanitize' => 'text',
 				),
-				'margin_top' => array(
-					'type'  => 'number',
-					'std'   => 0,
-					'step'  => 1,
-					'min'   => 0,
-					'max'   => 300,
-					'label' => esc_html__( 'Top margin of widget:', 'crimson-rose' ),
-					'sanitize' => 'number',
-				),
 				'margin_bottom' => array(
 					'type'  => 'number',
 					'std'   => 80,
@@ -154,10 +145,6 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Blog_Post' ) ) :
 			$style = array();
 			if ( ! empty( $o['margin_bottom'] ) ) {
 				$style[] = 'margin-bottom:' . $o['margin_bottom'] . 'px;';
-			}
-
-			if ( ! empty( $o['margin_top'] ) ) {
-				$style[] = 'margin-top:' . $o['margin_top'] . 'px;';
 			}
 
 			echo  $before_widget;
