@@ -224,6 +224,12 @@
 			padding-left: 20px;
 		}
 	}
+
+	.bx2-wrapper .bx2-pager.bx2-default-pager a:hover,
+	.bx2-wrapper .bx2-pager.bx2-default-pager a.active,
+	.bx2-wrapper .bx2-pager.bx2-default-pager a:focus {
+		background-color: rgba(0, 0, 0, 0.6);
+	}
 }
 
 @media (max-width : 1100px) {

@@ -3089,6 +3089,12 @@ a:hover, a:active {
   padding-left: 20px;
 }
 
+.content-jetpack-testimonial .bx2-wrapper .bx2-pager.bx2-default-pager a:hover,
+.content-jetpack-testimonial .bx2-wrapper .bx2-pager.bx2-default-pager a.active,
+.content-jetpack-testimonial .bx2-wrapper .bx2-pager.bx2-default-pager a:focus {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
 @media (max-width: 1100px) {
   #master .content-jetpack-testimonial .testimonial-featured-image {
     width: 70px;
