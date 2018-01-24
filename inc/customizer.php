@@ -627,6 +627,19 @@ function crimson_rose_customize_register( $wp_customize ) {
 		'section' => $section_id,
 	) );
 
+	$setting_id = 'shop_hide_title';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $crimson_rose_default[ $setting_id ],
+		'transport' => 'refresh',
+		'sanitize_callback' => 'crimson_rose_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( $setting_id, array(
+		'type' => 'checkbox',
+		'label' => __( 'Hide Shop Title From Main Shop Page', 'crimson-rose' ),
+		'section' => $section_id,
+	) );
+
 	$setting_id = 'shop_hide_breadcrumbs';
 	$wp_customize->add_setting( $setting_id, array(
 		'default' => $crimson_rose_default[ $setting_id ],
@@ -636,7 +649,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'checkbox',
-		'label' => __( 'Hide Shop Breadcrumbs', 'crimson-rose' ),
+		'label' => __( 'Hide Breadcrumbs From Shop Page', 'crimson-rose' ),
 		'section' => $section_id,
 	) );
 

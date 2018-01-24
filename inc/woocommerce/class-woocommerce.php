@@ -249,7 +249,13 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 		}
 
 		public function output_content_wrapper() {
+			global $crimson_rose;
+
 			echo '<div id="primary" class="content-area"><main id="main" class="site-main">';
+
+			if ( is_shop() && ! $crimson_rose['shop_hide_title'] ) {
+				echo '<h1 class="h1-title">' . woocommerce_page_title( false ) . '</h1>';
+			}
 		}
 
 		public function output_content_wrapper_end() {

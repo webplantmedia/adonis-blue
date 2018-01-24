@@ -73,12 +73,10 @@
 		</div><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
-	<?php if ( is_archive() ) : ?>
+	<?php if ( is_category() || is_tag() || is_tax() || is_date() || is_author() ) : ?>
 		<header class="page-header">
 			<div class="site-boundary">
-				<?php
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
-				?>
+				<?php the_archive_title( '<h1 class="page-title">', '</h1>' ); ?>
 			</div><!-- .site-boundary -->
 		</header><!-- .page-header -->
 	<?php elseif ( is_search() ) : ?>
