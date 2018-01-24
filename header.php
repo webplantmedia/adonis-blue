@@ -74,13 +74,13 @@
 	</header><!-- #masthead -->
 
 	<?php if ( is_category() || is_tag() || is_tax() || is_date() || is_author() ) : ?>
-		<header class="page-header">
+		<header class="archive-page-header">
 			<div class="site-boundary">
 				<?php the_archive_title( '<h1 class="page-title">', '</h1>' ); ?>
 			</div><!-- .site-boundary -->
 		</header><!-- .page-header -->
 	<?php elseif ( is_search() ) : ?>
-		<header class="page-header">
+		<header class="archive-page-header">
 			<div class="site-boundary">
 				<h1 class="page-title">
 					<span class="archive-type"><?php echo esc_html__( 'Search Results for:', 'crimson-rose' ); ?></span>

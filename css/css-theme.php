@@ -139,8 +139,8 @@ a:hover {
 	background-color: ' . $crimson_rose['primary_hover_color'] . '; /*id:primary_hover_color*/
 }
 
-.search .page-header,
-.archive .page-header {
+.search .archive-page-header,
+.archive .archive-page-header {
 	background-color: ' . $crimson_rose['archive_background_color'] . '; /*id:archive_background_color*/
 }
 

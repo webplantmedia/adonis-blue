@@ -135,8 +135,8 @@ h1.h1-title,
 }
 
 // Page header
-.search .page-header,
-.archive .page-header {
+.search .archive-page-header,
+.archive .archive-page-header {
 	text-align: center;
 	@include rem('padding-top',40px);
 	@include rem('padding-bottom',40px);
@@ -168,7 +168,7 @@ h1.h1-title,
 	}
 }
 
-#master .archive-title-light .page-header {
+#master .archive-title-light .archive-page-header {
 	.page-title {
 		color: $color__white;
 	}

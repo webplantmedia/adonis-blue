@@ -3955,8 +3955,8 @@ h1.h1-title,
   margin-bottom: 0;
 }
 
-.search .page-header,
-.archive .page-header {
+.search .archive-page-header,
+.archive .archive-page-header {
   text-align: center;
   padding-top: 40px;
   padding-top: 2.5rem;
@@ -3965,23 +3965,23 @@ h1.h1-title,
   background-color: #f7f7f7;
 }
 
-.search .page-header .page-title,
-.archive .page-header .page-title {
+.search .archive-page-header .page-title,
+.archive .archive-page-header .page-title {
   margin: 0;
   text-transform: uppercase;
   font-size: 30px;
   font-size: 1.875rem;
 }
 
-.search .page-header .page-title .archive-title,
-.archive .page-header .page-title .archive-title {
+.search .archive-page-header .page-title .archive-title,
+.archive .archive-page-header .page-title .archive-title {
   display: block;
   padding-bottom: 10px;
   padding-bottom: 0.625rem;
 }
 
-.search .page-header .page-title .archive-type,
-.archive .page-header .page-title .archive-type {
+.search .archive-page-header .page-title .archive-type,
+.archive .archive-page-header .page-title .archive-type {
   font-family: "Mrs Saint Delafield", cursive;
   font-size: 45px;
   font-size: 2.8125rem;
@@ -3992,13 +3992,13 @@ h1.h1-title,
   letter-spacing: normal;
 }
 
-.search .page-header .page-title .archive-type + .archive-title,
-.archive .page-header .page-title .archive-type + .archive-title {
+.search .archive-page-header .page-title .archive-type + .archive-title,
+.archive .archive-page-header .page-title .archive-type + .archive-title {
   margin-top: 10px;
   margin-top: 0.625rem;
 }
 
-#master .archive-title-light .page-header .page-title {
+#master .archive-title-light .archive-page-header .page-title {
   color: #ffffff;
 }
 
