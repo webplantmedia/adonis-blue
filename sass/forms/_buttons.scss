@@ -1,7 +1,7 @@
 button {
 	border: 0 solid;
 	padding: 0;
-	line-height: 1;
+	line-height: 1.2;
 	background: transparent;
 }
 
@@ -22,7 +22,7 @@ button {
 	input[type="reset"],
 	input[type="submit"] {
 		display: inline-block;
-		padding: 16px 24px;
+		padding: 14px 24px;
 		border: none;
 		border-radius: $button__radius;
 		color: #fff;
@@ -30,7 +30,7 @@ button {
 		@include rem('font-size',$font__main-size);
 		/*font-size: 0.75rem;*/
 		font-weight: bold;
-		line-height: 1;
+		line-height: 1.2;
 		text-align: center;
 		text-decoration: none;
 		/* -webkit-transition: color 0.5s ease, background-color 0.5s ease; */
@@ -55,7 +55,7 @@ button {
 		input[type="submit"] {
 			@include rem('font-size',$font__tiny-size);
 			text-transform: uppercase;
-			padding: 13px 30px;
+			padding: 12px 30px;
 		}
 	}
 
@@ -107,14 +107,14 @@ button {
 	}
 
 	.button.alt {
-		padding: 19px 59px;
+		padding: 17px 59px;
 	}
 
 	.grofile-full-link,
 	.flickr-more,
 	#eu-cookie-law input,
 	.button.button-small {
-		padding: 8px 14px;
+		padding: 7px 14px;
 		@include rem('font-size',$font__tiny-size);
 		text-transform: uppercase;
 	}
@@ -145,7 +145,7 @@ button {
 		@include rem('font-size',$font__large-size);
 		// background-size: 100% 100%;
 		// background-repeat: no-repeat;
-		padding: 24px 30px;
+		padding: 22px 30px;
 		cursor: pointer;
 		border-radius: 0;
 	}
@@ -187,7 +187,7 @@ button {
 		@include rem('font-size',$font__large-size);
 		// background-size: 100% 100%;
 		// background-repeat: no-repeat;
-		padding: 24px 30px;
+		padding: 22px 30px;
 		padding-right: 71px;
 		cursor: pointer;
 		border-radius: 0;
