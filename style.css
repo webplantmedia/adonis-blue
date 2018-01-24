@@ -5147,6 +5147,7 @@ h1.h1-title,
   float: left;
   padding-right: 80px;
   padding-right: 5rem;
+  min-height: 1px;
 }
 
 @media screen and (max-width: 1024px) {
@@ -5157,6 +5158,7 @@ h1.h1-title,
     max-width: 300px;
     margin: 0 auto;
     padding: 0;
+    min-height: 0;
   }
   .footer-container {
     margin-right: 0;

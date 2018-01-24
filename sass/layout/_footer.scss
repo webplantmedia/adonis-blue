@@ -101,6 +101,7 @@
 	width: 33.3333%;
 	float: left;
 	@include rem('padding-right',80px);
+	min-height: 1px;
 }
 
 @media screen and (max-width : 1024px) {
@@ -111,6 +112,7 @@
 		max-width: $size__site-sidebar;
 		margin: 0 auto;
 		padding: 0;
+		min-height: 0;
 	}
 	.footer-container {
 		margin-right: 0;

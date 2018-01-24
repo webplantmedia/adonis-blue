@@ -34,25 +34,25 @@ $column = 1;
 
 					<div class="footer-container">
 
-						<?php if ( $footer_1 ) : ?>
-							<div class="footer-column footer-column-<?php echo $column; ?>">
+						<div class="footer-column footer-column-<?php echo $column; ?>">
+							<?php if ( $footer_1 ) : ?>
 								<?php dynamic_sidebar( 'footer-1' ); ?>
-							</div>
-						<?php endif; ?>
+							<?php endif; ?>
+						</div>
 						<?php $column++; ?>
 
-						<?php if ( $footer_2 ) : ?>
-							<div class="footer-column footer-column-<?php echo $column; ?>">
+						<div class="footer-column footer-column-<?php echo $column; ?>">
+							<?php if ( $footer_2 ) : ?>
 								<?php dynamic_sidebar( 'footer-2' ); ?>
-							</div>
-						<?php endif; ?>
+							<?php endif; ?>
+						</div>
 						<?php $column++; ?>
 
-						<?php if ( $footer_3 ) : ?>
-							<div class="footer-column footer-column-<?php echo $column; ?>">
+						<div class="footer-column footer-column-<?php echo $column; ?>">
+							<?php if ( $footer_3 ) : ?>
 								<?php dynamic_sidebar( 'footer-3' ); ?>
-							</div>
-						<?php endif; ?>
+							<?php endif; ?>
+						</div>
 
 					</div>
 
