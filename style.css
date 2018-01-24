@@ -4955,162 +4955,158 @@ h1.h1-title,
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
-.site-footer {
-  min-height: 126px;
-  position: relative;
+.site-info-wrapper {
   background-image: url("img/footer-bg.png");
   background-size: 735px auto;
-  background-position: bottom center;
+  background-position: top center;
   background-repeat: repeat-x;
 }
 
-.footer-background-image-color-cyan .site-footer {
+.footer-background-image-color-cyan .site-info-wrapper {
   background-image: url("img/footer-bg-cyan.png");
 }
 
 @media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
-  .footer-background-image-color-cyan .site-footer {
+  .footer-background-image-color-cyan .site-info-wrapper {
     background-image: url("img/footer-bg-cyan-2x.png");
   }
 }
 
-.footer-background-image-color-azure .site-footer {
+.footer-background-image-color-azure .site-info-wrapper {
   background-image: url("img/footer-bg-azure.png");
 }
 
 @media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
-  .footer-background-image-color-azure .site-footer {
+  .footer-background-image-color-azure .site-info-wrapper {
     background-image: url("img/footer-bg-azure-2x.png");
   }
 }
 
-.footer-background-image-color-blue .site-footer {
+.footer-background-image-color-blue .site-info-wrapper {
   background-image: url("img/footer-bg-blue.png");
 }
 
 @media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
-  .footer-background-image-color-blue .site-footer {
+  .footer-background-image-color-blue .site-info-wrapper {
     background-image: url("img/footer-bg-blue-2x.png");
   }
 }
 
-.footer-background-image-color-violet .site-footer {
+.footer-background-image-color-violet .site-info-wrapper {
   background-image: url("img/footer-bg-violet.png");
 }
 
 @media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
-  .footer-background-image-color-violet .site-footer {
+  .footer-background-image-color-violet .site-info-wrapper {
     background-image: url("img/footer-bg-violet-2x.png");
   }
 }
 
-.footer-background-image-color-magenta .site-footer {
+.footer-background-image-color-magenta .site-info-wrapper {
   background-image: url("img/footer-bg-magenta.png");
 }
 
 @media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
-  .footer-background-image-color-magenta .site-footer {
+  .footer-background-image-color-magenta .site-info-wrapper {
     background-image: url("img/footer-bg-magenta-2x.png");
   }
 }
 
-.footer-background-image-color-rose .site-footer {
+.footer-background-image-color-rose .site-info-wrapper {
   background-image: url("img/footer-bg-rose.png");
 }
 
 @media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
-  .footer-background-image-color-rose .site-footer {
+  .footer-background-image-color-rose .site-info-wrapper {
     background-image: url("img/footer-bg-rose-2x.png");
   }
 }
 
-.footer-background-image-color-red .site-footer {
+.footer-background-image-color-red .site-info-wrapper {
   background-image: url("img/footer-bg-red.png");
 }
 
 @media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
-  .footer-background-image-color-red .site-footer {
+  .footer-background-image-color-red .site-info-wrapper {
     background-image: url("img/footer-bg-red-2x.png");
   }
 }
 
-.footer-background-image-color-orange .site-footer {
+.footer-background-image-color-orange .site-info-wrapper {
   background-image: url("img/footer-bg-orange.png");
 }
 
 @media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
-  .footer-background-image-color-orange .site-footer {
+  .footer-background-image-color-orange .site-info-wrapper {
     background-image: url("img/footer-bg-orange-2x.png");
   }
 }
 
-.footer-background-image-color-yellow .site-footer {
+.footer-background-image-color-yellow .site-info-wrapper {
   background-image: url("img/footer-bg-yellow.png");
 }
 
 @media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
-  .footer-background-image-color-yellow .site-footer {
+  .footer-background-image-color-yellow .site-info-wrapper {
     background-image: url("img/footer-bg-yellow-2x.png");
   }
 }
 
-.footer-background-image-color-chartreuse-green .site-footer {
+.footer-background-image-color-chartreuse-green .site-info-wrapper {
   background-image: url("img/footer-bg-chartreuse-green.png");
 }
 
 @media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
-  .footer-background-image-color-chartreuse-green .site-footer {
+  .footer-background-image-color-chartreuse-green .site-info-wrapper {
     background-image: url("img/footer-bg-chartreuse-green-2x.png");
   }
 }
 
-.footer-background-image-color-dark-green .site-footer {
+.footer-background-image-color-dark-green .site-info-wrapper {
   background-image: url("img/footer-bg-dark-green.png");
 }
 
 @media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
-  .footer-background-image-color-dark-green .site-footer {
+  .footer-background-image-color-dark-green .site-info-wrapper {
     background-image: url("img/footer-bg-dark-green-2x.png");
   }
 }
 
-.footer-background-image-color-spring-green .site-footer {
+.footer-background-image-color-spring-green .site-info-wrapper {
   background-image: url("img/footer-bg-spring-green.png");
 }
 
 @media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
-  .footer-background-image-color-spring-green .site-footer {
+  .footer-background-image-color-spring-green .site-info-wrapper {
     background-image: url("img/footer-bg-spring-green-2x.png");
   }
 }
 
-.footer-background-image-color-soft-pink .site-footer {
+.footer-background-image-color-soft-pink .site-info-wrapper {
   background-image: url("img/footer-bg-soft-pink.png");
 }
 
 @media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
-  .footer-background-image-color-soft-pink .site-footer {
+  .footer-background-image-color-soft-pink .site-info-wrapper {
     background-image: url("img/footer-bg-soft-pink-2x.png");
   }
 }
 
-.footer-background-image-color-gray .site-footer {
+.footer-background-image-color-gray .site-info-wrapper {
   background-image: url("img/footer-bg-gray.png");
 }
 
 @media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
-  .footer-background-image-color-gray .site-footer {
+  .footer-background-image-color-gray .site-info-wrapper {
     background-image: url("img/footer-bg-gray-2x.png");
   }
 }
 
 .site-info-wrapper {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  margin-top: 126px;
   text-align: center;
-  padding-bottom: 0.5em;
+  padding-top: 18px;
+  padding-bottom: 8px;
   font-size: 15px;
   font-size: 0.9375rem;
   letter-spacing: .15em;
@@ -5129,6 +5125,10 @@ h1.h1-title,
   color: #959595;
 }
 
+.has-footer-widgets .site-info-wrapper {
+  margin-top: 56px;
+}
+
 .footer-widget-area {
   overflow: hidden;
 }
@@ -5136,8 +5136,6 @@ h1.h1-title,
 .footer-container {
   padding-top: 70px;
   padding-top: 4.375rem;
-  padding-bottom: 106px;
-  padding-bottom: 6.625rem;
   margin-right: -80px;
   margin-right: -5rem;
 }

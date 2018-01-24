@@ -1,75 +1,71 @@
-.site-footer {
-	min-height: 126px;
-	position: relative;
+.site-info-wrapper {
 	background-image: url("img/footer-bg.png");
 	background-size: 735px auto;
-	background-position: bottom center;
+	background-position: top center;
 	background-repeat: repeat-x;
 }
 
-.footer-background-image-color-cyan .site-footer {
+.footer-background-image-color-cyan .site-info-wrapper {
 	@include background-2x('img/footer-bg-cyan','png');
 }
 
-.footer-background-image-color-azure .site-footer {
+.footer-background-image-color-azure .site-info-wrapper {
 	@include background-2x('img/footer-bg-azure','png');
 }
 
-.footer-background-image-color-blue .site-footer {
+.footer-background-image-color-blue .site-info-wrapper {
 	@include background-2x('img/footer-bg-blue','png');
 }
 
-.footer-background-image-color-violet .site-footer {
+.footer-background-image-color-violet .site-info-wrapper {
 	@include background-2x('img/footer-bg-violet','png');
 }
 
-.footer-background-image-color-magenta .site-footer {
+.footer-background-image-color-magenta .site-info-wrapper {
 	@include background-2x('img/footer-bg-magenta','png');
 }
 
-.footer-background-image-color-rose .site-footer {
+.footer-background-image-color-rose .site-info-wrapper {
 	@include background-2x('img/footer-bg-rose','png');
 }
 
-.footer-background-image-color-red .site-footer {
+.footer-background-image-color-red .site-info-wrapper {
 	@include background-2x('img/footer-bg-red','png');
 }
 
-.footer-background-image-color-orange .site-footer {
+.footer-background-image-color-orange .site-info-wrapper {
 	@include background-2x('img/footer-bg-orange','png');
 }
 
-.footer-background-image-color-yellow .site-footer {
+.footer-background-image-color-yellow .site-info-wrapper {
 	@include background-2x('img/footer-bg-yellow','png');
 }
 
-.footer-background-image-color-chartreuse-green .site-footer {
+.footer-background-image-color-chartreuse-green .site-info-wrapper {
 	@include background-2x('img/footer-bg-chartreuse-green','png');
 }
 
-.footer-background-image-color-dark-green .site-footer {
+.footer-background-image-color-dark-green .site-info-wrapper {
 	@include background-2x('img/footer-bg-dark-green','png');
 }
 
-.footer-background-image-color-spring-green .site-footer {
+.footer-background-image-color-spring-green .site-info-wrapper {
 	@include background-2x('img/footer-bg-spring-green','png');
 }
 
-.footer-background-image-color-soft-pink .site-footer {
+.footer-background-image-color-soft-pink .site-info-wrapper {
 	@include background-2x('img/footer-bg-soft-pink','png');
 }
 
-.footer-background-image-color-gray .site-footer {
+.footer-background-image-color-gray .site-info-wrapper {
 	@include background-2x('img/footer-bg-gray','png');
 }
 
 .site-info-wrapper {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	right: 0;
+	margin-top: 126px;
 	text-align: center;
-	padding-bottom: 0.5em;
+	padding-top: 18px;
+	padding-bottom: 8px;
 	@include rem('font-size',$font__small-size);
 	letter-spacing: .15em;
 	color: $color__text;
@@ -87,13 +83,18 @@
 	}
 }
 
+.has-footer-widgets {
+	.site-info-wrapper {
+		margin-top: 56px;
+	}
+}
+
 .footer-widget-area {
 	overflow: hidden;
 }
 
 .footer-container {
 	@include rem('padding-top',70px);
-	@include rem('padding-bottom',106px);
 	@include rem('margin-right',-80px);
 }
 

@@ -918,35 +918,6 @@ function crimson_rose_customize_register( $wp_customize ) {
 	) );
 
 	/**
-	 * Footer.
-	 */
-	$section_id = 'theme_options_footer';
-	$wp_customize->add_section( $section_id, array(
-		'title'    => __( 'Footer', 'crimson-rose' ),
-		'panel'    => 'theme_options',
-	) );
-
-	$setting_id = 'footer_image_bottom_offset';
-	$wp_customize->add_setting( $setting_id, array(
-		'default' => $crimson_rose_default[ $setting_id ],
-		'transport' => 'postMessage',
-		'sanitize_callback' => 'absint',
-	) );
-
-	$wp_customize->add_control( $setting_id, array(
-		'type' => 'range',
-		'label' => __( 'Footer Image Bottom Offset', 'crimson-rose' ),
-		'description' => __( 'This changes the position of your footer background so you can center it perfectly with your footer text.', 'crimson-rose' ),
-		'section' => $section_id,
-		'input_attrs' => array(
-			'min' => 0,
-			'max' => 85,
-			'step' => 1,
-			'style' => 'width:100%;',
-		),
-	) );
-
-	/**
 	 * 404 Error Page
 	 */
 	$section_id = 'theme_options_404';
