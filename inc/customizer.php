@@ -15,7 +15,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+	// $wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
 	if ( isset( $wp_customize->selective_refresh ) ) {
 		$wp_customize->selective_refresh->add_partial( 'blogname', array(
@@ -30,6 +30,10 @@ function crimson_rose_customize_register( $wp_customize ) {
 			'selector'        => '.site-logo',
 			'render_callback' => 'crimson_rose_customize_partial_custom_logo',
 		) );
+		/*$wp_customize->selective_refresh->add_partial( 'site_info', array(
+			'selector'        => '.site-info',
+			'render_callback' => 'crimson_rose_site_info',
+		) );*/
 	}
 
 	/**
@@ -406,7 +410,19 @@ function crimson_rose_customize_register( $wp_customize ) {
 		),
 	) );
 
+	$setting_id = 'site_info';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $crimson_rose_default[ $setting_id ],
+		'transport' => 'postMessage',
+		'sanitize_callback' => 'crimson_rose_sanitize_html',
+	) );
 
+	$wp_customize->add_control( $setting_id, array(
+		'type' => 'text',
+		'label' => __( 'Site Info', 'crimson-rose' ),
+		'description' => __( 'Allowed HTML tags are <code>span</code>, <code>i</code>, <code>br</code>, <code>p</code>, <code>h1-h6</code>, and <code>img</code> with the following attributes: id; class; and style. The <code>img</code> tag also includes the attributes: src; height; width; alt; and title.', 'crimson-rose' ),
+		'section' => $section_id,
+	) );
 
 	/**
 	 * Blog
@@ -1039,4 +1055,11 @@ function crimson_rose_sanitize_checkbox( $input ) {
 	}
 
 	return 0;
+}
+
+function crimson_rose_sanitize_html( $input ) {
+	$allowed_tags = crimson_rose_allowed_html();
+	$input = wp_kses( $input, $allowed_tags );
+
+	return $input;
 }

@@ -46,9 +46,14 @@
 			$( '.site-description' ).text( to );
 		} );
 	} );
+	wp.customize( 'site_info', function( value ) {
+		value.bind( function( to ) {
+			$( '.site-info' ).html( to );
+		} );
+	} );
 
 	// Header text color.
-	wp.customize( 'header_textcolor', function( value ) {
+	/*wp.customize( 'header_textcolor', function( value ) {
 		value.bind( function( to ) {
 			if ( 'blank' === to ) {
 				$( '.site-title, .site-description' ).css( {
@@ -65,7 +70,7 @@
 				} );
 			}
 		} );
-	} );
+	} );*/
 
 	// Colors
 	wp.customize( 'link_color', function( value ) {
