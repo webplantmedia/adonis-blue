@@ -431,6 +431,7 @@ function crimson_rose_allowed_html() {
 	$expandedtags['span'] = array();
 	$expandedtags['p'] = array();
 	$expandedtags['br'] = array();
+	$expandedtags['i'] = array();
 
 	// H1 - H6.
 	$expandedtags['h1'] = array();
