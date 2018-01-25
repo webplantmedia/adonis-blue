@@ -3877,7 +3877,7 @@ a:hover, a:active {
   margin-bottom: 4.375rem;
 }
 
-#master .site-main > *:last-child {
+#master body:not(.woocommerce) .site-main > *:last-child {
   border-bottom-width: 0;
 }
 

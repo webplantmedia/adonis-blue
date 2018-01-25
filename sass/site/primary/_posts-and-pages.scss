@@ -51,9 +51,9 @@
 	@include rem('margin-bottom',70px);
 }
 
-#master .site-main {
+#master body:not(.woocommerce) .site-main {
 	> *:last-child {
-		border-bottom-width: 0;
+		border-bottom-width: 0; // need to override bottom border for empty product pages in woocommerce.
 	}
 }
 
