@@ -207,8 +207,18 @@ function crimson_rose_scripts() {
 	global $crimson_rose;
 
 	// Add google font
-	$google_request = str_replace( ',', '%2C', crimson_rose_fonts_url() );
-	wp_enqueue_style( 'crimson-rose-google-font-request', $google_request, array(), null );
+	// $google_request = str_replace( ',', '%2C', crimson_rose_fonts_url() );
+	// wp_enqueue_style( 'crimson-rose-google-font-request', $google_request, array(), null );
+
+	if ( ! $crimson_rose['disable_body_font'] ) {
+		// Add custom fonts, used in the main stylesheet.
+		wp_enqueue_style( 'crimson-rose-body-font', get_parent_theme_file_uri() . '/fonts/body-font.css', array(), null );
+	}
+	
+	if ( ! $crimson_rose['disable_accent_font'] ) {
+		// Add custom fonts, used in the main stylesheet.
+		wp_enqueue_style( 'crimson-rose-accent-font', get_parent_theme_file_uri() . '/fonts/accent-font.css', array(), null );
+	}
 	
 	// Add genericons
 	wp_enqueue_style( 'genericons-neue', get_parent_theme_file_uri() . '/fonts/genericons-neue/genericons-neue.css', array(), CRIMSON_ROSE_VERSION );
@@ -249,31 +259,7 @@ add_action( 'wp_enqueue_scripts', 'crimson_rose_scripts' );
  * Register custom fonts.
  */
 function crimson_rose_fonts_url() {
-	global $crimson_rose;
-
 	$fonts_url = '';
-
-	// default font settings
-	$disable_body_font = false;
-	$disable_accent_font = false;
-	$body_font_name = 'Lato';
-	$accent_font_name = 'Sacramento';
-
-	if ( isset( $crimson_rose['body_font_name'] ) && ! empty( $crimson_rose['body_font_name'] ) ) {
-		$body_font_name = str_replace( ' ', '+', sanitize_text_field( $crimson_rose['body_font_name'] ) );
-	}
-
-	if ( isset( $crimson_rose['accent_font_name'] ) && ! empty( $crimson_rose['accent_font_name'] ) ) {
-		$accent_font_name = str_replace( ' ', '+', sanitize_text_field( $crimson_rose['accent_font_name'] ) );
-	}
-
-	if ( isset( $crimson_rose['disable_body_font'] ) ) {
-		$disable_body_font = $crimson_rose['disable_body_font'];
-	}
-
-	if ( isset( $crimson_rose['disable_accent_font'] ) ) {
-		$disable_body_font = $crimson_rose['disable_accent_font'];
-	}
 
 	/*
 	 * Translators: If there are characters in your language that are not
@@ -281,17 +267,17 @@ function crimson_rose_fonts_url() {
 	 * into your own language.
 	 */
 	$body = _x( 'on', 'Body font: on or off', 'crimson-rose' );
-	$accent = _x( 'on', 'Accent font: on or off', 'crimson-rose' );
+	// $accent = _x( 'on', 'Accent font: on or off', 'crimson-rose' );
 
 	$font_families = array();
 
-	if ( 'off' !== $body || ! $disable_body_font ) {
-		$font_families[] = $body_font_name . ':400,400i,700,700i';
+	if ( 'off' !== $body ) {
+		$font_families[] = 'Lato:400,400i,700,700i';
 	}
 
-	if ( 'off' !== $accent || ! $disable_accent_font ) {
-		$font_families[] = $accent_font_name;
-	}
+	// if ( 'off' !== $accent ) {
+		// $font_families[] = 'Sacramento';
+	// }
 		
 	if ( ! empty( $font_families ) ) {
 		$query_args = array(
