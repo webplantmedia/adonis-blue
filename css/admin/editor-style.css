@@ -251,7 +251,7 @@ ol li {
 ol li:before {
 	content: counter(item);
 	counter-increment: item;
-	font-weight: 800;
+	font-weight: 700;
 	left: -1.5em;
 	position: absolute;
 }
@@ -540,7 +540,7 @@ object {
 .wp-playlist-current-item .wp-playlist-item-artist {
 	font-size: 10px;
 	font-size: 0.625rem;
-	font-weight: 800;
+	font-weight: 700;
 	letter-spacing: 0.1818em;
 	text-transform: uppercase;
 }

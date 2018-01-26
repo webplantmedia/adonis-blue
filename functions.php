@@ -55,7 +55,7 @@ if ( ! function_exists( 'crimson_rose_setup' ) ) :
 			'social' => __( 'Social Menu', 'crimson-rose' ),
 		) );
 
-		$google_request = str_replace( ',', '%2C', crimson_rose_fonts_url() );
+		$google_request = str_replace( ',', '%2C', crimson_rose_fonts_url( false, true ) );
 
 		// This theme styles the visual editor with editor-style.css to match the theme style.
 		add_editor_style( array( 'css/admin/editor-style.css', $google_request ) );
@@ -206,15 +206,9 @@ add_action( 'wp_enqueue_scripts', 'crimson_rose_customizer_css_wrap', 20 );
 function crimson_rose_scripts() {
 	global $crimson_rose;
 
-	if ( ! $crimson_rose['disable_body_font'] ) {
-		// Add custom fonts, used in the main stylesheet.
-		wp_enqueue_style( 'crimson-rose-body-font', get_parent_theme_file_uri() . '/fonts/body.css', array(), null );
-	}
-	
-	if ( ! $crimson_rose['disable_accent_font'] ) {
-		// Add custom fonts, used in the main stylesheet.
-		wp_enqueue_style( 'crimson-rose-accent-font', get_parent_theme_file_uri() . '/fonts/accent.css', array(), null );
-	}
+	// Add google font
+	$google_request = str_replace( ',', '%2C', crimson_rose_fonts_url( $crimson_rose['disable_body_font'], $crimson_rose['disable_accent_font'] ) );
+	wp_enqueue_style( 'crimson-rose-google-font-request', $google_request, array(), null );
 	
 	// Add genericons
 	wp_enqueue_style( 'genericons-neue', get_parent_theme_file_uri() . '/fonts/genericons-neue/genericons-neue.css', array(), CRIMSON_ROSE_VERSION );
@@ -254,20 +248,31 @@ add_action( 'wp_enqueue_scripts', 'crimson_rose_scripts' );
 /**
  * Register custom fonts.
  */
-function crimson_rose_fonts_url() {
+function crimson_rose_fonts_url( $disable_body_font, $disable_accent_font ) {
 	$fonts_url = '';
 
 	/*
 	 * Translators: If there are characters in your language that are not
-	 * supported by Libre Franklin, translate this to 'off'. Do not translate
+	 * supported, translate this to 'off'. Do not translate
 	 * into your own language.
 	 */
-	$libre_franklin = _x( 'on', 'Lato font: on or off', 'crimson-rose' );
+	$lato = _x( 'on', 'Lato font: on or off', 'crimson-rose' );
+	$sacramento = _x( 'on', 'Sacramento font: on or off', 'crimson-rose' );
 
-	if ( 'off' !== $libre_franklin ) {
+	if ( 'off' !== $lato ) {
 		$font_families = array();
 
-		$font_families[] = 'Lato:100,100i,300,300i,300,300i,400,400i,700,700i,900,900i';
+		if ( ! $disable_body_font ) {
+			$font_families[] = 'Lato:400,400i,700,700i';
+		}
+
+		if ( ! $disable_accent_font ) {
+			$font_families[] = 'Sacramento';
+		}
+		
+		if ( empty( $font_families ) ) {
+			return '';
+		}
 
 		$query_args = array(
 			'family' => urlencode( implode( '|', $font_families ) ),
