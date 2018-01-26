@@ -89,6 +89,7 @@
 	.select2-choice {
 		height: 53px;
 		padding: 12px 46px 12px 12px;
+		line-height: 1.3; // max line height before safari starts to offset
 		border: 2px solid $color__form-border;
 		-webkit-border-radius: 0;
 		-moz-border-radius: 0;
