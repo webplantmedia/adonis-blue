@@ -55,7 +55,7 @@ if ( ! function_exists( 'crimson_rose_setup' ) ) :
 			'social' => __( 'Social Menu', 'crimson-rose' ),
 		) );
 
-		$google_request = str_replace( ',', '%2C', crimson_rose_fonts_url( false, true ) );
+		$google_request = str_replace( ',', '%2C', crimson_rose_fonts_url() );
 
 		// This theme styles the visual editor with editor-style.css to match the theme style.
 		add_editor_style( array( 'css/admin/editor-style.css', $google_request ) );
@@ -207,7 +207,7 @@ function crimson_rose_scripts() {
 	global $crimson_rose;
 
 	// Add google font
-	$google_request = str_replace( ',', '%2C', crimson_rose_fonts_url( $crimson_rose['disable_body_font'], $crimson_rose['disable_accent_font'] ) );
+	$google_request = str_replace( ',', '%2C', crimson_rose_fonts_url() );
 	wp_enqueue_style( 'crimson-rose-google-font-request', $google_request, array(), null );
 	
 	// Add genericons
@@ -248,36 +248,58 @@ add_action( 'wp_enqueue_scripts', 'crimson_rose_scripts' );
 /**
  * Register custom fonts.
  */
-function crimson_rose_fonts_url( $disable_body_font, $disable_accent_font ) {
+function crimson_rose_fonts_url() {
+	global $crimson_rose;
+
 	$fonts_url = '';
+
+	// default font settings
+	$disable_body_font = false;
+	$disable_accent_font = false;
+	$body_font_name = 'Lato';
+	$accent_font_name = 'Sacramento';
+
+	if ( isset( $crimson_rose['body_font_name'] ) && ! empty( $crimson_rose['body_font_name'] ) ) {
+		$body_font_name = str_replace( ' ', '+', sanitize_text_field( $crimson_rose['body_font_name'] ) );
+	}
+
+	if ( isset( $crimson_rose['accent_font_name'] ) && ! empty( $crimson_rose['accent_font_name'] ) ) {
+		$accent_font_name = str_replace( ' ', '+', sanitize_text_field( $crimson_rose['accent_font_name'] ) );
+	}
+
+	if ( isset( $crimson_rose['disable_body_font'] ) ) {
+		$disable_body_font = $crimson_rose['disable_body_font'];
+	}
+
+	if ( isset( $crimson_rose['disable_accent_font'] ) ) {
+		$disable_body_font = $crimson_rose['disable_accent_font'];
+	}
 
 	/*
 	 * Translators: If there are characters in your language that are not
 	 * supported, translate this to 'off'. Do not translate
 	 * into your own language.
 	 */
-	$lato = _x( 'on', 'Lato font: on or off', 'crimson-rose' );
-	$sacramento = _x( 'on', 'Sacramento font: on or off', 'crimson-rose' );
+	$body = _x( 'on', 'Body font: on or off', 'crimson-rose' );
+	$accent = _x( 'on', 'Accent font: on or off', 'crimson-rose' );
 
-	if ( 'off' !== $lato ) {
-		$font_families = array();
+	$font_families = array();
 
-		if ( ! $disable_body_font ) {
-			$font_families[] = 'Lato:400,400i,700,700i';
-		}
+	if ( 'off' !== $body || ! $disable_body_font ) {
+		$font_families[] = $body_font_name . ':400,400i,700,700i';
+	}
 
-		if ( ! $disable_accent_font ) {
-			$font_families[] = 'Sacramento';
-		}
+	if ( 'off' !== $accent || ! $disable_accent_font ) {
+		$font_families[] = $accent_font_name;
+	}
 		
-		if ( empty( $font_families ) ) {
-			return '';
-		}
-
+	if ( ! empty( $font_families ) ) {
 		$query_args = array(
-			'family' => urlencode( implode( '|', $font_families ) ),
-			'subset' => urlencode( 'latin,latin-ext' ),
+			'family' => implode( '|', $font_families ),
+			'subset' => 'latin,latin-ext',
 		);
+		
+		$query_args = apply_filters( 'crimson_rose_google_fonts_query_args', $query_args );
 
 		$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
 	}
