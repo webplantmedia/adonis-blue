@@ -55,10 +55,8 @@ if ( ! function_exists( 'crimson_rose_setup' ) ) :
 			'social' => __( 'Social Menu', 'crimson-rose' ),
 		) );
 
-		$google_request = str_replace( ',', '%2C', crimson_rose_fonts_url() );
-
 		// This theme styles the visual editor with editor-style.css to match the theme style.
-		add_editor_style( array( 'css/admin/editor-style.css', $google_request ) );
+		add_editor_style( array( 'css/admin/editor-style.css', get_parent_theme_file_uri() . '/fonts/body-font.css' ) );
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
@@ -259,6 +257,8 @@ add_action( 'wp_enqueue_scripts', 'crimson_rose_scripts' );
  * Register custom fonts.
  */
 function crimson_rose_fonts_url() {
+	// $google_request = str_replace( ',', '%2C', crimson_rose_fonts_url() );
+
 	$fonts_url = '';
 
 	/*
@@ -306,7 +306,7 @@ function crimson_rose_resource_hints( $urls, $relation_type ) {
 
 	return $urls;
 }
-add_filter( 'wp_resource_hints', 'crimson_rose_resource_hints', 10, 2 );
+// add_filter( 'wp_resource_hints', 'crimson_rose_resource_hints', 10, 2 );
 
 function crimson_rose_show_full_post() {
 	global $paged;
