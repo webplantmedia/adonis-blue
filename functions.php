@@ -289,7 +289,7 @@ function crimson_rose_fonts_url( $disable_body_font, $disable_accent_font ) {
  * Add preconnect for Google Fonts.
  */
 function crimson_rose_resource_hints( $urls, $relation_type ) {
-	if ( wp_style_is( 'crimson-rose-fonts', 'queue' ) && 'preconnect' === $relation_type ) {
+	if ( wp_style_is( 'crimson-rose-google-font-request', 'queue' ) && 'preconnect' === $relation_type ) {
 		$urls[] = array(
 			'href' => 'https://fonts.gstatic.com',
 			'crossorigin',
