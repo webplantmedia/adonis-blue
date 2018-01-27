@@ -55,6 +55,9 @@ if ( ! function_exists( 'crimson_rose_setup' ) ) :
 			'social' => __( 'Social Menu', 'crimson-rose' ),
 		) );
 
+		// $google_request = str_replace( ',', '%2C', crimson_rose_fonts_url() );
+		// add_editor_style( array( 'css/admin/editor-style.css', $google_request ) );
+
 		// This theme styles the visual editor with editor-style.css to match the theme style.
 		add_editor_style( array( 'css/admin/editor-style.css', get_parent_theme_file_uri() . '/fonts/body-font.css' ) );
 
@@ -210,12 +213,12 @@ function crimson_rose_scripts() {
 
 	if ( ! $crimson_rose['disable_body_font'] ) {
 		// Add custom fonts, used in the main stylesheet.
-		wp_enqueue_style( 'crimson-rose-body-font', get_parent_theme_file_uri() . '/fonts/body-font.css', array(), null );
+		wp_enqueue_style( 'crimson-rose-body-font', get_parent_theme_file_uri() . '/fonts/body-font.css', array(), CRIMSON_ROSE_VERSION );
 	}
 	
 	if ( ! $crimson_rose['disable_accent_font'] ) {
 		// Add custom fonts, used in the main stylesheet.
-		wp_enqueue_style( 'crimson-rose-accent-font', get_parent_theme_file_uri() . '/fonts/accent-font.css', array(), null );
+		wp_enqueue_style( 'crimson-rose-accent-font', get_parent_theme_file_uri() . '/fonts/accent-font.css', array(), CRIMSON_ROSE_VERSION );
 	}
 	
 	// Add genericons
@@ -257,8 +260,6 @@ add_action( 'wp_enqueue_scripts', 'crimson_rose_scripts' );
  * Register custom fonts.
  */
 function crimson_rose_fonts_url() {
-	// $google_request = str_replace( ',', '%2C', crimson_rose_fonts_url() );
-
 	$fonts_url = '';
 
 	/*
@@ -267,7 +268,7 @@ function crimson_rose_fonts_url() {
 	 * into your own language.
 	 */
 	$body = _x( 'on', 'Body font: on or off', 'crimson-rose' );
-	// $accent = _x( 'on', 'Accent font: on or off', 'crimson-rose' );
+	$accent = _x( 'on', 'Accent font: on or off', 'crimson-rose' );
 
 	$font_families = array();
 
@@ -275,9 +276,9 @@ function crimson_rose_fonts_url() {
 		$font_families[] = 'Lato:400,400i,700,700i';
 	}
 
-	// if ( 'off' !== $accent ) {
-		// $font_families[] = 'Sacramento';
-	// }
+	if ( 'off' !== $accent ) {
+		$font_families[] = 'Mrs+Saint+Delafield';
+	}
 		
 	if ( ! empty( $font_families ) ) {
 		$query_args = array(
