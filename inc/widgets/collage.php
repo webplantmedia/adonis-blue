@@ -352,7 +352,20 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 							pause: sliderpause,
 							autoHover: sliderautohover,
 							controls: slidercontrols,
-							pager: sliderpager
+							pager: sliderpager,
+							onSliderResize: function() {
+								if ( sliderauto ) {
+									var $el = $(this);
+									var $e = $el.find('.testimonial-entry-content-wrapper').first();
+									var check = $e.css('position');
+									if ( 'static' == check ) {
+										$slider.stopAuto();
+									}
+									else {
+										$slider.startAuto();
+									}
+								}
+							}
 						});
 					});
 				} )( jQuery );

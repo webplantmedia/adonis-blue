@@ -350,8 +350,7 @@ class Crimson_Rose_Content_Widget_Jetpack_Testimonials extends Crimson_Rose_Widg
 									sliderpager = sliderpager == 1 ? true : false;
 
 									$slider.bxSlider({
-										adaptiveHeight: true,
-										auto: false,
+										auto: sliderauto,
 										nextText: '<i class="genericons-neue genericons-neue-expand genericons-neue-rotate-270"></i>',
 										prevText: '<i class="genericons-neue genericons-neue-expand genericons-neue-rotate-90"></i>',
 										mode: slidermode,
@@ -359,19 +358,6 @@ class Crimson_Rose_Content_Widget_Jetpack_Testimonials extends Crimson_Rose_Widg
 										autoHover: sliderautohover,
 										controls: slidercontrols,
 										pager: sliderpager,
-										onSliderLoad: function() {
-											if ( sliderauto ) {
-												var $el = $(this);
-												var $e = $el.find('.testimonial-entry-content-wrapper').first();
-												var check = $e.css('position');
-												if ( 'static' == check ) {
-													$slider.stopAuto();
-												}
-												else {
-													$slider.startAuto();
-												}
-											}
-										},
 										onSliderResize: function() {
 											if ( sliderauto ) {
 												var $el = $(this);
