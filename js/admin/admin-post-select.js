@@ -20,7 +20,7 @@
 					var type = $this.data('autocompleteType');
 					var lookup = $this.data('autocompleteLookup');
 					var taxonomy = $this.data('autocompleteTaxonomy');
-					var post_type = 'post';
+					var post_type = $this.data('autocompletePostType');
 					var options = '';
 
 					if ( 'multi' == type ) {

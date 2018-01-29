@@ -660,10 +660,14 @@ class Crimson_Rose_Widget extends WP_Widget {
 			break;
 
 			case 'post':
+				$post_type = 'post';
+				if ( isset( $setting['post_type'] ) && ! empty( $setting['post_type'] ) && post_type_exists( $setting['post_type'] ) ) {
+					$post_type = $setting['post_type'];
+				}
 				?>
 				<p>
 					<label for="<?php echo $field_id; ?>"><?php echo esc_html( $setting['label'] ); ?></label>
-					<input class="widefat post-autocomplete-select" id="<?php echo esc_attr( $field_id ); ?>" data-autocomplete-type="multi" data-autocomplete-taxonomy="" data-autocomplete-lookup="post" name="<?php echo esc_attr( $field_name ); ?>" type="text" value="<?php echo esc_attr( $value ); ?>" />
+					<input class="widefat post-autocomplete-select" id="<?php echo esc_attr( $field_id ); ?>" data-autocomplete-type="multi" data-autocomplete-taxonomy="" data-autocomplete-lookup="post" data-autocomplete-post-type="<?php echo esc_attr( $post_type ); ?>" name="<?php echo esc_attr( $field_name ); ?>" type="text" value="<?php echo esc_attr( $value ); ?>" />
 					<?php if ( isset( $setting['description'] ) ) : ?>
 						<span class="description"><?php echo esc_html( $setting['description'] ); ?></span>
 					<?php endif; ?>

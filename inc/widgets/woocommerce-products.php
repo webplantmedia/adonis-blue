@@ -56,6 +56,13 @@ class Crimson_Rose_Content_Widget_WooCommerce_Products extends Crimson_Rose_Widg
 				),
 				'sanitize' => 'text',
 			),
+			'post_ids' => array(
+				'type'  => 'post',
+				'post_type' => 'product',
+				'std'   => '',
+				'label' => esc_html__( 'Post ID\'s:', 'crimson-rose' ),
+				'sanitize' => 'post_ids',
+			),
 			'skus' => array(
 				'type'  => 'text',
 				'std'   => '',
@@ -198,6 +205,9 @@ class Crimson_Rose_Content_Widget_WooCommerce_Products extends Crimson_Rose_Widg
 		}
 		if ( ! empty( $o['orderby'] ) ) {
 			$attr[] = 'orderby="' . $o['orderby'] . '"';
+		}
+		if ( ! empty( $o['post_ids'] ) ) {
+			$attr[] = 'ids="' . $o['post_ids'] . '"';
 		}
 		if ( ! empty( $o['skus'] ) ) {
 			$attr[] = 'skus="' . $o['skus'] . '"';
