@@ -41,7 +41,7 @@ button,
 input,
 select,
 textarea {
-	font-family: 'Crimson Rose Body Font', sans-serif;
+	font-family: 'Crimson Rose Body Font', 'Arial', sans-serif;
 	font-size: 18px;
 	font-size: 1rem;
 	font-weight: 400;
