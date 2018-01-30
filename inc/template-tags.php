@@ -147,6 +147,37 @@ if ( ! function_exists( 'crimson_rose_mobile_menu_button' ) ) :
 	}
 endif;
 
+if ( ! function_exists( 'crimson_rose_get_the_attachment' ) ) :
+	function crimson_rose_get_the_attachment() {
+		if ( wp_attachment_is( 'video' ) ) {
+			$meta = wp_get_attachment_metadata( get_the_ID() );
+			$atts = array( 'src' => wp_get_attachment_url() );
+			if ( ! empty( $meta['width'] ) && ! empty( $meta['height'] ) ) {
+				$atts['width'] = (int) $meta['width'];
+				$atts['height'] = (int) $meta['height'];
+			}
+			if ( has_post_thumbnail() ) {
+				$atts['poster'] = wp_get_attachment_url( get_post_thumbnail_id() );
+			}
+			$p = wp_video_shortcode( $atts );
+		} elseif ( wp_attachment_is( 'audio' ) ) {
+			$p = wp_audio_shortcode( array( 'src' => wp_get_attachment_url() ) );
+		} else {
+			// show the medium sized image representation of the attachment if available, and link to the raw file
+			$image_size = apply_filters( 'crimson_rose_attachment_size', array( 1600, 1600 ) ); 
+			$p = wp_get_attachment_link(0, $image_size, false);
+		}
+
+		return $p;
+	}
+endif;
+
+if ( ! function_exists( 'crimson_rose_the_attachment' ) ) :
+	function crimson_rose_the_attachment() {
+		echo crimson_rose_get_the_attachment();
+	}
+endif;
+
 if ( ! function_exists( 'crimson_rose_featured_post_navigation' ) ) :
 	function crimson_rose_featured_post_navigation() {
 		global $crimson_rose;
