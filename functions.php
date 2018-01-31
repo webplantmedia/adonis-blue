@@ -388,6 +388,14 @@ function crimson_rose_display_sidebar() {
 		return $crimson_rose['display_sidebar_archive'];
 	}
 	
+	if ( is_attachment() ) {
+		if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+			return false;
+		}
+
+		return $crimson_rose['display_sidebar_attachment'];
+	}
+	
 	return false;
 }
 
