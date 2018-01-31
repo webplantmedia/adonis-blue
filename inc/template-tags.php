@@ -164,7 +164,7 @@ if ( ! function_exists( 'crimson_rose_get_the_attachment' ) ) :
 			$p = wp_audio_shortcode( array( 'src' => wp_get_attachment_url() ) );
 		} else {
 			// show the medium sized image representation of the attachment if available, and link to the raw file
-			$image_size = apply_filters( 'crimson_rose_attachment_size', array( 1600, 1600 ) ); 
+			$image_size = apply_filters( 'crimson_rose_attachment_size', 'large' ); 
 			$p = wp_get_attachment_link(0, $image_size, false);
 		}
 
@@ -213,6 +213,40 @@ if ( ! function_exists( 'crimson_rose_featured_post_navigation' ) ) :
 
 		the_post_navigation( array(
 			'next_text' => $next_text,
+			'prev_text' => $prev_text,
+		) );
+	}
+endif;
+
+if ( ! function_exists( 'crimson_rose_parent_post_navigation' ) ) :
+	function crimson_rose_parent_post_navigation() {
+		global $crimson_rose;
+
+		$post = get_post();
+
+		// remove filter to keep featured images on post navigation.
+		if ( function_exists( 'jetpack_featured_images_remove_post_thumbnail' ) ) {
+			remove_filter( 'get_post_metadata', 'jetpack_featured_images_remove_post_thumbnail', true, 4 );
+		}
+
+		$prev_text = '';
+
+		// Previous/next post navigation.
+		$parent_post_id = wp_get_post_parent_id( $post->ID );
+
+		if ( ! $parent_post_id ) {
+			return;
+		}
+
+		if ( $parent_post = get_post( $parent_post_id ) ) {
+			$prev_text .= get_the_post_thumbnail($parent_post->ID,'thumbnail');
+		}
+
+		$prev_text .= '<span class="meta-nav" aria-hidden="true">' . __( 'Post', 'crimson-rose' ) . '</span> ' .
+			'<span class="screen-reader-text">' . __( 'Parent post:', 'crimson-rose' ) . '</span> ' .
+			'<span class="post-title">%title</span>';
+
+		the_post_navigation( array(
 			'prev_text' => $prev_text,
 		) );
 	}
