@@ -1110,6 +1110,9 @@ button {
   padding: 17px 59px;
 }
 
+#master .addresses .edit,
+#master .woocommerce-MyAccount-downloads-file.button,
+#master .woocommerce-MyAccount-orders .woocommerce-button,
 #master .grofile-full-link,
 #master .flickr-more,
 #master #eu-cookie-law input,
