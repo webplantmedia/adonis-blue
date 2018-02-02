@@ -250,6 +250,10 @@ function crimson_rose_scripts() {
 		wp_enqueue_style( 'crimson-rose-affiliate-royale', get_parent_theme_file_uri() . '/css/affiliate-royale.css', array(), CRIMSON_ROSE_VERSION );
 	}
 
+	if ( class_exists( 'Affiliate_WP' ) ) {
+		wp_enqueue_style( 'crimson-rose-affiliate-wp', get_parent_theme_file_uri() . '/css/affiliate-wp.css', array(), CRIMSON_ROSE_VERSION );
+	}
+
 	if ( defined( 'WC_SHORTCODES_VERSION' ) ) {
 		wp_enqueue_style( 'crimson-rose-wc-shortcodes', get_parent_theme_file_uri() . '/css/wc-shortcodes.css', array(), CRIMSON_ROSE_VERSION );
 	}

@@ -35,6 +35,11 @@ a:hover {
 	color: ' . $crimson_rose['link_hover_color'] . ' !important; /*id:link_hover_color*/
 }
 
+#master .affwp-affiliate-dashboard-tab.active a,
+#master .main-menu .current_page_item > a,
+#master .main-menu .current-menu-item > a,
+#master .main-menu .current_page_ancestor > a,
+#master .main-menu .current-menu-ancestor > a,
 #master .content-callout__content .content-callout__text ul li:before,
 #master .menu-toggle i,
 #master .entry-cat-meta span > a {
@@ -45,10 +50,11 @@ a:hover {
 	border-color: ' . $crimson_rose['primary_color'] . '; /*id:primary_color*/
 }
 
-#master .main-menu .current_page_item > a,
-#master .main-menu .current-menu-item > a,
-#master .main-menu .current_page_ancestor > a,
-#master .main-menu .current-menu-ancestor > a,
+#master #affwp-affiliate-dashboard-tabs .affwp-affiliate-dashboard-tab.active a:hover,
+#master .main-menu .current_page_item > a:hover,
+#master .main-menu .current-menu-item > a:hover,
+#master .main-menu .current_page_ancestor > a:hover,
+#master .main-menu .current-menu-ancestor > a:hover,
 #master .entry-cat-meta span > a:hover {
 	color: ' . $crimson_rose['primary_hover_color'] . '; /*id:primary_hover_color*/
 }
