@@ -26,6 +26,7 @@ button {
 		border: none;
 		border-radius: $button__radius;
 		color: #fff;
+		background: none;
 		background-color: #000000;
 		@include rem('font-size',$font__main-size);
 		/*font-size: 0.75rem;*/

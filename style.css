@@ -242,7 +242,10 @@ input[type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
 
-input[type="search"],
+input[type="search"] {
+  -webkit-appearance: none;
+}
+
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
@@ -1027,6 +1030,7 @@ button {
   border: none;
   border-radius: 3px;
   color: #fff;
+  background: none;
   background-color: #000000;
   font-size: 18px;
   font-size: 1.125rem;
