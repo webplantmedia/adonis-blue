@@ -55,3 +55,7 @@ AffiliateWP styling
   border-bottom-width: 0;
   padding-bottom: 0;
 }
+
+#master .affwp-form fieldset {
+  padding: 0;
+}
