@@ -78,11 +78,11 @@ if ( ! class_exists( 'Crimson_Rose_Upgrade' ) ) :
 				$options = apply_filters(
 					'crimson_rose_update_remote_post_options',
 					array(
-						'user-agent'	=> 'WordPress/' . $wp_version . '; ' . get_bloginfo( 'url' ),
+						'user-agent'	=> 'WordPress/' . $wp_version . '; ' . home_url( '/' ),
 						'body' => array(
 							'php_version'    => phpversion(),
 							'wp_version'     => $wp_version,
-							'uri'            => home_url(),
+							'uri'            => home_url( '/' ),
 							'version'        => $version,
 							'template'       => $template,
 							'stylesheet'     => $stylesheet,

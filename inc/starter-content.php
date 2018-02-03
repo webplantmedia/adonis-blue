@@ -158,12 +158,12 @@ Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam eli
 	);
 
 	$starter_content['widgets']['footer-2']['text_business_info'] = array(
-		'title' => _x( 'Find Us', 'Theme starter content' ),
+		'title' => _x( 'Find Us', 'Theme starter content', 'crimson-rose' ),
 		'text' => '<center>' . join( '', array(
-			'<strong>' . _x( 'Address', 'Theme starter content' ) . "</strong>\n",
-			_x( '123 Main Street', 'Theme starter content' ) . "\n" . _x( 'New York, NY 10001', 'Theme starter content' ) . "\n\n",
-			'<strong>' . _x( 'Hours', 'Theme starter content' ) . "</strong>\n",
-			_x( 'Mon&mdash;Fri: 9:00AM&ndash;5:00PM', 'Theme starter content' ) . "\n" . _x( 'Sat &amp; Sun: 11:00AM&ndash;3:00PM', 'Theme starter content' )
+			'<strong>' . _x( 'Address', 'Theme starter content', 'crimson-rose' ) . "</strong>\n",
+			_x( '123 Main Street', 'Theme starter content', 'crimson-rose' ) . "\n" . _x( 'New York, NY 10001', 'Theme starter content', 'crimson-rose' ) . "\n\n",
+			'<strong>' . _x( 'Hours', 'Theme starter content', 'crimson-rose' ) . "</strong>\n",
+			_x( 'Mon&mdash;Fri: 9:00AM&ndash;5:00PM', 'Theme starter content', 'crimson-rose' ) . "\n" . _x( 'Sat &amp; Sun: 11:00AM&ndash;3:00PM', 'Theme starter content', 'crimson-rose' )
 		) ) . '</center>',
 		'filter' => true,
 		'visual' => true,

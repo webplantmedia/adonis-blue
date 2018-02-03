@@ -113,11 +113,11 @@ function crimson_rose_get_comment_display( $label ) {
 			$num_comments = get_comments_number(); // get_comments_number returns only a numeric value
 
 			if ( $num_comments == 0 ) {
-				$comments = __('leave a Comment');
+				$comments = __( 'leave a Comment', 'crimson-rose' );
 			} elseif ( $num_comments > 1 ) {
-				$comments = $num_comments . __(' Comments');
+				$comments = $num_comments . __( ' Comments', 'crimson-rose' );
 			} else {
-				$comments = __('1 Comment');
+				$comments = __( '1 Comment', 'crimson-rose' );
 			}
 			$html .= '<a href="' . get_comments_link() .'"><i class="genericons-neue genericons-neue-comment"></i>'. $comments.'</a>';
 		}
