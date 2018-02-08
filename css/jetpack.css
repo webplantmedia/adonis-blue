@@ -243,11 +243,6 @@ Jetpack styling
   margin-top: 0.7em;
 }
 
-#master .jetpack_subscription_widget #subscribe-text {
-  font-size: 16px;
-  font-size: 1rem;
-}
-
 #master .widget_contact_info .confit-address,
 #master .widget_contact_info .confit-phone,
 #master .widget_contact_info .confit-email,
@@ -349,4 +344,24 @@ Jetpack styling
 
 .milestone-widget .milestone-header {
   color: #ffffff;
+}
+
+#master .contact-form input[type="email"],
+#master .contact-form input[type="text"],
+#master .contact-form input[type="url"] {
+  max-width: none;
+}
+
+#master .widget_top-posts .widgets-grid-layout .widget-grid-view-image img {
+  vertical-align: top;
+}
+
+#master .widget_top-posts .widgets-list-layout .widgets-list-layout-blavatar {
+  max-width: none;
+  margin-top: .4em;
+}
+
+#master .widget_top-posts .widgets-list-layout .widgets-list-layout-links a {
+  font-size: 14px;
+  font-size: 0.875rem;
 }

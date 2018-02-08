@@ -240,7 +240,6 @@
 // Jetpack Subscribe
 #master .jetpack_subscription_widget {
 	#subscribe-text {
-		@include rem('font-size',$font__medium-size);
 	}
 }
 
@@ -338,5 +337,34 @@
 
 	.milestone-header {
 		color: $color__white;
+	}
+}
+
+// Contact
+#master {
+	.contact-form input[type="email"],
+	.contact-form input[type="text"],
+	.contact-form input[type="url"] {
+		max-width: none;
+	}
+}
+
+// Top Posts
+#master {
+	.widget_top-posts {
+		.widgets-grid-layout .widget-grid-view-image img {
+			vertical-align: top;
+		}
+		.widgets-list-layout {
+			.widgets-list-layout-blavatar {
+				max-width: none;
+				margin-top: .4em;
+			}
+			.widgets-list-layout-links {
+				a {
+					@include rem('font-size',$font__xsmall-size);
+				}
+			}
+		}
 	}
 }

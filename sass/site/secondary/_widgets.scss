@@ -328,6 +328,7 @@
 }
 
 // UL & LI
+.widget_top-posts ul li,
 .widget_rss_links ul li,
 .widget_recent_entries ul li,
 #master .widget_authors ul ul li,
@@ -349,6 +350,7 @@
 	}
 }
 
+.widget_top-posts ul:not(.widgets-list-layout) li,
 .widget_rss_links ul li,
 .widget_recent_entries ul li,
 #master .widget_authors ul ul li,

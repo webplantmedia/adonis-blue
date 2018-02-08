@@ -4,7 +4,7 @@ Theme URI: https://webplantmedia.com/
 Author: Web Plant Media
 Author URI: https://webplantmedia.com/about/
 Description: Easy To Use, Fast To Install, Small Business WordPress Themes
-Version: 1.57
+Version: 1.58
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: crimson-rose
@@ -2733,6 +2733,7 @@ a:hover, a:active {
   text-align: center;
 }
 
+.widget_top-posts ul li,
 .widget_rss_links ul li,
 .widget_recent_entries ul li,
 #master .widget_authors ul ul li,
@@ -2746,6 +2747,7 @@ a:hover, a:active {
   margin-top: 0.7em;
 }
 
+.widget_top-posts ul li:first-child,
 .widget_rss_links ul li:first-child,
 .widget_recent_entries ul li:first-child,
 #master .widget_authors ul ul li:first-child,
@@ -2758,6 +2760,7 @@ a:hover, a:active {
   margin-top: 0;
 }
 
+.widget_top-posts ul li ul,
 .widget_rss_links ul li ul,
 .widget_recent_entries ul li ul,
 #master .widget_authors ul ul li ul,
@@ -2770,6 +2773,7 @@ a:hover, a:active {
   margin-top: 0.7em;
 }
 
+.widget_top-posts ul:not(.widgets-list-layout) li,
 .widget_rss_links ul li,
 .widget_recent_entries ul li,
 #master .widget_authors ul ul li,
@@ -2783,6 +2787,7 @@ a:hover, a:active {
   padding-left: 1.25rem;
 }
 
+.widget_top-posts ul:not(.widgets-list-layout) li:before,
 .widget_rss_links ul li:before,
 .widget_recent_entries ul li:before,
 #master .widget_authors ul ul li:before,
@@ -5256,6 +5261,10 @@ object {
   font-weight: bold;
 }
 
+.wp-caption-text a {
+  display: inline;
+}
+
 /*--------------------------------------------------------------
 ## Galleries
 --------------------------------------------------------------*/
@@ -5309,6 +5318,10 @@ object {
 
 .gallery-item a img {
   vertical-align: top;
+}
+
+.gallery-item .wp-caption-text a {
+  display: inline;
 }
 
 .gallery-columns-2 .gallery-item {

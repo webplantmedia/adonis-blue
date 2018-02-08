@@ -16,4 +16,8 @@
 	text-align: center;
 	@include rem('font-size',$font__small-size);
 	font-weight: bold;
+
+	a {
+		display: inline;
+	}
 }
