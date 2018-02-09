@@ -153,7 +153,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 							'type'  => 'text',
 							'std'   => '',
 							'label' => esc_html__( 'Button URL:', 'crimson-rose' ),
-							'sanitize' => 'text',
+							'sanitize' => 'url',
 						),
 						'button_style' => array(
 							'type'  => 'select',

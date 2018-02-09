@@ -77,7 +77,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Blog_Post' ) ) :
 					'type'  => 'text',
 					'std'   => '',
 					'label' => esc_html__( 'Button Link:', 'crimson-rose' ),
-					'sanitize' => 'text',
+					'sanitize' => 'url',
 				),
 				'button_style' => array(
 					'type'  => 'select',

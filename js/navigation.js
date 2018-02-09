@@ -107,4 +107,13 @@
 	$('.menu').find( 'a[href="#"]' ).click( function( event ) {
 		return false;
 	});
+
+	// animate scroll to anchor, and hide from address bar.
+	$('.content-widget a.slide-inner, content-widget .button').filter( 'a[href^="#"]' ).click( function( event ) {
+		event.preventDefault();
+
+		$('html,body').animate({scrollTop: $($(this).attr('href')).offset().top},'slow');
+
+		return false;
+	});
 } )( jQuery );

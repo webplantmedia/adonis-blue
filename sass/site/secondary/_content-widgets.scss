@@ -320,6 +320,12 @@
 
 	}
 
+	.full-width-static-content {
+		.hentry {
+			max-width: none;
+		}
+	}
+
 	.custom-color {
 		.hentry {
 			h1,

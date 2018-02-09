@@ -115,7 +115,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Static_Content' ) ) :
 
 			extract( $args );
 
-			$post = null;
+			$post = get_post($o['page']);
 			if ( ! empty( $o['page'] ) ) {
 				$post = new WP_Query( array( 'page_id' => $o['page'] ) );
 			}
@@ -147,6 +147,14 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Static_Content' ) ) :
 				$rgb = $this->hex2rgb( $o['background_color'] );
 				$opacity = absint( $o['background_opacity'] ) / 100;
 				$fullwidth = true;
+			}
+
+			$page_template = get_page_template_slug( $o['page'] );
+			if ( ( 'templates/grid-accordion-page.php' == $page_template )
+				|| ( 'templates/grid-page.php' == $page_template )
+				|| ( 'templates/full-width-page.php' == $page_template )
+				|| ( 'templates/two-columns-page.php' == $page_template ) ) {
+				$classes[] = 'full-width-static-content';
 			}
 
 			// Allow site-wide customization of the 'Read more' link text.
@@ -211,7 +219,15 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Static_Content' ) ) :
 									<?php if ( $o['title'] ) echo  $before_title . $o['title'] . $after_title; ?>
 
 									<div class="entry-content">
-										<?php the_content( $read_more ); ?>
+										<?php if ( 'templates/two-columns-page.php' == $page_template ) : ?>
+											<?php crimson_rose_the_two_columns_content(); ?>
+										<?php elseif ( 'templates/grid-page.php' == $page_template ) : ?>
+											<?php crimson_rose_the_grid_content(); ?>
+										<?php elseif ( 'templates/grid-accordion-page.php' == $page_template ) : ?>
+											<?php crimson_rose_the_accordion_content(); ?>
+										<?php else : ?>
+											<?php the_content( $read_more ); ?>
+										<?php endif; ?>
 									</div>
 
 									<?php if ( get_edit_post_link() ) : ?>
