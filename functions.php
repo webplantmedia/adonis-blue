@@ -10,7 +10,7 @@
 /**
  * The current version of the theme.
  */
-define( 'CRIMSON_ROSE_VERSION', '1.58' );
+define( 'CRIMSON_ROSE_VERSION', '1.59' );
 
 if ( ! function_exists( 'crimson_rose_setup' ) ) :
 	/**
