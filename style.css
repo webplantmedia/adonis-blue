@@ -4,7 +4,7 @@ Theme URI: https://webplantmedia.com/
 Author: Web Plant Media
 Author URI: https://webplantmedia.com/about/
 Description: Easy To Use, Fast To Install, Small Business WordPress Themes
-Version: 1.60
+Version: 1.61
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: crimson-rose
@@ -231,6 +231,7 @@ input::-moz-focus-inner {
 
 input {
   line-height: normal;
+  -webkit-appearance: none;
 }
 
 input[type="checkbox"],
@@ -266,6 +267,7 @@ legend {
 
 textarea {
   overflow: auto;
+  -webkit-appearance: none;
 }
 
 optgroup {

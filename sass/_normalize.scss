@@ -166,6 +166,7 @@ input::-moz-focus-inner {
 
 input {
 	line-height: normal;
+	-webkit-appearance: none;
 }
 
 input[type="checkbox"],
@@ -201,6 +202,7 @@ legend {
 
 textarea {
 	overflow: auto;
+	-webkit-appearance: none;
 }
 
 optgroup {
