@@ -174,15 +174,6 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Static_Content' ) ) :
 					background-color: rgba(<?php echo $rgb['red']; ?>,<?php echo $rgb['green']; ?>,<?php echo $rgb['blue']; ?>,<?php echo $opacity; ?>);
 				}
 				<?php endif; ?>
-				<?php if ( ! empty( $o['link_color'] ) ) : ?>
-				#<?php echo esc_html( $this->id ) ?> .entry-content a:not(.theme-generated-button):active,
-				#<?php echo esc_html( $this->id ) ?> .entry-content a:not(.theme-generated-button):focus,
-				#<?php echo esc_html( $this->id ) ?> .entry-content a:not(.theme-generated-button):visited,
-				#<?php echo esc_html( $this->id ) ?> .entry-content a:not(.theme-generated-button):hover,
-				#<?php echo esc_html( $this->id ) ?> .entry-content a:not(.theme-generated-button) {
-					color: <?php echo esc_html( $o['link_color'] ); ?>;
-				}
-				<?php endif; ?>
 				<?php if ( ! empty( $o['text_color'] ) ) : ?>
 				#<?php echo esc_html( $this->id ) ?> .entry-footer a,
 				#<?php echo esc_html( $this->id ) ?> .entry-footer a:hover,
@@ -196,9 +187,19 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Static_Content' ) ) :
 				#<?php echo esc_html( $this->id ) ?> .entry-content h5,
 				#<?php echo esc_html( $this->id ) ?> .entry-content h6,
 				#<?php echo esc_html( $this->id ) ?> .entry-content p,
+				#<?php echo esc_html( $this->id ) ?> .entry-content a,
 				#<?php echo esc_html( $this->id ) ?> .entry-content,
 				#<?php echo esc_html( $this->id ) ?> .widget-title {
 					color: <?php echo esc_html( $o['text_color'] ); ?>;
+				}
+				<?php endif; ?>
+				<?php if ( ! empty( $o['link_color'] ) ) : ?>
+				#<?php echo esc_html( $this->id ) ?> .entry-content a:not(.theme-generated-button):active,
+				#<?php echo esc_html( $this->id ) ?> .entry-content a:not(.theme-generated-button):focus,
+				#<?php echo esc_html( $this->id ) ?> .entry-content a:not(.theme-generated-button):visited,
+				#<?php echo esc_html( $this->id ) ?> .entry-content a:not(.theme-generated-button):hover,
+				#<?php echo esc_html( $this->id ) ?> .entry-content a:not(.theme-generated-button) {
+					color: <?php echo esc_html( $o['link_color'] ); ?>;
 				}
 				<?php endif; ?>
 			</style>
