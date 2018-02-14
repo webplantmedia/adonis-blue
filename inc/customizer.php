@@ -228,6 +228,19 @@ function crimson_rose_customize_register( $wp_customize ) {
 		),
 	) );
 
+	$setting_id = 'footer_text_light';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $brimstone_default[ $setting_id ],
+		'transport' => 'refresh',
+		'sanitize_callback' => 'brimstone_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( $setting_id, array(
+		'type' => 'checkbox',
+		'label' => __( 'Display White Footer Text?', 'brimstone' ),
+		'section' => $section_id,
+	) );
+
 	$setting_id = 'link_color';
 	$wp_customize->add_setting( $setting_id, array(
 		'default' => $crimson_rose_default[ $setting_id ],
