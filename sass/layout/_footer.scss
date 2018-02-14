@@ -129,22 +129,22 @@
 		h5,
 		h6,
 		p,
+		span,
 		div {
-			color: $color__white;
+			color: $color__white !important;
 
 			a {
-				color: $color__white;
+				color: $color__white !important;
+				text-decoration: underline;
 
 				&:hover {
-					color: $color__white;
-					text-decoration: underline;
+					color: $color__white !important;
+					text-decoration: none;
 				}
 			}
 		}
 
 		.widget-title {
-			border-bottom: 2px solid $color__white;
-			padding-bottom: 10px;
 		}
 
 		input,
@@ -169,6 +169,8 @@
 		input[type="button"],
 		input[type="reset"],
 		input[type="submit"] {
+			text-decoration: none;
+
 			&,
 			&:hover,
 			&:active,
@@ -176,6 +178,10 @@
 				border: 2px solid $color__white;
 				background-color: transparent;
 				color: $color__white;
+			}
+
+			&:hover {
+				text-decoration: underline;
 			}
 		}
 	}
