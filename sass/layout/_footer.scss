@@ -135,13 +135,17 @@
 
 			a {
 				color: $color__white !important;
-				text-decoration: underline;
+				text-decoration: none;
 
 				&:hover {
 					color: $color__white !important;
-					text-decoration: none;
+					text-decoration: underline;
 				}
 			}
+		}
+
+		hr {
+			background-color: $color__white;
 		}
 
 		.widget-title {
