@@ -63,6 +63,7 @@ a:hover {
 	background-color: ' . $crimson_rose['footer_background_color'] . '; /*id:footer_background_color*/
 }
 
+#master .woocommerce-product-search button[type="submit"],
 #master .milestone-header,
 #master .grofile-full-link,
 #master .flickr-more,
@@ -121,6 +122,7 @@ a:hover {
 	background-color: ' . $crimson_rose['primary_color'] . '; /*id:primary_color*/
 }
 
+#master .woocommerce-product-search button[type="submit"]:hover,
 #master .grofile-full-link:hover,
 #master .flickr-more:hover,
 #master #eu-cookie-law input:hover,

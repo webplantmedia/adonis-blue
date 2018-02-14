@@ -143,13 +143,40 @@
 		}
 
 		.widget-title {
-			opacity: 0.3;
+			border-bottom: 2px solid $color__white;
+			padding-bottom: 10px;
 		}
 
 		input,
 		select,
 		textarea {
 			border-color: $color__white;
+		}
+
+		.woocommerce-product-search button[type="submit"],
+		.grofile-full-link,
+		.flickr-more,
+		#eu-cookie-law input,
+		.wc-shortcodes-button,
+		#infinite-handle span button,
+		.woocommerce #respond input#submit,
+		.woocommerce-pagination ul span,
+		.woocommerce-pagination ul a,
+		.comment-navigation .nav-links a,
+		.posts-navigation .nav-links a,
+		.button,
+		.addresses .edit,
+		input[type="button"],
+		input[type="reset"],
+		input[type="submit"] {
+			&,
+			&:hover,
+			&:active,
+			&:focus {
+				border: 2px solid $color__white;
+				background-color: transparent;
+				color: $color__white;
+			}
 		}
 	}
 }
