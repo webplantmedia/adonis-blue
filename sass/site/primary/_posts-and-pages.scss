@@ -107,6 +107,7 @@ h1.h1-title,
 		@include rem('font-size',$font__h1-size);
 		font-weight: normal;
 		text-align: center;
+		text-transform: none;
 
 		&,
 		a {
@@ -478,7 +479,7 @@ h1.h1-title,
 #master .grid {
 	.excerpt2 {
 		.entry-title {
-			@include rem('font-size', 22px);
+			@include rem('font-size',$font__entry-title-size);
 		}
 		
 		.entry-image {
