@@ -36,6 +36,8 @@ a:hover {
 }
 
 #master .affwp-affiliate-dashboard-tab.active a,
+#master .main-menu .current_page_parent > a,
+#master .main-menu .current-menu-parent > a,
 #master .main-menu .current_page_item > a,
 #master .main-menu .current-menu-item > a,
 #master .main-menu .current_page_ancestor > a,
@@ -51,6 +53,8 @@ a:hover {
 }
 
 #master #affwp-affiliate-dashboard-tabs .affwp-affiliate-dashboard-tab.active a:hover,
+#master .main-menu .current_page_parent > a:hover,
+#master .main-menu .current-menu-parent > a:hover,
 #master .main-menu .current_page_item > a:hover,
 #master .main-menu .current-menu-item > a:hover,
 #master .main-menu .current_page_ancestor > a:hover,

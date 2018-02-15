@@ -97,6 +97,8 @@
 			letter-spacing: 0.07em;
 		}
 		
+		.current_page_parent > a,
+		.current-menu-parent > a,
 		.current_page_item > a,
 		.current-menu-item > a,
 		.current_page_ancestor > a,
@@ -309,8 +311,12 @@
 				&.focus > a {
 				}
 
+				&.current_page_parent > a,
+				&.current-menu-parent > a,
 				&.current_page_item > a,
-				&.current-menu-item > a {
+				&.current-menu-item > a,
+				&.current_page_ancestor > a,
+				&.current-menu-ancestor > a {
 				}
 
 				&:last-child > a {
