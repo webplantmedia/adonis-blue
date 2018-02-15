@@ -230,6 +230,7 @@ function crimson_rose_scripts() {
 	wp_enqueue_style( 'genericons-neue', get_parent_theme_file_uri() . '/fonts/genericons-neue/genericons-neue.css', array(), CRIMSON_ROSE_VERSION );
 
 	// Add social logos
+	wp_deregister_style( 'social-logos' ); //remove any plugins that try and use social icons, and use the themes.
 	wp_enqueue_style( 'social-logos', get_parent_theme_file_uri() . '/fonts/social-logos/social-logos.css', array(), CRIMSON_ROSE_VERSION );
 
 	wp_enqueue_style( 'crimson-rose-style', get_stylesheet_uri() );
