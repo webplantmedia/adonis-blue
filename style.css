@@ -3553,15 +3553,15 @@ a:hover, a:active {
 
 .widgetized-page .site-content .content-widget,
 .site-boundary {
-  max-width: 1100px;
-  max-width: 68.75rem;
+  max-width: 1140px;
+  max-width: 71.25rem;
   margin-left: auto;
   margin-right: auto;
   display: block;
-  padding-left: 20px;
-  padding-left: 1.25rem;
-  padding-right: 20px;
-  padding-right: 1.25rem;
+  padding-left: 40px;
+  padding-left: 2.5rem;
+  padding-right: 40px;
+  padding-right: 2.5rem;
 }
 
 #master .widgetized-page .site-content .full-width-bar,
@@ -3573,10 +3573,10 @@ a:hover, a:active {
 }
 
 .site-padding {
-  padding-left: 20px;
-  padding-left: 1.25rem;
-  padding-right: 20px;
-  padding-right: 1.25rem;
+  padding-left: 40px;
+  padding-left: 2.5rem;
+  padding-right: 40px;
+  padding-right: 2.5rem;
 }
 
 .site-content {
@@ -3596,10 +3596,21 @@ a:hover, a:active {
 }
 
 .site-structure-box #page {
-  max-width: 1140px;
-  max-width: 71.25rem;
+  max-width: 1300px;
+  max-width: 81.25rem;
   margin-left: auto;
   margin-right: auto;
+}
+
+@media (max-width: 700px) {
+  .widgetized-page .site-content .content-widget,
+  .site-boundary,
+  .site-padding {
+    padding-left: 20px;
+    padding-left: 1.25rem;
+    padding-right: 20px;
+    padding-right: 1.25rem;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -4244,7 +4255,10 @@ h1.h1-title,
 }
 
 @media (min-width: 800px) {
-  .page.has-post-thumbnail.display-fullwidth .site-main {
+  .page.has-post-thumbnail.display-sidebar .site-content .site-boundary, .page.has-post-thumbnail.display-fullwidth .site-content .site-boundary {
+    background-color: #ffffff;
+  }
+  .page.has-post-thumbnail.no-sidebar .content-area {
     max-width: 900px;
     max-width: 56.25rem;
     margin-left: auto;
@@ -4268,7 +4282,8 @@ h1.h1-title,
   .page.has-post-thumbnail .site-content .content-area {
     background-color: #ffffff;
   }
-  .page.has-post-thumbnail .site-content .content-area .site-main {
+  .page.has-post-thumbnail .site-content #secondary,
+  .page.has-post-thumbnail .site-content .site-main {
     padding-top: 70px;
     padding-top: 4.375rem;
   }
