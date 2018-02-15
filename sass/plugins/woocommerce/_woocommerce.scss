@@ -476,10 +476,10 @@
 	.woocommerce ul.products li.product .woocommerce-loop-product__title,
 	.woocommerce ul.products li.product h3 {
 		margin-top: 16px;
-		font-weight: bold;
-		@include rem('font-size',$font__entry-title-size);
-		font-weight: normal;
-		text-transform: none;
+		// font-weight: bold;
+		// @include rem('font-size',$font__entry-title-size);
+		// font-weight: normal;
+		// text-transform: none;
 	}
 	.woocommerce-shop-truncate-titles ul.products li.product .woocommerce-loop-category__title,
 	.woocommerce-shop-truncate-titles ul.products li.product .woocommerce-loop-product__title,
