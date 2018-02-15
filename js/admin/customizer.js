@@ -9,14 +9,16 @@
 ( function( $ ) {
 
 	function changeInlineCSS( id, value) {
-		var stylesheet = '#crimson-rose-style-inline-css';
-		var $css = $('head ' + stylesheet);
-		if ( $css.length ) {
-			var css = $css.html();
-			var regexp = new RegExp('(\\s*.*?):\\s*.*?;\\s*\\/\\*id:' + id + '\\*\\/', 'g');
-			var replace = '$1: ' + value + '; /*id:' + id + '*/';
-			css = css.replace(regexp,replace);
-			$css.html( css );
+		if ( value.length ) {
+			var stylesheet = '#crimson-rose-style-inline-css';
+			var $css = $('head ' + stylesheet);
+			if ( $css.length ) {
+				var css = $css.html();
+				var regexp = new RegExp('(\\s*.*?):\\s*.*?;\\s*\\/\\*id:' + id + '\\*\\/', 'g');
+				var replace = '$1: ' + value + '; /*id:' + id + '*/';
+				css = css.replace(regexp,replace);
+				$css.html( css );
+			}
 		}
 	}
 
