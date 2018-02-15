@@ -1056,6 +1056,7 @@ button {
   background: transparent;
 }
 
+#master .widget.null-instagram-feed > p.clear a,
 #master .woocommerce-product-search button[type="submit"],
 #master .grofile-full-link,
 #master .flickr-more,
@@ -1098,6 +1099,16 @@ button {
   height: 3.125rem;
 }
 
+#master #tertiary .widget.null-instagram-feed > p.clear a,
+#master #tertiary .woocommerce-product-search button[type="submit"],
+#master #tertiary .button.alt,
+#master #tertiary .button,
+#master #tertiary .addresses .edit,
+#master #tertiary input[type="button"],
+#master #tertiary input[type="reset"],
+#master #tertiary input[type="submit"],
+#master #secondary .widget.null-instagram-feed > p.clear a,
+#master #secondary .woocommerce-product-search button[type="submit"],
 #master #secondary .button.alt,
 #master #secondary .button,
 #master #secondary .addresses .edit,
@@ -1110,6 +1121,8 @@ button {
   padding: 12px 30px;
 }
 
+#master .widget.null-instagram-feed > p.clear a:active,
+#master .widget.null-instagram-feed > p.clear a:focus,
 #master .woocommerce-product-search button[type="submit"]:active,
 #master .woocommerce-product-search button[type="submit"]:focus,
 #master .grofile-full-link:active,
@@ -1142,6 +1155,7 @@ button {
   background: #252323;
 }
 
+#master .widget.null-instagram-feed > p.clear a:hover,
 #master .woocommerce-product-search button[type="submit"]:hover,
 #master .grofile-full-link:hover,
 #master .flickr-more:hover,
@@ -5611,4 +5625,96 @@ object {
   margin-top: 1.25rem;
   margin-bottom: 20px;
   margin-bottom: 1.25rem;
+}
+
+/*--------------------------------------------------------------
+## Instagram
+--------------------------------------------------------------*/
+#master .null-instagram-feed .instagram-pics li a {
+  display: block;
+}
+
+#master .null-instagram-feed .instagram-pics li a > *,
+#master .null-instagram-feed .instagram-pics li a img {
+  vertical-align: top;
+}
+
+#tertiary .null-instagram-feed .instagram-pics,
+#secondary .null-instagram-feed .instagram-pics {
+  margin-bottom: -5px;
+  margin-right: -5px;
+}
+
+#tertiary .null-instagram-feed .instagram-pics:before, #tertiary .null-instagram-feed .instagram-pics:after,
+#secondary .null-instagram-feed .instagram-pics:before,
+#secondary .null-instagram-feed .instagram-pics:after {
+  content: '';
+  display: table;
+}
+
+#tertiary .null-instagram-feed .instagram-pics:after,
+#secondary .null-instagram-feed .instagram-pics:after {
+  clear: both;
+}
+
+#tertiary .null-instagram-feed .instagram-pics li,
+#secondary .null-instagram-feed .instagram-pics li {
+  float: left;
+  padding: 0;
+  width: 33.33333%;
+  padding-right: 5px;
+  padding-bottom: 5px;
+}
+
+#tertiary .null-instagram-feed > p.clear,
+#secondary .null-instagram-feed > p.clear {
+  margin-top: 28px;
+  margin-top: 1.75rem;
+  text-align: center;
+}
+
+#master #footer-gallery .widget {
+  margin: 0;
+  text-align: center;
+}
+
+#master #footer-gallery .widget ul,
+#master #footer-gallery .widget ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#master #footer-gallery .widget li {
+  padding: 0;
+}
+
+#master #footer-gallery .widget-title {
+  display: none;
+}
+
+#master #footer-gallery .widget > p {
+  display: none;
+}
+
+#master #footer-gallery .footer-instagram-area {
+  text-align: center;
+}
+
+#master #footer-gallery .instagram-pics {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+
+#master #footer-gallery .instagram-pics li {
+  display: table-cell;
+  width: 2%;
+}
+
+@media (max-width: 700px) {
+  #master #footer-gallery .instagram-pics li {
+    display: inline-table;
+    width: 33.33333%;
+  }
 }
