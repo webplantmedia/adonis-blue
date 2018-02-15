@@ -48,7 +48,9 @@ button {
 	}
 
 
+	#tertiary,
 	#secondary {
+		.woocommerce-product-search button[type="submit"],
 		.button.alt,
 		.button,
 		.addresses .edit,
