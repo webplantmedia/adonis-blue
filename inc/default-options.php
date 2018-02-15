@@ -18,6 +18,7 @@ $crimson_rose_default['archive_background_color'] = '#fcf7f7';
 $crimson_rose_default['archive_title_light'] = 0;
 $crimson_rose_default['footer_background_color'] = '#fcf7f7';
 $crimson_rose_default['footer_background_image_color'] = 'red';
+$crimson_rose_default['footer_text_light'] = 0;
 $crimson_rose_default['link_color'] = '#666666';
 $crimson_rose_default['link_hover_color'] = '#d66c83';
 

@@ -119,3 +119,37 @@
 		@include rem('padding-bottom',100px);
 	}
 }
+
+#master .footer-text-light {
+	#colophon {
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		p,
+		div {
+			color: $color__white;
+
+			a {
+				color: $color__white;
+
+				&:hover {
+					color: $color__white;
+					text-decoration: underline;
+				}
+			}
+		}
+
+		.widget-title {
+			opacity: 0.3;
+		}
+
+		input,
+		select,
+		textarea {
+			border-color: $color__white;
+		}
+	}
+}

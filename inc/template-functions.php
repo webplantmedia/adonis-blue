@@ -48,6 +48,10 @@ function crimson_rose_body_classes( $classes ) {
 		$classes[] = 'archive-title-light';
 	}
 
+	if ( $crimson_rose['footer_text_light'] ) {
+		$classes[] = 'footer-text-light';
+	}
+
 	if ( $crimson_rose['shop_truncate_titles'] ) {
 		$classes[] = 'woocommerce-shop-truncate-titles';
 	}
