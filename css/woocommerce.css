@@ -197,7 +197,6 @@ WooCommerce styling
   padding-bottom: 0;
 }
 
-#master .woocommerce ul.cart_list li a,
 #master .woocommerce ul.product_list_widget li a {
   font-weight: normal;
   text-decoration: none;
