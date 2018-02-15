@@ -651,6 +651,11 @@ WooCommerce styling
 #master .woocommerce ul.products li.product .woocommerce-loop-product__title,
 #master .woocommerce ul.products li.product h3 {
   margin-top: 16px;
+  font-weight: bold;
+  font-size: 22px;
+  font-size: 1.375rem;
+  font-weight: normal;
+  text-transform: none;
 }
 
 #master .woocommerce-shop-truncate-titles ul.products li.product .woocommerce-loop-category__title,

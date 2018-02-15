@@ -1056,6 +1056,7 @@ button {
   background: transparent;
 }
 
+#master .woocommerce-product-search button[type="submit"],
 #master .grofile-full-link,
 #master .flickr-more,
 #master #eu-cookie-law input,
@@ -1109,6 +1110,8 @@ button {
   padding: 12px 30px;
 }
 
+#master .woocommerce-product-search button[type="submit"]:active,
+#master .woocommerce-product-search button[type="submit"]:focus,
 #master .grofile-full-link:active,
 #master .grofile-full-link:focus,
 #master .flickr-more:active,
@@ -1139,6 +1142,7 @@ button {
   background: #252323;
 }
 
+#master .woocommerce-product-search button[type="submit"]:hover,
 #master .grofile-full-link:hover,
 #master .flickr-more:hover,
 #master #eu-cookie-law input:hover,
@@ -2237,6 +2241,8 @@ a:hover, a:active {
   font-weight: normal;
   padding-left: 0.2em;
   padding-right: 0.2em;
+  height: 36px;
+  height: 2.25rem;
 }
 
 .top-header .social-navigation a:before {
@@ -2783,6 +2789,7 @@ a:hover, a:active {
 .widget_recent_entries ul li,
 #master .widget_authors ul ul li,
 .widget_product_categories ul li,
+.widget_categories ul li,
 .widget_pages ul li,
 .widget_nav_menu ul li,
 .widget_meta ul li,
@@ -2797,6 +2804,7 @@ a:hover, a:active {
 .widget_recent_entries ul li:first-child,
 #master .widget_authors ul ul li:first-child,
 .widget_product_categories ul li:first-child,
+.widget_categories ul li:first-child,
 .widget_pages ul li:first-child,
 .widget_nav_menu ul li:first-child,
 .widget_meta ul li:first-child,
@@ -2810,6 +2818,7 @@ a:hover, a:active {
 .widget_recent_entries ul li ul,
 #master .widget_authors ul ul li ul,
 .widget_product_categories ul li ul,
+.widget_categories ul li ul,
 .widget_pages ul li ul,
 .widget_nav_menu ul li ul,
 .widget_meta ul li ul,
@@ -2823,6 +2832,7 @@ a:hover, a:active {
 .widget_recent_entries ul li,
 #master .widget_authors ul ul li,
 .widget_product_categories ul li,
+.widget_categories ul li,
 .widget_pages ul li,
 .widget_nav_menu ul li,
 .widget_meta ul li,
@@ -2837,6 +2847,7 @@ a:hover, a:active {
 .widget_recent_entries ul li:before,
 #master .widget_authors ul ul li:before,
 .widget_product_categories ul li:before,
+.widget_categories ul li:before,
 .widget_pages ul li:before,
 .widget_nav_menu ul li:before,
 .widget_meta ul li:before,
@@ -3278,6 +3289,16 @@ a:hover, a:active {
 
 #master .crimson-rose-content-widget-collage .collage .slide-inner .custom-color .content-text *, #master .crimson-rose-content-widget-collage .collage .slide-inner:hover .custom-color .content-text *, #master .crimson-rose-content-widget-collage .collage .slide-inner:active .custom-color .content-text *, #master .crimson-rose-content-widget-collage .collage .slide-inner:focus .custom-color .content-text *, #master .crimson-rose-content-widget-collage .collage .slide-inner:visited .custom-color .content-text * {
   color: inherit;
+}
+
+#master .crimson-rose-content-widget-collage .collage h1,
+#master .crimson-rose-content-widget-collage .collage h2,
+#master .crimson-rose-content-widget-collage .collage h3,
+#master .crimson-rose-content-widget-collage .collage h4,
+#master .crimson-rose-content-widget-collage .collage h5,
+#master .crimson-rose-content-widget-collage .collage h6 {
+  font-size: 18px;
+  font-size: 1.125rem;
 }
 
 .crimson-rose-content-widget-collage .collage {
@@ -3994,6 +4015,7 @@ h1.h1-title,
   font-size: 1.5625rem;
   font-weight: normal;
   text-align: center;
+  text-transform: none;
 }
 
 .search .site-main article .entry-title,
@@ -5238,6 +5260,158 @@ h1.h1-title,
     padding-bottom: 100px;
     padding-bottom: 6.25rem;
   }
+}
+
+#master .footer-text-light #colophon h1,
+#master .footer-text-light #colophon h2,
+#master .footer-text-light #colophon h3,
+#master .footer-text-light #colophon h4,
+#master .footer-text-light #colophon h5,
+#master .footer-text-light #colophon h6,
+#master .footer-text-light #colophon p,
+#master .footer-text-light #colophon span,
+#master .footer-text-light #colophon div {
+  color: #ffffff !important;
+}
+
+#master .footer-text-light #colophon h1 a,
+#master .footer-text-light #colophon h2 a,
+#master .footer-text-light #colophon h3 a,
+#master .footer-text-light #colophon h4 a,
+#master .footer-text-light #colophon h5 a,
+#master .footer-text-light #colophon h6 a,
+#master .footer-text-light #colophon p a,
+#master .footer-text-light #colophon span a,
+#master .footer-text-light #colophon div a {
+  color: #ffffff !important;
+  text-decoration: none;
+}
+
+#master .footer-text-light #colophon h1 a:hover,
+#master .footer-text-light #colophon h2 a:hover,
+#master .footer-text-light #colophon h3 a:hover,
+#master .footer-text-light #colophon h4 a:hover,
+#master .footer-text-light #colophon h5 a:hover,
+#master .footer-text-light #colophon h6 a:hover,
+#master .footer-text-light #colophon p a:hover,
+#master .footer-text-light #colophon span a:hover,
+#master .footer-text-light #colophon div a:hover {
+  color: #ffffff !important;
+  text-decoration: underline;
+}
+
+#master .footer-text-light #colophon hr {
+  background-color: #ffffff;
+}
+
+#master .footer-text-light #colophon input,
+#master .footer-text-light #colophon select,
+#master .footer-text-light #colophon textarea {
+  border-color: #ffffff;
+}
+
+#master .footer-text-light #colophon .woocommerce-product-search button[type="submit"],
+#master .footer-text-light #colophon .grofile-full-link,
+#master .footer-text-light #colophon .flickr-more,
+#master .footer-text-light #colophon #eu-cookie-law input,
+#master .footer-text-light #colophon .wc-shortcodes-button,
+#master .footer-text-light #colophon #infinite-handle span button,
+#master .footer-text-light #colophon .woocommerce #respond input#submit,
+#master .footer-text-light #colophon .woocommerce-pagination ul span,
+#master .footer-text-light #colophon .woocommerce-pagination ul a,
+#master .footer-text-light #colophon .comment-navigation .nav-links a,
+#master .footer-text-light #colophon .posts-navigation .nav-links a,
+#master .footer-text-light #colophon .button,
+#master .footer-text-light #colophon .addresses .edit,
+#master .footer-text-light #colophon input[type="button"],
+#master .footer-text-light #colophon input[type="reset"],
+#master .footer-text-light #colophon input[type="submit"] {
+  text-decoration: none;
+}
+
+#master .footer-text-light #colophon .woocommerce-product-search button[type="submit"], #master .footer-text-light #colophon .woocommerce-product-search button[type="submit"]:hover, #master .footer-text-light #colophon .woocommerce-product-search button[type="submit"]:active, #master .footer-text-light #colophon .woocommerce-product-search button[type="submit"]:focus,
+#master .footer-text-light #colophon .grofile-full-link,
+#master .footer-text-light #colophon .grofile-full-link:hover,
+#master .footer-text-light #colophon .grofile-full-link:active,
+#master .footer-text-light #colophon .grofile-full-link:focus,
+#master .footer-text-light #colophon .flickr-more,
+#master .footer-text-light #colophon .flickr-more:hover,
+#master .footer-text-light #colophon .flickr-more:active,
+#master .footer-text-light #colophon .flickr-more:focus,
+#master .footer-text-light #colophon #eu-cookie-law input,
+#master .footer-text-light #colophon #eu-cookie-law input:hover,
+#master .footer-text-light #colophon #eu-cookie-law input:active,
+#master .footer-text-light #colophon #eu-cookie-law input:focus,
+#master .footer-text-light #colophon .wc-shortcodes-button,
+#master .footer-text-light #colophon .wc-shortcodes-button:hover,
+#master .footer-text-light #colophon .wc-shortcodes-button:active,
+#master .footer-text-light #colophon .wc-shortcodes-button:focus,
+#master .footer-text-light #colophon #infinite-handle span button,
+#master .footer-text-light #colophon #infinite-handle span button:hover,
+#master .footer-text-light #colophon #infinite-handle span button:active,
+#master .footer-text-light #colophon #infinite-handle span button:focus,
+#master .footer-text-light #colophon .woocommerce #respond input#submit,
+#master .footer-text-light #colophon .woocommerce #respond input#submit:hover,
+#master .footer-text-light #colophon .woocommerce #respond input#submit:active,
+#master .footer-text-light #colophon .woocommerce #respond input#submit:focus,
+#master .footer-text-light #colophon .woocommerce-pagination ul span,
+#master .footer-text-light #colophon .woocommerce-pagination ul span:hover,
+#master .footer-text-light #colophon .woocommerce-pagination ul span:active,
+#master .footer-text-light #colophon .woocommerce-pagination ul span:focus,
+#master .footer-text-light #colophon .woocommerce-pagination ul a,
+#master .footer-text-light #colophon .woocommerce-pagination ul a:hover,
+#master .footer-text-light #colophon .woocommerce-pagination ul a:active,
+#master .footer-text-light #colophon .woocommerce-pagination ul a:focus,
+#master .footer-text-light #colophon .comment-navigation .nav-links a,
+#master .footer-text-light #colophon .comment-navigation .nav-links a:hover,
+#master .footer-text-light #colophon .comment-navigation .nav-links a:active,
+#master .footer-text-light #colophon .comment-navigation .nav-links a:focus,
+#master .footer-text-light #colophon .posts-navigation .nav-links a,
+#master .footer-text-light #colophon .posts-navigation .nav-links a:hover,
+#master .footer-text-light #colophon .posts-navigation .nav-links a:active,
+#master .footer-text-light #colophon .posts-navigation .nav-links a:focus,
+#master .footer-text-light #colophon .button,
+#master .footer-text-light #colophon .button:hover,
+#master .footer-text-light #colophon .button:active,
+#master .footer-text-light #colophon .button:focus,
+#master .footer-text-light #colophon .addresses .edit,
+#master .footer-text-light #colophon .addresses .edit:hover,
+#master .footer-text-light #colophon .addresses .edit:active,
+#master .footer-text-light #colophon .addresses .edit:focus,
+#master .footer-text-light #colophon input[type="button"],
+#master .footer-text-light #colophon input[type="button"]:hover,
+#master .footer-text-light #colophon input[type="button"]:active,
+#master .footer-text-light #colophon input[type="button"]:focus,
+#master .footer-text-light #colophon input[type="reset"],
+#master .footer-text-light #colophon input[type="reset"]:hover,
+#master .footer-text-light #colophon input[type="reset"]:active,
+#master .footer-text-light #colophon input[type="reset"]:focus,
+#master .footer-text-light #colophon input[type="submit"],
+#master .footer-text-light #colophon input[type="submit"]:hover,
+#master .footer-text-light #colophon input[type="submit"]:active,
+#master .footer-text-light #colophon input[type="submit"]:focus {
+  border: 2px solid #ffffff;
+  background-color: transparent;
+  color: #ffffff;
+}
+
+#master .footer-text-light #colophon .woocommerce-product-search button[type="submit"]:hover,
+#master .footer-text-light #colophon .grofile-full-link:hover,
+#master .footer-text-light #colophon .flickr-more:hover,
+#master .footer-text-light #colophon #eu-cookie-law input:hover,
+#master .footer-text-light #colophon .wc-shortcodes-button:hover,
+#master .footer-text-light #colophon #infinite-handle span button:hover,
+#master .footer-text-light #colophon .woocommerce #respond input#submit:hover,
+#master .footer-text-light #colophon .woocommerce-pagination ul span:hover,
+#master .footer-text-light #colophon .woocommerce-pagination ul a:hover,
+#master .footer-text-light #colophon .comment-navigation .nav-links a:hover,
+#master .footer-text-light #colophon .posts-navigation .nav-links a:hover,
+#master .footer-text-light #colophon .button:hover,
+#master .footer-text-light #colophon .addresses .edit:hover,
+#master .footer-text-light #colophon input[type="button"]:hover,
+#master .footer-text-light #colophon input[type="reset"]:hover,
+#master .footer-text-light #colophon input[type="submit"]:hover {
+  text-decoration: underline;
 }
 
 /*--------------------------------------------------------------
