@@ -6,6 +6,7 @@ button {
 }
 
 #master {
+	.widget.null-instagram-feed > p.clear a,
 	.woocommerce-product-search button[type="submit"],
 	.grofile-full-link,
 	.flickr-more,
@@ -50,6 +51,7 @@ button {
 
 	#tertiary,
 	#secondary {
+		.widget.null-instagram-feed > p.clear a,
 		.woocommerce-product-search button[type="submit"],
 		.button.alt,
 		.button,
@@ -63,6 +65,8 @@ button {
 		}
 	}
 
+	.widget.null-instagram-feed > p.clear a:active,
+	.widget.null-instagram-feed > p.clear a:focus,
 	.woocommerce-product-search button[type="submit"]:active,
 	.woocommerce-product-search button[type="submit"]:focus,
 	.grofile-full-link:active,
@@ -95,6 +99,7 @@ button {
 		background: #252323;
 	}
 
+	.widget.null-instagram-feed > p.clear a:hover,
 	.woocommerce-product-search button[type="submit"]:hover,
 	.grofile-full-link:hover,
 	.flickr-more:hover,

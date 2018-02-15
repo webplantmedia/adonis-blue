@@ -63,6 +63,9 @@ a:hover {
 	background-color: ' . $crimson_rose['footer_background_color'] . '; /*id:footer_background_color*/
 }
 
+#master .widget.null-instagram-feed > p.clear a,
+#master .widget.null-instagram-feed > p.clear a:active,
+#master .widget.null-instagram-feed > p.clear a:focus,
 #master .woocommerce-product-search button[type="submit"],
 #master .milestone-header,
 #master .grofile-full-link,
@@ -122,6 +125,7 @@ a:hover {
 	background-color: ' . $crimson_rose['primary_color'] . '; /*id:primary_color*/
 }
 
+#master .widget.null-instagram-feed > p.clear a:hover,
 #master .woocommerce-product-search button[type="submit"]:hover,
 #master .grofile-full-link:hover,
 #master .flickr-more:hover,

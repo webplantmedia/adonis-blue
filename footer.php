@@ -24,6 +24,16 @@ $column = 1;
 		</div><!-- .site-boundary -->
 	</div><!-- #content -->
 
+	<?php if ( is_active_sidebar( 'gallery-1' ) ) : ?>
+
+		<div id="footer-gallery" class="footer-gallery-widget-wrapper">
+
+			<?php dynamic_sidebar( 'gallery-1' ); ?>
+
+		</div>
+
+	<?php endif; ?>
+
 	<?php if ( $has_footer_widgets ) : ?>
 
 		<footer id="colophon" class="site-footer has-footer-widgets">

@@ -84,6 +84,12 @@ function crimson_rose_register_required_plugins() {
 		),
 
 		array(
+			'name'      => 'WP Instagram Widget',
+			'slug'      => 'wp-instagram-widget',
+			'required'  => false,
+		),
+
+		array(
 			'name'      => 'One Click Demo Import',
 			'slug'      => 'one-click-demo-import',
 			'required'  => false,
