@@ -1771,6 +1771,8 @@ a:hover, a:active {
   letter-spacing: 0.07em;
 }
 
+.main-menu ul .current_page_parent > a,
+.main-menu ul .current-menu-parent > a,
 .main-menu ul .current_page_item > a,
 .main-menu ul .current-menu-item > a,
 .main-menu ul .current_page_ancestor > a,
@@ -5339,6 +5341,7 @@ h1.h1-title,
   border-color: #ffffff;
 }
 
+#master .footer-text-light #colophon .widget.null-instagram-feed > p.clear a,
 #master .footer-text-light #colophon .woocommerce-product-search button[type="submit"],
 #master .footer-text-light #colophon .grofile-full-link,
 #master .footer-text-light #colophon .flickr-more,
@@ -5358,7 +5361,11 @@ h1.h1-title,
   text-decoration: none;
 }
 
-#master .footer-text-light #colophon .woocommerce-product-search button[type="submit"], #master .footer-text-light #colophon .woocommerce-product-search button[type="submit"]:hover, #master .footer-text-light #colophon .woocommerce-product-search button[type="submit"]:active, #master .footer-text-light #colophon .woocommerce-product-search button[type="submit"]:focus,
+#master .footer-text-light #colophon .widget.null-instagram-feed > p.clear a, #master .footer-text-light #colophon .widget.null-instagram-feed > p.clear a:hover, #master .footer-text-light #colophon .widget.null-instagram-feed > p.clear a:active, #master .footer-text-light #colophon .widget.null-instagram-feed > p.clear a:focus,
+#master .footer-text-light #colophon .woocommerce-product-search button[type="submit"],
+#master .footer-text-light #colophon .woocommerce-product-search button[type="submit"]:hover,
+#master .footer-text-light #colophon .woocommerce-product-search button[type="submit"]:active,
+#master .footer-text-light #colophon .woocommerce-product-search button[type="submit"]:focus,
 #master .footer-text-light #colophon .grofile-full-link,
 #master .footer-text-light #colophon .grofile-full-link:hover,
 #master .footer-text-light #colophon .grofile-full-link:active,
@@ -5424,6 +5431,7 @@ h1.h1-title,
   color: #ffffff;
 }
 
+#master .footer-text-light #colophon .widget.null-instagram-feed > p.clear a:hover,
 #master .footer-text-light #colophon .woocommerce-product-search button[type="submit"]:hover,
 #master .footer-text-light #colophon .grofile-full-link:hover,
 #master .footer-text-light #colophon .flickr-more:hover,
@@ -5671,6 +5679,10 @@ object {
   margin-top: 28px;
   margin-top: 1.75rem;
   text-align: center;
+}
+
+#tertiary .null-instagram-feed > p.clear {
+  text-align: left;
 }
 
 #master #footer-gallery .widget {
