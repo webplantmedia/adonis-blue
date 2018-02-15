@@ -79,3 +79,24 @@ h6 {
 	}
 }
 
+@media screen and (min-width: ($size__menu-collapse-width + 1) ) {
+	#master .h1,
+	h1 {
+		// @include rem('font-size',($font__h1-size+7));
+	}
+
+	#master .h2,
+	h2 {
+		// @include rem('font-size',($font__h1-size+6));
+	}
+
+	#master .h3,
+	h3 {
+		// @include rem('font-size',($font__h1-size+4));
+	}
+
+	#master .h4,
+	h4 {
+		// @include rem('font-size',($font__h1-size+3));
+	}
+}

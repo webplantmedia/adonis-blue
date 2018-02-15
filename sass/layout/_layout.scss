@@ -8,8 +8,8 @@
 	margin-left: auto;
 	margin-right: auto;
 	display: block;
-	@include rem('padding-left', 20px);
-	@include rem('padding-right', 20px);
+	@include rem('padding-left', 40px);
+	@include rem('padding-right', 40px);
 }
 
 #master .widgetized-page {
@@ -23,8 +23,8 @@
 }
 
 .site-padding {
-	@include rem('padding-left', 20px);
-	@include rem('padding-right', 20px);
+	@include rem('padding-left', 40px);
+	@include rem('padding-right', 40px);
 }
 
 .site-content {
@@ -45,4 +45,13 @@
 	@include rem('max-width', $size__box-container);
 	margin-left: auto;
 	margin-right: auto;
+}
+
+@media (max-width: 700px) {
+	.widgetized-page .site-content .content-widget,
+	.site-boundary,
+	.site-padding {
+		@include rem('padding-left', 20px);
+		@include rem('padding-right', 20px);
+	}
 }

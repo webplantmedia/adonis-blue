@@ -114,12 +114,7 @@ add_action( 'after_setup_theme', 'crimson_rose_content_width', 0 );
 
 function crimson_rose_content_width_check() {
 	if ( crimson_rose_display_fullwidth() ) {
-		if ( crimson_rose_display_header_image() ) {
-			$GLOBALS['content_width'] = apply_filters( 'crimson_rose_content_width', 900 );
-		}
-		else {
-			$GLOBALS['content_width'] = apply_filters( 'crimson_rose_content_width', 1060 );
-		}
+		$GLOBALS['content_width'] = apply_filters( 'crimson_rose_content_width', 1060 );
 	}
 }
 add_action( 'template_redirect', 'crimson_rose_content_width_check' );
