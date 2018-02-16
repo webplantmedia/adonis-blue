@@ -2597,6 +2597,11 @@ a:hover, a:active {
   margin-bottom: 5rem;
 }
 
+#tertiary .widget .widget-title {
+  margin-bottom: 28px;
+  margin-bottom: 1.75rem;
+}
+
 .footer-column-2 .widget_archive ul,
 .footer-column-2 .widget_categories ul,
 .footer-column-2 .widget_pages ul,
