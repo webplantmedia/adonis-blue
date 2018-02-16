@@ -98,6 +98,10 @@
 
 #tertiary .widget {
 	@include rem('margin-bottom',80px);
+
+	.widget-title {
+		@include rem('margin-bottom',28px);
+	}
 }
 
 // Footer Column 2
