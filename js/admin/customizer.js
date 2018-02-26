@@ -13,7 +13,7 @@
 			value = 'initial';
 		}
 
-		var stylesheet = '#brimstone-style-inline-css';
+		var stylesheet = '#crimson-rose-style-inline-css';
 		var $css = $('head ' + stylesheet);
 		if ( $css.length ) {
 			var css = $css.html();
