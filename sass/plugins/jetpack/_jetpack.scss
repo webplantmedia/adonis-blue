@@ -59,6 +59,11 @@
 		text-decoration: none;
 	}
 
+	// for some reason, jetpack overrides their negative margin on mobile displays
+	#jp-relatedposts .jp-relatedposts-items-visual {
+		margin-right: -20px;
+	}
+
 	.sharedaddy {
 		@include rem('margin-top',40px);
 	}
