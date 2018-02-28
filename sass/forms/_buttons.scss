@@ -268,6 +268,20 @@ button {
 		}
 	}
 
+	@media (max-width: 600px) {
+		.fancy2-button:focus,
+		.fancy2-button:visited,
+		.fancy2-button:active,
+		.fancy2-button:hover,
+		.fancy2-button {
+			padding-right: 30px;
+
+			&:after {
+				display: none;
+			}
+		}
+	}
+
 	.fancy2-button:before,
 	.fancy2-button:hover {
 		// background-image: url("img/button2-bg-dark.jpg");
