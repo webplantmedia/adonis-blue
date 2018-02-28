@@ -72,6 +72,10 @@ Jetpack styling
   text-decoration: none;
 }
 
+#master #jp-relatedposts .jp-relatedposts-items-visual {
+  margin-right: -20px;
+}
+
 #master .sharedaddy {
   margin-top: 40px;
   margin-top: 2.5rem;
