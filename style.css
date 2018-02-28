@@ -1278,6 +1278,23 @@ button {
   margin-top: -13px;
 }
 
+@media (max-width: 600px) {
+  #master body .fancy2-button:focus,
+  #master body .fancy2-button:visited,
+  #master body .fancy2-button:active,
+  #master body .fancy2-button:hover,
+  #master body .fancy2-button {
+    padding-right: 30px;
+  }
+  #master body .fancy2-button:focus:after,
+  #master body .fancy2-button:visited:after,
+  #master body .fancy2-button:active:after,
+  #master body .fancy2-button:hover:after,
+  #master body .fancy2-button:after {
+    display: none;
+  }
+}
+
 /*--------------------------------------------------------------
 ## Fields
 --------------------------------------------------------------*/
