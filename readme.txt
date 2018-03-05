@@ -1,19 +1,19 @@
 === Crimson Rose ===
 
-Contributors: automattic
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+Contributors: cbaldelomar
+Tags: two-columns, three-columns, four-columns, right-sidebar, grid-layout, custom-background, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-image-header, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, blog, e-commerce, entertainment, food-and-drink, photography
 
-Requires at least: 4.0
-Tested up to: 4.8
-Stable tag: 1.0.0
+Requires at least: 4.7
+Tested up to: 4.9.4
+Stable tag: trunk
 License: GNU General Public License v2 or later
-License URI: LICENSE
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A starter theme called Crimson Rose.
+Easy To Use, Fast To Install, Small Business WordPress Themes
 
 == Description ==
 
-Pretty, Feminine WordPress Themes
+Crimson Rose is an easy to use WordPress theme with a feminine and watercolor design for female entrepreneurs. Quickly change the color scheme, set up a beautiful homepage using widgets, and create grid based content using page templates. This theme is specially designed to integrate with Jetpack, WooCommerce, and AffiliateWP, which is all you need to get your shopping site online, marketed, and social. This theme provides you with the necessary Customizer options so you can easily brand your site, and make it your own. Spend less time configuring your theme, and more time writing great content, and communicating to your audience.
 
 == Installation ==
 
@@ -29,7 +29,8 @@ Crimson Rose includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
-= 1.0 - May 12 2015 =
+= 1.71 =
+
 * Initial release
 
 == Credits ==
