@@ -357,6 +357,20 @@ function crimson_rose_customize_register( $wp_customize ) {
 		'section' => $section_id,
 	) );
 
+	/*$setting_id = 'disable_heading_font';
+	$wp_customize->add_setting( $setting_id, array(
+		'default' => $crimson_rose_default[ $setting_id ],
+		'transport' => 'refresh',
+		'sanitize_callback' => 'crimson_rose_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( $setting_id, array(
+		'type' => 'checkbox',
+		'label' => __( 'Disable Heading Font', 'crimson-rose' ),
+		'description' => __( 'If you are using a Google Font plugin, then you can disable the load of the heading font.', 'crimson-rose' ),
+		'section' => $section_id,
+	) );*/
+	
 	$setting_id = 'disable_accent_font';
 	$wp_customize->add_setting( $setting_id, array(
 		'default' => $crimson_rose_default[ $setting_id ],

@@ -221,6 +221,11 @@ function crimson_rose_scripts() {
 		wp_enqueue_style( 'crimson-rose-body-font', get_parent_theme_file_uri() . '/fonts/body-font.css', array(), CRIMSON_ROSE_VERSION );
 	}
 	
+	/*if ( ! $crimson_rose['disable_heading_font'] ) {
+		// Add custom fonts, used in the main stylesheet.
+		wp_enqueue_style( 'crimson-rose-heading-font', get_parent_theme_file_uri() . '/fonts/heading-font.css', array(), BRIMSTONE_VERSION );
+	}*/
+	
 	if ( ! $crimson_rose['disable_accent_font'] ) {
 		// Add custom fonts, used in the main stylesheet.
 		wp_enqueue_style( 'crimson-rose-accent-font', get_parent_theme_file_uri() . '/fonts/accent-font.css', array(), CRIMSON_ROSE_VERSION );

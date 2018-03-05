@@ -35,6 +35,7 @@ $crimson_rose_default['show_menu_arrows'] = 1;
 // Site
 $crimson_rose_default['default_button_style'] = 'button-2';
 $crimson_rose_default['disable_body_font'] = 0;
+$crimson_rose_default['disable_heading_font'] = 0;
 $crimson_rose_default['disable_accent_font'] = 0;
 $crimson_rose_default['page_image_header_height'] = 400;
 $crimson_rose_default['check_for_updates'] = 1;
