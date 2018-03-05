@@ -303,6 +303,36 @@ textarea {
   color: #6d686c;
 }
 
+.site-title,
+#master .h1,
+#master .h2,
+#master .h3,
+#master .h4,
+#master .h5,
+#master .h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Crimson Rose Body Font", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
+}
+
+#master .sd-social-text .sd-content ul li a,
+#master .sd-social-icon-text .sd-content ul li a {
+  font-family: "Crimson Rose Body Font", sans-serif;
+}
+
+.search .archive-page-header .page-title .archive-type,
+.archive .archive-page-header .page-title .archive-type,
+.site-branding .site-description {
+  font-family: "Crimson Rose Accent Font", cursive;
+}
+
 /*--------------------------------------------------------------
 ## Headings
 --------------------------------------------------------------*/
@@ -3954,7 +3984,6 @@ a:hover, a:active {
 }
 
 .site-branding .site-description {
-  font-family: "Crimson Rose Accent Font", cursive;
   text-align: center;
   margin: 0;
   text-transform: lowercase;
@@ -4158,7 +4187,6 @@ h1.h1-title,
 
 .search .archive-page-header .page-title .archive-type,
 .archive .archive-page-header .page-title .archive-type {
-  font-family: "Crimson Rose Accent Font", cursive;
   font-size: 45px;
   font-size: 2.8125rem;
   line-height: 1;
