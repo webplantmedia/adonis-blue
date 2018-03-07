@@ -96,6 +96,29 @@ if ( ! function_exists( 'crimson_rose_setup' ) ) :
 		) );
 
 		add_theme_support( 'custom-background' );
+
+		add_theme_support( 'wpm-fonts', array(
+			'logo' => array(
+				'font'	=> 'Lato',
+				'selectors' => '.site-title',
+			),
+			'body' => array(
+				'font'	=> 'Lato',
+				'selectors' => 'body, button, input, select, optgroup, textarea',
+			),
+			'heading' => array(
+				'font'	=> 'Lato',
+				'selectors' => '#master .h1, #master .h2, #master .h3, #master .h4, #master .h5, #master .h6, h1, h2, h3, h4, h5, h6',
+			),
+			'accent' => array(
+				'font'	=> 'Mrs Saint Delafield',
+				'selectors' => array(
+					'.search .archive-page-header .page-title .archive-type',
+					'.archive .archive-page-header .page-title .archive-type',
+					'.site-branding .site-description',
+				),
+			),
+		) );
 	}
 endif;
 add_action( 'after_setup_theme', 'crimson_rose_setup' );
@@ -216,19 +239,21 @@ function crimson_rose_scripts() {
 	// $google_request = str_replace( ',', '%2C', crimson_rose_fonts_url() );
 	// wp_enqueue_style( 'crimson-rose-google-font-request', $google_request, array(), null );
 
-	if ( ! $crimson_rose['disable_body_font'] ) {
-		// Add custom fonts, used in the main stylesheet.
-		wp_enqueue_style( 'crimson-rose-body-font', get_parent_theme_file_uri() . '/fonts/body-font.css', array(), CRIMSON_ROSE_VERSION );
-	}
-	
-	/*if ( ! $crimson_rose['disable_heading_font'] ) {
-		// Add custom fonts, used in the main stylesheet.
-		wp_enqueue_style( 'crimson-rose-heading-font', get_parent_theme_file_uri() . '/fonts/heading-font.css', array(), BRIMSTONE_VERSION );
-	}*/
-	
-	if ( ! $crimson_rose['disable_accent_font'] ) {
-		// Add custom fonts, used in the main stylesheet.
-		wp_enqueue_style( 'crimson-rose-accent-font', get_parent_theme_file_uri() . '/fonts/accent-font.css', array(), CRIMSON_ROSE_VERSION );
+	if ( ! crimson_rose_is_wpm_fonts_activated() ) {
+		if ( ! $crimson_rose['disable_body_font'] ) {
+			// Add custom fonts, used in the main stylesheet.
+			wp_enqueue_style( 'crimson-rose-body-font', get_parent_theme_file_uri() . '/fonts/lato/stylesheet.css', array(), CRIMSON_ROSE_VERSION );
+		}
+		
+		/*if ( ! $crimson_rose['disable_heading_font'] ) {
+			// Add custom fonts, used in the main stylesheet.
+			wp_enqueue_style( 'crimson-rose-heading-font', get_parent_theme_file_uri() . '/fonts/heading-font.css', array(), CRIMSON_ROSE_VERSION );
+		}*/
+		
+		if ( ! $crimson_rose['disable_accent_font'] ) {
+			// Add custom fonts, used in the main stylesheet.
+			wp_enqueue_style( 'crimson-rose-accent-font', get_parent_theme_file_uri() . '/fonts/mrs-saint-delafield/stylesheet.css', array(), CRIMSON_ROSE_VERSION );
+		}
 	}
 	
 	// Add genericons
@@ -573,6 +598,17 @@ function crimson_rose_is_woocommerce_activated() {
  */
 function crimson_rose_is_jetpack_activated() {
 	if ( defined( 'JETPACK__VERSION' ) ) {
+		return true;
+	}
+
+	return false;
+}
+
+/**
+ * Check WPM Fonts activation
+ */
+function crimson_rose_is_wpm_fonts_activated() {
+	if ( defined( 'WPM_FONTS_VERSION' ) ) {
 		return true;
 	}
 
