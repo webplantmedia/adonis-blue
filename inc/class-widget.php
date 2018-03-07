@@ -686,7 +686,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 				?>
 				<p>
 					<label for="<?php echo $field_id; ?>"><?php echo esc_html( $setting['label'] ); ?></label>
-					<input class="widefat" id="<?php echo esc_attr( $field_id ); ?>" name="<?php echo esc_attr( $field_name ); ?>" type="number" step="<?php echo esc_attr( $setting['step'] ); ?>" min="<?php echo esc_attr( $setting['min'] ); ?>" max="<?php echo esc_attr( $setting['max'] ); ?>" value="<?php echo esc_attr( $value ); ?>" />
+					<input class="widefat" id="<?php echo esc_attr( $field_id ); ?>" name="<?php echo esc_attr( $field_name ); ?>" type="number" step="<?php echo esc_attr( $setting['step'] ); ?>" <?php if ( isset( $setting['min'] ) ) : ?> min="<?php echo esc_attr( $setting['min'] ); ?>" <?php endif; ?> <?php if ( isset( $setting['max'] ) ) : ?> max="<?php echo esc_attr( $setting['max'] ); ?>" <?php endif; ?> value="<?php echo esc_attr( $value ); ?>" />
 					<?php if ( isset( $setting['description'] ) ) : ?>
 						<span class="description"><?php echo esc_html( $setting['description'] ); ?></span>
 					<?php endif; ?>
