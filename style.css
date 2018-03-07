@@ -3991,6 +3991,16 @@ a:hover, a:active {
   font-size: 1.75rem;
 }
 
+.wpm-fonts .site-branding .site-description {
+  font-size: 16px;
+  font-size: 1rem;
+}
+
+.wpm-fonts.wpm-fonts-accent-small-font .site-branding .site-description {
+  font-size: 28px;
+  font-size: 1.75rem;
+}
+
 #master .site-branding .site-title a, #master .site-branding .site-title a:hover {
   color: #666666;
 }
@@ -4001,6 +4011,14 @@ a:hover, a:active {
     font-size: 1.5625rem;
   }
   #master .site-branding .site-description {
+    font-size: 22px;
+    font-size: 1.375rem;
+  }
+  #master .wpm-fonts .site-branding .site-description {
+    font-size: 14px;
+    font-size: 0.875rem;
+  }
+  #master .wpm-fonts.wpm-fonts-accent-small-font .site-branding .site-description {
     font-size: 22px;
     font-size: 1.375rem;
   }
@@ -4200,6 +4218,18 @@ h1.h1-title,
 .archive .archive-page-header .page-title .archive-type + .archive-title {
   margin-top: 10px;
   margin-top: 0.625rem;
+}
+
+.wpm-fonts.search .archive-page-header .page-title .archive-type,
+.wpm-fonts.archive .archive-page-header .page-title .archive-type {
+  font-size: 22px;
+  font-size: 1.375rem;
+}
+
+.wpm-fonts.wpm-fonts-accent-small-font.search .archive-page-header .page-title .archive-type,
+.wpm-fonts.wpm-fonts-accent-small-font.archive .archive-page-header .page-title .archive-type {
+  font-size: 45px;
+  font-size: 2.8125rem;
 }
 
 #master .archive-title-light .archive-page-header .page-title {
