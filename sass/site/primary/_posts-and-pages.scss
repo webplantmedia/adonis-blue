@@ -168,6 +168,27 @@ h1.h1-title,
 	}
 }
 
+.wpm-fonts {
+	&.search .archive-page-header,
+	&.archive .archive-page-header {
+		.page-title {
+			.archive-type {
+				@include rem('font-size',$font__xlarge-size);
+			}
+		}
+	}
+	&.wpm-fonts-accent-small-font {
+		&.search .archive-page-header,
+		&.archive .archive-page-header {
+			.page-title {
+				.archive-type {
+					@include rem('font-size',45px);
+				}
+			}
+		}
+	}
+}
+
 #master .archive-title-light .archive-page-header {
 	.page-title {
 		color: $color__white;

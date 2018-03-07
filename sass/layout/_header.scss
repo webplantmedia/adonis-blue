@@ -134,6 +134,21 @@
 	}
 }
 
+.wpm-fonts {
+	.site-branding {
+		.site-description {
+			@include rem('font-size',$font__medium-size);
+		}
+	}
+	&.wpm-fonts-accent-small-font {
+		.site-branding {
+			.site-description {
+				@include rem('font-size',28px);
+			}
+		}
+	}
+}
+
 #master .site-branding {
 	.site-title a {
 		&,
@@ -144,14 +159,32 @@
 }
 
 @media screen and (max-width: 600px) {
-	#master .site-branding {
-		.site-title {
-			@include rem('font-size',25px);
+	#master {
+		.site-branding {
+			.site-title {
+				@include rem('font-size',25px);
+			}
+
+			.site-description {
+				@include rem('font-size',22px);
+			}
 		}
 
-		.site-description {
-			@include rem('font-size',22px);
+		.wpm-fonts {
+			.site-branding {
+				.site-description {
+					@include rem('font-size',$font__xsmall-size);
+				}
+			}
+			&.wpm-fonts-accent-small-font {
+				.site-branding {
+					.site-description {
+						@include rem('font-size',22px);
+					}
+				}
+			}
 		}
+
 	}
 }
 
