@@ -510,6 +510,9 @@ function crimson_rose_allowed_html() {
 		$expandedtags[ $tag ]['style'] = true;
 	}
 
+	// anchor target
+	$expandedtags['a']['target'] = true;
+
 	// img.
 	$expandedtags['img'] = array(
 		'src' => true,
