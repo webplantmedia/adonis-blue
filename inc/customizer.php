@@ -13,6 +13,8 @@
 function crimson_rose_customize_register( $wp_customize ) {
 	global $crimson_rose_default;
 
+	require get_template_directory() . '/inc/class-customize-control.php';
+	
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	// $wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
@@ -355,6 +357,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 		'label' => __( 'Disable Body Font', 'crimson-rose' ),
 		'description' => __( 'If you are using a Google Font plugin, then you can disable the load of the body font.', 'crimson-rose' ),
 		'section' => $section_id,
+		'active_callback' => function () { return ! crimson_rose_is_wpm_fonts_activated(); },
 	) );
 
 	/*$setting_id = 'disable_heading_font';
@@ -369,6 +372,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 		'label' => __( 'Disable Heading Font', 'crimson-rose' ),
 		'description' => __( 'If you are using a Google Font plugin, then you can disable the load of the heading font.', 'crimson-rose' ),
 		'section' => $section_id,
+		'active_callback' => function () { return ! crimson_rose_is_wpm_fonts_activated(); },
 	) );*/
 	
 	$setting_id = 'disable_accent_font';
@@ -383,6 +387,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 		'label' => __( 'Disable Accent Font', 'crimson-rose' ),
 		'description' => __( 'The accent font is a cursive font used in places such as your archive title. If you are using a Google Font plugin, then you can disable the load of this accent font.', 'crimson-rose' ),
 		'section' => $section_id,
+		'active_callback' => function () { return ! crimson_rose_is_wpm_fonts_activated(); },
 	) );
 
 	$setting_id = 'page_image_header_height';
@@ -1042,6 +1047,36 @@ function crimson_rose_customize_register( $wp_customize ) {
 		'label' => __( 'Display White Text?', 'crimson-rose' ),
 		'section' => $section_id,
 	) );
+
+	if ( ! crimson_rose_is_wpm_fonts_activated() ) {
+		/**
+		 * Fonts
+		 */
+		$section_id = 'wpm_fonts';
+		$wp_customize->add_section( $section_id, array(
+			'title'    => __( 'Fonts', 'crimson-rose' ),
+			'panel'	=> 'theme_options',
+			'priority' => 331, // Before Additional CSS.
+		) );
+
+		$setting_id = 'wpm_fonts_notice';
+		$wp_customize->add_setting( $setting_id, array(
+			'default' => '',
+			'transport' => 'refresh',
+			'sanitize_callback' => 'int',
+		) );
+
+		$wp_customize->add_control( new Crimson_Rose_Notice_Control(
+			$wp_customize,
+			$setting_id,
+			array(
+				'label' => __( 'Font Customization', 'crimson-rose' ),
+				'description' => __( 'To easily change the font styles for your theme, please download our <a target="_blank" href="https://webplantmedia.com"><span style="text-decoration:none;" class="dashicons dashicons-external"></span>Designer Fonts</a> plugin.', 'crimson-rose' ),
+				'section' => $section_id,
+				'settings' => $setting_id,
+			)
+		) );
+	}
 }
 add_action( 'customize_register', 'crimson_rose_customize_register' );
 

@@ -118,6 +118,7 @@ if ( ! function_exists( 'crimson_rose_setup' ) ) :
 					'.site-branding .site-description',
 				),
 			),
+			'customizer_panel' => 'theme_options',
 		) );
 	}
 endif;
