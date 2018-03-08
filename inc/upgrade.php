@@ -26,6 +26,9 @@ if ( ! class_exists( 'Crimson_Rose_Upgrade' ) ) :
 
 			add_action( 'load-update-core.php', array( $this, 'clear_update_transient' ) );
 			add_action( 'load-themes.php', array( $this, 'clear_update_transient' ) );
+
+			// remove comment to always force a check with the server.
+			// $this->clear_update_transient();
 		}
 
 		/**
