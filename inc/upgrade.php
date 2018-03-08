@@ -29,7 +29,7 @@ if ( ! class_exists( 'Crimson_Rose_Upgrade' ) ) :
 		}
 
 		/**
-		 * Ping http://api.genesistheme.com/ asking if a new version of this theme is available.
+		 * Ping http://api.webplantmedia.com/ asking if a new version of this theme is available.
 		 *
 		 * If not, it returns false.
 		 *
