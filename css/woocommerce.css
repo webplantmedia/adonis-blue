@@ -571,8 +571,47 @@ WooCommerce styling
   margin-bottom: 5em;
 }
 
+#master .woocommerce div.product div.images .woocommerce-product-gallery__wrapper {
+  content: "";
+  display: table;
+  table-layout: fixed;
+}
+
+#master .woocommerce div.product div.images .woocommerce-product-gallery__image:nth-child(n+2) {
+  width: 10%;
+  float: left;
+}
+
+@media screen and (max-width: 420px) {
+  #master .woocommerce div.product div.images .woocommerce-product-gallery__image:nth-child(n+2) {
+    width: 12.5%;
+  }
+}
+
 #master .woocommerce div.product div.images .woocommerce-product-gallery__trigger {
   background: #ffffff;
+}
+
+#master .woocommerce div.product div.images .flex-control-thumbs li {
+  width: 10%;
+}
+
+@media screen and (max-width: 420px) {
+  #master .woocommerce div.product div.images .flex-control-thumbs li {
+    width: 12.5%;
+  }
+}
+
+#master .woocommerce div.product .woocommerce-product-gallery--columns-3 .flex-control-thumbs li:nth-child(3n+1) {
+  clear: none;
+}
+
+#master .woocommerce div.product .woocommerce-product-gallery--columns-4 .flex-control-thumbs li:nth-child(4n+1) {
+  clear: none;
+}
+
+#master .woocommerce div.product .woocommerce-product-gallery--columns-5 .flex-control-thumbs li:nth-child(5n+1) {
+  clear: none;
 }
 
 #master .woocommerce div.product div.summary {
