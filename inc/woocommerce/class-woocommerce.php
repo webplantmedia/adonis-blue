@@ -93,7 +93,9 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 
 		function woocommerce_setup() {
 			// Declare WooCommerce support.
-			add_theme_support( 'woocommerce' );
+			add_theme_support( 'woocommerce', array(
+				// 'gallery_thumbnail_image_width' => 100,
+			) );
 			add_theme_support( 'wc-product-gallery-zoom' );
 			add_theme_support( 'wc-product-gallery-lightbox' );
 			add_theme_support( 'wc-product-gallery-slider' );
