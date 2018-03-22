@@ -9,7 +9,7 @@ Stable tag: trunk
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Easy To Use, Fast To Install, Small Business WordPress Themes
+Easy To Use, Fast To Install, Small Business Feminine WordPress Themes
 
 == Description ==
 
@@ -29,7 +29,7 @@ Crimson Rose includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
-= 1.71 =
+= 1.74 =
 
 * Initial release
 
