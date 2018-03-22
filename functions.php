@@ -690,6 +690,11 @@ require get_parent_theme_file_path() . '/inc/icon-functions.php';
 require get_parent_theme_file_path() . '/inc/recommended-plugins.php';
 
 /*
+ * Add dashboard widget and info page.
+ */
+require get_parent_theme_file_path() . '/inc/dashboard.php';
+
+/*
  * Check for theme update.
  */
 require get_parent_theme_file_path() . '/inc/upgrade.php';
