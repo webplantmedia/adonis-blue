@@ -452,7 +452,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'text',
 		'label' => __( 'Site Info', 'crimson-rose' ),
-		'description' => __( 'Allowed HTML tags are <code>span</code>, <code>i</code>, <code>br</code>, <code>p</code>, <code>h1-h6</code>, and <code>img</code> with the following attributes: id; class; and style. The <code>img</code> tag also includes the attributes: src; height; width; alt; and title.', 'crimson-rose' ),
+		'description' => __( 'Allowed HTML tags are <code>a</code>, <code>span</code>, <code>i</code>, <code>br</code>, <code>p</code>, <code>h1-h6</code>, and <code>img</code> with the following attributes: id; class; and style. The <code>img</code> tag also includes the attributes: src; height; width; alt; and title. The <code>a</code> tag also includes the attribute: target.', 'crimson-rose' ),
 		'section' => $section_id,
 	) );
 
@@ -1071,7 +1071,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 			$setting_id,
 			array(
 				'label' => __( 'Font Customization', 'crimson-rose' ),
-				'description' => __( 'To easily change the font styles for your theme, please download our <a target="_blank" href="https://webplantmedia.com"><span style="text-decoration:none;" class="dashicons dashicons-external"></span>Designer Fonts</a> plugin.', 'crimson-rose' ),
+				'description' => __( 'To easily change the font styles for your theme, please download our <a target="_blank" href="https://webplantmedia.com/product/designer-fonts-wordpress-plugin/"><span style="text-decoration:none;" class="dashicons dashicons-external"></span>Designer Fonts</a> plugin.', 'crimson-rose' ),
 				'section' => $section_id,
 				'settings' => $setting_id,
 			)
