@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Crimson Rose 1.55\n"
+"Project-Id-Version: Crimson Rose 1.76\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/crimson-rose\n"
-"POT-Creation-Date: 2018-02-03 17:23:04+00:00\n"
+"POT-Creation-Date: 2018-03-23 15:49:32+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
 #. translators: %s: Name of current post. Only visible to screen readers
-#: 404.php:53 inc/template-tags.php:103 inc/widgets/static-content.php:224
+#: 404.php:53 inc/template-tags.php:103 inc/widgets/static-content.php:241
 #: template-parts/content-full-width.php:55
 #: template-parts/content-grid-accordion.php:32
 #: template-parts/content-grid.php:36 template-parts/content-page.php:37
@@ -73,39 +73,47 @@ msgstr ""
 msgid "Social Menu"
 msgstr ""
 
-#: functions.php:139
+#: functions.php:158
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:141 functions.php:151 functions.php:161 functions.php:171
-#: functions.php:181
+#: functions.php:160 functions.php:170 functions.php:180 functions.php:190
+#: functions.php:210
 msgid "Add widgets here."
 msgstr ""
 
-#: functions.php:149
+#: functions.php:168
 msgid "Footer 1"
 msgstr ""
 
-#: functions.php:159
+#: functions.php:178
 msgid "Footer 2"
 msgstr ""
 
-#: functions.php:169
+#: functions.php:188
 msgid "Footer 3"
 msgstr ""
 
-#: functions.php:179
+#: functions.php:198
+msgid "Instagram Gallery"
+msgstr ""
+
+#: functions.php:200
+msgid "Add Instagram widget here."
+msgstr ""
+
+#: functions.php:208
 msgid "Front Page"
 msgstr ""
 
 #. Translators: If there are characters in your language that are not
 #. supported, translate this to 'off'. Do not translate into your own language.
-#: functions.php:274
+#: functions.php:311
 msgctxt "Body font: on or off"
 msgid "on"
 msgstr ""
 
-#: functions.php:275
+#: functions.php:312
 msgctxt "Accent font: on or off"
 msgid "on"
 msgstr ""
@@ -182,375 +190,442 @@ msgstr ""
 msgid "Default Header Image"
 msgstr ""
 
-#: inc/customizer.php:52
+#: inc/customizer.php:54
 msgid "Retina Logo"
 msgstr ""
 
-#: inc/customizer.php:56 inc/customizer.php:59
+#: inc/customizer.php:58 inc/customizer.php:61
 msgid "Select Retina Logo"
 msgstr ""
 
-#: inc/customizer.php:57
+#: inc/customizer.php:59
 msgid "Change Retina Logo"
 msgstr ""
 
-#: inc/customizer.php:58
+#: inc/customizer.php:60
 msgid "No retina logo selected"
 msgstr ""
 
-#: inc/customizer.php:60
+#: inc/customizer.php:62
 msgid "Choose Retina Logo"
 msgstr ""
 
-#: inc/customizer.php:62
+#: inc/customizer.php:64
 msgid ""
 "Select image twice the size as your original logo image for crisp display on "
 "retina screens."
 msgstr ""
 
-#: inc/customizer.php:74
+#: inc/customizer.php:76
 msgid "Padding Top"
 msgstr ""
 
-#: inc/customizer.php:87
+#: inc/customizer.php:89
 msgid "Padding Bottom"
 msgstr ""
 
-#: inc/customizer.php:117
+#: inc/customizer.php:119
 msgid "Header Background Image Color"
 msgstr ""
 
-#: inc/customizer.php:118
+#: inc/customizer.php:120
 msgid "Control the color of the watercolor background image in the header."
 msgstr ""
 
-#: inc/customizer.php:147
+#: inc/customizer.php:149
 msgid "Primary Color"
 msgstr ""
 
-#: inc/customizer.php:159
+#: inc/customizer.php:161
 msgid "Primary Hover Color"
 msgstr ""
 
-#: inc/customizer.php:171
+#: inc/customizer.php:173
 msgid "Archive Background Color"
 msgstr ""
 
-#: inc/customizer.php:184
+#: inc/customizer.php:186
 msgid "Display White Archive Title?"
 msgstr ""
 
-#: inc/customizer.php:196
+#: inc/customizer.php:198
 msgid "Footer Background Color"
 msgstr ""
 
-#: inc/customizer.php:209
+#: inc/customizer.php:211
 msgid "Footer Background Image Color"
 msgstr ""
 
-#: inc/customizer.php:210
+#: inc/customizer.php:212
 msgid "Control the color of the watercolor background image in the footer."
 msgstr ""
 
-#: inc/customizer.php:239
+#: inc/customizer.php:242
+msgid "Display White Footer Text?"
+msgstr ""
+
+#: inc/customizer.php:254
 msgid "Link Color"
 msgstr ""
 
-#: inc/customizer.php:251
+#: inc/customizer.php:266
 msgid "Link Hover Color"
 msgstr ""
 
-#: inc/customizer.php:259
+#: inc/customizer.php:274
 msgid "Theme Options"
 msgstr ""
 
-#: inc/customizer.php:268
+#: inc/customizer.php:283
 msgid "Top Header"
 msgstr ""
 
-#: inc/customizer.php:281
+#: inc/customizer.php:296
 msgid "Top Header Background Offset"
 msgstr ""
 
-#: inc/customizer.php:282
+#: inc/customizer.php:297
 msgid ""
 "This changes the position of your top header background so you can center it "
 "perfectly with your top header menu."
 msgstr ""
 
-#: inc/customizer.php:297
+#: inc/customizer.php:312
 msgid "Site"
 msgstr ""
 
-#: inc/customizer.php:310
+#: inc/customizer.php:325
 msgid "Show Menu Arrows"
 msgstr ""
 
-#: inc/customizer.php:323
+#: inc/customizer.php:338
 msgid "Default Button Style"
 msgstr ""
 
-#: inc/customizer.php:324
+#: inc/customizer.php:339
 msgid ""
 "When you insert a link on its own line in the WP Editor, the theme turns it "
 "into a button. Choose the default style of your button to display in your "
 "post and pages."
 msgstr ""
 
-#: inc/customizer.php:342
+#: inc/customizer.php:357
 msgid "Disable Body Font"
 msgstr ""
 
-#: inc/customizer.php:343
+#: inc/customizer.php:358
 msgid ""
 "If you are using a Google Font plugin, then you can disable the load of the "
 "body font."
 msgstr ""
 
-#: inc/customizer.php:356
+#: inc/customizer.php:387
 msgid "Disable Accent Font"
 msgstr ""
 
-#: inc/customizer.php:357
+#: inc/customizer.php:388
 msgid ""
 "The accent font is a cursive font used in places such as your archive title. "
 "If you are using a Google Font plugin, then you can disable the load of this "
 "accent font."
 msgstr ""
 
-#: inc/customizer.php:371
+#: inc/customizer.php:403
 msgid "Page Image Header Height"
 msgstr ""
 
-#: inc/customizer.php:372
+#: inc/customizer.php:404
 msgid ""
 "This changes the height of your featured image in your page header area."
 msgstr ""
 
-#: inc/customizer.php:391
+#: inc/customizer.php:423
 msgid "Check For Theme Update"
 msgstr ""
 
-#: inc/customizer.php:404
+#: inc/customizer.php:436
 msgid "Site Structure"
 msgstr ""
 
-#: inc/customizer.php:405
+#: inc/customizer.php:437
 msgid ""
 "Choose between full width or box layout. The background image options can "
 "only be seen when using a box layout."
 msgstr ""
 
-#: inc/customizer.php:422
+#: inc/customizer.php:454
 msgid "Site Info"
 msgstr ""
 
-#: inc/customizer.php:423
+#: inc/customizer.php:455
 msgid ""
-"Allowed HTML tags are <code>span</code>, <code>i</code>, <code>br</code>, "
-"<code>p</code>, <code>h1-h6</code>, and <code>img</code> with the following "
-"attributes: id; class; and style. The <code>img</code> tag also includes the "
-"attributes: src; height; width; alt; and title."
+"Allowed HTML tags are <code>a</code>, <code>span</code>, <code>i</code>, "
+"<code>br</code>, <code>p</code>, <code>h1-h6</code>, and <code>img</code> "
+"with the following attributes: id; class; and style. The <code>img</code> "
+"tag also includes the attributes: src; height; width; alt; and title. The "
+"<code>a</code> tag also includes the attribute: target."
 msgstr ""
 
-#: inc/customizer.php:432 inc/customizer.php:830
+#: inc/customizer.php:464 inc/customizer.php:862
 msgid "Blog"
 msgstr ""
 
-#: inc/customizer.php:445
+#: inc/customizer.php:477
 msgid "Blog Display"
 msgstr ""
 
-#: inc/customizer.php:464
+#: inc/customizer.php:496
 msgid "Archive Display"
 msgstr ""
 
-#: inc/customizer.php:483
+#: inc/customizer.php:515
 msgid "Search Display"
 msgstr ""
 
-#: inc/customizer.php:503
+#: inc/customizer.php:535
 msgid "Thumb Excerpt Max Height"
 msgstr ""
 
-#: inc/customizer.php:504
+#: inc/customizer.php:536
 msgid ""
 "If you have long featured images in your excerpts, set a max-height on your "
 "image. Enter 0 for no max-height"
 msgstr ""
 
-#: inc/customizer.php:522
+#: inc/customizer.php:554
 msgid "Thumb Grid Max Height"
 msgstr ""
 
-#: inc/customizer.php:523
+#: inc/customizer.php:555
 msgid ""
 "If you have long featured images in your grid, set a max-height on your "
 "image. Enter 0 for no max-height"
 msgstr ""
 
-#: inc/customizer.php:540
+#: inc/customizer.php:572
 msgid "Hide Post Navigation"
 msgstr ""
 
-#: inc/customizer.php:541
+#: inc/customizer.php:573
 msgid "Hide the post navigation buttons at the bottom of each post."
 msgstr ""
 
-#: inc/customizer.php:550
+#: inc/customizer.php:582
 msgid "Jetpack"
 msgstr ""
 
-#: inc/customizer.php:564
+#: inc/customizer.php:596
 msgid "Hide Share Button Count"
 msgstr ""
 
-#: inc/customizer.php:573 inc/customizer.php:883
+#: inc/customizer.php:605 inc/customizer.php:915
 msgid "Shop"
 msgstr ""
 
-#: inc/customizer.php:587
+#: inc/customizer.php:619
 msgid "Shop Columns"
 msgstr ""
 
-#: inc/customizer.php:605
+#: inc/customizer.php:637
 msgid "Shop Archive Columns"
 msgstr ""
 
-#: inc/customizer.php:623
+#: inc/customizer.php:655
 msgid "Related Products Columns"
 msgstr ""
 
-#: inc/customizer.php:641
+#: inc/customizer.php:673
 msgid "Display Product Image Backdrop"
 msgstr ""
 
-#: inc/customizer.php:642
+#: inc/customizer.php:674
 msgid ""
 "Add a light gray backdrop with a dropshadow for your product images. "
 "Visually helpful for images with light colored backgrounds."
 msgstr ""
 
-#: inc/customizer.php:655
+#: inc/customizer.php:687
 msgid "Hide Shop Title From Main Shop Page"
 msgstr ""
 
-#: inc/customizer.php:668
+#: inc/customizer.php:700
 msgid "Hide Breadcrumbs From Shop Page"
 msgstr ""
 
-#: inc/customizer.php:681
+#: inc/customizer.php:713
 msgid "Hide Product Reviews From Shop Page"
 msgstr ""
 
-#: inc/customizer.php:694
+#: inc/customizer.php:726
 msgid "Hide Result Count String From Shop Page"
 msgstr ""
 
-#: inc/customizer.php:707
+#: inc/customizer.php:739
 msgid "Hide Ordering Dropdown From Shop Page"
 msgstr ""
 
-#: inc/customizer.php:720
+#: inc/customizer.php:752
 msgid "Truncate Product Titles"
 msgstr ""
 
-#: inc/customizer.php:721
+#: inc/customizer.php:753
 msgid "This will cause product titles to appear in one line."
 msgstr ""
 
-#: inc/customizer.php:734
+#: inc/customizer.php:766
 msgid "Hide Product Reviews From Product Page"
 msgstr ""
 
-#: inc/customizer.php:747
+#: inc/customizer.php:779
 msgid "Hide Product Meta From Product Page"
 msgstr ""
 
-#: inc/customizer.php:760
+#: inc/customizer.php:792
 msgid "Disable Gallery Zoom on Product Page"
 msgstr ""
 
-#: inc/customizer.php:773
+#: inc/customizer.php:805
 msgid "Disable Gallery Lightbox on Product Page"
 msgstr ""
 
-#: inc/customizer.php:786
+#: inc/customizer.php:818
 msgid "Disable Gallery Slider on Product Page"
 msgstr ""
 
-#: inc/customizer.php:799
+#: inc/customizer.php:831
 msgid "Product Description Page Template"
 msgstr ""
 
-#: inc/customizer.php:800
+#: inc/customizer.php:832
 msgid ""
 "Select the page template you want to display on your product pages "
 "description area"
 msgstr ""
 
-#: inc/customizer.php:816
+#: inc/customizer.php:848
 msgid "Display Sidebar"
 msgstr ""
 
-#: inc/customizer.php:843 inc/template-tags.php:245
+#: inc/customizer.php:875 inc/template-tags.php:245
 msgid "Post"
 msgstr ""
 
-#: inc/customizer.php:856
+#: inc/customizer.php:888
 msgid "Archive"
 msgstr ""
 
-#: inc/customizer.php:869 searchform.php:23
+#: inc/customizer.php:901 searchform.php:23
 msgid "Search"
 msgstr ""
 
-#: inc/customizer.php:897
+#: inc/customizer.php:929
 msgid "Shop Archive"
 msgstr ""
 
-#: inc/customizer.php:910
+#: inc/customizer.php:942
 msgid "Attachment Page"
 msgstr ""
 
-#: inc/customizer.php:919
+#: inc/customizer.php:951
 msgid "Labels"
 msgstr ""
 
-#: inc/customizer.php:932
+#: inc/customizer.php:964
 msgid "Mobile Menu Label"
 msgstr ""
 
-#: inc/customizer.php:945
+#: inc/customizer.php:977
 msgid "Read More Label"
 msgstr ""
 
-#: inc/customizer.php:954
+#: inc/customizer.php:986
 msgid "404 Error Page"
 msgstr ""
 
-#: inc/customizer.php:967
+#: inc/customizer.php:999
 msgid "Select 404 Page"
 msgstr ""
 
-#: inc/customizer.php:968
+#: inc/customizer.php:1000
 msgid "Set the page's featured image for the background image to display."
 msgstr ""
 
-#: inc/customizer.php:983
+#: inc/customizer.php:1015
 msgid "Page Cover Opacity"
 msgstr ""
 
-#: inc/customizer.php:984
+#: inc/customizer.php:1016
 msgid "Set opacity for 404 Page Cover's featured image."
 msgstr ""
 
-#: inc/customizer.php:1002
+#: inc/customizer.php:1034
 msgid "Page Cover Color"
 msgstr ""
 
-#: inc/customizer.php:1015
+#: inc/customizer.php:1047
 msgid "Display White Text?"
+msgstr ""
+
+#: inc/customizer.php:1057
+msgid "Fonts"
+msgstr ""
+
+#: inc/customizer.php:1073
+msgid "Font Customization"
+msgstr ""
+
+#: inc/customizer.php:1074
+msgid ""
+"To easily change the font styles for your theme, please download our <a "
+"target=\"_blank\" href=\"https://webplantmedia.com/product/designer-fonts-"
+"wordpress-plugin/\"><span style=\"text-decoration:none;\" class=\"dashicons "
+"dashicons-external\"></span>Designer Fonts</a> plugin."
+msgstr ""
+
+#: inc/dashboard.php:42
+msgid "Documentation"
+msgstr ""
+
+#: inc/dashboard.php:43
+msgid "Theme Documentation"
+msgstr ""
+
+#: inc/dashboard.php:45
+msgid ""
+"Every theme option and theme feature is well documented on our product page. "
+"Find out all the amazing features coded within our theme."
+msgstr ""
+
+#: inc/dashboard.php:48
+msgid "Support"
+msgstr ""
+
+#: inc/dashboard.php:49
+msgid "Extended WordPress Support"
+msgstr ""
+
+#: inc/dashboard.php:51
+msgid ""
+"If you are using one of our themes, and need WordPress support, a little CSS "
+"hack, or some custom debugging support for your WordPress site, then you can "
+"purchase extended WordPress support. We are WordPress experts, and will "
+"quickly and efficiently take care of your site problem or need."
+msgstr ""
+
+#: inc/dashboard.php:54
+msgid "Font Customizer Plugin"
+msgstr ""
+
+#: inc/dashboard.php:55
+msgid "Designer Fonts Plugin"
+msgstr ""
+
+#: inc/dashboard.php:57
+msgid ""
+"Use our Designer Fonts plugin to quickly and easily customize the default "
+"fonts on your theme. Easily change your site title font, heading font, "
+"accent font, and body font, from your Customizer panel using our Designer "
+"Fonts plugin."
 msgstr ""
 
 #: inc/icon-functions.php:39
@@ -723,6 +798,36 @@ msgstr ""
 
 #: inc/template-tags.php:246
 msgid "Parent post:"
+msgstr ""
+
+#: inc/theme-info.php:11
+msgid "Theme Info"
+msgstr ""
+
+#: inc/theme-info.php:25
+msgid "Crimson Rose WordPress Theme - Version&nbsp;%s"
+msgstr ""
+
+#: inc/theme-info.php:27
+msgid ""
+"Thank you for using a WordPress theme by <a href=\"%s\" target=\"_blank"
+"\">Web Plant Media</a>! We are dedicated to making premium coded themes with "
+"beautiful designs that are open source, easy to use, and fast to install."
+msgstr ""
+
+#. #-#-#-#-#  crimson-rose.pot (Crimson Rose 1.76)  #-#-#-#-#
+#. Author of the plugin/theme
+#: inc/theme-info.php:28
+msgid "Web Plant Media"
+msgstr ""
+
+#. translators: %s: smiling face with smiling eyes emoji
+#: inc/theme-info.php:35
+msgid "Premium Themes with Support %s"
+msgstr ""
+
+#: inc/theme-info.php:65
+msgid "Help Articles by WordPress Experts"
 msgstr ""
 
 #: inc/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php:327
@@ -1179,7 +1284,7 @@ msgstr ""
 msgid "Bottom margin of widget:"
 msgstr ""
 
-#: inc/widgets/blog-posts.php:153 inc/widgets/static-content.php:153
+#: inc/widgets/blog-posts.php:153 inc/widgets/static-content.php:161
 msgid "Read more"
 msgstr ""
 
@@ -1542,11 +1647,11 @@ msgstr ""
 msgid "Background Color Opacity:"
 msgstr ""
 
-#: inc/widgets/static-content.php:243
+#: inc/widgets/static-content.php:260
 msgid "Static Content Widget"
 msgstr ""
 
-#: inc/widgets/static-content.php:245
+#: inc/widgets/static-content.php:262
 msgid "Select a page in your widget settings for content to display."
 msgstr ""
 
@@ -1644,11 +1749,11 @@ msgstr ""
 msgid "Activate WooCommerce and begin adding products."
 msgstr ""
 
-#: inc/woocommerce/class-woocommerce.php:314
+#: inc/woocommerce/class-woocommerce.php:316
 msgid "items in your cart"
 msgstr ""
 
-#: inc/woocommerce/class-woocommerce.php:323
+#: inc/woocommerce/class-woocommerce.php:325
 msgid "Payment info"
 msgstr ""
 
@@ -1721,19 +1826,15 @@ msgid "Crimson Rose"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "https://webplantmedia.com/"
+msgid "https://crimson-rose.webplantmedia.com/"
 msgstr ""
 
 #. Description of the plugin/theme
 msgid "Easy To Use, Fast To Install, Small Business WordPress Themes"
 msgstr ""
 
-#. Author of the plugin/theme
-msgid "Web Plant Media"
-msgstr ""
-
 #. Author URI of the plugin/theme
-msgid "https://webplantmedia.com/about/"
+msgid "https://webplantmedia.com/"
 msgstr ""
 
 #. Template Name of the plugin/theme
