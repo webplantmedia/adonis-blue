@@ -620,6 +620,17 @@ function crimson_rose_is_wpm_fonts_activated() {
 }
 
 /**
+ * Check Crimson Rose Watercolor Backgrounds activation
+ */
+function crimson_rose_is_watercolor_backgrounds_activated() {
+	if ( defined( 'CRIMSON_ROSE_WATERCOLOR_BACKGROUNDS_VERSION' ) ) {
+		return true;
+	}
+
+	return false;
+}
+
+/**
  * Check One Click Demo Import (ocdi) activation
  */
 function crimson_rose_is_ocdi_activated() {

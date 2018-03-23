@@ -114,28 +114,22 @@ function crimson_rose_customize_register( $wp_customize ) {
 		'sanitize_callback' => 'sanitize_text_field',
 	) );
 
+	if ( ! crimson_rose_is_watercolor_backgrounds_activated() ) {
+		$description = __( 'To add more watercolor backgrounds, please download our <a target="_blank" href="https://webplantmedia.com/product/crimson-rose-watercolor-backgrounds-plugin/"><span style="text-decoration:none;" class="dashicons dashicons-external"></span>Watercolor Backgrounds</a> plugin.', 'crimson-rose' );
+	}
+	else {
+		$description = __( 'Control the color of the watercolor background image in the header.', 'crimson-rose' );
+	}
+
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'select',
 		'label' => __( 'Header Background Image Color', 'crimson-rose' ),
-		'description' => __( 'Control the color of the watercolor background image in the header.', 'crimson-rose' ),
+		'description' => $description,
 		'section' => $section_id,
-		'choices' => array(
+		'choices' => apply_filters( 'crimson-rose-header-background-image-color', array(
 			'none' => 'No Image',
-			'cyan' => 'Cyan',
-			'azure' => 'Azure',
-			'blue' => 'Blue',
-			'violet' => 'Violet',
-			'magenta' => 'Magenta',
-			'rose' => 'Rose',
 			'red' => 'Red',
-			'orange' => 'Orange',
-			'yellow' => 'Yellow',
-			'chartreuse-green' => 'Chartreuse Green',
-			'dark-green' => 'Dark Green',
-			'spring-green' => 'Spring Green',
-			'soft-pink' => 'Soft Pink',
-			'gray' => 'Gray',
-		),
+		) ),
 	) );
 
 	$setting_id = 'primary_color';
@@ -206,28 +200,22 @@ function crimson_rose_customize_register( $wp_customize ) {
 		'sanitize_callback' => 'sanitize_text_field',
 	) );
 
+	if ( ! crimson_rose_is_watercolor_backgrounds_activated() ) {
+		$description = __( 'To add more watercolor backgrounds, please download our <a target="_blank" href="https://webplantmedia.com/product/crimson-rose-watercolor-backgrounds-plugin/"><span style="text-decoration:none;" class="dashicons dashicons-external"></span>Watercolor Backgrounds</a> plugin.', 'crimson-rose' );
+	}
+	else {
+		$description = __( 'Control the color of the watercolor background image in the footer.', 'crimson-rose' );
+	}
+
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'select',
 		'label' => __( 'Footer Background Image Color', 'crimson-rose' ),
-		'description' => __( 'Control the color of the watercolor background image in the footer.', 'crimson-rose' ),
+		'description' => $description,
 		'section' => $section_id,
-		'choices' => array(
+		'choices' => apply_filters( 'crimson-rose-footer-background-image-color', array(
 			'none' => 'No Image',
-			'cyan' => 'Cyan',
-			'azure' => 'Azure',
-			'blue' => 'Blue',
-			'violet' => 'Violet',
-			'magenta' => 'Magenta',
-			'rose' => 'Rose',
 			'red' => 'Red',
-			'orange' => 'Orange',
-			'yellow' => 'Yellow',
-			'chartreuse-green' => 'Chartreuse Green',
-			'dark-green' => 'Dark Green',
-			'spring-green' => 'Spring Green',
-			'soft-pink' => 'Soft Pink',
-			'gray' => 'Gray',
-		),
+		) ),
 	) );
 
 	$setting_id = 'footer_text_light';

@@ -8,72 +8,8 @@
 	background-repeat: no-repeat;
 }
 
-.header-background-image-color-cyan .site-header-inner {
-	@include background-2x('img/top-right-header-bg-cyan','png');
-}
-
-.header-background-image-color-azure .site-header-inner {
-	@include background-2x('img/top-right-header-bg-azure','png');
-}
-
-
-.header-background-image-color-blue .site-header-inner {
-	@include background-2x('img/top-right-header-bg-blue','png');
-}
-
-
-.header-background-image-color-violet .site-header-inner {
-	@include background-2x('img/top-right-header-bg-violet','png');
-}
-
-
-.header-background-image-color-magenta .site-header-inner {
-	@include background-2x('img/top-right-header-bg-magenta','png');
-}
-
-
-.header-background-image-color-rose .site-header-inner {
-	@include background-2x('img/top-right-header-bg-rose','png');
-}
-
-
 .header-background-image-color-red .site-header-inner {
 	@include background-2x('img/top-right-header-bg-red','png');
-}
-
-
-.header-background-image-color-orange .site-header-inner {
-	@include background-2x('img/top-right-header-bg-orange','png');
-}
-
-
-.header-background-image-color-yellow .site-header-inner {
-	@include background-2x('img/top-right-header-bg-yellow','png');
-}
-
-
-.header-background-image-color-chartreuse-green .site-header-inner {
-	@include background-2x('img/top-right-header-bg-chartreuse-green','png');
-}
-
-
-.header-background-image-color-dark-green .site-header-inner {
-	@include background-2x('img/top-right-header-bg-dark-green','png');
-}
-
-
-.header-background-image-color-spring-green .site-header-inner {
-	@include background-2x('img/top-right-header-bg-spring-green','png');
-}
-
-
-.header-background-image-color-soft-pink .site-header-inner {
-	@include background-2x('img/top-right-header-bg-soft-pink','png');
-}
-
-
-.header-background-image-color-gray .site-header-inner {
-	@include background-2x('img/top-right-header-bg-gray','png');
 }
 
 .custom-header-media {
