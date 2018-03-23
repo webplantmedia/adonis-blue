@@ -60,6 +60,11 @@ function crimson_rose_dashboard_get_services() {
 			'link' => 'https://webplantmedia.com/product/designer-fonts-wordpress-plugin/',
 			'description' => sprintf( __( 'Use our Designer Fonts plugin to quickly and easily customize the default fonts on your theme. Easily change your site title font, heading font, accent font, and body font, from your Customizer panel using our Designer Fonts plugin.', 'crimson-rose' ) ),
 		),
+		array(
+			'title' => __( 'Watercolor Backgrounds Plugin', 'crimson-rose' ),
+			'link' => 'https://webplantmedia.com/product/crimson-rose-watercolor-backgrounds-plugin/',
+			'description' => sprintf( __( 'To add more watercolor background options in your Customizer for your header and footer areas of your theme, please download our Watercolor Backgrounds plugin.', 'crimson-rose' ) ),
+		),
 	);
 
 	return $services;
