@@ -19,7 +19,7 @@ function crimson_rose_dashboard_static_short_services() {
 	<?php foreach( $services as $service ) : ?>
 
 		<?php if ( ! $first ) : ?> 
-			<span style="color:#ddd;">|</span>
+			<span style="color:#ddd;">&#124;</span>
 		<?php endif; ?>
 
 		<a href="<?php echo $service['link']; ?>" target="_blank"><?php echo $service['short']; ?>
@@ -68,7 +68,7 @@ function crimson_rose_dashboard_static_feed() {
 			'link' => 'https://webplantmedia.com/the-best-setup-for-your-wordpress-shopping-site-and-blog/',
 		),
 		array(
-			'title' => 'How to Transfer and Migrate Your Site Content from WordPress.com to a Self Hosted WordPress.org Site on Bluehost – Step By Step Instructions',
+			'title' => 'How to Transfer and Migrate Your Site Content from WordPress.com to a Self Hosted WordPress.org Site on Bluehost &#8211; Step By Step Instructions',
 			'link' => 'https://webplantmedia.com/how-to-transfer-and-migrate-your-site-content-from-wordpress-com-to-a-self-hosted-wordpress-org-site-on-bluehost-step-by-step-instructions/',
 		),
 		array(
