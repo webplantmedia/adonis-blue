@@ -18,16 +18,20 @@ function crimson_rose_dashboard_static_short_services() {
 
 	<?php foreach( $services as $service ) : ?>
 
-		<?php if ( ! $first ) : ?> 
-			<span style="color:#ddd;">&#124;</span>
+		<?php if ( isset( $service['short'] ) && ! empty( $service['short'] ) ) : ?> 
+
+			<?php if ( ! $first ) : ?> 
+				<span style="color:#ddd;">&#124;</span>
+			<?php endif; ?>
+
+			<a href="<?php echo $service['link']; ?>" target="_blank"><?php echo $service['short']; ?>
+				<span class="screen-reader-text">(opens in a new window)</span>
+				<span aria-hidden="true" class="dashicons dashicons-external"></span>
+			</a>
+
+			<?php $first = false; ?>
+
 		<?php endif; ?>
-
-		<a href="<?php echo $service['link']; ?>" target="_blank"><?php echo $service['short']; ?>
-			<span class="screen-reader-text">(opens in a new window)</span>
-			<span aria-hidden="true" class="dashicons dashicons-external"></span>
-		</a>
-
-		<?php $first = false; ?>
 
 	<?php endforeach; ?>
 
@@ -102,7 +106,7 @@ function crimson_rose_dashboard_widget() {
 add_action('admin_menu', 'crimson_rose_theme_info');
 
 function crimson_rose_theme_info() {
-	add_theme_page('Theme Info', 'Theme Info', 'read', 'crimson-rose-theme-info', 'crimson_rose_theme_page');
+	add_theme_page('Theme Add-ons', 'Theme Add-ons', 'read', 'crimson-rose-theme-info', 'crimson_rose_theme_page');
 }
 
 function crimson_rose_theme_page() {
