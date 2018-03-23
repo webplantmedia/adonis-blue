@@ -62,7 +62,7 @@ function crimson_rose_dashboard_get_services() {
 		),
 		array(
 			'title' => __( 'Watercolor Backgrounds Plugin', 'crimson-rose' ),
-			'link' => 'https://webplantmedia.com/product/crimson-rose-watercolor-backgrounds-plugin/',
+			'link' => 'https://webplantmedia.com/product/crimson-rose-watercolor-backgrounds-wordpress-plugin/',
 			'description' => sprintf( __( 'To add more watercolor background options in your Customizer for your header and footer areas of your theme, please download our Watercolor Backgrounds plugin.', 'crimson-rose' ) ),
 		),
 	);

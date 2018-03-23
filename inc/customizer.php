@@ -115,7 +115,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 	) );
 
 	if ( ! crimson_rose_is_watercolor_backgrounds_activated() ) {
-		$description = __( 'To add more watercolor backgrounds, please download our <a target="_blank" href="https://webplantmedia.com/product/crimson-rose-watercolor-backgrounds-plugin/"><span style="text-decoration:none;" class="dashicons dashicons-external"></span>Watercolor Backgrounds</a> plugin.', 'crimson-rose' );
+		$description = __( 'To add more watercolor backgrounds, please download our <a target="_blank" href="https://webplantmedia.com/product/crimson-rose-watercolor-backgrounds-wordpress-plugin/"><span style="text-decoration:none;" class="dashicons dashicons-external"></span>Watercolor Backgrounds</a> plugin.', 'crimson-rose' );
 	}
 	else {
 		$description = __( 'Control the color of the watercolor background image in the header.', 'crimson-rose' );
@@ -201,7 +201,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 	) );
 
 	if ( ! crimson_rose_is_watercolor_backgrounds_activated() ) {
-		$description = __( 'To add more watercolor backgrounds, please download our <a target="_blank" href="https://webplantmedia.com/product/crimson-rose-watercolor-backgrounds-plugin/"><span style="text-decoration:none;" class="dashicons dashicons-external"></span>Watercolor Backgrounds</a> plugin.', 'crimson-rose' );
+		$description = __( 'To add more watercolor backgrounds, please download our <a target="_blank" href="https://webplantmedia.com/product/crimson-rose-watercolor-backgrounds-wordpress-plugin/"><span style="text-decoration:none;" class="dashicons dashicons-external"></span>Watercolor Backgrounds</a> plugin.', 'crimson-rose' );
 	}
 	else {
 		$description = __( 'Control the color of the watercolor background image in the footer.', 'crimson-rose' );
