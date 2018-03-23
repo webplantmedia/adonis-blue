@@ -239,7 +239,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'checkbox',
-		'label' => __( 'Display White Footer Text?', 'crimson_rose' ),
+		'label' => __( 'Display White Footer Text?', 'crimson-rose' ),
 		'section' => $section_id,
 	) );
 
