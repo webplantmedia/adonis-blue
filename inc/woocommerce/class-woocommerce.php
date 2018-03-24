@@ -43,6 +43,7 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 			add_action( 'wp_enqueue_scripts', array( $this, 'woocommerce_enqueue' ) );
 
 			add_filter( 'woocommerce_output_related_products_args', array( $this, 'related_products_args' ) );
+			add_filter( 'woocommerce_upsell_display_args', array( $this, 'related_products_args' ) );
 
 			remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
 			remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
@@ -242,10 +243,10 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 		public function related_products_args( $args ) {
 			global $crimson_rose;
 			
-			$args = apply_filters( 'crimson_rose_related_products_args', array(
+			$args = array_merge( $args, apply_filters( 'crimson_rose_related_products_args', array(
 				'posts_per_page' => $crimson_rose['shop_related_products_columns'],
 				'columns'        => $crimson_rose['shop_related_products_columns'],
-			) );
+			) ) );
 
 			return $args;
 		}
