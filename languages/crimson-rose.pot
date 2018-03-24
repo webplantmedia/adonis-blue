@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Crimson Rose 1.76\n"
+"Project-Id-Version: Crimson Rose 1.83\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/crimson-rose\n"
-"POT-Creation-Date: 2018-03-23 15:49:32+00:00\n"
+"POT-Creation-Date: 2018-03-24 03:14:31+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -224,140 +224,148 @@ msgstr ""
 msgid "Padding Bottom"
 msgstr ""
 
-#: inc/customizer.php:119
-msgid "Header Background Image Color"
+#: inc/customizer.php:118 inc/customizer.php:204
+msgid ""
+"To add more watercolor backgrounds, please download our <a target=\"_blank\" "
+"href=\"https://webplantmedia.com/product/crimson-rose-watercolor-backgrounds-"
+"wordpress-plugin/\"><span style=\"text-decoration:none;\" class=\"dashicons "
+"dashicons-external\"></span>Watercolor Backgrounds</a> plugin."
 msgstr ""
 
-#: inc/customizer.php:120
+#: inc/customizer.php:121
 msgid "Control the color of the watercolor background image in the header."
 msgstr ""
 
-#: inc/customizer.php:149
+#: inc/customizer.php:126
+msgid "Header Background Image Color"
+msgstr ""
+
+#: inc/customizer.php:143
 msgid "Primary Color"
 msgstr ""
 
-#: inc/customizer.php:161
+#: inc/customizer.php:155
 msgid "Primary Hover Color"
 msgstr ""
 
-#: inc/customizer.php:173
+#: inc/customizer.php:167
 msgid "Archive Background Color"
 msgstr ""
 
-#: inc/customizer.php:186
+#: inc/customizer.php:180
 msgid "Display White Archive Title?"
 msgstr ""
 
-#: inc/customizer.php:198
+#: inc/customizer.php:192
 msgid "Footer Background Color"
 msgstr ""
 
-#: inc/customizer.php:211
-msgid "Footer Background Image Color"
-msgstr ""
-
-#: inc/customizer.php:212
+#: inc/customizer.php:207
 msgid "Control the color of the watercolor background image in the footer."
 msgstr ""
 
-#: inc/customizer.php:242
+#: inc/customizer.php:212
+msgid "Footer Background Image Color"
+msgstr ""
+
+#: inc/customizer.php:230
 msgid "Display White Footer Text?"
 msgstr ""
 
-#: inc/customizer.php:254
+#: inc/customizer.php:242
 msgid "Link Color"
 msgstr ""
 
-#: inc/customizer.php:266
+#: inc/customizer.php:254
 msgid "Link Hover Color"
 msgstr ""
 
-#: inc/customizer.php:274
+#: inc/customizer.php:262
 msgid "Theme Options"
 msgstr ""
 
-#: inc/customizer.php:283
+#: inc/customizer.php:271
 msgid "Top Header"
 msgstr ""
 
-#: inc/customizer.php:296
+#: inc/customizer.php:284
 msgid "Top Header Background Offset"
 msgstr ""
 
-#: inc/customizer.php:297
+#: inc/customizer.php:285
 msgid ""
 "This changes the position of your top header background so you can center it "
 "perfectly with your top header menu."
 msgstr ""
 
-#: inc/customizer.php:312
+#: inc/customizer.php:300
 msgid "Site"
 msgstr ""
 
-#: inc/customizer.php:325
+#: inc/customizer.php:313
 msgid "Show Menu Arrows"
 msgstr ""
 
-#: inc/customizer.php:338
+#: inc/customizer.php:326
 msgid "Default Button Style"
 msgstr ""
 
-#: inc/customizer.php:339
+#: inc/customizer.php:327
 msgid ""
 "When you insert a link on its own line in the WP Editor, the theme turns it "
 "into a button. Choose the default style of your button to display in your "
 "post and pages."
 msgstr ""
 
-#: inc/customizer.php:357
+#: inc/customizer.php:345
 msgid "Disable Body Font"
 msgstr ""
 
-#: inc/customizer.php:358
+#: inc/customizer.php:346
 msgid ""
 "If you are using a Google Font plugin, then you can disable the load of the "
 "body font."
 msgstr ""
 
-#: inc/customizer.php:387
+#: inc/customizer.php:375
 msgid "Disable Accent Font"
 msgstr ""
 
-#: inc/customizer.php:388
+#: inc/customizer.php:376
 msgid ""
 "The accent font is a cursive font used in places such as your archive title. "
 "If you are using a Google Font plugin, then you can disable the load of this "
 "accent font."
 msgstr ""
 
-#: inc/customizer.php:403
+#: inc/customizer.php:391
 msgid "Page Image Header Height"
 msgstr ""
 
-#: inc/customizer.php:404
+#: inc/customizer.php:392
 msgid ""
 "This changes the height of your featured image in your page header area."
 msgstr ""
 
-#: inc/customizer.php:423
+#: inc/customizer.php:411
 msgid "Check For Theme Update"
 msgstr ""
 
-#: inc/customizer.php:436
+#: inc/customizer.php:424
 msgid "Site Structure"
 msgstr ""
 
-#: inc/customizer.php:437
+#: inc/customizer.php:425
 msgid ""
 "Choose between full width or box layout. The background image options can "
 "only be seen when using a box layout."
 msgstr ""
 
-#: inc/customizer.php:454
+#: inc/customizer.php:442
 msgid "Site Info"
 msgstr ""
 
-#: inc/customizer.php:455
+#: inc/customizer.php:443
 msgid ""
 "Allowed HTML tags are <code>a</code>, <code>span</code>, <code>i</code>, "
 "<code>br</code>, <code>p</code>, <code>h1-h6</code>, and <code>img</code> "
@@ -366,215 +374,215 @@ msgid ""
 "<code>a</code> tag also includes the attribute: target."
 msgstr ""
 
-#: inc/customizer.php:464 inc/customizer.php:862
+#: inc/customizer.php:452 inc/customizer.php:850
 msgid "Blog"
 msgstr ""
 
-#: inc/customizer.php:477
+#: inc/customizer.php:465
 msgid "Blog Display"
 msgstr ""
 
-#: inc/customizer.php:496
+#: inc/customizer.php:484
 msgid "Archive Display"
 msgstr ""
 
-#: inc/customizer.php:515
+#: inc/customizer.php:503
 msgid "Search Display"
 msgstr ""
 
-#: inc/customizer.php:535
+#: inc/customizer.php:523
 msgid "Thumb Excerpt Max Height"
 msgstr ""
 
-#: inc/customizer.php:536
+#: inc/customizer.php:524
 msgid ""
 "If you have long featured images in your excerpts, set a max-height on your "
 "image. Enter 0 for no max-height"
 msgstr ""
 
-#: inc/customizer.php:554
+#: inc/customizer.php:542
 msgid "Thumb Grid Max Height"
 msgstr ""
 
-#: inc/customizer.php:555
+#: inc/customizer.php:543
 msgid ""
 "If you have long featured images in your grid, set a max-height on your "
 "image. Enter 0 for no max-height"
 msgstr ""
 
-#: inc/customizer.php:572
+#: inc/customizer.php:560
 msgid "Hide Post Navigation"
 msgstr ""
 
-#: inc/customizer.php:573
+#: inc/customizer.php:561
 msgid "Hide the post navigation buttons at the bottom of each post."
 msgstr ""
 
-#: inc/customizer.php:582
+#: inc/customizer.php:570
 msgid "Jetpack"
 msgstr ""
 
-#: inc/customizer.php:596
+#: inc/customizer.php:584
 msgid "Hide Share Button Count"
 msgstr ""
 
-#: inc/customizer.php:605 inc/customizer.php:915
+#: inc/customizer.php:593 inc/customizer.php:903
 msgid "Shop"
 msgstr ""
 
-#: inc/customizer.php:619
+#: inc/customizer.php:607
 msgid "Shop Columns"
 msgstr ""
 
-#: inc/customizer.php:637
+#: inc/customizer.php:625
 msgid "Shop Archive Columns"
 msgstr ""
 
-#: inc/customizer.php:655
+#: inc/customizer.php:643
 msgid "Related Products Columns"
 msgstr ""
 
-#: inc/customizer.php:673
+#: inc/customizer.php:661
 msgid "Display Product Image Backdrop"
 msgstr ""
 
-#: inc/customizer.php:674
+#: inc/customizer.php:662
 msgid ""
 "Add a light gray backdrop with a dropshadow for your product images. "
 "Visually helpful for images with light colored backgrounds."
 msgstr ""
 
-#: inc/customizer.php:687
+#: inc/customizer.php:675
 msgid "Hide Shop Title From Main Shop Page"
 msgstr ""
 
-#: inc/customizer.php:700
+#: inc/customizer.php:688
 msgid "Hide Breadcrumbs From Shop Page"
 msgstr ""
 
-#: inc/customizer.php:713
+#: inc/customizer.php:701
 msgid "Hide Product Reviews From Shop Page"
 msgstr ""
 
-#: inc/customizer.php:726
+#: inc/customizer.php:714
 msgid "Hide Result Count String From Shop Page"
 msgstr ""
 
-#: inc/customizer.php:739
+#: inc/customizer.php:727
 msgid "Hide Ordering Dropdown From Shop Page"
 msgstr ""
 
-#: inc/customizer.php:752
+#: inc/customizer.php:740
 msgid "Truncate Product Titles"
 msgstr ""
 
-#: inc/customizer.php:753
+#: inc/customizer.php:741
 msgid "This will cause product titles to appear in one line."
 msgstr ""
 
-#: inc/customizer.php:766
+#: inc/customizer.php:754
 msgid "Hide Product Reviews From Product Page"
 msgstr ""
 
-#: inc/customizer.php:779
+#: inc/customizer.php:767
 msgid "Hide Product Meta From Product Page"
 msgstr ""
 
-#: inc/customizer.php:792
+#: inc/customizer.php:780
 msgid "Disable Gallery Zoom on Product Page"
 msgstr ""
 
-#: inc/customizer.php:805
+#: inc/customizer.php:793
 msgid "Disable Gallery Lightbox on Product Page"
 msgstr ""
 
-#: inc/customizer.php:818
+#: inc/customizer.php:806
 msgid "Disable Gallery Slider on Product Page"
 msgstr ""
 
-#: inc/customizer.php:831
+#: inc/customizer.php:819
 msgid "Product Description Page Template"
 msgstr ""
 
-#: inc/customizer.php:832
+#: inc/customizer.php:820
 msgid ""
 "Select the page template you want to display on your product pages "
 "description area"
 msgstr ""
 
-#: inc/customizer.php:848
+#: inc/customizer.php:836
 msgid "Display Sidebar"
 msgstr ""
 
-#: inc/customizer.php:875 inc/template-tags.php:245
+#: inc/customizer.php:863 inc/template-tags.php:245
 msgid "Post"
 msgstr ""
 
-#: inc/customizer.php:888
+#: inc/customizer.php:876
 msgid "Archive"
 msgstr ""
 
-#: inc/customizer.php:901 searchform.php:23
+#: inc/customizer.php:889 searchform.php:23
 msgid "Search"
 msgstr ""
 
-#: inc/customizer.php:929
+#: inc/customizer.php:917
 msgid "Shop Archive"
 msgstr ""
 
-#: inc/customizer.php:942
+#: inc/customizer.php:930
 msgid "Attachment Page"
 msgstr ""
 
-#: inc/customizer.php:951
+#: inc/customizer.php:939
 msgid "Labels"
 msgstr ""
 
-#: inc/customizer.php:964
+#: inc/customizer.php:952
 msgid "Mobile Menu Label"
 msgstr ""
 
-#: inc/customizer.php:977
+#: inc/customizer.php:965
 msgid "Read More Label"
 msgstr ""
 
-#: inc/customizer.php:986
+#: inc/customizer.php:974
 msgid "404 Error Page"
 msgstr ""
 
-#: inc/customizer.php:999
+#: inc/customizer.php:987
 msgid "Select 404 Page"
 msgstr ""
 
-#: inc/customizer.php:1000
+#: inc/customizer.php:988
 msgid "Set the page's featured image for the background image to display."
 msgstr ""
 
-#: inc/customizer.php:1015
+#: inc/customizer.php:1003
 msgid "Page Cover Opacity"
 msgstr ""
 
-#: inc/customizer.php:1016
+#: inc/customizer.php:1004
 msgid "Set opacity for 404 Page Cover's featured image."
 msgstr ""
 
-#: inc/customizer.php:1034
+#: inc/customizer.php:1022
 msgid "Page Cover Color"
 msgstr ""
 
-#: inc/customizer.php:1047
+#: inc/customizer.php:1035
 msgid "Display White Text?"
 msgstr ""
 
-#: inc/customizer.php:1057
+#: inc/customizer.php:1045
 msgid "Fonts"
 msgstr ""
 
-#: inc/customizer.php:1073
+#: inc/customizer.php:1061
 msgid "Font Customization"
 msgstr ""
 
-#: inc/customizer.php:1074
+#: inc/customizer.php:1062
 msgid ""
 "To easily change the font styles for your theme, please download our <a "
 "target=\"_blank\" href=\"https://webplantmedia.com/product/designer-fonts-"
@@ -582,29 +590,29 @@ msgid ""
 "dashicons-external\"></span>Designer Fonts</a> plugin."
 msgstr ""
 
-#: inc/dashboard.php:42
+#: inc/dashboard.php:46
 msgid "Documentation"
 msgstr ""
 
-#: inc/dashboard.php:43
+#: inc/dashboard.php:47
 msgid "Theme Documentation"
 msgstr ""
 
-#: inc/dashboard.php:45
+#: inc/dashboard.php:49
 msgid ""
 "Every theme option and theme feature is well documented on our product page. "
 "Find out all the amazing features coded within our theme."
 msgstr ""
 
-#: inc/dashboard.php:48
+#: inc/dashboard.php:52
 msgid "Support"
 msgstr ""
 
-#: inc/dashboard.php:49
+#: inc/dashboard.php:53
 msgid "Extended WordPress Support"
 msgstr ""
 
-#: inc/dashboard.php:51
+#: inc/dashboard.php:55
 msgid ""
 "If you are using one of our themes, and need WordPress support, a little CSS "
 "hack, or some custom debugging support for your WordPress site, then you can "
@@ -612,20 +620,31 @@ msgid ""
 "quickly and efficiently take care of your site problem or need."
 msgstr ""
 
-#: inc/dashboard.php:54
+#: inc/dashboard.php:58
 msgid "Font Customizer Plugin"
 msgstr ""
 
-#: inc/dashboard.php:55
+#: inc/dashboard.php:59
 msgid "Designer Fonts Plugin"
 msgstr ""
 
-#: inc/dashboard.php:57
+#: inc/dashboard.php:61
 msgid ""
 "Use our Designer Fonts plugin to quickly and easily customize the default "
 "fonts on your theme. Easily change your site title font, heading font, "
 "accent font, and body font, from your Customizer panel using our Designer "
 "Fonts plugin."
+msgstr ""
+
+#: inc/dashboard.php:64
+msgid "Watercolor Backgrounds Plugin"
+msgstr ""
+
+#: inc/dashboard.php:66
+msgid ""
+"To add more watercolor background options in your Customizer for your header "
+"and footer areas of your theme, please download our Watercolor Backgrounds "
+"plugin."
 msgstr ""
 
 #: inc/icon-functions.php:39
@@ -815,7 +834,7 @@ msgid ""
 "beautiful designs that are open source, easy to use, and fast to install."
 msgstr ""
 
-#. #-#-#-#-#  crimson-rose.pot (Crimson Rose 1.76)  #-#-#-#-#
+#. #-#-#-#-#  crimson-rose.pot (Crimson Rose 1.83)  #-#-#-#-#
 #. Author of the plugin/theme
 #: inc/theme-info.php:28
 msgid "Web Plant Media"
@@ -1830,7 +1849,7 @@ msgid "https://crimson-rose.webplantmedia.com/"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid "Easy To Use, Fast To Install, Small Business WordPress Themes"
+msgid "Easy To Use, Fast To Install, Small Business Feminine WordPress Theme"
 msgstr ""
 
 #. Author URI of the plugin/theme
