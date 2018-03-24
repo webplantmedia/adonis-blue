@@ -706,6 +706,11 @@ require get_parent_theme_file_path() . '/inc/recommended-plugins.php';
 require get_parent_theme_file_path() . '/inc/dashboard.php';
 
 /*
+ * Check for theme update.
+ */
+require get_parent_theme_file_path() . '/inc/upgrade.php';
+
+/*
  * One Click Demo Import
  */
 if ( crimson_rose_is_ocdi_activated() ) {
