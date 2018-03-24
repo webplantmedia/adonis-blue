@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Crimson Rose 1.83\n"
+"Project-Id-Version: Crimson Rose 1.84\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/crimson-rose\n"
-"POT-Creation-Date: 2018-03-24 03:14:31+00:00\n"
+"POT-Creation-Date: 2018-03-24 03:15:40+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -834,7 +834,7 @@ msgid ""
 "beautiful designs that are open source, easy to use, and fast to install."
 msgstr ""
 
-#. #-#-#-#-#  crimson-rose.pot (Crimson Rose 1.83)  #-#-#-#-#
+#. #-#-#-#-#  crimson-rose.pot (Crimson Rose 1.84)  #-#-#-#-#
 #. Author of the plugin/theme
 #: inc/theme-info.php:28
 msgid "Web Plant Media"
