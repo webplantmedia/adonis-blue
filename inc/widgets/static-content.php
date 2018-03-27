@@ -115,7 +115,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Static_Content' ) ) :
 
 			extract( $args );
 
-			$post = get_post($o['page']);
+			$post = null; // no default page is set for starter-content
 			if ( ! empty( $o['page'] ) ) {
 				$post = new WP_Query( array( 'page_id' => $o['page'] ) );
 			}
