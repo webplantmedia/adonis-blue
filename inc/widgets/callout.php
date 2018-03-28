@@ -51,7 +51,7 @@ class Crimson_Rose_Content_Widget_Callout extends Crimson_Rose_Widget {
 			),
 			'image' => array(
 				'type'  => 'image',
-				'std'   => get_template_directory_uri() . '/img/widgets/flowers-plant-blossom-bloom.png',
+				'std'   => get_template_directory_uri() . '/img/widgets/callout-1.png',
 				'label' => esc_html__( 'Image:', 'crimson-rose' ),
 				'sanitize' => 'url',
 			),

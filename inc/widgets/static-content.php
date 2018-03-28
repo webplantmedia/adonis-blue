@@ -38,7 +38,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Static_Content' ) ) :
 				),
 				'background_image' => array(
 					'type'  => 'image',
-					'std'   => get_template_directory_uri() . '/img/widgets/japanese-cherry-trees-flowers-spring-japanese-flowering-cherry-54630.jpeg',
+					'std'   => get_template_directory_uri() . '/img/widgets/static-content-1.jpg',
 					'label' => esc_html__( 'Background Image:', 'crimson-rose' ),
 					'sanitize' => 'url',
 				),

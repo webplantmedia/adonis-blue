@@ -21,7 +21,7 @@ Insert your contact form shortcode here.
 $our_story = '
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna. Praesent sit amet ligula id orci venenatis auctor. Phasellus porttitor, metus non tincidunt dapibus, orci pede pretium neque, sit amet adipiscing ipsum lectus et libero. Aenean bibendum. Curabitur mattis quam id urna. Vivamus dui. Donec nonummy lacinia lorem. Cras risus arcu, sodales ac, ultrices ac, mollis quis, justo. Sed a libero. Quisque risus erat, posuere at, tristique non, lacinia quis, eros.
 
-<img class="alignnone" src="' . get_template_directory_uri() . '/img/starter-content/our-story-2.jpeg" />
+<img class="alignnone" src="' . get_template_directory_uri() . '/img/starter-content/our-story-2.jpg" />
 
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna. Praesent sit amet ligula id orci venenatis auctor. Phasellus porttitor, metus non tincidunt dapibus, orci pede pretium neque, sit amet adipiscing ipsum lectus et libero. Aenean bibendum. Curabitur mattis quam id urna. Vivamus dui. Donec nonummy lacinia lorem. Cras risus arcu, sodales ac, ultrices ac, mollis quis, justo. Sed a libero. Quisque risus erat, posuere at, tristique non, lacinia quis, eros.
 ';
@@ -148,7 +148,7 @@ Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam eli
 			'crimson-rose-image-banner',
 			array(
 				'title' => 'ENJOY YOURSELF!',
-				'image' => get_template_directory_uri() . '/img/starter-content/hearts.png',
+				'image' => get_template_directory_uri() . '/img/starter-content/footer-widget.png',
 				'image_2x' => '',
 				'text_position' => 'below',
 				'description' => '',
@@ -248,7 +248,7 @@ Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam eli
 	$starter_content['attachments'] = array(
 		'image-demo-1' => array(
 			'post_title' => _x( 'Demo Image 1', 'Theme starter content', 'crimson-rose' ),
-			'file' => 'img/starter-content/our-story.jpeg',
+			'file' => 'img/starter-content/our-story-1.jpg',
 		),
 	);
 

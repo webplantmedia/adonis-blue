@@ -170,7 +170,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 					'default' => array(
 						array(
 							'background_color' => '#ffede4',
-							'background_image' => get_template_directory_uri() . '/img/widgets/pexels-photo-122734.jpeg',
+							'background_image' => get_template_directory_uri() . '/img/widgets/slide-1.jpg',
 							'background_size' => 'cover',
 							'content_text' => '<h3>ORDER ONLINE FOR YOUR WEDDING</h3>',
 							'text_color' => '',
@@ -183,7 +183,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 						),
 						array(
 							'background_color' => '#ffffff',
-							'background_image' => get_template_directory_uri() . '/img/widgets/pexels-photo-169193.jpeg',
+							'background_image' => get_template_directory_uri() . '/img/widgets/slide-2.jpg',
 							'background_size' => 'cover',
 							'content_text' => '<h3>FLOWERS DELIVERED TO YOUR LOCATION</h3>',
 							'text_color' => '',
@@ -195,7 +195,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 						),
 						array(
 							'background_color' => '#fdf3ec',
-							'background_image' => get_template_directory_uri() . '/img/widgets/pexels-photo-395132.jpeg',
+							'background_image' => get_template_directory_uri() . '/img/widgets/slide-3.jpg',
 							'background_size' => 'cover',
 							'content_text' => '<h3>SIGN UP FOR OUR WORKSHOP</h3>',
 							'text_color' => '',
@@ -207,7 +207,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 						),
 						array(
 							'background_color' => '#fcf7f7',
-							'background_image' => get_template_directory_uri() . '/img/widgets/roses-bouquet-congratulations-arrangement-68570.jpg',
+							'background_image' => get_template_directory_uri() . '/img/widgets/collage-2.jpg',
 							'background_size' => 'cover',
 							'content_text' => '<h3>SEE OUR SEASONAL FLOWER ARRANGEMENTS</h3>',
 							'text_color' => '',
@@ -219,7 +219,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 						),
 						array(
 							'background_color' => '#ffffff',
-							'background_image' => get_template_directory_uri() . '/img/widgets/pexels-photo-529927.jpeg',
+							'background_image' => get_template_directory_uri() . '/img/widgets/collage-3.jpg',
 							'background_size' => 'cover',
 							'content_text' => '<h3>CUSTOM ORDERS</h3>',
 							'text_color' => '',
@@ -231,7 +231,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 						),
 						array(
 							'background_color' => '#fde2e2',
-							'background_image' => get_template_directory_uri() . '/img/widgets/gifts.png',
+							'background_image' => get_template_directory_uri() . '/img/widgets/collage-4.png',
 							'background_size' => 'fit-width',
 							'content_text' => '',
 							'text_color' => '',
@@ -243,7 +243,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 						),
 						array(
 							'background_color' => '#fffdfc',
-							'background_image' => get_template_directory_uri() . '/img/widgets/pexels-photo-226145.jpeg',
+							'background_image' => get_template_directory_uri() . '/img/widgets/collage-5.jpg',
 							'background_size' => 'cover',
 							'content_text' => '<h3>CHECK DELIVERY AREA</h3>',
 							'text_color' => '',
