@@ -541,10 +541,11 @@ h1.h1-title,
 }
 
 // Entry Author
-.entry-author {
+.entry-author-container {
 	@include rem('margin-top', 70px);
+	@include rem('padding-top', 70px);
 	@include rem('padding-bottom', 70px);
-	border-bottom: 2px solid $color__border;
+	background-color: $color__lightest-gray;
 
 	.author-avatar {
 		margin-top: 5px;
