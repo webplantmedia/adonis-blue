@@ -32,7 +32,7 @@
 	}
 
 	$(document).ready(function(){
-		var $dropdown = $('#page_template, #_customize-input-shop_product_page_template');
+		var $dropdown = $('#page_template, #_customize-input-shop_product_page_template, #editor .editor-page-attributes__template #template-selector-0');
 		var val = $dropdown.val();
 
 		var html = '<p id="template-instruction" class="description" style="display:none;"></p>';
