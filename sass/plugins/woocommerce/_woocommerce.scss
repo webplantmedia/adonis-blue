@@ -357,6 +357,9 @@
 	}
 	.woocommerce div.product div.social iframe {
 	}
+	.woocommerce div.product .woocommerce-tabs {
+		margin-bottom: 5em;
+	}
 	.woocommerce div.product .woocommerce-tabs ul.tabs {
 		padding: 0;
 		@include rem('margin-bottom',50px);
