@@ -25,6 +25,7 @@ function crimson_rose_body_classes( $classes ) {
 	}
 	else if ( crimson_rose_display_fullwidth() ) {
 		$classes[] = 'display-fullwidth';
+		$classes[] = 'no-sidebar';
 	}
 	else {
 		$classes[] = 'no-sidebar';
