@@ -136,3 +136,11 @@ function crimson_rose_custom_thumb_size( $get_image_options ) {
         return $get_image_options;
 }
 add_filter( 'jetpack_top_posts_widget_image_options', 'crimson_rose_custom_thumb_size' );
+
+function crimson_rose_jetpack_author_bio() {
+	?>
+	<div class="entry-author-container">
+		<?php jetpack_author_bio(); ?>
+	</div>
+	<?php
+}

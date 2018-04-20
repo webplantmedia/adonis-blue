@@ -16,7 +16,7 @@ get_header(); ?>
 
 			get_template_part( 'template-parts/content', 'no-featured-image' );
 
-			if ( function_exists( 'jetpack_author_bio' ) ) jetpack_author_bio();
+			if ( function_exists( 'jetpack_author_bio' ) ) crimson_rose_jetpack_author_bio();
 
 			if ( class_exists( 'Jetpack_RelatedPosts' ) ) {
 				echo do_shortcode( '[jetpack-related-posts]' );
