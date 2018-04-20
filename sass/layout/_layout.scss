@@ -3,6 +3,7 @@
 }
 
 .widgetized-page .site-content .content-widget,
+.site-boundary-no-padding,
 .site-boundary {
 	@include rem('max-width', $size__site-container);
 	margin-left: auto;
@@ -10,6 +11,36 @@
 	display: block;
 	@include rem('padding-left', 40px);
 	@include rem('padding-right', 40px);
+}
+
+.site-boundary-no-padding {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.comments-area .comments-title,
+.comments-area .comment-list,
+.comments-area .comment-respond,
+.entry-author,
+.entry-header,
+#master .entry-content > h1,
+#master .entry-content {
+	@include rem('max-width', $size__content-container);
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+#master body.woocommerce-page,
+#master .page-template-no-featured-image-page,
+#master .page-template-accordion-page,
+#master .page-template-two-columns-page,
+#master .page-template-grid-page,
+#master .page-template-full-width-page {
+	.site-main,
+	.entry-content {
+		max-width: none;
+	}
 }
 
 #master .widgetized-page {

@@ -292,7 +292,7 @@ h1.h1-title,
 }
 
 .entry-footer {
-	@include rem('margin-top',40px);
+	@include rem('margin-top',100px);
 
 	> div {
 		@include rem('margin-top',40px);
@@ -343,7 +343,7 @@ h1.h1-title,
 // Page content
 .page.has-post-thumbnail {
 	.page-image-header {
-		margin: 0;
+		margin: 0 auto;
 	}
 	.page-image-header-background {
 		margin: 0;
@@ -400,9 +400,10 @@ h1.h1-title,
 				@include rem('padding-top',70px);
 			}
 		}
+		margin: 0 auto;
+		display: block;
 	}
 }
-
 
 // Entry content
 // Page content

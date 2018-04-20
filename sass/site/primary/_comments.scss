@@ -36,7 +36,7 @@
 	margin: 60px 0 0;
 	padding: 0;
 	list-style: none;
-	border-bottom: 2px solid $color__border;
+	// border-bottom: 2px solid $color__border;
 }
 
 .comment-list .children {
@@ -223,12 +223,12 @@
 }
 
 #master .comment-list > li:first-child > .comment-body {
-	border-top-width: 0;
+	// border-top-width: 0;
 }
 
 .comment-list > .comment:not(.parent) > .comment-body {
 	padding-bottom: 45px;
-	border-top: 2px solid $color__border;
+	// border-top: 2px solid $color__border;
 }
 
 .comment-list .parent > .comment-body .comment-content,
@@ -238,7 +238,7 @@
 
 .comment-list .comment-body {
 	padding-bottom: 27px;
-	border-top: 2px solid $color__border;
+	// border-top: 2px solid $color__border;
 }
 
 @media screen and (max-width: 959px) {
