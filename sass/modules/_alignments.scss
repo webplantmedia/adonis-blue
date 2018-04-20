@@ -53,6 +53,15 @@
 	}
 }
 
+#master .display-sidebar {
+	.entry-content > .alignfull,
+	.entry-content > .alignwide {
+		@media only screen and (min-width: $size__site-container-no-padding) {
+			margin-right: 0;
+		}
+	}
+}
+
 .wp-block-gallery.alignwide,
 .wp-block-gallery.alignfull {
 	margin-left: -28px;
@@ -68,3 +77,13 @@
 		margin-right: -($size__content-side-spacing+8);
 	}
 }
+
+#master .display-sidebar {
+	.wp-block-gallery.alignwide,
+	.wp-block-gallery.alignfull {
+		@media only screen and (min-width: $size__site-container-no-padding) {
+			margin-right: 0;
+		}
+	}
+}
+
