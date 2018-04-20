@@ -4318,10 +4318,6 @@ h1.h1-title,
 }
 
 @media (min-width: 800px) {
-  .page.has-post-thumbnail {
-    margin: 0 auto;
-    display: block;
-  }
   .page.has-post-thumbnail.display-sidebar .site-content .site-boundary, .page.has-post-thumbnail.display-fullwidth .site-content .site-boundary {
     background-color: #ffffff;
   }
