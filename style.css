@@ -1208,6 +1208,7 @@ button {
   padding: 17px 59px;
 }
 
+#master .widget_shopping_cart .button,
 #master .addresses .edit,
 #master .woocommerce-MyAccount-downloads-file.button,
 #master .woocommerce-MyAccount-orders .woocommerce-button,
@@ -3397,6 +3398,10 @@ a:hover, a:active {
   position: relative;
 }
 
+.crimson-rose-content-widget-static-content .grid__col {
+  position: relative;
+}
+
 .crimson-rose-content-widget-static-content .bg-image-cover {
   background-size: cover;
   background-repeat: no-repeat;
@@ -3405,8 +3410,7 @@ a:hover, a:active {
 
 .crimson-rose-content-widget-static-content .hentry .entry-footer {
   position: absolute;
-  bottom: 20px;
-  left: 20px;
+  bottom: -40px;
   margin: 0;
 }
 

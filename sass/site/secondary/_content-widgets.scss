@@ -304,6 +304,10 @@
 .crimson-rose-content-widget-static-content {
 	position: relative;
 
+	.grid__col {
+		position: relative;
+	}
+		
 	.bg-image-cover {
 		background-size: cover;
 		background-repeat: no-repeat;
@@ -313,8 +317,7 @@
 	.hentry {
 		.entry-footer {
 			position: absolute;
-			bottom: 20px;
-			left: 20px;
+			bottom: -40px;
 			margin: 0;
 		}
 

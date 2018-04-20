@@ -647,15 +647,18 @@ class Crimson_Rose_Widget extends WP_Widget {
 			case 'page':
 				$pages = get_pages( 'sort_order=ASC&sort_column=post_title&post_status=publish' );
 				?>
-				<label for="<?php echo esc_attr( $field_id ); ?>"><?php echo esc_html( $setting['label'] ); ?></label>
-				<select class="widefat" id="<?php echo esc_attr( $field_id ); ?>" name="<?php echo esc_attr( $field_name ); ?>">
-					<?php foreach ( $pages as $page ) : ?>
-						<option value="<?php echo esc_attr( $page->ID ); ?>" <?php selected( $page->ID, $value ); ?>><?php echo esc_attr( $page->post_title ); ?></option>
-					<?php endforeach; ?>
-				</select>
-				<?php if ( isset( $setting['description'] ) ) : ?>
-					<span class="description"><?php echo esc_html( $setting['description'] ); ?></span>
-				<?php endif; ?>
+				<p>
+					<label for="<?php echo esc_attr( $field_id ); ?>"><?php echo esc_html( $setting['label'] ); ?></label>
+					<select class="widefat" id="<?php echo esc_attr( $field_id ); ?>" name="<?php echo esc_attr( $field_name ); ?>">
+						<option value="" <?php selected( '', $value ); ?>><?php echo __( 'No Page', 'brimstone' ); ?></option>
+						<?php foreach ( $pages as $page ) : ?>
+							<option value="<?php echo esc_attr( $page->ID ); ?>" <?php selected( $page->ID, $value ); ?>><?php echo esc_attr( $page->post_title ); ?></option>
+						<?php endforeach; ?>
+					</select>
+					<?php if ( isset( $setting['description'] ) ) : ?>
+						<span class="description"><?php echo esc_html( $setting['description'] ); ?></span>
+					<?php endif; ?>
+				</p>
 				<?php
 			break;
 

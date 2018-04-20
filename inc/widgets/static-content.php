@@ -33,7 +33,19 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Static_Content' ) ) :
 				'page' => array(
 					'type'  => 'page',
 					'std'   => '',
-					'label' => esc_html__( 'Select Page:', 'crimson-rose' ),
+					'label' => esc_html__( 'Select Page: (Column 1)', 'crimson-rose' ),
+					'sanitize' => 'text',
+				),
+				'page-2' => array(
+					'type'  => 'page',
+					'std'   => '',
+					'label' => esc_html__( 'Select Page: (Column 2)', 'crimson-rose' ),
+					'sanitize' => 'text',
+				),
+				'page-3' => array(
+					'type'  => 'page',
+					'std'   => '',
+					'label' => esc_html__( 'Select Page: (Column 3)', 'crimson-rose' ),
 					'sanitize' => 'text',
 				),
 				'background_image' => array(
@@ -115,9 +127,29 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Static_Content' ) ) :
 
 			extract( $args );
 
-			$post = null; // no default page is set for starter-content
+			$page_ids = array();
 			if ( ! empty( $o['page'] ) ) {
-				$post = new WP_Query( array( 'page_id' => $o['page'] ) );
+				$page_ids[] = $o['page'];
+			}
+
+			if ( ! empty( $o['page-2'] ) ) {
+				$page_ids[] = $o['page-2'];
+			}
+
+			if ( ! empty( $o['page-3'] ) ) {
+				$page_ids[] = $o['page-3'];
+			}
+
+			$grid = false;
+			$columns = 0;
+			$post = null; // no default page is set for starter-content
+			if ( ! empty( $page_ids ) ) {
+				$post = new WP_Query( array( 'post_type' => 'page', 'post__in' => $page_ids ) );
+
+				$columns = sizeof( $page_ids );
+				if ( $columns > 1 ) {
+					$grid = true;
+				}
 			}
 
 			$style = array();
@@ -151,6 +183,10 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Static_Content' ) ) :
 
 			$page_template = get_page_template_slug( $o['page'] );
 			if ( ( 'templates/full-width-page.php' == $page_template ) ) {
+				$classes[] = 'full-width-static-content';
+			}
+
+			if ( $grid ) {
 				$classes[] = 'full-width-static-content';
 			}
 
@@ -212,38 +248,55 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Static_Content' ) ) :
 					<?php endif; ?>
 
 						<?php if ( $post && $post->have_posts() ) : ?>
+							<?php if ( $grid ) : ?>
+								<div class="grid">
+							<?php endif; ?>
+
 							<?php while ( $post->have_posts() ) : $post->the_post(); ?>
-								<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-									<?php if ( $o['title'] ) echo  $before_title . $o['title'] . $after_title; ?>
+								<?php if ( $grid ) : ?>
+									<div class="grid__col grid__col--1-of-<?php echo $columns; ?>">
+								<?php endif; ?>
+										<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+											<?php if ( $o['title'] ) echo  $before_title . $o['title'] . $after_title; ?>
 
-									<div class="entry-content">
-										<?php the_content( $read_more ); ?>
-									</div>
+											<div class="entry-content">
+												<?php the_content( $read_more ); ?>
+											</div>
 
-									<?php if ( get_edit_post_link() ) : ?>
-										<footer class="entry-footer">
-											<?php
-												edit_post_link(
-													sprintf(
-														wp_kses(
-															/* translators: %s: Name of current post. Only visible to screen readers */
-															__( 'Edit <span class="screen-reader-text">%s</span>', 'crimson-rose' ),
-															array(
-																'span' => array(
-																	'class' => array(),
+											<?php if ( get_edit_post_link() ) : ?>
+												<footer class="entry-footer">
+													<?php
+														edit_post_link(
+															sprintf(
+																wp_kses(
+																	/* translators: %s: Name of current post. Only visible to screen readers */
+																	__( 'Edit <span class="screen-reader-text">%s</span>', 'brimstone' ),
+																	array(
+																		'span' => array(
+																			'class' => array(),
+																		),
+																	)	
 																),
-															)
-														),
-														get_the_title()
-													),
-													'<div class="entry-footer-meta"><span class="edit-link">',
-													'</span></div>'
-												);
-											?>
-										</footer><!-- .entry-footer -->
-									<?php endif; ?>
-								</article>
+																get_the_title()
+															),
+															'<div class="entry-footer-meta"><span class="edit-link">',
+															'</span></div>'
+														);
+													?>
+												</footer><!-- .entry-footer -->
+											<?php endif; ?>
+										</article>
+
+								<?php if ( $grid ) : ?>
+									</div>
+								<?php endif; ?>
+
 							<?php endwhile; ?>
+
+							<?php if ( $grid ) : ?>
+								</div>
+							<?php endif; ?>
+
 						<?php else : ?>
 							<article>
 								<?php echo  $before_title . __( 'Static Content Widget', 'crimson-rose' ) . $after_title; ?>
