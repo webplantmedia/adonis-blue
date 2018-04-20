@@ -211,7 +211,7 @@ WooCommerce styling
 #master .woocommerce.widget_shopping_cart .buttons a {
   margin: 0;
   width: calc(50% - 5px);
-  padding: 13px 24px;
+  padding: 12px 24px;
 }
 
 #master .woocommerce .widget_shopping_cart .buttons a.wc-forward,
