@@ -34,12 +34,16 @@ $color__border-abbr: #666;
 // Structure
 $size__box-container: 1300px;
 $size__site-container: 1140px;
+$size__site-container-no-padding: $size__site-container - 40 - 40;
 $size__content-container: 700px;
 $size__site-gutter: 60px;
 $size__site-sidebar: 300px;
 $size__site-sidebar-with-padding: $size__site-sidebar + $size__site_gutter;
 $size__menu-collapse-width: 960px;
-$size__site-main-no-sidebar: $size__site-container - 40 - 40 - $size__site-sidebar - $size__site-gutter;
+$size__site-main-no-sidebar: $size__site-container-no-padding - $size__site-sidebar - $size__site-gutter;
+$size__content-side-spacing: ( $size__site-main-no-sidebar - $size__content-container ) / 2;
+
+// media query widths
 
 // Typography
 $font__main: 'Lato', sans-serif;

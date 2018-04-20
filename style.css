@@ -2450,18 +2450,33 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 # Alignments
 --------------------------------------------------------------*/
-.alignleft {
-  display: inline;
-  float: left;
-  margin-right: 1.5em;
-  margin-top: .5em;
+@media (min-width: 600px) {
+  .alignleft {
+    display: inline;
+    float: left;
+    margin-right: 1.5em;
+    margin-top: .5em;
+    margin-bottom: .5em;
+  }
+  .alignright {
+    display: inline;
+    float: right;
+    margin-left: 1.5em;
+    margin-top: .5em;
+    margin-bottom: .5em;
+  }
 }
 
-.alignright {
-  display: inline;
-  float: right;
-  margin-left: 1.5em;
-  margin-top: .5em;
+@media (max-width: 599px) {
+  .alignright,
+  .alignleft {
+    display: block;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
 }
 
 .aligncenter {
@@ -2469,6 +2484,56 @@ a:hover, a:active {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+.alignfull,
+.alignwide {
+  margin-top: 2.2em;
+  margin-bottom: 2.1em;
+}
+
+.entry-content > .alignfull,
+.entry-content > .alignwide {
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+@media only screen and (min-width: 700px) {
+  .entry-content > .alignfull,
+  .entry-content > .alignwide {
+    margin-left: -40px;
+    margin-right: -40px;
+  }
+}
+
+@media only screen and (min-width: 1060px) {
+  .entry-content > .alignfull,
+  .entry-content > .alignwide {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+
+.wp-block-gallery.alignwide,
+.wp-block-gallery.alignfull {
+  margin-left: -28px;
+  margin-right: -28px;
+}
+
+@media only screen and (min-width: 700px) {
+  .wp-block-gallery.alignwide,
+  .wp-block-gallery.alignfull {
+    margin-left: -48px;
+    margin-right: -48px;
+  }
+}
+
+@media only screen and (min-width: 1060px) {
+  .wp-block-gallery.alignwide,
+  .wp-block-gallery.alignfull {
+    margin-left: -8px;
+    margin-right: -8px;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -3688,9 +3753,9 @@ a:hover, a:active {
 .comments-area .comments-title,
 .comments-area .comment-list,
 .comments-area .comment-respond,
+body:not(.single-post) .entry-footer,
 .entry-author,
 .entry-header,
-#master .entry-content > h1,
 #master .entry-content {
   max-width: 700px;
   max-width: 43.75rem;
@@ -3699,19 +3764,14 @@ a:hover, a:active {
   display: block;
 }
 
-#master body.woocommerce-page .site-main,
-#master body.woocommerce-page .entry-content,
-#master .page-template-no-featured-image-page .site-main,
-#master .page-template-no-featured-image-page .entry-content,
-#master .page-template-accordion-page .site-main,
-#master .page-template-accordion-page .entry-content,
-#master .page-template-two-columns-page .site-main,
-#master .page-template-two-columns-page .entry-content,
-#master .page-template-grid-page .site-main,
-#master .page-template-grid-page .entry-content,
-#master .page-template-full-width-page .site-main,
-#master .page-template-full-width-page .entry-content {
+#master .display-fullwidth .site-main,
+#master .display-fullwidth .entry-content {
   max-width: none;
+}
+
+#master .display-fullwidth #master .entry-content > h1 {
+  max-width: 700px;
+  max-width: 43.75rem;
 }
 
 #master .widgetized-page .site-content .full-width-bar,
@@ -4385,10 +4445,10 @@ h1.h1-title,
 .comment-content > hr,
 .entry-content > hr,
 .page-content > hr {
-  margin-top: 50px;
-  margin-top: 3.125rem;
-  margin-bottom: 50px;
-  margin-bottom: 3.125rem;
+  margin-top: 80px;
+  margin-top: 5rem;
+  margin-bottom: 80px;
+  margin-bottom: 5rem;
 }
 
 .comment-content ul li,
@@ -5409,7 +5469,7 @@ object {
 ## Captions
 --------------------------------------------------------------*/
 .wp-caption {
-  margin-bottom: 1.5em;
+  margin-bottom: 2em;
   max-width: 100%;
 }
 
@@ -5419,20 +5479,32 @@ object {
   margin-right: auto;
 }
 
-.wp-caption .wp-caption-text {
-  margin: 0.8075em 0;
-  color: #959595;
-}
-
+.wp-block-gallery .blocks-gallery-item figcaption,
+.wp-block-image figcaption,
 .wp-caption-text {
   text-align: center;
   font-size: 15px;
   font-size: 0.9375rem;
   font-weight: bold;
+  margin: 0;
+  padding: 0.8075em 0;
+  color: #959595;
+  line-height: 1.375;
 }
 
+.wp-block-gallery .blocks-gallery-item figcaption a,
+.wp-block-image figcaption a,
 .wp-caption-text a {
   display: inline;
+}
+
+.wp-block-gallery .blocks-gallery-item figcaption {
+  padding-left: 0.8705em;
+  padding-right: 0.8705em;
+}
+
+.wp-block-image img[class*="wp-image-"] {
+  display: block;
 }
 
 /*--------------------------------------------------------------
@@ -5530,6 +5602,20 @@ object {
   display: block;
 }
 
+.wp-block-gallery {
+  padding: 0;
+  margin: -8px;
+}
+
+@media only screen and (max-width: 599px) {
+  .wp-block-gallery .blocks-gallery-item {
+    width: 100%;
+  }
+}
+
+/*--------------------------------------------------------------
+## Gutenberg Media
+--------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # Plugins
 --------------------------------------------------------------*/

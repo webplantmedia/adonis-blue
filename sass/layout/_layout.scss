@@ -21,9 +21,9 @@
 .comments-area .comments-title,
 .comments-area .comment-list,
 .comments-area .comment-respond,
+body:not(.single-post) .entry-footer,
 .entry-author,
 .entry-header,
-#master .entry-content > h1,
 #master .entry-content {
 	@include rem('max-width', $size__content-container);
 	margin-left: auto;
@@ -31,15 +31,14 @@
 	display: block;
 }
 
-#master body.woocommerce-page,
-#master .page-template-no-featured-image-page,
-#master .page-template-accordion-page,
-#master .page-template-two-columns-page,
-#master .page-template-grid-page,
-#master .page-template-full-width-page {
+#master .display-fullwidth {
 	.site-main,
 	.entry-content {
 		max-width: none;
+	}
+
+	& #master .entry-content > h1 {
+		@include rem('max-width', $size__content-container);
 	}
 }
 

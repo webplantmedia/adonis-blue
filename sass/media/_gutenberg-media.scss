@@ -1,0 +1,98 @@
+// Gutenberg galleries
+ul.wp-block-gallery {
+	margin-top: 2.2em;
+	margin-bottom: 2.1em;
+	padding: 0;
+	margin-left: -8px;
+
+	@media only screen and (max-width: 599px) {
+		width: calc( 100% + 16px );
+	}
+
+	@media only screen and (min-width: 600px) {
+		margin-left: -8px;
+		margin-top: 1.9em;
+		margin-bottom: 1.9em;
+	}
+
+	li.blocks-gallery-item {
+		padding-left: 0;
+		display: flex;
+	}
+
+	&.columns-2,
+	&.columns-3 {
+		width: calc( 100% + 16px );
+	}
+
+	&.alignwide {
+		margin-left: -8px;
+		width: calc( 100% + 16px );
+
+		@media only screen and (min-width: 600px) {
+			margin-left: calc( -4vw - 8px );
+		}
+
+		@media only screen and (min-width: 870px) {
+			margin-left: calc( -7vw - 8px );
+		}
+	}
+
+	&.alignfull {
+		width: calc(-100vw / 2 + 100% / 2) !important;
+		margin-left: calc(-100vw / 2 + 100% / 2) !important;
+  		margin-right: calc(-100vw / 2 + 100% / 2) !important;
+
+  		li.blocks-gallery-item {
+		}
+	}
+}
+
+// Wide Alignment galleries
+.no-sidebar .alignfull {
+	// margin-left: calc( -100vw / 2 + 100% / 2 ) !important;
+	// margin-right: calc( -100vw / 2 + 100% / 2 ) !important;
+	// max-width: 100vw;
+	// width: 100vw;
+	margin-top: 2.3em;
+	margin-bottom: 2.3em;
+
+	@media only screen and (min-width: 600px) {
+		margin-top: 2.8em;
+		margin-bottom: 2.44em;
+	}
+
+	img {
+		width: 100%;
+	}
+}
+
+.display-sidebar .alignfull,
+.alignwide {
+	margin: 2.2em 0 2.1em;
+
+	@media only screen and (min-width: 600px) {
+		// margin-left: -4vw !important;
+		// width: calc( 100% + 8vw ) !important;
+		// max-width: calc( 100% + 8vw ) !important;
+		margin: 2.5em 0 2.37em;
+	}
+
+	@media only screen and (min-width: 870px) {
+		// margin-left: -5.5vw !important;
+		// width: calc( 100% + 11vw ) !important;
+		// max-width: calc( 100% + 11vw ) !important;
+		margin-left: -$size__content-side-spacing !important;
+		margin-right: -$size__content-side-spacing !important;
+	}
+}
+
+
+.aligncenter.wp-block-image {
+	margin: 2.2em auto 2.1em;
+
+	@media only screen and (min-width: 600px) {
+		margin-top: 2.5em;
+		margin-bottom: 2.37em;
+	}
+}

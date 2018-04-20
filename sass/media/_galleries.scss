@@ -60,3 +60,15 @@
 .gallery-caption {
 	display: block;
 }
+
+// Gutenberg
+.wp-block-gallery {
+	padding: 0;
+	margin: -8px;
+
+	@media only screen and (max-width: 599px) {
+		.blocks-gallery-item {
+			width: 100%;
+		}
+	}
+}
