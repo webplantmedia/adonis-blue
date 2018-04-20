@@ -1,7 +1,7 @@
 // Rem output with px fallback
 @mixin rem($selector: '', $sizeValue: 1) {
 	@if $selector == '' {
-		@return '';
+		// @return '';
 	} @else {
 		$sizeValueRem: (($sizeValue/1px)/16);
 		#{$selector}: $sizeValue;
