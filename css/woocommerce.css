@@ -618,6 +618,10 @@ WooCommerce styling
   margin-bottom: 5em;
 }
 
+#master .woocommerce div.product .woocommerce-tabs {
+  margin-bottom: 5em;
+}
+
 #master .woocommerce div.product .woocommerce-tabs ul.tabs {
   padding: 0;
   margin-bottom: 50px;

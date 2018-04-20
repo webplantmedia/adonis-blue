@@ -3754,6 +3754,8 @@ a:hover, a:active {
   padding-right: 0;
 }
 
+#master #tab-description,
+#master #tab-reviews,
 .comments-area .comments-title,
 .comments-area .comment-list,
 .comments-area .comment-respond,
