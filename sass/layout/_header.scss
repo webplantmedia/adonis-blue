@@ -52,7 +52,7 @@
 		text-align: center;
 		margin: 0;
 		// @include rem('margin-bottom',10px);
-		@include rem('font-size',40px);
+		@include rem('font-size',$font__site-title-size);
 		text-transform: uppercase;
 		letter-spacing: 0.07em;
 
@@ -66,20 +66,27 @@
 		text-align: center;
 		margin: 0;
 		text-transform: lowercase;
-		@include rem('font-size',28px);
+		@include rem('font-size',($font__site-description-size + 15));
 	}
 }
 
 .wpm-fonts {
 	.site-branding {
 		.site-description {
-			@include rem('font-size',$font__medium-size);
+			@include rem('font-size',$font__site-description-size);
+		}
+	}
+	&.wpm-fonts-accent-medium-small-font {
+		.site-branding {
+			.site-description {
+				@include rem('font-size',($font__site-description-size + 7));
+			}
 		}
 	}
 	&.wpm-fonts-accent-small-font {
 		.site-branding {
 			.site-description {
-				@include rem('font-size',28px);
+				@include rem('font-size',($font__site-description-size + 15));
 			}
 		}
 	}
@@ -98,29 +105,35 @@
 	#master {
 		.site-branding {
 			.site-title {
-				@include rem('font-size',25px);
+				@include rem('font-size',($font__site-title-size - 15));
 			}
 
 			.site-description {
-				@include rem('font-size',22px);
+				@include rem('font-size',($font__site-description-size + 8));
 			}
 		}
 
 		.wpm-fonts {
 			.site-branding {
 				.site-description {
-					@include rem('font-size',$font__xsmall-size);
+					@include rem('font-size',($font__site-description-size - 3));
+				}
+			}
+			&.wpm-fonts-accent-medium-small-font {
+				.site-branding {
+					.site-description {
+						@include rem('font-size',($font__site-description-size + 2));
+					}
 				}
 			}
 			&.wpm-fonts-accent-small-font {
 				.site-branding {
 					.site-description {
-						@include rem('font-size',22px);
+						@include rem('font-size',($font__site-description-size + 8));
 					}
 				}
 			}
 		}
-
 	}
 }
 

@@ -155,7 +155,7 @@ h1.h1-title,
 		}
 
 		.archive-type {
-			@include rem('font-size',45px);
+			@include rem('font-size',($font__archive-type-size + 20));
 			line-height: 1;
 			display: inline-block;
 			font-weight: normal;
@@ -173,7 +173,17 @@ h1.h1-title,
 	&.archive .archive-page-header {
 		.page-title {
 			.archive-type {
-				@include rem('font-size',$font__xlarge-size);
+				@include rem('font-size',$font__archive-type-size);
+			}
+		}
+	}
+	&.wpm-fonts-accent-medium-small-font {
+		&.search .archive-page-header,
+		&.archive .archive-page-header {
+			.page-title {
+				.archive-type {
+					@include rem('font-size',($font__archive-type-size + 10));
+				}
 			}
 		}
 	}
@@ -182,7 +192,7 @@ h1.h1-title,
 		&.archive .archive-page-header {
 			.page-title {
 				.archive-type {
-					@include rem('font-size',45px);
+					@include rem('font-size',($font__archive-type-size + 23));
 				}
 			}
 		}
