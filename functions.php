@@ -59,7 +59,7 @@ if ( ! function_exists( 'crimson_rose_setup' ) ) :
 		// add_editor_style( array( 'css/admin/editor-style.css', $google_request ) );
 
 		// This theme styles the visual editor with editor-style.css to match the theme style.
-		add_editor_style( array( 'css/admin/editor-style.css', get_parent_theme_file_uri() . '/fonts/body-font.css' ) );
+		add_editor_style( array( 'css/admin/editor-style.css', get_parent_theme_file_uri() . '/fonts/lato/stylesheet.css' ) );
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
