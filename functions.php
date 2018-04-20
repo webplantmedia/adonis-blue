@@ -205,8 +205,8 @@ function crimson_rose_widgets_init() {
 	) );
 	
 	register_sidebar( array(
-		'name'          => esc_html__( 'Front Page', 'crimson-rose' ),
-		'id'            => 'front-page',
+		'name'          => esc_html__( 'Widgetized Page', 'crimson-rose' ),
+		'id'            => 'widgetized-page',
 		'description'   => esc_html__( 'Add widgets here.', 'crimson-rose' ),
 		'before_widget' => '<section id="%1$s" class="content-widget %2$s">',
 		'after_widget'  => '</section>',
@@ -584,8 +584,10 @@ function crimson_rose_jetpack_featured_image_display() {
 
 function crimson_rose_display_header_image() {
 	if ( is_page() && has_post_thumbnail() && crimson_rose_jetpack_featured_image_display() ) {
-		if ( ! is_page_template( 'templates/front-page.php' ) ) {
-			return true;
+		if ( ! is_page_template( 'templates/widgetized-page.php' ) ) {
+			if ( ! is_page_template( 'templates/no-featured-image-page.php' ) ) {
+				return true;
+			}
 		}
 	}
 

@@ -9,7 +9,7 @@ get_header(); ?>
 
 	<?php while ( have_posts() ) : the_post(); ?>
 
-		<?php dynamic_sidebar( 'front-page' ); ?>
+		<?php dynamic_sidebar( 'widgetized-page' ); ?>
 
 	<?php endwhile; ?>
 

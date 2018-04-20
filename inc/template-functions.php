@@ -36,7 +36,7 @@ function crimson_rose_body_classes( $classes ) {
 	}
 
 	// Widgetized Pages
-	if ( is_page_template( 'templates/front-page.php' ) ) {
+	if ( is_page_template( 'templates/widgetized-page.php' ) ) {
 		$classes[] = 'widgetized-page';
 	}
 

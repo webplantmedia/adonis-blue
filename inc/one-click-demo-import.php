@@ -13,7 +13,7 @@ add_filter( 'pt-ocdi/import_files', 'crimson_rose_ocdi_import_files' );
 
 function crimson_rose_ocdi_before_widgets_import( $selected_import ) {
 	$clear_sidebars = array(
-		'front-page',
+		'widgetized-page',
 		'footer-1',
 		'footer-2',
 		'footer-3',

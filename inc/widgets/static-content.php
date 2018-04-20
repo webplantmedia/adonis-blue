@@ -150,10 +150,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Static_Content' ) ) :
 			}
 
 			$page_template = get_page_template_slug( $o['page'] );
-			if ( ( 'templates/grid-accordion-page.php' == $page_template )
-				|| ( 'templates/grid-page.php' == $page_template )
-				|| ( 'templates/full-width-page.php' == $page_template )
-				|| ( 'templates/two-columns-page.php' == $page_template ) ) {
+			if ( ( 'templates/full-width-page.php' == $page_template ) ) {
 				$classes[] = 'full-width-static-content';
 			}
 
@@ -220,15 +217,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Static_Content' ) ) :
 									<?php if ( $o['title'] ) echo  $before_title . $o['title'] . $after_title; ?>
 
 									<div class="entry-content">
-										<?php if ( 'templates/two-columns-page.php' == $page_template ) : ?>
-											<?php crimson_rose_the_two_columns_content(); ?>
-										<?php elseif ( 'templates/grid-page.php' == $page_template ) : ?>
-											<?php crimson_rose_the_grid_content(); ?>
-										<?php elseif ( 'templates/grid-accordion-page.php' == $page_template ) : ?>
-											<?php crimson_rose_the_accordion_content(); ?>
-										<?php else : ?>
-											<?php the_content( $read_more ); ?>
-										<?php endif; ?>
+										<?php the_content( $read_more ); ?>
 									</div>
 
 									<?php if ( get_edit_post_link() ) : ?>

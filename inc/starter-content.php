@@ -183,39 +183,39 @@ Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam eli
 		),
 	);
 
-	$starter_content['widgets']['front-page']['crimson-rose-content-widget-collage'] = array(
+	$starter_content['widgets']['widgetized-page']['crimson-rose-content-widget-collage'] = array(
 		'crimson-rose-content-widget-collage',
 		array(),
 	);
 
-	$starter_content['widgets']['front-page']['crimson-rose-content-widget-callout'] = array(
+	$starter_content['widgets']['widgetized-page']['crimson-rose-content-widget-callout'] = array(
 		'crimson-rose-content-widget-callout',
 		array(),
 	);
 
-	$starter_content['widgets']['front-page']['crimson-rose-content-widget-woocommerce-products'] = array(
+	$starter_content['widgets']['widgetized-page']['crimson-rose-content-widget-woocommerce-products'] = array(
 		'crimson-rose-content-widget-woocommerce-products',
 		array(),
 	);
 
-	$starter_content['widgets']['front-page']['crimson-rose-content-widget-static-content'] = array(
+	$starter_content['widgets']['widgetized-page']['crimson-rose-content-widget-static-content'] = array(
 		'crimson-rose-content-widget-static-content',
 		array(),
 	);
 
-	$starter_content['widgets']['front-page']['crimson-rose-content-widget-blog-posts'] = array(
+	$starter_content['widgets']['widgetized-page']['crimson-rose-content-widget-blog-posts'] = array(
 		'crimson-rose-content-widget-blog-posts',
 		array(),
 	);
 
-	$starter_content['widgets']['front-page']['crimson-rose-content-widget-jetpack-testimonials'] = array(
+	$starter_content['widgets']['widgetized-page']['crimson-rose-content-widget-jetpack-testimonials'] = array(
 		'crimson-rose-content-widget-jetpack-testimonials',
 		array(),
 	);
 
 	$starter_content['posts'] = array(
 		'home' => array(
-			'template' => 'templates/front-page.php',
+			'template' => 'templates/widgetized-page.php',
 		),
 		'about' => array(
 			'template' => 'templates/grid-page.php',
