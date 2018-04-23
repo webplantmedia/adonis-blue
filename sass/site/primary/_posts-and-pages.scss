@@ -368,7 +368,7 @@ h1.h1-title,
 
 		&.no-sidebar {
 			.content-area {
-				@include rem('max-width',($size__site-main-no-sidebar + 200) );
+				@include rem('max-width',($size__site-container) );
 				margin-left: auto;
 				margin-right: auto;
 			}
