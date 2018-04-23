@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Front Page Sidebar
+ * Template Name: Widgetized Page
  *
  * @package Crimson_Rose
  */
