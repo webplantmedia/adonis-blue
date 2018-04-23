@@ -361,7 +361,7 @@ function crimson_rose_show_full_post() {
 function crimson_rose_display_sub_header() {
 	global $post;
 
-	if ( preg_match( '/^\s*\<h2/', $post->post_content ) ) {
+	if ( preg_match( '/\<h2/', $post->post_content ) ) {
 		return false;
 	}
 
@@ -371,7 +371,7 @@ function crimson_rose_display_sub_header() {
 function crimson_rose_display_header() {
 	global $post;
 
-	if ( preg_match( '/^\s*\<h1/', $post->post_content ) ) {
+	if ( preg_match( '/\<h1/', $post->post_content ) ) {
 		return false;
 	}
 
