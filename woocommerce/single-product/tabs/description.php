@@ -30,26 +30,4 @@ $heading = esc_html( apply_filters( 'woocommerce_product_description_heading', _
   <h2><?php echo $heading; ?></h2>
 <?php endif; ?>
 
-
-<?php
-global $crimson_rose;
-
-switch ( $crimson_rose['shop_product_page_template'] ) {
-	case 'grid-accordion' :
-		crimson_rose_the_accordion_content();
-		wp_enqueue_script( 'crimson-rose-accordion' );
-		break;
-
-	case 'grid' :
-		crimson_rose_the_grid_content();
-		break;
-
-	case 'two-columns' :
-		crimson_rose_the_two_columns_content();
-		break;
-
-	default :
-		the_content();
-		break;
-}
-?>
+<?php the_content(); ?>

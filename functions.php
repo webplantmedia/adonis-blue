@@ -143,11 +143,6 @@ function crimson_rose_content_width_check() {
 }
 add_action( 'template_redirect', 'crimson_rose_content_width_check' );
 
-function crimson_rose_admin_enqueue_scripts() {
-	wp_enqueue_script( 'crimson-rose-admin-notifier', get_template_directory_uri() . '/js/admin/admin-notifier.js', array( 'jquery' ), CRIMSON_ROSE_VERSION, true );
-}
-add_action( 'admin_enqueue_scripts', 'crimson_rose_admin_enqueue_scripts' );
-
 /**
  * Register widget area.
  *
@@ -463,19 +458,7 @@ function crimson_rose_display_fullwidth() {
 		}
 	}
 
-	if ( is_page_template( 'templates/grid-accordion-page.php' ) ) {
-		return true;
-	}
-
 	if ( is_page_template( 'templates/full-width-page.php' ) ) {
-		return true;
-	}
-
-	if ( is_page_template( 'templates/grid-page.php' ) ) {
-		return true;
-	}
-
-	if ( is_page_template( 'templates/two-columns-page.php' ) ) {
 		return true;
 	}
 

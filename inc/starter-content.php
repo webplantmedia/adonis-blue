@@ -218,7 +218,6 @@ Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam eli
 			'template' => 'templates/widgetized-page.php',
 		),
 		'about' => array(
-			'template' => 'templates/grid-page.php',
 			'post_type' => 'page',
 			'post_title' => _x( 'About', 'Theme starter content', 'crimson-rose' ),
 			'post_content' => $about,
@@ -226,13 +225,11 @@ Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam eli
 		'blog' => array(
 		),
 		'contact' => array(
-			'template' => 'templates/two-columns-page.php',
 			'post_type' => 'page',
 			'post_title' => _x( 'Contact', 'Theme starter content', 'crimson-rose' ),
 			'post_content' => $contact,
 		),
 		'faq' => array(
-			'template' => 'templates/grid-accordion-page.php',
 			'post_type' => 'page',
 			'post_title' => _x( 'FAQ', 'Theme starter content', 'crimson-rose' ),
 			'post_content' => $faq,
