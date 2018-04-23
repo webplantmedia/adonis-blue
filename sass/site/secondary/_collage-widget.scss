@@ -55,13 +55,13 @@
 }
 
 .crimson-rose-content-widget-collage {
-	@media (min-width: 1400px) {
-		height: 700px;
-	}
-	
 	.collage {
 		position: relative;
 		height: 650px;
+
+		@media (min-width: 1400px) {
+			height: 700px;
+		}
 
 		.slide-5 {
 			position: absolute;
