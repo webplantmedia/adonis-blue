@@ -2507,7 +2507,7 @@ a:hover, a:active {
   }
 }
 
-@media only screen and (min-width: 1100px) {
+@media only screen and (min-width: 1060px) {
   .entry-content > .alignfull,
   .entry-content > .alignwide {
     margin-left: -80px;
@@ -2515,7 +2515,7 @@ a:hover, a:active {
   }
 }
 
-@media only screen and (min-width: 1100px) {
+@media only screen and (min-width: 1060px) {
   #master .display-sidebar .entry-content > .alignfull,
   #master .display-sidebar .entry-content > .alignwide {
     margin-right: 0;
@@ -2536,7 +2536,7 @@ a:hover, a:active {
   }
 }
 
-@media only screen and (min-width: 1100px) {
+@media only screen and (min-width: 1060px) {
   .wp-block-gallery.alignwide,
   .wp-block-gallery.alignfull {
     margin-left: -88px;
@@ -2544,7 +2544,7 @@ a:hover, a:active {
   }
 }
 
-@media only screen and (min-width: 1100px) {
+@media only screen and (min-width: 1060px) {
   #master .display-sidebar .wp-block-gallery.alignwide,
   #master .display-sidebar .wp-block-gallery.alignfull {
     margin-right: 0;
@@ -3493,15 +3493,15 @@ a:hover, a:active {
   font-size: 1.125rem;
 }
 
-@media (min-width: 1400px) {
-  .crimson-rose-content-widget-collage {
-    height: 700px;
-  }
-}
-
 .crimson-rose-content-widget-collage .collage {
   position: relative;
   height: 650px;
+}
+
+@media (min-width: 1400px) {
+  .crimson-rose-content-widget-collage .collage {
+    height: 700px;
+  }
 }
 
 .crimson-rose-content-widget-collage .collage .slide-5 {
@@ -3752,8 +3752,8 @@ a:hover, a:active {
 .widgetized-page .site-content .content-widget,
 .site-boundary-no-padding,
 .site-boundary {
-  max-width: 1180px;
-  max-width: 73.75rem;
+  max-width: 1140px;
+  max-width: 71.25rem;
   margin-left: auto;
   margin-right: auto;
   display: block;
@@ -3854,7 +3854,7 @@ body:not(.single-post) .entry-footer,
 
 .crimson-rose-content-widget-static-content .hentry,
 .no-sidebar .content-area .site-main {
-  max-width: 700px;
+  max-width: 660px;
   margin: 0 auto;
 }
 
@@ -3889,7 +3889,7 @@ body:not(.single-post) .entry-footer,
   }
   #master .site-main {
     margin: 0;
-    max-width: 700px;
+    max-width: 660px;
     margin: 0 auto;
   }
   #master .site-content .widget-area {
@@ -4402,8 +4402,8 @@ h1.h1-title,
     background-color: #ffffff;
   }
   .page.has-post-thumbnail.no-sidebar .content-area {
-    max-width: 900px;
-    max-width: 56.25rem;
+    max-width: 860px;
+    max-width: 53.75rem;
     margin-left: auto;
     margin-right: auto;
   }
