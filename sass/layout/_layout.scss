@@ -73,12 +73,6 @@ body:not(.single-post) .entry-footer,
 	padding-right: 9999rem;
 }
 
-.site-structure-box #page {
-	@include rem('max-width', $size__box-container);
-	margin-left: auto;
-	margin-right: auto;
-}
-
 @media (max-width: 700px) {
 	.widgetized-page .site-content .content-widget,
 	.site-boundary,

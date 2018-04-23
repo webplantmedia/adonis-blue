@@ -412,24 +412,6 @@ function crimson_rose_customize_register( $wp_customize ) {
 		'section' => $section_id,
 	) );
 
-	$setting_id = 'site_structure';
-	$wp_customize->add_setting( $setting_id, array(
-		'default' => $crimson_rose_default[ $setting_id ],
-		'transport' => 'refresh',
-		'sanitize_callback' => 'sanitize_text_field',
-	) );
-
-	$wp_customize->add_control( $setting_id, array(
-		'type' => 'select',
-		'label' => __( 'Site Structure', 'crimson-rose' ),
-		'description' => __( 'Choose between full width or box layout. The background image options can only be seen when using a box layout.', 'crimson-rose' ),
-		'section' => $section_id,
-		'choices' => array(
-			'full-width' => 'Full Width',
-			'box' => 'Box',
-		),
-	) );
-
 	$setting_id = 'site_info';
 	$wp_customize->add_setting( $setting_id, array(
 		'default' => $crimson_rose_default[ $setting_id ],
