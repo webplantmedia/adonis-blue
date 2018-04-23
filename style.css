@@ -561,10 +561,6 @@ body {
   /* Fallback for when there is no custom background color defined. */
 }
 
-body.site-structure-box {
-  background: #f9bebe;
-}
-
 html, body {
   overflow-x: hidden;
 }
@@ -3827,13 +3823,6 @@ body:not(.single-post) .entry-footer,
   padding-right: 9999rem;
 }
 
-.site-structure-box #page {
-  max-width: 1300px;
-  max-width: 81.25rem;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 @media (max-width: 700px) {
   .widgetized-page .site-content .content-widget,
   .site-boundary,
@@ -4404,8 +4393,8 @@ h1.h1-title,
     background-color: #ffffff;
   }
   .page.has-post-thumbnail.no-sidebar .content-area {
-    max-width: 860px;
-    max-width: 53.75rem;
+    max-width: 1140px;
+    max-width: 71.25rem;
     margin-left: auto;
     margin-right: auto;
   }
