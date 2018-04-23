@@ -600,11 +600,13 @@ blockquote:before {
   }
 }
 
+.wp-block-separator,
 hr {
   background-color: #ececec;
   border: 0;
   height: 2px;
   margin-bottom: 1.5em;
+  max-width: none;
 }
 
 img {
