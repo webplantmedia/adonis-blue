@@ -2496,8 +2496,7 @@ a:hover, a:active {
   margin-bottom: 2.1em;
 }
 
-.entry-content > .alignfull,
-.entry-content > .alignwide {
+.entry-content > .alignfull {
   margin-left: -20px;
   margin-right: -20px;
 }
@@ -2513,8 +2512,8 @@ a:hover, a:active {
 @media only screen and (min-width: 1060px) {
   .entry-content > .alignfull,
   .entry-content > .alignwide {
-    margin-left: -80px;
-    margin-right: -80px;
+    margin-left: -200px;
+    margin-right: -200px;
   }
 }
 
@@ -2525,7 +2524,6 @@ a:hover, a:active {
   }
 }
 
-.wp-block-gallery.alignwide,
 .wp-block-gallery.alignfull {
   margin-left: -28px;
   margin-right: -28px;
@@ -2542,8 +2540,8 @@ a:hover, a:active {
 @media only screen and (min-width: 1060px) {
   .wp-block-gallery.alignwide,
   .wp-block-gallery.alignfull {
-    margin-left: -88px;
-    margin-right: -88px;
+    margin-left: -208px;
+    margin-right: -208px;
   }
 }
 
@@ -3780,8 +3778,8 @@ body:not(.single-post) .entry-footer,
 .entry-author,
 .entry-header,
 #master .entry-content {
-  max-width: 700px;
-  max-width: 43.75rem;
+  max-width: 660px;
+  max-width: 41.25rem;
   margin-left: auto;
   margin-right: auto;
   display: block;
@@ -3793,8 +3791,8 @@ body:not(.single-post) .entry-footer,
 }
 
 #master .display-fullwidth #master .entry-content > h1 {
-  max-width: 700px;
-  max-width: 43.75rem;
+  max-width: 660px;
+  max-width: 41.25rem;
 }
 
 #master .widgetized-page .site-content .full-width-bar,
