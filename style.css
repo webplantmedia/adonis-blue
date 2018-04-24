@@ -5498,7 +5498,6 @@ object {
   font-size: 0.9375rem;
   font-weight: bold;
   margin: 0;
-  padding: 0.8075em 0;
   color: #959595;
   line-height: 1.375;
 }
@@ -5509,9 +5508,9 @@ object {
   display: inline;
 }
 
-.wp-block-gallery .blocks-gallery-item figcaption {
-  padding-left: 0.8705em;
-  padding-right: 0.8705em;
+.wp-block-image figcaption,
+.wp-caption-text {
+  padding: 0.8075em 0;
 }
 
 .wp-block-image img[class*="wp-image-"] {
