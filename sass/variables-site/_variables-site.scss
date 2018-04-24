@@ -41,9 +41,7 @@ $size__site-sidebar: 300px;
 $size__site-sidebar-with-padding: $size__site-sidebar + $size__site_gutter;
 $size__menu-collapse-width: 960px;
 $size__site-main-no-sidebar: $size__site-container-no-padding - $size__site-sidebar - $size__site-gutter;
-$size__content-side-spacing: max( (( $size__site-main-no-sidebar - $size__content-container ) / 2), 80px );
-
-// media query widths
+$size__content-side-spacing: max( (( $size__site-container-no-padding - $size__content-container ) / 2), 80px );
 
 // Typography
 $font__main: 'Lato', sans-serif;

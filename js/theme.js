@@ -10,15 +10,7 @@
 			margin;
 
 		$this = $(this);
-		console.log($this);
-
-		// save elements
-		if ( $this.hasClass('alignfull') ) {
-			$site = $('body');
-		}
-		else {
-			$site = $('.site-content > .site-boundary');
-		}
+		$site = $('body');
 
 		$content = $('.site-main .entry-content');
 		if ( $site.length && $content.length ) {
@@ -26,16 +18,24 @@
 			siteWidth = $site.outerWidth(false);
 			contentWidth = $content.outerWidth( false );
 
-			if ( siteWidth <= 780 ) {
+			if ( siteWidth <= 700 ) {
 				$this.css( {'margin-left': '', 'margin-right': ''} );
 			}
 			else {
 				// used for centering.
-				margin = ( ( siteWidth - contentWidth ) / 2 ) * -1;
+				margin = ( ( siteWidth - contentWidth ) / 2 );
+
+				if ( $this.hasClass('alignwide') ) {
+					margin -= 20;
+					margin = Math.max( margin, 0 );
+					margin = Math.min( margin, 200 );
+				}
 
 				if ( $this.hasClass('wp-block-gallery') ) {
-					margin -= 8; //8px offset for gallery margin.
+					margin += 8; //8px offset for gallery margin.
 				}
+
+				margin *= -1;
 
 				// apply margin offset
 				$this.css( {'margin-left': margin+'px', 'margin-right': margin+'px'} );
@@ -53,7 +53,6 @@
 
 		$this = $(this);
 
-		// save elements
 		$window = $(window);
 		$content = $('.site-main .entry-content');
 		if ( $content.length && $window.length ) {
@@ -61,15 +60,17 @@
 			windowWidth = $window.width();
 
 			x = $content.offset();
-			margin = x.left * -1;
+			margin = x.left;
 
 			if ( $this.hasClass('alignwide') ) {
-				margin = Math.min( Math.round( margin / 2 ), -40 );
+				margin = Math.max( ( margin - 20 ), 20 );
 			}
 
 			if ( $this.hasClass('wp-block-gallery') ) {
-				margin -= 8; //8px offset for gallery margin.
+				margin += 8; //8px offset for gallery margin.
 			}
+
+			margin *= -1;
 
 			if ( windowWidth <= 780 ) {
 				$this.css( {'margin-left':'','margin-right':''} );

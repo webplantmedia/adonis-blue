@@ -37,11 +37,13 @@
 	margin-bottom: 2.1em;
 }
 
-.entry-content > .alignfull,
-.entry-content > .alignwide {
+.entry-content > .alignfull {
 	margin-left: -20px;
 	margin-right: -20px;
+}
 
+.entry-content > .alignfull,
+.entry-content > .alignwide {
 	@media only screen and (min-width: 700px) {
 		margin-left: -40px;
 		margin-right: -40px;
@@ -62,11 +64,13 @@
 	}
 }
 
-.wp-block-gallery.alignwide,
 .wp-block-gallery.alignfull {
 	margin-left: -28px;
 	margin-right: -28px;
+}
 
+.wp-block-gallery.alignwide,
+.wp-block-gallery.alignfull {
 	@media only screen and (min-width: 700px) {
 		margin-left: -48px;
 		margin-right: -48px;
@@ -86,4 +90,3 @@
 		}
 	}
 }
-
