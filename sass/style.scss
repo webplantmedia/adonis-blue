@@ -54,6 +54,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 	## Comments
 # Footer
 # Infinite scroll
+# Gutenberg
 # Media
 	## Captions
 	## Galleries
@@ -214,6 +215,11 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 @import "modules/infinite-scroll";
 
 /*--------------------------------------------------------------
+# Gutenberg
+--------------------------------------------------------------*/
+@import "modules/gutenberg";
+
+/*--------------------------------------------------------------
 # Media
 --------------------------------------------------------------*/
 @import "media/media";
@@ -227,11 +233,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 ## Galleries
 --------------------------------------------------------------*/
 @import "media/galleries";
-
-/*--------------------------------------------------------------
-## Gutenberg Media
---------------------------------------------------------------*/
-// @import "media/gutenberg-media";
 
 /*--------------------------------------------------------------
 # Plugins
