@@ -132,7 +132,7 @@ add_action( 'after_setup_theme', 'crimson_rose_setup' );
  * @global int $content_width
  */
 function crimson_rose_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'crimson_rose_content_width', 700 );
+	$GLOBALS['content_width'] = apply_filters( 'crimson_rose_content_width', 660 );
 }
 add_action( 'after_setup_theme', 'crimson_rose_content_width', 0 );
 
