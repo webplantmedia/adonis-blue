@@ -67,6 +67,9 @@ a:hover {
 	background-color: ' . $crimson_rose['footer_background_color'] . '; /*id:footer_background_color*/
 }
 
+#master .wp-block-button__link,
+#master .wp-block-button__link:active,
+#master .wp-block-button__link:focus,
 #master .widget.null-instagram-feed > p.clear a,
 #master .widget.null-instagram-feed > p.clear a:active,
 #master .widget.null-instagram-feed > p.clear a:focus,
@@ -129,6 +132,7 @@ a:hover {
 	background-color: ' . $crimson_rose['primary_color'] . '; /*id:primary_color*/
 }
 
+#master .wp-block-button__link:hover,
 #master .widget.null-instagram-feed > p.clear a:hover,
 #master .woocommerce-product-search button[type="submit"]:hover,
 #master .grofile-full-link:hover,

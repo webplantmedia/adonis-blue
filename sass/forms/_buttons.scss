@@ -6,6 +6,7 @@ button {
 }
 
 #master {
+	.wp-block-button__link,
 	.widget.null-instagram-feed > p.clear a,
 	.woocommerce-product-search button[type="submit"],
 	.grofile-full-link,
@@ -65,6 +66,8 @@ button {
 		}
 	}
 
+	.wp-block-button__link:active,
+	.wp-block-button__link:focus,
 	.widget.null-instagram-feed > p.clear a:active,
 	.widget.null-instagram-feed > p.clear a:focus,
 	.woocommerce-product-search button[type="submit"]:active,
@@ -99,6 +102,7 @@ button {
 		background: #252323;
 	}
 
+	.wp-block-button__link:hover,
 	.widget.null-instagram-feed > p.clear a:hover,
 	.woocommerce-product-search button[type="submit"]:hover,
 	.grofile-full-link:hover,
