@@ -53,6 +53,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 	## Comments
 # Footer
 # Infinite scroll
+# Gutenberg
 # Media
 	## Captions
 	## Galleries
@@ -1084,6 +1085,7 @@ button {
   background: transparent;
 }
 
+#master .wp-block-button__link,
 #master .widget.null-instagram-feed > p.clear a,
 #master .woocommerce-product-search button[type="submit"],
 #master .grofile-full-link,
@@ -1149,6 +1151,8 @@ button {
   padding: 12px 30px;
 }
 
+#master .wp-block-button__link:active,
+#master .wp-block-button__link:focus,
 #master .widget.null-instagram-feed > p.clear a:active,
 #master .widget.null-instagram-feed > p.clear a:focus,
 #master .woocommerce-product-search button[type="submit"]:active,
@@ -1183,6 +1187,7 @@ button {
   background: #252323;
 }
 
+#master .wp-block-button__link:hover,
 #master .widget.null-instagram-feed > p.clear a:hover,
 #master .woocommerce-product-search button[type="submit"]:hover,
 #master .grofile-full-link:hover,
@@ -5448,6 +5453,45 @@ h1.h1-title,
 }
 
 /*--------------------------------------------------------------
+# Gutenberg
+--------------------------------------------------------------*/
+@media (max-width: 700px) {
+  .wp-block-text-columns.alignwide,
+  .wp-block-text-columns.alignfull,
+  .wp-block-columns.alignwide,
+  .wp-block-columns.alignfull {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  #master .wp-block-text-columns,
+  #master .wp-block-columns {
+    display: block;
+  }
+  #master .wp-block-text-columns .wp-block-column,
+  #master .wp-block-columns .wp-block-column {
+    display: block;
+    width: auto;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 701px) {
+  .wp-block-text-columns.alignwide,
+  .wp-block-text-columns.alignfull,
+  .wp-block-columns.alignwide,
+  .wp-block-columns.alignfull {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .wp-block-text-columns p,
+  .wp-block-columns p {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+/*--------------------------------------------------------------
 # Media
 --------------------------------------------------------------*/
 .page-content .wp-smiley,
@@ -5623,9 +5667,6 @@ object {
   }
 }
 
-/*--------------------------------------------------------------
-## Gutenberg Media
---------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # Plugins
 --------------------------------------------------------------*/
