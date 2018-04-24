@@ -2,7 +2,7 @@
 /**
  * Gutenberg theme support.
  *
- * @package     Brimstone
+ * @package     Crimson_Rose
  * @license     GPL-3.0
  */
 
@@ -11,7 +11,7 @@
  *
  * @see http://gutenberg-devdoc.surge.sh/reference/theme-support/
  */
-function brimstone_gutenberg_supported_features() {
+function crimson_rose_gutenberg_supported_features() {
 
 	/**
 	 * Custom colors for use in the editor.
@@ -31,17 +31,17 @@ function brimstone_gutenberg_supported_features() {
 	add_theme_support( 'align-wide' );
 
 }
-add_action( 'after_setup_theme', 'brimstone_gutenberg_supported_features' );
+add_action( 'after_setup_theme', 'crimson_rose_gutenberg_supported_features' );
 
 /**
  * Enqueue theme styles within Gutenberg.
  */
-function brimstone_gutenberg_styles() {
+function crimson_rose_gutenberg_styles() {
 
 	// Load the theme styles within Gutenberg.
-	wp_enqueue_style( 'brimstone-gutenberg', get_template_directory_uri() . '/css/admin/gutenberg.css', array(), BRIMSTONE_VERSION, 'all' );
+	wp_enqueue_style( 'crimson-rose-gutenberg', get_template_directory_uri() . '/css/admin/gutenberg.css', array(), CRIMSON_ROSE_VERSION, 'all' );
 
 	// Add custom fonts to Gutenberg.
-	wp_enqueue_style( 'brimstone-body-font', get_parent_theme_file_uri() . '/fonts/lato/stylesheet.css', array(), BRIMSTONE_VERSION );
+	wp_enqueue_style( 'crimson-rose-body-font', get_parent_theme_file_uri() . '/fonts/lato/stylesheet.css', array(), CRIMSON_ROSE_VERSION );
 }
-add_action( 'enqueue_block_editor_assets', 'brimstone_gutenberg_styles' );
+add_action( 'enqueue_block_editor_assets', 'crimson_rose_gutenberg_styles' );

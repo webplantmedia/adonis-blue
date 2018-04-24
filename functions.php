@@ -630,6 +630,11 @@ function crimson_rose_is_ocdi_activated() {
 require get_template_directory() . '/inc/default-options.php';
 
 /**
+ * Gutenberg editor.
+ */
+require get_template_directory() . '/inc/gutenberg.php';
+
+/**
  * Implement the Custom Header feature.
  */
 // require get_template_directory() . '/inc/custom-header.php';
