@@ -614,7 +614,7 @@ img {
 }
 
 figure {
-  margin: 1em 0;
+  margin: 2em 0;
   /* Extra wide images within figure tags don't overflow the content area. */
 }
 
@@ -5486,9 +5486,12 @@ h1.h1-title,
     padding-left: 20px;
     padding-right: 20px;
   }
-  .wp-block-text-columns p,
-  .wp-block-columns p {
+  .wp-block-text-columns > *:first-child,
+  .wp-block-columns > *:first-child {
     margin-top: 0;
+  }
+  .wp-block-text-columns > *:last-child,
+  .wp-block-columns > *:last-child {
     margin-bottom: 0;
   }
 }
