@@ -3429,10 +3429,6 @@ a:hover, a:active {
   margin: 0;
 }
 
-.crimson-rose-content-widget-static-content .full-width-static-content .hentry {
-  max-width: none;
-}
-
 .crimson-rose-content-widget-static-content .custom-color .hentry h1,
 .crimson-rose-content-widget-static-content .custom-color .hentry h2,
 .crimson-rose-content-widget-static-content .custom-color .hentry h3,
@@ -3446,6 +3442,11 @@ a:hover, a:active {
 .crimson-rose-content-widget-static-content .custom-color .hentry a:not(.theme-generated-button):active,
 .crimson-rose-content-widget-static-content .custom-color .hentry a:not(.theme-generated-button):visited {
   color: inherit;
+}
+
+#master .crimson-rose-content-widget-static-content .full-width-static-content .entry-content,
+#master .crimson-rose-content-widget-static-content .full-width-static-content .hentry {
+  max-width: none;
 }
 
 .crimson-rose-content-widget-blog-posts .button-wrapper {
