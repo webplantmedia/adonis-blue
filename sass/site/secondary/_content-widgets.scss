@@ -323,12 +323,6 @@
 
 	}
 
-	.full-width-static-content {
-		.hentry {
-			max-width: none;
-		}
-	}
-
 	.custom-color {
 		.hentry {
 			h1,
@@ -348,6 +342,15 @@
 		}
 	}
 
+}
+
+#master .crimson-rose-content-widget-static-content {
+	.full-width-static-content {
+		.entry-content,
+		.hentry {
+			max-width: none;
+		}
+	}
 }
 
 // Static Content
