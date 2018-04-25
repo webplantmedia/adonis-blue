@@ -37,8 +37,11 @@
 
 	.wp-block-text-columns,
 	.wp-block-columns {
-		p {
+		> *:first-child {
 			margin-top: 0;
+		}
+
+		> *:last-child {
 			margin-bottom: 0;
 		}
 	}
