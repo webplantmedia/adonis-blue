@@ -192,6 +192,8 @@ class Crimson_Rose_Content_Widget_Jetpack_Testimonials extends Crimson_Rose_Widg
 	 * @return void
 	 */
 	function widget( $args, $instance ) {
+		wp_enqueue_script( 'bx2slider' );
+
 		extract( $args );
 
 		$o = $this->sanitize( $instance );

@@ -270,7 +270,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 		 * @return void
 		 */
 		function widget( $args, $instance ) {
-			wp_enqueue_script( 'crimson-rose-bx2slider' );
+			wp_enqueue_script( 'bx2slider' );
 
 			$o = $this->sanitize( $instance );
 
