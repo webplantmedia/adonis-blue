@@ -147,7 +147,7 @@ Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam eli
 		'crimson-rose-image-banner' => array(
 			'crimson-rose-image-banner',
 			array(
-				'title' => 'ENJOY YOURSELF!',
+				'title' => _x( 'ENJOY YOURSELF!', 'Theme starter content', 'crimson-rose',
 				'image' => get_template_directory_uri() . '/img/starter-content/footer-widget.png',
 				'image_2x' => '',
 				'text_position' => 'below',
@@ -179,7 +179,7 @@ Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam eli
 	$starter_content['widgets']['footer-3']['crimson-rose-social-menu'] = array(
 		'crimson-rose-social-menu',
 		array(
-			'title' => 'Connect',
+			'title' => _x( 'Connect', 'Theme starter content', 'crimson-rose' ),
 		),
 	);
 
