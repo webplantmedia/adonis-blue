@@ -440,7 +440,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 			}
 			?>
 
-			<<?php echo $tag; ?> <?php echo esc_attr( implode( ' ', $attr ) ); ?>>
+			<<?php echo $tag; ?> <?php echo implode( ' ', $attr ); ?>>
 					
 				<div class="content-wrapper<?php echo esc_attr( $text_class ); ?>" style="<?php echo esc_attr( implode( '', $text_style ) ); ?>">
 					<?php if ( ! empty( $slide_setting['content_text'] ) ) : ?>
