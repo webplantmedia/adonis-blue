@@ -7,6 +7,7 @@
  * @package Crimson_Rose
  */
 
+global $crimson_rose;
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -41,18 +42,9 @@
 	<div class="entry-content">
 		<?php
 			the_content( sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Read More<i class="genericons-neue genericons-neue-next"></i><span class="screen-reader-text">"%s"</span>', 'crimson-rose' ),
-					array(
-						'i' => array(
-							'class' => array(),
-						),
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
+				/* translators: %s: Name of current post. Only visible to screen readers */
+				__( '%1$s<i class="genericons-neue genericons-neue-next"></i><span class="screen-reader-text">"%2$s"</span>', 'crimson-rose' ),
+				esc_html( $crimson_rose['read_more_label'] ),
 				get_the_title()
 			) );
 
