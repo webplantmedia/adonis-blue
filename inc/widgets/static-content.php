@@ -231,15 +231,8 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Static_Content' ) ) :
 											<?php
 												edit_post_link(
 													sprintf(
-														wp_kses(
-															/* translators: %s: Name of current post. Only visible to screen readers */
-															__( 'Edit <span class="screen-reader-text">%s</span>', 'brimstone' ),
-															array(
-																'span' => array(
-																	'class' => array(),
-																),
-															)	
-														),
+														/* translators: %s: Name of current post. Only visible to screen readers */
+														__( 'Edit <span class="screen-reader-text">%s</span>', 'crimson-rose' ),
 														get_the_title()
 													),
 													'<div class="entry-footer-meta"><span class="edit-link">',
