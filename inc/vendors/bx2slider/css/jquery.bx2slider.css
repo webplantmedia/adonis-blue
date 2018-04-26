@@ -90,16 +90,14 @@ ul.bxslider {
   left: 10px;
   /* background: url('../images/controls.png') no-repeat 0 -32px; */
 }
-.bx2-wrapper .bx2-prev:hover,
-.bx2-wrapper .bx2-prev:focus {
+.bx2-wrapper .bx2-prev:hover {
   color: rgba(0, 0, 0, 0.7);
 }
 .bx2-wrapper .bx2-next {
   right: 10px;
   /* background: url('../images/controls.png') no-repeat -43px -32px; */
 }
-.bx2-wrapper .bx2-next:hover,
-.bx2-wrapper .bx2-next:focus {
+.bx2-wrapper .bx2-next:hover {
   color: rgba(0, 0, 0, 0.7);
 }
 .bx2-wrapper .bx2-controls-direction a {
