@@ -12,8 +12,8 @@ class Crimson_Rose_Content_Widget_Callout extends Crimson_Rose_Widget {
 	 */
 	public function __construct() {
 		$this->widget_id          = 'crimson-rose-content-widget-callout';
-		$this->widget_description = esc_html__( 'Displays a callout.', 'crimson-rose' );
-		$this->widget_name        = esc_html__( 'Crimson Rose: Callout', 'crimson-rose' );
+		$this->widget_description = __( 'Displays a callout.', 'crimson-rose' );
+		$this->widget_name        = __( 'Crimson Rose: Callout', 'crimson-rose' );
 		$this->settings           = array(
 			'title' => array(
 				'type'  => 'text',
@@ -52,7 +52,7 @@ class Crimson_Rose_Content_Widget_Callout extends Crimson_Rose_Widget {
 			'image' => array(
 				'type'  => 'image',
 				'std'   => get_template_directory_uri() . '/img/widgets/callout-1.png',
-				'label' => esc_html__( 'Image:', 'crimson-rose' ),
+				'label' => __( 'Image:', 'crimson-rose' ),
 				'sanitize' => 'url',
 			),
 			'background_color' => array(
@@ -65,19 +65,19 @@ class Crimson_Rose_Content_Widget_Callout extends Crimson_Rose_Widget {
 				'type'  => 'colorpicker',
 				'std'   => '',
 				'label' => __( 'Text Color:', 'crimson-rose' ),
-				'description' => esc_html__( 'Leave blank to use default theme color.', 'crimson-rose' ),
+				'description' => __( '<strong>Leave</strong> blank to use default theme color.', 'crimson-rose' ),
 				'sanitize' => 'color',
 			),
 			'button_text' => array(
 				'type'  => 'text',
 				'std'   => 'SHOP FLOWERS',
-				'label' => esc_html__( 'Button Text:', 'crimson-rose' ),
+				'label' => __( 'Button Text:', 'crimson-rose' ),
 				'sanitize' => 'text',
 			),
 			'button_link' => array(
 				'type'  => 'text',
 				'std'   => get_home_url(),
-				'label' => esc_html__( 'Button URL:', 'crimson-rose' ),
+				'label' => __( 'Button URL:', 'crimson-rose' ),
 				'sanitize' => 'url',
 			),
 			'button_style' => array(
@@ -107,7 +107,7 @@ class Crimson_Rose_Content_Widget_Callout extends Crimson_Rose_Widget {
 				'step'  => 1,
 				'min'   => 0,
 				'max'   => 300,
-				'label' => esc_html__( 'Top padding of widget:', 'crimson-rose' ),
+				'label' => __( 'Top padding of widget:', 'crimson-rose' ),
 				'sanitize' => 'number',
 			),
 			'padding_bottom' => array(
@@ -116,7 +116,7 @@ class Crimson_Rose_Content_Widget_Callout extends Crimson_Rose_Widget {
 				'step'  => 1,
 				'min'   => 0,
 				'max'   => 300,
-				'label' => esc_html__( 'Bottom padding of widget:', 'crimson-rose' ),
+				'label' => __( 'Bottom padding of widget:', 'crimson-rose' ),
 				'sanitize' => 'number',
 			),
 			'margin_bottom' => array(
@@ -125,7 +125,7 @@ class Crimson_Rose_Content_Widget_Callout extends Crimson_Rose_Widget {
 				'step'  => 1,
 				'min'   => 0,
 				'max'   => 300,
-				'label' => esc_html__( 'Bottom margin of widget:', 'crimson-rose' ),
+				'label' => __( 'Bottom margin of widget:', 'crimson-rose' ),
 				'sanitize' => 'number',
 			),
 		);
@@ -187,17 +187,17 @@ class Crimson_Rose_Content_Widget_Callout extends Crimson_Rose_Widget {
 		<?php echo $before_widget; ?>
 
 		<?php if ( 'border' == $o['style'] ) : ?>
-			<div class="content-callout-border-wrap" style="<?php echo implode( '', $wrap_style ); ?>">
+			<div class="content-callout-border-wrap" style="<?php echo esc_attr( implode( '', $wrap_style ) ); ?>">
 		<?php endif; ?>
 
-				<div class="content-callout text-<?php echo $o['text_align']; ?>" style="<?php echo implode( '', $style ); ?>">
+				<div class="content-callout text-<?php echo esc_attr( $o['text_align'] ); ?>" style="<?php echo esc_attr( implode( '', $style ) ); ?>">
 					<div class="site-boundary">
 						<div class="grid grid--no-gutter valign-<?php echo esc_attr( $o['vertical_align'] ); ?>">
 							<div class="grid__col grid__col--1-of-2 text-container<?php echo ( 'right' === $o['text_align'] ) ? ' grid__col--push-1-of-2' : ''; ?>"><?php echo $content; ?></div>
 
 							<?php if ( '' !== $o['image'] ) : ?>
 							<div class="grid__col grid__col--1-of-2 image-container<?php echo ( 'right' === $o['text_align'] ) ? ' grid__col--pull-2-of-2' : ''; ?>">
-								<img src="<?php echo $o['image']; ?>" alt="<?php echo $o['title']; ?>">
+								<img src="<?php echo esc_url( $o['image'] ); ?>" alt="<?php echo esc_attr( $o['title'] ); ?>">
 							</div>
 							<?php endif; ?>
 						</div>

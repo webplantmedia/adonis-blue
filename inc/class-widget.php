@@ -230,55 +230,6 @@ class Crimson_Rose_Widget extends WP_Widget {
 		return $instance;
 	}
 
-	function allowed_html() {
-		$expandedtags = wp_kses_allowed_html();
-
-		// Paragraph.
-		$expandedtags['span'] = array();
-		$expandedtags['p'] = array();
-		$expandedtags['br'] = array();
-		$expandedtags['i'] = array();
-		$expandedtags['ul'] = array();
-		$expandedtags['li'] = array();
-
-		// H1 - H6.
-		$expandedtags['h1'] = array();
-		$expandedtags['h2'] = array();
-		$expandedtags['h3'] = array();
-		$expandedtags['h4'] = array();
-		$expandedtags['h5'] = array();
-		$expandedtags['h6'] = array();
-
-		// Enable id, class, and style attributes for each tag.
-		foreach ( $expandedtags as $tag => $attributes ) {
-			$expandedtags[ $tag ]['id']    = true;
-			$expandedtags[ $tag ]['class'] = true;
-			$expandedtags[ $tag ]['style'] = true;
-		}
-
-		// img.
-		$expandedtags['img'] = array(
-			'src' => true,
-			'height' => true,
-			'width' => true,
-			'alt' => true,
-			'title' => true,
-			'class' => true,
-			'style' => true,
-			'id' => true,
-		);
-
-		/**
-		 * Customize the tags and attributes that are allows during text sanitization.
-		 *
-		 * @since 1.0.0.
-		 *
-		 * @param array     $expandedtags    The list of allowed tags and attributes.
-		 * @param string    $string          The text string being sanitized.
-		 */
-		return apply_filters( 'crimson_rose_allowed_html', $expandedtags );
-	}
-
 	function sanitize_instance( $setting, $new_value, $action = 'update' ) {
 		if ( ! isset( $setting['sanitize'] ) ) {
 			return $new_value;
@@ -288,7 +239,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 
 		switch ( $setting['sanitize'] ) {
 			case 'html' :
-				$value = wp_kses( $new_value, $this->allowed_html() );
+				$value = wp_kses_post( $new_value );
 				break;
 
 			case 'multicheck' :
@@ -384,7 +335,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 		}
 		?>
 
-		<div id="<?php echo $this->id; ?>" class="widget-inner-container ui-theme-override">
+		<div id="<?php echo esc_attr( $this->id ); ?>" class="widget-inner-container ui-theme-override">
 			<?php
 
 			foreach ( $this->settings as $key => $setting ) {
@@ -441,15 +392,15 @@ class Crimson_Rose_Widget extends WP_Widget {
 					( function( $ ) {
 						"use strict";
 						$(document).ready(function($){
-							$('#widgets-right <?php echo $selector; ?>').accordion({
+							$('#widgets-right <?php echo esc_attr( $selector ); ?>').accordion({
 								header: '.widget-panel-title',
 								heightStyle: 'content',
 								collapsible: true,
 								active: false
 							});
 
-							widgetPanelRepeaterButtons( $('<?php echo $selector; ?>') );
-							widgetPanelMoveRefresh( $('<?php echo $selector; ?>') );
+							widgetPanelRepeaterButtons( $('<?php echo esc_attr( $selector ); ?>') );
+							widgetPanelMoveRefresh( $('<?php echo esc_attr( $selector ); ?>') );
 						});
 					} )( jQuery );
 					/* ]]> */
@@ -463,7 +414,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 					( function( $ ) {
 						"use strict";
 						$(document).ready(function($){
-							$('#widgets-right <?php echo $selector; ?>').accordion({
+							$('#widgets-right <?php echo esc_attr( $selector ); ?>').accordion({
 								header: '.widget-panel-title',
 								heightStyle: 'content',
 								collapsible: true,
@@ -499,8 +450,8 @@ class Crimson_Rose_Widget extends WP_Widget {
 	public function display_after_panel_repeater( $panel_count ) {
 		?>
 		</div>
-		<input type="hidden" id="widget-panel-repeater-count" value="<?php echo $panel_count; ?>" />
-		<a href="#" class="button-secondary widget-panel-repeater" onclick="widgetPanelRepeater( '<?php echo $this->id; ?>' ); return false;"><?php esc_html_e( 'Add New Item', 'crimson-rose' ); ?></a>
+		<input type="hidden" id="widget-panel-repeater-count" value="<?php echo esc_attr( $panel_count ); ?>" />
+		<a href="#" class="button-secondary widget-panel-repeater" onclick="widgetPanelRepeater( '<?php echo esc_attr( $this->id ); ?>' ); return false;"><?php esc_html_e( 'Add New Item', 'crimson-rose' ); ?></a>
 		<?php
 	}
 
@@ -554,7 +505,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 			case 'text':
 				?>
 				<p>
-					<label for="<?php echo $field_id; ?>"><?php echo esc_html( $setting['label'] ); ?></label>
+					<label for="<?php echo esc_attr( $field_id ); ?>"><?php echo esc_html( $setting['label'] ); ?></label>
 					<input class="widefat" id="<?php echo esc_attr( $field_id ); ?>" name="<?php echo esc_attr( $field_name ); ?>" type="text" value="<?php echo esc_attr( $value ); ?>" />
 					<?php if ( isset( $setting['description'] ) ) : ?>
 						<span class="description"><?php echo esc_html( $setting['description'] ); ?></span>
@@ -569,7 +520,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 				$id_prefix = $this->get_field_id( '' );
 			?>
 				<p style="margin-bottom: 0;">
-					<label for="<?php echo $field_id; ?>"><?php echo $setting['label']; ?></label>
+					<label for="<?php echo esc_attr( $field_id ); ?>"><?php echo esc_html( $setting['label'] ); ?></label>
 				</p>
 
 				<div class="image-sel-container" style="margin-top: 3px;">
@@ -582,7 +533,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 						<?php endif; ?>
 					</div>
 
-					<input type="text" class="widefat image-sel-value" id="<?php echo esc_attr( $field_id ); ?>" name="<?php echo $field_name; ?>"value="<?php echo $value; ?>" placeholder="http://" style="margin-bottom:5px;" />
+					<input type="text" class="widefat image-sel-value" id="<?php echo esc_attr( $field_id ); ?>" name="<?php echo esc_attr( $field_name ); ?>"value="<?php echo esc_attr( $value ); ?>" placeholder="http://" style="margin-bottom:5px;" />
 					<a href="#" class="button-secondary image-sel-add" onclick="imageWidget.uploader( this ); return false;"><?php esc_html_e( 'Choose Image', 'crimson-rose' ); ?></a>
 					<a href="#" style="display:inline-block;margin:5px 0 0 3px;<?php if ( empty( $value ) ) echo 'display:none;'; ?>" class="image-sel-remove" onclick="imageWidget.remove( this ); return false;"><?php esc_html_e( 'Remove', 'crimson-rose' ); ?></a>
 				</div>
@@ -595,7 +546,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 			case 'checkbox' :
 				?>
 				<p>
-					<label for="<?php echo $field_id; ?>">
+					<label for="<?php echo esc_attr( $field_id ); ?>">
 						<input type="checkbox" id="<?php echo esc_attr( $field_id ); ?>" name="<?php echo esc_attr( $field_name ); ?>" type="text" value="1" <?php checked( 1, esc_attr( $value ) ); ?>/>
 						<?php echo esc_html( $setting['label'] ); ?>
 					</label>
@@ -616,8 +567,8 @@ class Crimson_Rose_Widget extends WP_Widget {
 				<p><?php echo esc_attr( $setting['label'] ); ?></p>
 				<p>
 					<?php foreach ( $setting['options'] as $id => $label ) : ?>
-					<label for="<?php echo sanitize_title( $label ); ?>-<?php echo esc_attr( $id ); ?>">
-						<input type="checkbox" id="<?php echo sanitize_title( $label ); ?>-<?php echo esc_attr( $id ); ?>" name="<?php echo esc_attr( $field_name ); ?>[]" value="<?php echo esc_attr( $id ); ?>" <?php if ( in_array( $id, $value ) ) : ?>checked="checked"<?php endif; ?>/>
+					<label for="<?php echo esc_attr( sanitize_title( $label ) ); ?>-<?php echo esc_attr( $id ); ?>">
+						<input type="checkbox" id="<?php echo esc_attr( sanitize_title( $label ) ); ?>-<?php echo esc_attr( $id ); ?>" name="<?php echo esc_attr( $field_name ); ?>[]" value="<?php echo esc_attr( $id ); ?>" <?php if ( in_array( $id, $value ) ) : ?>checked="checked"<?php endif; ?>/>
 						<?php echo esc_attr( $label ); ?><br />
 					</label>
 					<?php endforeach; ?>
@@ -631,8 +582,8 @@ class Crimson_Rose_Widget extends WP_Widget {
 			case 'select' :
 				?>
 				<p>
-					<label for="<?php echo $field_id; ?>"><?php echo esc_html( $setting['label'] ); ?></label>
-					<select class="widefat" id="<?php echo esc_attr( $field_id ); ?>" name="<?php echo $field_name; ?>">
+					<label for="<?php echo esc_attr( $field_id ); ?>"><?php echo esc_html( $setting['label'] ); ?></label>
+					<select class="widefat" id="<?php echo esc_attr( $field_id ); ?>" name="<?php echo esc_attr( $field_name ); ?>">
 						<?php foreach ( $setting['options'] as $key => $label ) : ?>
 						<option value="<?php echo esc_attr( $key ); ?>" <?php selected( $key, $value ); ?>><?php echo esc_attr( $label ); ?></option>
 						<?php endforeach; ?>
@@ -650,7 +601,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 				<p>
 					<label for="<?php echo esc_attr( $field_id ); ?>"><?php echo esc_html( $setting['label'] ); ?></label>
 					<select class="widefat" id="<?php echo esc_attr( $field_id ); ?>" name="<?php echo esc_attr( $field_name ); ?>">
-						<option value="" <?php selected( '', $value ); ?>><?php echo __( 'No Page', 'brimstone' ); ?></option>
+						<option value="" <?php selected( '', $value ); ?>><?php echo esc_html__( 'No Page', 'crimson-rose' ); ?></option>
 						<?php foreach ( $pages as $page ) : ?>
 							<option value="<?php echo esc_attr( $page->ID ); ?>" <?php selected( $page->ID, $value ); ?>><?php echo esc_attr( $page->post_title ); ?></option>
 						<?php endforeach; ?>
@@ -669,7 +620,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 				}
 				?>
 				<p>
-					<label for="<?php echo $field_id; ?>"><?php echo esc_html( $setting['label'] ); ?></label>
+					<label for="<?php echo esc_attr( $field_id ); ?>"><?php echo esc_html( $setting['label'] ); ?></label>
 					<input class="widefat post-autocomplete-select" id="<?php echo esc_attr( $field_id ); ?>" data-autocomplete-type="multi" data-autocomplete-taxonomy="" data-autocomplete-lookup="post" data-autocomplete-post-type="<?php echo esc_attr( $post_type ); ?>" name="<?php echo esc_attr( $field_name ); ?>" type="text" value="<?php echo esc_attr( $value ); ?>" />
 					<?php if ( isset( $setting['description'] ) ) : ?>
 						<span class="description"><?php echo esc_html( $setting['description'] ); ?></span>
@@ -688,7 +639,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 			case 'number' :
 				?>
 				<p>
-					<label for="<?php echo $field_id; ?>"><?php echo esc_html( $setting['label'] ); ?></label>
+					<label for="<?php echo esc_attr( $field_id ); ?>"><?php echo esc_html( $setting['label'] ); ?></label>
 					<input class="widefat" id="<?php echo esc_attr( $field_id ); ?>" name="<?php echo esc_attr( $field_name ); ?>" type="number" step="<?php echo esc_attr( $setting['step'] ); ?>" <?php if ( isset( $setting['min'] ) ) : ?> min="<?php echo esc_attr( $setting['min'] ); ?>" <?php endif; ?> <?php if ( isset( $setting['max'] ) ) : ?> max="<?php echo esc_attr( $setting['max'] ); ?>" <?php endif; ?> value="<?php echo esc_attr( $value ); ?>" />
 					<?php if ( isset( $setting['description'] ) ) : ?>
 						<span class="description"><?php echo esc_html( $setting['description'] ); ?></span>
@@ -700,7 +651,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 			case 'textarea' :
 				?>
 				<p>
-					<label for="<?php echo $field_id; ?>"><?php echo esc_html( $setting['label'] ); ?></label>
+					<label for="<?php echo esc_attr( $field_id ); ?>"><?php echo esc_html( $setting['label'] ); ?></label>
 					<textarea class="widefat" id="<?php echo esc_attr( $field_id ); ?>"
 					name="<?php echo esc_attr( $field_name ); ?>" rows="<?php echo isset( $setting['rows'] )
 					? $setting['rows'] : 3; ?>"><?php echo esc_html( $value ); ?></textarea>
@@ -716,7 +667,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 					wp_enqueue_style( 'wp-color-picker' );
 				?>
 				<p style="margin-bottom: 0;">
-					<label for="<?php echo $field_id; ?>"><?php echo esc_html( $setting['label'] ); ?></label>
+					<label for="<?php echo esc_attr( $field_id ); ?>"><?php echo esc_html( $setting['label'] ); ?></label>
 				</p>
 				<div class="color-picker-wrapper">
 					<input type="text" class="widefat color-picker" id="<?php echo esc_attr( $field_id ); ?>" name="<?php echo esc_attr( $field_name ); ?>" data-default-color="<?php echo $setting['std']; ?>" value="<?php echo $value; ?>" />
@@ -724,7 +675,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 						/* <![CDATA[ */
 						( function( $ ){
 							$( document ).ready( function() {
-								$('#widgets-right #<?php echo $field_id; ?>').wpColorPicker({
+								$('#widgets-right #<?php echo esc_attr( $field_id ); ?>').wpColorPicker({
 									change: _.throttle( function() { // For Customizer
 										$(this).trigger( 'change' );
 									}, 3000 )

@@ -21,20 +21,20 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 		 */
 		public function __construct() {
 			$this->widget_id          = 'crimson-rose-content-widget-collage';
-			$this->widget_description = esc_html__( 'Displays collage', 'crimson-rose' );
-			$this->widget_name        = esc_html__( 'Crimson Rose: Collage', 'crimson-rose' );
+			$this->widget_description = __( 'Displays collage', 'crimson-rose' );
+			$this->widget_name        = __( 'Crimson Rose: Collage', 'crimson-rose' );
 			$this->settings           = array(
 				'panels' => array(
 					array(
-						'title' => esc_html__( 'Slider Settings', 'crimson-rose' ),
+						'title' => __( 'Slider Settings', 'crimson-rose' ),
 						'fields' => array(
 							'slider_mode' => array(
 								'type'  => 'select',
 								'std'   => 'horizontal',
-								'label' => esc_html__( 'Transition Effect:', 'crimson-rose' ),
+								'label' => __( 'Transition Effect:', 'crimson-rose' ),
 								'options' => array(
-									'horizontal' => esc_html__( 'Slide', 'crimson-rose' ),
-									'fade' => esc_html__( 'Fade', 'crimson-rose' ),
+									'horizontal' => __( 'Slide', 'crimson-rose' ),
+									'fade' => __( 'Fade', 'crimson-rose' ),
 								),
 								'sanitize' => 'text',
 							),
@@ -44,31 +44,31 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 								'step'  => 1,
 								'min'   => 1,
 								'max'   => 100,
-								'label' => esc_html__( 'Speed of the slideshow change in seconds:', 'crimson-rose' ),
+								'label' => __( 'Speed of the slideshow change in seconds:', 'crimson-rose' ),
 								'sanitize' => 'number',
 							),
 							'slider_auto' => array(
 								'type'  => 'checkbox',
 								'std'   => 1,
-								'label' => esc_html__( 'Auto start slider transitions?', 'crimson-rose' ),
+								'label' => __( 'Auto start slider transitions?', 'crimson-rose' ),
 								'sanitize' => 'checkbox',
 							),
 							'slider_autohover' => array(
 								'type'  => 'checkbox',
 								'std'   => 1,
-								'label' => esc_html__( 'Pause slideshow when hovering?', 'crimson-rose' ),
+								'label' => __( 'Pause slideshow when hovering?', 'crimson-rose' ),
 								'sanitize' => 'checkbox',
 							),
 							'slider_controls' => array(
 								'type'  => 'checkbox',
 								'std'   => 1,
-								'label' => esc_html__( 'Show slide control?', 'crimson-rose' ),
+								'label' => __( 'Show slide control?', 'crimson-rose' ),
 								'sanitize' => 'checkbox',
 							),
 							'slider_pager' => array(
 								'type'  => 'checkbox',
 								'std'   => 1,
-								'label' => esc_html__( 'Show slide pagination?', 'crimson-rose' ),
+								'label' => __( 'Show slide pagination?', 'crimson-rose' ),
 								'sanitize' => 'checkbox',
 							),
 							'margin_bottom' => array(
@@ -77,52 +77,52 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 								'step'  => 1,
 								'min'   => 0,
 								'max'   => 300,
-								'label' => esc_html__( 'Bottom margin of widget:', 'crimson-rose' ),
+								'label' => __( 'Bottom margin of widget:', 'crimson-rose' ),
 								'sanitize' => 'number',
 							),
 						),
 					),
 				),
 				'repeater' => array(
-					'title' => esc_html__( 'Slide', 'crimson-rose' ),
+					'title' => __( 'Slide', 'crimson-rose' ),
 					'fields' => array(
 						'background_color' => array(
 							'type'  => 'colorpicker',
 							'std'   => '#ffece3',
-							'label' => esc_html__( 'Background Color:', 'crimson-rose' ),
+							'label' => __( 'Background Color:', 'crimson-rose' ),
 							'sanitize' => 'color',
 						),
 						'background_image' => array(
 							'type'  => 'image',
 							'std'   => null,
-							'label' => esc_html__( 'Background Image:', 'crimson-rose' ),
+							'label' => __( 'Background Image:', 'crimson-rose' ),
 							'sanitize' => 'url',
 						),
 						'background_size' => array(
 							'type'  => 'select',
 							'std'   => 'cover',
-							'label' => esc_html__( 'Background Size:', 'crimson-rose' ),
+							'label' => __( 'Background Size:', 'crimson-rose' ),
 							'options' => $this->options_background_size(),
 							'sanitize' => 'background_size',
 						),
 						'content_text' => array(
 							'type'  => 'textarea',
 							'std'   => '',
-							'label' => esc_html__( 'Content:', 'crimson-rose' ),
+							'label' => __( 'Content:', 'crimson-rose' ),
 							'sanitize' => 'html',
 						),
 						'text_color' => array(
 							'type'  => 'colorpicker',
 							'std'   => '',
-							'label' => esc_html__( 'Text Color:', 'crimson-rose' ),
-							'description' => esc_html__( 'Leave blank to use default theme color.', 'crimson-rose' ),
+							'label' => __( 'Text Color:', 'crimson-rose' ),
+							'description' => __( 'Leave blank to use default theme color.', 'crimson-rose' ),
 							'sanitize' => 'color',
 						),
 						'text_background_color' => array(
 							'type'  => 'colorpicker',
 							'std'   => '',
-							'label' => esc_html__( 'Text Background Color:', 'crimson-rose' ),
-							'description' => esc_html__( 'Leave blank to use default theme color.', 'crimson-rose' ),
+							'label' => __( 'Text Background Color:', 'crimson-rose' ),
+							'description' => __( 'Leave blank to use default theme color.', 'crimson-rose' ),
 							'sanitize' => 'color',
 						),
 						'text_background_opacity' => array(
@@ -131,7 +131,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 							'step'  => '1',
 							'min'   => '0',
 							'max'   => '100',
-							'label' => esc_html__( 'Text Background Color Opacity:', 'crimson-rose' ),
+							'label' => __( 'Text Background Color Opacity:', 'crimson-rose' ),
 							'sanitize' => 'absint',
 						),
 						'max_width' => array(
@@ -139,20 +139,20 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 							'std'   => '400',
 							'step'  => '1',
 							'min'   => '0',
-							'label' => esc_html__( 'Max Width of Content Box:', 'crimson-rose' ),
-							'description' => esc_html__( 'Leave blank to set max width to none.', 'crimson-rose' ),
+							'label' => __( 'Max Width of Content Box:', 'crimson-rose' ),
+							'description' => __( 'Leave blank to set max width to none.', 'crimson-rose' ),
 							'sanitize' => 'number_blank',
 						),
 						'button_text' => array(
 							'type'  => 'text',
 							'std'   => '',
-							'label' => esc_html__( 'Button Text:', 'crimson-rose' ),
+							'label' => __( 'Button Text:', 'crimson-rose' ),
 							'sanitize' => 'text',
 						),
 						'button_link' => array(
 							'type'  => 'text',
 							'std'   => '',
-							'label' => esc_html__( 'Button URL:', 'crimson-rose' ),
+							'label' => __( 'Button URL:', 'crimson-rose' ),
 							'sanitize' => 'url',
 						),
 						'button_style' => array(
@@ -292,7 +292,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 
 			?>
 
-			<div class="collage" style="<?php echo implode( '', $style ); ?>">
+			<div class="collage" style="<?php echo esc_attr( implode( '', $style ) ); ?>">
 				<?php if ( $slider_size > 5 ) : ?>
 					<div class="slide carousel slide-5">
 						<div class="slide-gutter">
@@ -313,7 +313,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 					</div>
 				<?php endif; ?>
 				<?php foreach ( $repeater as $slide_setting ) : ?>
-					<div class="slide slide-<?php echo $slider_size; ?>">
+					<div class="slide slide-<?php echo esc_attr( $slider_size ); ?>">
 						<div class="slide-gutter">
 							<div class="slide-overflow">
 								<?php $this->widget_get_slide( $slide_setting ); ?>
@@ -329,7 +329,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 					'use strict';
 
 					$(document).ready(function(){
-						var $slider = $('#<?php echo $this->id; ?> .carousel-container');
+						var $slider = $('#<?php echo esc_attr( $this->id ); ?> .carousel-container');
 						var sliderauto = $slider.data('sliderauto');
 						var slidermode = $slider.data('slidermode');
 						var sliderpause = $slider.data('sliderpause');
@@ -440,9 +440,9 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 			}
 			?>
 
-			<<?php echo $tag; ?> <?php echo implode( ' ', $attr ); ?>>
+			<<?php echo $tag; ?> <?php echo esc_attr( implode( ' ', $attr ) ); ?>>
 					
-				<div class="content-wrapper<?php echo $text_class; ?>" style="<?php echo implode( '', $text_style ); ?>">
+				<div class="content-wrapper<?php echo esc_attr( $text_class ); ?>" style="<?php echo esc_attr( implode( '', $text_style ) ); ?>">
 					<?php if ( ! empty( $slide_setting['content_text'] ) ) : ?>
 						<div class="content-text">
 							<?php echo $slide_setting['content_text']; ?>
@@ -464,7 +464,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 					}
 					?>
 						<div class="button-text">
-							<a class="button slide-button<?php echo $button_class; ?>"<?php echo $button_href; ?>>
+							<a class="button slide-button<?php echo esc_attr( $button_class ); ?>"<?php echo $button_href; ?>>
 								<?php echo $slide_setting['button_text']; ?>
 							</a>
 						</div>

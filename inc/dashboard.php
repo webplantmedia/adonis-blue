@@ -24,7 +24,7 @@ function crimson_rose_dashboard_static_short_services() {
 				<span style="color:#ddd;">&#124;</span>
 			<?php endif; ?>
 
-			<a href="<?php echo $service['link']; ?>" target="_blank"><?php echo $service['short']; ?>
+			<a href="<?php echo esc_attr( $service['link'] ); ?>" target="_blank"><?php echo esc_html( $service['short'] ); ?>
 				<span class="screen-reader-text">(opens in a new window)</span>
 				<span aria-hidden="true" class="dashicons dashicons-external"></span>
 			</a>
@@ -95,7 +95,7 @@ function crimson_rose_dashboard_static_feed() {
 		<div>
 			<span class="dashicons dashicons-thumbs-up" style="color:#82878c;float:left;"></span>
 			<p style="overflow:hidden;padding-left:10px;">
-				<a target="_blank" href="<?php echo $post['link']; ?>"><?php echo $post['title']; ?></a>
+				<a target="_blank" href="<?php echo esc_attr( $post['link'] ); ?>"><?php echo esc_html( $post['title'] ); ?></a>
 			</p>
 		</div>
 	<?php endforeach; ?>

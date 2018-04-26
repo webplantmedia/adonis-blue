@@ -235,7 +235,7 @@ function crimson_rose_scripts() {
 	// $google_request = str_replace( ',', '%2C', crimson_rose_fonts_url() );
 	// wp_enqueue_style( 'crimson-rose-google-font-request', $google_request, array(), null );
 
-	if ( ! crimson_rose_is_wpm_fonts_activated() ) {
+	if ( crimson_rose_is_wpm_fonts_deactivated() ) {
 		if ( ! $crimson_rose['disable_body_font'] ) {
 			// Add custom fonts, used in the main stylesheet.
 			wp_enqueue_style( 'crimson-rose-body-font', get_parent_theme_file_uri() . '/fonts/lato/stylesheet.css', array(), CRIMSON_ROSE_VERSION );
@@ -465,63 +465,6 @@ function crimson_rose_display_fullwidth() {
 	return false;
 }
 
-/**
- * Return the WordPress array of allowed tags, with a few things added.
- *
- * @since 1.0.0.
- *
- * @return mixed|void
- */
-function crimson_rose_allowed_html() {
-	$expandedtags = wp_kses_allowed_html();
-
-	// Paragraph.
-	$expandedtags['span'] = array();
-	$expandedtags['p'] = array();
-	$expandedtags['br'] = array();
-	$expandedtags['i'] = array();
-
-	// H1 - H6.
-	$expandedtags['h1'] = array();
-	$expandedtags['h2'] = array();
-	$expandedtags['h3'] = array();
-	$expandedtags['h4'] = array();
-	$expandedtags['h5'] = array();
-	$expandedtags['h6'] = array();
-
-	// Enable id, class, and style attributes for each tag.
-	foreach ( $expandedtags as $tag => $attributes ) {
-		$expandedtags[ $tag ]['id']    = true;
-		$expandedtags[ $tag ]['class'] = true;
-		$expandedtags[ $tag ]['style'] = true;
-	}
-
-	// anchor target
-	$expandedtags['a']['target'] = true;
-
-	// img.
-	$expandedtags['img'] = array(
-		'src' => true,
-		'height' => true,
-		'width' => true,
-		'alt' => true,
-		'title' => true,
-		'class' => true,
-		'style' => true,
-		'id' => true,
-	);
-
-	/**
-	 * Customize the tags and attributes that are allows during text sanitization.
-	 *
-	 * @since 1.0.0.
-	 *
-	 * @param array     $expandedtags    The list of allowed tags and attributes.
-	 * @param string    $string          The text string being sanitized.
-	 */
-	return apply_filters( 'crimson_rose_allowed_html', $expandedtags );
-}
-
 function crimson_rose_get_blog_part() {
 	global $crimson_rose;
 
@@ -596,7 +539,7 @@ function crimson_rose_is_jetpack_activated() {
 }
 
 /**
- * Check WPM Fonts activation
+ * Check WPM Fonts is activated
  */
 function crimson_rose_is_wpm_fonts_activated() {
 	if ( defined( 'WPM_FONTS_VERSION' ) ) {
@@ -604,6 +547,13 @@ function crimson_rose_is_wpm_fonts_activated() {
 	}
 
 	return false;
+}
+
+/**
+ * Check WPM Fonts id deactivated
+ */
+function crimson_rose_is_wpm_fonts_deactivated() {
+	return ! crimson_rose_is_wpm_fonts_activated();
 }
 
 /**

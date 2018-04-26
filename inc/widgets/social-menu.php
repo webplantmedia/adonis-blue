@@ -22,38 +22,38 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Social_Menu' ) ) :
 		public function __construct() {
 			$this->widget_id          = 'crimson-rose-social-menu';
 			$this->widget_cssclass    = 'crimson-rose-social-menu';
-			$this->widget_description = esc_html__( 'Displays social menu in your footer or sidebar.', 'crimson-rose' );
-			$this->widget_name        = esc_html__( 'Crimson Rose: Social Menu', 'crimson-rose' );
+			$this->widget_description = __( 'Displays social menu in your footer or sidebar.', 'crimson-rose' );
+			$this->widget_name        = __( 'Crimson Rose: Social Menu', 'crimson-rose' );
 			$this->settings           = array(
 				'title' => array(
 					'type'  => 'text',
 					'std'   => '',
-					'label' => esc_html__( 'Title:', 'crimson-rose' ),
+					'label' => __( 'Title:', 'crimson-rose' ),
 					'sanitize' => 'text',
 				),
 				'align' => array(
 					'type'  => 'select',
 					'std'   => 'center',
-					'label' => esc_html__( 'Align:', 'crimson-rose' ),
+					'label' => __( 'Align:', 'crimson-rose' ),
 					'options' => array(
-						'left' => esc_html__( 'Left', 'crimson-rose' ),
-						'center' => esc_html__( 'Center', 'crimson-rose' ),
-						'right' => esc_html__( 'Right', 'crimson-rose' ),
+						'left' => __( 'Left', 'crimson-rose' ),
+						'center' => __( 'Center', 'crimson-rose' ),
+						'right' => __( 'Right', 'crimson-rose' ),
 					),
 					'sanitize' => 'text',
 				),
 				'link_color' => array(
 					'type'  => 'colorpicker',
 					'std'   => '',
-					'label' => esc_html__( 'Text Color:', 'crimson-rose' ),
-					'description' => esc_html__( 'Leave blank to use default text color.', 'crimson-rose' ),
+					'label' => __( 'Text Color:', 'crimson-rose' ),
+					'description' => __( 'Leave blank to use default text color.', 'crimson-rose' ),
 					'sanitize' => 'color',
 				),
 				'link_hover_color' => array(
 					'type'  => 'colorpicker',
 					'std'   => '',
-					'label' => esc_html__( 'Link Color:', 'crimson-rose' ),
-					'description' => esc_html__( 'Leave blank to use default hover color.', 'crimson-rose' ),
+					'label' => __( 'Link Color:', 'crimson-rose' ),
+					'description' => __( 'Leave blank to use default hover color.', 'crimson-rose' ),
 					'sanitize' => 'color',
 				),
 			);
@@ -99,10 +99,10 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Social_Menu' ) ) :
 			</style>
 
 			<?php if ( ! empty( $o['title'] ) ) : ?>
-				<?php echo $before_title . $o['title'] . $after_title; ?>
+				<?php echo $before_title . esc_html( $o['title'] ) . $after_title; ?>
 			<?php endif; ?>
 
-			<div class="social-menu-wrapper social-menu-align-<?php echo $o['align']; ?>">
+			<div class="social-menu-wrapper social-menu-align-<?php echo esc_attr( $o['align'] ); ?>">
 				<?php if ( has_nav_menu( 'social' ) ) : ?>
 					<nav class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Footer Social Links Menu', 'crimson-rose' ); ?>">
 						<?php

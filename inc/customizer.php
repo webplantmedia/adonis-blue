@@ -345,7 +345,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 		'label' => __( 'Disable Body Font', 'crimson-rose' ),
 		'description' => __( 'If you are using a Google Font plugin, then you can disable the load of the body font.', 'crimson-rose' ),
 		'section' => $section_id,
-		'active_callback' => function () { return ! crimson_rose_is_wpm_fonts_activated(); },
+		'active_callback' => 'crimson_rose_is_wpm_fonts_deactivated',
 	) );
 
 	/*$setting_id = 'disable_heading_font';
@@ -360,7 +360,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 		'label' => __( 'Disable Heading Font', 'crimson-rose' ),
 		'description' => __( 'If you are using a Google Font plugin, then you can disable the load of the heading font.', 'crimson-rose' ),
 		'section' => $section_id,
-		'active_callback' => function () { return ! crimson_rose_is_wpm_fonts_activated(); },
+		'active_callback' => 'crimson_rose_is_wpm_fonts_deactivated',
 	) );*/
 	
 	$setting_id = 'disable_accent_font';
@@ -375,7 +375,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 		'label' => __( 'Disable Accent Font', 'crimson-rose' ),
 		'description' => __( 'The accent font is a cursive font used in places such as your archive title. If you are using a Google Font plugin, then you can disable the load of this accent font.', 'crimson-rose' ),
 		'section' => $section_id,
-		'active_callback' => function () { return ! crimson_rose_is_wpm_fonts_activated(); },
+		'active_callback' => 'crimson_rose_is_wpm_fonts_deactivated',
 	) );
 
 	$setting_id = 'page_image_header_height';
@@ -416,7 +416,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( $setting_id, array(
 		'default' => $crimson_rose_default[ $setting_id ],
 		'transport' => 'postMessage',
-		'sanitize_callback' => 'crimson_rose_sanitize_html',
+		'sanitize_callback' => 'wp_kses_post',
 	) );
 
 	$wp_customize->add_control( $setting_id, array(
@@ -1018,7 +1018,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 		'section' => $section_id,
 	) );
 
-	if ( ! crimson_rose_is_wpm_fonts_activated() ) {
+	if ( crimson_rose_is_wpm_fonts_deactivated() ) {
 		/**
 		 * Fonts
 		 */
@@ -1100,11 +1100,4 @@ function crimson_rose_sanitize_checkbox( $input ) {
 	}
 
 	return 0;
-}
-
-function crimson_rose_sanitize_html( $input ) {
-	$allowed_tags = crimson_rose_allowed_html();
-	$input = wp_kses( $input, $allowed_tags );
-
-	return $input;
 }

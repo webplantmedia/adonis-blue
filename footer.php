@@ -44,21 +44,21 @@ $column = 1;
 
 					<div class="footer-container">
 
-						<div class="footer-column footer-column-<?php echo $column; ?>">
+						<div class="footer-column footer-column-<?php echo esc_attr( $column ); ?>">
 							<?php if ( $footer_1 ) : ?>
 								<?php dynamic_sidebar( 'footer-1' ); ?>
 							<?php endif; ?>
 						</div>
 						<?php $column++; ?>
 
-						<div class="footer-column footer-column-<?php echo $column; ?>">
+						<div class="footer-column footer-column-<?php echo esc_attr( $column ); ?>">
 							<?php if ( $footer_2 ) : ?>
 								<?php dynamic_sidebar( 'footer-2' ); ?>
 							<?php endif; ?>
 						</div>
 						<?php $column++; ?>
 
-						<div class="footer-column footer-column-<?php echo $column; ?>">
+						<div class="footer-column footer-column-<?php echo esc_attr( $column ); ?>">
 							<?php if ( $footer_3 ) : ?>
 								<?php dynamic_sidebar( 'footer-3' ); ?>
 							<?php endif; ?>

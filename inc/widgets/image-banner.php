@@ -22,69 +22,69 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Image_Banner_Widget' ) ) :
 		public function __construct() {
 			$this->widget_id          = 'crimson-rose-image-banner';
 			$this->widget_cssclass    = 'crimson-rose-image-banner';
-			$this->widget_description = esc_html__( 'Display an image banner in your footer or sidebar.', 'crimson-rose' );
-			$this->widget_name        = esc_html__( 'Crimson Rose: Image Banner', 'crimson-rose' );
+			$this->widget_description = __( 'Display an image banner in your footer or sidebar.', 'crimson-rose' );
+			$this->widget_name        = __( 'Crimson Rose: Image Banner', 'crimson-rose' );
 			$this->settings           = array(
 				'title' => array(
 					'type'  => 'text',
 					'std'   => 'About Me',
-					'label' => esc_html__( 'Title:', 'crimson-rose' ),
+					'label' => __( 'Title:', 'crimson-rose' ),
 					'sanitize' => 'text',
 				),
 				'image' => array(
 					'type'  => 'image',
 					'std'   => get_template_directory_uri() . '/img/widgets/about-me.jpg',
-					'label' => esc_html__( 'Image URL:', 'crimson-rose' ),
+					'label' => __( 'Image URL:', 'crimson-rose' ),
 					'sanitize' => 'url',
 				),
 				'image_2x' => array(
 					'type'  => 'image',
 					'std'   => get_template_directory_uri() . '/img/widgets/about-me-2x.jpg',
-					'label' => esc_html__( 'Image 2x URL (Retina Displays):', 'crimson-rose' ),
+					'label' => __( 'Image 2x URL (Retina Displays):', 'crimson-rose' ),
 					'sanitize' => 'url',
 				),
 				'image_style' => array(
 					'type'  => 'select',
 					'std'   => 'round',
-					'label' => esc_html__( 'Image Style:', 'crimson-rose' ),
+					'label' => __( 'Image Style:', 'crimson-rose' ),
 					'options' => array(
-						'none' => esc_html__( 'None', 'crimson-rose' ),
-						'round' => esc_html__( 'Round', 'crimson-rose' ),
+						'none' => __( 'None', 'crimson-rose' ),
+						'round' => __( 'Round', 'crimson-rose' ),
 					),
 					'sanitize' => 'text',
 				),
 				'title_position' => array(
 					'type'  => 'select',
 					'std'   => 'below',
-					'label' => esc_html__( 'Title Position:', 'crimson-rose' ),
+					'label' => __( 'Title Position:', 'crimson-rose' ),
 					'options' => array(
-						'above' => esc_html__( 'Above', 'crimson-rose' ),
-						'middle' => esc_html__( 'Middle', 'crimson-rose' ),
-						'below' => esc_html__( 'Below', 'crimson-rose' ),
+						'above' => __( 'Above', 'crimson-rose' ),
+						'middle' => __( 'Middle', 'crimson-rose' ),
+						'below' => __( 'Below', 'crimson-rose' ),
 					),
 					'sanitize' => 'text',
 				),
 				'description' => array(
 					'type'  => 'textarea',
 					'std'   => 'Curabitur mattis quam id urna. Vivamus dui. Donec nonummy lacinia lorem. Cras risus arcu, sodales ac, ultrices ac, mollis quis, justo. Sed a libero. Quisque risus erat, posuere at, tristique non, lacinia quis, eros.',
-					'label' => esc_html__( 'Description:', 'crimson-rose' ),
+					'label' => __( 'Description:', 'crimson-rose' ),
 					'sanitize' => 'html',
 				),
 				'text_align' => array(
 					'type'  => 'select',
 					'std'   => 'center',
-					'label' => esc_html__( 'Text Align:', 'crimson-rose' ),
+					'label' => __( 'Text Align:', 'crimson-rose' ),
 					'options' => array(
-						'left' => esc_html__( 'Left', 'crimson-rose' ),
-						'center' => esc_html__( 'Center', 'crimson-rose' ),
-						'right' => esc_html__( 'Right', 'crimson-rose' ),
+						'left' => __( 'Left', 'crimson-rose' ),
+						'center' => __( 'Center', 'crimson-rose' ),
+						'right' => __( 'Right', 'crimson-rose' ),
 					),
 					'sanitize' => 'text',
 				),
 				'link' => array(
 					'type'  => 'text',
 					'std'   => get_home_url(),
-					'label' => esc_html__( 'Link:', 'crimson-rose' ),
+					'label' => __( 'Link:', 'crimson-rose' ),
 					'sanitize' => 'url',
 				),
 			);
@@ -115,20 +115,20 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Image_Banner_Widget' ) ) :
 			$class[] = 'image-banner-style-' . $o['image_style'];
 			?>
 
-			<div class="<?php echo implode( ' ', $class ); ?>">
-				<?php if ( ! empty( $o['title'] && $o['title_position'] == 'above' ) ) : ?>
-					<?php echo $before_title . $o['title'] . $after_title; ?>
+			<div class="<?php echo esc_attr( implode( ' ', $class ) ); ?>">
+				<?php if ( ! empty( $o['title'] ) && ( $o['title_position'] == 'above' ) ) : ?>
+					<?php echo $before_title . esc_html( $o['title'] ) . $after_title; ?>
 				<?php endif; ?>
 
 				<?php if ( ! empty( $o['link'] ) ) : ?>
-					<a href="<?php echo $o['link']; ?>">
+					<a href="<?php echo esc_url( $o['link'] ); ?>">
 				<?php endif; ?>
 
 					<?php if ( ! empty( $o['image'] ) ) : ?>
-						<img src="<?php echo $o['image']; ?>" srcset="<?php echo empty ( $o['image_2x'] ) ? '' : esc_url( $o['image_2x'] ) . ' 2x'; ?>"/>
+						<img src="<?php echo esc_url( $o['image'] ); ?>" srcset="<?php echo empty ( $o['image_2x'] ) ? '' : esc_url( $o['image_2x'] ) . ' 2x'; ?>"/>
 					<?php endif; ?>
-					<?php if ( ! empty( $o['title'] && $o['title_position'] != 'above' ) ) : ?>
-						<?php echo $before_title . '<span>' . $o['title'] . '</span>' . $after_title; ?>
+					<?php if ( ! empty( $o['title'] ) && ( $o['title_position'] != 'above' ) ) : ?>
+						<?php echo $before_title . '<span>' . esc_html( $o['title'] ) . '</span>' . $after_title; ?>
 					<?php endif; ?>
 
 				<?php if ( ! empty( $o['link'] ) ) : ?>

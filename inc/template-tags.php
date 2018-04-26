@@ -24,11 +24,7 @@ if ( ! function_exists( 'crimson_rose_posted_on' ) ) :
 			esc_html( get_the_modified_date() )
 		);
 
-		$posted_on = sprintf(
-			/* translators: %s: post date. */
-			esc_html_x( '%s', 'post date', 'crimson-rose' ),
-			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-		);
+		$posted_on = '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
 
 		// $byline = sprintf(
 			/* translators: %s: post author. */
@@ -53,7 +49,7 @@ if ( ! function_exists( 'crimson_rose_entry_header' ) ) :
 			$categories_list = get_the_category_list( $delimeter, 'crimson-rose' );
 			if ( $categories_list ) {
 				/* translators: 1: list of categories. */
-				printf( '<span class="cat-links">' . esc_html__( '%1$s', 'crimson-rose' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+				printf( '<span class="cat-links">%1$s</span>', $categories_list ); // WPCS: XSS OK.
 			}
 		}
 	}
@@ -249,8 +245,7 @@ if ( ! function_exists( 'crimson_rose_get_site_info' ) ) :
 	function crimson_rose_get_site_info() {
 		global $crimson_rose;
 
-		$allowed_tags = crimson_rose_allowed_html();
-		return wp_kses( $crimson_rose['site_info'], $allowed_tags );
+		return $crimson_rose['site_info'];
 	}
 endif;
 

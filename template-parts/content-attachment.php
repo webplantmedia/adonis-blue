@@ -29,7 +29,8 @@
 			<?php endif; ?>
 		</div>
 
-		<?php if ( ! empty( get_the_content() ) ) : ?>
+		<?php $content = get_the_content(); ?>
+		<?php if ( ! empty( $content ) ) : ?>
 			<div class="entry-content">
 				<?php the_content(); ?>
 			</div><!-- .entry-content -->

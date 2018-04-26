@@ -12,8 +12,8 @@ class Crimson_Rose_Content_Widget_Jetpack_Testimonials extends Crimson_Rose_Widg
 	 */
 	public function __construct() {
 		$this->widget_id          = 'crimson-rose-content-widget-jetpack-testimonials';
-		$this->widget_description = esc_html__( 'Displays Jetpack Testimonials.', 'crimson-rose' );
-		$this->widget_name        = esc_html__( 'Crimson Rose: Jetpack Testimonials', 'crimson-rose' );
+		$this->widget_description = __( 'Displays Jetpack Testimonials.', 'crimson-rose' );
+		$this->widget_name        = __( 'Crimson Rose: Jetpack Testimonials', 'crimson-rose' );
 		$this->settings           = array(
 			'title' => array(
 				'type'  => 'text',
@@ -56,7 +56,7 @@ class Crimson_Rose_Content_Widget_Jetpack_Testimonials extends Crimson_Rose_Widg
 				'step'  => 1,
 				'min'   => 0,
 				'label' => __( 'Number of testimonials to display:', 'crimson-rose' ),
-				'description' => esc_html__( 'Set to zero to display all.', 'crimson-rose' ),
+				'description' => __( 'Set to zero to display all.', 'crimson-rose' ),
 				'sanitize' => 'number',
 			),
 			'order' => array(
@@ -97,7 +97,7 @@ class Crimson_Rose_Content_Widget_Jetpack_Testimonials extends Crimson_Rose_Widg
 				'step'  => 1,
 				'min'   => 0,
 				'max'   => 1000,
-				'label' => esc_html__( 'Height of testimonials:', 'crimson-rose' ),
+				'label' => __( 'Height of testimonials:', 'crimson-rose' ),
 				'sanitize' => 'number',
 			),
 			'padding_top' => array(
@@ -106,7 +106,7 @@ class Crimson_Rose_Content_Widget_Jetpack_Testimonials extends Crimson_Rose_Widg
 				'step'  => 1,
 				'min'   => 0,
 				'max'   => 300,
-				'label' => esc_html__( 'Top padding of widget:', 'crimson-rose' ),
+				'label' => __( 'Top padding of widget:', 'crimson-rose' ),
 				'sanitize' => 'number',
 			),
 			'padding_bottom' => array(
@@ -115,7 +115,7 @@ class Crimson_Rose_Content_Widget_Jetpack_Testimonials extends Crimson_Rose_Widg
 				'step'  => 1,
 				'min'   => 0,
 				'max'   => 300,
-				'label' => esc_html__( 'Bottom padding of widget:', 'crimson-rose' ),
+				'label' => __( 'Bottom padding of widget:', 'crimson-rose' ),
 				'sanitize' => 'number',
 			),
 			'margin_bottom' => array(
@@ -124,20 +124,20 @@ class Crimson_Rose_Content_Widget_Jetpack_Testimonials extends Crimson_Rose_Widg
 				'step'  => 1,
 				'min'   => 0,
 				'max'   => 300,
-				'label' => esc_html__( 'Bottom margin of widget:', 'crimson-rose' ),
+				'label' => __( 'Bottom margin of widget:', 'crimson-rose' ),
 				'sanitize' => 'number',
 			),
 			'panels' => array(
 				array(
-					'title' => esc_html__( 'Slider Settings', 'crimson-rose' ),
+					'title' => __( 'Slider Settings', 'crimson-rose' ),
 					'fields' => array(
 						'slider_mode' => array(
 							'type'  => 'select',
 							'std'   => 'horizontal',
-							'label' => esc_html__( 'Transition Effect:', 'crimson-rose' ),
+							'label' => __( 'Transition Effect:', 'crimson-rose' ),
 							'options' => array(
-								'horizontal' => esc_html__( 'Slide', 'crimson-rose' ),
-								'fade' => esc_html__( 'Fade', 'crimson-rose' ),
+								'horizontal' => __( 'Slide', 'crimson-rose' ),
+								'fade' => __( 'Fade', 'crimson-rose' ),
 							),
 							'sanitize' => 'text',
 						),
@@ -147,31 +147,31 @@ class Crimson_Rose_Content_Widget_Jetpack_Testimonials extends Crimson_Rose_Widg
 							'step'  => 1,
 							'min'   => 1,
 							'max'   => 100,
-							'label' => esc_html__( 'Speed of the slideshow change in seconds:', 'crimson-rose' ),
+							'label' => __( 'Speed of the slideshow change in seconds:', 'crimson-rose' ),
 							'sanitize' => 'number',
 						),
 						'slider_auto' => array(
 							'type'  => 'checkbox',
 							'std'   => 1,
-							'label' => esc_html__( 'Auto start slider transitions?', 'crimson-rose' ),
+							'label' => __( 'Auto start slider transitions?', 'crimson-rose' ),
 							'sanitize' => 'checkbox',
 						),
 						'slider_autohover' => array(
 							'type'  => 'checkbox',
 							'std'   => 1,
-							'label' => esc_html__( 'Pause slideshow when hovering?', 'crimson-rose' ),
+							'label' => __( 'Pause slideshow when hovering?', 'crimson-rose' ),
 							'sanitize' => 'checkbox',
 						),
 						'slider_controls' => array(
 							'type'  => 'checkbox',
 							'std'   => 1,
-							'label' => esc_html__( 'Show slide control?', 'crimson-rose' ),
+							'label' => __( 'Show slide control?', 'crimson-rose' ),
 							'sanitize' => 'checkbox',
 						),
 						'slider_pager' => array(
 							'type'  => 'checkbox',
 							'std'   => 1,
-							'label' => esc_html__( 'Show slide pagination?', 'crimson-rose' ),
+							'label' => __( 'Show slide pagination?', 'crimson-rose' ),
 							'sanitize' => 'checkbox',
 						),
 					),
@@ -298,10 +298,10 @@ class Crimson_Rose_Content_Widget_Jetpack_Testimonials extends Crimson_Rose_Widg
 		<?php $before_widget = str_replace( 'class="content-widget', 'class="content-widget full-width-bar', $before_widget ); ?>
 		<?php echo $before_widget; ?>
 
-			<div class="<?php echo implode( ' ', $classes ); ?>" style="<?php echo implode( '', $style ); ?>">
+			<div class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>" style="<?php echo esc_attr( implode( '', $style ) ); ?>">
 				<div class="site-boundary">
 					<?php if ( ! empty( $o['title'] ) ) : ?>
-						<?php echo $before_title . $o['title'] . $after_title; ?>
+						<?php echo $before_title . esc_html( $o['title'] ) . $after_title; ?>
 					<?php endif; ?>
 
 					<?php if ( ! empty( $testimonials ) ) : ?>
@@ -310,15 +310,15 @@ class Crimson_Rose_Content_Widget_Jetpack_Testimonials extends Crimson_Rose_Widg
 							<?php foreach ( $testimonials as $slide ) :
 								$size = sizeof( $slide );
 								?>
-								<div class="testimonial-slide testimonial-slide-size-<?php echo $size; ?>">
+								<div class="testimonial-slide testimonial-slide-size-<?php echo esc_attr( $size ); ?>">
 									<div class="grid">
 										<?php foreach ( $slide as $key => $testimonial ) : ?>
 											<?php if ( $size == 1 ) : ?>
-												<div class="grid__col grid__col--2-of-2 testimonial-position-<?php echo $key; ?>">
+												<div class="grid__col grid__col--2-of-2 testimonial-position-<?php echo esc_attr( $key ); ?>">
 													<?php echo $testimonial; ?>
 												</div>
 											<?php else : ?>
-												<div class="grid__col grid__col--1-of-2 testimonial-position-<?php echo $key; ?>">
+												<div class="grid__col grid__col--1-of-2 testimonial-position-<?php echo esc_attr( $key ); ?>">
 													<?php echo $testimonial; ?>
 												</div>
 											<?php endif; ?>
@@ -334,7 +334,7 @@ class Crimson_Rose_Content_Widget_Jetpack_Testimonials extends Crimson_Rose_Widg
 								'use strict';
 
 								$(document).ready(function(){
-									var $slider = $('#<?php echo $this->id; ?> .testimonial-slider');
+									var $slider = $('#<?php echo esc_attr( $this->id ); ?> .testimonial-slider');
 									var sliderauto = $slider.data('sliderauto');
 									var slidermode = $slider.data('slidermode');
 									var sliderpause = $slider.data('sliderpause');
@@ -380,9 +380,9 @@ class Crimson_Rose_Content_Widget_Jetpack_Testimonials extends Crimson_Rose_Widg
 					<?php else : ?>
 
 						<?php if ( ! crimson_rose_is_jetpack_activated() ) : ?>
-							<p><center><em><?php echo __( 'Activate Jetpack and enable testimonials.', 'crimson-rose' ); ?></em></center></p>
+							<p><center><em><?php echo esc_html__( 'Activate Jetpack and enable testimonials.', 'crimson-rose' ); ?></em></center></p>
 						<?php else : ?>
-							<p><center><em><?php echo __( 'Your Testimonial Archive currently has no entries. You can start creating them on your dashboard.', 'crimson-rose' ); ?></em></center></p>
+							<p><center><em><?php echo esc_html__( 'Your Testimonial Archive currently has no entries. You can start creating them on your dashboard.', 'crimson-rose' ); ?></em></center></p>
 						<?php endif; ?>
 
 					<?php endif; ?>

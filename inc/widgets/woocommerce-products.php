@@ -12,8 +12,8 @@ class Crimson_Rose_Content_Widget_WooCommerce_Products extends Crimson_Rose_Widg
 	 */
 	public function __construct() {
 		$this->widget_id          = 'crimson-rose-content-widget-woocommerce-products';
-		$this->widget_description = esc_html__( 'Displays WooCommerce Products.', 'crimson-rose' );
-		$this->widget_name        = esc_html__( 'Crimson Rose: WooCommerce Products', 'crimson-rose' );
+		$this->widget_description = __( 'Displays WooCommerce Products.', 'crimson-rose' );
+		$this->widget_name        = __( 'Crimson Rose: WooCommerce Products', 'crimson-rose' );
 		$this->settings           = array(
 			'title' => array(
 				'type'  => 'text',
@@ -27,7 +27,7 @@ class Crimson_Rose_Content_Widget_WooCommerce_Products extends Crimson_Rose_Widg
 				'step'  => 1,
 				'min'   => -1,
 				'label' => __( 'Limit:', 'crimson-rose' ),
-				'description' => esc_html__( 'The number of products to display. Defaults to display all (-1)', 'crimson-rose' ),
+				'description' => __( 'The number of products to display. Defaults to display all (-1)', 'crimson-rose' ),
 				'sanitize' => 'number',
 			),
 			'columns' => array(
@@ -60,21 +60,21 @@ class Crimson_Rose_Content_Widget_WooCommerce_Products extends Crimson_Rose_Widg
 				'type'  => 'post',
 				'post_type' => 'product',
 				'std'   => '',
-				'label' => esc_html__( 'Post ID\'s:', 'crimson-rose' ),
+				'label' => __( 'Post ID\'s:', 'crimson-rose' ),
 				'sanitize' => 'post_ids',
 			),
 			'skus' => array(
 				'type'  => 'text',
 				'std'   => '',
 				'label' => __( 'Skus:', 'crimson-rose' ),
-				'description' => esc_html__( 'Comma separated list of product SKUs.', 'crimson-rose' ),
+				'description' => __( 'Comma separated list of product SKUs.', 'crimson-rose' ),
 				'sanitize' => 'ids',
 			),
 			'category' => array(
 				'type'  => 'text',
 				'std'   => '',
 				'label' => __( 'Category:', 'crimson-rose' ),
-				'description' => esc_html__( 'Comma separated list of category slugs.', 'crimson-rose' ),
+				'description' => __( 'Comma separated list of category slugs.', 'crimson-rose' ),
 				'sanitize' => 'slugs',
 			),
 			'order' => array(
@@ -91,28 +91,28 @@ class Crimson_Rose_Content_Widget_WooCommerce_Products extends Crimson_Rose_Widg
 				'type'  => 'checkbox',
 				'std'   => 0,
 				'label' => __( 'On Sale:', 'crimson-rose' ),
-				'description' => esc_html__( 'Retrieve on sale products. Not to be used in conjunction with best_selling or top_rated.', 'crimson-rose' ),
+				'description' => __( 'Retrieve on sale products. Not to be used in conjunction with best_selling or top_rated.', 'crimson-rose' ),
 				'sanitize' => 'checkbox',
 			),
 			'best_selling' => array(
 				'type'  => 'checkbox',
 				'std'   => 0,
 				'label' => __( 'Best Selling:', 'crimson-rose' ),
-				'description' => esc_html__( 'Retrieve best selling products. Not to be used in conjunction with on_sale or top_rated.', 'crimson-rose' ),
+				'description' => __( 'Retrieve best selling products. Not to be used in conjunction with on_sale or top_rated.', 'crimson-rose' ),
 				'sanitize' => 'checkbox',
 			),
 			'top_rated' => array(
 				'type'  => 'checkbox',
 				'std'   => 0,
 				'label' => __( 'Top Rated:', 'crimson-rose' ),
-				'description' => esc_html__( 'Retrieve top rated products. Not to be used in conjunction with on_sale or best_selling.', 'crimson-rose' ),
+				'description' => __( 'Retrieve top rated products. Not to be used in conjunction with on_sale or best_selling.', 'crimson-rose' ),
 				'sanitize' => 'checkbox',
 			),
 			'featured' => array(
 				'type'  => 'checkbox',
 				'std'   => 0,
 				'label' => __( 'Featured:', 'crimson-rose' ),
-				'description' => esc_html__( 'Products that are marked as Featured Products.', 'crimson-rose' ),
+				'description' => __( 'Products that are marked as Featured Products.', 'crimson-rose' ),
 				'sanitize' => 'checkbox',
 			),
 			/*'style' => array(
@@ -131,7 +131,7 @@ class Crimson_Rose_Content_Widget_WooCommerce_Products extends Crimson_Rose_Widg
 				'step'  => 1,
 				'min'   => 0,
 				'max'   => 300,
-				'label' => esc_html__( 'Top padding of widget:', 'crimson-rose' ),
+				'label' => __( 'Top padding of widget:', 'crimson-rose' ),
 				'sanitize' => 'number',
 			),
 			'padding_bottom' => array(
@@ -140,7 +140,7 @@ class Crimson_Rose_Content_Widget_WooCommerce_Products extends Crimson_Rose_Widg
 				'step'  => 1,
 				'min'   => 0,
 				'max'   => 300,
-				'label' => esc_html__( 'Bottom padding of widget:', 'crimson-rose' ),
+				'label' => __( 'Bottom padding of widget:', 'crimson-rose' ),
 				'sanitize' => 'number',
 			),
 			'margin_bottom' => array(
@@ -149,7 +149,7 @@ class Crimson_Rose_Content_Widget_WooCommerce_Products extends Crimson_Rose_Widg
 				'step'  => 1,
 				'min'   => 0,
 				'max'   => 300,
-				'label' => esc_html__( 'Bottom margin of widget:', 'crimson-rose' ),
+				'label' => __( 'Bottom margin of widget:', 'crimson-rose' ),
 				'sanitize' => 'number',
 			),
 		);
@@ -239,13 +239,13 @@ class Crimson_Rose_Content_Widget_WooCommerce_Products extends Crimson_Rose_Widg
 
 		<?php echo $before_widget; ?>
 
-			<div class="<?php echo implode( ' ', $classes ); ?>" style="<?php echo implode( '', $style ); ?>">
+			<div class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>" style="<?php echo esc_attr( implode( '', $style ) ); ?>">
 				<?php if ( ! empty( $o['title'] ) ) : ?>
-					<?php echo $before_title . $o['title'] . $after_title; ?>
+					<?php echo $before_title . esc_html( $o['title'] ) . $after_title; ?>
 				<?php endif; ?>
 
 				<?php if ( ! crimson_rose_is_woocommerce_activated() ) : ?>
-					<p><center><em><?php echo __( 'Activate WooCommerce and begin adding products.', 'crimson-rose' ); ?></em></center></p>
+					<p><center><em><?php echo esc_html__( 'Activate WooCommerce and begin adding products.', 'crimson-rose' ); ?></em></center></p>
 				<?php else : ?>
 					<?php echo do_shortcode( $shortcode ); ?>
 				<?php endif; ?>

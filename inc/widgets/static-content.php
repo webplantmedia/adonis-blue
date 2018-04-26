@@ -21,31 +21,31 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Static_Content' ) ) :
 		 */
 		public function __construct() {
 			$this->widget_id          = 'crimson-rose-content-widget-static-content';
-			$this->widget_description = esc_html__( 'Displays content from a specific page.', 'crimson-rose' );
-			$this->widget_name        = esc_html__( 'Crimson Rose: Static Content', 'crimson-rose' );
+			$this->widget_description = __( 'Displays content from a specific page.', 'crimson-rose' );
+			$this->widget_name        = __( 'Crimson Rose: Static Content', 'crimson-rose' );
 			$this->settings           = array(
 				'title' => array(
 					'type'  => 'text',
 					'std'   => '',
-					'label' => esc_html__( 'Title:', 'crimson-rose' ),
+					'label' => __( 'Title:', 'crimson-rose' ),
 					'sanitize' => 'text',
 				),
 				'page' => array(
 					'type'  => 'page',
 					'std'   => '',
-					'label' => esc_html__( 'Select Page:', 'crimson-rose' ),
+					'label' => __( 'Select Page:', 'crimson-rose' ),
 					'sanitize' => 'text',
 				),
 				'background_image' => array(
 					'type'  => 'image',
 					'std'   => get_template_directory_uri() . '/img/widgets/static-content-1.jpg',
-					'label' => esc_html__( 'Background Image:', 'crimson-rose' ),
+					'label' => __( 'Background Image:', 'crimson-rose' ),
 					'sanitize' => 'url',
 				),
 				'background_color' => array(
 					'type'  => 'colorpicker',
 					'std'   => '#ffffff',
-					'label' => esc_html__( 'Background Color:', 'crimson-rose' ),
+					'label' => __( 'Background Color:', 'crimson-rose' ),
 					'sanitize' => 'color',
 				),
 				'background_opacity' => array(
@@ -54,19 +54,19 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Static_Content' ) ) :
 					'step'  => '1',
 					'min'   => '0',
 					'max'   => '100',
-					'label' => esc_html__( 'Background Color Opacity:', 'crimson-rose' ),
+					'label' => __( 'Background Color Opacity:', 'crimson-rose' ),
 					'sanitize' => 'absint',
 				),
 				'text_color' => array(
 					'type'  => 'colorpicker',
 					'std'   => '',
-					'label' => esc_html__( 'Text Color:', 'crimson-rose' ),
+					'label' => __( 'Text Color:', 'crimson-rose' ),
 					'sanitize' => 'color',
 				),
 				'link_color' => array(
 					'type'  => 'colorpicker',
 					'std'   => '',
-					'label' => esc_html__( 'Link Color:', 'crimson-rose' ),
+					'label' => __( 'Link Color:', 'crimson-rose' ),
 					'sanitize' => 'color',
 				),
 				'padding_top' => array(
@@ -75,7 +75,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Static_Content' ) ) :
 					'step'  => 1,
 					'min'   => 0,
 					'max'   => 300,
-					'label' => esc_html__( 'Top padding of widget:', 'crimson-rose' ),
+					'label' => __( 'Top padding of widget:', 'crimson-rose' ),
 					'sanitize' => 'number',
 				),
 				'padding_bottom' => array(
@@ -84,7 +84,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Static_Content' ) ) :
 					'step'  => 1,
 					'min'   => 0,
 					'max'   => 300,
-					'label' => esc_html__( 'Bottom padding of widget:', 'crimson-rose' ),
+					'label' => __( 'Bottom padding of widget:', 'crimson-rose' ),
 					'sanitize' => 'number',
 				),
 				'margin_bottom' => array(
@@ -93,7 +93,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Static_Content' ) ) :
 					'step'  => 1,
 					'min'   => 0,
 					'max'   => 300,
-					'label' => esc_html__( 'Bottom margin of widget:', 'crimson-rose' ),
+					'label' => __( 'Bottom margin of widget:', 'crimson-rose' ),
 					'sanitize' => 'number',
 				),
 			);
@@ -207,10 +207,10 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Static_Content' ) ) :
 			</style>
 
 			<?php if ( ! empty( $bg_style ) ) : ?>
-			<div class="bg-image-cover" style="<?php echo implode( '', $bg_style ); ?>">
+			<div class="bg-image-cover" style="<?php echo esc_attr( implode( '', $bg_style ) ); ?>">
 			<?php endif; ?>
 
-				<div class="<?php echo implode( ' ', $classes ); ?>" style="<?php echo implode( '', $style ); ?>">
+				<div class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>" style="<?php echo esc_attr( implode( '', $style ) ); ?>">
 
 					<?php if ( $fullwidth ) : ?>
 						<div class="site-boundary">
@@ -220,7 +220,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Static_Content' ) ) :
 							<?php while ( $post->have_posts() ) : $post->the_post(); ?>
 
 								<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-									<?php if ( $o['title'] ) echo  $before_title . $o['title'] . $after_title; ?>
+									<?php if ( $o['title'] ) echo $before_title . esc_html( $o['title'] ) . $after_title; ?>
 
 									<div class="entry-content">
 										<?php the_content( $read_more ); ?>
@@ -247,9 +247,9 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Static_Content' ) ) :
 
 						<?php else : ?>
 							<article>
-								<?php echo  $before_title . __( 'Static Content Widget', 'crimson-rose' ) . $after_title; ?>
+								<?php echo  $before_title . esc_html__( 'Static Content Widget', 'crimson-rose' ) . $after_title; ?>
 								<div class="entry-content">
-									<center><em><?php echo __( 'Select a page in your widget settings for content to display.', 'crimson-rose' ); ?></em></center>
+									<center><em><?php echo esc_html__( 'Select a page in your widget settings for content to display.', 'crimson-rose' ); ?></em></center>
 								</div>
 							</article>
 						<?php endif; ?>

@@ -21,25 +21,25 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Blog_Post' ) ) :
 		 */
 		public function __construct() {
 			$this->widget_id          = 'crimson-rose-content-widget-blog-posts';
-			$this->widget_description = esc_html__( 'Displays content from blog posts.', 'crimson-rose' );
-			$this->widget_name        = esc_html__( 'Crimson Rose: Blog Posts', 'crimson-rose' );
+			$this->widget_description = __( 'Displays content from blog posts.', 'crimson-rose' );
+			$this->widget_name        = __( 'Crimson Rose: Blog Posts', 'crimson-rose' );
 			$this->settings           = array(
 				'title' => array(
 					'type'  => 'text',
 					'std'   => 'BLOG',
-					'label' => esc_html__( 'Title:', 'crimson-rose' ),
+					'label' => __( 'Title:', 'crimson-rose' ),
 					'sanitize' => 'text',
 				),
 				'post_ids' => array(
 					'type'  => 'post',
 					'std'   => '',
-					'label' => esc_html__( 'Post ID\'s:', 'crimson-rose' ),
+					'label' => __( 'Post ID\'s:', 'crimson-rose' ),
 					'sanitize' => 'post_ids',
 				),
 				'category' => array(
 					'type'  => 'category',
 					'std'   => 0,
-					'label' => esc_html__( 'Category:', 'crimson-rose' ),
+					'label' => __( 'Category:', 'crimson-rose' ),
 					'sanitize' => 'number',
 				),
 				'post_count' => array(
@@ -48,7 +48,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Blog_Post' ) ) :
 					'step'  => 1,
 					'min'   => 1,
 					'max'   => 100,
-					'label' => esc_html__( 'Number of Posts:', 'crimson-rose' ),
+					'label' => __( 'Number of Posts:', 'crimson-rose' ),
 					'sanitize' => 'number',
 				),
 				'columns' => array(
@@ -70,13 +70,13 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Blog_Post' ) ) :
 				'button_text' => array(
 					'type'  => 'text',
 					'std'   => 'See All Posts',
-					'label' => esc_html__( 'Button Text:', 'crimson-rose' ),
+					'label' => __( 'Button Text:', 'crimson-rose' ),
 					'sanitize' => 'text',
 				),
 				'button_link' => array(
 					'type'  => 'text',
 					'std'   => '',
-					'label' => esc_html__( 'Button Link:', 'crimson-rose' ),
+					'label' => __( 'Button Link:', 'crimson-rose' ),
 					'sanitize' => 'url',
 				),
 				'button_style' => array(
@@ -96,7 +96,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Blog_Post' ) ) :
 					'step'  => 1,
 					'min'   => 0,
 					'max'   => 300,
-					'label' => esc_html__( 'Bottom margin of widget:', 'crimson-rose' ),
+					'label' => __( 'Bottom margin of widget:', 'crimson-rose' ),
 					'sanitize' => 'number',
 				),
 			);
@@ -147,17 +147,17 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Blog_Post' ) ) :
 				$style[] = 'margin-bottom:' . $o['margin_bottom'] . 'px;';
 			}
 
-			echo  $before_widget;
+			echo $before_widget;
 
 			// Allow site-wide customization of the 'Read more' link text.
 			$read_more = apply_filters( 'crimson_rose_read_more_text', esc_html__( 'Read more', 'crimson-rose' ) );
 			?>
 
-			<div class="container" style="<?php echo implode( '', $style ); ?>">
+			<div class="container" style="<?php echo esc_attr( implode( '', $style ) ); ?>">
 
 				<?php
 				if ( $o['title'] ) {
-					echo  $before_title . $o['title'] . $after_title;
+					echo  $before_title . esc_html( $o['title'] ) . $after_title;
 				}
 				?>
 
@@ -170,11 +170,11 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Blog_Post' ) ) :
 
 				<?php if ( $post->have_posts() ) : ?>
 
-					<div id="posts-container" class="<?php echo $container_class; ?>">
+					<div id="posts-container" class="<?php echo esc_attr( $container_class ); ?>">
 						<div class='grid'>
 
 							<?php while ( $post->have_posts() ) : $post->the_post(); ?>
-								<div class="grid__col grid__col--1-of-<?php echo $o['columns']; ?>">
+								<div class="grid__col grid__col--1-of-<?php echo esc_attr( $o['columns'] ); ?>">
 									<?php get_template_part( 'template-parts/excerpt2' ); ?>
 								</div>
 							<?php endwhile; ?>
@@ -197,13 +197,13 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Blog_Post' ) ) :
 						}
 						?>
 						<p class="button-wrapper">
-							<a class="button<?php echo $button_class; ?>" href="<?php echo $o['button_link']; ?>"><?php echo $o['button_text']; ?></a>
+							<a class="button<?php echo esc_attr( $button_class ); ?>" href="<?php echo esc_url( $o['button_link'] ); ?>"><?php echo $o['button_text']; ?></a>
 						</p>
 					<?php endif; ?>
 
 				<?php else : ?>
 
-					<p><center><em><?php echo __( 'No blog posts found.', 'crimson-rose' ); ?></em></center></p>
+					<p><center><em><?php echo esc_html__( 'No blog posts found.', 'crimson-rose' ); ?></em></center></p>
 
 				<?php endif; ?>
 
