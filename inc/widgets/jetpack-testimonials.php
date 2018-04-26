@@ -349,7 +349,7 @@ class Crimson_Rose_Content_Widget_Jetpack_Testimonials extends Crimson_Rose_Widg
 									slidercontrols = slidercontrols == 1 ? true : false;
 									sliderpager = sliderpager == 1 ? true : false;
 
-									$slider.bxSlider({
+									$slider.bx2Slider({
 										auto: sliderauto,
 										nextText: '<i class="genericons-neue genericons-neue-expand genericons-neue-rotate-270"></i>',
 										prevText: '<i class="genericons-neue genericons-neue-expand genericons-neue-rotate-90"></i>',

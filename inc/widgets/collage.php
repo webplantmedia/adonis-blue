@@ -270,7 +270,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 		 * @return void
 		 */
 		function widget( $args, $instance ) {
-			wp_enqueue_script( 'crimson-rose-bxslider' );
+			wp_enqueue_script( 'crimson-rose-bx2slider' );
 
 			$o = $this->sanitize( $instance );
 
@@ -344,7 +344,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 						slidercontrols = slidercontrols == 1 ? true : false;
 						sliderpager = sliderpager == 1 ? true : false;
 
-						$slider.bxSlider({
+						$slider.bx2Slider({
 							auto: sliderauto,
 							nextText: '<i class="genericons-neue genericons-neue-expand genericons-neue-rotate-270"></i>',
 							prevText: '<i class="genericons-neue genericons-neue-expand genericons-neue-rotate-90"></i>',

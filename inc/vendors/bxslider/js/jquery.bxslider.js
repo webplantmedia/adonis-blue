@@ -1,5 +1,5 @@
 /**
- * bxSlider v4.2.12
+ * bx2Slider v4.2.12
  * Copyright 2013-2015 Steven Wanderski
  * Written while drinking Belgian ales and listening to jazz
  * Licensed under MIT (http://opensource.org/licenses/MIT)
@@ -92,7 +92,7 @@
 	onAutoChange: function() { return true; } //calls when auto slides starts and stops
   };
 
-  $.fn.bxSlider = function(options) {
+  $.fn.bx2Slider = function(options) {
 
     if (this.length === 0) {
       return this;
@@ -101,7 +101,7 @@
     // support multiple elements
     if (this.length > 1) {
       this.each(function() {
-        $(this).bxSlider(options);
+        $(this).bx2Slider(options);
       });
       return this;
     }
@@ -115,7 +115,7 @@
     windowHeight = $(window).height();
 
     // Return if slider is already initialized
-    if ($(el).data('bxSlider')) { return; }
+    if ($(el).data('bx2Slider')) { return; }
 
     /**
      * ===================================================================================
@@ -128,7 +128,7 @@
      */
     var init = function() {
       // Return if slider is already initialized
-      if ($(el).data('bxSlider')) { return; }
+      if ($(el).data('bx2Slider')) { return; }
       // merge user-supplied options with the defaults
       slider.settings = $.extend({}, defaults, options);
       // parse slideWidth setting
@@ -1076,7 +1076,7 @@
 
       //for browsers that have implemented pointer events and fire a click after
       //every pointerup regardless of whether pointerup is on same screen location as pointerdown or not
-      slider.viewport.on('click', '.bxslider a', function(e) {
+      slider.viewport.on('click', '.bx2slider a', function(e) {
         if (slider.viewport.hasClass('click-disabled')) {
           e.preventDefault();
           slider.viewport.removeClass('click-disabled');
@@ -1589,7 +1589,7 @@
       if (slider.settings.responsive) { $(window).unbind('resize', resizeWindow); }
       if (slider.settings.keyboardEnabled) { $(document).unbind('keydown', keyPress); }
       //remove self reference in data
-      $(this).removeData('bxSlider');
+      $(this).removeData('bx2Slider');
 	  // remove global window handlers
 	  $(window).off('blur', windowBlurHandler).off('focus', windowFocusHandler);
     };
@@ -1602,12 +1602,12 @@
       el.destroySlider();
       init();
       //store reference to self in order to access public functions later
-      $(el).data('bxSlider', this);
+      $(el).data('bx2Slider', this);
     };
 
     init();
 
-    $(el).data('bxSlider', this);
+    $(el).data('bx2Slider', this);
 
     // returns the current jQuery object
     return this;
