@@ -20,24 +20,33 @@
 	}
 
 	$(document).ready(function(){
-		var $title = $('.entry-content h3');
-		var $content = $title.next('.accordion-content');
+		var $search = $('.wpm-accordion');
 
-		$title.click( function() {
-			var $_title = $(this);
-			var $_content = $_title.next('.accordion-content');
-			var $_inner = $_content.children('.accordion-content-inner');
-			if ( $_content.length ) {
-				if ( '0px' === $_content.css('height') ) {
-					var height = get_height( $_inner );
-					$_title.addClass('accordion-item-open');
-					$_content.animate({height:height},'fast','linear',function() {$(this).css('height','auto')});
+		if ( $search.length > 0 ) {
+			$.each( $search, function() {
+				var $this = $(this);
+				$this.nextUntil('h2,h3').wrapAll('<div class="wpm-accordion-content" />').wrapAll('<div class="wpm-accordion-content-inner" />');
+			});
+
+			var $title = $('.wpm-accordion');
+			var $content = $title.next('.wpm-accordion-content');
+
+			$title.click( function() {
+				var $_title = $(this);
+				var $_content = $_title.next('.wpm-accordion-content');
+				var $_inner = $_content.children('.wpm-accordion-content-inner');
+				if ( $_content.length ) {
+					if ( '0px' === $_content.css('height') ) {
+						var height = get_height( $_inner );
+						$_title.addClass('wpm-accordion-item-open');
+						$_content.animate({height:height},'fast','linear',function() {$(this).css('height','auto')});
+					}
+					else {
+						$_title.removeClass('wpm-accordion-item-open');
+						$_content.animate({height:0},'fast','linear');
+					}
 				}
-				else {
-					$_title.removeClass('accordion-item-open');
-					$_content.animate({height:0},'fast','linear');
-				}
-			}
-		});
+			});
+		}
 	});
 } )( jQuery );

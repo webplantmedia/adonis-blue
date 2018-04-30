@@ -268,7 +268,7 @@ function crimson_rose_scripts() {
 	wp_register_script( 'bx2slider', get_template_directory_uri() . '/inc/vendors/bx2slider/js/jquery.bx2slider.js', array( 'jquery' ), '4.2.14', true );
 
 	// Register accordion
-	wp_register_script( 'crimson-rose-accordion', get_template_directory_uri() . '/js/accordion.js', array( 'jquery' ), CRIMSON_ROSE_VERSION, true );
+	wp_enqueue_script( 'crimson-rose-accordion', get_template_directory_uri() . '/js/accordion.js', array( 'jquery' ), CRIMSON_ROSE_VERSION, true );
 
 	wp_enqueue_script( 'crimson-rose-navigation', get_template_directory_uri() . '/js/navigation.js', array( 'jquery' ), CRIMSON_ROSE_VERSION, true );
 
