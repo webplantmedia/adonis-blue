@@ -25,7 +25,7 @@
 		if ( $search.length > 0 ) {
 			$.each( $search, function() {
 				var $this = $(this);
-				$this.nextUntil('h2,h3').wrapAll('<div class="wpm-accordion-content" />').wrapAll('<div class="wpm-accordion-content-inner" />');
+				$this.nextUntil('h2,h3,hr').wrapAll('<div class="wpm-accordion-content" />').wrapAll('<div class="wpm-accordion-content-inner" />');
 			});
 
 			var $title = $('.wpm-accordion');
