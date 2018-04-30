@@ -60,6 +60,12 @@ function crimson_rose_register_required_plugins() {
 	$plugins = array(
 
 		array(
+			'name'      => 'Gutenberg',
+			'slug'      => 'gutenberg',
+			'required'  => false,
+		),
+
+		array(
 			'name'      => 'Jetpack',
 			'slug'      => 'jetpack',
 			'required'  => false,
