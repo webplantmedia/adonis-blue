@@ -656,6 +656,14 @@ h1.h1-title,
 	.wpm-accordion-content-inner {
 		@include rem('padding-top',40px);
 		@include rem('padding-left',30px);
+
+		> *:first-child {
+			margin-top: 0;
+		}
+
+		> *:last-child {
+			margin-bottom: 0;
+		}
 	}
 }
 
