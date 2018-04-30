@@ -3462,9 +3462,11 @@ a:hover, a:active {
   margin-top: -1.875rem;
 }
 
-#master .crimson-rose-content-widget-collage {
-  /* @media (min-width: 701px) { */
-  /* } */
+@media (min-width: 1300px) {
+  #master .crimson-rose-content-widget-collage {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 #master .crimson-rose-content-widget-collage .collage .slide-inner .content-text {
@@ -3496,6 +3498,12 @@ a:hover, a:active {
 .crimson-rose-content-widget-collage .collage {
   position: relative;
   height: 650px;
+}
+
+@media (min-width: 1300px) {
+  .crimson-rose-content-widget-collage .collage {
+    height: 700px;
+  }
 }
 
 .crimson-rose-content-widget-collage .collage .slide-5 {
