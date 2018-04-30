@@ -3,10 +3,10 @@
 }
 
 #master .crimson-rose-content-widget-collage {
-	/* @media (min-width: 701px) { */
-		// padding-left: 0;
-		// padding-right: 0;
-	/* } */
+	@media (min-width: 1300px) {
+		padding-left: 0;
+		padding-right: 0;
+	}
 	
 	.collage {
 
@@ -59,9 +59,9 @@
 		position: relative;
 		height: 650px;
 
-		// @media (min-width: 1400px) {
-			// height: 700px;
-		// }
+		@media (min-width: 1300px) {
+			height: 700px;
+		}
 
 		.slide-5 {
 			position: absolute;
