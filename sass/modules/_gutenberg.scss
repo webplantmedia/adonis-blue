@@ -23,6 +23,10 @@
 }
 
 @media (min-width: 701px) {
+	.wp-block-text-columns .wp-block-column {
+		margin: 0 20px;
+	}
+
 	.wp-block-text-columns.alignfull,
 	.wp-block-columns.alignfull {
 		padding-left: 40px;
@@ -35,7 +39,7 @@
 		padding-right: 20px;
 	}
 
-	.wp-block-text-columns,
+	.wp-block-text-columns .wp-block-column,
 	.wp-block-columns {
 		> *:first-child {
 			margin-top: 0;
