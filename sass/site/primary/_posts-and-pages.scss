@@ -584,14 +584,14 @@ h1.h1-title,
 
 // Accordion page template
 #master {
-	.accordion-item {
+	.wpm-accordion {
 		margin: 0;
 		@include rem('margin-top',40px);
 	}
 }
 
-.accordion-item {
-	h3 {
+#master {
+	.wpm-accordion {
 		margin: 0;
 		cursor: pointer;
 		@include rem('padding-left',30px);
@@ -635,7 +635,7 @@ h1.h1-title,
 			@include rem('font-size',$font__medium-size);
 		}
 
-		&.accordion-item-open {
+		&.wpm-accordion-item-open {
 			&:before {
 				-webkit-transform: rotate(0deg);
 				-moz-transform: rotate(0deg);
@@ -648,12 +648,12 @@ h1.h1-title,
 
 	}
 
-	.accordion-content {
+	.wpm-accordion-content {
 		height: 0;
 		overflow: hidden;
 	}
 
-	.accordion-content-inner {
+	.wpm-accordion-content-inner {
 		@include rem('padding-top',40px);
 		@include rem('padding-left',30px);
 	}
