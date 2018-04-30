@@ -10,12 +10,18 @@
  */
 function crimson_rose_starter_content() {
 $contact = '
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna.
-
-Insert your contact form shortcode here.
-<hr />
-
-<img class="alignnone" src="' . get_template_directory_uri() . '/img/starter-content/contact.jpeg" />
+<div class="wp-block-text-columns alignundefined columns-2">
+	<div class="wp-block-column">
+		<p>Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna.</p>
+		<p>
+			[Insert contact form 7 shortcode here]
+		</p>
+	</div>
+	<div class="wp-block-column">
+		<figure class="wp-block-image"><img src="' . get_template_directory_uri() . '/img/starter-content/contact.jpeg" alt="" />
+		</figure>
+	</div>
+</div>
 ';
 
 $our_story = '
@@ -28,102 +34,197 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec mollis. Quisque 
 
 $faq = '
 <h2>General Questions</h2>
-<h3>Lorem ipsum dolor sit adipiscing elit?</h3>
+<h3 class="wpm-accordion">Lorem ipsum dolor sit adipiscing elit?</h3>
 Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna.
-<h3>Quisque convallis libero?</h3>
+<h3 class="wpm-accordion">Quisque convallis libero?</h3>
 Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna.
-<h3>Aliquam elit ante, malesuada id?</h3>
+<h3 class="wpm-accordion">Aliquam elit ante, malesuada id?</h3>
 Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna.
-<h3>Quisque convallis libero in sapien elit ante, malesuada id?</h3>
+<h3 class="wpm-accordion">Quisque convallis libero in sapien elit ante, malesuada id?</h3>
 Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna.
-<h3>Et adipiscing orci velit quis magna?</h3>
+<h3 class="wpm-accordion">Et adipiscing orci velit quis magna?</h3>
 Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna.
 <h2>Sales Questions</h2>
-<h3>Lorem ipsum dolor sit adipiscing elit?</h3>
+<h3 class="wpm-accordion">Lorem ipsum dolor sit adipiscing elit?</h3>
 Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna.
-<h3>Quisque convallis libero?</h3>
+<h3 class="wpm-accordion">Quisque convallis libero?</h3>
 Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna.
-<h3>Aliquam elit ante, malesuada id?</h3>
+<h3 class="wpm-accordion">Aliquam elit ante, malesuada id?</h3>
 Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna.
-<h3>Quisque convallis libero in sapien elit ante, malesuada id?</h3>
+<h3 class="wpm-accordion">Quisque convallis libero in sapien elit ante, malesuada id?</h3>
 Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna.
-<h3>Et adipiscing orci velit quis magna?</h3>
+<h3 class="wpm-accordion">Et adipiscing orci velit quis magna?</h3>
 Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna.
 <h2>Product Questions</h2>
-<h3>Lorem ipsum dolor sit adipiscing elit?</h3>
+<h3 class="wpm-accordion">Lorem ipsum dolor sit adipiscing elit?</h3>
 Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna.
-<h3>Quisque convallis libero?</h3>
+<h3 class="wpm-accordion">Quisque convallis libero?</h3>
 Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna.
-<h3>Aliquam elit ante, malesuada id?</h3>
+<h3 class="wpm-accordion">Aliquam elit ante, malesuada id?</h3>
 Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna.
-<h3>Quisque convallis libero in sapien elit ante, malesuada id?</h3>
+<h3 class="wpm-accordion">Quisque convallis libero in sapien elit ante, malesuada id?</h3>
 Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna.
-<h3>Et adipiscing orci velit quis magna?</h3>
+<h3 class="wpm-accordion">Et adipiscing orci velit quis magna?</h3>
 Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna.
 <h2>Other Questions</h2>
-<h3>Lorem ipsum dolor sit adipiscing elit?</h3>
+<h3 class="wpm-accordion">Lorem ipsum dolor sit adipiscing elit?</h3>
 Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna.
-<h3>Quisque convallis libero?</h3>
+<h3 class="wpm-accordion">Quisque convallis libero?</h3>
 Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna.
-<h3>Aliquam elit ante, malesuada id?</h3>
+<h3 class="wpm-accordion">Aliquam elit ante, malesuada id?</h3>
 Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna.
-<h3>Quisque convallis libero in sapien elit ante, malesuada id?</h3>
+<h3 class="wpm-accordion">Quisque convallis libero in sapien elit ante, malesuada id?</h3>
 Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna.
-<h3>Et adipiscing orci velit quis magna?</h3>
+<h3 class="wpm-accordion">Et adipiscing orci velit quis magna?</h3>
 Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna.
 ';
 
 $about = '
+<!-- wp:heading -->
 <h1>What We Sell</h1>
-Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna.
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
 <h2>We\'ve Got You Covered</h2>
-Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna.
-<h2>See What Our Clients Say</h2>
-Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna.
+<!-- /wp:heading -->
 
-<hr />
+<!-- wp:text-columns -->
+<div class="wp-block-text-columns alignundefined columns-2">
+    <div class="wp-block-column">
+        <p>Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna.</p>
+    </div>
+    <div class="wp-block-column">
+        <p>Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna.</p>
+    </div>
+</div>
+<!-- /wp:text-columns -->
 
-<h5 style="text-align: center;">Showcase 1</h5>
-<img class="alignnone" src="' . get_template_directory_uri() . '/img/starter-content/showcase-1.jpeg" />
+<!-- wp:image -->
+<figure class="wp-block-image"><img src="' . get_template_directory_uri() . '/img/starter-content/showcase-1.jpeg" alt="" /></figure>
+<!-- /wp:image -->
 
-Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio.
-<h5 style="text-align: center;">Showcase 2</h5>
-<img class="alignnone" src="' . get_template_directory_uri() . '/img/starter-content/showcase-2.jpeg" />
+<!-- wp:separator -->
+<hr class="wp-block-separator" />
+<!-- /wp:separator -->
 
-Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio.
-<h5 style="text-align: center;">Showcase 3</h5>
-<img class="alignnone" src="' . get_template_directory_uri() . '/img/starter-content/showcase-3.jpeg" />
+<!-- wp:heading {"className":"wpm-accordion"} -->
+<h3 class="wpm-accordion">Visit Our Workshop and Learn<br/></h3>
+<!-- /wp:heading -->
 
-Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio.
-<h5 style="text-align: center;">Showcase 4</h5>
-<img class="alignnone" src="' . get_template_directory_uri() . '/img/starter-content/showcase-4.jpeg" />
+<!-- wp:image -->
+<figure class="wp-block-image"><img src="' . get_template_directory_uri() . '/img/starter-content/showcase-2.jpeg" alt="" /></figure>
+<!-- /wp:image -->
 
-Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio.
-<h5 style="text-align: center;">Showcase 5</h5>
-<img class="alignnone" src="' . get_template_directory_uri() . '/img/starter-content/showcase-5.jpeg" />
+<!-- wp:paragraph -->
+<p>Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio.
+</p>
+<!-- /wp:paragraph -->
 
-Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio.
-<h5 style="text-align: center;">Showcase 6</h5>
-<img class="alignnone" src="' . get_template_directory_uri() . '/img/starter-content/showcase-6.jpeg" />
+<!-- wp:heading {"className":"wpm-accordion"} -->
+<h3 class="wpm-accordion">Custom Orders Available Online<br/></h3>
+<!-- /wp:heading -->
 
-Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio.
+<!-- wp:image -->
+<figure class="wp-block-image"><img src="' . get_template_directory_uri() . '/img/starter-content/showcase-3.jpeg" alt="" /></figure>
+<!-- /wp:image -->
 
-<hr />
+<!-- wp:paragraph -->
+<p>Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio.
+</p>
+<!-- /wp:paragraph -->
 
+<!-- wp:heading {"className":"wpm-accordion"} -->
+<h3 class="wpm-accordion">Custom Baskets For Your Event<br/></h3>
+<!-- /wp:heading -->
+
+<!-- wp:image -->
+<figure class="wp-block-image"><img src="' . get_template_directory_uri() . '/img/starter-content/showcase-4.jpeg" alt="" /></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p>Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio.
+</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"className":"wpm-accordion"} -->
+<h3 id="" class="wpm-accordion">Custom Greetings and Delivery<br/></h3>
+<!-- /wp:heading -->
+
+<!-- wp:image -->
+<figure class="wp-block-image"><img src="' . get_template_directory_uri() . '/img/starter-content/showcase-5.jpeg" alt="" /></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p>Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio.
+</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"className":"wpm-accordion"} -->
+<h3 class="wpm-accordion">Large Selection To Choose From<br/></h3>
+<!-- /wp:heading -->
+
+<!-- wp:image -->
+<figure class="wp-block-image"><img src="' . get_template_directory_uri() . '/img/starter-content/showcase-6.jpeg" alt="" /></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p>Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:separator -->
+<hr class="wp-block-separator" />
+<!-- /wp:separator -->
+
+<!-- wp:heading -->
 <h2>Show Off Those Products</h2>
-Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna.
-<h2>Best In The Market</h2>
-Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna.
-<h2>Highest Quality</h2>
-Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna.
-<h2>Multiple Options</h2>
-Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna.
-<h2>Visit Our Shop</h2>
-Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna.
+<!-- /wp:heading -->
 
-<hr />
-<p style="text-align: center;">So what are you waiting for?! Go to our shop today. You won\'t regret it.</p>
-<p style="text-align: center;"><a href="' . get_home_url() . '">SHOP</a></p>
+<!-- wp:text-columns -->
+<div class="wp-block-text-columns alignundefined columns-2">
+    <div class="wp-block-column">
+        <p>Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna.</p>
+    </div>
+    <div class="wp-block-column">
+        <p>Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna.</p>
+    </div>
+</div>
+<!-- /wp:text-columns -->
+
+<!-- wp:image -->
+<figure class="wp-block-image"><img src="' . get_template_directory_uri() . '/img/starter-content/showcase-3.jpeg" alt="" /></figure>
+<!-- /wp:image -->
+
+<!-- wp:heading -->
+<h2>Best In The Market</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2>Visit Our Shop</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam elit ante, malesuada id, tempor eu, gravida id, odio. Maecenas suscipit, risus et eleifend imperdiet, nisi orci ullamcorper massa, et adipiscing orci velit quis magna.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:separator -->
+<hr class="wp-block-separator" />
+<!-- /wp:separator -->
+
+<!-- wp:paragraph -->
+<p>So what are you waiting for?! Go to our shop today. You won\'t regret it.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="https://crimson-rose.webplantmedia.com">SHOP</a></p>
+<!-- /wp:paragraph -->
 ';
 
 	// Define and register starter content to showcase the theme on new sites.
@@ -225,6 +326,7 @@ Donec mollis. Quisque convallis libero in sapien pharetra tincidunt. Aliquam eli
 		'blog' => array(
 		),
 		'contact' => array(
+			'template' => 'templates/full-width-page.php',
 			'post_type' => 'page',
 			'post_title' => _x( 'Contact', 'Theme starter content', 'crimson-rose' ),
 			'post_content' => $contact,

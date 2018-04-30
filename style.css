@@ -4621,14 +4621,10 @@ h1.h1-title,
 }
 
 #master .wpm-accordion {
+  cursor: pointer;
   margin: 0;
   margin-top: 40px;
   margin-top: 2.5rem;
-}
-
-#master .wpm-accordion {
-  margin: 0;
-  cursor: pointer;
   padding-left: 30px;
   padding-left: 1.875rem;
   position: relative;
@@ -5485,7 +5481,7 @@ h1.h1-title,
 
 @media (min-width: 701px) {
   .wp-block-text-columns .wp-block-column {
-    margin: 0 20px;
+    margin: 0 25px;
   }
   .wp-block-text-columns.alignfull,
   .wp-block-columns.alignfull {
