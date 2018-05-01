@@ -3796,6 +3796,10 @@ body:not(.single-post) .entry-footer,
   max-width: 41.25rem;
 }
 
+#master body.display-fullwidth:not(.single-post) .entry-footer {
+  max-width: none;
+}
+
 #master .widgetized-page .site-content .full-width-bar,
 #master .widgetized-page .site-content > .site-boundary {
   max-width: none;
