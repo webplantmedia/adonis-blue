@@ -44,6 +44,10 @@ body:not(.single-post) .entry-footer,
 	}
 }
 
+#master body.display-fullwidth:not(.single-post) .entry-footer {
+	max-width: none;
+}
+
 #master .widgetized-page {
 	.site-content .full-width-bar,
 	.site-content > .site-boundary {
