@@ -137,6 +137,14 @@ function crimson_rose_custom_thumb_size( $get_image_options ) {
 }
 add_filter( 'jetpack_top_posts_widget_image_options', 'crimson_rose_custom_thumb_size' );
 
+
+// Tell Jetpack that image galleries and the content width should be considered larger (make it so images within image galleries don't get shown too small [what tiled_gallery_content_width controls] as well as making sure the sizes="(max-width:***)" doesn't pull a size smaller than desired [what jetpack_content_width controls])
+function crimson_rose_jetpack_overwrite_image_width() {
+	return 1320; //twice the size of normal content width
+}
+add_filter( 'tiled_gallery_content_width', 'crimson_rose_jetpack_overwrite_image_width' );
+// add_filter( 'jetpack_content_width', 'crimson_rose_jetpack_overwrite_image_width' );
+
 function crimson_rose_jetpack_author_bio() {
 	?>
 	<div class="entry-author-container">
