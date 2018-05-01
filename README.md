@@ -34,7 +34,7 @@ Crimson Rose includes support for Infinite Scroll in Jetpack.
 ## Changelog 
 
 
-### 1.97
+### 1.98
 
 * Initial release
 
