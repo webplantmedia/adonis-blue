@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Crimson Rose 1.85\n"
+"Project-Id-Version: Crimson Rose 1.99\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/crimson-rose\n"
-"POT-Creation-Date: 2018-03-24 03:25:01+00:00\n"
+"POT-Creation-Date: 2018-05-01 21:22:02+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -13,30 +13,27 @@ msgstr ""
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
 #. translators: %s: Name of current post. Only visible to screen readers
-#: 404.php:53 inc/template-tags.php:103 inc/widgets/static-content.php:241
-#: template-parts/content-full-width.php:55
-#: template-parts/content-grid-accordion.php:32
-#: template-parts/content-grid.php:36 template-parts/content-page.php:37
-#: template-parts/content-two-columns.php:36
+#: 404.php:52 inc/template-tags.php:98 inc/widgets/static-content.php:235
+#: template-parts/content-full-width.php:54 template-parts/content-page.php:36
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
 
-#: 404.php:82
+#: 404.php:75
 msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
-#: 404.php:86
+#: 404.php:79
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links "
 "below or a search?"
 msgstr ""
 
-#: 404.php:94
+#: 404.php:87
 msgid "Most Used Categories"
 msgstr ""
 
 #. translators: %1$s: smiley
-#: 404.php:111
+#: 404.php:104
 msgid "Try looking in the monthly archives. %1$s"
 msgstr ""
 
@@ -73,47 +70,49 @@ msgstr ""
 msgid "Social Menu"
 msgstr ""
 
-#: functions.php:158
+#: functions.php:153
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:160 functions.php:170 functions.php:180 functions.php:190
-#: functions.php:210
+#: functions.php:155 functions.php:165 functions.php:175 functions.php:185
+#: functions.php:205
 msgid "Add widgets here."
 msgstr ""
 
-#: functions.php:168
+#: functions.php:163
 msgid "Footer 1"
 msgstr ""
 
-#: functions.php:178
+#: functions.php:173
 msgid "Footer 2"
 msgstr ""
 
-#: functions.php:188
+#: functions.php:183
 msgid "Footer 3"
 msgstr ""
 
-#: functions.php:198
+#: functions.php:193
 msgid "Instagram Gallery"
 msgstr ""
 
-#: functions.php:200
+#: functions.php:195
 msgid "Add Instagram widget here."
 msgstr ""
 
-#: functions.php:208
-msgid "Front Page"
+#. #-#-#-#-#  crimson-rose.pot (Crimson Rose 1.99)  #-#-#-#-#
+#. Template Name of the plugin/theme
+#: functions.php:203
+msgid "Widgetized Page"
 msgstr ""
 
 #. Translators: If there are characters in your language that are not
 #. supported, translate this to 'off'. Do not translate into your own language.
-#: functions.php:311
+#: functions.php:308
 msgctxt "Body font: on or off"
 msgid "on"
 msgstr ""
 
-#: functions.php:312
+#: functions.php:309
 msgctxt "Accent font: on or off"
 msgid "on"
 msgstr ""
@@ -126,64 +125,60 @@ msgstr ""
 msgid "Search Results for:"
 msgstr ""
 
-#: inc/class-widget.php:503
+#: inc/class-widget.php:454
 msgid "Add New Item"
 msgstr ""
 
-#: inc/class-widget.php:525
+#: inc/class-widget.php:476
 msgid "Delete Slide?"
 msgstr ""
 
-#: inc/class-widget.php:526
+#: inc/class-widget.php:477
 msgid "Yes"
 msgstr ""
 
-#: inc/class-widget.php:527
+#: inc/class-widget.php:478
 msgid "No"
 msgstr ""
 
-#: inc/class-widget.php:586
+#: inc/class-widget.php:537
 msgid "Choose Image"
 msgstr ""
 
-#: inc/class-widget.php:587
+#: inc/class-widget.php:538
 msgid "Remove"
 msgstr ""
 
-#: inc/class-widget.php:745
+#: inc/class-widget.php:604
+msgid "No Page"
+msgstr ""
+
+#: inc/class-widget.php:699
 msgid "All Categories"
 msgstr ""
 
-#: inc/class-widget.php:879
+#: inc/class-widget.php:833
 msgid "Cover"
 msgstr ""
 
-#: inc/class-widget.php:880
+#: inc/class-widget.php:834
 msgid "Contain"
 msgstr ""
 
-#: inc/class-widget.php:881
+#: inc/class-widget.php:835
 msgid "Stretch"
 msgstr ""
 
-#: inc/class-widget.php:882
+#: inc/class-widget.php:836
 msgid "Fit Width"
 msgstr ""
 
-#: inc/class-widget.php:883
+#: inc/class-widget.php:837
 msgid "Fit Height"
 msgstr ""
 
-#: inc/class-widget.php:884
+#: inc/class-widget.php:838
 msgid "Auto"
-msgstr ""
-
-#: inc/class-widgetized-pages.php:23
-msgid "Page: %s"
-msgstr ""
-
-#: inc/class-widgetized-pages.php:24
-msgid "Widgets that appear on the \"%s\" page."
 msgstr ""
 
 #: inc/custom-header.php:34
@@ -352,20 +347,10 @@ msgid "Check For Theme Update"
 msgstr ""
 
 #: inc/customizer.php:424
-msgid "Site Structure"
-msgstr ""
-
-#: inc/customizer.php:425
-msgid ""
-"Choose between full width or box layout. The background image options can "
-"only be seen when using a box layout."
-msgstr ""
-
-#: inc/customizer.php:442
 msgid "Site Info"
 msgstr ""
 
-#: inc/customizer.php:443
+#: inc/customizer.php:425
 msgid ""
 "Allowed HTML tags are <code>a</code>, <code>span</code>, <code>i</code>, "
 "<code>br</code>, <code>p</code>, <code>h1-h6</code>, and <code>img</code> "
@@ -374,215 +359,215 @@ msgid ""
 "<code>a</code> tag also includes the attribute: target."
 msgstr ""
 
-#: inc/customizer.php:452 inc/customizer.php:850
+#: inc/customizer.php:434 inc/customizer.php:832
 msgid "Blog"
 msgstr ""
 
-#: inc/customizer.php:465
+#: inc/customizer.php:447
 msgid "Blog Display"
 msgstr ""
 
-#: inc/customizer.php:484
+#: inc/customizer.php:466
 msgid "Archive Display"
 msgstr ""
 
-#: inc/customizer.php:503
+#: inc/customizer.php:485
 msgid "Search Display"
 msgstr ""
 
-#: inc/customizer.php:523
+#: inc/customizer.php:505
 msgid "Thumb Excerpt Max Height"
 msgstr ""
 
-#: inc/customizer.php:524
+#: inc/customizer.php:506
 msgid ""
 "If you have long featured images in your excerpts, set a max-height on your "
 "image. Enter 0 for no max-height"
 msgstr ""
 
-#: inc/customizer.php:542
+#: inc/customizer.php:524
 msgid "Thumb Grid Max Height"
 msgstr ""
 
-#: inc/customizer.php:543
+#: inc/customizer.php:525
 msgid ""
 "If you have long featured images in your grid, set a max-height on your "
 "image. Enter 0 for no max-height"
 msgstr ""
 
-#: inc/customizer.php:560
+#: inc/customizer.php:542
 msgid "Hide Post Navigation"
 msgstr ""
 
-#: inc/customizer.php:561
+#: inc/customizer.php:543
 msgid "Hide the post navigation buttons at the bottom of each post."
 msgstr ""
 
-#: inc/customizer.php:570
+#: inc/customizer.php:552
 msgid "Jetpack"
 msgstr ""
 
-#: inc/customizer.php:584
+#: inc/customizer.php:566
 msgid "Hide Share Button Count"
 msgstr ""
 
-#: inc/customizer.php:593 inc/customizer.php:903
+#: inc/customizer.php:575 inc/customizer.php:885
 msgid "Shop"
 msgstr ""
 
-#: inc/customizer.php:607
+#: inc/customizer.php:589
 msgid "Shop Columns"
 msgstr ""
 
-#: inc/customizer.php:625
+#: inc/customizer.php:607
 msgid "Shop Archive Columns"
 msgstr ""
 
-#: inc/customizer.php:643
+#: inc/customizer.php:625
 msgid "Related Products Columns"
 msgstr ""
 
-#: inc/customizer.php:661
+#: inc/customizer.php:643
 msgid "Display Product Image Backdrop"
 msgstr ""
 
-#: inc/customizer.php:662
+#: inc/customizer.php:644
 msgid ""
 "Add a light gray backdrop with a dropshadow for your product images. "
 "Visually helpful for images with light colored backgrounds."
 msgstr ""
 
-#: inc/customizer.php:675
+#: inc/customizer.php:657
 msgid "Hide Shop Title From Main Shop Page"
 msgstr ""
 
-#: inc/customizer.php:688
+#: inc/customizer.php:670
 msgid "Hide Breadcrumbs From Shop Page"
 msgstr ""
 
-#: inc/customizer.php:701
+#: inc/customizer.php:683
 msgid "Hide Product Reviews From Shop Page"
 msgstr ""
 
-#: inc/customizer.php:714
+#: inc/customizer.php:696
 msgid "Hide Result Count String From Shop Page"
 msgstr ""
 
-#: inc/customizer.php:727
+#: inc/customizer.php:709
 msgid "Hide Ordering Dropdown From Shop Page"
 msgstr ""
 
-#: inc/customizer.php:740
+#: inc/customizer.php:722
 msgid "Truncate Product Titles"
 msgstr ""
 
-#: inc/customizer.php:741
+#: inc/customizer.php:723
 msgid "This will cause product titles to appear in one line."
 msgstr ""
 
-#: inc/customizer.php:754
+#: inc/customizer.php:736
 msgid "Hide Product Reviews From Product Page"
 msgstr ""
 
-#: inc/customizer.php:767
+#: inc/customizer.php:749
 msgid "Hide Product Meta From Product Page"
 msgstr ""
 
-#: inc/customizer.php:780
+#: inc/customizer.php:762
 msgid "Disable Gallery Zoom on Product Page"
 msgstr ""
 
-#: inc/customizer.php:793
+#: inc/customizer.php:775
 msgid "Disable Gallery Lightbox on Product Page"
 msgstr ""
 
-#: inc/customizer.php:806
+#: inc/customizer.php:788
 msgid "Disable Gallery Slider on Product Page"
 msgstr ""
 
-#: inc/customizer.php:819
+#: inc/customizer.php:801
 msgid "Product Description Page Template"
 msgstr ""
 
-#: inc/customizer.php:820
+#: inc/customizer.php:802
 msgid ""
 "Select the page template you want to display on your product pages "
 "description area"
 msgstr ""
 
-#: inc/customizer.php:836
+#: inc/customizer.php:818
 msgid "Display Sidebar"
 msgstr ""
 
-#: inc/customizer.php:863 inc/template-tags.php:245
+#: inc/customizer.php:845 inc/template-tags.php:234
 msgid "Post"
 msgstr ""
 
-#: inc/customizer.php:876
+#: inc/customizer.php:858
 msgid "Archive"
 msgstr ""
 
-#: inc/customizer.php:889 searchform.php:23
+#: inc/customizer.php:871 searchform.php:23
 msgid "Search"
 msgstr ""
 
-#: inc/customizer.php:917
+#: inc/customizer.php:899
 msgid "Shop Archive"
 msgstr ""
 
-#: inc/customizer.php:930
+#: inc/customizer.php:912
 msgid "Attachment Page"
 msgstr ""
 
-#: inc/customizer.php:939
+#: inc/customizer.php:921
 msgid "Labels"
 msgstr ""
 
-#: inc/customizer.php:952
+#: inc/customizer.php:934
 msgid "Mobile Menu Label"
 msgstr ""
 
-#: inc/customizer.php:965
+#: inc/customizer.php:947
 msgid "Read More Label"
 msgstr ""
 
-#: inc/customizer.php:974
+#: inc/customizer.php:956
 msgid "404 Error Page"
 msgstr ""
 
-#: inc/customizer.php:987
+#: inc/customizer.php:969
 msgid "Select 404 Page"
 msgstr ""
 
-#: inc/customizer.php:988
+#: inc/customizer.php:970
 msgid "Set the page's featured image for the background image to display."
 msgstr ""
 
-#: inc/customizer.php:1003
+#: inc/customizer.php:985
 msgid "Page Cover Opacity"
 msgstr ""
 
-#: inc/customizer.php:1004
+#: inc/customizer.php:986
 msgid "Set opacity for 404 Page Cover's featured image."
 msgstr ""
 
-#: inc/customizer.php:1022
+#: inc/customizer.php:1004
 msgid "Page Cover Color"
 msgstr ""
 
-#: inc/customizer.php:1035
+#: inc/customizer.php:1017
 msgid "Display White Text?"
 msgstr ""
 
-#: inc/customizer.php:1045
+#: inc/customizer.php:1027
 msgid "Fonts"
 msgstr ""
 
-#: inc/customizer.php:1061
+#: inc/customizer.php:1043
 msgid "Font Customization"
 msgstr ""
 
-#: inc/customizer.php:1062
+#: inc/customizer.php:1044
 msgid ""
 "To easily change the font styles for your theme, please download our <a "
 "target=\"_blank\" href=\"https://webplantmedia.com/product/designer-fonts-"
@@ -647,6 +632,20 @@ msgid ""
 "plugin."
 msgstr ""
 
+#: inc/default-options.php:81
+msgid ""
+"Site crafted with <i class=\"genericons-neue genericons-neue-heart\"></i> by "
+"<a href=\"https://webplantmedia.com/\">Web Plant Media</a>"
+msgstr ""
+
+#: inc/default-options.php:84
+msgid "Menu"
+msgstr ""
+
+#: inc/default-options.php:85
+msgid "Continue Reading"
+msgstr ""
+
 #: inc/icon-functions.php:39
 msgid "Please define default parameters in the form of an array."
 msgstr ""
@@ -667,155 +666,154 @@ msgstr ""
 msgid "1 Comment"
 msgstr ""
 
-#: inc/starter-content.php:138 inc/starter-content.php:174
+#: inc/starter-content.php:239 inc/starter-content.php:275
 msgctxt "Theme starter content"
 msgid "Categories"
 msgstr ""
 
-#: inc/starter-content.php:145
+#: inc/starter-content.php:246
 msgctxt "Theme starter content"
 msgid "Search"
 msgstr ""
 
-#: inc/starter-content.php:161
+#: inc/starter-content.php:251
 msgctxt "Theme starter content"
-msgid "Find Us"
-msgstr ""
-
-#: inc/starter-content.php:163
-msgctxt "Theme starter content"
-msgid "Address"
-msgstr ""
-
-#: inc/starter-content.php:164
-msgctxt "Theme starter content"
-msgid "123 Main Street"
-msgstr ""
-
-#: inc/starter-content.php:164
-msgctxt "Theme starter content"
-msgid "New York, NY 10001"
-msgstr ""
-
-#: inc/starter-content.php:165
-msgctxt "Theme starter content"
-msgid "Hours"
-msgstr ""
-
-#: inc/starter-content.php:166
-msgctxt "Theme starter content"
-msgid "Mon&mdash;Fri: 9:00AM&ndash;5:00PM"
-msgstr ""
-
-#: inc/starter-content.php:166
-msgctxt "Theme starter content"
-msgid "Sat &amp; Sun: 11:00AM&ndash;3:00PM"
-msgstr ""
-
-#: inc/starter-content.php:223
-msgctxt "Theme starter content"
-msgid "About"
-msgstr ""
-
-#: inc/starter-content.php:231
-msgctxt "Theme starter content"
-msgid "Contact"
-msgstr ""
-
-#: inc/starter-content.php:237
-msgctxt "Theme starter content"
-msgid "FAQ"
-msgstr ""
-
-#: inc/starter-content.php:243
-msgctxt "Theme starter content"
-msgid "Our Story"
-msgstr ""
-
-#: inc/starter-content.php:250
-msgctxt "Theme starter content"
-msgid "Demo Image 1"
+msgid "ENJOY YOURSELF!"
 msgstr ""
 
 #: inc/starter-content.php:262
 msgctxt "Theme starter content"
+msgid "Find Us"
+msgstr ""
+
+#: inc/starter-content.php:264
+msgctxt "Theme starter content"
+msgid "Address"
+msgstr ""
+
+#: inc/starter-content.php:265
+msgctxt "Theme starter content"
+msgid "123 Main Street"
+msgstr ""
+
+#: inc/starter-content.php:265
+msgctxt "Theme starter content"
+msgid "New York, NY 10001"
+msgstr ""
+
+#: inc/starter-content.php:266
+msgctxt "Theme starter content"
+msgid "Hours"
+msgstr ""
+
+#: inc/starter-content.php:267
+msgctxt "Theme starter content"
+msgid "Mon&mdash;Fri: 9:00AM&ndash;5:00PM"
+msgstr ""
+
+#: inc/starter-content.php:267
+msgctxt "Theme starter content"
+msgid "Sat &amp; Sun: 11:00AM&ndash;3:00PM"
+msgstr ""
+
+#: inc/starter-content.php:283
+msgctxt "Theme starter content"
+msgid "Connect"
+msgstr ""
+
+#: inc/starter-content.php:323
+msgctxt "Theme starter content"
+msgid "About"
+msgstr ""
+
+#: inc/starter-content.php:331
+msgctxt "Theme starter content"
+msgid "Contact"
+msgstr ""
+
+#: inc/starter-content.php:336
+msgctxt "Theme starter content"
+msgid "FAQ"
+msgstr ""
+
+#: inc/starter-content.php:342
+msgctxt "Theme starter content"
+msgid "Our Story"
+msgstr ""
+
+#: inc/starter-content.php:349
+msgctxt "Theme starter content"
+msgid "Demo Image 1"
+msgstr ""
+
+#: inc/starter-content.php:361
+msgctxt "Theme starter content"
 msgid "Primary"
 msgstr ""
 
-#: inc/starter-content.php:282
+#: inc/starter-content.php:381
 msgctxt "Theme starter content"
 msgid "Top Left Menu"
 msgstr ""
 
-#: inc/starter-content.php:296
+#: inc/starter-content.php:395
 msgctxt "Theme starter content"
 msgid "Top Right Menu"
 msgstr ""
 
-#: inc/starter-content.php:303
+#: inc/starter-content.php:402
 msgctxt "Theme starter content"
 msgid "Social Links Menu"
 msgstr ""
 
-#. translators: %s: post date.
-#: inc/template-tags.php:29
-msgctxt "post date"
-msgid "%s"
-msgstr ""
-
-#. translators: 1: list of categories.
-#: inc/template-tags.php:56
-msgid "%1$s"
-msgstr ""
-
 #. translators: %s: post author.
-#: inc/template-tags.php:71
+#: inc/template-tags.php:67
 msgctxt "post author"
 msgid "By %s"
 msgstr ""
 
 #. translators: used between list items, there is a space after the comma
-#: inc/template-tags.php:77
+#: inc/template-tags.php:73
 msgid ", "
 msgstr ""
 
 #. translators: 1: list of categories.
-#: inc/template-tags.php:80
+#: inc/template-tags.php:76
 msgid "In %1$s"
 msgstr ""
 
 #. translators: used between list items, there is a space after the comma
-#: inc/template-tags.php:84
+#: inc/template-tags.php:80
 msgctxt "list item separator"
 msgid ", "
 msgstr ""
 
 #. translators: 1: list of tags.
-#: inc/template-tags.php:87
+#: inc/template-tags.php:83
 msgid "Tagged %1$s"
 msgstr ""
 
-#: inc/template-tags.php:94
+#: inc/template-tags.php:90
 msgid "Leave a Comment"
 msgstr ""
 
-#: inc/template-tags.php:206
+#: inc/template-tags.php:195
 msgid "Next"
 msgstr ""
 
-#: inc/template-tags.php:207
+#: inc/template-tags.php:196
 msgid "Next post:"
 msgstr ""
 
-#: inc/template-tags.php:210
+#: inc/template-tags.php:199
 msgid "Previous"
 msgstr ""
 
-#: inc/template-tags.php:211
+#: inc/template-tags.php:200
 msgid "Previous post:"
 msgstr ""
 
-#: inc/template-tags.php:246
+#: inc/template-tags.php:235
 msgid "Parent post:"
 msgstr ""
 
@@ -834,7 +832,7 @@ msgid ""
 "beautiful designs that are open source, easy to use, and fast to install."
 msgstr ""
 
-#. #-#-#-#-#  crimson-rose.pot (Crimson Rose 1.85)  #-#-#-#-#
+#. #-#-#-#-#  crimson-rose.pot (Crimson Rose 1.99)  #-#-#-#-#
 #. Author of the plugin/theme
 #: inc/theme-info.php:28
 msgid "Web Plant Media"
@@ -1303,7 +1301,7 @@ msgstr ""
 msgid "Bottom margin of widget:"
 msgstr ""
 
-#: inc/widgets/blog-posts.php:153 inc/widgets/static-content.php:161
+#: inc/widgets/blog-posts.php:153 inc/widgets/static-content.php:163
 msgid "Read more"
 msgstr ""
 
@@ -1367,9 +1365,8 @@ msgstr ""
 msgid "Text Color:"
 msgstr ""
 
-#: inc/widgets/callout.php:68 inc/widgets/collage.php:118
-#: inc/widgets/collage.php:125
-msgid "Leave blank to use default theme color."
+#: inc/widgets/callout.php:68
+msgid "<strong>Leave</strong> blank to use default theme color."
 msgstr ""
 
 #: inc/widgets/callout.php:80 inc/widgets/collage.php:155
@@ -1451,6 +1448,10 @@ msgstr ""
 msgid "Background Size:"
 msgstr ""
 
+#: inc/widgets/collage.php:118 inc/widgets/collage.php:125
+msgid "Leave blank to use default theme color."
+msgstr ""
+
 #: inc/widgets/collage.php:124
 msgid "Text Background Color:"
 msgstr ""
@@ -1465,6 +1466,51 @@ msgstr ""
 
 #: inc/widgets/collage.php:143
 msgid "Leave blank to set max width to none."
+msgstr ""
+
+#: inc/widgets/collage.php:175
+msgctxt "Theme starter content"
+msgid "ORDER ONLINE FOR YOUR WEDDING"
+msgstr ""
+
+#: inc/widgets/collage.php:181
+msgctxt "Theme starter content"
+msgid "Order Now"
+msgstr ""
+
+#: inc/widgets/collage.php:188
+msgctxt "Theme starter content"
+msgid "FLOWERS DELIVERED TO YOUR LOCATION"
+msgstr ""
+
+#: inc/widgets/collage.php:194
+msgctxt "Theme starter content"
+msgid "Shop Now"
+msgstr ""
+
+#: inc/widgets/collage.php:200
+msgctxt "Theme starter content"
+msgid "SIGN UP FOR OUR WORKSHOP"
+msgstr ""
+
+#: inc/widgets/collage.php:206
+msgctxt "Theme starter content"
+msgid "Join Now"
+msgstr ""
+
+#: inc/widgets/collage.php:212
+msgctxt "Theme starter content"
+msgid "SEE OUR SEASONAL FLOWER ARRANGEMENTS"
+msgstr ""
+
+#: inc/widgets/collage.php:224
+msgctxt "Theme starter content"
+msgid "CUSTOM ORDERS"
+msgstr ""
+
+#: inc/widgets/collage.php:248
+msgctxt "Theme starter content"
+msgid "CHECK DELIVERY AREA"
 msgstr ""
 
 #: inc/widgets/image-banner.php:25
@@ -1611,11 +1657,11 @@ msgstr ""
 msgid "Height of testimonials:"
 msgstr ""
 
-#: inc/widgets/jetpack-testimonials.php:383
+#: inc/widgets/jetpack-testimonials.php:385
 msgid "Activate Jetpack and enable testimonials."
 msgstr ""
 
-#: inc/widgets/jetpack-testimonials.php:385
+#: inc/widgets/jetpack-testimonials.php:387
 msgid ""
 "Your Testimonial Archive currently has no entries. You can start creating "
 "them on your dashboard."
@@ -1666,11 +1712,11 @@ msgstr ""
 msgid "Background Color Opacity:"
 msgstr ""
 
-#: inc/widgets/static-content.php:260
+#: inc/widgets/static-content.php:250
 msgid "Static Content Widget"
 msgstr ""
 
-#: inc/widgets/static-content.php:262
+#: inc/widgets/static-content.php:252
 msgid "Select a page in your widget settings for content to display."
 msgstr ""
 
@@ -1768,11 +1814,11 @@ msgstr ""
 msgid "Activate WooCommerce and begin adding products."
 msgstr ""
 
-#: inc/woocommerce/class-woocommerce.php:316
+#: inc/woocommerce/class-woocommerce.php:317
 msgid "items in your cart"
 msgstr ""
 
-#: inc/woocommerce/class-woocommerce.php:325
+#: inc/woocommerce/class-woocommerce.php:326
 msgid "Payment info"
 msgstr ""
 
@@ -1791,19 +1837,9 @@ msgid "Press Enter to submit your search"
 msgstr ""
 
 #: template-parts/content-full-width.php:26
-#: template-parts/content-full-width.php:41 template-parts/content-grid.php:23
-#: template-parts/content-no-featured-image.php:54
-#: template-parts/content-page.php:24 template-parts/content-two-columns.php:23
-#: template-parts/content.php:60 templates/widgets-custom.php:20
+#: template-parts/content-full-width.php:41 template-parts/content-page.php:24
+#: template-parts/content.php:52
 msgid "Pages:"
-msgstr ""
-
-#. translators: %s: Name of current post. Only visible to screen readers
-#: template-parts/content-no-featured-image.php:40
-#: template-parts/content.php:46
-msgid ""
-"Read More<i class=\"genericons-neue genericons-neue-next\"></i><span class="
-"\"screen-reader-text\">\"%s\"</span>"
 msgstr ""
 
 #: template-parts/content-none.php:14
@@ -1811,21 +1847,28 @@ msgid "Nothing Found"
 msgstr ""
 
 #. translators: 1: link to WP admin new post page.
-#: template-parts/content-none.php:25
+#: template-parts/content-none.php:24
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: template-parts/content-none.php:38
+#: template-parts/content-none.php:31
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
 
-#: template-parts/content-none.php:44
+#: template-parts/content-none.php:37
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
+msgstr ""
+
+#. translators: %s: Name of current post. Only visible to screen readers
+#: template-parts/content.php:46
+msgid ""
+"%1$s<i class=\"genericons-neue genericons-neue-next\"></i><span class="
+"\"screen-reader-text\">\"%2$s\"</span>"
 msgstr ""
 
 #: template-parts/menu-mobile-cart.php:5
@@ -1845,7 +1888,7 @@ msgid "Crimson Rose"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "https://crimson-rose.webplantmedia.com/"
+msgid "https://webplantmedia.com/product/crimson-rose-wordpress-theme/"
 msgstr ""
 
 #. Description of the plugin/theme
@@ -1857,25 +1900,9 @@ msgid "https://webplantmedia.com/"
 msgstr ""
 
 #. Template Name of the plugin/theme
-msgid "Front Page Sidebar"
-msgstr ""
-
-#. Template Name of the plugin/theme
 msgid "Full Width Page"
 msgstr ""
 
 #. Template Name of the plugin/theme
-msgid "Grid Accordion Page"
-msgstr ""
-
-#. Template Name of the plugin/theme
-msgid "Grid Page"
-msgstr ""
-
-#. Template Name of the plugin/theme
 msgid "No Featured Image Page"
-msgstr ""
-
-#. Template Name of the plugin/theme
-msgid "Two Columns Page"
 msgstr ""
