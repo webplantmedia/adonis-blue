@@ -65,7 +65,7 @@ class Crimson_Rose_Content_Widget_Callout extends Crimson_Rose_Widget {
 				'type'  => 'colorpicker',
 				'std'   => '',
 				'label' => __( 'Text Color:', 'crimson-rose' ),
-				'description' => __( '<strong>Leave</strong> blank to use default theme color.', 'crimson-rose' ),
+				'description' => __( 'Leave blank to use default theme color.', 'crimson-rose' ),
 				'sanitize' => 'color',
 			),
 			'button_text' => array(
