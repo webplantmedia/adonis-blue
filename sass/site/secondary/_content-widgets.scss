@@ -16,6 +16,12 @@
 		text-align: center;
 		margin-top: 0;
 	}
+
+	.entry-footer {
+		position: absolute;
+		bottom: -40px;
+		margin: 0;
+	}
 }
 
 // Content Callout
@@ -27,6 +33,10 @@
 }
 
 .content-callout {
+	.site-boundary {
+		position: relative; // for edit post link
+	}
+
 	.image-container {
 		text-align: center;
 
@@ -312,15 +322,6 @@
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: center center;
-	}
-
-	.hentry {
-		.entry-footer {
-			position: absolute;
-			bottom: -40px;
-			margin: 0;
-		}
-
 	}
 
 	.custom-color {

@@ -15,23 +15,27 @@ class Crimson_Rose_Content_Widget_Callout extends Crimson_Rose_Widget {
 		$this->widget_description = __( 'Displays a callout.', 'crimson-rose' );
 		$this->widget_name        = __( 'Crimson Rose: Callout', 'crimson-rose' );
 		$this->settings           = array(
-			'title' => array(
-				'type'  => 'text',
+			'page' => array(
+				'type'  => 'page',
 				'std'   => '',
-				'label' => __( 'Title:', 'crimson-rose' ),
+				'label' => __( 'Select Page:', 'crimson-rose' ),
+				'description' => __( 'The post content and featured image will be grabbed from the selected post. If no featured image is set, then the text will display in full width.', 'crimson-rose' ),
 				'sanitize' => 'text',
 			),
-			'content' => array(
-				'type'  => 'textarea',
-				'std'   => '<h3>SEE OUR LARGE SELECTION OF BEAUTIFUL, FRESH CUT FLOWERS, DELIVERED TO YOUR DOOR.</h3>',
-				'label' => __( 'Content:', 'crimson-rose' ),
-				'rows'  => 5,
-				'sanitize' => 'html',
+			'image_width' => array(
+				'type'  => 'number',
+				'std'   => '',
+				'step'  => 5,
+				'min'   => 100,
+				'max'   => 1600,
+				'label' => __( 'Image Width (in pixels)', 'crimson-rose' ),
+				'description' => __( 'Set custom size for featured image. Leave blank to use large image display.', 'crimson-rose' ),
+				'sanitize' => 'number_blank',
 			),
 			'text_align' => array(
 				'type'  => 'select',
 				'std'   => 'left',
-				'label' => __( 'Text Align:', 'crimson-rose' ),
+				'label' => __( 'Text Position:', 'crimson-rose' ),
 				'options' => array(
 					'left' => __( 'Left', 'crimson-rose' ),
 					'right' => __( 'Right', 'crimson-rose' ),
@@ -49,12 +53,6 @@ class Crimson_Rose_Content_Widget_Callout extends Crimson_Rose_Widget {
 				),
 				'sanitize' => 'text',
 			),
-			'image' => array(
-				'type'  => 'image',
-				'std'   => get_template_directory_uri() . '/img/widgets/callout-1.png',
-				'label' => __( 'Image:', 'crimson-rose' ),
-				'sanitize' => 'url',
-			),
 			'background_color' => array(
 				'type'  => 'colorpicker',
 				'std'   => '#fcf7f7',
@@ -67,18 +65,6 @@ class Crimson_Rose_Content_Widget_Callout extends Crimson_Rose_Widget {
 				'label' => __( 'Text Color:', 'crimson-rose' ),
 				'description' => __( 'Leave blank to use default theme color.', 'crimson-rose' ),
 				'sanitize' => 'color',
-			),
-			'button_text' => array(
-				'type'  => 'text',
-				'std'   => 'SHOP FLOWERS',
-				'label' => __( 'Button Text:', 'crimson-rose' ),
-				'sanitize' => 'text',
-			),
-			'button_link' => array(
-				'type'  => 'text',
-				'std'   => get_home_url(),
-				'label' => __( 'Button URL:', 'crimson-rose' ),
-				'sanitize' => 'url',
 			),
 			'button_style' => array(
 				'type'  => 'select',
@@ -131,14 +117,6 @@ class Crimson_Rose_Content_Widget_Callout extends Crimson_Rose_Widget {
 		);
 
 		parent::__construct();
-
-		add_filter( 'crimson_rose_feature_callout_description', 'wptexturize' );
-		add_filter( 'crimson_rose_feature_callout_description', 'convert_smilies' );
-		add_filter( 'crimson_rose_feature_callout_description', 'convert_chars' );
-		add_filter( 'crimson_rose_feature_callout_description', 'wpautop' );
-		add_filter( 'crimson_rose_feature_callout_description', 'shortcode_unautop' );
-		add_filter( 'crimson_rose_feature_callout_description', 'prepend_attachment' );
-		add_filter( 'crimson_rose_feature_callout_description', 'do_shortcode' );
 	}
 
 	/**
@@ -155,7 +133,13 @@ class Crimson_Rose_Content_Widget_Callout extends Crimson_Rose_Widget {
 
 		$o = $this->sanitize( $instance );
 
-		$content  = $this->callout_content( $o );
+		$p = null;
+		$featured_image = null;
+		if ( ! empty( $o['page'] ) ) {
+			$p = get_post( $o['page'] );
+		}
+
+		$content = $this->callout_content( $o, $p );
 
 		$style = array();
 		$wrap_style = array();
@@ -181,6 +165,14 @@ class Crimson_Rose_Content_Widget_Callout extends Crimson_Rose_Widget {
 			$style[] = 'padding-bottom:' . $o['padding_bottom'] . 'px;';
 		}
 
+		if ( $p ) {
+			$size = 'large';
+			if ( $o['image_width'] >= 100 ) {
+				$size = array( $o['image_width'], 9999 );
+			}
+			$featured_image = get_the_post_thumbnail( $p->ID, $size );
+		}
+
 		$before_widget = str_replace( 'class="content-widget', 'class="content-widget full-width-bar', $before_widget );
 		?>
 
@@ -192,15 +184,33 @@ class Crimson_Rose_Content_Widget_Callout extends Crimson_Rose_Widget {
 
 				<div class="content-callout text-<?php echo esc_attr( $o['text_align'] ); ?>" style="<?php echo esc_attr( implode( '', $style ) ); ?>">
 					<div class="site-boundary">
-						<div class="grid grid--no-gutter valign-<?php echo esc_attr( $o['vertical_align'] ); ?>">
-							<div class="grid__col grid__col--1-of-2 text-container<?php echo ( 'right' === $o['text_align'] ) ? ' grid__col--push-1-of-2' : ''; ?>"><?php echo $content; ?></div>
-
-							<?php if ( '' !== $o['image'] ) : ?>
-							<div class="grid__col grid__col--1-of-2 image-container<?php echo ( 'right' === $o['text_align'] ) ? ' grid__col--pull-2-of-2' : ''; ?>">
-								<img src="<?php echo esc_url( $o['image'] ); ?>" alt="<?php echo esc_attr( $o['title'] ); ?>">
+						<?php if ( $featured_image ) : ?>
+							<div class="grid grid--no-gutter valign-<?php echo esc_attr( $o['vertical_align'] ); ?>">
+								<div class="grid__col grid__col--1-of-2 text-container<?php echo ( 'right' === $o['text_align'] ) ? ' grid__col--push-1-of-2' : ''; ?>"><?php echo $content; ?></div>
+								<div class="grid__col grid__col--1-of-2 image-container<?php echo ( 'right' === $o['text_align'] ) ? ' grid__col--pull-2-of-2' : ''; ?>">
+									<?php echo $featured_image; ?>
+								</div>
 							</div>
-							<?php endif; ?>
-						</div>
+						<?php else : ?>
+							<div class="text-container-full-width"><?php echo $content; ?></div>
+						<?php endif; ?>
+
+						<?php if ( $p && get_edit_post_link( $p->ID ) ) : ?>
+							<footer class="entry-footer">
+								<?php
+									edit_post_link(
+										sprintf(
+											/* translators: %s: Name of current post. Only visible to screen readers */
+											__( 'Edit <span class="screen-reader-text">%s</span>', 'crimson-rose' ),
+											get_the_title()
+										),
+										'<div class="entry-footer-meta"><span class="edit-link">',
+										'</span></div>',
+										$p->ID
+									);
+								?>
+							</footer><!-- .entry-footer -->
+						<?php endif; ?>
 					</div>
 				</div>
 
@@ -213,7 +223,7 @@ class Crimson_Rose_Content_Widget_Callout extends Crimson_Rose_Widget {
 		<?php
 	}
 
-	private function callout_content( $o ) {
+	private function callout_content( $o, $p ) {
 		$style = '';
 		$class = '';
 
@@ -226,34 +236,17 @@ class Crimson_Rose_Content_Widget_Callout extends Crimson_Rose_Widget {
 		}
 
 		$output  = '<div class="content-callout__content">';
+
 			$output .= '<div class="content-callout__text'.$class.'" style="'.$style.'">';
 
-				if ( ! empty( $o['title'] ) ) {
-					$output .= '<h2 class="content-callout__title">' . $o['title'] . '</h2>';
-				}
-
-				$output .= wpautop( $o['content'] );
+			if ( $p && isset( $p->post_content ) ) {
+				$output .= crimson_rose_button_generation( wpautop( $p->post_content ), $o['button_style'] );
+			}
+			else {
+				$output .='<center><em>' . esc_html__( 'Select a page in your widget settings for content to display.', 'crimson-rose' ) . '</em></center>';
+			}
 
 			$output .= '</div>';
-
-			if ( ! empty( $o['button_text'] ) && ! empty( $o['button_link'] ) ) {
-				$output .= '<div class="button-text">';
-					switch ( $o['button_style'] ) {
-						case 'button-1' :
-							$button_class = ' fancy-button';
-							break;
-						case 'button-2' :
-							$button_class = ' fancy2-button';
-							break;
-						default :
-							$button_class = '';
-							break;
-					}
-					$output .= '<a class="button callout-button'.$button_class.'" href="' . esc_url( $o['button_link'] ) . '">';
-						$output .= $o['button_text'];
-					$output .= '</a>';
-				$output .= '</div>';
-			}
 
 		$output .= '</div>';
 
