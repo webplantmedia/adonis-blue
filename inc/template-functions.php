@@ -174,13 +174,11 @@ function crimson_rose_read_more_text() {
 }
 add_filter('crimson_rose_read_more_text', 'crimson_rose_read_more_text');
 
-function crimson_rose_the_content( $output ) {
-	global $crimson_rose;
-
+function crimson_rose_button_generation( $output, $button_style ) {
 	$search = array();
 	$replace = array();
 
-	switch ( $crimson_rose['default_button_style'] ) {
+	switch ( $button_style ) {
 		case 'button-1' :
 			$button_class = ' fancy-button';
 			break;
@@ -190,12 +188,6 @@ function crimson_rose_the_content( $output ) {
 		default :
 			$button_class = '';
 			break;
-	}
-
-	$post_type = get_post_type();
-
-	if ( 'post' != $post_type && 'page' != $post_type && 'product' != $post_type ) {
-		return $output;
 	}
 
 	if ( preg_match_all( '/\<p.*?>\<a.*?\>\s*[^\<].*?\<\/a\><\/p\>/', $output, $matches ) ) {
@@ -212,6 +204,20 @@ function crimson_rose_the_content( $output ) {
 	if ( ! empty( $search ) ) {
 		$output = str_replace( $search, $replace, $output );
 	}
+
+	return $output;
+}
+
+function crimson_rose_the_content( $output ) {
+	global $crimson_rose;
+
+	$post_type = get_post_type();
+
+	if ( 'post' != $post_type && 'page' != $post_type && 'product' != $post_type ) {
+		return $output;
+	}
+
+	$output = crimson_rose_button_generation( $output, $crimson_rose['default_button_style'] );
 
 	return $output;
 
