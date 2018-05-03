@@ -86,17 +86,18 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 				'repeater' => array(
 					'title' => __( 'Slide', 'crimson-rose' ),
 					'fields' => array(
+						'page' => array(
+							'type'  => 'page',
+							'std'   => '',
+							'label' => __( 'Select Page:', 'crimson-rose' ),
+							'description' => __( 'The post content and featured image will be grabbed from the selected post. If no featured image is set, then the text will display in full width.', 'crimson-rose' ),
+							'sanitize' => 'text',
+						),
 						'background_color' => array(
 							'type'  => 'colorpicker',
 							'std'   => '#ffece3',
 							'label' => __( 'Background Color:', 'crimson-rose' ),
 							'sanitize' => 'color',
-						),
-						'background_image' => array(
-							'type'  => 'image',
-							'std'   => null,
-							'label' => __( 'Background Image:', 'crimson-rose' ),
-							'sanitize' => 'url',
 						),
 						'background_size' => array(
 							'type'  => 'select',
@@ -104,12 +105,6 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 							'label' => __( 'Background Size:', 'crimson-rose' ),
 							'options' => $this->options_background_size(),
 							'sanitize' => 'background_size',
-						),
-						'content_text' => array(
-							'type'  => 'textarea',
-							'std'   => '',
-							'label' => __( 'Content:', 'crimson-rose' ),
-							'sanitize' => 'html',
 						),
 						'text_color' => array(
 							'type'  => 'colorpicker',
@@ -313,6 +308,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 					</div>
 				<?php endif; ?>
 				<?php foreach ( $repeater as $slide_setting ) : ?>
+					<?php $id = 'collage-' . $slider_size; ?>
 					<div class="slide slide-<?php echo esc_attr( $slider_size ); ?>">
 						<div class="slide-gutter">
 							<div class="slide-overflow">
@@ -367,6 +363,13 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 								}
 							}
 						});
+
+						$slider.find('.div-click').click( function(e) {
+							if ( $(e.target).hasClass('div-click')) {
+								var slideUrl = $(this).data('slideUrl');
+								window.location.href = slideUrl;
+							}
+						});
 					});
 				} )( jQuery );
 				/* ]]> */
@@ -375,8 +378,21 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 			<?php
 			echo  $after_widget;
 		}
-
+		
 		function widget_get_slide( $slide_setting ) {
+			global $crimson_rose;
+
+			$p = null;
+			$featured_image_url = null;
+
+			if ( ! empty( $slide_setting['page'] ) ) {
+				$p = get_post( $slide_setting['page'] );
+			}
+
+			if ( $p ) {
+				$featured_image_url = get_the_post_thumbnail_url( $p->ID, 'full' );
+			}
+
 			$tag = 'div';
 			$button_href = '';
 			$classes[] = 'slide-inner';
@@ -386,17 +402,13 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 			$text_class = '';
 
 			if ( ! empty( $slide_setting['button_link'] ) ) {
-				if ( ! empty( $slide_setting['button_text'] ) ) {
-					$button_href = ' href="' . esc_url( $slide_setting['button_link'] ) . '"';
-				}
-				else {
-					$tag = 'a';
-					$attr[] = 'href="' . esc_url( $slide_setting['button_link'] ) . '"';
-				}
+				$attr[] = 'data-slide-url="' . esc_url( $slide_setting['button_link'] ) . '"';
+				$style[] = 'cursor:pointer;';
+				$classes[] = 'div-click';
 			}
 
-			if ( ! empty( $slide_setting['background_image'] ) ) {
-				$style[] = 'background-image:url(\'' . esc_url( $slide_setting['background_image'] ) . '\');';
+			if ( ! empty( $featured_image_url ) ) {
+				$style[] = 'background-image:url(\'' . esc_url( $featured_image_url ) . '\');';
 			}
 
 			if ( ! empty( $slide_setting['background_size'] ) ) {
@@ -438,31 +450,44 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 			if ( ! empty( $classes ) ) {
 				$attr[] = 'class="' . implode( ' ', $classes ) . '"';
 			}
+
 			?>
 
-			<<?php echo $tag; ?> <?php echo implode( ' ', $attr ); ?>>
+			<div <?php echo implode( ' ', $attr ); ?>>
 					
 				<div class="content-wrapper<?php echo esc_attr( $text_class ); ?>" style="<?php echo esc_attr( implode( '', $text_style ) ); ?>">
-					<?php if ( ! empty( $slide_setting['content_text'] ) ) : ?>
+					<?php if ( ! empty( $slide_setting['button_link'] ) ) : ?>
+						<a class="screen-reader-text" href="<?php echo esc_attr( $slide_setting['button_link'] ); ?>">
+							<?php echo esc_html( $crimson_rose['read_more_label'] ); ?>
+						</a>
+					<?php endif; ?>
+
+					<?php if ( $p && isset( $p->post_content ) ) : ?>
+						<?php if ( ! empty( $p->post_content ) ) : ?>
+							<div class="content-text">
+								<?php echo apply_filters( 'wpautop', $p->post_content ); ?>
+							</div>
+						<?php endif; ?>
+					<?php else : ?>
 						<div class="content-text">
-							<?php echo $slide_setting['content_text']; ?>
+							<center><em><a href="<?php echo admin_url( 'customize.php?autofocus[panel]=widgets' ); ?>"><?php echo esc_html__( 'Select a page', 'crimson-rose' ); ?></a></em></center>
 						</div>
 					<?php endif; ?>
 
 					<?php if ( ! empty( $slide_setting['button_text'] ) ) : ?>
-					<?php
-					switch ( $slide_setting['button_style'] ) {
-						case 'button-1' :
-							$button_class = ' fancy-button';
-							break;
-						case 'button-2' :
-							$button_class = ' fancy2-button';
-							break;
-						default :
-							$button_class = '';
-							break;
-					}
-					?>
+						<?php
+						switch ( $slide_setting['button_style'] ) {
+							case 'button-1' :
+								$button_class = ' fancy-button';
+								break;
+							case 'button-2' :
+								$button_class = ' fancy2-button';
+								break;
+							default :
+								$button_class = '';
+								break;
+						}
+						?>
 						<div class="button-text">
 							<a class="button slide-button<?php echo esc_attr( $button_class ); ?>"<?php echo $button_href; ?>>
 								<?php echo $slide_setting['button_text']; ?>
@@ -471,7 +496,24 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 					<?php endif; ?>
 				</div>
 
-			</<?php echo $tag; ?>>
+				<?php if ( $p && get_edit_post_link( $p->ID ) ) : ?>
+					<footer class="entry-footer">
+						<?php
+							edit_post_link(
+								sprintf(
+									/* translators: %s: Name of current post. Only visible to screen readers */
+									__( 'Edit <span class="screen-reader-text">%s</span>', 'crimson-rose' ),
+									get_the_title()
+								),
+								'<div class="entry-footer-meta"><span class="edit-link">',
+								'</span></div>',
+								$p->ID
+							);
+						?>
+					</footer><!-- .entry-footer -->
+				<?php endif; ?>
+
+			</div>
 			<?php
 		}
 
