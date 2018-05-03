@@ -66,6 +66,18 @@ class Crimson_Rose_Content_Widget_Callout extends Crimson_Rose_Widget {
 				'description' => __( 'Leave blank to use default theme color.', 'crimson-rose' ),
 				'sanitize' => 'color',
 			),
+			'button_text' => array(
+				'type'  => 'text',
+				'std'   => 'SHOP FLOWERS',
+				'label' => __( 'Button Text:', 'crimson-rose' ),
+				'sanitize' => 'text',
+			),
+			'button_link' => array(
+				'type'  => 'text',
+				'std'   => get_home_url(),
+				'label' => __( 'Button URL:', 'crimson-rose' ),
+				'sanitize' => 'url',
+			),
 			'button_style' => array(
 				'type'  => 'select',
 				'std'   => 'button-2',
@@ -240,13 +252,32 @@ class Crimson_Rose_Content_Widget_Callout extends Crimson_Rose_Widget {
 			$output .= '<div class="content-callout__text'.$class.'" style="'.$style.'">';
 
 			if ( $p && isset( $p->post_content ) ) {
-				$output .= crimson_rose_button_generation( wpautop( $p->post_content ), $o['button_style'] );
+				$output .= apply_filters( 'wpautop', $p->post_content );
 			}
 			else {
 				$output .='<center><em>' . esc_html__( 'Select a page in your widget settings for content to display.', 'crimson-rose' ) . '</em></center>';
 			}
 
 			$output .= '</div>';
+
+			if ( ! empty( $o['button_text'] ) && ! empty( $o['button_link'] ) ) {
+				$output .= '<div class="button-text">';
+					switch ( $o['button_style'] ) {
+						case 'button-1' :
+							$button_class = ' fancy-button';
+							break;
+						case 'button-2' :
+							$button_class = ' fancy2-button';
+							break;
+						default :
+							$button_class = '';
+							break;
+					}
+					$output .= '<a class="button callout-button'.$button_class.'" href="' . esc_url( $o['button_link'] ) . '">';
+						$output .= $o['button_text'];
+					$output .= '</a>';
+				$output .= '</div>';
+			}
 
 		$output .= '</div>';
 
