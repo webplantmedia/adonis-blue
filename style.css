@@ -3423,6 +3423,10 @@ a:hover, a:active {
   position: relative;
 }
 
+.crimson-rose-content-widget-static-content .hentry {
+  position: relative;
+}
+
 .crimson-rose-content-widget-static-content .grid__col {
   position: relative;
 }
