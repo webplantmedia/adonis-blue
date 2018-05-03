@@ -36,12 +36,6 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Static_Content' ) ) :
 					'label' => __( 'Select Page:', 'crimson-rose' ),
 					'sanitize' => 'text',
 				),
-				'background_image' => array(
-					'type'  => 'image',
-					'std'   => get_template_directory_uri() . '/img/widgets/static-content-1.jpg',
-					'label' => __( 'Background Image:', 'crimson-rose' ),
-					'sanitize' => 'url',
-				),
 				'background_color' => array(
 					'type'  => 'colorpicker',
 					'std'   => '#ffffff',
@@ -115,14 +109,12 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Static_Content' ) ) :
 
 			extract( $args );
 
-			$page_ids = array();
-			if ( ! empty( $o['page'] ) ) {
-				$page_ids[] = $o['page'];
-			}
-
 			$post = null; // no default page is set for starter-content
-			if ( ! empty( $page_ids ) ) {
-				$post = new WP_Query( array( 'post_type' => 'page', 'post__in' => $page_ids ) );
+			$featured_image_url = null;
+
+			if ( ! empty( $o['page'] ) ) {
+				$post = new WP_Query( array( 'page_id' => $o['page'] ) );
+				$featured_image_url = get_the_post_thumbnail_url( $o['page'], 'full' );
 			}
 
 			$style = array();
@@ -143,8 +135,8 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Static_Content' ) ) :
 				$style[] = 'margin-bottom:' . $o['margin_bottom'] . 'px;';
 			}
 
-			if ( '' !== $o['background_image'] ) {
-				$bg_style[] = 'background-image:url(' . esc_url( $o['background_image'] ) . ');';
+			if ( ! empty( $featured_image_url ) ) {
+				$bg_style[] = 'background-image:url(' . esc_url( $featured_image_url ) . ');';
 				$fullwidth = true;
 			}
 
