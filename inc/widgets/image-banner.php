@@ -65,7 +65,7 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Image_Banner_Widget' ) ) :
 				),
 				'link' => array(
 					'type'  => 'text',
-					'std'   => get_home_url(),
+					'std'   => home_url('/'),
 					'label' => __( 'Link:', 'crimson-rose' ),
 					'sanitize' => 'url',
 				),

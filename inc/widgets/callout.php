@@ -74,7 +74,7 @@ class Crimson_Rose_Content_Widget_Callout extends Crimson_Rose_Widget {
 			),
 			'button_link' => array(
 				'type'  => 'text',
-				'std'   => get_home_url(),
+				'std'   => home_url('/'),
 				'label' => __( 'Button URL:', 'crimson-rose' ),
 				'sanitize' => 'url',
 			),

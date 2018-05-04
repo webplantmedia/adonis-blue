@@ -172,7 +172,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 							'text_background_color' => '#ffffff',
 							'text_background_opacity' => '70',
 							'max_width' => '300',
-							'button_link' => get_home_url(),
+							'button_link' => home_url('/'),
 							'button_text' => _x( 'Order Now', 'Theme starter content', 'crimson-rose' ),
 							'button_style' => 'default',
 						),
@@ -185,7 +185,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 							'text_background_color' => '#ffffff',
 							'text_background_opacity' => '70',
 							'max_width' => '300',
-							'button_link' => get_home_url(),
+							'button_link' => home_url('/'),
 							'button_text' => _x( 'Shop Now', 'Theme starter content', 'crimson-rose' ),
 						),
 						array(
@@ -197,7 +197,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 							'text_background_color' => '#ffffff',
 							'text_background_opacity' => '70',
 							'max_width' => '300',
-							'button_link' => get_home_url(),
+							'button_link' => home_url('/'),
 							'button_text' => _x( 'Join Now', 'Theme starter content', 'crimson-rose' ),
 						),
 						array(
@@ -209,7 +209,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 							'text_background_color' => '',
 							'text_background_opacity' => '70',
 							'max_width' => '350',
-							'button_link' => get_home_url(),
+							'button_link' => home_url('/'),
 							'button_text' => '',
 						),
 						array(
@@ -221,7 +221,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 							'text_background_color' => '',
 							'text_background_opacity' => '70',
 							'max_width' => '',
-							'button_link' => get_home_url(),
+							'button_link' => home_url('/'),
 							'button_text' => '',
 						),
 						array(
@@ -233,7 +233,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 							'text_background_color' => '',
 							'text_background_opacity' => '70',
 							'max_width' => '',
-							'button_link' => get_home_url(),
+							'button_link' => home_url('/'),
 							'button_text' => '',
 						),
 						array(
@@ -245,7 +245,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 							'text_background_color' => '#ffffff',
 							'text_background_opacity' => '100',
 							'max_width' => '',
-							'button_link' => get_home_url(),
+							'button_link' => home_url('/'),
 							'button_text' => '',
 						),
 					),
