@@ -2754,6 +2754,12 @@ a:hover, a:active {
   margin-bottom: 0;
 }
 
+.widget .entry-footer {
+  position: absolute;
+  bottom: -20px;
+  left: 5px;
+}
+
 #tertiary .widget {
   margin-bottom: 80px;
   margin-bottom: 5rem;
@@ -2865,9 +2871,19 @@ a:hover, a:active {
   color: #666666;
 }
 
-.crimson-rose-image-banner .image-banner-wrapper > a {
+.crimson-rose-image-banner .image-banner-wrapper {
+  position: relative;
+}
+
+.crimson-rose-image-banner .image-banner-wrapper .image-banner-pic {
+  text-align: center;
   position: relative;
   display: block;
+}
+
+.crimson-rose-image-banner .image-banner-wrapper .entry-footer {
+  left: 0;
+  bottom: -30px;
 }
 
 .crimson-rose-image-banner .image-banner-title-position-below .widget-title {
@@ -2906,18 +2922,6 @@ a:hover, a:active {
 
 .crimson-rose-image-banner .image-banner-description > *:last-child {
   margin-bottom: 0;
-}
-
-.crimson-rose-image-banner .image-banner-text-align-center .image-banner-description {
-  text-align: center;
-}
-
-.crimson-rose-image-banner .image-banner-text-align-left .image-banner-description {
-  text-align: left;
-}
-
-.crimson-rose-image-banner .image-banner-text-align-right .image-banner-description {
-  text-align: right;
 }
 
 .widget.crimson-rose-social-menu .social-menu-align-center .menu {
