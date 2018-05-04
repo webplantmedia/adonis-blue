@@ -25,23 +25,22 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Image_Banner_Widget' ) ) :
 			$this->widget_description = __( 'Display an image banner in your footer or sidebar.', 'crimson-rose' );
 			$this->widget_name        = __( 'Crimson Rose: Image Banner', 'crimson-rose' );
 			$this->settings           = array(
-				'title' => array(
-					'type'  => 'text',
-					'std'   => 'About Me',
-					'label' => __( 'Title:', 'crimson-rose' ),
+				'page' => array(
+					'type'  => 'page',
+					'std'   => '',
+					'label' => __( 'Select Page:', 'crimson-rose' ),
+					'description' => __( 'The post content and featured image will be grabbed from the selected post. If no featured image is set, then the text will display in full width.', 'crimson-rose' ),
 					'sanitize' => 'text',
 				),
-				'image' => array(
-					'type'  => 'image',
-					'std'   => get_template_directory_uri() . '/img/widgets/about-me.jpg',
-					'label' => __( 'Image URL:', 'crimson-rose' ),
-					'sanitize' => 'url',
-				),
-				'image_2x' => array(
-					'type'  => 'image',
-					'std'   => get_template_directory_uri() . '/img/widgets/about-me-2x.jpg',
-					'label' => __( 'Image 2x URL (Retina Displays):', 'crimson-rose' ),
-					'sanitize' => 'url',
+				'image_width' => array(
+					'type'  => 'number',
+					'std'   => '',
+					'step'  => 5,
+					'min'   => 100,
+					'max'   => 1600,
+					'label' => __( 'Image Width (in pixels)', 'crimson-rose' ),
+					'description' => __( 'Set custom size for featured image. Leave blank to use large image display.', 'crimson-rose' ),
+					'sanitize' => 'number_blank',
 				),
 				'image_style' => array(
 					'type'  => 'select',
@@ -61,23 +60,6 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Image_Banner_Widget' ) ) :
 						'above' => __( 'Above', 'crimson-rose' ),
 						'middle' => __( 'Middle', 'crimson-rose' ),
 						'below' => __( 'Below', 'crimson-rose' ),
-					),
-					'sanitize' => 'text',
-				),
-				'description' => array(
-					'type'  => 'textarea',
-					'std'   => 'Curabitur mattis quam id urna. Vivamus dui. Donec nonummy lacinia lorem. Cras risus arcu, sodales ac, ultrices ac, mollis quis, justo. Sed a libero. Quisque risus erat, posuere at, tristique non, lacinia quis, eros.',
-					'label' => __( 'Description:', 'crimson-rose' ),
-					'sanitize' => 'html',
-				),
-				'text_align' => array(
-					'type'  => 'select',
-					'std'   => 'center',
-					'label' => __( 'Text Align:', 'crimson-rose' ),
-					'options' => array(
-						'left' => __( 'Left', 'crimson-rose' ),
-						'center' => __( 'Center', 'crimson-rose' ),
-						'right' => __( 'Right', 'crimson-rose' ),
 					),
 					'sanitize' => 'text',
 				),
@@ -106,39 +88,78 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Image_Banner_Widget' ) ) :
 
 			extract( $args );
 
+			$p = null;
+			$featured_image = null;
+			if ( ! empty( $o['page'] ) ) {
+				$p = get_post( $o['page'] );
+			}
+
+			if ( $p ) {
+				$size = 'large';
+				if ( $o['image_width'] >= 100 ) {
+					$size = array( $o['image_width'], 9999 );
+				}
+				$featured_image = get_the_post_thumbnail( $p->ID, $size );
+			}
+
 			echo  $before_widget;
 
 			$class = array();
 			$class[] = 'image-banner-wrapper';
 			$class[] = 'image-banner-title-position-' . $o['title_position'];
-			$class[] = 'image-banner-text-align-' . $o['text_align'];
 			$class[] = 'image-banner-style-' . $o['image_style'];
 			?>
 
 			<div class="<?php echo esc_attr( implode( ' ', $class ) ); ?>">
-				<?php if ( ! empty( $o['title'] ) && ( $o['title_position'] == 'above' ) ) : ?>
-					<?php echo $before_title . esc_html( $o['title'] ) . $after_title; ?>
-				<?php endif; ?>
-
-				<?php if ( ! empty( $o['link'] ) ) : ?>
-					<a href="<?php echo esc_url( $o['link'] ); ?>">
-				<?php endif; ?>
-
-					<?php if ( ! empty( $o['image'] ) ) : ?>
-						<img src="<?php echo esc_url( $o['image'] ); ?>" srcset="<?php echo empty ( $o['image_2x'] ) ? '' : esc_url( $o['image_2x'] ) . ' 2x'; ?>"/>
-					<?php endif; ?>
-					<?php if ( ! empty( $o['title'] ) && ( $o['title_position'] != 'above' ) ) : ?>
-						<?php echo $before_title . '<span>' . esc_html( $o['title'] ) . '</span>' . $after_title; ?>
+				<?php if ( $p ) : ?>
+					<?php if ( ! empty( $p->post_title ) && ( $o['title_position'] == 'above' ) ) : ?>
+						<?php echo $before_title . esc_html( $p->post_title ) . $after_title; ?>
 					<?php endif; ?>
 
-				<?php if ( ! empty( $o['link'] ) ) : ?>
-					</a>
+					<?php if ( ! empty( $o['link'] ) ) : ?>
+						<a class="image-banner-pic" href="<?php echo esc_url( $o['link'] ); ?>">
+					<?php else: ?>
+						<div class="image-banner-pic">
+					<?php endif; ?>
+
+						<?php if ( $featured_image ) : ?>
+							<?php echo $featured_image; ?>
+						<?php endif; ?>
+
+						<?php if ( ! empty( $p->post_title ) && ( $o['title_position'] != 'above' ) ) : ?>
+							<?php echo $before_title . '<span>' . esc_html( $p->post_title ) . '</span>' . $after_title; ?>
+						<?php endif; ?>
+
+					<?php if ( ! empty( $o['link'] ) ) : ?>
+						</a>
+					<?php else: ?>
+						</div>
+					<?php endif; ?>
+
+					<?php if ( ! empty( $p->post_content ) ) : ?>
+						<div class="image-banner-description">
+							<?php echo apply_filters( 'wpautop', $p->post_content ); ?>
+						</div>
+					<?php endif; ?>
+				<?php else : ?>
+					<center><em><a href="<?php echo admin_url( 'customize.php?autofocus[panel]=widgets' ); ?>"><?php echo esc_html__( 'Select a page.', 'crimson-rose' ); ?></a></em></center>
 				<?php endif; ?>
 
-				<?php if ( ! empty( $o['description'] ) ) : ?>
-					<div class="image-banner-description">
-						<?php echo wpautop( $o['description'] ); ?>
-					</div>
+				<?php if ( $p && get_edit_post_link( $p->ID ) ) : ?>
+					<footer class="entry-footer">
+						<?php
+							edit_post_link(
+								sprintf(
+									/* translators: %s: Name of current post. Only visible to screen readers */
+									__( 'Edit <span class="screen-reader-text">%s</span>', 'crimson-rose' ),
+									get_the_title()
+								),
+								'<div class="entry-footer-meta"><span class="edit-link">',
+								'</span></div>',
+								$p->ID
+							);
+						?>
+					</footer><!-- .entry-footer -->
 				<?php endif; ?>
 			</div>
 

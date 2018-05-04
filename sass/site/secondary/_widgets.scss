@@ -94,6 +94,12 @@
 			margin-bottom: 0;
 		}
 	}
+
+	.entry-footer {
+		position: absolute;
+		bottom: -20px;
+		left: 5px;
+	}
 }
 
 #tertiary .widget {
@@ -206,9 +212,17 @@
 // Image Banner
 .crimson-rose-image-banner {
 	.image-banner-wrapper {
-		> a {
+		position: relative;
+
+		.image-banner-pic {
+			text-align: center;
 			position: relative;
 			display: block;
+		}
+
+		.entry-footer {
+			left: 0;
+			bottom: -30px;
 		}
 	}
 
@@ -248,24 +262,6 @@
 
 		> *:last-child {
 			margin-bottom: 0;
-		}
-	}
-
-	.image-banner-text-align-center {
-		.image-banner-description {
-			text-align: center;
-		}
-	}
-
-	.image-banner-text-align-left {
-		.image-banner-description {
-			text-align: left;
-		}
-	}
-
-	.image-banner-text-align-right {
-		.image-banner-description {
-			text-align: right;
 		}
 	}
 }
