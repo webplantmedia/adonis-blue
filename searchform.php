@@ -15,7 +15,7 @@
 				esc_html_e( 'Search for:', 'crimson-rose' ); ?>
 			</span>
 
-			<input type="search" class="search-field" placeholder="<?php esc_html_e( 'Type keyword', 'crimson-rose' ); ?>" title="<?php esc_attr_e( 'Press Enter to submit your search', 'crimson-rose' ) ?>" value="<?php echo esc_attr( get_search_query() ); ?>" name="s">
+			<input type="search" class="search-field" placeholder="<?php esc_attr_e( 'Type keyword', 'crimson-rose' ); ?>" title="<?php esc_attr_e( 'Press Enter to submit your search', 'crimson-rose' ) ?>" value="<?php echo esc_attr( get_search_query() ); ?>" name="s">
 		</label>
 
 		<button type="submit" class="search-submit">
