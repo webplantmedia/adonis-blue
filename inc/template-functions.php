@@ -62,22 +62,22 @@ function crimson_rose_body_classes( $classes ) {
 	}
 
 	if ( $crimson_rose['header_background_image_color'] ) {
-		$classes[] = 'header-background-image-color-' . $crimson_rose['header_background_image_color'];
+		$classes[] = 'header-background-image-color-' . esc_attr( $crimson_rose['header_background_image_color'] );
 	}
 
 	if ( $crimson_rose['footer_background_image_color'] ) {
-		$classes[] = 'footer-background-image-color-' . $crimson_rose['footer_background_image_color'];
+		$classes[] = 'footer-background-image-color-' . esc_attr( $crimson_rose['footer_background_image_color'] );
 	}
 
 	if ( crimson_rose_is_woocommerce_activated() ) {
 		if ( is_shop() ) {
-			$classes[] = 'woocommerce-shop-columns-' . $crimson_rose['shop_columns'];
+			$classes[] = 'woocommerce-shop-columns-' . esc_attr( $crimson_rose['shop_columns'] );
 		}
 		else if ( is_product_taxonomy() ) {
-			$classes[] = 'woocommerce-shop-columns-' . $crimson_rose['shop_archive_columns'];
+			$classes[] = 'woocommerce-shop-columns-' . esc_attr( $crimson_rose['shop_archive_columns'] );
 		}
 		else if ( is_product() ) {
-			$classes[] = 'woocommerce-shop-columns-' . $crimson_rose['shop_related_products_columns'];
+			$classes[] = 'woocommerce-shop-columns-' . esc_attr( $crimson_rose['shop_related_products_columns'] );
 		}
 
 		if ( $crimson_rose['shop_image_backdrop'] ) {
