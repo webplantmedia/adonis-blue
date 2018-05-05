@@ -3,9 +3,9 @@ function crimson_rose_ocdi_import_files() {
     return array(
         array(
             'import_file_name'           => 'Full Demo Import',
-            'import_file_url'            => 'http://api.webplantmedia.com/demo/crimson-rose/crimson-rose.wordpress.xml',
-            'import_widget_file_url'     => 'http://api.webplantmedia.com/demo/crimson-rose/crimson-rose.widgets.wie',
-			'import_customizer_file_url' => 'http://api.webplantmedia.com/demo/crimson-rose/crimson-rose.customizer.dat',
+			'local_import_file'            => trailingslashit( get_template_directory() ) . 'demo/crimson-rose.wordpress.xml',
+			'local_import_widget_file'     => trailingslashit( get_template_directory() ) . 'demo/crimson-rose.widgets.wie',
+			'local_import_customizer_file' => trailingslashit( get_template_directory() ) . 'demo/crimson-rose.customizer.dat',
         ),
     );
 }
