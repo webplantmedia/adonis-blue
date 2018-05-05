@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Crimson Rose 1.99\n"
+"Project-Id-Version: Crimson Rose 2.03\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/crimson-rose\n"
-"POT-Creation-Date: 2018-05-01 21:22:02+00:00\n"
+"POT-Creation-Date: 2018-05-05 12:57:31+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -13,8 +13,10 @@ msgstr ""
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
 #. translators: %s: Name of current post. Only visible to screen readers
-#: 404.php:52 inc/template-tags.php:98 inc/widgets/static-content.php:235
-#: template-parts/content-full-width.php:54 template-parts/content-page.php:36
+#: 404.php:52 inc/template-tags.php:98 inc/widgets/callout.php:216
+#: inc/widgets/collage.php:505 inc/widgets/image-banner.php:154
+#: inc/widgets/static-content.php:227 template-parts/content-full-width.php:54
+#: template-parts/content-page.php:36
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
 
@@ -99,7 +101,7 @@ msgstr ""
 msgid "Add Instagram widget here."
 msgstr ""
 
-#. #-#-#-#-#  crimson-rose.pot (Crimson Rose 1.99)  #-#-#-#-#
+#. #-#-#-#-#  crimson-rose.pot (Crimson Rose 2.03)  #-#-#-#-#
 #. Template Name of the plugin/theme
 #: functions.php:203
 msgid "Widgetized Page"
@@ -575,63 +577,6 @@ msgid ""
 "dashicons-external\"></span>Designer Fonts</a> plugin."
 msgstr ""
 
-#: inc/dashboard.php:46
-msgid "Documentation"
-msgstr ""
-
-#: inc/dashboard.php:47
-msgid "Theme Documentation"
-msgstr ""
-
-#: inc/dashboard.php:49
-msgid ""
-"Every theme option and theme feature is well documented on our product page. "
-"Find out all the amazing features coded within our theme."
-msgstr ""
-
-#: inc/dashboard.php:52
-msgid "Support"
-msgstr ""
-
-#: inc/dashboard.php:53
-msgid "Extended WordPress Support"
-msgstr ""
-
-#: inc/dashboard.php:55
-msgid ""
-"If you are using one of our themes, and need WordPress support, a little CSS "
-"hack, or some custom debugging support for your WordPress site, then you can "
-"purchase extended WordPress support. We are WordPress experts, and will "
-"quickly and efficiently take care of your site problem or need."
-msgstr ""
-
-#: inc/dashboard.php:58
-msgid "Font Customizer Plugin"
-msgstr ""
-
-#: inc/dashboard.php:59
-msgid "Designer Fonts Plugin"
-msgstr ""
-
-#: inc/dashboard.php:61
-msgid ""
-"Use our Designer Fonts plugin to quickly and easily customize the default "
-"fonts on your theme. Easily change your site title font, heading font, "
-"accent font, and body font, from your Customizer panel using our Designer "
-"Fonts plugin."
-msgstr ""
-
-#: inc/dashboard.php:64
-msgid "Watercolor Backgrounds Plugin"
-msgstr ""
-
-#: inc/dashboard.php:66
-msgid ""
-"To add more watercolor background options in your Customizer for your header "
-"and footer areas of your theme, please download our Watercolor Backgrounds "
-"plugin."
-msgstr ""
-
 #: inc/default-options.php:81
 msgid ""
 "Site crafted with <i class=\"genericons-neue genericons-neue-heart\"></i> by "
@@ -832,7 +777,7 @@ msgid ""
 "beautiful designs that are open source, easy to use, and fast to install."
 msgstr ""
 
-#. #-#-#-#-#  crimson-rose.pot (Crimson Rose 1.99)  #-#-#-#-#
+#. #-#-#-#-#  crimson-rose.pot (Crimson Rose 2.03)  #-#-#-#-#
 #. Author of the plugin/theme
 #: inc/theme-info.php:28
 msgid "Web Plant Media"
@@ -1223,15 +1168,14 @@ msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
 #: inc/widgets/blog-posts.php:24
-msgid "Displays content from blog posts."
+msgid "Displays content from blog posts on your widgetized page."
 msgstr ""
 
 #: inc/widgets/blog-posts.php:25
 msgid "Crimson Rose: Blog Posts"
 msgstr ""
 
-#: inc/widgets/blog-posts.php:30 inc/widgets/callout.php:21
-#: inc/widgets/image-banner.php:31 inc/widgets/jetpack-testimonials.php:21
+#: inc/widgets/blog-posts.php:30 inc/widgets/jetpack-testimonials.php:21
 #: inc/widgets/social-menu.php:31 inc/widgets/static-content.php:30
 #: inc/widgets/woocommerce-products.php:21
 msgid "Title:"
@@ -1266,8 +1210,8 @@ msgstr ""
 msgid "Random order?"
 msgstr ""
 
-#: inc/widgets/blog-posts.php:73 inc/widgets/callout.php:74
-#: inc/widgets/collage.php:149
+#: inc/widgets/blog-posts.php:73 inc/widgets/callout.php:72
+#: inc/widgets/collage.php:144
 msgid "Button Text:"
 msgstr ""
 
@@ -1275,33 +1219,33 @@ msgstr ""
 msgid "Button Link:"
 msgstr ""
 
-#: inc/widgets/blog-posts.php:85 inc/widgets/callout.php:86
-#: inc/widgets/collage.php:161
+#: inc/widgets/blog-posts.php:85 inc/widgets/callout.php:84
+#: inc/widgets/collage.php:156
 msgid "Button Style:"
 msgstr ""
 
-#: inc/widgets/blog-posts.php:87 inc/widgets/callout.php:88
-#: inc/widgets/collage.php:163
+#: inc/widgets/blog-posts.php:87 inc/widgets/callout.php:86
+#: inc/widgets/collage.php:158
 msgid "Default Button"
 msgstr ""
 
-#: inc/widgets/blog-posts.php:88 inc/widgets/callout.php:89
-#: inc/widgets/collage.php:164
+#: inc/widgets/blog-posts.php:88 inc/widgets/callout.php:87
+#: inc/widgets/collage.php:159
 msgid "Image Button 1"
 msgstr ""
 
-#: inc/widgets/blog-posts.php:89 inc/widgets/callout.php:90
-#: inc/widgets/collage.php:165
+#: inc/widgets/blog-posts.php:89 inc/widgets/callout.php:88
+#: inc/widgets/collage.php:160
 msgid "Image Button 2"
 msgstr ""
 
-#: inc/widgets/blog-posts.php:99 inc/widgets/callout.php:128
+#: inc/widgets/blog-posts.php:99 inc/widgets/callout.php:126
 #: inc/widgets/collage.php:80 inc/widgets/jetpack-testimonials.php:127
-#: inc/widgets/static-content.php:96 inc/widgets/woocommerce-products.php:152
+#: inc/widgets/static-content.php:90 inc/widgets/woocommerce-products.php:152
 msgid "Bottom margin of widget:"
 msgstr ""
 
-#: inc/widgets/blog-posts.php:153 inc/widgets/static-content.php:163
+#: inc/widgets/blog-posts.php:153 inc/widgets/static-content.php:155
 msgid "Read more"
 msgstr ""
 
@@ -1310,93 +1254,109 @@ msgid "No blog posts found."
 msgstr ""
 
 #: inc/widgets/callout.php:15
-msgid "Displays a callout."
+msgid "Displays a callout on your widgetized page."
 msgstr ""
 
 #: inc/widgets/callout.php:16
 msgid "Crimson Rose: Callout"
 msgstr ""
 
-#: inc/widgets/callout.php:27 inc/widgets/collage.php:111
-msgid "Content:"
+#: inc/widgets/callout.php:21 inc/widgets/collage.php:92
+#: inc/widgets/image-banner.php:31 inc/widgets/static-content.php:36
+msgid "Select Page:"
 msgstr ""
 
-#: inc/widgets/callout.php:34 inc/widgets/image-banner.php:76
-msgid "Text Align:"
+#: inc/widgets/callout.php:22 inc/widgets/collage.php:93
+#: inc/widgets/image-banner.php:32
+msgid ""
+"The post content and featured image will be grabbed from the selected post. "
+"If no featured image is set, then the text will display in full width."
 msgstr ""
 
-#: inc/widgets/callout.php:36 inc/widgets/image-banner.php:78
-#: inc/widgets/social-menu.php:39
+#: inc/widgets/callout.php:31 inc/widgets/image-banner.php:41
+msgid "Image Width (in pixels)"
+msgstr ""
+
+#: inc/widgets/callout.php:32 inc/widgets/image-banner.php:42
+msgid ""
+"Set custom size for featured image. Leave blank to use large image display."
+msgstr ""
+
+#: inc/widgets/callout.php:38
+msgid "Text Position:"
+msgstr ""
+
+#: inc/widgets/callout.php:40 inc/widgets/social-menu.php:39
 msgid "Left"
 msgstr ""
 
-#: inc/widgets/callout.php:37 inc/widgets/image-banner.php:80
-#: inc/widgets/social-menu.php:41
+#: inc/widgets/callout.php:41 inc/widgets/social-menu.php:41
 msgid "Right"
 msgstr ""
 
-#: inc/widgets/callout.php:44
+#: inc/widgets/callout.php:48
 msgid "Vertical Alignment:"
 msgstr ""
 
-#: inc/widgets/callout.php:46
+#: inc/widgets/callout.php:50
 msgid "Top"
 msgstr ""
 
-#: inc/widgets/callout.php:47 inc/widgets/image-banner.php:62
+#: inc/widgets/callout.php:51 inc/widgets/image-banner.php:61
 msgid "Middle"
 msgstr ""
 
-#: inc/widgets/callout.php:48
+#: inc/widgets/callout.php:52
 msgid "Bottom"
 msgstr ""
 
-#: inc/widgets/callout.php:55
-msgid "Image:"
-msgstr ""
-
-#: inc/widgets/callout.php:61 inc/widgets/collage.php:92
-#: inc/widgets/static-content.php:48
+#: inc/widgets/callout.php:59 inc/widgets/collage.php:99
+#: inc/widgets/static-content.php:42
 msgid "Background Color:"
 msgstr ""
 
-#: inc/widgets/callout.php:67 inc/widgets/collage.php:117
-#: inc/widgets/social-menu.php:48 inc/widgets/static-content.php:63
+#: inc/widgets/callout.php:65 inc/widgets/collage.php:112
+#: inc/widgets/social-menu.php:48 inc/widgets/static-content.php:57
 msgid "Text Color:"
 msgstr ""
 
-#: inc/widgets/callout.php:68
-msgid "<strong>Leave</strong> blank to use default theme color."
+#: inc/widgets/callout.php:66 inc/widgets/collage.php:113
+#: inc/widgets/collage.php:120
+msgid "Leave blank to use default theme color."
 msgstr ""
 
-#: inc/widgets/callout.php:80 inc/widgets/collage.php:155
+#: inc/widgets/callout.php:78 inc/widgets/collage.php:150
 msgid "Button URL:"
 msgstr ""
 
-#: inc/widgets/callout.php:97 inc/widgets/jetpack-testimonials.php:87
+#: inc/widgets/callout.php:95 inc/widgets/jetpack-testimonials.php:87
 msgid "Box Style:"
 msgstr ""
 
-#: inc/widgets/callout.php:99 inc/widgets/jetpack-testimonials.php:89
+#: inc/widgets/callout.php:97 inc/widgets/jetpack-testimonials.php:89
 msgid "Plain"
 msgstr ""
 
-#: inc/widgets/callout.php:100 inc/widgets/jetpack-testimonials.php:90
+#: inc/widgets/callout.php:98 inc/widgets/jetpack-testimonials.php:90
 msgid "Border"
 msgstr ""
 
-#: inc/widgets/callout.php:110 inc/widgets/jetpack-testimonials.php:109
-#: inc/widgets/static-content.php:78 inc/widgets/woocommerce-products.php:134
+#: inc/widgets/callout.php:108 inc/widgets/jetpack-testimonials.php:109
+#: inc/widgets/static-content.php:72 inc/widgets/woocommerce-products.php:134
 msgid "Top padding of widget:"
 msgstr ""
 
-#: inc/widgets/callout.php:119 inc/widgets/jetpack-testimonials.php:118
-#: inc/widgets/static-content.php:87 inc/widgets/woocommerce-products.php:143
+#: inc/widgets/callout.php:117 inc/widgets/jetpack-testimonials.php:118
+#: inc/widgets/static-content.php:81 inc/widgets/woocommerce-products.php:143
 msgid "Bottom padding of widget:"
 msgstr ""
 
+#: inc/widgets/callout.php:279 inc/widgets/static-content.php:244
+msgid "Select a page in your widget settings for content to display."
+msgstr ""
+
 #: inc/widgets/collage.php:24
-msgid "Displays collage"
+msgid "Displays a collage on your widgetized page."
 msgstr ""
 
 #: inc/widgets/collage.php:25
@@ -1440,77 +1400,73 @@ msgstr ""
 msgid "Show slide pagination?"
 msgstr ""
 
-#: inc/widgets/collage.php:98 inc/widgets/static-content.php:42
-msgid "Background Image:"
-msgstr ""
-
-#: inc/widgets/collage.php:104
+#: inc/widgets/collage.php:105
 msgid "Background Size:"
 msgstr ""
 
-#: inc/widgets/collage.php:118 inc/widgets/collage.php:125
-msgid "Leave blank to use default theme color."
-msgstr ""
-
-#: inc/widgets/collage.php:124
+#: inc/widgets/collage.php:119
 msgid "Text Background Color:"
 msgstr ""
 
-#: inc/widgets/collage.php:134
+#: inc/widgets/collage.php:129
 msgid "Text Background Color Opacity:"
 msgstr ""
 
-#: inc/widgets/collage.php:142
+#: inc/widgets/collage.php:137
 msgid "Max Width of Content Box:"
 msgstr ""
 
-#: inc/widgets/collage.php:143
+#: inc/widgets/collage.php:138
 msgid "Leave blank to set max width to none."
 msgstr ""
 
-#: inc/widgets/collage.php:175
+#: inc/widgets/collage.php:170
 msgctxt "Theme starter content"
 msgid "ORDER ONLINE FOR YOUR WEDDING"
 msgstr ""
 
-#: inc/widgets/collage.php:181
+#: inc/widgets/collage.php:176
 msgctxt "Theme starter content"
 msgid "Order Now"
 msgstr ""
 
-#: inc/widgets/collage.php:188
+#: inc/widgets/collage.php:183
 msgctxt "Theme starter content"
 msgid "FLOWERS DELIVERED TO YOUR LOCATION"
 msgstr ""
 
-#: inc/widgets/collage.php:194
+#: inc/widgets/collage.php:189
 msgctxt "Theme starter content"
 msgid "Shop Now"
 msgstr ""
 
-#: inc/widgets/collage.php:200
+#: inc/widgets/collage.php:195
 msgctxt "Theme starter content"
 msgid "SIGN UP FOR OUR WORKSHOP"
 msgstr ""
 
-#: inc/widgets/collage.php:206
+#: inc/widgets/collage.php:201
 msgctxt "Theme starter content"
 msgid "Join Now"
 msgstr ""
 
-#: inc/widgets/collage.php:212
+#: inc/widgets/collage.php:207
 msgctxt "Theme starter content"
 msgid "SEE OUR SEASONAL FLOWER ARRANGEMENTS"
 msgstr ""
 
-#: inc/widgets/collage.php:224
+#: inc/widgets/collage.php:219
 msgctxt "Theme starter content"
 msgid "CUSTOM ORDERS"
 msgstr ""
 
-#: inc/widgets/collage.php:248
+#: inc/widgets/collage.php:243
 msgctxt "Theme starter content"
 msgid "CHECK DELIVERY AREA"
+msgstr ""
+
+#: inc/widgets/collage.php:473
+msgid "Select a page"
 msgstr ""
 
 #: inc/widgets/image-banner.php:25
@@ -1521,52 +1477,40 @@ msgstr ""
 msgid "Crimson Rose: Image Banner"
 msgstr ""
 
-#: inc/widgets/image-banner.php:37
-msgid "Image URL:"
-msgstr ""
-
-#: inc/widgets/image-banner.php:43
-msgid "Image 2x URL (Retina Displays):"
-msgstr ""
-
-#: inc/widgets/image-banner.php:49
+#: inc/widgets/image-banner.php:48
 msgid "Image Style:"
 msgstr ""
 
-#: inc/widgets/image-banner.php:51 inc/widgets/jetpack-testimonials.php:39
+#: inc/widgets/image-banner.php:50 inc/widgets/jetpack-testimonials.php:39
 msgid "None"
 msgstr ""
 
-#: inc/widgets/image-banner.php:52
+#: inc/widgets/image-banner.php:51
 msgid "Round"
 msgstr ""
 
-#: inc/widgets/image-banner.php:59
+#: inc/widgets/image-banner.php:58
 msgid "Title Position:"
 msgstr ""
 
-#: inc/widgets/image-banner.php:61
+#: inc/widgets/image-banner.php:60
 msgid "Above"
 msgstr ""
 
-#: inc/widgets/image-banner.php:63
+#: inc/widgets/image-banner.php:62
 msgid "Below"
 msgstr ""
 
-#: inc/widgets/image-banner.php:70
-msgid "Description:"
-msgstr ""
-
-#: inc/widgets/image-banner.php:79 inc/widgets/social-menu.php:40
-msgid "Center"
-msgstr ""
-
-#: inc/widgets/image-banner.php:87
+#: inc/widgets/image-banner.php:69
 msgid "Link:"
 msgstr ""
 
+#: inc/widgets/image-banner.php:145
+msgid "Select a page."
+msgstr ""
+
 #: inc/widgets/jetpack-testimonials.php:15
-msgid "Displays Jetpack Testimonials."
+msgid "Displays Jetpack testimonials on your widgetized page."
 msgstr ""
 
 #: inc/widgets/jetpack-testimonials.php:16
@@ -1668,7 +1612,7 @@ msgid ""
 msgstr ""
 
 #: inc/widgets/social-menu.php:25
-msgid "Displays social menu in your footer or sidebar."
+msgid "Displays your social menu icons in your footer or sidebar."
 msgstr ""
 
 #: inc/widgets/social-menu.php:26
@@ -1679,11 +1623,15 @@ msgstr ""
 msgid "Align:"
 msgstr ""
 
+#: inc/widgets/social-menu.php:40
+msgid "Center"
+msgstr ""
+
 #: inc/widgets/social-menu.php:49
 msgid "Leave blank to use default text color."
 msgstr ""
 
-#: inc/widgets/social-menu.php:55 inc/widgets/static-content.php:69
+#: inc/widgets/social-menu.php:55 inc/widgets/static-content.php:63
 msgid "Link Color:"
 msgstr ""
 
@@ -1697,31 +1645,23 @@ msgid "Footer Social Links Menu"
 msgstr ""
 
 #: inc/widgets/static-content.php:24
-msgid "Displays content from a specific page."
+msgid "Displays content from a specified page on your widgetized page."
 msgstr ""
 
 #: inc/widgets/static-content.php:25
 msgid "Crimson Rose: Static Content"
 msgstr ""
 
-#: inc/widgets/static-content.php:36
-msgid "Select Page:"
-msgstr ""
-
-#: inc/widgets/static-content.php:57
+#: inc/widgets/static-content.php:51
 msgid "Background Color Opacity:"
 msgstr ""
 
-#: inc/widgets/static-content.php:250
+#: inc/widgets/static-content.php:242
 msgid "Static Content Widget"
 msgstr ""
 
-#: inc/widgets/static-content.php:252
-msgid "Select a page in your widget settings for content to display."
-msgstr ""
-
 #: inc/widgets/woocommerce-products.php:15
-msgid "Displays WooCommerce Products."
+msgid "Displays WooCommerce products on your widgetized page."
 msgstr ""
 
 #: inc/widgets/woocommerce-products.php:16
