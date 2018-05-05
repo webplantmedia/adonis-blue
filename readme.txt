@@ -1,7 +1,7 @@
 === Crimson Rose ===
 
 Contributors: cbaldelomar
-Tags: two-columns, three-columns, four-columns, right-sidebar, grid-layout, custom-background, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-image-header, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, blog, e-commerce, entertainment, food-and-drink, photography
+Tags: two-columns, three-columns, four-columns, right-sidebar, grid-layout, custom-background, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-image-header, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, e-commerce, blog, photography
 Requires at least: 4.7
 Tested up to: 4.9.4
 Stable tag: trunk
