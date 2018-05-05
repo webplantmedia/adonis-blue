@@ -279,13 +279,13 @@ html .widget-inner-container.ui-accordion .ui-accordion-header.ui-accordion-head
 .panel-delete-confirm .panel-delete-final {
 	display: inline;
 }
-#widgets-left div[id*="crimson-rose-content-widget"].widget .widget-top {
+/* #widgets-left div[id*="crimson-rose-content-widget"].widget .widget-top {
 	background-color: #e3ecf9;
 	border-color: #b3cef5;
 }
 #widgets-left div[id*="crimson-rose-content-widget"].widget .widget-top:hover {
 	border-color: #5996ef;
-}
+} */
 .widget-content .description {
 	display: block;
 }
