@@ -1,6 +1,6 @@
 # Crimson Rose #
 
-**Contributors:** cbaldelomar 
+**Contributors:** cbaldelomar
 **Tags:** two-columns, three-columns, four-columns, right-sidebar, grid-layout, custom-background, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-image-header, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, blog, e-commerce, entertainment, food-and-drink, photography
 **Requires at least:** 4.7
 **Tested up to:** 4.9.4
@@ -138,3 +138,6 @@ Source: https://www.pexels.com/photo/adult-cold-face-fashion-370013/
 ### 2.02 ###
 
 * Initial release
+
+
+
