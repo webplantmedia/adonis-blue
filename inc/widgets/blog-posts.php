@@ -21,7 +21,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Blog_Post' ) ) :
 		 */
 		public function __construct() {
 			$this->widget_id          = 'crimson-rose-content-widget-blog-posts';
-			$this->widget_description = __( 'Displays content from blog posts.', 'crimson-rose' );
+			$this->widget_description = __( 'Displays content from blog posts on your widgetized page.', 'crimson-rose' );
 			$this->widget_name        = __( 'Crimson Rose: Blog Posts', 'crimson-rose' );
 			$this->settings           = array(
 				'title' => array(

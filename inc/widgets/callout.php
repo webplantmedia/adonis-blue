@@ -12,7 +12,7 @@ class Crimson_Rose_Content_Widget_Callout extends Crimson_Rose_Widget {
 	 */
 	public function __construct() {
 		$this->widget_id          = 'crimson-rose-content-widget-callout';
-		$this->widget_description = __( 'Displays a callout.', 'crimson-rose' );
+		$this->widget_description = __( 'Displays a callout on your widgetized page.', 'crimson-rose' );
 		$this->widget_name        = __( 'Crimson Rose: Callout', 'crimson-rose' );
 		$this->settings           = array(
 			'page' => array(

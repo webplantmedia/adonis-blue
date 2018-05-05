@@ -21,7 +21,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Static_Content' ) ) :
 		 */
 		public function __construct() {
 			$this->widget_id          = 'crimson-rose-content-widget-static-content';
-			$this->widget_description = __( 'Displays content from a specific page.', 'crimson-rose' );
+			$this->widget_description = __( 'Displays content from a specified page on your widgetized page.', 'crimson-rose' );
 			$this->widget_name        = __( 'Crimson Rose: Static Content', 'crimson-rose' );
 			$this->settings           = array(
 				'title' => array(

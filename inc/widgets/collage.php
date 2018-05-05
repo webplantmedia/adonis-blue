@@ -21,7 +21,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 		 */
 		public function __construct() {
 			$this->widget_id          = 'crimson-rose-content-widget-collage';
-			$this->widget_description = __( 'Displays collage', 'crimson-rose' );
+			$this->widget_description = __( 'Displays a collage on your widgetized page.', 'crimson-rose' );
 			$this->widget_name        = __( 'Crimson Rose: Collage', 'crimson-rose' );
 			$this->settings           = array(
 				'panels' => array(

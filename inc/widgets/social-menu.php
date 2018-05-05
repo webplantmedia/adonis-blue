@@ -22,7 +22,7 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Social_Menu' ) ) :
 		public function __construct() {
 			$this->widget_id          = 'crimson-rose-social-menu';
 			$this->widget_cssclass    = 'crimson-rose-social-menu';
-			$this->widget_description = __( 'Displays social menu in your footer or sidebar.', 'crimson-rose' );
+			$this->widget_description = __( 'Displays your social menu icons in your footer or sidebar.', 'crimson-rose' );
 			$this->widget_name        = __( 'Crimson Rose: Social Menu', 'crimson-rose' );
 			$this->settings           = array(
 				'title' => array(
