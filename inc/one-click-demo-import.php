@@ -178,7 +178,6 @@ function crimson_rose_ocdi_plugin_intro_text( $default_text ) {
 		<ul>
 			<li>No existing posts, pages, categories, images, or custom post types will be deleted or modified.</li>
 			<li>When doing a "Full Demo Import", your <a href="'.admin_url( 'widgets.php' ).'" target="_blank">sidebar widgets</a> will be cleared, and replaced with our demo sidebar widgets.</li>
-			<li>When doing a "Widgets Only Import", the demo sidebar widgets will be appended to your existing <a href="'.admin_url( 'widgets.php' ).'" target="_blank">sidebar widgets</a>.</li>
 			<li>Please click on the Import button only once and wait, it can take a couple of minutes.</li>
 		</ul>
 
