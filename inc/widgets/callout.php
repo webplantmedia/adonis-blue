@@ -251,33 +251,36 @@ class Crimson_Rose_Content_Widget_Callout extends Crimson_Rose_Widget {
 
 			$output .= '<div class="content-callout__text'.$class.'" style="'.$style.'">';
 
-			if ( $p && isset( $p->post_content ) ) {
-				$output .= apply_filters( 'wpautop', $p->post_content );
-			}
-			else {
-				$output .='<center><em>' . esc_html__( 'Select a page in your widget settings for content to display.', 'crimson-rose' ) . '</em></center>';
-			}
+				if ( $p ) {
+					if ( isset( $p->post_content ) && ! empty( $p->post_content ) ) {
+						$output .= apply_filters( 'wpautop', $p->post_content );
+					}
+
+					if ( ! empty( $o['button_text'] ) && ! empty( $o['button_link'] ) ) {
+						$output .= '<div class="button-text">';
+							switch ( $o['button_style'] ) {
+								case 'button-1' :
+									$button_class = ' fancy-button';
+									break;
+								case 'button-2' :
+									$button_class = ' fancy2-button';
+									break;
+								default :
+									$button_class = '';
+									break;
+							}
+							$output .= '<a class="button callout-button'.$button_class.'" href="' . esc_url( $o['button_link'] ) . '">';
+								$output .= $o['button_text'];
+							$output .= '</a>';
+						$output .= '</div>';
+					}
+				}
+				else {
+					$output .='<center><em>' . esc_html__( 'Select a page in your widget settings for content to display.', 'crimson-rose' ) . '</em></center>';
+				}
 
 			$output .= '</div>';
 
-			if ( ! empty( $o['button_text'] ) && ! empty( $o['button_link'] ) ) {
-				$output .= '<div class="button-text">';
-					switch ( $o['button_style'] ) {
-						case 'button-1' :
-							$button_class = ' fancy-button';
-							break;
-						case 'button-2' :
-							$button_class = ' fancy2-button';
-							break;
-						default :
-							$button_class = '';
-							break;
-					}
-					$output .= '<a class="button callout-button'.$button_class.'" href="' . esc_url( $o['button_link'] ) . '">';
-						$output .= $o['button_text'];
-					$output .= '</a>';
-				$output .= '</div>';
-			}
 
 		$output .= '</div>';
 
