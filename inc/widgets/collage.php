@@ -90,7 +90,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 							'type'  => 'page',
 							'std'   => '',
 							'label' => __( 'Select Page:', 'crimson-rose' ),
-							'description' => __( 'The post content and featured image will be grabbed from the selected post. If no featured image is set, then the text will display in full width.', 'crimson-rose' ),
+							'description' => __( 'The post content and featured image will be grabbed from the selected post. If no featured image is set, then the collage panel will display only the background color selected.', 'crimson-rose' ),
 							'sanitize' => 'text',
 						),
 						'background_color' => array(

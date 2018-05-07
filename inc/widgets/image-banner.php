@@ -29,7 +29,7 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Image_Banner_Widget' ) ) :
 					'type'  => 'page',
 					'std'   => '',
 					'label' => __( 'Select Page:', 'crimson-rose' ),
-					'description' => __( 'The post content and featured image will be grabbed from the selected post. If no featured image is set, then the text will display in full width.', 'crimson-rose' ),
+					'description' => __( 'The post content and featured image will be grabbed from the selected post.', 'crimson-rose' ),
 					'sanitize' => 'text',
 				),
 				'image_width' => array(

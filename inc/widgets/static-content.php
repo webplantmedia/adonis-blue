@@ -34,6 +34,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Static_Content' ) ) :
 					'type'  => 'page',
 					'std'   => '',
 					'label' => __( 'Select Page:', 'crimson-rose' ),
+					'description' => __( 'The post content and featured image will be grabbed from the selected post.', 'crimson-rose' ),
 					'sanitize' => 'text',
 				),
 				'background_color' => array(
