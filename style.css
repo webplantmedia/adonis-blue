@@ -5236,6 +5236,33 @@ h1.h1-title,
   background-repeat: repeat-x;
 }
 
+.site-info-wrapper .site-info p,
+.site-info-wrapper .site-info div,
+.site-info-wrapper .site-info img,
+.site-info-wrapper .site-info span {
+  margin-top: 0;
+  padding-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.site-info-wrapper .site-info img {
+  vertical-align: top;
+}
+
+.site-info-wrapper .site-info p,
+.site-info-wrapper .site-info div {
+  margin-bottom: 1.5em;
+  padding-bottom: 0;
+}
+
+.site-info-wrapper .site-info > .widget > div > *:last-child,
+.site-info-wrapper .site-info > .widget > *:last-child,
+.site-info-wrapper .site-info > *:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
 .footer-background-image-color-red .site-info-wrapper {
   background-image: url("img/footer-bg-red.png");
 }
