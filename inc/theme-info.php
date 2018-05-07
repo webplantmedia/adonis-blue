@@ -22,10 +22,10 @@ $display_version = CRIMSON_ROSE_VERSION;
 			}
 		</style>
 		
-		<h1><?php printf( esc_html__( 'Crimson Rose WordPress Theme - Version&nbsp;%s', 'crimson-rose' ), $display_version ); ?></h1>
+		<h1><?php printf( __( 'Crimson Rose WordPress Theme - Version&nbsp;%s', 'crimson-rose' ), esc_html( $display_version ) ); ?></h1>
 
-		<p class="about-text"><?php printf( esc_html__( 'Thank you for using a WordPress theme by <a href="%s" target="_blank">Web Plant Media</a>! We are dedicated to making premium coded themes with beautiful designs that are open source, easy to use, and fast to install.', 'crimson-rose' ), "https://webplantmedia.com", $display_version ); ?></p>
-		<div class="wp-badge"><?php printf( esc_html__( 'Web Plant Media', 'crimson-rose' ) ); ?></div>
+		<p class="about-text"><?php printf( __( 'Thank you for using a WordPress theme by <a href="%s" target="_blank">Web Plant Media</a>! We are dedicated to making premium coded themes with beautiful designs that are open source, easy to use, and fast to install.', 'crimson-rose' ), "https://webplantmedia.com", esc_html( $display_version ) ); ?></p>
+		<div class="wp-badge"><?php printf( __( 'Web Plant Media', 'crimson-rose' ) ); ?></div>
 
 		<div style="margin-bottom:40px;">
 

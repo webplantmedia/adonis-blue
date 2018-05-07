@@ -1,45 +1,4 @@
 <?php
-add_action( 'wp_dashboard_setup', 'crimson_rose_dashboard_widgets' );
-  
-function crimson_rose_dashboard_widgets() {
-	global $wp_meta_boxes;
-	 
-	$display_version = CRIMSON_ROSE_VERSION;
-
-	wp_add_dashboard_widget('crimson_rose_help_widget', 'Crimson Rose WordPress Theme - Version&nbsp;' . $display_version, 'crimson_rose_dashboard_widget');
-}
- 
-function crimson_rose_dashboard_static_short_services() {
-	$services = crimson_rose_dashboard_get_services();
-	$first = true;
-	?>
-
-	<p style="border-top:1px solid #eee;padding-top:1em;">
-
-	<?php foreach( $services as $service ) : ?>
-
-		<?php if ( isset( $service['short'] ) && ! empty( $service['short'] ) ) : ?> 
-
-			<?php if ( ! $first ) : ?> 
-				<span style="color:#ddd;">&#124;</span>
-			<?php endif; ?>
-
-			<a href="<?php echo esc_attr( $service['link'] ); ?>" target="_blank"><?php echo esc_html( $service['short'] ); ?>
-				<span class="screen-reader-text">(opens in a new window)</span>
-				<span aria-hidden="true" class="dashicons dashicons-external"></span>
-			</a>
-
-			<?php $first = false; ?>
-
-		<?php endif; ?>
-
-	<?php endforeach; ?>
-
-	</p>
-
-	<?php
-}
-
 function crimson_rose_dashboard_get_services() {
 	$services = array(
 		array(
@@ -103,16 +62,11 @@ function crimson_rose_dashboard_static_feed() {
 	<?php
 }
 
-function crimson_rose_dashboard_widget() {
-	crimson_rose_dashboard_static_feed();
-	crimson_rose_dashboard_static_short_services();
-}
-
-add_action('admin_menu', 'crimson_rose_theme_info');
-
 function crimson_rose_theme_info() {
 	add_theme_page('Theme Add-ons', 'Theme Add-ons', 'read', 'crimson-rose-theme-info', 'crimson_rose_theme_page');
 }
+
+add_action('admin_menu', 'crimson_rose_theme_info');
 
 function crimson_rose_theme_page() {
 	require get_parent_theme_file_path() . '/inc/theme-info.php';
