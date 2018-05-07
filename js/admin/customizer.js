@@ -50,11 +50,6 @@
 			$( '.site-description' ).text( to );
 		} );
 	} );
-	wp.customize( 'site_info', function( value ) {
-		value.bind( function( to ) {
-			$( '.site-info' ).html( to );
-		} );
-	} );
 
 	// Header text color.
 	/*wp.customize( 'header_textcolor', function( value ) {

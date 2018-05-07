@@ -2,6 +2,35 @@
 	background-size: 735px auto;
 	background-position: top center;
 	background-repeat: repeat-x;
+
+	.site-info {
+		p,
+		div,
+		img,
+		span {
+			margin-top: 0;
+			padding-top: 0;
+			margin-bottom: 0;
+			padding-bottom: 0;
+		}
+
+		img {
+			vertical-align: top;
+		}
+
+		p,
+		div {
+			margin-bottom: 1.5em;
+			padding-bottom: 0;
+		}
+
+		> .widget > div > *:last-child,
+		> .widget > *:last-child,
+		> *:last-child {
+			margin-bottom: 0;
+			padding-bottom: 0;
+		}
+	}
 }
 
 .footer-background-image-color-red .site-info-wrapper {

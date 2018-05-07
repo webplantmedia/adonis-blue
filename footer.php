@@ -79,7 +79,11 @@ $column = 1;
 			<div class="site-info-wrapper">
 				<div class="site-boundary">
 					<div class="site-info">
-						<?php crimson_rose_site_info(); ?>
+						<?php if ( is_active_sidebar( 'footer-bottom' ) ) : ?>
+							<?php dynamic_sidebar( 'footer-bottom' ); ?>
+						<?php else : ?>
+							<p><?php printf( __( 'Site crafted with', 'crimson-rose' ) . ' <i class="genericons-neue genericons-neue-heart"></i> ' . __( 'by', 'crimson-rose' ) . ' <a href="https://webplantmedia.com/">' . __( 'Web Plant Media', 'crimson-rose' ) . '</a>' ); ?></p>
+						<?php endif; ?>
 					</div><!-- .site-info -->
 				</div><!-- .site-boundary -->
 			</div><!-- .site-info-wrapper -->

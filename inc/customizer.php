@@ -32,10 +32,6 @@ function crimson_rose_customize_register( $wp_customize ) {
 			'selector'        => '.site-logo',
 			'render_callback' => 'crimson_rose_customize_partial_custom_logo',
 		) );
-		/*$wp_customize->selective_refresh->add_partial( 'site_info', array(
-			'selector'        => '.site-info',
-			'render_callback' => 'crimson_rose_site_info',
-		) );*/
 	}
 
 	/**
@@ -397,20 +393,6 @@ function crimson_rose_customize_register( $wp_customize ) {
 			'step' => 5,
 			'style' => 'width:100%;',
 		),
-	) );
-
-	$setting_id = 'site_info';
-	$wp_customize->add_setting( $setting_id, array(
-		'default' => $crimson_rose_default[ $setting_id ],
-		'transport' => 'postMessage',
-		'sanitize_callback' => 'wp_kses_post',
-	) );
-
-	$wp_customize->add_control( $setting_id, array(
-		'type' => 'textarea',
-		'label' => __( 'Site Info', 'crimson-rose' ),
-		'description' => __( 'Basic HTML is allowed.', 'crimson-rose' ),
-		'section' => $section_id,
 	) );
 
 	/**

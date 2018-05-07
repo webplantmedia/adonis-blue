@@ -188,6 +188,16 @@ function crimson_rose_widgets_init() {
 	) );
 
 	register_sidebar( array(
+		'name'          => esc_html__( 'Footer Bottom', 'crimson-rose' ),
+		'id'            => 'footer-bottom',
+		'description'   => esc_html__( 'Add a text or HTML widget here with your site credit and copyright information. Doing so will override the default footer credit at the bottom of your pages.', 'crimson-rose' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
 		'name'          => esc_html__( 'Instagram Gallery', 'crimson-rose' ),
 		'id'            => 'gallery-1',
 		'description'   => esc_html__( 'Add Instagram widget here.', 'crimson-rose' ),

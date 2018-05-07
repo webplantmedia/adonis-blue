@@ -74,9 +74,6 @@ $crimson_rose_default['display_sidebar_search'] = 0;
 $crimson_rose_default['display_sidebar_shop_archive'] = 0;
 $crimson_rose_default['display_sidebar_attachment'] = 0;
 
-// Footer
-$crimson_rose_default['site_info'] = __( 'Site crafted with <i class="genericons-neue genericons-neue-heart"></i> by <a href="https://webplantmedia.com/">Web Plant Media</a>', 'crimson-rose' );
-
 // Labels
 $crimson_rose_default['mobile_menu_label'] = __( 'Menu', 'crimson-rose' );
 $crimson_rose_default['read_more_label'] = __( 'Continue Reading', 'crimson-rose' );

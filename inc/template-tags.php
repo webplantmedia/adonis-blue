@@ -240,17 +240,3 @@ if ( ! function_exists( 'crimson_rose_parent_post_navigation' ) ) :
 		) );
 	}
 endif;
-
-if ( ! function_exists( 'crimson_rose_get_site_info' ) ) :
-	function crimson_rose_get_site_info() {
-		global $crimson_rose;
-
-		return $crimson_rose['site_info'];
-	}
-endif;
-
-if ( ! function_exists( 'crimson_rose_site_info' ) ) :
-	function crimson_rose_site_info() {
-		echo crimson_rose_get_site_info();
-	}
-endif;
