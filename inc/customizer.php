@@ -260,11 +260,11 @@ function crimson_rose_customize_register( $wp_customize ) {
 	) );
 
 	/**
-	 * Top header.
+	 * Site
 	 */
-	$section_id = 'theme_options_top_header';
+	$section_id = 'theme_options_site';
 	$wp_customize->add_section( $section_id, array(
-		'title'    => __( 'Top Header', 'crimson-rose' ),
+		'title'    => __( 'Site', 'crimson-rose' ),
 		'panel'    => 'theme_options',
 	) );
 
@@ -286,15 +286,6 @@ function crimson_rose_customize_register( $wp_customize ) {
 			'step' => 1,
 			'style' => 'width:100%;',
 		),
-	) );
-
-	/**
-	 * Site
-	 */
-	$section_id = 'theme_options_site';
-	$wp_customize->add_section( $section_id, array(
-		'title'    => __( 'Site', 'crimson-rose' ),
-		'panel'    => 'theme_options',
 	) );
 
 	$setting_id = 'show_menu_arrows';
