@@ -643,6 +643,11 @@ require get_parent_theme_file_path() . '/inc/icon-functions.php';
 require get_parent_theme_file_path() . '/inc/recommended-plugins.php';
 
 /*
+ * Add dashboard widget and info page.
+ */
+require get_parent_theme_file_path() . '/inc/dashboard.php';
+
+/*
  * One Click Demo Import
  */
 if ( crimson_rose_is_ocdi_activated() ) {
