@@ -285,7 +285,7 @@ $about = '
 		'custom_html',
 		array(
 			'title' => '',
-			'content' => '<p>' . "\n\t" . _x( 'Site crafted with', 'Theme starter content', 'crimson-rose' ) . ' <i class="genericons-neue genericons-neue-heart"></i> ' . _x( 'by', 'Theme starter content', 'crimson-rose' ) . ' <a href="https://webplantmedia.com/">' . _x( 'Web Plant Media', 'Theme starter content', 'crimson-rose' ) . '</a>.' . "\n" . '</p>',
+			'content' => '<p>' . "\n\t" . _x( 'Site crafted with', 'Theme starter content', 'crimson-rose' ) . ' <i class="genericons-neue genericons-neue-heart"></i> ' . _x( 'by', 'Theme starter content', 'crimson-rose' ) . ' <a href="https://webplantmedia.com/">' . _x( 'Web Plant Media', 'Theme starter content', 'crimson-rose' ) . '</a>' . "\n" . '</p>',
 		),
 	);
 
