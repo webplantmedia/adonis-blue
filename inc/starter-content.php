@@ -248,9 +248,6 @@ $about = '
 		'crimson-rose-image-banner' => array(
 			'crimson-rose-image-banner',
 			array(
-				'title' => _x( 'ENJOY YOURSELF!', 'Theme starter content', 'crimson-rose' ),
-				'image' => get_template_directory_uri() . '/img/starter-content/footer-widget.png',
-				'image_2x' => '',
 				'text_position' => 'below',
 				'description' => '',
 
