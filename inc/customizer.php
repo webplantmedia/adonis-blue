@@ -420,9 +420,9 @@ function crimson_rose_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( $setting_id, array(
-		'type' => 'text',
+		'type' => 'textarea',
 		'label' => __( 'Site Info', 'crimson-rose' ),
-		'description' => __( 'Allowed HTML tags are <code>a</code>, <code>span</code>, <code>i</code>, <code>br</code>, <code>p</code>, <code>h1-h6</code>, and <code>img</code> with the following attributes: id; class; and style. The <code>img</code> tag also includes the attributes: src; height; width; alt; and title. The <code>a</code> tag also includes the attribute: target.', 'crimson-rose' ),
+		'description' => __( 'Basic HTML is allowed.', 'crimson-rose' ),
 		'section' => $section_id,
 	) );
 
