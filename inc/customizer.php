@@ -980,7 +980,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'checkbox',
-		'label' => __( 'Display White Text?', 'crimson-rose' ),
+		'label' => __( 'Display White Text', 'crimson-rose' ),
 		'section' => $section_id,
 	) );
 
