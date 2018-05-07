@@ -89,8 +89,6 @@ if ( ! function_exists( 'crimson_rose_setup' ) ) :
 			'header-text' => array( 'site-title', 'site-description' ),
 		) );
 
-		add_theme_support( 'custom-background' );
-
 		add_theme_support( 'wpm-fonts', array(
 			'logo' => array(
 				'font'	=> 'Lato',
