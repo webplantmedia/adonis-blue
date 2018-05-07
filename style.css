@@ -5236,6 +5236,10 @@ h1.h1-title,
   background-repeat: repeat-x;
 }
 
+.site-info-wrapper .site-info a {
+  text-decoration: none;
+}
+
 .site-info-wrapper .site-info p,
 .site-info-wrapper .site-info div,
 .site-info-wrapper .site-info img,
