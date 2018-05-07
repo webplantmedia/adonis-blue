@@ -789,27 +789,6 @@ function crimson_rose_customize_register( $wp_customize ) {
 		'section' => $section_id,
 	) );
 
-	$setting_id = 'shop_product_page_template';
-	$wp_customize->add_setting( $setting_id, array(
-		'default' => $crimson_rose_default[ $setting_id ],
-		'transport' => 'refresh',
-		'sanitize_callback' => 'sanitize_text_field',
-	) );
-
-	$wp_customize->add_control( $setting_id, array(
-		'type' => 'select',
-		'label' => __( 'Product Description Page Template', 'crimson-rose' ),
-		'description' => __( 'Select the page template you want to display on your product pages description area', 'crimson-rose' ),
-		'section' => $section_id,
-		'choices' => array(
-			'grid-accordion' => 'Grid Accordion Page',
-			'grid' => 'Grid Page',
-			'two-columns' => 'Two Columns Page',
-			'default' => 'Default Template',
-		),
-	) );
-
-
 	/**
 	 * Display Sidebar
 	 */

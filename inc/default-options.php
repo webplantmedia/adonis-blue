@@ -66,7 +66,6 @@ $crimson_rose_default['shop_disable_gallery_zoom'] = 0;
 $crimson_rose_default['shop_disable_gallery_lightbox'] = 0;
 $crimson_rose_default['shop_disable_gallery_slider'] = 0;
 $crimson_rose_default['shop_truncate_titles'] = 1;
-$crimson_rose_default['shop_product_page_template'] = 'grid-accordion';
 
 // Display Sidebar
 $crimson_rose_default['display_sidebar_blog'] = 1;
