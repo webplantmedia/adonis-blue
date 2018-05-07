@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Crimson Rose 2.07\n"
+"Project-Id-Version: Crimson Rose 2.08\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/crimson-rose\n"
-"POT-Creation-Date: 2018-05-07 19:51:37+00:00\n"
+"POT-Creation-Date: 2018-05-07 21:16:03+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -64,7 +64,7 @@ msgstr ""
 msgid "by"
 msgstr ""
 
-#. #-#-#-#-#  crimson-rose.pot (Crimson Rose 2.07)  #-#-#-#-#
+#. #-#-#-#-#  crimson-rose.pot (Crimson Rose 2.08)  #-#-#-#-#
 #. Author of the plugin/theme
 #: footer.php:85 inc/theme-info.php:28
 msgid "Web Plant Media"
@@ -125,7 +125,7 @@ msgstr ""
 msgid "Add Instagram widget here."
 msgstr ""
 
-#. #-#-#-#-#  crimson-rose.pot (Crimson Rose 2.07)  #-#-#-#-#
+#. #-#-#-#-#  crimson-rose.pot (Crimson Rose 2.08)  #-#-#-#-#
 #. Template Name of the plugin/theme
 #: functions.php:211
 msgid "Widgetized Page"
@@ -659,7 +659,7 @@ msgstr ""
 msgid "1 Comment"
 msgstr ""
 
-#: inc/starter-content.php:239 inc/starter-content.php:275
+#: inc/starter-content.php:239 inc/starter-content.php:272
 msgctxt "Theme starter content"
 msgid "Categories"
 msgstr ""
@@ -669,92 +669,102 @@ msgctxt "Theme starter content"
 msgid "Search"
 msgstr ""
 
-#: inc/starter-content.php:251
-msgctxt "Theme starter content"
-msgid "ENJOY YOURSELF!"
-msgstr ""
-
-#: inc/starter-content.php:262
+#: inc/starter-content.php:259
 msgctxt "Theme starter content"
 msgid "Find Us"
 msgstr ""
 
-#: inc/starter-content.php:264
+#: inc/starter-content.php:261
 msgctxt "Theme starter content"
 msgid "Address"
 msgstr ""
 
-#: inc/starter-content.php:265
+#: inc/starter-content.php:262
 msgctxt "Theme starter content"
 msgid "123 Main Street"
 msgstr ""
 
-#: inc/starter-content.php:265
+#: inc/starter-content.php:262
 msgctxt "Theme starter content"
 msgid "New York, NY 10001"
 msgstr ""
 
-#: inc/starter-content.php:266
+#: inc/starter-content.php:263
 msgctxt "Theme starter content"
 msgid "Hours"
 msgstr ""
 
-#: inc/starter-content.php:267
+#: inc/starter-content.php:264
 msgctxt "Theme starter content"
 msgid "Mon&mdash;Fri: 9:00AM&ndash;5:00PM"
 msgstr ""
 
-#: inc/starter-content.php:267
+#: inc/starter-content.php:264
 msgctxt "Theme starter content"
 msgid "Sat &amp; Sun: 11:00AM&ndash;3:00PM"
 msgstr ""
 
-#: inc/starter-content.php:283
+#: inc/starter-content.php:280
 msgctxt "Theme starter content"
 msgid "Connect"
 msgstr ""
 
-#: inc/starter-content.php:323
+#: inc/starter-content.php:288
+msgctxt "Theme starter content"
+msgid "Site crafted with"
+msgstr ""
+
+#: inc/starter-content.php:288
+msgctxt "Theme starter content"
+msgid "by"
+msgstr ""
+
+#: inc/starter-content.php:288
+msgctxt "Theme starter content"
+msgid "Web Plant Media"
+msgstr ""
+
+#: inc/starter-content.php:328
 msgctxt "Theme starter content"
 msgid "About"
 msgstr ""
 
-#: inc/starter-content.php:331
+#: inc/starter-content.php:336
 msgctxt "Theme starter content"
 msgid "Contact"
 msgstr ""
 
-#: inc/starter-content.php:336
+#: inc/starter-content.php:341
 msgctxt "Theme starter content"
 msgid "FAQ"
 msgstr ""
 
-#: inc/starter-content.php:342
+#: inc/starter-content.php:347
 msgctxt "Theme starter content"
 msgid "Our Story"
 msgstr ""
 
-#: inc/starter-content.php:349
+#: inc/starter-content.php:354
 msgctxt "Theme starter content"
 msgid "Demo Image 1"
 msgstr ""
 
-#: inc/starter-content.php:361
+#: inc/starter-content.php:366
 msgctxt "Theme starter content"
 msgid "Primary"
 msgstr ""
 
-#: inc/starter-content.php:381
+#: inc/starter-content.php:386
 msgctxt "Theme starter content"
 msgid "Top Left Menu"
 msgstr ""
 
-#: inc/starter-content.php:395
+#: inc/starter-content.php:400
 msgctxt "Theme starter content"
 msgid "Top Right Menu"
 msgstr ""
 
-#: inc/starter-content.php:402
+#: inc/starter-content.php:407
 msgctxt "Theme starter content"
 msgid "Social Links Menu"
 msgstr ""
