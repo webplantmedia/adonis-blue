@@ -73,12 +73,6 @@ if ( ! function_exists( 'crimson_rose_setup' ) ) :
 			'caption',
 		) );
 
-		// Set up the WordPress core custom background feature.
-		/*add_theme_support( 'custom-background', apply_filters( 'crimson_rose_custom_background_args', array(
-			'default-color' => false,
-			'default-image' => '',
-		) ) );*/
-
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
