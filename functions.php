@@ -210,7 +210,7 @@ function crimson_rose_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Widgetized Page', 'crimson-rose' ),
 		'id'            => 'widgetized-page',
-		'description'   => esc_html__( 'Add widgets here.', 'crimson-rose' ),
+		'description'   => esc_html__( 'Add content widgets here.', 'crimson-rose' ),
 		'before_widget' => '<section id="%1$s" class="content-widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title content-widget-title">',
