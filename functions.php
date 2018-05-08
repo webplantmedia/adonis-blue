@@ -637,7 +637,7 @@ if ( crimson_rose_is_jetpack_activated() ) {
 }
 
 if ( crimson_rose_is_woocommerce_activated() ) {
-	require get_parent_theme_file_path() . '/inc/woocommerce/class-woocommerce.php';
+	require get_parent_theme_file_path() . '/inc/class-woocommerce.php';
 }
 
 /**
