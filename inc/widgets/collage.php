@@ -312,6 +312,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 
 					$(document).ready(function(){
 						var $slider = $('#<?php echo esc_attr( $this->id ); ?> .carousel-container');
+						var $divclick = $('#<?php echo esc_attr( $this->id ); ?> .div-click');
 						var sliderauto = $slider.data('sliderauto');
 						var slidermode = $slider.data('slidermode');
 						var sliderpause = $slider.data('sliderpause');
@@ -350,7 +351,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 							}
 						});
 
-						$slider.find('.div-click').click( function(e) {
+						$divclick.click( function(e) {
 							if ( $(e.target).hasClass('div-click')) {
 								var slideUrl = $(this).data('slideUrl');
 								window.location.href = slideUrl;
