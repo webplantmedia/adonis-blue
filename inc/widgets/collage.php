@@ -165,9 +165,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 					'default' => array(
 						array(
 							'background_color' => '#ffede4',
-							'background_image' => get_template_directory_uri() . '/img/widgets/slide-1.jpg',
 							'background_size' => 'cover',
-							'content_text' => '<h3>' . _x( 'ORDER ONLINE FOR YOUR WEDDING', 'Theme starter content', 'crimson-rose' ) . '</h3>',
 							'text_color' => '',
 							'text_background_color' => '#ffffff',
 							'text_background_opacity' => '70',
@@ -178,9 +176,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 						),
 						array(
 							'background_color' => '#ffffff',
-							'background_image' => get_template_directory_uri() . '/img/widgets/slide-2.jpg',
 							'background_size' => 'cover',
-							'content_text' => '<h3>' . _x( 'FLOWERS DELIVERED TO YOUR LOCATION', 'Theme starter content', 'crimson-rose' ) . '</h3>',
 							'text_color' => '',
 							'text_background_color' => '#ffffff',
 							'text_background_opacity' => '70',
@@ -190,9 +186,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 						),
 						array(
 							'background_color' => '#fdf3ec',
-							'background_image' => get_template_directory_uri() . '/img/widgets/slide-3.jpg',
 							'background_size' => 'cover',
-							'content_text' => '<h3>' . _x( 'SIGN UP FOR OUR WORKSHOP', 'Theme starter content', 'crimson-rose' ) . '</h3>',
 							'text_color' => '',
 							'text_background_color' => '#ffffff',
 							'text_background_opacity' => '70',
@@ -202,9 +196,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 						),
 						array(
 							'background_color' => '#fcf7f7',
-							'background_image' => get_template_directory_uri() . '/img/widgets/collage-2.jpg',
 							'background_size' => 'cover',
-							'content_text' => '<h3>' . _x( 'SEE OUR SEASONAL FLOWER ARRANGEMENTS', 'Theme starter content', 'crimson-rose' ) . '</h3>',
 							'text_color' => '',
 							'text_background_color' => '',
 							'text_background_opacity' => '70',
@@ -214,9 +206,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 						),
 						array(
 							'background_color' => '#ffffff',
-							'background_image' => get_template_directory_uri() . '/img/widgets/collage-3.jpg',
 							'background_size' => 'cover',
-							'content_text' => '<h3>' . _x( 'CUSTOM ORDERS', 'Theme starter content', 'crimson-rose' ) . '</h3>',
 							'text_color' => '',
 							'text_background_color' => '',
 							'text_background_opacity' => '70',
@@ -226,9 +216,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 						),
 						array(
 							'background_color' => '#fde2e2',
-							'background_image' => get_template_directory_uri() . '/img/widgets/collage-4.png',
 							'background_size' => 'fit-width',
-							'content_text' => '',
 							'text_color' => '',
 							'text_background_color' => '',
 							'text_background_opacity' => '70',
@@ -238,9 +226,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 						),
 						array(
 							'background_color' => '#fffdfc',
-							'background_image' => get_template_directory_uri() . '/img/widgets/collage-5.jpg',
 							'background_size' => 'cover',
-							'content_text' => '<h3>' . _x( 'CHECK DELIVERY AREA', 'Theme starter content', 'crimson-rose' ) . '</h3>',
 							'text_color' => '',
 							'text_background_color' => '#ffffff',
 							'text_background_opacity' => '100',
@@ -394,14 +380,13 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 			}
 
 			$tag = 'div';
-			$button_href = '';
 			$classes[] = 'slide-inner';
 			$attr = array();
 			$style = array();
 			$text_style = array();
 			$text_class = '';
 
-			if ( ! empty( $slide_setting['button_link'] ) ) {
+			if ( ! empty( $slide_setting['button_link'] ) && empty( $slide_setting['button_text'] ) ) {
 				$attr[] = 'data-slide-url="' . esc_url( $slide_setting['button_link'] ) . '"';
 				$style[] = 'cursor:pointer;';
 				$classes[] = 'div-click';
@@ -457,7 +442,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 					
 				<div class="content-wrapper<?php echo esc_attr( $text_class ); ?>" style="<?php echo esc_attr( implode( '', $text_style ) ); ?>">
 					<?php if ( ! empty( $slide_setting['button_link'] ) ) : ?>
-						<a class="screen-reader-text" href="<?php echo esc_attr( $slide_setting['button_link'] ); ?>">
+						<a class="screen-reader-text" href="<?php echo esc_url( $slide_setting['button_link'] ); ?>">
 							<?php echo esc_html( $crimson_rose['read_more_label'] ); ?>
 						</a>
 					<?php endif; ?>
@@ -470,11 +455,11 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 						<?php endif; ?>
 					<?php else : ?>
 						<div class="content-text">
-							<center><em><a href="<?php echo admin_url( 'customize.php?autofocus[panel]=widgets' ); ?>"><?php echo esc_html__( 'Select a page', 'crimson-rose' ); ?></a></em></center>
+							<center><em><a href="<?php echo esc_url( admin_url( 'customize.php?autofocus[panel]=widgets' ) ); ?>"><?php echo esc_html__( 'Select a page', 'crimson-rose' ); ?></a></em></center>
 						</div>
 					<?php endif; ?>
 
-					<?php if ( ! empty( $slide_setting['button_text'] ) ) : ?>
+					<?php if ( ! empty( $slide_setting['button_link'] ) && ! empty( $slide_setting['button_text'] ) ) : ?>
 						<?php
 						switch ( $slide_setting['button_style'] ) {
 							case 'button-1' :
@@ -489,7 +474,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 						}
 						?>
 						<div class="button-text">
-							<a class="button slide-button<?php echo esc_attr( $button_class ); ?>"<?php echo $button_href; ?>>
+							<a class="button slide-button<?php echo esc_attr( $button_class ); ?>" href="<?php echo esc_url( $slide_setting['button_link'] ); ?>">
 								<?php echo $slide_setting['button_text']; ?>
 							</a>
 						</div>

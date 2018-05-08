@@ -142,7 +142,7 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Image_Banner_Widget' ) ) :
 						</div>
 					<?php endif; ?>
 				<?php else : ?>
-					<center><em><a href="<?php echo admin_url( 'customize.php?autofocus[panel]=widgets' ); ?>"><?php echo esc_html__( 'Select a page.', 'crimson-rose' ); ?></a></em></center>
+					<center><em><a href="<?php echo esc_url( admin_url( 'customize.php?autofocus[panel]=widgets' ) ); ?>"><?php echo esc_html__( 'Select a page.', 'crimson-rose' ); ?></a></em></center>
 				<?php endif; ?>
 
 				<?php if ( $p && get_edit_post_link( $p->ID ) ) : ?>
