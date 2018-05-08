@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Crimson Rose 2.08\n"
+"Project-Id-Version: Crimson Rose 2.09\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/crimson-rose\n"
-"POT-Creation-Date: 2018-05-07 21:16:03+00:00\n"
+"POT-Creation-Date: 2018-05-08 10:39:39+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -14,7 +14,7 @@ msgstr ""
 
 #. translators: %s: Name of current post. Only visible to screen readers
 #: 404.php:52 inc/template-tags.php:98 inc/widgets/callout.php:216
-#: inc/widgets/collage.php:505 inc/widgets/image-banner.php:154
+#: inc/widgets/collage.php:490 inc/widgets/image-banner.php:154
 #: inc/widgets/static-content.php:228 template-parts/content-full-width.php:54
 #: template-parts/content-page.php:36
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
@@ -64,7 +64,7 @@ msgstr ""
 msgid "by"
 msgstr ""
 
-#. #-#-#-#-#  crimson-rose.pot (Crimson Rose 2.08)  #-#-#-#-#
+#. #-#-#-#-#  crimson-rose.pot (Crimson Rose 2.09)  #-#-#-#-#
 #. Author of the plugin/theme
 #: footer.php:85 inc/theme-info.php:28
 msgid "Web Plant Media"
@@ -125,7 +125,7 @@ msgstr ""
 msgid "Add Instagram widget here."
 msgstr ""
 
-#. #-#-#-#-#  crimson-rose.pot (Crimson Rose 2.08)  #-#-#-#-#
+#. #-#-#-#-#  crimson-rose.pot (Crimson Rose 2.09)  #-#-#-#-#
 #. Template Name of the plugin/theme
 #: functions.php:211
 msgid "Widgetized Page"
@@ -1478,52 +1478,22 @@ msgstr ""
 msgid "Leave blank to set max width to none."
 msgstr ""
 
-#: inc/widgets/collage.php:170
-msgctxt "Theme starter content"
-msgid "ORDER ONLINE FOR YOUR WEDDING"
-msgstr ""
-
-#: inc/widgets/collage.php:176
+#: inc/widgets/collage.php:174
 msgctxt "Theme starter content"
 msgid "Order Now"
 msgstr ""
 
-#: inc/widgets/collage.php:183
-msgctxt "Theme starter content"
-msgid "FLOWERS DELIVERED TO YOUR LOCATION"
-msgstr ""
-
-#: inc/widgets/collage.php:189
+#: inc/widgets/collage.php:185
 msgctxt "Theme starter content"
 msgid "Shop Now"
 msgstr ""
 
 #: inc/widgets/collage.php:195
 msgctxt "Theme starter content"
-msgid "SIGN UP FOR OUR WORKSHOP"
-msgstr ""
-
-#: inc/widgets/collage.php:201
-msgctxt "Theme starter content"
 msgid "Join Now"
 msgstr ""
 
-#: inc/widgets/collage.php:207
-msgctxt "Theme starter content"
-msgid "SEE OUR SEASONAL FLOWER ARRANGEMENTS"
-msgstr ""
-
-#: inc/widgets/collage.php:219
-msgctxt "Theme starter content"
-msgid "CUSTOM ORDERS"
-msgstr ""
-
-#: inc/widgets/collage.php:243
-msgctxt "Theme starter content"
-msgid "CHECK DELIVERY AREA"
-msgstr ""
-
-#: inc/widgets/collage.php:473
+#: inc/widgets/collage.php:458
 msgid "Select a page"
 msgstr ""
 
