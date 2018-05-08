@@ -219,11 +219,11 @@ $about = '
 <!-- /wp:separator -->
 
 <!-- wp:paragraph -->
-<p>So what are you waiting for?! Go to our shop today. You won\'t regret it.</p>
+<p style="text-align:center">So what are you waiting for?! Go to our shop today. You won\'t regret it.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><a href="https://crimson-rose.webplantmedia.com">SHOP</a></p>
+<p style="text-align:center"><a href="">SHOP</a></p>
 <!-- /wp:paragraph -->
 ';
 
