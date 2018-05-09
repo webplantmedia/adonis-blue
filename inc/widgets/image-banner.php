@@ -150,8 +150,8 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Image_Banner_Widget' ) ) :
 						<?php
 							edit_post_link(
 								sprintf(
-									/* translators: %s: Name of current post. Only visible to screen readers */
-									__( 'Edit <span class="screen-reader-text">%s</span>', 'crimson-rose' ),
+									'%1$s <span class="screen-reader-text">%2$s</span>',
+									__( 'Edit', 'crimson-rose' ),
 									get_the_title()
 								),
 								'<div class="entry-footer-meta"><span class="edit-link">',
