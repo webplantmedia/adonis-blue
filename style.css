@@ -3314,6 +3314,12 @@ a:hover, a:active {
 .content-jetpack-testimonial .testimonial-entry-wrapper {
   padding: 0 40px;
   background-color: #f7f7f7;
+  position: relative;
+}
+
+.content-jetpack-testimonial .testimonial-entry-wrapper .entry-footer {
+  left: 5px;
+  bottom: 0;
 }
 
 .content-jetpack-testimonial .testimonial-entry {
