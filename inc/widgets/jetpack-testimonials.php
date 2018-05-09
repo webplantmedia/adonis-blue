@@ -286,7 +286,7 @@ class Crimson_Rose_Content_Widget_Jetpack_Testimonials extends Crimson_Rose_Widg
 							$temp .= sprintf(
 								'<a class="post-edit-link" href="%1$s">%2$s <span class="screen-reader-text">%3$s</span></a>',
 								esc_url( get_edit_post_link( $post_id ) ),
-								__( 'Edit', 'crimson-rose' ),
+								esc_html__( 'Edit', 'crimson-rose' ),
 								get_the_title()
 							);
 						$temp .= '</span></div>';

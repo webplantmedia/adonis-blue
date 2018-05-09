@@ -1,9 +1,15 @@
 /**
- * File navigation.js.
+ * Search for headings with class wpm-accordion, and turn it into an accordion.
  *
- * Handles toggling the navigation menu for small screens and enables TAB key
- * navigation support for dropdown menus.
+ * @package WordPress
+ * @subpackage Crimson_Rose
+ * @since 1.01
+ * @author Chris Baldelomar <chris@webplantmedia.com>
+ * @copyright Copyright (c) 2018, Chris Baldelomar
+ * @link https://webplantmedia.com/product/crimson-rose-wordpress-theme/
+ * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
+
 ( function($) {
 	'use strict';
 

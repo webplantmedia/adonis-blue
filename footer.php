@@ -4,9 +4,13 @@
  *
  * Contains the closing of the #content div and all content after.
  *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package Crimson_Rose
+ * @package WordPress
+ * @subpackage Crimson_Rose
+ * @since 1.01
+ * @author Chris Baldelomar <chris@webplantmedia.com>
+ * @copyright Copyright (c) 2018, Chris Baldelomar
+ * @link https://webplantmedia.com/product/crimson-rose-wordpress-theme/
+ * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
 $footer_1 = is_active_sidebar( 'footer-1' );

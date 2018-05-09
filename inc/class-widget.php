@@ -2,11 +2,21 @@
 /**
  * Widget base class.
  *
- * @package Crimson_Rose
+ * @package WordPress
+ * @subpackage Crimson_Rose
+ * @since 1.01
+ * @author Chris Baldelomar <chris@webplantmedia.com>
+ * @copyright Copyright (c) 2018, Chris Baldelomar
+ * @link https://webplantmedia.com/product/crimson-rose-wordpress-theme/
+ * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
 /**
- * Widget base
+ * Class: Widget base.
+ *
+ * @since Crimson_Rose 1.01
+ *
+ * @see WP_Widget
  */
 class Crimson_Rose_Widget extends WP_Widget {
 
@@ -18,7 +28,11 @@ class Crimson_Rose_Widget extends WP_Widget {
 	public $selective_refresh = true;
 
 	/**
-	 * Constructor.
+	 * __construct
+	 *
+	 * @since Crimson_Rose 1.0
+	 *
+	 * @return void
 	 */
 	public function __construct() {
 		$widget_ops = array(
@@ -33,6 +47,14 @@ class Crimson_Rose_Widget extends WP_Widget {
 		add_action( 'wp_ajax_crimson_rose_post_lookup', array( &$this, 'post_lookup_callback' ) );
 	}
 
+	/**
+	 * Echo post title and id for ajax request. Used in widget for searching
+	 * for post by title.
+	 *
+	 * @since Crimson_Rose 1.0
+	 *
+	 * @return void
+	 */
 	public function post_lookup_callback() {
 		global $wpdb; //get access to the WordPress database object variable
 
@@ -80,11 +102,12 @@ class Crimson_Rose_Widget extends WP_Widget {
 	}
 
 	/**
-	 * Enqueue scripts.
+	 * Enqueue Scripts
 	 *
-	 * @since 1.0
+	 * @since Crimson_Rose 1.0
 	 *
-	 * @param string $hook_suffix enqueue scripts.
+	 * @param string $hook_suffix
+	 * @return void
 	 */
 	public function enqueue_scripts( $hook_suffix ) {
 		if ( 'widgets.php' !== $hook_suffix ) {
@@ -102,6 +125,14 @@ class Crimson_Rose_Widget extends WP_Widget {
 		wp_enqueue_script( 'crimson-rose-post-select', get_template_directory_uri() . '/js/admin/admin-post-select.js', array(), CRIMSON_ROSE_VERSION, true );
 	}
 
+	/**
+	 * Sanitize options.
+	 *
+	 * @since Crimson_Rose 1.0
+	 *
+	 * @param array $instance
+	 * @return array
+	 */
 	function sanitize( $instance ) {
 		if ( ! $this->settings ) {
 			return $instance;
@@ -150,6 +181,16 @@ class Crimson_Rose_Widget extends WP_Widget {
 		return $instance;
 	}
 
+	/**
+	 * Check if default value needs to be returned.
+	 *
+	 * @since Crimson_Rose 1.0
+	 *
+	 * @param string $key
+	 * @param array $instance
+	 * @param array $setting
+	 * @return array
+	 */
 	function default_sanitize_value( $key, $instance, $setting ) {
 		if ( array_key_exists( $key, $instance ) ) {
 			return $instance[ $key ];
@@ -159,6 +200,16 @@ class Crimson_Rose_Widget extends WP_Widget {
 		}
 	}
 
+	/**
+	 * Properly save user input.
+	 *
+	 * @since Crimson_Rose 1.0
+	 *
+	 * @param string $key
+	 * @param array $instance
+	 * @param array $setting
+	 * @return mixed
+	 */
 	function default_update_value( $key, $instance, $setting ) {
 		if ( array_key_exists( $key, $instance ) ) {
 			return $instance[ $key ];
@@ -174,10 +225,10 @@ class Crimson_Rose_Widget extends WP_Widget {
 	}
 
 	/**
-	 * Update function.
+	 * Update
 	 *
-	 * @see WP_Widget->update
-	 * @access public
+	 * @since Crimson_Rose 1.0
+	 *
 	 * @param array $new_instance
 	 * @param array $old_instance
 	 * @return array
@@ -230,6 +281,16 @@ class Crimson_Rose_Widget extends WP_Widget {
 		return $instance;
 	}
 
+	/**
+	 * Sanitize Instance
+	 *
+	 * @since Crimson_Rose 1.0
+	 *
+	 * @param array $setting
+	 * @param mixed $new_value
+	 * @param string $action
+	 * @return mixed
+	 */
 	function sanitize_instance( $setting, $new_value, $action = 'update' ) {
 		if ( ! isset( $setting['sanitize'] ) ) {
 			return $new_value;
@@ -305,10 +366,11 @@ class Crimson_Rose_Widget extends WP_Widget {
 	}
 
 	/**
-	 * Form function.
+	 * This functions provides the big picture logic
+	 * for displaying each type of user input field. 
 	 *
-	 * @see WP_Widget->form
-	 * @access public
+	 * @since Crimson_Rose 1.0
+	 *
 	 * @param array $instance
 	 * @return void
 	 */
@@ -386,7 +448,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 		</div>
 
 		<?php if ( $display_repeater ) : ?>
-				<?php $selector = '#' . $this->id . ' .panel-repeater-container'; ?>
+				<?php $selector = '#' . esc_attr( $this->id ) . ' .panel-repeater-container'; ?>
 				<script type="text/javascript">
 					/* <![CDATA[ */
 					( function( $ ) {
@@ -408,7 +470,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 		<?php endif; ?>
 
 		<?php if ( $display_panels ) : ?>
-				<?php $selector = '#' . $this->id . ' .panel-container'; ?>
+				<?php $selector = '#' . esc_attr( $this->id ) . ' .panel-container'; ?>
 				<script type="text/javascript">
 					/* <![CDATA[ */
 					( function( $ ) {
@@ -429,24 +491,53 @@ class Crimson_Rose_Widget extends WP_Widget {
 		<?php
 	}
 
+	/**
+	 * Display HTML before panels start
+	 *
+	 * @since Crimson_Rose 1.0
+	 *
+	 * @return void
+	 */
 	public function display_before_panels() {
 		?>
 		<div class="panel-container">
 		<?php
 	}
 
+	/**
+	 * Display HTML after panels start
+	 *
+	 * @since Crimson_Rose 1.0
+	 *
+	 * @return void
+	 */
 	public function display_after_panels() {
 		?>
 		</div>
 		<?php
 	}
 
+	/**
+	 * Display HTML before panel repeater start
+	 *
+	 * @since Crimson_Rose 1.0
+	 *
+	 * @return void
+	 */
 	public function display_before_panel_repeater() {
 		?>
 		<div class="panel-repeater-container">
 		<?php
 	}
 
+	/**
+	 * Display HTML after panel repeater start
+	 *
+	 * @since Crimson_Rose 1.0
+	 *
+	 * @param int $panel_count
+	 * @return void
+	 */
 	public function display_after_panel_repeater( $panel_count ) {
 		?>
 		</div>
@@ -455,6 +546,14 @@ class Crimson_Rose_Widget extends WP_Widget {
 		<?php
 	}
 
+	/**
+	 * Display HTML before panel start
+	 *
+	 * @since Crimson_Rose 1.0
+	 *
+	 * @param string $title
+	 * @return void
+	 */
 	public function display_before_panel( $title ) {
 		?>
 		<div class="widget-panel">
@@ -463,6 +562,14 @@ class Crimson_Rose_Widget extends WP_Widget {
 		<?php
 	}
 
+	/**
+	 * Display HTML after panel start
+	 *
+	 * @since Crimson_Rose 1.0
+	 *
+	 * @param bool $display_repeater
+	 * @return void
+	 */
 	public function display_after_panel( $display_repeater = false ) {
 		?>
 			</div>
@@ -483,6 +590,18 @@ class Crimson_Rose_Widget extends WP_Widget {
 		<?php
 	}
 
+	/**
+	 * Display Setting
+	 *
+	 * @since Crimson_Rose 1.0
+	 *
+	 * @param array $instance
+	 * @param string $key
+	 * @param array $setting
+	 * @param bool $display_repeater
+	 * @param int $count
+	 * @return void
+	 */
 	public function display_settings( $instance, $key, $setting, $display_repeater = false, $count = 1 ) {
 		$value = array_key_exists( $key, $instance ) ? $instance[ $key ] : $setting['std'];
 
@@ -567,10 +686,10 @@ class Crimson_Rose_Widget extends WP_Widget {
 				<p><?php echo esc_attr( $setting['label'] ); ?></p>
 				<p>
 					<?php foreach ( $setting['options'] as $id => $label ) : ?>
-					<label for="<?php echo esc_attr( sanitize_title( $label ) ); ?>-<?php echo esc_attr( $id ); ?>">
-						<input type="checkbox" id="<?php echo esc_attr( sanitize_title( $label ) ); ?>-<?php echo esc_attr( $id ); ?>" name="<?php echo esc_attr( $field_name ); ?>[]" value="<?php echo esc_attr( $id ); ?>" <?php if ( in_array( $id, $value ) ) : ?>checked="checked"<?php endif; ?>/>
-						<?php echo esc_attr( $label ); ?><br />
-					</label>
+						<label for="<?php echo esc_attr( sanitize_title( $label ) ); ?>-<?php echo esc_attr( $id ); ?>">
+							<input type="checkbox" id="<?php echo esc_attr( sanitize_title( $label ) ); ?>-<?php echo esc_attr( $id ); ?>" name="<?php echo esc_attr( $field_name ); ?>[]" value="<?php echo esc_attr( $id ); ?>" <?php if ( in_array( $id, $value ) ) : ?>checked="checked"<?php endif; ?>/>
+							<?php echo esc_attr( $label ); ?><br />
+						</label>
 					<?php endforeach; ?>
 					<?php if ( isset( $setting['description'] ) ) : ?>
 						<span class="description"><?php echo esc_html( $setting['description'] ); ?></span>
@@ -585,7 +704,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 					<label for="<?php echo esc_attr( $field_id ); ?>"><?php echo esc_html( $setting['label'] ); ?></label>
 					<select class="widefat" id="<?php echo esc_attr( $field_id ); ?>" name="<?php echo esc_attr( $field_name ); ?>">
 						<?php foreach ( $setting['options'] as $key => $label ) : ?>
-						<option value="<?php echo esc_attr( $key ); ?>" <?php selected( $key, $value ); ?>><?php echo esc_attr( $label ); ?></option>
+							<option value="<?php echo esc_attr( $key ); ?>" <?php selected( $key, $value ); ?>><?php echo esc_attr( $label ); ?></option>
 						<?php endforeach; ?>
 					</select>
 					<?php if ( isset( $setting['description'] ) ) : ?>
@@ -670,7 +789,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 					<label for="<?php echo esc_attr( $field_id ); ?>"><?php echo esc_html( $setting['label'] ); ?></label>
 				</p>
 				<div class="color-picker-wrapper">
-					<input type="text" class="widefat color-picker" id="<?php echo esc_attr( $field_id ); ?>" name="<?php echo esc_attr( $field_name ); ?>" data-default-color="<?php echo $setting['std']; ?>" value="<?php echo $value; ?>" />
+					<input type="text" class="widefat color-picker" id="<?php echo esc_attr( $field_id ); ?>" name="<?php echo esc_attr( $field_name ); ?>" data-default-color="<?php echo esc_attr( $setting['std'] ); ?>" value="<?php echo esc_attr( $value ); ?>" />
 					<script type="text/javascript">
 						/* <![CDATA[ */
 						( function( $ ){
@@ -717,6 +836,14 @@ class Crimson_Rose_Widget extends WP_Widget {
 		}
 	}
 
+	/**
+	 * Helper method to go from hex to rgb color.
+	 *
+	 * @since Crimson_Rose 1.0
+	 *
+	 * @param string $colour
+	 * @return array
+	 */
 	function hex2rgb( $colour ) {
 		if ( $colour[0] == '#' ) {
 				$colour = substr( $colour, 1 );
@@ -735,13 +862,12 @@ class Crimson_Rose_Widget extends WP_Widget {
 	}
 
 	/**
-	 * Accept only comma delimited numbers.
+	 * Convert post_ids string to array of ints.
 	 *
-	 * @since 4.8.1
-	 * @access private
+	 * @since Crimson_Rose 1.0
 	 *
 	 * @param string $post_ids
-	 * @return string
+	 * @return array
 	 */
 	private function sanitize_ids_array( $post_ids ) {
 		$post_ids = explode( ',', $post_ids );
@@ -764,6 +890,14 @@ class Crimson_Rose_Widget extends WP_Widget {
 		return array();
 	}
 
+	/**
+	 * Wrapper function to sanitize string of comma delimited ids.
+	 *
+	 * @since Crimson_Rose 1.0
+	 *
+	 * @param mixed $post_ids
+	 * @return void
+	 */
 	private function sanitize_ids( $post_ids ) {
 		$post_ids_array = $this->sanitize_ids_array( $post_ids );
 
@@ -776,6 +910,14 @@ class Crimson_Rose_Widget extends WP_Widget {
 		return '';
 	}
 
+	/**
+	 * Comma delimited post slugs string to array
+	 *
+	 * @since Crimson_Rose 1.0
+	 *
+	 * @param string $post_ids
+	 * @return void
+	 */
 	private function sanitize_slugs_array( $post_ids ) {
 		$post_ids = explode( ',', $post_ids );
 
@@ -797,6 +939,14 @@ class Crimson_Rose_Widget extends WP_Widget {
 		return array();
 	}
 
+	/**
+	 * Wrapper function to sanitize post slugs in comma delimited string.
+	 *
+	 * @since Crimson_Rose 1.0
+	 *
+	 * @param string $post_ids
+	 * @return void
+	 */
 	private function sanitize_slugs( $post_ids ) {
 		$post_ids_array = $this->sanitize_slugs_array( $post_ids );
 
@@ -809,6 +959,14 @@ class Crimson_Rose_Widget extends WP_Widget {
 		return '';
 	}
 
+	/**
+	 * Sanitize URL. This fixes a link bug in the Customizer.
+	 *
+	 * @since Crimson_Rose 1.0
+	 *
+	 * @param string $value
+	 * @return string
+	 */
 	function sanitize_url_for_customizer( $value ) {
 		if ( is_customize_preview() || is_preview() ) {
 			// fixes obscure bug when admin panel is ssl and front end is not ssl.
@@ -818,6 +976,14 @@ class Crimson_Rose_Widget extends WP_Widget {
 		return $value;
 	}
 
+	/**
+	 * Sanitize background size
+	 *
+	 * @since Crimson_Rose 1.0
+	 *
+	 * @param mixed $value
+	 * @return mixed
+	 */
 	function sanitize_background_size( $value ) {
 		$whitelist = $this->options_background_size();
 
@@ -828,17 +994,32 @@ class Crimson_Rose_Widget extends WP_Widget {
 		return '';
 	}
 
+	/**
+	 * Background size CSS options
+	 *
+	 * @since Crimson_Rose 1.0
+	 *
+	 * @return array
+	 */
 	function options_background_size() {
 		return array(
-			'cover' => __( 'Cover', 'crimson-rose' ),
-			'contain' => __( 'Contain', 'crimson-rose' ),
-			'stretch' => __( 'Stretch', 'crimson-rose' ),
-			'fit-width' => __( 'Fit Width', 'crimson-rose' ),
-			'fit-height' => __( 'Fit Height', 'crimson-rose' ),
-			'auto' => __( 'Auto', 'crimson-rose' ),
+			'cover' => esc_html__( 'Cover', 'crimson-rose' ),
+			'contain' => esc_html__( 'Contain', 'crimson-rose' ),
+			'stretch' => esc_html__( 'Stretch', 'crimson-rose' ),
+			'fit-width' => esc_html__( 'Fit Width', 'crimson-rose' ),
+			'fit-height' => esc_html__( 'Fit Height', 'crimson-rose' ),
+			'auto' => esc_html__( 'Auto', 'crimson-rose' ),
 		);
 	}
 
+	/**
+	 * Get CSS background size options
+	 *
+	 * @since Crimson_Rose 1.0
+	 *
+	 * @param string $value
+	 * @return array
+	 */
 	function get_background_size( $value ) {
 		switch ( $value ) {
 			case 'stretch' :
@@ -854,17 +1035,4 @@ class Crimson_Rose_Widget extends WP_Widget {
 
 		return $value;
 	}
-
-	/**
-	 * Widget function.
-	 *
-	 * @see    WP_Widget
-	 * @access public
-	 *
-	 * @param array $args
-	 * @param array $instance
-	 *
-	 * @return void
-	 */
-	public function widget( $args, $instance ) {}
 }

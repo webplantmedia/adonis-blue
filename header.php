@@ -4,9 +4,13 @@
  *
  * This is the template that displays all of the <head> section and everything up until <div id="content">
  *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package Crimson_Rose
+ * @package WordPress
+ * @subpackage Crimson_Rose
+ * @since 1.01
+ * @author Chris Baldelomar <chris@webplantmedia.com>
+ * @copyright Copyright (c) 2018, Chris Baldelomar
+ * @link https://webplantmedia.com/product/crimson-rose-wordpress-theme/
+ * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
 ?>
@@ -83,7 +87,7 @@
 		<header class="archive-page-header">
 			<div class="site-boundary">
 				<h1 class="page-title">
-					<span class="archive-type"><?php echo esc_html__( 'Search Results for:', 'crimson-rose' ); ?></span>
+					<span class="archive-type"><?php esc_html_e( 'Search Results for:', 'crimson-rose' ); ?></span>
 					<span class="archive-title"><?php echo get_search_query(); ?></span>
 				</h1>
 			</div>

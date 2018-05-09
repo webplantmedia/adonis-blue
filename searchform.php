@@ -2,7 +2,13 @@
 /**
  * Custom search form.
  *
- * @package Crimson_Rose
+ * @package WordPress
+ * @subpackage Crimson_Rose
+ * @since 1.01
+ * @author Chris Baldelomar <chris@webplantmedia.com>
+ * @copyright Copyright (c) 2018, Chris Baldelomar
+ * @link https://webplantmedia.com/product/crimson-rose-wordpress-theme/
+ * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
 ?>
@@ -15,7 +21,7 @@
 				esc_html_e( 'Search for:', 'crimson-rose' ); ?>
 			</span>
 
-			<input type="search" class="search-field" placeholder="<?php esc_attr_e( 'Type keyword', 'crimson-rose' ); ?>" title="<?php esc_attr_e( 'Press Enter to submit your search', 'crimson-rose' ) ?>" value="<?php echo esc_attr( get_search_query() ); ?>" name="s">
+			<input type="search" class="search-field" placeholder="<?php esc_attr_e( 'Type keyword', 'crimson-rose' ); ?>" title="<?php esc_attr_e( 'Press Enter to submit your search', 'crimson-rose' ) ?>" value="<?php esc_attr( get_search_query() ); ?>" name="s">
 		</label>
 
 		<button type="submit" class="search-submit">
@@ -24,4 +30,3 @@
 		</button>
 	</form>
 </div>
-

@@ -95,7 +95,7 @@ if ( ! function_exists( 'crimson_rose_entry_footer' ) ) :
 		edit_post_link(
 			sprintf(
 				'%1$s <span class="screen-reader-text">%2$s</span>',
-				__( 'Edit', 'crimson-rose' ),
+				esc_html__( 'Edit', 'crimson-rose' ),
 				get_the_title()
 			),
 			'<span class="edit-link">',

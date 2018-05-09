@@ -2,16 +2,20 @@
 /**
  * Partials template for displaying top navigation in header.php
  *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package Crimson_Rose
+ * @package WordPress
+ * @subpackage Crimson_Rose
+ * @since 1.01
+ * @author Chris Baldelomar <chris@webplantmedia.com>
+ * @copyright Copyright (c) 2018, Chris Baldelomar
+ * @link https://webplantmedia.com/product/crimson-rose-wordpress-theme/
+ * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
 if ( ! has_nav_menu( 'menu-3' ) && ! has_nav_menu( 'menu-2' ) && ! has_nav_menu( 'social' ) ) {
 	return;
 }
-
 ?>
+
 <div class="top-header">
 	<div class="site-boundary">
 		<div class="top-left-header">

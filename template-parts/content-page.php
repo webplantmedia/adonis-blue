@@ -1,10 +1,15 @@
 <?php
 /**
+ * Crimson Rose functions and definitions
  * Template part for displaying page content in page.php
  *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package Crimson_Rose
+ * @package WordPress
+ * @subpackage Crimson_Rose
+ * @since 1.01
+ * @author Chris Baldelomar <chris@webplantmedia.com>
+ * @copyright Copyright (c) 2018, Chris Baldelomar
+ * @link https://webplantmedia.com/product/crimson-rose-wordpress-theme/
+ * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
 ?>
@@ -33,7 +38,7 @@
 				edit_post_link(
 					sprintf(
 						'%1$s <span class="screen-reader-text">%2$s</span>',
-						__( 'Edit', 'crimson-rose' ),
+						esc_html__( 'Edit', 'crimson-rose' ),
 						get_the_title()
 					),
 					'<div class="entry-footer-meta"><span class="edit-link">',

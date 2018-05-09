@@ -488,7 +488,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 							edit_post_link(
 								sprintf(
 									'%1$s <span class="screen-reader-text">%2$s</span>',
-									__( 'Edit', 'crimson-rose' ),
+									esc_html__( 'Edit', 'crimson-rose' ),
 									get_the_title()
 								),
 								'<div class="entry-footer-meta"><span class="edit-link">',
