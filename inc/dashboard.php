@@ -63,7 +63,7 @@ function crimson_rose_dashboard_static_feed() {
 }
 
 function crimson_rose_theme_info() {
-	add_theme_page('Theme Add-ons', 'Theme Add-ons', 'read', 'crimson-rose-theme-info', 'crimson_rose_theme_page');
+	add_theme_page('Theme Add-ons', 'Theme Add-ons', 'edit_theme_options', 'crimson-rose-theme-info', 'crimson_rose_theme_page');
 }
 
 add_action('admin_menu', 'crimson_rose_theme_info');

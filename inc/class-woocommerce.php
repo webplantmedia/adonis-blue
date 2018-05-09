@@ -303,7 +303,7 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 			// $link             = get_permalink( wc_get_page_id( 'shop' ));
 			$cart_items_count = $woocommerce->cart->cart_contents_count;
 
-			$temp = "<a class='cart_dropdown_link' href='" . $link . "'><i class='genericons-neue genericons-neue-cart'></i><span class='alert-count'>" . $cart_items_count . "</span></a><!--<span class='cart_subtotal'>" . $cart_subtotal . "</span>-->";
+			$temp = "<a class='cart_dropdown_link' href='" . esc_url( $link ) . "'><i class='genericons-neue genericons-neue-cart'></i><span class='alert-count'>" . $cart_items_count . "</span></a><!--<span class='cart_subtotal'>" . $cart_subtotal . "</span>-->";
 
 			$fragments['a.cart_dropdown_link'] = $temp;
 

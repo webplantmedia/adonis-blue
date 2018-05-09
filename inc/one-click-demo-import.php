@@ -145,26 +145,6 @@ function crimson_rose_ocdi_after_import_setup() {
 			update_option( 'page_for_posts', $blog_page_id->ID );
 		}
 	}
-
-	if ( 'post' === get_post_type( 1 ) ) {
-		// set sample post to draft
-		$my_post = array(
-			'ID' => 1,
-			'post_status' => 'draft',
-		);
-
-		wp_update_post( $my_post );
-	}
-
-	if ( 'post' === get_post_type( 2 ) ) {
-		// set sample page to draft
-		$my_post = array(
-			'ID' => 2,
-			'post_status' => 'draft',
-		);
-
-		wp_update_post( $my_post );
-	}
 }
 add_action( 'pt-ocdi/after_import', 'crimson_rose_ocdi_after_import_setup' );
 
@@ -177,14 +157,14 @@ function crimson_rose_ocdi_plugin_intro_text( $default_text ) {
 
 		<ul>
 			<li>No existing posts, pages, categories, images, or custom post types will be deleted or modified.</li>
-			<li>When doing a "Full Demo Import", your <a href="'.admin_url( 'widgets.php' ).'" target="_blank">sidebar widgets</a> will be cleared, and replaced with our demo sidebar widgets.</li>
+			<li>When doing a "Full Demo Import", your <a href="'.esc_url( admin_url( 'widgets.php' ) ).'" target="_blank">sidebar widgets</a> will be cleared, and replaced with our demo sidebar widgets.</li>
 			<li>Please click on the Import button only once and wait, it can take a couple of minutes.</li>
 		</ul>
 
 		<p><strong>After Your Import:</strong></p>
 
 		<ul>
-			<li>We try to set your menu, front page, and blog page, automatically. If your menu is not set, please <a href="'.admin_url( 'nav-menus.php' ).'" target="_blank">set your menu manually</a>.</li>
+			<li>We try to set your menu, front page, and blog page, automatically. If your menu is not set, please <a href="'.esc_url( admin_url( 'nav-menus.php' ) ).'" target="_blank">set your menu manually</a>.</li>
 		</ul>
 
 		<hr>
