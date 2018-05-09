@@ -17,7 +17,7 @@ class Crimson_Rose_Content_Widget_Jetpack_Testimonials extends Crimson_Rose_Widg
 		$this->settings           = array(
 			'title' => array(
 				'type'  => 'text',
-				'std'   => 'THOUSANDS OF HAPPY CUSTOMERS AND COUNTING',
+				'std'   => __( 'THOUSANDS OF HAPPY CUSTOMERS AND COUNTING', 'crimson-rose' ),
 				'label' => __( 'Title:', 'crimson-rose' ),
 				'sanitize' => 'text',
 			),

@@ -26,7 +26,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Blog_Post' ) ) :
 			$this->settings           = array(
 				'title' => array(
 					'type'  => 'text',
-					'std'   => 'BLOG',
+					'std'   => __( 'BLOG', 'crimson-rose' ),
 					'label' => __( 'Title:', 'crimson-rose' ),
 					'sanitize' => 'text',
 				),
@@ -69,7 +69,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Blog_Post' ) ) :
 				),
 				'button_text' => array(
 					'type'  => 'text',
-					'std'   => 'See All Posts',
+					'std'   => __( 'See All Posts', 'crimson-rose' ),
 					'label' => __( 'Button Text:', 'crimson-rose' ),
 					'sanitize' => 'text',
 				),

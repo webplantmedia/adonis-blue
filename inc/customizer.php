@@ -123,8 +123,8 @@ function crimson_rose_customize_register( $wp_customize ) {
 		'description' => $description,
 		'section' => $section_id,
 		'choices' => apply_filters( 'crimson-rose-header-background-image-color', array(
-			'none' => 'No Image',
-			'red' => 'Red',
+			'none' => __( 'No Image', 'crimson-rose' ),
+			'red' => __( 'Red', 'crimson-rose' ),
 		) ),
 	) );
 
@@ -209,8 +209,8 @@ function crimson_rose_customize_register( $wp_customize ) {
 		'description' => $description,
 		'section' => $section_id,
 		'choices' => apply_filters( 'crimson-rose-footer-background-image-color', array(
-			'none' => 'No Image',
-			'red' => 'Red',
+			'none' => __( 'No Image', 'crimson-rose' ),
+			'red' => __( 'Red', 'crimson-rose' ),
 		) ),
 	) );
 
@@ -314,9 +314,9 @@ function crimson_rose_customize_register( $wp_customize ) {
 		'description' => __( 'When you insert a link on its own line in the WP Editor, the theme turns it into a button. Choose the default style of your button to display in your post and pages.', 'crimson-rose' ),
 		'section' => $section_id,
 		'choices' => array(
-			'default' => 'Default Button',
-			'button-1' => 'Button Style 1',
-			'button-2' => 'Button Style 2',
+			'default' => __( 'Default Button', 'crimson-rose' ),
+			'button-1' => __( 'Button Style 1', 'crimson-rose' ),
+			'button-2' => __( 'Button Style 2', 'crimson-rose' ),
 		),
 	) );
 
@@ -407,10 +407,10 @@ function crimson_rose_customize_register( $wp_customize ) {
 		'label' => __( 'Blog Display', 'crimson-rose' ),
 		'section' => $section_id,
 		'choices' => array(
-			'blog1' => 'Lead Excerpt + Grid',
-			'blog4' => 'Grid',
-			'blog2' => 'Excerpt',
-			'blog3' => 'Content',
+			'blog1' => __( 'Lead Excerpt + Grid', 'crimson-rose' ),
+			'blog4' => __( 'Grid', 'crimson-rose' ),
+			'blog2' => __( 'Excerpt', 'crimson-rose' ),
+			'blog3' => __( 'Content', 'crimson-rose' ),
 		),
 	) );
 
@@ -426,10 +426,10 @@ function crimson_rose_customize_register( $wp_customize ) {
 		'label' => __( 'Archive Display', 'crimson-rose' ),
 		'section' => $section_id,
 		'choices' => array(
-			'blog1' => 'Lead Excerpt + Grid',
-			'blog4' => 'Grid',
-			'blog2' => 'Excerpt',
-			'blog3' => 'Content',
+			'blog1' => __( 'Lead Excerpt + Grid', 'crimson-rose' ),
+			'blog4' => __( 'Grid', 'crimson-rose' ),
+			'blog2' => __( 'Excerpt', 'crimson-rose' ),
+			'blog3' => __( 'Content', 'crimson-rose' ),
 		),
 	) );
 
@@ -445,10 +445,10 @@ function crimson_rose_customize_register( $wp_customize ) {
 		'label' => __( 'Search Display', 'crimson-rose' ),
 		'section' => $section_id,
 		'choices' => array(
-			'blog1' => 'Lead Excerpt + Grid',
-			'blog4' => 'Grid',
-			'blog2' => 'Excerpt',
-			'blog3' => 'Content',
+			'blog1' => __( 'Lead Excerpt + Grid', 'crimson-rose' ),
+			'blog4' => __( 'Grid', 'crimson-rose' ),
+			'blog2' => __( 'Excerpt', 'crimson-rose' ),
+			'blog3' => __( 'Content', 'crimson-rose' ),
 		),
 	) );
 
@@ -549,9 +549,9 @@ function crimson_rose_customize_register( $wp_customize ) {
 		'label' => __( 'Shop Columns', 'crimson-rose' ),
 		'section' => $section_id,
 		'choices' => array(
-			2 => '2',
-			3 => '3',
-			4 => '4',
+			2 => __( '2', 'crimson-rose' ),
+			3 => __( '3', 'crimson-rose' ),
+			4 => __( '4', 'crimson-rose' ),
 		),
 	) );
 
@@ -567,9 +567,9 @@ function crimson_rose_customize_register( $wp_customize ) {
 		'label' => __( 'Shop Archive Columns', 'crimson-rose' ),
 		'section' => $section_id,
 		'choices' => array(
-			2 => '2',
-			3 => '3',
-			4 => '4',
+			2 => __( '2', 'crimson-rose' ),
+			3 => __( '3', 'crimson-rose' ),
+			4 => __( '4', 'crimson-rose' ),
 		),
 	) );
 
@@ -585,9 +585,9 @@ function crimson_rose_customize_register( $wp_customize ) {
 		'label' => __( 'Related Products Columns', 'crimson-rose' ),
 		'section' => $section_id,
 		'choices' => array(
-			2 => '2',
-			3 => '3',
-			4 => '4',
+			2 => __( '2', 'crimson-rose' ),
+			3 => __( '3', 'crimson-rose' ),
+			4 => __( '4', 'crimson-rose' ),
 		),
 	) );
 

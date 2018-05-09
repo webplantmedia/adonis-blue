@@ -32,19 +32,19 @@ function crimson_rose_dashboard_get_services() {
 function crimson_rose_dashboard_static_feed() {
 	$blog = array(
 		array(
-			'title' => 'The Best Setup For Your Self Hosted WordPress Shopping Site and Blog',
+			'title' => __( 'The Best Setup For Your Self Hosted WordPress Shopping Site and Blog', 'crimson-rose' ),
 			'link' => 'https://webplantmedia.com/the-best-setup-for-your-wordpress-shopping-site-and-blog/',
 		),
 		array(
-			'title' => 'How to Transfer and Migrate Your Site Content from WordPress.com to a Self Hosted WordPress.org Site on Bluehost &#8211; Step By Step Instructions',
+			'title' => __( 'How to Transfer and Migrate Your Site Content from WordPress.com to a Self Hosted WordPress.org Site on Bluehost &#8211; Step By Step Instructions', 'crimson-rose' ),
 			'link' => 'https://webplantmedia.com/how-to-transfer-and-migrate-your-site-content-from-wordpress-com-to-a-self-hosted-wordpress-org-site-on-bluehost-step-by-step-instructions/',
 		),
 		array(
-			'title' => 'WordPress.com vs WordPress.org: What is the Difference?',
+			'title' => __( 'WordPress.com vs WordPress.org: What is the Difference?', 'crimson-rose' ),
 			'link' => 'https://webplantmedia.com/wordpress-com-vs-wordpress-org-what-is-the-difference/',
 		),
 		array(
-			'title' => 'The Best Managed WordPress Hosting for Your Small Business Site',
+			'title' => __( 'The Best Managed WordPress Hosting for Your Small Business Site', 'crimson-rose' ),
 			'link' => 'https://webplantmedia.com/the-best-managed-wordpress-hosting-for-your-small-business-site/',
 		),
 	);
