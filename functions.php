@@ -288,35 +288,35 @@ function crimson_rose_scripts() {
 		}
 	}
 	
-	// Add genericons
+	// Add genericons.
 	wp_enqueue_style( 'genericons-neue', get_parent_theme_file_uri() . '/fonts/genericons-neue/genericons-neue.css', array(), CRIMSON_ROSE_VERSION );
 
-	// Add social logos
-	wp_deregister_style( 'social-logos' ); //remove any plugins that try and use social icons, and use the themes.
+	// Add social logos.
+	wp_deregister_style( 'social-logos' ); // remove any plugins that try and use social icons, and use the themes.
 	wp_enqueue_style( 'social-logos', get_parent_theme_file_uri() . '/fonts/social-logos/social-logos.css', array(), CRIMSON_ROSE_VERSION );
 
-	// Add theme stylesheet
+	// Add theme stylesheet.
 	wp_enqueue_style( 'crimson-rose-style', get_stylesheet_uri() );
 
-	// Add bxslider style
+	// Add bxslider style.
 	wp_enqueue_style( 'bx2slider', get_parent_theme_file_uri() . '/inc/vendors/bx2slider/css/jquery.bx2slider.css', array(), CRIMSON_ROSE_VERSION );
 
-	// Register bxslider
+	// Register bxslider.
 	wp_register_script( 'bx2slider', get_template_directory_uri() . '/inc/vendors/bx2slider/js/jquery.bx2slider.js', array( 'jquery' ), '4.2.14', true );
 
-	// Register accordion
+	// Register accordion.
 	wp_enqueue_script( 'crimson-rose-accordion', get_template_directory_uri() . '/js/accordion.js', array( 'jquery' ), CRIMSON_ROSE_VERSION, true );
 
 	// Add menu script.
 	wp_enqueue_script( 'crimson-rose-navigation', get_template_directory_uri() . '/js/navigation.js', array( 'jquery' ), CRIMSON_ROSE_VERSION, true );
 
-	// Add theme script
+	// Add theme script.
 	wp_enqueue_script( 'crimson-rose-theme', get_template_directory_uri() . '/js/theme.js', array( 'jquery' ), CRIMSON_ROSE_VERSION, true );
 
 	// Helps with accessibility for keyboard only users.
 	wp_enqueue_script( 'crimson-rose-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), CRIMSON_ROSE_VERSION, true );
 
-	// Load comment script
+	// Load comment script.
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -348,7 +348,7 @@ add_action( 'wp_enqueue_scripts', 'crimson_rose_scripts' );
 function crimson_rose_show_full_post() {
 	global $paged;
 
-	// should only show on first page
+	// should only show on first page.
 	if ( $paged ) {
 		return false;
 	}
