@@ -216,6 +216,7 @@ function crimson_rose_ocdi_plugin_intro_text( $default_text ) {
 
 		$html .= '<ul>';
 			$html .= '<li>' . esc_html__( 'No existing posts, pages, categories, images, or custom post types will be deleted or modified.', 'crimson-rose' ) . '</li>';
+			/* Translators: this string is a link to the widgets page on the dashboard. */
 			$html .= '<li>' . sprintf( esc_html__( 'When doing a "Full Demo Import", your %s will be cleared, and replaced with our demo sidebar widgets.', 'crimson-rose' ), '<a href="'.esc_url( admin_url( 'widgets.php' ) ).'" target="_blank">' . esc_html__( 'sidebar widgets', 'crimson-rose' ) . '</a>' ) . '</li>';
 			$html .= '<li>' . esc_html__( 'Please click on the Import button only once and wait, it can take a couple of minutes.', 'crimson-rose' ) . '</li>';
 		$html .= '</ul>';
@@ -223,6 +224,7 @@ function crimson_rose_ocdi_plugin_intro_text( $default_text ) {
 		$html .= '<p><strong>' . esc_html__( 'After Your Import:', 'crimson-rose' ) . '</strong></p>';
 
 		$html .= '<ul>';
+			/* Translators: this string is a link to the menu page on the dashboard. */
 			$html .= '<li>' . sprintf( esc_html__( 'We try to set your menu, front page, and blog page, automatically. If your menu is not set, please %s.', 'crimson-rose' ), '<a href="'.esc_url( admin_url( 'nav-menus.php' ) ).'" target="_blank">' . esc_html__( 'set your menu manually', 'crimson-rose' ) . '</a>' ) . '</li>';
 		$html .= '</ul>';
 

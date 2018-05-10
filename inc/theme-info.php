@@ -27,8 +27,15 @@ $display_version = CRIMSON_ROSE_VERSION;
 			}
 		</style>
 		
-		<h1><?php printf( esc_html__( 'Crimson Rose WordPress Theme - Version&nbsp;%s', 'crimson-rose' ), $display_version ); ?></h1>
+		<h1><?php
+			printf(
+				/* Translators: this string is the currenty theme version number. */
+				esc_html__( 'Crimson Rose WordPress Theme - Version&nbsp;%s', 'crimson-rose' ),
+				esc_html( $display_version )
+			);
+		?></h1>
 
+		<?php /* Translators: this string is a link to the theme authors page. */ ?>
 		<p class="about-text"><?php printf( esc_html__( 'Thank you for using a WordPress theme by %s! We are dedicated to making premium coded themes with beautiful designs that are open source, easy to use, and fast to install.', 'crimson-rose' ), '<a href="https://webplantmedia.com" target="_blank">' . esc_html__( 'Web Plant Media', 'crimson-rose' ) . '</a>' ); ?></p>
 		<div class="wp-badge"><?php esc_html_e( 'Web Plant Media', 'crimson-rose' ); ?></div>
 
@@ -51,9 +58,9 @@ $display_version = CRIMSON_ROSE_VERSION;
 					<div class="col">
 
 						<h3 style="margin:1.33em 0;font-size:1em;line-height:inherit;color:#23282d;">
-							<a target="_blank" href="<?php echo esc_url( $service['link'] ); ?>"><?php echo $service['title']; /* already escaped */ ?></a>
+							<a target="_blank" href="<?php echo esc_url( $service['link'] ); ?>"><?php echo $service['title']; /* WPCS: XSS OK. already escaped */ ?></a>
 						</h3>
-						<p><?php echo $service['description']; ?></p>
+						<p><?php echo $service['description']; /* WPCS: XSS OK. HTML output. */ ?></p>
 
 					</div>
 

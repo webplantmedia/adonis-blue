@@ -617,7 +617,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 		switch ( $setting['type'] ) {
 			case 'description' :
 				?>
-				<p class="description"><?php echo $value; ?></p>
+				<p class="description"><?php echo $value; /* WPCS: XSS OK. HTML output */ ?></p>
 				<?php
 			break;
 
@@ -773,7 +773,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 					<label for="<?php echo esc_attr( $field_id ); ?>"><?php echo esc_html( $setting['label'] ); ?></label>
 					<textarea class="widefat" id="<?php echo esc_attr( $field_id ); ?>"
 					name="<?php echo esc_attr( $field_name ); ?>" rows="<?php echo isset( $setting['rows'] )
-					? $setting['rows'] : 3; ?>"><?php echo esc_html( $value ); ?></textarea>
+					? esc_attr( $setting['rows'] ) : 3; ?>"><?php echo esc_html( $value ); ?></textarea>
 					<?php if ( isset( $setting['description'] ) ) : ?>
 						<span class="description"><?php echo esc_html( $setting['description'] ); ?></span>
 					<?php endif; ?>
@@ -825,7 +825,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 				?>
 
 				<label for="<?php echo esc_attr( $field_id ); ?>"><?php echo esc_html( $setting['label'] ); ?></label>
-				<?php echo $categories_dropdown;  ?>
+				<?php echo $categories_dropdown; /* WPCS: XSS OK. HTML output. */ ?>
 
 				<?php
 			break;

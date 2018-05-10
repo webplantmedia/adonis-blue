@@ -22,6 +22,9 @@
 function crimson_rose_customize_register( $wp_customize ) {
 	global $crimson_rose_default;
 
+	/**
+	 * Load custom Customizer control class.
+	 */
 	require get_template_directory() . '/inc/class-customize-control.php';
 	
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
@@ -108,6 +111,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 
 	if ( ! crimson_rose_is_watercolor_backgrounds_activated() ) {
 		$description = sprintf(
+			/* Translators: this string is a link to a self hosted WordPress plugin. */
 			esc_html__( 'To add more watercolor backgrounds, please download our %s plugin.', 'crimson-rose' ),
 			'<a target="_blank" href="https://webplantmedia.com/product/crimson-rose-watercolor-backgrounds-wordpress-plugin/"><span style="text-decoration:none;" class="dashicons dashicons-external"></span>' . esc_html__( 'Watercolor Backgrounds', 'crimson-rose' ) . '</a>'
 		);
@@ -197,6 +201,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 
 	if ( ! crimson_rose_is_watercolor_backgrounds_activated() ) {
 		$description = sprintf(
+			/* Translators: this string is a link to a self hosted WordPress plugin. */
 			esc_html__( 'To add more watercolor backgrounds, please download our %s plugin.', 'crimson-rose' ),
 			'<a target="_blank" href="https://webplantmedia.com/product/crimson-rose-watercolor-backgrounds-wordpress-plugin/"><span style="text-decoration:none;" class="dashicons dashicons-external"></span>' . esc_html__( 'Watercolor Backgrounds', 'crimson-rose' ) . '</a>'
 		);
@@ -968,6 +973,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 			array(
 				'label' => esc_html__( 'Font Customization', 'crimson-rose' ),
 				'description' => sprintf(
+					/* Translators: this string is a link to a self hosted WordPress plugin. */
 					esc_html__( 'To easily change the font styles for your theme, please download our %s plugin.', 'crimson-rose' ),
 					'<a target="_blank" href="https://webplantmedia.com/product/designer-fonts-wordpress-plugin/"><span style="text-decoration:none;" class="dashicons dashicons-external"></span>' . esc_html__( 'Designer Fonts', 'crimson-rose' ) . '</a>'
 				),

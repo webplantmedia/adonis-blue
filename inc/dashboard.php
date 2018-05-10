@@ -80,7 +80,7 @@ function crimson_rose_dashboard_static_feed() {
 		<div>
 			<span class="dashicons dashicons-thumbs-up" style="color:#82878c;float:left;"></span>
 			<p style="overflow:hidden;padding-left:10px;">
-				<a target="_blank" href="<?php echo esc_attr( $post['link'] ); ?>"><?php echo $post['title']; /* alread escaped */ ?></a>
+				<a target="_blank" href="<?php echo esc_attr( $post['link'] ); ?>"><?php echo $post['title']; /* WPCS: XSS OK. Already escaped. */ ?></a>
 			</p>
 		</div>
 	<?php endforeach; ?>

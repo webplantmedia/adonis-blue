@@ -23,9 +23,9 @@
 
 			<p><?php
 				printf(
-					/* translators: 1: link to WP admin new post page. */
-					__( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'crimson-rose' ),
-					esc_url( admin_url( 'post-new.php' ) )
+					/* translators: link to WP admin new post page. */
+					esc_html__( 'Ready to publish your first post? %s.', 'crimson-rose' ),
+					'<a href="' . esc_url( admin_url( 'post-new.php' ) ) . '">' . esc_html__( 'Get started here', 'crimson-rose' ) . '</a>'
 				);
 			?></p>
 

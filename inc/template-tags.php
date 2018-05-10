@@ -130,7 +130,7 @@ if ( ! function_exists( 'crimson_rose_the_term_description' ) ) :
 
 		<?php if ( ! empty( $description ) ) : ?>
 			<div class="term-description">
-				<?php echo $description; ?>
+				<?php echo $description; /* WPCS: XSS OK. HTML output. */ ?>
 			</div>
 		<?php endif; ?>
 
@@ -203,7 +203,7 @@ if ( ! function_exists( 'crimson_rose_the_attachment' ) ) :
 	 * @return void
 	 */
 	function crimson_rose_the_attachment() {
-		echo crimson_rose_get_the_attachment();
+		echo crimson_rose_get_the_attachment(); /* WPCS: XSS OK. HTML output. */
 	}
 endif;
 

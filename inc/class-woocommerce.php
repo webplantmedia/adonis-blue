@@ -350,7 +350,9 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 			echo '<div id="primary" class="content-area"><main id="main" class="site-main">';
 
 			if ( is_shop() && ! $crimson_rose['shop_hide_title'] ) {
-				echo '<h1 class="h1-title">' . woocommerce_page_title( false ) . '</h1>';
+				$title = woocommerce_page_title( false );
+				$title = '<h1 class="h1-title">' . $title . '</h1>';
+				echo $title; /* WPCS: XSS OK. HTML output. */
 			}
 		}
 
@@ -393,7 +395,7 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 			$output .= '</li></ul>';
 			$output .= '</li>';
 
-			echo $output;
+			echo $output; /* WPCS: XSS OK. HTML output. */
 		}
 
 		/**
@@ -432,7 +434,7 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 
 			$output = "<h3 class='widget-sub-title'>" . $cart_items_count . ' ' . esc_html__( 'items in your cart', 'crimson-rose' ) . "</h3>";
 
-			echo $output;
+			echo $output; /* WPCS: XSS OK. HTML output. */
 		}
 
 		/**
