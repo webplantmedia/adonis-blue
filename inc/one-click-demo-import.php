@@ -1,4 +1,23 @@
 <?php
+/**
+ * One click demo import
+ *
+ * @package WordPress
+ * @subpackage Crimson_Rose
+ * @since 1.01
+ * @author Chris Baldelomar <chris@webplantmedia.com>
+ * @copyright Copyright (c) 2018, Chris Baldelomar
+ * @link https://webplantmedia.com/product/crimson-rose-wordpress-theme/
+ * @license http://www.gnu.org/licenses/gpl-2.0.html
+ */
+
+/**
+ * Set import files
+ *
+ * @since Crimson_Rose 1.0
+ *
+ * @return void
+ */
 function crimson_rose_ocdi_import_files() {
     return array(
         array(
@@ -11,6 +30,14 @@ function crimson_rose_ocdi_import_files() {
 }
 add_filter( 'pt-ocdi/import_files', 'crimson_rose_ocdi_import_files' );
 
+/**
+ * Clear sidebars during import
+ *
+ * @since Crimson_Rose 1.0
+ *
+ * @param array $selected_import
+ * @return void
+ */
 function crimson_rose_ocdi_before_widgets_import( $selected_import ) {
 	$clear_sidebars = array(
 		'widgetized-page',
@@ -48,6 +75,14 @@ function crimson_rose_ocdi_before_widgets_import( $selected_import ) {
 }
 add_action( 'pt-ocdi/before_widgets_import', 'crimson_rose_ocdi_before_widgets_import' );
 
+/**
+ * Cleared problem with refreshing page after import.
+ *
+ * @since Crimson_Rose 1.0
+ *
+ * @param object $current_screen
+ * @return void
+ */
 function crimson_rose_current_screen( $current_screen ) {
 	if ( 'appearance_page_pt-one-click-demo-import' == $current_screen->base ) {
 		delete_transient( 'ocdi_importer_data' );
@@ -55,6 +90,15 @@ function crimson_rose_current_screen( $current_screen ) {
 }
 add_action( 'current_screen', 'crimson_rose_current_screen' );
 
+/**
+ * Set nav menu in widgets.
+ *
+ * @since Crimson_Rose 1.0
+ *
+ * @param int $sidebar_id
+ * @param int $menu_term_id
+ * @return void
+ */
 function crimson_rose_update_widget_nav_menu( $sidebar_id, $menu_term_id ) {
 	$widgets = wp_get_sidebars_widgets(); 
 	$widget_option_name = 'widget_nav_menu';
@@ -77,6 +121,13 @@ function crimson_rose_update_widget_nav_menu( $sidebar_id, $menu_term_id ) {
 	}
 }
 
+/**
+ * Automate common changes after import
+ *
+ * @since Crimson_Rose 1.0
+ *
+ * @return void
+ */
 function crimson_rose_ocdi_after_import_setup() {
 	$menus = array();
 
@@ -148,35 +199,54 @@ function crimson_rose_ocdi_after_import_setup() {
 }
 add_action( 'pt-ocdi/after_import', 'crimson_rose_ocdi_after_import_setup' );
 
+/**
+ * Set into text
+ *
+ * @since Crimson_Rose 1.0
+ *
+ * @param string $default_text
+ * @return string
+ */
 function crimson_rose_ocdi_plugin_intro_text( $default_text ) {
-	$default_text = '<div class="ocdi__intro-text">
-		<p class="about-description">Importing demo data (post, pages, images, theme settings, ...) is the easiest way to setup your theme. It will allow you to quickly edit everything instead of creating content from scratch.</p>
-		<hr>
+	$html = '<div class="ocdi__intro-text">';
+		$html .= '<p class="about-description">' . esc_html__( 'Importing demo data (post, pages, images, theme settings, ...) is the easiest way to setup your theme. It will allow you to quickly edit everything instead of creating content from scratch.', 'crimson-rose' ) . '</p>';
+		$html .= '<hr>';
 
-		<p><strong>Before Your Import:</strong></p>
+		$html .= '<p><strong>' . esc_html__( 'Before Your Import:', 'crimson-rose' ) . '</strong></p>';
 
-		<ul>
-			<li>No existing posts, pages, categories, images, or custom post types will be deleted or modified.</li>
-			<li>When doing a "Full Demo Import", your <a href="'.esc_url( admin_url( 'widgets.php' ) ).'" target="_blank">sidebar widgets</a> will be cleared, and replaced with our demo sidebar widgets.</li>
-			<li>Please click on the Import button only once and wait, it can take a couple of minutes.</li>
-		</ul>
+		$html .= '<ul>';
+			$html .= '<li>' . esc_html__( 'No existing posts, pages, categories, images, or custom post types will be deleted or modified.', 'crimson-rose' ) . '</li>';
+			$html .= '<li>' . sprintf( esc_html__( 'When doing a "Full Demo Import", your %s will be cleared, and replaced with our demo sidebar widgets.', 'crimson-rose' ), '<a href="'.esc_url( admin_url( 'widgets.php' ) ).'" target="_blank">' . esc_html__( 'sidebar widgets', 'crimson-rose' ) . '</a>' ) . '</li>';
+			$html .= '<li>' . esc_html__( 'Please click on the Import button only once and wait, it can take a couple of minutes.', 'crimson-rose' ) . '</li>';
+		$html .= '</ul>';
 
-		<p><strong>After Your Import:</strong></p>
+		$html .= '<p><strong>' . esc_html__( 'After Your Import:', 'crimson-rose' ) . '</strong></p>';
 
-		<ul>
-			<li>We try to set your menu, front page, and blog page, automatically. If your menu is not set, please <a href="'.esc_url( admin_url( 'nav-menus.php' ) ).'" target="_blank">set your menu manually</a>.</li>
-		</ul>
+		$html .= '<ul>';
+			$html .= '<li>' . sprintf( esc_html__( 'We try to set your menu, front page, and blog page, automatically. If your menu is not set, please %s.', 'crimson-rose' ), '<a href="'.esc_url( admin_url( 'nav-menus.php' ) ).'" target="_blank">' . esc_html__( 'set your menu manually', 'crimson-rose' ) . '</a>' ) . '</li>';
+		$html .= '</ul>';
 
-		<hr>
-	</div>';
+		$html .= '<hr>';
+	$html .= '</div>';
 
-	return $default_text;
+	return $html;
 }
 add_filter( 'pt-ocdi/plugin_intro_text', 'crimson_rose_ocdi_plugin_intro_text' );
 
+/**
+ * Disable branding
+ */
 add_filter( 'pt-ocdi/disable_pt_branding', '__return_true' );
 
-// https://github.com/proteusthemes/one-click-demo-import/blob/master/docs/import-problems.md
+/**
+ * Better support for slower internet connections
+ *
+ * https://github.com/proteusthemes/one-click-demo-import/blob/master/docs/import-problems.md
+ *
+ * @since Crimson_Rose 1.0
+ *
+ * @return int
+ */
 function crimson_rose_ocdi_change_time_of_single_ajax_call() {
 	return 10;
 }

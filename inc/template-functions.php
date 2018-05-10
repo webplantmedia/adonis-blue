@@ -2,13 +2,21 @@
 /**
  * Functions which enhance the theme by hooking into WordPress
  *
- * @package Crimson_Rose
+ * @package WordPress
+ * @subpackage Crimson_Rose
+ * @since 1.01
+ * @author Chris Baldelomar <chris@webplantmedia.com>
+ * @copyright Copyright (c) 2018, Chris Baldelomar
+ * @link https://webplantmedia.com/product/crimson-rose-wordpress-theme/
+ * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
 /**
  * Adds custom classes to the array of body classes.
  *
- * @param array $classes Classes for the body element.
+ * @since Crimson_Rose 1.0
+ *
+ * @param array $classes
  * @return array
  */
 function crimson_rose_body_classes( $classes ) {
@@ -101,6 +109,10 @@ add_filter( 'body_class', 'crimson_rose_body_classes' );
 
 /**
  * Add a pingback url auto-discovery header for singularly identifiable articles.
+ *
+ * @since Crimson_Rose 1.0
+ *
+ * @return void
  */
 function crimson_rose_pingback_header() {
 	if ( is_singular() && pings_open() ) {
@@ -111,6 +123,12 @@ add_action( 'wp_head', 'crimson_rose_pingback_header' );
 
 /**
  * Add retina src image to custom logo
+ *
+ * @since Crimson_Rose 1.0
+ *
+ * @param string $html
+ * @param int $blog_id
+ * @return string
  */
 function crimson_rose_get_custom_logo( $html, $blog_id ) {
 	global $crimson_rose;
@@ -136,8 +154,7 @@ add_filter( 'get_custom_logo', 'crimson_rose_get_custom_logo', 10, 2 );
 /**
  * Add "read more" link on all excerpts.
  *
- * @since 4.8.1
- * @access public
+ * @since Crimson_Rose 1.0
  *
  * @param string $output
  * @return string Appended "Read More" link
@@ -156,13 +173,20 @@ function crimson_rose_read_more_link( $output ) {
 	}
 
 	return $output . sprintf( ' <a class="more-link%1$s" href="%2$s">%3$s<i class="genericons-neue genericons-neue-next"></i></a>',
-		$class,
+		esc_attr( $class ),
 		esc_url( get_permalink( get_the_ID() ) ),
 		esc_html( $crimson_rose['read_more_label'] )
 	);
 }
 add_filter('the_excerpt', 'crimson_rose_read_more_link');
 
+/**
+ * Conditional display of read more text.
+ *
+ * @since Crimson_Rose 1.0
+ *
+ * @return string
+ */
 function crimson_rose_read_more_text() {
 	global $crimson_rose;
 
@@ -174,6 +198,15 @@ function crimson_rose_read_more_text() {
 }
 add_filter('crimson_rose_read_more_text', 'crimson_rose_read_more_text');
 
+/**
+ * Convert single link line to button.
+ *
+ * @since Crimson_Rose 1.0
+ *
+ * @param string $output
+ * @param string $button_style
+ * @return string
+ */
 function crimson_rose_button_generation( $output, $button_style ) {
 	$search = array();
 	$replace = array();
@@ -208,6 +241,14 @@ function crimson_rose_button_generation( $output, $button_style ) {
 	return $output;
 }
 
+/**
+ * Parse content, and convert single link line to button.
+ *
+ * @since Crimson_Rose 1.0
+ *
+ * @param string $output
+ * @return string
+ */
 function crimson_rose_the_content( $output ) {
 	global $crimson_rose;
 
@@ -227,6 +268,8 @@ add_filter('the_content', 'crimson_rose_the_content', 11 );
 /**
  * Filter the except length to specified characters.
  *
+ * @since Crimson_Rose 1.0
+ *
  * @param int $length Excerpt length.
  * @return int (Maybe) modified excerpt length.
  */
@@ -235,6 +278,14 @@ function crimson_rose_custom_excerpt_length( $length ) {
 }
 add_filter( 'excerpt_length', 'crimson_rose_custom_excerpt_length', 999 );
 
+/**
+ * Custom display of archive title
+ *
+ * @since Crimson_Rose 1.0
+ *
+ * @param string $title
+ * @return string
+ */
 function crimson_rose_get_the_archive_title( $title ) {
 	$pieces = explode( ': ', $title );
 

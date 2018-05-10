@@ -4,12 +4,22 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package Crimson_Rose
+ * @package WordPress
+ * @subpackage Crimson_Rose
+ * @since 1.01
+ * @author Chris Baldelomar <chris@webplantmedia.com>
+ * @copyright Copyright (c) 2018, Chris Baldelomar
+ * @link https://webplantmedia.com/product/crimson-rose-wordpress-theme/
+ * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
 if ( ! function_exists( 'crimson_rose_posted_on' ) ) :
 	/**
 	 * Prints HTML with meta information for the current post-date/time and author.
+	 *
+	 * @since Crimson_Rose 1.0
+	 *
+	 * @return void
 	 */
 	function crimson_rose_posted_on() {
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
@@ -26,13 +36,6 @@ if ( ! function_exists( 'crimson_rose_posted_on' ) ) :
 
 		$posted_on = '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
 
-		// $byline = sprintf(
-			/* translators: %s: post author. */
-			// esc_html_x( 'by %s', 'post author', 'crimson-rose' ),
-			// '<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
-		// );
-
-		// echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
 		echo '<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
 
 	}
@@ -41,6 +44,11 @@ endif;
 if ( ! function_exists( 'crimson_rose_entry_header' ) ) :
 	/**
 	 * Prints HTML with meta information for the categories, tags and comments.
+	 *
+	 * @since Crimson_Rose 1.0
+	 *
+	 * @param string $delimeter
+	 * @return void
 	 */
 	function crimson_rose_entry_header( $delimeter = '' ) {
 		// Hide category and tag text for pages.
@@ -58,6 +66,10 @@ endif;
 if ( ! function_exists( 'crimson_rose_entry_footer' ) ) :
 	/**
 	 * Prints HTML with meta information for the categories, tags and comments.
+	 *
+	 * @since Crimson_Rose 1.0
+	 *
+	 * @return void
 	 */
 	function crimson_rose_entry_footer() {
 		// Hide category and tag text for pages.
@@ -87,7 +99,7 @@ if ( ! function_exists( 'crimson_rose_entry_footer' ) ) :
 		if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 			echo '<span class="comments-link">';
 				comments_popup_link(
-					__( 'Leave a Comment', 'crimson-rose' )
+					esc_html__( 'Leave a Comment', 'crimson-rose' )
 				);
 			echo '</span>';
 		}
@@ -105,6 +117,13 @@ if ( ! function_exists( 'crimson_rose_entry_footer' ) ) :
 endif;
 
 if ( ! function_exists( 'crimson_rose_the_term_description' ) ) :
+	/**
+	 * Display term description
+	 *
+	 * @since Crimson_Rose 1.0
+	 *
+	 * @return void
+	 */
 	function crimson_rose_the_term_description() {
 		$description = term_description();
 		?>
@@ -120,6 +139,13 @@ if ( ! function_exists( 'crimson_rose_the_term_description' ) ) :
 endif;
 
 if ( ! function_exists( 'crimson_rose_mobile_menu_button' ) ) :
+	/**
+	 * Display mobile menu button
+	 *
+	 * @since Crimson_Rose 1.0
+	 *
+	 * @return void
+	 */
 	function crimson_rose_mobile_menu_button() {
 		global $crimson_rose;
 
@@ -137,6 +163,13 @@ if ( ! function_exists( 'crimson_rose_mobile_menu_button' ) ) :
 endif;
 
 if ( ! function_exists( 'crimson_rose_get_the_attachment' ) ) :
+	/**
+	 * Display attachment image
+	 *
+	 * @since Crimson_Rose 1.0
+	 *
+	 * @return void
+	 */
 	function crimson_rose_get_the_attachment() {
 		if ( wp_attachment_is( 'video' ) ) {
 			$meta = wp_get_attachment_metadata( get_the_ID() );
@@ -162,12 +195,26 @@ if ( ! function_exists( 'crimson_rose_get_the_attachment' ) ) :
 endif;
 
 if ( ! function_exists( 'crimson_rose_the_attachment' ) ) :
+	/**
+	 * Display attachment image wrapper
+	 *
+	 * @since Crimson_Rose 1.0
+	 *
+	 * @return void
+	 */
 	function crimson_rose_the_attachment() {
 		echo crimson_rose_get_the_attachment();
 	}
 endif;
 
 if ( ! function_exists( 'crimson_rose_featured_post_navigation' ) ) :
+	/**
+	 * Display post navigation.
+	 *
+	 * @since Crimson_Rose 1.0
+	 *
+	 * @return void
+	 */
 	function crimson_rose_featured_post_navigation() {
 		global $crimson_rose;
 
@@ -192,12 +239,12 @@ if ( ! function_exists( 'crimson_rose_featured_post_navigation' ) ) :
 			$prev_text .= get_the_post_thumbnail($previous_post->ID,'thumbnail');
 		}
 
-		$next_text .= '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'crimson-rose' ) . '</span> ' .
-			'<span class="screen-reader-text">' . __( 'Next post:', 'crimson-rose' ) . '</span> ' .
+		$next_text .= '<span class="meta-nav" aria-hidden="true">' . esc_html__( 'Next', 'crimson-rose' ) . '</span> ' .
+			'<span class="screen-reader-text">' . esc_html__( 'Next post:', 'crimson-rose' ) . '</span> ' .
 			'<span class="post-title">%title</span>';
 
-		$prev_text .= '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'crimson-rose' ) . '</span> ' .
-			'<span class="screen-reader-text">' . __( 'Previous post:', 'crimson-rose' ) . '</span> ' .
+		$prev_text .= '<span class="meta-nav" aria-hidden="true">' . esc_html__( 'Previous', 'crimson-rose' ) . '</span> ' .
+			'<span class="screen-reader-text">' . esc_html__( 'Previous post:', 'crimson-rose' ) . '</span> ' .
 			'<span class="post-title">%title</span>';
 
 		the_post_navigation( array(
@@ -208,6 +255,13 @@ if ( ! function_exists( 'crimson_rose_featured_post_navigation' ) ) :
 endif;
 
 if ( ! function_exists( 'crimson_rose_parent_post_navigation' ) ) :
+	/**
+	 * Display parent post navigation
+	 *
+	 * @since Crimson_Rose 1.0
+	 *
+	 * @return void
+	 */
 	function crimson_rose_parent_post_navigation() {
 		global $crimson_rose;
 
@@ -231,8 +285,8 @@ if ( ! function_exists( 'crimson_rose_parent_post_navigation' ) ) :
 			$prev_text .= get_the_post_thumbnail($parent_post->ID,'thumbnail');
 		}
 
-		$prev_text .= '<span class="meta-nav" aria-hidden="true">' . __( 'Post', 'crimson-rose' ) . '</span> ' .
-			'<span class="screen-reader-text">' . __( 'Parent post:', 'crimson-rose' ) . '</span> ' .
+		$prev_text .= '<span class="meta-nav" aria-hidden="true">' . esc_html__( 'Post', 'crimson-rose' ) . '</span> ' .
+			'<span class="screen-reader-text">' . esc_html__( 'Parent post:', 'crimson-rose' ) . '</span> ' .
 			'<span class="post-title">%title</span>';
 
 		the_post_navigation( array(

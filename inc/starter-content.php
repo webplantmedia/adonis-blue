@@ -1,12 +1,22 @@
 <?php
 /**
- * @package Crimson_Rose
+ * Starter Content
+ *
+ * @package WordPress
+ * @subpackage Crimson_Rose
+ * @since 1.01
+ * @author Chris Baldelomar <chris@webplantmedia.com>
+ * @copyright Copyright (c) 2018, Chris Baldelomar
+ * @link https://webplantmedia.com/product/crimson-rose-wordpress-theme/
+ * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
 /**
- * Set up the WordPress core custom header feature.
+ * Set starter content for fresh installs.
  *
- * @uses crimson_rose_header_style()
+ * @since Crimson_Rose 1.0
+ *
+ * @return void
  */
 function crimson_rose_starter_content() {
 $contact = '
@@ -236,14 +246,14 @@ $about = '
 		'search',
 		'text_about',
 		'categories' => array(
-			'title' => _x( 'Categories', 'Theme starter content', 'crimson-rose' ),
+			'title' => esc_html_x( 'Categories', 'Theme starter content', 'crimson-rose' ),
 			'dropdown' => '1',
 		),
 	);
 
 	$starter_content['widgets']['footer-1'] = array(
 		'search' => array(
-			'title' => _x( 'Search', 'Theme starter content', 'crimson-rose' ),
+			'title' => esc_html_x( 'Search', 'Theme starter content', 'crimson-rose' ),
 		),
 		'crimson-rose-image-banner' => array(
 			'crimson-rose-image-banner',
@@ -256,12 +266,12 @@ $about = '
 	);
 
 	$starter_content['widgets']['footer-2']['text_business_info'] = array(
-		'title' => _x( 'Find Us', 'Theme starter content', 'crimson-rose' ),
+		'title' => esc_html_x( 'Find Us', 'Theme starter content', 'crimson-rose' ),
 		'text' => '<center>' . join( '', array(
-			'<strong>' . _x( 'Address', 'Theme starter content', 'crimson-rose' ) . "</strong>\n",
-			_x( '123 Main Street', 'Theme starter content', 'crimson-rose' ) . "\n" . _x( 'New York, NY 10001', 'Theme starter content', 'crimson-rose' ) . "\n\n",
-			'<strong>' . _x( 'Hours', 'Theme starter content', 'crimson-rose' ) . "</strong>\n",
-			_x( 'Mon&mdash;Fri: 9:00AM&ndash;5:00PM', 'Theme starter content', 'crimson-rose' ) . "\n" . _x( 'Sat &amp; Sun: 11:00AM&ndash;3:00PM', 'Theme starter content', 'crimson-rose' )
+			'<strong>' . esc_html_x( 'Address', 'Theme starter content', 'crimson-rose' ) . "</strong>\n",
+			esc_html_x( '123 Main Street', 'Theme starter content', 'crimson-rose' ) . "\n" . esc_html_x( 'New York, NY 10001', 'Theme starter content', 'crimson-rose' ) . "\n\n",
+			'<strong>' . esc_html_x( 'Hours', 'Theme starter content', 'crimson-rose' ) . "</strong>\n",
+			esc_html_x( 'Mon&mdash;Fri: 9:00AM&ndash;5:00PM', 'Theme starter content', 'crimson-rose' ) . "\n" . esc_html_x( 'Sat &amp; Sun: 11:00AM&ndash;3:00PM', 'Theme starter content', 'crimson-rose' )
 		) ) . '</center>',
 		'filter' => true,
 		'visual' => true,
@@ -269,7 +279,7 @@ $about = '
 
 	$starter_content['widgets']['footer-3'] = array(
 		'categories' => array(
-			'title' => _x( 'Categories', 'Theme starter content', 'crimson-rose' ),
+			'title' => esc_html_x( 'Categories', 'Theme starter content', 'crimson-rose' ),
 			'dropdown' => '1',
 		),
 	);
@@ -277,7 +287,7 @@ $about = '
 	$starter_content['widgets']['footer-3']['crimson-rose-social-menu'] = array(
 		'crimson-rose-social-menu',
 		array(
-			'title' => _x( 'Connect', 'Theme starter content', 'crimson-rose' ),
+			'title' => esc_html_x( 'Connect', 'Theme starter content', 'crimson-rose' ),
 		),
 	);
 
@@ -285,7 +295,7 @@ $about = '
 		'custom_html',
 		array(
 			'title' => '',
-			'content' => '<p>' . "\n\t" . _x( 'Site crafted with', 'Theme starter content', 'crimson-rose' ) . ' <i class="genericons-neue genericons-neue-heart"></i> ' . _x( 'by', 'Theme starter content', 'crimson-rose' ) . ' <a href="https://webplantmedia.com/">' . _x( 'Web Plant Media', 'Theme starter content', 'crimson-rose' ) . '</a>' . "\n" . '</p>',
+			'content' => '<p>' . "\n\t" . esc_html_x( 'Site crafted with', 'Theme starter content', 'crimson-rose' ) . ' <i class="genericons-neue genericons-neue-heart"></i> ' . esc_html_x( 'by', 'Theme starter content', 'crimson-rose' ) . ' <a href="https://webplantmedia.com/">' . esc_html_x( 'Web Plant Media', 'Theme starter content', 'crimson-rose' ) . '</a>' . "\n" . '</p>',
 		),
 	);
 
@@ -325,7 +335,7 @@ $about = '
 		),
 		'about' => array(
 			'post_type' => 'page',
-			'post_title' => _x( 'About', 'Theme starter content', 'crimson-rose' ),
+			'post_title' => esc_html_x( 'About', 'Theme starter content', 'crimson-rose' ),
 			'post_content' => $about,
 		),
 		'blog' => array(
@@ -333,25 +343,25 @@ $about = '
 		'contact' => array(
 			'template' => 'templates/full-width-page.php',
 			'post_type' => 'page',
-			'post_title' => _x( 'Contact', 'Theme starter content', 'crimson-rose' ),
+			'post_title' => esc_html_x( 'Contact', 'Theme starter content', 'crimson-rose' ),
 			'post_content' => $contact,
 		),
 		'faq' => array(
 			'post_type' => 'page',
-			'post_title' => _x( 'FAQ', 'Theme starter content', 'crimson-rose' ),
+			'post_title' => esc_html_x( 'FAQ', 'Theme starter content', 'crimson-rose' ),
 			'post_content' => $faq,
 		),
 		'our-story' => array(
 			'thumbnail' => '{{image-demo-1}}',
 			'post_type' => 'page',
-			'post_title' => _x( 'Our Story', 'Theme starter content', 'crimson-rose' ),
+			'post_title' => esc_html_x( 'Our Story', 'Theme starter content', 'crimson-rose' ),
 			'post_content' => $our_story,
 		),
 	);
 
 	$starter_content['attachments'] = array(
 		'image-demo-1' => array(
-			'post_title' => _x( 'Demo Image 1', 'Theme starter content', 'crimson-rose' ),
+			'post_title' => esc_html_x( 'Demo Image 1', 'Theme starter content', 'crimson-rose' ),
 			'file' => 'img/starter-content/our-story-1.jpg',
 		),
 	);
@@ -363,7 +373,7 @@ $about = '
 	);
 
 	$starter_content['nav_menus']['menu-1'] = array(
-		'name' => _x( 'Primary', 'Theme starter content', 'crimson-rose' ),
+		'name' => esc_html_x( 'Primary', 'Theme starter content', 'crimson-rose' ),
 		'items' => array(
 			'link_home', // Note that the core "home" page is actually a link in case a static front page is not used.
 			'page_about',
@@ -383,7 +393,7 @@ $about = '
 	);
 
 	$starter_content['nav_menus']['menu-2'] = array(
-		'name' => _x( 'Top Left Menu', 'Theme starter content', 'crimson-rose' ),
+		'name' => esc_html_x( 'Top Left Menu', 'Theme starter content', 'crimson-rose' ),
 		'items' => array(
 			'page_blog',
 			'page_about',
@@ -397,14 +407,14 @@ $about = '
 	);
 
 	$starter_content['nav_menus']['menu-3'] = array(
-		'name' => _x( 'Top Right Menu', 'Theme starter content', 'crimson-rose' ),
+		'name' => esc_html_x( 'Top Right Menu', 'Theme starter content', 'crimson-rose' ),
 		'items' => array(
 			'page_contact',
 		),
 	);
 
 	$starter_content['nav_menus']['social'] = array(
-		'name' => _x( 'Social Links Menu', 'Theme starter content', 'crimson-rose' ),
+		'name' => esc_html_x( 'Social Links Menu', 'Theme starter content', 'crimson-rose' ),
 		'items' => array(
 			'link_pinterest',
 			'link_facebook',
@@ -413,9 +423,9 @@ $about = '
 	);
 
 	/**
-	 * Filters Twenty Seventeen array of starter content.
+	 * Filters starter content.
 	 *
-	 * @since Twenty Seventeen 1.1
+	 * @since Crimson_Rose 1.01
 	 *
 	 * @param array $starter_content Array of starter content.
 	 */
