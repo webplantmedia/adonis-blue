@@ -1,25 +1,41 @@
 <?php
 /**
- * Content collout widget for widgetized pages.
+ * Content Widget: collout widget for widgetized pages.
  *
- * @since Crimson_Rose 1.0.0.
+ * @package WordPress
+ * @subpackage Crimson_Rose
+ * @since 1.01
+ * @author Chris Baldelomar <chris@webplantmedia.com>
+ * @copyright Copyright (c) 2018, Chris Baldelomar
+ * @link https://webplantmedia.com/product/crimson-rose-wordpress-theme/
+ * @license http://www.gnu.org/licenses/gpl-2.0.html
+ */
+
+/**
+ * Class: Callout widget
  *
- * @package Crimson_Rose
+ * @since Crimson_Rose 1.01
+ *
+ * @see Crimson_Rose_Widget
  */
 class Crimson_Rose_Content_Widget_Callout extends Crimson_Rose_Widget {
 	/**
-	 * Constructor
+	 * __construct
+	 *
+	 * @since Crimson_Rose 1.0
+	 *
+	 * @return void
 	 */
 	public function __construct() {
 		$this->widget_id          = 'crimson-rose-content-widget-callout';
-		$this->widget_description = __( 'Displays a callout on your widgetized page.', 'crimson-rose' );
-		$this->widget_name        = __( 'Crimson Rose: Callout', 'crimson-rose' );
+		$this->widget_description = esc_html__( 'Displays a callout on your widgetized page.', 'crimson-rose' );
+		$this->widget_name        = esc_html__( 'Crimson Rose: Callout', 'crimson-rose' );
 		$this->settings           = array(
 			'page' => array(
 				'type'  => 'page',
 				'std'   => '',
-				'label' => __( 'Select Page:', 'crimson-rose' ),
-				'description' => __( 'The post content and featured image will be grabbed from the selected post. If no featured image is set, then the text will display in full width.', 'crimson-rose' ),
+				'label' => esc_html__( 'Select Page:', 'crimson-rose' ),
+				'description' => esc_html__( 'The post content and featured image will be grabbed from the selected post. If no featured image is set, then the text will display in full width.', 'crimson-rose' ),
 				'sanitize' => 'text',
 			),
 			'image_width' => array(
@@ -28,74 +44,74 @@ class Crimson_Rose_Content_Widget_Callout extends Crimson_Rose_Widget {
 				'step'  => 5,
 				'min'   => 100,
 				'max'   => 1600,
-				'label' => __( 'Image Width (in pixels)', 'crimson-rose' ),
-				'description' => __( 'Set custom size for featured image. Leave blank to use large image display.', 'crimson-rose' ),
+				'label' => esc_html__( 'Image Width (in pixels)', 'crimson-rose' ),
+				'description' => esc_html__( 'Set custom size for featured image. Leave blank to use large image display.', 'crimson-rose' ),
 				'sanitize' => 'number_blank',
 			),
 			'text_align' => array(
 				'type'  => 'select',
 				'std'   => 'left',
-				'label' => __( 'Text Position:', 'crimson-rose' ),
+				'label' => esc_html__( 'Text Position:', 'crimson-rose' ),
 				'options' => array(
-					'left' => __( 'Left', 'crimson-rose' ),
-					'right' => __( 'Right', 'crimson-rose' ),
+					'left' => esc_html__( 'Left', 'crimson-rose' ),
+					'right' => esc_html__( 'Right', 'crimson-rose' ),
 				),
 				'sanitize' => 'text',
 			),
 			'vertical_align' => array(
 				'type'  => 'select',
 				'std'   => 'middle',
-				'label' => __( 'Vertical Alignment:', 'crimson-rose' ),
+				'label' => esc_html__( 'Vertical Alignment:', 'crimson-rose' ),
 				'options' => array(
-					'top' => __( 'Top', 'crimson-rose' ),
-					'middle' => __( 'Middle', 'crimson-rose' ),
-					'bottom' => __( 'Bottom', 'crimson-rose' ),
+					'top' => esc_html__( 'Top', 'crimson-rose' ),
+					'middle' => esc_html__( 'Middle', 'crimson-rose' ),
+					'bottom' => esc_html__( 'Bottom', 'crimson-rose' ),
 				),
 				'sanitize' => 'text',
 			),
 			'background_color' => array(
 				'type'  => 'colorpicker',
 				'std'   => '#fcf7f7',
-				'label' => __( 'Background Color:', 'crimson-rose' ),
+				'label' => esc_html__( 'Background Color:', 'crimson-rose' ),
 				'sanitize' => 'color',
 			),
 			'text_color' => array(
 				'type'  => 'colorpicker',
 				'std'   => '',
-				'label' => __( 'Text Color:', 'crimson-rose' ),
-				'description' => __( 'Leave blank to use default theme color.', 'crimson-rose' ),
+				'label' => esc_html__( 'Text Color:', 'crimson-rose' ),
+				'description' => esc_html__( 'Leave blank to use default theme color.', 'crimson-rose' ),
 				'sanitize' => 'color',
 			),
 			'button_text' => array(
 				'type'  => 'text',
 				'std'   => 'SHOP FLOWERS',
-				'label' => __( 'Button Text:', 'crimson-rose' ),
+				'label' => esc_html__( 'Button Text:', 'crimson-rose' ),
 				'sanitize' => 'text',
 			),
 			'button_link' => array(
 				'type'  => 'text',
 				'std'   => home_url('/'),
-				'label' => __( 'Button URL:', 'crimson-rose' ),
+				'label' => esc_html__( 'Button URL:', 'crimson-rose' ),
 				'sanitize' => 'url',
 			),
 			'button_style' => array(
 				'type'  => 'select',
 				'std'   => 'button-2',
-				'label' => __( 'Button Style:', 'crimson-rose' ),
+				'label' => esc_html__( 'Button Style:', 'crimson-rose' ),
 				'options' => array(
-					'default' => __( 'Default Button', 'crimson-rose' ),
-					'button-1' => __( 'Image Button 1', 'crimson-rose' ),
-					'button-2' => __( 'Image Button 2', 'crimson-rose' ),
+					'default' => esc_html__( 'Default Button', 'crimson-rose' ),
+					'button-1' => esc_html__( 'Image Button 1', 'crimson-rose' ),
+					'button-2' => esc_html__( 'Image Button 2', 'crimson-rose' ),
 				),
 				'sanitize' => 'text',
 			),
 			'style' => array(
 				'type'  => 'select',
 				'std'   => 'border',
-				'label' => __( 'Box Style:', 'crimson-rose' ),
+				'label' => esc_html__( 'Box Style:', 'crimson-rose' ),
 				'options' => array(
-					'plain' => __( 'Plain', 'crimson-rose' ),
-					'border' => __( 'Border', 'crimson-rose' ),
+					'plain' => esc_html__( 'Plain', 'crimson-rose' ),
+					'border' => esc_html__( 'Border', 'crimson-rose' ),
 				),
 				'sanitize' => 'text',
 			),
@@ -105,7 +121,7 @@ class Crimson_Rose_Content_Widget_Callout extends Crimson_Rose_Widget {
 				'step'  => 1,
 				'min'   => 0,
 				'max'   => 300,
-				'label' => __( 'Top padding of widget:', 'crimson-rose' ),
+				'label' => esc_html__( 'Top padding of widget:', 'crimson-rose' ),
 				'sanitize' => 'number',
 			),
 			'padding_bottom' => array(
@@ -114,7 +130,7 @@ class Crimson_Rose_Content_Widget_Callout extends Crimson_Rose_Widget {
 				'step'  => 1,
 				'min'   => 0,
 				'max'   => 300,
-				'label' => __( 'Bottom padding of widget:', 'crimson-rose' ),
+				'label' => esc_html__( 'Bottom padding of widget:', 'crimson-rose' ),
 				'sanitize' => 'number',
 			),
 			'margin_bottom' => array(
@@ -123,7 +139,7 @@ class Crimson_Rose_Content_Widget_Callout extends Crimson_Rose_Widget {
 				'step'  => 1,
 				'min'   => 0,
 				'max'   => 300,
-				'label' => __( 'Bottom margin of widget:', 'crimson-rose' ),
+				'label' => esc_html__( 'Bottom margin of widget:', 'crimson-rose' ),
 				'sanitize' => 'number',
 			),
 		);
@@ -134,8 +150,8 @@ class Crimson_Rose_Content_Widget_Callout extends Crimson_Rose_Widget {
 	/**
 	 * Widget function.
 	 *
-	 * @see WP_Widget
-	 * @access public
+	 * @since Crimson_Rose 1.0
+	 *
 	 * @param array $args
 	 * @param array $instance
 	 * @return void
@@ -188,7 +204,7 @@ class Crimson_Rose_Content_Widget_Callout extends Crimson_Rose_Widget {
 		$before_widget = str_replace( 'class="content-widget', 'class="content-widget full-width-bar', $before_widget );
 		?>
 
-		<?php echo $before_widget; ?>
+		<?php echo $before_widget; /* WPCS: XSS OK. HTML output. */ ?>
 
 		<?php if ( 'border' == $o['style'] ) : ?>
 			<div class="content-callout-border-wrap" style="<?php echo esc_attr( implode( '', $wrap_style ) ); ?>">
@@ -198,13 +214,13 @@ class Crimson_Rose_Content_Widget_Callout extends Crimson_Rose_Widget {
 					<div class="site-boundary">
 						<?php if ( $featured_image ) : ?>
 							<div class="grid grid--no-gutter valign-<?php echo esc_attr( $o['vertical_align'] ); ?>">
-								<div class="grid__col grid__col--1-of-2 text-container<?php echo ( 'right' === $o['text_align'] ) ? ' grid__col--push-1-of-2' : ''; ?>"><?php echo $content; ?></div>
+								<div class="grid__col grid__col--1-of-2 text-container<?php echo ( 'right' === $o['text_align'] ) ? ' grid__col--push-1-of-2' : ''; ?>"><?php echo $content; /* WPCS: XSS OK. HTML output. */ ?></div>
 								<div class="grid__col grid__col--1-of-2 image-container<?php echo ( 'right' === $o['text_align'] ) ? ' grid__col--pull-2-of-2' : ''; ?>">
-									<?php echo $featured_image; ?>
+									<?php echo $featured_image; /* WPCS: XSS OK. HTML output. */ ?>
 								</div>
 							</div>
 						<?php else : ?>
-							<div class="text-container-full-width"><?php echo $content; ?></div>
+							<div class="text-container-full-width"><?php echo $content; /* WPCS: XSS OK. HTML output. */ ?></div>
 						<?php endif; ?>
 
 						<?php if ( $p && get_edit_post_link( $p->ID ) ) : ?>
@@ -230,11 +246,20 @@ class Crimson_Rose_Content_Widget_Callout extends Crimson_Rose_Widget {
 			</div>
 		<?php endif; ?>
 
-		<?php echo $after_widget; ?>
+		<?php echo $after_widget; /* WPCS: XSS OK. HTML output. */ ?>
 
 		<?php
 	}
 
+	/**
+	 * Callout Content
+	 *
+	 * @since Crimson_Rose 1.0
+	 *
+	 * @param array $o
+	 * @param object $p
+	 * @return string
+	 */
 	private function callout_content( $o, $p ) {
 		$style = '';
 		$class = '';
@@ -249,7 +274,7 @@ class Crimson_Rose_Content_Widget_Callout extends Crimson_Rose_Widget {
 
 		$output  = '<div class="content-callout__content">';
 
-			$output .= '<div class="content-callout__text'.$class.'" style="'.$style.'">';
+			$output .= '<div class="content-callout__text'.esc_attr( $class ).'" style="'.esc_attr( $style ).'">';
 
 				if ( $p ) {
 					if ( isset( $p->post_content ) && ! empty( $p->post_content ) ) {
@@ -269,7 +294,7 @@ class Crimson_Rose_Content_Widget_Callout extends Crimson_Rose_Widget {
 									$button_class = '';
 									break;
 							}
-							$output .= '<a class="button callout-button'.$button_class.'" href="' . esc_url( $o['button_link'] ) . '">';
+							$output .= '<a class="button callout-button' . esc_attr( $button_class ) . '" href="' . esc_url( $o['button_link'] ) . '">';
 								$output .= $o['button_text'];
 							$output .= '</a>';
 						$output .= '</div>';

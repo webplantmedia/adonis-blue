@@ -2,58 +2,66 @@
 /**
  * Social Menu Widget
  *
- * @since Crimson_Rose 1.0.0.
- *
- * @package Crimson_Rose
+ * @package WordPress
+ * @subpackage Crimson_Rose
+ * @since 1.01
+ * @author Chris Baldelomar <chris@webplantmedia.com>
+ * @copyright Copyright (c) 2018, Chris Baldelomar
+ * @link https://webplantmedia.com/product/crimson-rose-wordpress-theme/
+ * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
 if ( ! class_exists( 'Crimson_Rose_Widget_Social_Menu' ) ) :
 	/**
-	 * Display static content from an specific page.
+	 * Class: Display static content from an specific page.
 	 *
-	 * @since Crimson_Rose 1.0.0.
+	 * @since Crimson_Rose 1.01
 	 *
-	 * @package Crimson_Rose
+	 * @see Crimson_Rose_Widget
 	 */
 	class Crimson_Rose_Widget_Social_Menu extends Crimson_Rose_Widget {
 		/**
-		 * Constructor
+		 * __construct
+		 *
+		 * @since Crimson_Rose 1.0
+		 *
+		 * @return void
 		 */
 		public function __construct() {
 			$this->widget_id          = 'crimson-rose-social-menu';
 			$this->widget_cssclass    = 'crimson-rose-social-menu';
-			$this->widget_description = __( 'Displays your social menu icons in your footer or sidebar.', 'crimson-rose' );
-			$this->widget_name        = __( 'Crimson Rose: Social Menu', 'crimson-rose' );
+			$this->widget_description = esc_html__( 'Displays your social menu icons in your footer or sidebar.', 'crimson-rose' );
+			$this->widget_name        = esc_html__( 'Crimson Rose: Social Menu', 'crimson-rose' );
 			$this->settings           = array(
 				'title' => array(
 					'type'  => 'text',
 					'std'   => '',
-					'label' => __( 'Title:', 'crimson-rose' ),
+					'label' => esc_html__( 'Title:', 'crimson-rose' ),
 					'sanitize' => 'text',
 				),
 				'align' => array(
 					'type'  => 'select',
 					'std'   => 'center',
-					'label' => __( 'Align:', 'crimson-rose' ),
+					'label' => esc_html__( 'Align:', 'crimson-rose' ),
 					'options' => array(
-						'left' => __( 'Left', 'crimson-rose' ),
-						'center' => __( 'Center', 'crimson-rose' ),
-						'right' => __( 'Right', 'crimson-rose' ),
+						'left' => esc_html__( 'Left', 'crimson-rose' ),
+						'center' => esc_html__( 'Center', 'crimson-rose' ),
+						'right' => esc_html__( 'Right', 'crimson-rose' ),
 					),
 					'sanitize' => 'text',
 				),
 				'link_color' => array(
 					'type'  => 'colorpicker',
 					'std'   => '',
-					'label' => __( 'Text Color:', 'crimson-rose' ),
-					'description' => __( 'Leave blank to use default text color.', 'crimson-rose' ),
+					'label' => esc_html__( 'Text Color:', 'crimson-rose' ),
+					'description' => esc_html__( 'Leave blank to use default text color.', 'crimson-rose' ),
 					'sanitize' => 'color',
 				),
 				'link_hover_color' => array(
 					'type'  => 'colorpicker',
 					'std'   => '',
-					'label' => __( 'Link Color:', 'crimson-rose' ),
-					'description' => __( 'Leave blank to use default hover color.', 'crimson-rose' ),
+					'label' => esc_html__( 'Link Color:', 'crimson-rose' ),
+					'description' => esc_html__( 'Leave blank to use default hover color.', 'crimson-rose' ),
 					'sanitize' => 'color',
 				),
 			);
@@ -64,11 +72,11 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Social_Menu' ) ) :
 		/**
 		 * Widget function.
 		 *
-		 * @see WP_Widget
-		 * @access public
+		 * @since Crimson_Rose 1.0
+		 *
 		 * @param array $args
 		 * @param array $instance
-		 * @return void
+		 * @return string
 		 */
 		function widget( $args, $instance ) {
 			$o = $this->sanitize( $instance );
@@ -79,7 +87,7 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Social_Menu' ) ) :
 				$before_widget = str_replace( 'class="widget', 'class="widget no-title', $before_widget );
 			}
 
-			echo  $before_widget;
+			echo $before_widget; /* WPCS: XSS OK. HTML output. */
 			?>
 
 			<style type="text/css">
@@ -99,7 +107,7 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Social_Menu' ) ) :
 			</style>
 
 			<?php if ( ! empty( $o['title'] ) ) : ?>
-				<?php echo $before_title . esc_html( $o['title'] ) . $after_title; ?>
+				<?php echo $before_title . esc_html( $o['title'] ) . $after_title; /* WPCS: XSS OK. HTML output. */ ?>
 			<?php endif; ?>
 
 			<div class="social-menu-wrapper social-menu-align-<?php echo esc_attr( $o['align'] ); ?>">
@@ -120,14 +128,16 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Social_Menu' ) ) :
 				<?php endif; ?>
 			</div>
 
-			<?php echo  $after_widget; ?>
+			<?php echo $after_widget; /* WPCS: XSS OK. HTML output. */ ?>
 			<?php
 		}
 
 		/**
 		 * Registers the widget with the WordPress Widget API.
 		 *
-		 * @return mixed
+		 * @since Crimson_Rose 1.0
+		 *
+		 * @return void
 		 */
 		public static function register() {
 			register_widget( __CLASS__ );

@@ -228,7 +228,7 @@ function crimson_rose_button_generation( $output, $button_style ) {
 			foreach ( $match as $html ) {
 				if ( ! preg_match( '/class\=\"|\'/', $html ) ) {
 					$search[] = $html;
-					$replace[] = str_replace( '<a', '<a class="theme-generated-button button'.$button_class.'"', $html );
+					$replace[] = str_replace( '<a', '<a class="theme-generated-button button'.esc_attr( $button_class ).'"', $html );
 				}
 			}
 		}

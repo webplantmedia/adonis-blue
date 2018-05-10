@@ -28,11 +28,8 @@ $display_version = CRIMSON_ROSE_VERSION;
 		</style>
 		
 		<h1><?php
-			printf(
-				/* Translators: this string is the currenty theme version number. */
-				esc_html__( 'Crimson Rose WordPress Theme - Version&nbsp;%s', 'crimson-rose' ),
-				esc_html( $display_version )
-			);
+			/* Translators: this string is the currenty theme version number. */
+			printf( esc_html__( 'Crimson Rose WordPress Theme - Version&nbsp;%s', 'crimson-rose' ), $display_version ); /* WPCS: XSS OK. HTML output. */
 		?></h1>
 
 		<?php /* Translators: this string is a link to the theme authors page. */ ?>

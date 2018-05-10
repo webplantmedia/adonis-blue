@@ -1,40 +1,48 @@
 <?php
 /**
- * Section: Featured Slides Widget
+ * Content Widget: Featured Slides Widget
  *
- * @since Crimson_Rose 1.0.0.
- *
- * @package Crimson_Rose
+ * @package WordPress
+ * @subpackage Crimson_Rose
+ * @since 1.01
+ * @author Chris Baldelomar <chris@webplantmedia.com>
+ * @copyright Copyright (c) 2018, Chris Baldelomar
+ * @link https://webplantmedia.com/product/crimson-rose-wordpress-theme/
+ * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
 if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 	/**
-	 * Display Featured Slide Item for section
+	 * Class: Display Featured Slide Item for section
 	 *
-	 * @since Crimson_Rose 1.0.0.
+	 * @since Crimson_Rose 1.01
 	 *
-	 * @package Crimson_Rose
+	 * @see Crimson_Rose_Widget
 	 */
 	class Crimson_Rose_Content_Widget_Collage extends Crimson_Rose_Widget {
 		/**
-		 * Constructor
+		 * __construct
+		 *
+		 * @since Crimson_Rose 1.0
+		 *
+		 * @return void
 		 */
 		public function __construct() {
 			$this->widget_id          = 'crimson-rose-content-widget-collage';
-			$this->widget_description = __( 'Displays a collage on your widgetized page.', 'crimson-rose' );
-			$this->widget_name        = __( 'Crimson Rose: Collage', 'crimson-rose' );
+			$this->widget_description = esc_html__( 'Displays a collage on your widgetized page.', 'crimson-rose' );
+			$this->widget_name        = esc_html__( 'Crimson Rose: Collage', 'crimson-rose' );
 			$this->settings           = array(
 				'panels' => array(
 					array(
-						'title' => __( 'Slider Settings', 'crimson-rose' ),
+						'title' => esc_html__( 'Slider Settings', 'crimson-rose' ),
 						'fields' => array(
 							'slider_mode' => array(
 								'type'  => 'select',
 								'std'   => 'horizontal',
-								'label' => __( 'Transition Effect:', 'crimson-rose' ),
+								'label' => esc_html__( 'Transition Effect:', 'crimson-rose' ),
 								'options' => array(
-									'horizontal' => __( 'Slide', 'crimson-rose' ),
-									'fade' => __( 'Fade', 'crimson-rose' ),
+									'horizontal' => esc_html__( 'Slide', 'crimson-rose' ),
+									'fade' => esc_html__( 'Fade', 'crimson-rose' ),
 								),
 								'sanitize' => 'text',
 							),
@@ -44,31 +52,31 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 								'step'  => 1,
 								'min'   => 1,
 								'max'   => 100,
-								'label' => __( 'Speed of the slideshow change in seconds:', 'crimson-rose' ),
+								'label' => esc_html__( 'Speed of the slideshow change in seconds:', 'crimson-rose' ),
 								'sanitize' => 'number',
 							),
 							'slider_auto' => array(
 								'type'  => 'checkbox',
 								'std'   => 1,
-								'label' => __( 'Auto start slider transitions?', 'crimson-rose' ),
+								'label' => esc_html__( 'Auto start slider transitions?', 'crimson-rose' ),
 								'sanitize' => 'checkbox',
 							),
 							'slider_autohover' => array(
 								'type'  => 'checkbox',
 								'std'   => 1,
-								'label' => __( 'Pause slideshow when hovering?', 'crimson-rose' ),
+								'label' => esc_html__( 'Pause slideshow when hovering?', 'crimson-rose' ),
 								'sanitize' => 'checkbox',
 							),
 							'slider_controls' => array(
 								'type'  => 'checkbox',
 								'std'   => 1,
-								'label' => __( 'Show slide control?', 'crimson-rose' ),
+								'label' => esc_html__( 'Show slide control?', 'crimson-rose' ),
 								'sanitize' => 'checkbox',
 							),
 							'slider_pager' => array(
 								'type'  => 'checkbox',
 								'std'   => 1,
-								'label' => __( 'Show slide pagination?', 'crimson-rose' ),
+								'label' => esc_html__( 'Show slide pagination?', 'crimson-rose' ),
 								'sanitize' => 'checkbox',
 							),
 							'margin_bottom' => array(
@@ -77,47 +85,47 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 								'step'  => 1,
 								'min'   => 0,
 								'max'   => 300,
-								'label' => __( 'Bottom margin of widget:', 'crimson-rose' ),
+								'label' => esc_html__( 'Bottom margin of widget:', 'crimson-rose' ),
 								'sanitize' => 'number',
 							),
 						),
 					),
 				),
 				'repeater' => array(
-					'title' => __( 'Slide', 'crimson-rose' ),
+					'title' => esc_html__( 'Slide', 'crimson-rose' ),
 					'fields' => array(
 						'page' => array(
 							'type'  => 'page',
 							'std'   => '',
-							'label' => __( 'Select Page:', 'crimson-rose' ),
-							'description' => __( 'The post content and featured image will be grabbed from the selected post. If no featured image is set, then the collage panel will display only the background color selected.', 'crimson-rose' ),
+							'label' => esc_html__( 'Select Page:', 'crimson-rose' ),
+							'description' => esc_html__( 'The post content and featured image will be grabbed from the selected post. If no featured image is set, then the collage panel will display only the background color selected.', 'crimson-rose' ),
 							'sanitize' => 'text',
 						),
 						'background_color' => array(
 							'type'  => 'colorpicker',
 							'std'   => '#ffece3',
-							'label' => __( 'Background Color:', 'crimson-rose' ),
+							'label' => esc_html__( 'Background Color:', 'crimson-rose' ),
 							'sanitize' => 'color',
 						),
 						'background_size' => array(
 							'type'  => 'select',
 							'std'   => 'cover',
-							'label' => __( 'Background Size:', 'crimson-rose' ),
+							'label' => esc_html__( 'Background Size:', 'crimson-rose' ),
 							'options' => $this->options_background_size(),
 							'sanitize' => 'background_size',
 						),
 						'text_color' => array(
 							'type'  => 'colorpicker',
 							'std'   => '',
-							'label' => __( 'Text Color:', 'crimson-rose' ),
-							'description' => __( 'Leave blank to use default theme color.', 'crimson-rose' ),
+							'label' => esc_html__( 'Text Color:', 'crimson-rose' ),
+							'description' => esc_html__( 'Leave blank to use default theme color.', 'crimson-rose' ),
 							'sanitize' => 'color',
 						),
 						'text_background_color' => array(
 							'type'  => 'colorpicker',
 							'std'   => '',
-							'label' => __( 'Text Background Color:', 'crimson-rose' ),
-							'description' => __( 'Leave blank to use default theme color.', 'crimson-rose' ),
+							'label' => esc_html__( 'Text Background Color:', 'crimson-rose' ),
+							'description' => esc_html__( 'Leave blank to use default theme color.', 'crimson-rose' ),
 							'sanitize' => 'color',
 						),
 						'text_background_opacity' => array(
@@ -126,7 +134,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 							'step'  => '1',
 							'min'   => '0',
 							'max'   => '100',
-							'label' => __( 'Text Background Color Opacity:', 'crimson-rose' ),
+							'label' => esc_html__( 'Text Background Color Opacity:', 'crimson-rose' ),
 							'sanitize' => 'absint',
 						),
 						'max_width' => array(
@@ -134,30 +142,30 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 							'std'   => '400',
 							'step'  => '1',
 							'min'   => '0',
-							'label' => __( 'Max Width of Content Box:', 'crimson-rose' ),
-							'description' => __( 'Leave blank to set max width to none.', 'crimson-rose' ),
+							'label' => esc_html__( 'Max Width of Content Box:', 'crimson-rose' ),
+							'description' => esc_html__( 'Leave blank to set max width to none.', 'crimson-rose' ),
 							'sanitize' => 'number_blank',
 						),
 						'button_text' => array(
 							'type'  => 'text',
 							'std'   => '',
-							'label' => __( 'Button Text:', 'crimson-rose' ),
+							'label' => esc_html__( 'Button Text:', 'crimson-rose' ),
 							'sanitize' => 'text',
 						),
 						'button_link' => array(
 							'type'  => 'text',
 							'std'   => '',
-							'label' => __( 'Button URL:', 'crimson-rose' ),
+							'label' => esc_html__( 'Button URL:', 'crimson-rose' ),
 							'sanitize' => 'url',
 						),
 						'button_style' => array(
 							'type'  => 'select',
 							'std'   => 'default',
-							'label' => __( 'Button Style:', 'crimson-rose' ),
+							'label' => esc_html__( 'Button Style:', 'crimson-rose' ),
 							'options' => array(
-								'default' => __( 'Default Button', 'crimson-rose' ),
-								'button-1' => __( 'Image Button 1', 'crimson-rose' ),
-								'button-2' => __( 'Image Button 2', 'crimson-rose' ),
+								'default' => esc_html__( 'Default Button', 'crimson-rose' ),
+								'button-1' => esc_html__( 'Image Button 1', 'crimson-rose' ),
+								'button-2' => esc_html__( 'Image Button 2', 'crimson-rose' ),
 							),
 							'sanitize' => 'text',
 						),
@@ -244,8 +252,8 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 		/**
 		 * Widget function.
 		 *
-		 * @see WP_Widget
-		 * @access public
+		 * @since Crimson_Rose 1.0
+		 *
 		 * @param array $args
 		 * @param array $instance
 		 * @return void
@@ -269,7 +277,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 
 			extract( $args );
 
-			echo  $before_widget;
+			echo $before_widget; /* WPCS: XSS OK. HTML output. */
 
 			?>
 
@@ -363,9 +371,17 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 			</script>
 
 			<?php
-			echo  $after_widget;
+			echo $after_widget; /* WPCS: XSS OK. HTML output. */
 		}
 		
+		/**
+		 * Generate slide HTML
+		 *
+		 * @since Crimson_Rose 1.0
+		 *
+		 * @param string $slide_setting
+		 * @return string
+		 */
 		function widget_get_slide( $slide_setting ) {
 			global $crimson_rose;
 
@@ -398,15 +414,15 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 			}
 
 			if ( ! empty( $slide_setting['background_size'] ) ) {
-				$style[] = 'background-size:' . esc_attr( $this->get_background_size( $slide_setting['background_size'] ) ) . ';';
+				$style[] = 'background-size:' . $this->get_background_size( $slide_setting['background_size'] ) . ';';
 			}
 
 			if ( ! empty( $slide_setting['background_color'] ) ) {
-				$style[] = 'background-color:' . esc_attr( $slide_setting['background_color'] ) . ';';
+				$style[] = 'background-color:' . $slide_setting['background_color'] . ';';
 			}
 
 			if ( ! empty( $slide_setting['text_color'] ) ) {
-				$text_style[] = 'color:' . esc_attr( $slide_setting['text_color'] ) . ';';
+				$text_style[] = 'color:' . $slide_setting['text_color'] . ';';
 				$text_class .= ' custom-color';
 			}
 			else {
@@ -430,16 +446,16 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 
 
 			if ( ! empty( $style ) ) {
-				$attr[] = 'style="' . implode( '', $style ) . '"';
+				$attr[] = 'style="' . esc_attr( implode( '', $style ) ) . '"';
 			}
 
 			if ( ! empty( $classes ) ) {
-				$attr[] = 'class="' . implode( ' ', $classes ) . '"';
+				$attr[] = 'class="' . esc_attr( implode( ' ', $classes ) ) . '"';
 			}
 
 			?>
 
-			<div <?php echo implode( ' ', $attr ); ?>>
+			<div <?php echo implode( ' ', $attr ); /* WPCS: XSS OK. Escaped above. */ ?>>
 					
 				<div class="content-wrapper<?php echo esc_attr( $text_class ); ?>" style="<?php echo esc_attr( implode( '', $text_style ) ); ?>">
 					<?php if ( ! empty( $slide_setting['button_link'] ) ) : ?>
@@ -451,7 +467,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 					<?php if ( $p && isset( $p->post_content ) ) : ?>
 						<?php if ( ! empty( $p->post_content ) ) : ?>
 							<div class="content-text">
-								<?php echo apply_filters( 'wpautop', $p->post_content ); ?>
+								<?php echo apply_filters( 'wpautop', $p->post_content ); /* WPCS: XSS OK. HTML output. */ ?>
 							</div>
 						<?php endif; ?>
 					<?php else : ?>
@@ -476,7 +492,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 						?>
 						<div class="button-text">
 							<a class="button slide-button<?php echo esc_attr( $button_class ); ?>" href="<?php echo esc_url( $slide_setting['button_link'] ); ?>">
-								<?php echo $slide_setting['button_text']; ?>
+								<?php echo $slide_setting['button_text']; /* WPCS: XSS OK. HTML output. */ ?>
 							</a>
 						</div>
 					<?php endif; ?>
@@ -506,7 +522,9 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 		/**
 		 * Registers the widget with the WordPress Widget API.
 		 *
-		 * @return mixed
+		 * @since Crimson_Rose 1.0
+		 *
+		 * @return void
 		 */
 		public static function register() {
 			register_widget( __CLASS__ );

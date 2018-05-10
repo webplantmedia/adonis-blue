@@ -1,45 +1,53 @@
 <?php
 /**
- * Section: Blog Posts Widget
+ * Content Widget: Blog Posts Widget
  *
- * @since Crimson_Rose 1.0.0.
- *
- * @package Crimson_Rose
+ * @package WordPress
+ * @subpackage Crimson_Rose
+ * @since 1.01
+ * @author Chris Baldelomar <chris@webplantmedia.com>
+ * @copyright Copyright (c) 2018, Chris Baldelomar
+ * @link https://webplantmedia.com/product/crimson-rose-wordpress-theme/
+ * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
 if ( ! class_exists( 'Crimson_Rose_Content_Widget_Blog_Post' ) ) :
 	/**
-	 * Display static content from an specific page.
+	 * Class: Display static content from an specific page.
 	 *
-	 * @since Crimson_Rose 1.0.0.
+	 * @since Crimson_Rose 1.01
 	 *
-	 * @package Crimson_Rose
+	 * @see Crimson_Rose_Widget
 	 */
 	class Crimson_Rose_Content_Widget_Blog_Post extends Crimson_Rose_Widget {
 		/**
-		 * Constructor
+		 * __construct
+		 *
+		 * @since Crimson_Rose 1.0
+		 *
+		 * @return void
 		 */
 		public function __construct() {
 			$this->widget_id          = 'crimson-rose-content-widget-blog-posts';
-			$this->widget_description = __( 'Displays content from blog posts on your widgetized page.', 'crimson-rose' );
-			$this->widget_name        = __( 'Crimson Rose: Blog Posts', 'crimson-rose' );
+			$this->widget_description = esc_html__( 'Displays content from blog posts on your widgetized page.', 'crimson-rose' );
+			$this->widget_name        = esc_html__( 'Crimson Rose: Blog Posts', 'crimson-rose' );
 			$this->settings           = array(
 				'title' => array(
 					'type'  => 'text',
-					'std'   => __( 'BLOG', 'crimson-rose' ),
-					'label' => __( 'Title:', 'crimson-rose' ),
+					'std'   => esc_html__( 'BLOG', 'crimson-rose' ),
+					'label' => esc_html__( 'Title:', 'crimson-rose' ),
 					'sanitize' => 'text',
 				),
 				'post_ids' => array(
 					'type'  => 'post',
 					'std'   => '',
-					'label' => __( 'Post ID\'s:', 'crimson-rose' ),
+					'label' => esc_html__( 'Post ID\'s:', 'crimson-rose' ),
 					'sanitize' => 'post_ids',
 				),
 				'category' => array(
 					'type'  => 'category',
 					'std'   => 0,
-					'label' => __( 'Category:', 'crimson-rose' ),
+					'label' => esc_html__( 'Category:', 'crimson-rose' ),
 					'sanitize' => 'number',
 				),
 				'post_count' => array(
@@ -48,45 +56,45 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Blog_Post' ) ) :
 					'step'  => 1,
 					'min'   => 1,
 					'max'   => 100,
-					'label' => __( 'Number of Posts:', 'crimson-rose' ),
+					'label' => esc_html__( 'Number of Posts:', 'crimson-rose' ),
 					'sanitize' => 'number',
 				),
 				'columns' => array(
 					'type'  => 'select',
 					'std'   => 3,
-					'label' => __( 'Columns:', 'crimson-rose' ),
+					'label' => esc_html__( 'Columns:', 'crimson-rose' ),
 					'options' => array(
-						2 => __( '2 Columns', 'crimson-rose' ),
-						3 => __( '3 Columns', 'crimson-rose' ),
+						2 => esc_html__( '2 Columns', 'crimson-rose' ),
+						3 => esc_html__( '3 Columns', 'crimson-rose' ),
 					),
 					'sanitize' => 'number',
 				),
 				'random_order' => array(
 					'type'  => 'checkbox',
 					'std'   => 0,
-					'label' => __( 'Random order?', 'crimson-rose' ),
+					'label' => esc_html__( 'Random order?', 'crimson-rose' ),
 					'sanitize' => 'checkbox',
 				),
 				'button_text' => array(
 					'type'  => 'text',
-					'std'   => __( 'See All Posts', 'crimson-rose' ),
-					'label' => __( 'Button Text:', 'crimson-rose' ),
+					'std'   => esc_html__( 'See All Posts', 'crimson-rose' ),
+					'label' => esc_html__( 'Button Text:', 'crimson-rose' ),
 					'sanitize' => 'text',
 				),
 				'button_link' => array(
 					'type'  => 'text',
 					'std'   => '',
-					'label' => __( 'Button Link:', 'crimson-rose' ),
+					'label' => esc_html__( 'Button Link:', 'crimson-rose' ),
 					'sanitize' => 'url',
 				),
 				'button_style' => array(
 					'type'  => 'select',
 					'std'   => 'button-2',
-					'label' => __( 'Button Style:', 'crimson-rose' ),
+					'label' => esc_html__( 'Button Style:', 'crimson-rose' ),
 					'options' => array(
-						'default' => __( 'Default Button', 'crimson-rose' ),
-						'button-1' => __( 'Image Button 1', 'crimson-rose' ),
-						'button-2' => __( 'Image Button 2', 'crimson-rose' ),
+						'default' => esc_html__( 'Default Button', 'crimson-rose' ),
+						'button-1' => esc_html__( 'Image Button 1', 'crimson-rose' ),
+						'button-2' => esc_html__( 'Image Button 2', 'crimson-rose' ),
 					),
 					'sanitize' => 'text',
 				),
@@ -96,7 +104,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Blog_Post' ) ) :
 					'step'  => 1,
 					'min'   => 0,
 					'max'   => 300,
-					'label' => __( 'Bottom margin of widget:', 'crimson-rose' ),
+					'label' => esc_html__( 'Bottom margin of widget:', 'crimson-rose' ),
 					'sanitize' => 'number',
 				),
 			);
@@ -107,8 +115,8 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Blog_Post' ) ) :
 		/**
 		 * Widget function.
 		 *
-		 * @see WP_Widget
-		 * @access public
+		 * @since Crimson_Rose 1.0
+		 *
 		 * @param array $args
 		 * @param array $instance
 		 * @return void
@@ -147,7 +155,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Blog_Post' ) ) :
 				$style[] = 'margin-bottom:' . $o['margin_bottom'] . 'px;';
 			}
 
-			echo $before_widget;
+			echo $before_widget; /* WPCS: XSS OK. HTML output. */
 
 			// Allow site-wide customization of the 'Read more' link text.
 			$read_more = apply_filters( 'crimson_rose_read_more_text', esc_html__( 'Read more', 'crimson-rose' ) );
@@ -157,7 +165,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Blog_Post' ) ) :
 
 				<?php
 				if ( $o['title'] ) {
-					echo  $before_title . esc_html( $o['title'] ) . $after_title;
+					echo  $before_title . esc_html( $o['title'] ) . $after_title; /* WPCS: XSS OK. HTML output. */
 				}
 				?>
 
@@ -197,7 +205,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Blog_Post' ) ) :
 						}
 						?>
 						<p class="button-wrapper">
-							<a class="button<?php echo esc_attr( $button_class ); ?>" href="<?php echo esc_url( $o['button_link'] ); ?>"><?php echo $o['button_text']; ?></a>
+							<a class="button<?php echo esc_attr( $button_class ); ?>" href="<?php echo esc_url( $o['button_link'] ); ?>"><?php echo $o['button_text']; /* WPCS: XSS OK. HTML output. */ ?></a>
 						</p>
 					<?php endif; ?>
 
@@ -209,13 +217,21 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Blog_Post' ) ) :
 
 			</div>
 
-			<?php echo $after_widget; ?>
+			<?php echo $after_widget; /* WPCS: XSS OK. HTML output. */ ?>
 
 			<?php //remove_filter( 'excerpt_length', array( $this, 'custom_excerpt_length' ) ); ?>
 
 			<?php wp_reset_postdata();
 		}
 
+		/**
+		 * Change excerpt length
+		 *
+		 * @since Crimson_Rose 1.0
+		 *
+		 * @param int $length
+		 * @return void
+		 */
 		function custom_excerpt_length( $length ) {
 			return 20;
 		}
@@ -223,7 +239,9 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Blog_Post' ) ) :
 		/**
 		 * Registers the widget with the WordPress Widget API.
 		 *
-		 * @return mixed
+		 * @since Crimson_Rose 1.0
+		 *
+		 * @return void
 		 */
 		public static function register() {
 			register_widget( __CLASS__ );
