@@ -2,13 +2,22 @@
 /**
  * Crimson Rose Theme Customizer
  *
- * @package Crimson_Rose
+ * @package WordPress
+ * @subpackage Crimson_Rose
+ * @since 1.01
+ * @author Chris Baldelomar <chris@webplantmedia.com>
+ * @copyright Copyright (c) 2018, Chris Baldelomar
+ * @link https://webplantmedia.com/product/crimson-rose-wordpress-theme/
+ * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
 /**
- * Add refresh support for site title and description for the Theme Customizer.
+ * Customizer support
  *
- * @param WP_Customize_Manager $wp_customize Theme Customizer object.
+ * @since Crimson_Rose 1.0
+ *
+ * @param object $wp_customize
+ * @return void
  */
 function crimson_rose_customize_register( $wp_customize ) {
 	global $crimson_rose_default;
@@ -17,7 +26,6 @@ function crimson_rose_customize_register( $wp_customize ) {
 	
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-	// $wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
 	if ( isset( $wp_customize->selective_refresh ) ) {
 		$wp_customize->selective_refresh->add_partial( 'blogname', array(
@@ -47,17 +55,17 @@ function crimson_rose_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, $setting_id, array(
-		'label' => __( 'Retina Logo', 'crimson-rose' ),
+		'label' => esc_html__( 'Retina Logo', 'crimson-rose' ),
 		'priority' => 8, // below the logo media selector
 		'section' => $section_id,
 		'button_labels' => array(
-			'select'       => __( 'Select Retina Logo', 'crimson-rose' ),
-			'change'       => __( 'Change Retina Logo', 'crimson-rose' ),
-			'placeholder'  => __( 'No retina logo selected', 'crimson-rose' ),
-			'frame_title'  => __( 'Select Retina Logo', 'crimson-rose' ),
-			'frame_button' => __( 'Choose Retina Logo', 'crimson-rose' ),
+			'select'       => esc_html__( 'Select Retina Logo', 'crimson-rose' ),
+			'change'       => esc_html__( 'Change Retina Logo', 'crimson-rose' ),
+			'placeholder'  => esc_html__( 'No retina logo selected', 'crimson-rose' ),
+			'frame_title'  => esc_html__( 'Select Retina Logo', 'crimson-rose' ),
+			'frame_button' => esc_html__( 'Choose Retina Logo', 'crimson-rose' ),
 		),
-		'description' => __( 'Select image twice the size as your original logo image for crisp display on retina screens.', 'crimson-rose' ),
+		'description' => esc_html__( 'Select image twice the size as your original logo image for crisp display on retina screens.', 'crimson-rose' ),
 	) ) );
 
 	$setting_id = 'heading_padding_top';
@@ -69,7 +77,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'number',
-		'label' => __( 'Padding Top', 'crimson-rose' ),
+		'label' => esc_html__( 'Padding Top', 'crimson-rose' ),
 		'section' => $section_id,
 	) );
 
@@ -82,7 +90,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'number',
-		'label' => __( 'Padding Bottom', 'crimson-rose' ),
+		'label' => esc_html__( 'Padding Bottom', 'crimson-rose' ),
 		'section' => $section_id,
 	) );
 
@@ -90,18 +98,6 @@ function crimson_rose_customize_register( $wp_customize ) {
 	 * Custom colors.
 	 */
 	$section_id = 'colors';
-
-	/* $setting_id = 'header_textcolor';
-	$wp_customize->add_setting( $setting_id, array(
-		'default'   => '#000000',
-		'transport' => 'postMessage',
-		'sanitize_callback' => 'sanitize_hex_color',
-	) );
-
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $setting_id, array(
-		'label' => __( 'Header Text Color', 'crimson-rose' ),
-		'section' => $section_id,
-	) ) ); */
 
 	$setting_id = 'header_background_image_color';
 	$wp_customize->add_setting( $setting_id, array(
@@ -111,20 +107,23 @@ function crimson_rose_customize_register( $wp_customize ) {
 	) );
 
 	if ( ! crimson_rose_is_watercolor_backgrounds_activated() ) {
-		$description = __( 'To add more watercolor backgrounds, please download our <a target="_blank" href="https://webplantmedia.com/product/crimson-rose-watercolor-backgrounds-wordpress-plugin/"><span style="text-decoration:none;" class="dashicons dashicons-external"></span>Watercolor Backgrounds</a> plugin.', 'crimson-rose' );
+		$description = sprintf(
+			esc_html__( 'To add more watercolor backgrounds, please download our %s plugin.', 'crimson-rose' ),
+			'<a target="_blank" href="https://webplantmedia.com/product/crimson-rose-watercolor-backgrounds-wordpress-plugin/"><span style="text-decoration:none;" class="dashicons dashicons-external"></span>' . esc_html__( 'Watercolor Backgrounds', 'crimson-rose' ) . '</a>'
+		);
 	}
 	else {
-		$description = __( 'Control the color of the watercolor background image in the header.', 'crimson-rose' );
+		$description = esc_html__( 'Control the color of the watercolor background image in the header.', 'crimson-rose' );
 	}
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'select',
-		'label' => __( 'Header Background Image Color', 'crimson-rose' ),
+		'label' => esc_html__( 'Header Background Image Color', 'crimson-rose' ),
 		'description' => $description,
 		'section' => $section_id,
 		'choices' => apply_filters( 'crimson-rose-header-background-image-color', array(
-			'none' => __( 'No Image', 'crimson-rose' ),
-			'red' => __( 'Red', 'crimson-rose' ),
+			'none' => esc_html__( 'No Image', 'crimson-rose' ),
+			'red' => esc_html__( 'Red', 'crimson-rose' ),
 		) ),
 	) );
 
@@ -136,7 +135,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $setting_id, array(
-		'label' => __( 'Primary Color', 'crimson-rose' ),
+		'label' => esc_html__( 'Primary Color', 'crimson-rose' ),
 		'section' => $section_id,
 	) ) );
 
@@ -148,7 +147,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $setting_id, array(
-		'label' => __( 'Primary Hover Color', 'crimson-rose' ),
+		'label' => esc_html__( 'Primary Hover Color', 'crimson-rose' ),
 		'section' => $section_id,
 	) ) );
 
@@ -160,7 +159,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $setting_id, array(
-		'label' => __( 'Archive Background Color', 'crimson-rose' ),
+		'label' => esc_html__( 'Archive Background Color', 'crimson-rose' ),
 		'section' => $section_id,
 	) ) );
 
@@ -173,7 +172,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'checkbox',
-		'label' => __( 'Display White Archive Title?', 'crimson-rose' ),
+		'label' => esc_html__( 'Display White Archive Title?', 'crimson-rose' ),
 		'section' => $section_id,
 	) );
 
@@ -185,7 +184,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $setting_id, array(
-		'label' => __( 'Footer Background Color', 'crimson-rose' ),
+		'label' => esc_html__( 'Footer Background Color', 'crimson-rose' ),
 		'section' => $section_id,
 	) ) );
 
@@ -197,20 +196,23 @@ function crimson_rose_customize_register( $wp_customize ) {
 	) );
 
 	if ( ! crimson_rose_is_watercolor_backgrounds_activated() ) {
-		$description = __( 'To add more watercolor backgrounds, please download our <a target="_blank" href="https://webplantmedia.com/product/crimson-rose-watercolor-backgrounds-wordpress-plugin/"><span style="text-decoration:none;" class="dashicons dashicons-external"></span>Watercolor Backgrounds</a> plugin.', 'crimson-rose' );
+		$description = sprintf(
+			esc_html__( 'To add more watercolor backgrounds, please download our %s plugin.', 'crimson-rose' ),
+			'<a target="_blank" href="https://webplantmedia.com/product/crimson-rose-watercolor-backgrounds-wordpress-plugin/"><span style="text-decoration:none;" class="dashicons dashicons-external"></span>' . esc_html__( 'Watercolor Backgrounds', 'crimson-rose' ) . '</a>'
+		);
 	}
 	else {
-		$description = __( 'Control the color of the watercolor background image in the footer.', 'crimson-rose' );
+		$description = esc_html__( 'Control the color of the watercolor background image in the footer.', 'crimson-rose' );
 	}
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'select',
-		'label' => __( 'Footer Background Image Color', 'crimson-rose' ),
+		'label' => esc_html__( 'Footer Background Image Color', 'crimson-rose' ),
 		'description' => $description,
 		'section' => $section_id,
 		'choices' => apply_filters( 'crimson-rose-footer-background-image-color', array(
-			'none' => __( 'No Image', 'crimson-rose' ),
-			'red' => __( 'Red', 'crimson-rose' ),
+			'none' => esc_html__( 'No Image', 'crimson-rose' ),
+			'red' => esc_html__( 'Red', 'crimson-rose' ),
 		) ),
 	) );
 
@@ -223,7 +225,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'checkbox',
-		'label' => __( 'Display White Footer Text?', 'crimson-rose' ),
+		'label' => esc_html__( 'Display White Footer Text?', 'crimson-rose' ),
 		'section' => $section_id,
 	) );
 
@@ -235,7 +237,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $setting_id, array(
-		'label' => __( 'Link Color', 'crimson-rose' ),
+		'label' => esc_html__( 'Link Color', 'crimson-rose' ),
 		'section' => $section_id,
 	) ) );
 
@@ -247,7 +249,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $setting_id, array(
-		'label' => __( 'Link Hover Color', 'crimson-rose' ),
+		'label' => esc_html__( 'Link Hover Color', 'crimson-rose' ),
 		'section' => $section_id,
 	) ) );
 
@@ -255,7 +257,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 	 * Theme options.
 	 */
 	$wp_customize->add_panel( 'theme_options', array(
-		'title'    => __( 'Theme Options', 'crimson-rose' ),
+		'title'    => esc_html__( 'Theme Options', 'crimson-rose' ),
 		'priority' => 330, // Before Additional CSS.
 	) );
 
@@ -264,7 +266,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 	 */
 	$section_id = 'theme_options_site';
 	$wp_customize->add_section( $section_id, array(
-		'title'    => __( 'Site', 'crimson-rose' ),
+		'title'    => esc_html__( 'Site', 'crimson-rose' ),
 		'panel'    => 'theme_options',
 	) );
 
@@ -277,8 +279,8 @@ function crimson_rose_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'range',
-		'label' => __( 'Top Header Background Offset', 'crimson-rose' ),
-		'description' => __( 'This changes the position of your top header background so you can center it perfectly with your top header menu.', 'crimson-rose' ),
+		'label' => esc_html__( 'Top Header Background Offset', 'crimson-rose' ),
+		'description' => esc_html__( 'This changes the position of your top header background so you can center it perfectly with your top header menu.', 'crimson-rose' ),
 		'section' => $section_id,
 		'input_attrs' => array(
 			'min' => 0,
@@ -297,7 +299,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'checkbox',
-		'label' => __( 'Show Menu Arrows', 'crimson-rose' ),
+		'label' => esc_html__( 'Show Menu Arrows', 'crimson-rose' ),
 		'section' => $section_id,
 	) );
 
@@ -310,13 +312,13 @@ function crimson_rose_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'select',
-		'label' => __( 'Default Button Style', 'crimson-rose' ),
-		'description' => __( 'When you insert a link on its own line in the WP Editor, the theme turns it into a button. Choose the default style of your button to display in your post and pages.', 'crimson-rose' ),
+		'label' => esc_html__( 'Default Button Style', 'crimson-rose' ),
+		'description' => esc_html__( 'When you insert a link on its own line in the WP Editor, the theme turns it into a button. Choose the default style of your button to display in your post and pages.', 'crimson-rose' ),
 		'section' => $section_id,
 		'choices' => array(
-			'default' => __( 'Default Button', 'crimson-rose' ),
-			'button-1' => __( 'Button Style 1', 'crimson-rose' ),
-			'button-2' => __( 'Button Style 2', 'crimson-rose' ),
+			'default' => esc_html__( 'Default Button', 'crimson-rose' ),
+			'button-1' => esc_html__( 'Button Style 1', 'crimson-rose' ),
+			'button-2' => esc_html__( 'Button Style 2', 'crimson-rose' ),
 		),
 	) );
 
@@ -329,27 +331,12 @@ function crimson_rose_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'checkbox',
-		'label' => __( 'Disable Body Font', 'crimson-rose' ),
-		'description' => __( 'If you are using a Google Font plugin, then you can disable the load of the body font.', 'crimson-rose' ),
+		'label' => esc_html__( 'Disable Body Font', 'crimson-rose' ),
+		'description' => esc_html__( 'If you are using a Google Font plugin, then you can disable the load of the body font.', 'crimson-rose' ),
 		'section' => $section_id,
 		'active_callback' => 'crimson_rose_is_wpm_fonts_deactivated',
 	) );
 
-	/*$setting_id = 'disable_heading_font';
-	$wp_customize->add_setting( $setting_id, array(
-		'default' => $crimson_rose_default[ $setting_id ],
-		'transport' => 'refresh',
-		'sanitize_callback' => 'crimson_rose_sanitize_checkbox',
-	) );
-
-	$wp_customize->add_control( $setting_id, array(
-		'type' => 'checkbox',
-		'label' => __( 'Disable Heading Font', 'crimson-rose' ),
-		'description' => __( 'If you are using a Google Font plugin, then you can disable the load of the heading font.', 'crimson-rose' ),
-		'section' => $section_id,
-		'active_callback' => 'crimson_rose_is_wpm_fonts_deactivated',
-	) );*/
-	
 	$setting_id = 'disable_accent_font';
 	$wp_customize->add_setting( $setting_id, array(
 		'default' => $crimson_rose_default[ $setting_id ],
@@ -359,8 +346,8 @@ function crimson_rose_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'checkbox',
-		'label' => __( 'Disable Accent Font', 'crimson-rose' ),
-		'description' => __( 'The accent font is a cursive font used in places such as your archive title. If you are using a Google Font plugin, then you can disable the load of this accent font.', 'crimson-rose' ),
+		'label' => esc_html__( 'Disable Accent Font', 'crimson-rose' ),
+		'description' => esc_html__( 'The accent font is a cursive font used in places such as your archive title. If you are using a Google Font plugin, then you can disable the load of this accent font.', 'crimson-rose' ),
 		'section' => $section_id,
 		'active_callback' => 'crimson_rose_is_wpm_fonts_deactivated',
 	) );
@@ -375,8 +362,8 @@ function crimson_rose_customize_register( $wp_customize ) {
 	$wp_customize->add_control( $setting_id, array(
 		'section' => $section_id,
 		'type' => 'range',
-		'label' => __( 'Page Image Header Height', 'crimson-rose' ),
-		'description' => __( 'This changes the height of your featured image in your page header area.', 'crimson-rose' ),
+		'label' => esc_html__( 'Page Image Header Height', 'crimson-rose' ),
+		'description' => esc_html__( 'This changes the height of your featured image in your page header area.', 'crimson-rose' ),
 		'section' => $section_id,
 		'input_attrs' => array(
 			'min' => 0,
@@ -391,7 +378,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 	 */
 	$section_id = 'theme_options_blog';
 	$wp_customize->add_section( $section_id, array(
-		'title'    => __( 'Blog', 'crimson-rose' ),
+		'title'    => esc_html__( 'Blog', 'crimson-rose' ),
 		'panel'    => 'theme_options',
 	) );
 
@@ -404,13 +391,13 @@ function crimson_rose_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'select',
-		'label' => __( 'Blog Display', 'crimson-rose' ),
+		'label' => esc_html__( 'Blog Display', 'crimson-rose' ),
 		'section' => $section_id,
 		'choices' => array(
-			'blog1' => __( 'Lead Excerpt + Grid', 'crimson-rose' ),
-			'blog4' => __( 'Grid', 'crimson-rose' ),
-			'blog2' => __( 'Excerpt', 'crimson-rose' ),
-			'blog3' => __( 'Content', 'crimson-rose' ),
+			'blog1' => esc_html__( 'Lead Excerpt + Grid', 'crimson-rose' ),
+			'blog4' => esc_html__( 'Grid', 'crimson-rose' ),
+			'blog2' => esc_html__( 'Excerpt', 'crimson-rose' ),
+			'blog3' => esc_html__( 'Content', 'crimson-rose' ),
 		),
 	) );
 
@@ -423,13 +410,13 @@ function crimson_rose_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'select',
-		'label' => __( 'Archive Display', 'crimson-rose' ),
+		'label' => esc_html__( 'Archive Display', 'crimson-rose' ),
 		'section' => $section_id,
 		'choices' => array(
-			'blog1' => __( 'Lead Excerpt + Grid', 'crimson-rose' ),
-			'blog4' => __( 'Grid', 'crimson-rose' ),
-			'blog2' => __( 'Excerpt', 'crimson-rose' ),
-			'blog3' => __( 'Content', 'crimson-rose' ),
+			'blog1' => esc_html__( 'Lead Excerpt + Grid', 'crimson-rose' ),
+			'blog4' => esc_html__( 'Grid', 'crimson-rose' ),
+			'blog2' => esc_html__( 'Excerpt', 'crimson-rose' ),
+			'blog3' => esc_html__( 'Content', 'crimson-rose' ),
 		),
 	) );
 
@@ -442,13 +429,13 @@ function crimson_rose_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'select',
-		'label' => __( 'Search Display', 'crimson-rose' ),
+		'label' => esc_html__( 'Search Display', 'crimson-rose' ),
 		'section' => $section_id,
 		'choices' => array(
-			'blog1' => __( 'Lead Excerpt + Grid', 'crimson-rose' ),
-			'blog4' => __( 'Grid', 'crimson-rose' ),
-			'blog2' => __( 'Excerpt', 'crimson-rose' ),
-			'blog3' => __( 'Content', 'crimson-rose' ),
+			'blog1' => esc_html__( 'Lead Excerpt + Grid', 'crimson-rose' ),
+			'blog4' => esc_html__( 'Grid', 'crimson-rose' ),
+			'blog2' => esc_html__( 'Excerpt', 'crimson-rose' ),
+			'blog3' => esc_html__( 'Content', 'crimson-rose' ),
 		),
 	) );
 
@@ -462,8 +449,8 @@ function crimson_rose_customize_register( $wp_customize ) {
 	$wp_customize->add_control( $setting_id, array(
 		'section' => $section_id,
 		'type' => 'number',
-		'label' => __( 'Thumb Excerpt Max Height', 'crimson-rose' ),
-		'description' => __( 'If you have long featured images in your excerpts, set a max-height on your image. Enter 0 for no max-height', 'crimson-rose' ),
+		'label' => esc_html__( 'Thumb Excerpt Max Height', 'crimson-rose' ),
+		'description' => esc_html__( 'If you have long featured images in your excerpts, set a max-height on your image. Enter 0 for no max-height', 'crimson-rose' ),
 		'section' => $section_id,
 		'input_attrs' => array(
 			'min' => 0,
@@ -481,8 +468,8 @@ function crimson_rose_customize_register( $wp_customize ) {
 	$wp_customize->add_control( $setting_id, array(
 		'section' => $section_id,
 		'type' => 'number',
-		'label' => __( 'Thumb Grid Max Height', 'crimson-rose' ),
-		'description' => __( 'If you have long featured images in your grid, set a max-height on your image. Enter 0 for no max-height', 'crimson-rose' ),
+		'label' => esc_html__( 'Thumb Grid Max Height', 'crimson-rose' ),
+		'description' => esc_html__( 'If you have long featured images in your grid, set a max-height on your image. Enter 0 for no max-height', 'crimson-rose' ),
 		'section' => $section_id,
 		'input_attrs' => array(
 			'min' => 0,
@@ -499,8 +486,8 @@ function crimson_rose_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'checkbox',
-		'label' => __( 'Hide Post Navigation', 'crimson-rose' ),
-		'description' => __( 'Hide the post navigation buttons at the bottom of each post.', 'crimson-rose' ),
+		'label' => esc_html__( 'Hide Post Navigation', 'crimson-rose' ),
+		'description' => esc_html__( 'Hide the post navigation buttons at the bottom of each post.', 'crimson-rose' ),
 		'section' => $section_id,
 	) );
 
@@ -509,7 +496,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 	 */
 	$section_id = 'theme_options_jetpack';
 	$wp_customize->add_section( $section_id, array(
-		'title'    => __( 'Jetpack', 'crimson-rose' ),
+		'title'    => esc_html__( 'Jetpack', 'crimson-rose' ),
 		'panel'    => 'theme_options',
 		'active_callback' => 'crimson_rose_is_jetpack_activated',
 	) );
@@ -523,7 +510,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'checkbox',
-		'label' => __( 'Hide Share Button Count', 'crimson-rose' ),
+		'label' => esc_html__( 'Hide Share Button Count', 'crimson-rose' ),
 		'section' => $section_id,
 	) );
 
@@ -532,7 +519,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 	 */
 	$section_id = 'theme_options_shop';
 	$wp_customize->add_section( $section_id, array(
-		'title'    => __( 'Shop', 'crimson-rose' ),
+		'title'    => esc_html__( 'Shop', 'crimson-rose' ),
 		'panel'    => 'theme_options',
 		'active_callback' => 'crimson_rose_is_woocommerce_activated',
 	) );
@@ -546,12 +533,12 @@ function crimson_rose_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'select',
-		'label' => __( 'Shop Columns', 'crimson-rose' ),
+		'label' => esc_html__( 'Shop Columns', 'crimson-rose' ),
 		'section' => $section_id,
 		'choices' => array(
-			2 => __( '2', 'crimson-rose' ),
-			3 => __( '3', 'crimson-rose' ),
-			4 => __( '4', 'crimson-rose' ),
+			2 => esc_html__( '2', 'crimson-rose' ),
+			3 => esc_html__( '3', 'crimson-rose' ),
+			4 => esc_html__( '4', 'crimson-rose' ),
 		),
 	) );
 
@@ -564,12 +551,12 @@ function crimson_rose_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'select',
-		'label' => __( 'Shop Archive Columns', 'crimson-rose' ),
+		'label' => esc_html__( 'Shop Archive Columns', 'crimson-rose' ),
 		'section' => $section_id,
 		'choices' => array(
-			2 => __( '2', 'crimson-rose' ),
-			3 => __( '3', 'crimson-rose' ),
-			4 => __( '4', 'crimson-rose' ),
+			2 => esc_html__( '2', 'crimson-rose' ),
+			3 => esc_html__( '3', 'crimson-rose' ),
+			4 => esc_html__( '4', 'crimson-rose' ),
 		),
 	) );
 
@@ -582,12 +569,12 @@ function crimson_rose_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'select',
-		'label' => __( 'Related Products Columns', 'crimson-rose' ),
+		'label' => esc_html__( 'Related Products Columns', 'crimson-rose' ),
 		'section' => $section_id,
 		'choices' => array(
-			2 => __( '2', 'crimson-rose' ),
-			3 => __( '3', 'crimson-rose' ),
-			4 => __( '4', 'crimson-rose' ),
+			2 => esc_html__( '2', 'crimson-rose' ),
+			3 => esc_html__( '3', 'crimson-rose' ),
+			4 => esc_html__( '4', 'crimson-rose' ),
 		),
 	) );
 
@@ -600,8 +587,8 @@ function crimson_rose_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'checkbox',
-		'label' => __( 'Display Product Image Backdrop', 'crimson-rose' ),
-		'description' => __( 'Add a light gray backdrop with a dropshadow for your product images. Visually helpful for images with light colored backgrounds.', 'crimson-rose' ),
+		'label' => esc_html__( 'Display Product Image Backdrop', 'crimson-rose' ),
+		'description' => esc_html__( 'Add a light gray backdrop with a dropshadow for your product images. Visually helpful for images with light colored backgrounds.', 'crimson-rose' ),
 		'section' => $section_id,
 	) );
 
@@ -614,7 +601,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'checkbox',
-		'label' => __( 'Hide Shop Title From Main Shop Page', 'crimson-rose' ),
+		'label' => esc_html__( 'Hide Shop Title From Main Shop Page', 'crimson-rose' ),
 		'section' => $section_id,
 	) );
 
@@ -627,7 +614,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'checkbox',
-		'label' => __( 'Hide Breadcrumbs From Shop Page', 'crimson-rose' ),
+		'label' => esc_html__( 'Hide Breadcrumbs From Shop Page', 'crimson-rose' ),
 		'section' => $section_id,
 	) );
 
@@ -640,7 +627,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'checkbox',
-		'label' => __( 'Hide Product Reviews From Shop Page', 'crimson-rose' ),
+		'label' => esc_html__( 'Hide Product Reviews From Shop Page', 'crimson-rose' ),
 		'section' => $section_id,
 	) );
 
@@ -653,7 +640,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'checkbox',
-		'label' => __( 'Hide Result Count String From Shop Page', 'crimson-rose' ),
+		'label' => esc_html__( 'Hide Result Count String From Shop Page', 'crimson-rose' ),
 		'section' => $section_id,
 	) );
 
@@ -666,7 +653,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'checkbox',
-		'label' => __( 'Hide Ordering Dropdown From Shop Page', 'crimson-rose' ),
+		'label' => esc_html__( 'Hide Ordering Dropdown From Shop Page', 'crimson-rose' ),
 		'section' => $section_id,
 	) );
 
@@ -679,8 +666,8 @@ function crimson_rose_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'checkbox',
-		'label' => __( 'Truncate Product Titles', 'crimson-rose' ),
-		'description' => __( 'This will cause product titles to appear in one line.', 'crimson-rose' ),
+		'label' => esc_html__( 'Truncate Product Titles', 'crimson-rose' ),
+		'description' => esc_html__( 'This will cause product titles to appear in one line.', 'crimson-rose' ),
 		'section' => $section_id,
 	) );
 
@@ -693,7 +680,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'checkbox',
-		'label' => __( 'Hide Product Reviews From Product Page', 'crimson-rose' ),
+		'label' => esc_html__( 'Hide Product Reviews From Product Page', 'crimson-rose' ),
 		'section' => $section_id,
 	) );
 
@@ -706,7 +693,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'checkbox',
-		'label' => __( 'Hide Product Meta From Product Page', 'crimson-rose' ),
+		'label' => esc_html__( 'Hide Product Meta From Product Page', 'crimson-rose' ),
 		'section' => $section_id,
 	) );
 
@@ -719,7 +706,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'checkbox',
-		'label' => __( 'Disable Gallery Zoom on Product Page', 'crimson-rose' ),
+		'label' => esc_html__( 'Disable Gallery Zoom on Product Page', 'crimson-rose' ),
 		'section' => $section_id,
 	) );
 
@@ -732,7 +719,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'checkbox',
-		'label' => __( 'Disable Gallery Lightbox on Product Page', 'crimson-rose' ),
+		'label' => esc_html__( 'Disable Gallery Lightbox on Product Page', 'crimson-rose' ),
 		'section' => $section_id,
 	) );
 
@@ -745,7 +732,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'checkbox',
-		'label' => __( 'Disable Gallery Slider on Product Page', 'crimson-rose' ),
+		'label' => esc_html__( 'Disable Gallery Slider on Product Page', 'crimson-rose' ),
 		'section' => $section_id,
 	) );
 
@@ -754,9 +741,9 @@ function crimson_rose_customize_register( $wp_customize ) {
 	 */
 	$section_id = 'theme_options_display_sidebar';
 	$wp_customize->add_section( $section_id, array(
-		'title'    => __( 'Display Sidebar', 'crimson-rose' ),
+		'title'    => esc_html__( 'Display Sidebar', 'crimson-rose' ),
 		'panel'    => 'theme_options',
-		'description' => 'Check the pages where you want the sidebar to display.',
+		'description' => esc_html__( 'Check the pages where you want the sidebar to display.', 'crimson-rose' ),
 	) );
 
 	$setting_id = 'display_sidebar_blog';
@@ -768,7 +755,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'checkbox',
-		'label' => __( 'Blog', 'crimson-rose' ),
+		'label' => esc_html__( 'Blog', 'crimson-rose' ),
 		'section' => $section_id,
 	) );
 
@@ -781,7 +768,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'checkbox',
-		'label' => __( 'Post', 'crimson-rose' ),
+		'label' => esc_html__( 'Post', 'crimson-rose' ),
 		'section' => $section_id,
 	) );
 
@@ -794,7 +781,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'checkbox',
-		'label' => __( 'Archive', 'crimson-rose' ),
+		'label' => esc_html__( 'Archive', 'crimson-rose' ),
 		'section' => $section_id,
 	) );
 
@@ -807,7 +794,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'checkbox',
-		'label' => __( 'Search', 'crimson-rose' ),
+		'label' => esc_html__( 'Search', 'crimson-rose' ),
 		'section' => $section_id,
 	) );
 
@@ -821,7 +808,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'checkbox',
-		'label' => __( 'Shop', 'crimson-rose' ),
+		'label' => esc_html__( 'Shop', 'crimson-rose' ),
 		'section' => $section_id,
 	) );
 
@@ -835,7 +822,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'checkbox',
-		'label' => __( 'Shop Archive', 'crimson-rose' ),
+		'label' => esc_html__( 'Shop Archive', 'crimson-rose' ),
 		'section' => $section_id,
 	) );
 
@@ -848,7 +835,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'checkbox',
-		'label' => __( 'Attachment Page', 'crimson-rose' ),
+		'label' => esc_html__( 'Attachment Page', 'crimson-rose' ),
 		'section' => $section_id,
 	) );
 
@@ -857,7 +844,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 	 */
 	$section_id = 'theme_options_lables';
 	$wp_customize->add_section( $section_id, array(
-		'title'    => __( 'Labels', 'crimson-rose' ),
+		'title'    => esc_html__( 'Labels', 'crimson-rose' ),
 		'panel'    => 'theme_options',
 	) );
 
@@ -870,7 +857,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'text',
-		'label' => __( 'Mobile Menu Label', 'crimson-rose' ),
+		'label' => esc_html__( 'Mobile Menu Label', 'crimson-rose' ),
 		'section' => $section_id,
 	) );
 
@@ -883,7 +870,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'text',
-		'label' => __( 'Read More Label', 'crimson-rose' ),
+		'label' => esc_html__( 'Read More Label', 'crimson-rose' ),
 		'section' => $section_id,
 	) );
 
@@ -892,7 +879,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 	 */
 	$section_id = 'theme_options_404';
 	$wp_customize->add_section( $section_id, array(
-		'title'    => __( '404 Error Page', 'crimson-rose' ),
+		'title'    => esc_html__( '404 Error Page', 'crimson-rose' ),
 		'panel'    => 'theme_options',
 	) );
 
@@ -905,8 +892,8 @@ function crimson_rose_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'input',
-		'label' => __( 'Select 404 Page', 'crimson-rose' ),
-		'description' => __( 'Set the page\'s featured image for the background image to display.', 'crimson-rose' ),
+		'label' => esc_html__( 'Select 404 Page', 'crimson-rose' ),
+		'description' => esc_html__( 'Set the page\'s featured image for the background image to display.', 'crimson-rose' ),
 		'type' => 'dropdown-pages',
 		'allow_addition' => true,
 		'section' => $section_id,
@@ -921,8 +908,8 @@ function crimson_rose_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'range',
-		'label' => __( 'Page Cover Opacity', 'crimson-rose' ),
-		'description' => __( 'Set opacity for 404 Page Cover\'s featured image.', 'crimson-rose' ),
+		'label' => esc_html__( 'Page Cover Opacity', 'crimson-rose' ),
+		'description' => esc_html__( 'Set opacity for 404 Page Cover\'s featured image.', 'crimson-rose' ),
 		'section' => $section_id,
 		'input_attrs' => array(
 			'min' => 0,
@@ -940,7 +927,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $setting_id, array(
-		'label' => __( 'Page Cover Color', 'crimson-rose' ),
+		'label' => esc_html__( 'Page Cover Color', 'crimson-rose' ),
 		'section' => $section_id,
 	) ) );
 
@@ -953,7 +940,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( $setting_id, array(
 		'type' => 'checkbox',
-		'label' => __( 'Display White Text', 'crimson-rose' ),
+		'label' => esc_html__( 'Display White Text', 'crimson-rose' ),
 		'section' => $section_id,
 	) );
 
@@ -963,7 +950,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 		 */
 		$section_id = 'wpm_fonts';
 		$wp_customize->add_section( $section_id, array(
-			'title'    => __( 'Fonts', 'crimson-rose' ),
+			'title'    => esc_html__( 'Fonts', 'crimson-rose' ),
 			'panel'	=> 'theme_options',
 			'priority' => 331, // Before Additional CSS.
 		) );
@@ -979,8 +966,11 @@ function crimson_rose_customize_register( $wp_customize ) {
 			$wp_customize,
 			$setting_id,
 			array(
-				'label' => __( 'Font Customization', 'crimson-rose' ),
-				'description' => __( 'To easily change the font styles for your theme, please download our <a target="_blank" href="https://webplantmedia.com/product/designer-fonts-wordpress-plugin/"><span style="text-decoration:none;" class="dashicons dashicons-external"></span>Designer Fonts</a> plugin.', 'crimson-rose' ),
+				'label' => esc_html__( 'Font Customization', 'crimson-rose' ),
+				'description' => sprintf(
+					esc_html__( 'To easily change the font styles for your theme, please download our %s plugin.', 'crimson-rose' ),
+					'<a target="_blank" href="https://webplantmedia.com/product/designer-fonts-wordpress-plugin/"><span style="text-decoration:none;" class="dashicons dashicons-external"></span>' . esc_html__( 'Designer Fonts', 'crimson-rose' ) . '</a>'
+				),
 				'section' => $section_id,
 				'settings' => $setting_id,
 			)
@@ -992,6 +982,8 @@ add_action( 'customize_register', 'crimson_rose_customize_register' );
 /**
  * Render the site title for the selective refresh partial.
  *
+ * @since Crimson_Rose 1.0
+ *
  * @return void
  */
 function crimson_rose_customize_partial_blogname() {
@@ -1000,6 +992,8 @@ function crimson_rose_customize_partial_blogname() {
 
 /**
  * Render the site tagline for the selective refresh partial.
+ *
+ * @since Crimson_Rose 1.0
  *
  * @return void
  */
@@ -1010,6 +1004,8 @@ function crimson_rose_customize_partial_blogdescription() {
 /**
  * Render the site logo for the selective refresh partial.
  *
+ * @since Crimson_Rose 1.0
+ *
  * @return void
  */
 function crimson_rose_customize_partial_custom_logo() {
@@ -1018,6 +1014,10 @@ function crimson_rose_customize_partial_custom_logo() {
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
+ *
+ * @since Crimson_Rose 1.0
+ *
+ * @return void
  */
 function crimson_rose_customize_preview_js() {
 	wp_enqueue_script( 'crimson-rose-customizer', get_template_directory_uri() . '/js/admin/customizer.js', array( 'customize-preview' ), CRIMSON_ROSE_VERSION, true );
@@ -1029,7 +1029,10 @@ add_action( 'customize_preview_init', 'crimson_rose_customize_preview_js' );
 /**
  * Sanitize the page layout options.
  *
- * @param string $input Page layout.
+ * @since Crimson_Rose 1.0
+ *
+ * @param mixed $input
+ * @return void
  */
 function crimson_rose_sanitize_checkbox( $input ) {
 	$valid = array( 0, 1 );

@@ -1,14 +1,19 @@
 <?php
 /**
- * About This Version administration panel.
+ * Content to display for add_theme_page.
  *
  * @package WordPress
- * @subpackage Administration
+ * @subpackage Crimson_Rose
+ * @since 1.01
+ * @author Chris Baldelomar <chris@webplantmedia.com>
+ * @copyright Copyright (c) 2018, Chris Baldelomar
+ * @link https://webplantmedia.com/product/crimson-rose-wordpress-theme/
+ * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
 wp_enqueue_script( 'underscore' );
 
-$title = __( 'Theme Info', 'crimson-rose' );
+$title = esc_html__( 'Theme Info', 'crimson-rose' );
 
 $display_version = CRIMSON_ROSE_VERSION;
 ?>
@@ -22,10 +27,10 @@ $display_version = CRIMSON_ROSE_VERSION;
 			}
 		</style>
 		
-		<h1><?php printf( __( 'Crimson Rose WordPress Theme - Version&nbsp;%s', 'crimson-rose' ), esc_html( $display_version ) ); ?></h1>
+		<h1><?php printf( esc_html__( 'Crimson Rose WordPress Theme - Version&nbsp;%s', 'crimson-rose' ), $display_version ); ?></h1>
 
-		<p class="about-text"><?php printf( __( 'Thank you for using a WordPress theme by <a href="%s" target="_blank">Web Plant Media</a>! We are dedicated to making premium coded themes with beautiful designs that are open source, easy to use, and fast to install.', 'crimson-rose' ), "https://webplantmedia.com", esc_html( $display_version ) ); ?></p>
-		<div class="wp-badge"><?php printf( __( 'Web Plant Media', 'crimson-rose' ) ); ?></div>
+		<p class="about-text"><?php printf( esc_html__( 'Thank you for using a WordPress theme by %s! We are dedicated to making premium coded themes with beautiful designs that are open source, easy to use, and fast to install.', 'crimson-rose' ), '<a href="https://webplantmedia.com" target="_blank">' . esc_html__( 'Web Plant Media', 'crimson-rose' ) . '</a>' ); ?></p>
+		<div class="wp-badge"><?php esc_html_e( 'Web Plant Media', 'crimson-rose' ); ?></div>
 
 		<div style="margin-bottom:40px;">
 
@@ -46,7 +51,7 @@ $display_version = CRIMSON_ROSE_VERSION;
 					<div class="col">
 
 						<h3 style="margin:1.33em 0;font-size:1em;line-height:inherit;color:#23282d;">
-							<a target="_blank" href="<?php echo esc_url( $service['link'] ); ?>"><?php echo esc_html( $service['title'] ); ?></a>
+							<a target="_blank" href="<?php echo esc_url( $service['link'] ); ?>"><?php echo $service['title']; /* already escaped */ ?></a>
 						</h3>
 						<p><?php echo $service['description']; ?></p>
 
@@ -79,5 +84,4 @@ $display_version = CRIMSON_ROSE_VERSION;
 	</div>
 <?php
 
-// These are strings we may use to describe maintenance/security releases, where we aim for no new strings.
 return;

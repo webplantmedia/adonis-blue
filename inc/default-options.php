@@ -1,16 +1,36 @@
 <?php
+/**
+ * Default options for Customizer
+ *
+ * @package WordPress
+ * @subpackage Crimson_Rose
+ * @since 1.01
+ * @author Chris Baldelomar <chris@webplantmedia.com>
+ * @copyright Copyright (c) 2018, Chris Baldelomar
+ * @link https://webplantmedia.com/product/crimson-rose-wordpress-theme/
+ * @license http://www.gnu.org/licenses/gpl-2.0.html
+ */
+
 // Store user defined options
 $crimson_rose = array();
+
 // Store default options;
 $crimson_rose_default = array();
+
+/**
+ * Site Info Section in Customizer
+ */
 
 // Title & Tagline
 $crimson_rose_default['custom_logo_2x'] = '';
 $crimson_rose_default['heading_padding_top'] = '50';
 $crimson_rose_default['heading_padding_bottom'] = '50';
 
+/**
+ * Colors Section in Customizer
+ */
+
 // Colors
-// $crimson_rose_default['header_textcolor'] = '#333333'; // CSS displayed in inc/custom-header.php
 $crimson_rose_default['header_background_image_color'] = 'red';
 $crimson_rose_default['primary_color'] = '#de8699';
 $crimson_rose_default['primary_hover_color'] = '#d66c83';
@@ -22,8 +42,8 @@ $crimson_rose_default['footer_text_light'] = 0;
 $crimson_rose_default['link_color'] = '#666666';
 $crimson_rose_default['link_hover_color'] = '#d66c83';
 
-/*
- * Theme Options
+/**
+ * New Theme Options Section in Customizer
  */
 
 // Top header
@@ -75,8 +95,8 @@ $crimson_rose_default['display_sidebar_shop_archive'] = 0;
 $crimson_rose_default['display_sidebar_attachment'] = 0;
 
 // Labels
-$crimson_rose_default['mobile_menu_label'] = __( 'Menu', 'crimson-rose' );
-$crimson_rose_default['read_more_label'] = __( 'Continue Reading', 'crimson-rose' );
+$crimson_rose_default['mobile_menu_label'] = esc_html__( 'Menu', 'crimson-rose' );
+$crimson_rose_default['read_more_label'] = esc_html__( 'Continue Reading', 'crimson-rose' );
 
 // 404 Page
 $crimson_rose_default['404_custom_page'] = 0;
@@ -91,6 +111,10 @@ $crimson_rose_default['404_text_white'] = 0;
  * a custom $content_width.
  *
  * Also, if we call get_theme_mod any sooner, then we can't live preview.
+ *
+ * @since Crimson_Rose 1.0
+ *
+ * @return void
  */
 function crimson_rose_default_options() {
 	global $crimson_rose_default;
