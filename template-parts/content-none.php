@@ -10,6 +10,7 @@
  * @link https://webplantmedia.com/product/crimson-rose-wordpress-theme/
  * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
+
 ?>
 
 <section class="no-results not-found">

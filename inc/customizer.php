@@ -1038,7 +1038,7 @@ add_action( 'customize_preview_init', 'crimson_rose_customize_preview_js' );
  * @since Crimson_Rose 1.01
  *
  * @param mixed $input
- * @return void
+ * @return int
  */
 function crimson_rose_sanitize_checkbox( $input ) {
 	$valid = array( 0, 1 );

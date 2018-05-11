@@ -10,6 +10,7 @@
  * @link https://webplantmedia.com/product/crimson-rose-wordpress-theme/
  * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
+
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

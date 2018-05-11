@@ -33,11 +33,6 @@ add_action( 'after_setup_theme', 'crimson_rose_gutenberg_supported_features' );
  * @return void
  */
 function crimson_rose_gutenberg_styles() {
-	/*
-	 * TODO: Load editor style within Gutenberg to match front end design. 
-	 */
-	// wp_enqueue_style( 'crimson-rose-gutenberg', get_template_directory_uri() . '/css/admin/gutenberg.css', array(), CRIMSON_ROSE_VERSION, 'all' );
-
 	// Add custom fonts to Gutenberg.
 	wp_enqueue_style( 'crimson-rose-body-font', get_parent_theme_file_uri() . '/fonts/lato/stylesheet.css', array(), CRIMSON_ROSE_VERSION );
 }

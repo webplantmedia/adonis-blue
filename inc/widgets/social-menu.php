@@ -76,7 +76,7 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Social_Menu' ) ) :
 		 *
 		 * @param array $args
 		 * @param array $instance
-		 * @return string
+		 * @return void
 		 */
 		function widget( $args, $instance ) {
 			$o = $this->sanitize( $instance );

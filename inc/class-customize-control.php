@@ -12,7 +12,21 @@
  * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
+/**
+ * Class: Notice Control
+ *
+ * @since Crimson_Rose 1.01
+ *
+ * @see WP_Customize_Control
+ */
 class Crimson_Rose_Notice_Control extends WP_Customize_Control {
+	/**
+	 * Render Content
+	 *
+	 * @since Crimson_Rose 1.01
+	 *
+	 * @return void
+	 */
 	public function render_content() {
 		?>
 		<div class="notice-control-wrapper">

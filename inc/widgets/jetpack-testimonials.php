@@ -425,7 +425,7 @@ class Crimson_Rose_Content_Widget_Jetpack_Testimonials extends Crimson_Rose_Widg
 	 * @since Crimson_Rose 1.01
 	 *
 	 * @param int $post_id
-	 * @return void
+	 * @return string
 	 */
 	private function get_testimonial_thumbnail_link( $post_id ) {
 		if ( has_post_thumbnail( $post_id ) ) {

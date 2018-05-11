@@ -20,7 +20,6 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 	 * Class: WooCommerce Integration class.
 	 *
 	 * @since Crimson_Rose 1.01
-	 *
 	 */
 	class Crimson_Rose_WooCommerce {
 		/**
@@ -239,7 +238,7 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 		 *
 		 * @since Crimson_Rose 1.01
 		 *
-		 * @return void
+		 * @return string
 		 */
 		function return_shop_single_image_size() {
 			return 'shop_single';

@@ -159,7 +159,7 @@ add_filter( 'jetpack_sharing_headline_html', 'crimson_rose_jetpack_sharing_headl
  * @since Crimson_Rose 1.01
  *
  * @param string $label
- * @return void
+ * @return string
  */
 function crimson_rose_get_comment_display( $label ) {
 	$html = '';

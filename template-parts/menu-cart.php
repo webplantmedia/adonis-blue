@@ -10,6 +10,7 @@
  * @link https://webplantmedia.com/product/crimson-rose-wordpress-theme/
  * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
+
 ?>
 
 <?php if ( crimson_rose_is_woocommerce_activated() ) : ?>

@@ -168,7 +168,7 @@ if ( ! function_exists( 'crimson_rose_get_the_attachment' ) ) :
 	 *
 	 * @since Crimson_Rose 1.01
 	 *
-	 * @return void
+	 * @return string
 	 */
 	function crimson_rose_get_the_attachment() {
 		if ( wp_attachment_is( 'video' ) ) {

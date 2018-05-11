@@ -16,7 +16,7 @@
  *
  * @since Crimson_Rose 1.01
  *
- * @return void
+ * @return array
  */
 function crimson_rose_ocdi_import_files() {
     return array(
@@ -47,9 +47,11 @@ function crimson_rose_ocdi_before_widgets_import( $selected_import ) {
 		'sidebar-1',
 	);
 
-	/* if ( $selected_import['import_file_name'] == 'Full Demo Import' ) {
-		array_unshift( $clear_sidebars, 'sidebar-1' );
-	} */
+	/*
+	 * if ( $selected_import['import_file_name'] == 'Full Demo Import' ) {
+	 *     array_unshift( $clear_sidebars, 'sidebar-1' );
+	 * }
+	 */
 
 	$sidebars_widgets = get_option( 'sidebars_widgets' );
 
@@ -243,7 +245,7 @@ add_filter( 'pt-ocdi/disable_pt_branding', '__return_true' );
 /**
  * Better support for slower internet connections
  *
- * https://github.com/proteusthemes/one-click-demo-import/blob/master/docs/import-problems.md
+ * @link https://github.com/proteusthemes/one-click-demo-import/blob/master/docs/import-problems.md
  *
  * @since Crimson_Rose 1.01
  *

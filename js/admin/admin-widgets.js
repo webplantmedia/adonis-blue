@@ -42,17 +42,17 @@
 	}
 
 	function swapElements(obj1, obj2) {
-		// create marker element and insert it where obj1 is
+		// create marker element and insert it where obj1 is.
 		var temp = document.createElement("div");
 		obj1.parentNode.insertBefore(temp, obj1);
 
-		// move obj1 to right before obj2
+		// move obj1 to right before obj2.
 		obj2.parentNode.insertBefore(obj1, obj2);
 
-		// move obj2 to right before where obj1 used to be
+		// move obj2 to right before where obj1 used to be.
 		temp.parentNode.insertBefore(obj2, temp);
 
-		// remove temporary marker node
+		// remove temporary marker node.
 		temp.parentNode.removeChild(temp);
 	}
 
@@ -110,7 +110,7 @@
 		var $panel = $this.closest('.widget-panel');
 		var $container = $this.closest('.panel-repeater-container');
 		var $panels = $container.find('.widget-panel');
-		// $container.accordion({active:false});
+		/* $container.accordion({active:false}); */
 
 		if ( $panels.length <= 1 ) {
 			return;
@@ -197,7 +197,7 @@
 
 	function initColorPicker( widget ) {
 		widget.find( '.color-picker' ).wpColorPicker( {
-			change: _.throttle( function() { // For Customizer
+			change: _.throttle( function() { /* For Customizer */
 				$(this).trigger( 'change' );
 			}, 3000 )
 		});
@@ -207,6 +207,6 @@
 		initColorPicker( widget );
 	}
 
-	// $( document ).on( 'widget-added widget-updated', onFormUpdate );
+	/* $( document ).on( 'widget-added widget-updated', onFormUpdate ); */
 
 } )( jQuery );

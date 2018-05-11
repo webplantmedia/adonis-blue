@@ -896,7 +896,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 	 * @since Crimson_Rose 1.01
 	 *
 	 * @param mixed $post_ids
-	 * @return void
+	 * @return string
 	 */
 	private function sanitize_ids( $post_ids ) {
 		$post_ids_array = $this->sanitize_ids_array( $post_ids );
@@ -916,7 +916,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 	 * @since Crimson_Rose 1.01
 	 *
 	 * @param string $post_ids
-	 * @return void
+	 * @return array
 	 */
 	private function sanitize_slugs_array( $post_ids ) {
 		$post_ids = explode( ',', $post_ids );
@@ -945,7 +945,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 	 * @since Crimson_Rose 1.01
 	 *
 	 * @param string $post_ids
-	 * @return void
+	 * @return string
 	 */
 	private function sanitize_slugs( $post_ids ) {
 		$post_ids_array = $this->sanitize_slugs_array( $post_ids );

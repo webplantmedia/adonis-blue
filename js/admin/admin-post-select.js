@@ -14,7 +14,7 @@
 	"use strict";
 
 	$.fn.extend({
-        // change 'pluginname' to your plugin name (duh)
+        // change 'pluginname' to your plugin name (duh).
         postAutoCompleteSelect: function(options) {
 			var split = function ( val ) {
 				return val.split( /,\s*/ );
@@ -53,11 +53,11 @@
 							},
 							select: function( event, ui ) {
 								var terms = split( this.value );
-								// remove the current input
+								// remove the current input.
 								terms.pop();
-								// add the selected item
+								// add the selected item.
 								terms.push( ui.item.value );
-								// add placeholder to get the comma-and-space at the end
+								// add placeholder to get the comma-and-space at the end.
 								terms.push( "" );
 
 								$(this).val( terms.join( "," ) );
@@ -65,14 +65,14 @@
 								return false;
 							},
 							focus: function( event, ui ) {
-								return false; // Prevent comma delim value from being replace by single value.
+								return false; // Prevent comma delim value from being replace by single value..
 							},
 							close: function( event, ui ) {
 								var $t = $(this);
 								$t.trigger('change');
-								// setTimeout(function(){
-									// $t.blur();
-								// }, 0);
+								/* setTimeout(function(){
+									$t.blur();
+								}, 0); */
 							}
 						}
 					}
@@ -101,9 +101,9 @@
 							close: function ( event, ui ) {
 								var $t = $(this);
 								$t.trigger('change');
-								// setTimeout(function(){
-									// $t.blur();
-								// }, 0);
+								/* setTimeout(function(){
+									$t.blur();
+								}, 0); */
 							}
 						};
 					}

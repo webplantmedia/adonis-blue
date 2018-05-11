@@ -380,7 +380,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 		 * @since Crimson_Rose 1.01
 		 *
 		 * @param string $slide_setting
-		 * @return string
+		 * @return void
 		 */
 		function widget_get_slide( $slide_setting ) {
 			global $crimson_rose;

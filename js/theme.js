@@ -26,7 +26,7 @@
 
 		$content = $('.site-main .entry-content');
 		if ( $site.length && $content.length ) {
-			// get width
+			// get width.
 			siteWidth = $site.outerWidth(false);
 			contentWidth = $content.outerWidth( false );
 
@@ -44,12 +44,12 @@
 				}
 
 				if ( $this.hasClass('wp-block-gallery') ) {
-					margin += 8; // 8px offset for gallery margin.
+					margin += 8; /* 8px offset for gallery margin. */
 				}
 
 				margin *= -1;
 
-				// apply margin offset
+				// apply margin offset.
 				$this.css( {'margin-left': margin+'px', 'margin-right': margin+'px'} );
 			}
 		}
@@ -68,7 +68,7 @@
 		$window = $(window);
 		$content = $('.site-main .entry-content');
 		if ( $content.length && $window.length ) {
-			// get width
+			// get width.
 			windowWidth = $window.width();
 
 			x = $content.offset();
@@ -79,7 +79,7 @@
 			}
 
 			if ( $this.hasClass('wp-block-gallery') ) {
-				margin += 8; // 8px offset for gallery margin.
+				margin += 8; /* 8px offset for gallery margin. */
 			}
 
 			margin *= -1;

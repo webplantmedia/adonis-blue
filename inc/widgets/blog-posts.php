@@ -230,7 +230,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Blog_Post' ) ) :
 		 * @since Crimson_Rose 1.01
 		 *
 		 * @param int $length
-		 * @return void
+		 * @return int
 		 */
 		function custom_excerpt_length( $length ) {
 			return 20;
