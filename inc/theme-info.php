@@ -27,10 +27,12 @@ $display_version = CRIMSON_ROSE_VERSION;
 			}
 		</style>
 		
-		<h1><?php
+		<h1>
+		<?php
 			/* Translators: this string is the currenty theme version number. */
 			printf( esc_html__( 'Crimson Rose WordPress Theme - Version&nbsp;%s', 'crimson-rose' ), esc_html( $display_version ) );
-		?></h1>
+		?>
+		</h1>
 
 		<?php /* Translators: this string is a link to the theme authors page. */ ?>
 		<p class="about-text"><?php printf( esc_html__( 'Thank you for using a WordPress theme by %s! We are dedicated to making premium coded themes with beautiful designs that are open source, easy to use, and fast to install.', 'crimson-rose' ), '<a href="https://webplantmedia.com" target="_blank">' . esc_html__( 'Web Plant Media', 'crimson-rose' ) . '</a>' ); ?></p>
@@ -38,19 +40,21 @@ $display_version = CRIMSON_ROSE_VERSION;
 
 		<div style="margin-bottom:40px;">
 
-			<h2 style="font-size:1.4em;font-weight:600;text-align:left;"><?php
+			<h2 style="font-size:1.4em;font-weight:600;text-align:left;">
+			<?php
 				printf(
 					/* translators: %s: smiling face with smiling eyes emoji */
 					esc_html__( 'Premium Themes with Support %s', 'crimson-rose' ),
 					'&#x1F60A'
 				);
-			?></h2>
+			?>
+			</h2>
 
 			<?php $services = crimson_rose_dashboard_get_services(); ?>
 
 			<div class="under-the-hood two-col">
 
-				<?php foreach( $services as $service ) : ?>
+				<?php foreach ( $services as $service ) : ?>
 
 					<div class="col">
 

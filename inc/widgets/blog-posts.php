@@ -32,79 +32,79 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Blog_Post' ) ) :
 			$this->widget_description = esc_html__( 'Displays content from blog posts on your widgetized page.', 'crimson-rose' );
 			$this->widget_name        = esc_html__( 'Crimson Rose: Blog Posts', 'crimson-rose' );
 			$this->settings           = array(
-				'title' => array(
-					'type'  => 'text',
-					'std'   => esc_html__( 'BLOG', 'crimson-rose' ),
-					'label' => esc_html__( 'Title:', 'crimson-rose' ),
+				'title'         => array(
+					'type'     => 'text',
+					'std'      => esc_html__( 'BLOG', 'crimson-rose' ),
+					'label'    => esc_html__( 'Title:', 'crimson-rose' ),
 					'sanitize' => 'text',
 				),
-				'post_ids' => array(
-					'type'  => 'post',
-					'std'   => '',
-					'label' => esc_html__( 'Post ID\'s:', 'crimson-rose' ),
+				'post_ids'      => array(
+					'type'     => 'post',
+					'std'      => '',
+					'label'    => esc_html__( 'Post ID\'s:', 'crimson-rose' ),
 					'sanitize' => 'post_ids',
 				),
-				'category' => array(
-					'type'  => 'category',
-					'std'   => 0,
-					'label' => esc_html__( 'Category:', 'crimson-rose' ),
+				'category'      => array(
+					'type'     => 'category',
+					'std'      => 0,
+					'label'    => esc_html__( 'Category:', 'crimson-rose' ),
 					'sanitize' => 'number',
 				),
-				'post_count' => array(
-					'type'  => 'number',
-					'std'   => 6,
-					'step'  => 1,
-					'min'   => 1,
-					'max'   => 100,
-					'label' => esc_html__( 'Number of Posts:', 'crimson-rose' ),
+				'post_count'    => array(
+					'type'     => 'number',
+					'std'      => 6,
+					'step'     => 1,
+					'min'      => 1,
+					'max'      => 100,
+					'label'    => esc_html__( 'Number of Posts:', 'crimson-rose' ),
 					'sanitize' => 'number',
 				),
-				'columns' => array(
-					'type'  => 'select',
-					'std'   => 3,
-					'label' => esc_html__( 'Columns:', 'crimson-rose' ),
-					'options' => array(
+				'columns'       => array(
+					'type'     => 'select',
+					'std'      => 3,
+					'label'    => esc_html__( 'Columns:', 'crimson-rose' ),
+					'options'  => array(
 						2 => esc_html__( '2 Columns', 'crimson-rose' ),
 						3 => esc_html__( '3 Columns', 'crimson-rose' ),
 					),
 					'sanitize' => 'number',
 				),
-				'random_order' => array(
-					'type'  => 'checkbox',
-					'std'   => 0,
-					'label' => esc_html__( 'Random order?', 'crimson-rose' ),
+				'random_order'  => array(
+					'type'     => 'checkbox',
+					'std'      => 0,
+					'label'    => esc_html__( 'Random order?', 'crimson-rose' ),
 					'sanitize' => 'checkbox',
 				),
-				'button_text' => array(
-					'type'  => 'text',
-					'std'   => esc_html__( 'See All Posts', 'crimson-rose' ),
-					'label' => esc_html__( 'Button Text:', 'crimson-rose' ),
+				'button_text'   => array(
+					'type'     => 'text',
+					'std'      => esc_html__( 'See All Posts', 'crimson-rose' ),
+					'label'    => esc_html__( 'Button Text:', 'crimson-rose' ),
 					'sanitize' => 'text',
 				),
-				'button_link' => array(
-					'type'  => 'text',
-					'std'   => '',
-					'label' => esc_html__( 'Button Link:', 'crimson-rose' ),
+				'button_link'   => array(
+					'type'     => 'text',
+					'std'      => '',
+					'label'    => esc_html__( 'Button Link:', 'crimson-rose' ),
 					'sanitize' => 'url',
 				),
-				'button_style' => array(
-					'type'  => 'select',
-					'std'   => 'button-2',
-					'label' => esc_html__( 'Button Style:', 'crimson-rose' ),
-					'options' => array(
-						'default' => esc_html__( 'Default Button', 'crimson-rose' ),
+				'button_style'  => array(
+					'type'     => 'select',
+					'std'      => 'button-2',
+					'label'    => esc_html__( 'Button Style:', 'crimson-rose' ),
+					'options'  => array(
+						'default'  => esc_html__( 'Default Button', 'crimson-rose' ),
 						'button-1' => esc_html__( 'Image Button 1', 'crimson-rose' ),
 						'button-2' => esc_html__( 'Image Button 2', 'crimson-rose' ),
 					),
 					'sanitize' => 'text',
 				),
 				'margin_bottom' => array(
-					'type'  => 'number',
-					'std'   => 80,
-					'step'  => 1,
-					'min'   => 0,
-					'max'   => 300,
-					'label' => esc_html__( 'Bottom margin of widget:', 'crimson-rose' ),
+					'type'     => 'number',
+					'std'      => 80,
+					'step'     => 1,
+					'min'      => 0,
+					'max'      => 300,
+					'label'    => esc_html__( 'Bottom margin of widget:', 'crimson-rose' ),
 					'sanitize' => 'number',
 				),
 			);
@@ -139,7 +139,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Blog_Post' ) ) :
 
 			if ( ! empty( $o['post_ids'] ) ) {
 				$post_args['post__in'] = explode( ',', $o['post_ids'] );
-				$post_args['orderby'] = 'post__in';
+				$post_args['orderby']  = 'post__in';
 			}
 
 			if ( 1 === $o['random_order'] ) {
@@ -165,7 +165,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Blog_Post' ) ) :
 
 				<?php
 				if ( $o['title'] ) {
-					echo  $before_title . esc_html( $o['title'] ) . $after_title; /* WPCS: XSS OK. HTML output. */
+					echo $before_title . esc_html( $o['title'] ) . $after_title; /* WPCS: XSS OK. HTML output. */
 				}
 				?>
 
@@ -181,7 +181,8 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Blog_Post' ) ) :
 					<div id="posts-container" class="<?php echo esc_attr( $container_class ); ?>">
 						<div class='grid'>
 
-							<?php while ( $post->have_posts() ) : $post->the_post(); ?>
+							<?php while ( $post->have_posts() ) : ?>
+								<?php $post->the_post(); ?>
 								<div class="grid__col grid__col--1-of-<?php echo esc_attr( $o['columns'] ); ?>">
 									<?php get_template_part( 'template-parts/excerpt2' ); ?>
 								</div>
@@ -193,13 +194,13 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Blog_Post' ) ) :
 					<?php if ( '' !== $o['button_text'] ) : ?>
 						<?php
 						switch ( $o['button_style'] ) {
-							case 'button-1' :
+							case 'button-1':
 								$button_class = ' fancy-button';
 								break;
-							case 'button-2' :
+							case 'button-2':
 								$button_class = ' fancy2-button';
 								break;
-							default :
+							default:
 								$button_class = '';
 								break;
 						}
@@ -221,7 +222,8 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Blog_Post' ) ) :
 
 			<?php /* remove_filter( 'excerpt_length', array( $this, 'custom_excerpt_length' ) ); */ ?>
 
-			<?php wp_reset_postdata();
+			<?php
+			wp_reset_postdata();
 		}
 
 		/**

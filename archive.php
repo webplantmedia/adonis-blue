@@ -16,10 +16,11 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
-		<?php crimson_rose_the_term_description() ?>
+		<?php crimson_rose_the_term_description(); ?>
 
 		<?php
-		if ( have_posts() ) : ?>
+		if ( have_posts() ) :
+		?>
 
 			<?php crimson_rose_get_blog_part(); ?>
 			<?php
@@ -30,7 +31,8 @@ get_header(); ?>
 
 			get_template_part( 'template-parts/content', 'none' );
 
-		endif; ?>
+		endif;
+		?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

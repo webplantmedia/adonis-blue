@@ -17,7 +17,7 @@
  * @since Crimson_Rose 1.01
  *
  * @param string $property
- * @param int $pixel
+ * @param int    $pixel
  * @return string
  */
 function crimson_rose_css_set_unit( $property, $pixel ) {
@@ -28,11 +28,11 @@ function crimson_rose_css_set_unit( $property, $pixel ) {
 	$default_font_size = 16;
 
 	$css = '';
-	$em = round( ( $pixel / $default_font_size ), 6 );
+	$em  = round( ( $pixel / $default_font_size ), 6 );
 
 	switch ( $property ) {
-		default :
-			$css = $property . ': ' . $pixel . 'px;';
+		default:
+			$css  = $property . ': ' . $pixel . 'px;';
 			$css .= $property . ': ' . $em . 'rem;';
 			break;
 	}

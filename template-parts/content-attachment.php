@@ -28,7 +28,7 @@
 
 			<?php if ( has_excerpt() ) : ?>
 				<figcaption class="wp-caption-text">
-				 <?php the_excerpt(); ?>
+					<?php the_excerpt(); ?>
 				</figcaption><!-- .entry-caption -->
 			<?php endif; ?>
 		</div>

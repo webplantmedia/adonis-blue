@@ -33,48 +33,48 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Image_Banner_Widget' ) ) :
 			$this->widget_description = esc_html__( 'Display an image banner in your footer or sidebar.', 'crimson-rose' );
 			$this->widget_name        = esc_html__( 'Crimson Rose: Image Banner', 'crimson-rose' );
 			$this->settings           = array(
-				'page' => array(
-					'type'  => 'page',
-					'std'   => '',
-					'label' => esc_html__( 'Select Page:', 'crimson-rose' ),
+				'page'           => array(
+					'type'        => 'page',
+					'std'         => '',
+					'label'       => esc_html__( 'Select Page:', 'crimson-rose' ),
 					'description' => esc_html__( 'The post content and featured image will be grabbed from the selected post.', 'crimson-rose' ),
-					'sanitize' => 'text',
+					'sanitize'    => 'text',
 				),
-				'image_width' => array(
-					'type'  => 'number',
-					'std'   => '',
-					'step'  => 5,
-					'min'   => 100,
-					'max'   => 1600,
-					'label' => esc_html__( 'Image Width (in pixels)', 'crimson-rose' ),
+				'image_width'    => array(
+					'type'        => 'number',
+					'std'         => '',
+					'step'        => 5,
+					'min'         => 100,
+					'max'         => 1600,
+					'label'       => esc_html__( 'Image Width (in pixels)', 'crimson-rose' ),
 					'description' => esc_html__( 'Set custom size for featured image. Leave blank to use large image display.', 'crimson-rose' ),
-					'sanitize' => 'number_blank',
+					'sanitize'    => 'number_blank',
 				),
-				'image_style' => array(
-					'type'  => 'select',
-					'std'   => 'round',
-					'label' => esc_html__( 'Image Style:', 'crimson-rose' ),
-					'options' => array(
-						'none' => esc_html__( 'None', 'crimson-rose' ),
+				'image_style'    => array(
+					'type'     => 'select',
+					'std'      => 'round',
+					'label'    => esc_html__( 'Image Style:', 'crimson-rose' ),
+					'options'  => array(
+						'none'  => esc_html__( 'None', 'crimson-rose' ),
 						'round' => esc_html__( 'Round', 'crimson-rose' ),
 					),
 					'sanitize' => 'text',
 				),
 				'title_position' => array(
-					'type'  => 'select',
-					'std'   => 'below',
-					'label' => esc_html__( 'Title Position:', 'crimson-rose' ),
-					'options' => array(
-						'above' => esc_html__( 'Above', 'crimson-rose' ),
+					'type'     => 'select',
+					'std'      => 'below',
+					'label'    => esc_html__( 'Title Position:', 'crimson-rose' ),
+					'options'  => array(
+						'above'  => esc_html__( 'Above', 'crimson-rose' ),
 						'middle' => esc_html__( 'Middle', 'crimson-rose' ),
-						'below' => esc_html__( 'Below', 'crimson-rose' ),
+						'below'  => esc_html__( 'Below', 'crimson-rose' ),
 					),
 					'sanitize' => 'text',
 				),
-				'link' => array(
-					'type'  => 'text',
-					'std'   => home_url('/'),
-					'label' => esc_html__( 'Link:', 'crimson-rose' ),
+				'link'           => array(
+					'type'     => 'text',
+					'std'      => home_url( '/' ),
+					'label'    => esc_html__( 'Link:', 'crimson-rose' ),
 					'sanitize' => 'url',
 				),
 			);
@@ -96,7 +96,7 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Image_Banner_Widget' ) ) :
 
 			extract( $args );
 
-			$p = null;
+			$p              = null;
 			$featured_image = null;
 			if ( ! empty( $o['page'] ) ) {
 				$p = get_post( $o['page'] );
@@ -112,7 +112,7 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Image_Banner_Widget' ) ) :
 
 			echo $before_widget; /* WPCS: XSS OK. HTML output. */
 
-			$class = array();
+			$class   = array();
 			$class[] = 'image-banner-wrapper';
 			$class[] = 'image-banner-title-position-' . $o['title_position'];
 			$class[] = 'image-banner-style-' . $o['image_style'];
@@ -126,7 +126,7 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Image_Banner_Widget' ) ) :
 
 					<?php if ( ! empty( $o['link'] ) ) : ?>
 						<a class="image-banner-pic" href="<?php echo esc_url( $o['link'] ); ?>">
-					<?php else: ?>
+					<?php else : ?>
 						<div class="image-banner-pic">
 					<?php endif; ?>
 
@@ -140,7 +140,7 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Image_Banner_Widget' ) ) :
 
 					<?php if ( ! empty( $o['link'] ) ) : ?>
 						</a>
-					<?php else: ?>
+					<?php else : ?>
 						</div>
 					<?php endif; ?>
 
@@ -171,7 +171,7 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Image_Banner_Widget' ) ) :
 				<?php endif; ?>
 			</div>
 
-			<?php echo  $after_widget; /* WPCS: XSS OK. HTML output. */ ?>
+			<?php echo $after_widget; /* WPCS: XSS OK. HTML output. */ ?>
 			<?php
 		}
 

@@ -28,34 +28,38 @@ function crimson_rose_jetpack_setup() {
 	if ( crimson_rose_display_sidebar_footer() ) {
 		$footer_widgets = true;
 	}
-	add_theme_support( 'infinite-scroll', array(
-		'container' => 'main',
-		'render'    => 'crimson_rose_infinite_scroll_render',
-		'footer'    => 'page',
-		'footer_widgets' => $footer_widgets,
-	) );
+	add_theme_support(
+		'infinite-scroll', array(
+			'container'      => 'main',
+			'render'         => 'crimson_rose_infinite_scroll_render',
+			'footer'         => 'page',
+			'footer_widgets' => $footer_widgets,
+		)
+	);
 
 	// Add theme support for Responsive Videos.
 	add_theme_support( 'jetpack-responsive-videos' );
 
 	// Add theme support for Content Options.
-	add_theme_support( 'jetpack-content-options', array(
-		'author-bio'         => true,
-		'author-bio-default' => true,
-		'post-details' => array(
-			'stylesheet' => 'crimson-rose-style',
-			'date'       => '.posted-on,.entry-meta',
-			'categories' => '.cat-links,.entry-cat-meta,.tags-links:before',
-			'tags'       => '.tags-links,.tags-links + span:before',
-			'author'     => '.byline,.cat-links:before',
-			'comment'    => '.comments-link',
-		),
-		'featured-images'    => array(
-			'archive'         => true,
-			'post'            => true,
-			'page'            => true,
-		),
-	) );
+	add_theme_support(
+		'jetpack-content-options', array(
+			'author-bio'         => true,
+			'author-bio-default' => true,
+			'post-details'       => array(
+				'stylesheet' => 'crimson-rose-style',
+				'date'       => '.posted-on,.entry-meta',
+				'categories' => '.cat-links,.entry-cat-meta,.tags-links:before',
+				'tags'       => '.tags-links,.tags-links + span:before',
+				'author'     => '.byline,.cat-links:before',
+				'comment'    => '.comments-link',
+			),
+			'featured-images'    => array(
+				'archive' => true,
+				'post'    => true,
+				'page'    => true,
+			),
+		)
+	);
 }
 add_action( 'after_setup_theme', 'crimson_rose_jetpack_setup' );
 
@@ -89,12 +93,12 @@ add_action( 'wp_enqueue_scripts', 'crimson_rose_jetpack_enqueue' );
  *
  * @return string
  */
-function crimson_rose_infinite_scroll_credit(){
-    $content = crimson_rose_get_site_info();
+function crimson_rose_infinite_scroll_credit() {
+	$content = crimson_rose_get_site_info();
 
-    return $content;
+	return $content;
 }
-add_filter('infinite_scroll_credit','crimson_rose_infinite_scroll_credit');
+add_filter( 'infinite_scroll_credit', 'crimson_rose_infinite_scroll_credit' );
 
 /**
  * Remove related posts. Inserting function instead in desired location.
@@ -104,11 +108,11 @@ add_filter('infinite_scroll_credit','crimson_rose_infinite_scroll_credit');
  * @return void
  */
 function crimson_rose_jetpackme_remove_rp() {
-    if ( class_exists( 'Jetpack_RelatedPosts' ) ) {
-        $jprp = Jetpack_RelatedPosts::init();
-        $callback = array( $jprp, 'filter_add_target_to_dom' );
-        remove_filter( 'the_content', $callback, 40 );
-    }
+	if ( class_exists( 'Jetpack_RelatedPosts' ) ) {
+		$jprp     = Jetpack_RelatedPosts::init();
+		$callback = array( $jprp, 'filter_add_target_to_dom' );
+		remove_filter( 'the_content', $callback, 40 );
+	}
 }
 add_filter( 'wp', 'crimson_rose_jetpackme_remove_rp', 20 );
 
@@ -166,22 +170,21 @@ function crimson_rose_get_comment_display( $label ) {
 
 	$html .= '<div class="sd-title comment-display">';
 
-		if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+	if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 
-			$num_comments = get_comments_number(); /* get_comments_number returns only a numeric value. */
+		$num_comments = get_comments_number(); /* get_comments_number returns only a numeric value. */
 
-			if ( $num_comments == 0 ) {
-				$comments = esc_html__( 'leave a Comment', 'crimson-rose' );
-			} elseif ( $num_comments > 1 ) {
-				$comments = $num_comments . esc_html__( ' Comments', 'crimson-rose' );
-			} else {
-				$comments = esc_html__( '1 Comment', 'crimson-rose' );
-			}
-			$html .= '<a href="' . esc_url( get_comments_link() ) .'"><i class="genericons-neue genericons-neue-comment"></i>'. $comments.'</a>';
+		if ( $num_comments == 0 ) {
+			$comments = esc_html__( 'leave a Comment', 'crimson-rose' );
+		} elseif ( $num_comments > 1 ) {
+			$comments = $num_comments . esc_html__( ' Comments', 'crimson-rose' );
+		} else {
+			$comments = esc_html__( '1 Comment', 'crimson-rose' );
 		}
-		else {
-			$html .= '<span>' . $label . '</span>';
-		}
+		$html .= '<a href="' . esc_url( get_comments_link() ) . '"><i class="genericons-neue genericons-neue-comment"></i>' . $comments . '</a>';
+	} else {
+		$html .= '<span>' . $label . '</span>';
+	}
 
 	$html .= '</div>';
 
@@ -197,18 +200,18 @@ function crimson_rose_get_comment_display( $label ) {
  * @return array
  */
 function crimson_rose_custom_thumb_size( $get_image_options ) {
-        $get_image_options['avatar_size'] = 128;
- 
-        return $get_image_options;
+		$get_image_options['avatar_size'] = 128;
+
+		return $get_image_options;
 }
 add_filter( 'jetpack_top_posts_widget_image_options', 'crimson_rose_custom_thumb_size' );
 
 
 /**
  * Tell Jetpack that image galleries and the content width should be considered
- * larger (make it so images within image galleries don't get shown too small 
- * [what tiled_gallery_content_width controls] as well as making sure the 
- * sizes="(max-width:***)" doesn't pull a size smaller than desired 
+ * larger (make it so images within image galleries don't get shown too small
+ * [what tiled_gallery_content_width controls] as well as making sure the
+ * sizes="(max-width:***)" doesn't pull a size smaller than desired
  * [what jetpack_content_width controls])
  *
  * @since Crimson_Rose 1.01

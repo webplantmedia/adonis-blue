@@ -17,11 +17,14 @@ get_header(); ?>
 		<main id="main" class="site-main">
 
 		<?php
-		while ( have_posts() ) : the_post();
+		while ( have_posts() ) :
+			the_post();
 
 			get_template_part( 'template-parts/content', get_post_type() );
 
-			if ( function_exists( 'jetpack_author_bio' ) ) crimson_rose_jetpack_author_bio();
+			if ( function_exists( 'jetpack_author_bio' ) ) {
+				crimson_rose_jetpack_author_bio();
+			}
 
 			if ( class_exists( 'Jetpack_RelatedPosts' ) ) {
 				echo do_shortcode( '[jetpack-related-posts]' );

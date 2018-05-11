@@ -30,12 +30,10 @@ function crimson_rose_body_classes( $classes ) {
 	// Sidebar.
 	if ( crimson_rose_display_sidebar() ) {
 		$classes[] = 'display-sidebar';
-	}
-	else if ( crimson_rose_display_fullwidth() ) {
+	} elseif ( crimson_rose_display_fullwidth() ) {
 		$classes[] = 'display-fullwidth';
 		$classes[] = 'no-sidebar';
-	}
-	else {
+	} else {
 		$classes[] = 'no-sidebar';
 	}
 
@@ -80,11 +78,9 @@ function crimson_rose_body_classes( $classes ) {
 	if ( crimson_rose_is_woocommerce_activated() ) {
 		if ( is_shop() ) {
 			$classes[] = 'woocommerce-shop-columns-' . esc_attr( $crimson_rose['shop_columns'] );
-		}
-		else if ( is_product_taxonomy() ) {
+		} elseif ( is_product_taxonomy() ) {
 			$classes[] = 'woocommerce-shop-columns-' . esc_attr( $crimson_rose['shop_archive_columns'] );
-		}
-		else if ( is_product() ) {
+		} elseif ( is_product() ) {
 			$classes[] = 'woocommerce-shop-columns-' . esc_attr( $crimson_rose['shop_related_products_columns'] );
 		}
 
@@ -127,7 +123,7 @@ add_action( 'wp_head', 'crimson_rose_pingback_header' );
  * @since Crimson_Rose 1.01
  *
  * @param string $html
- * @param int $blog_id
+ * @param int    $blog_id
  * @return string
  */
 function crimson_rose_get_custom_logo( $html, $blog_id ) {
@@ -141,8 +137,7 @@ function crimson_rose_get_custom_logo( $html, $blog_id ) {
 	if ( ! empty( $crimson_rose['custom_logo_2x'] ) ) {
 		if ( preg_match( '/srcset=(\'|\").*?(\'|\")/', $html ) ) {
 			$html = preg_replace( '/srcset=(\'|\").*?(\'|\")/', 'srcset="' . esc_url( $crimson_rose['custom_logo_2x'] ) . ' 2x"', $html );
-		}
-		else {
+		} else {
 			$html = preg_replace( '/(src=(\'|\").*?(\'|\"))/', '\\1 srcset="' . esc_url( $crimson_rose['custom_logo_2x'] ) . ' 2x"', $html );
 		}
 	}
@@ -172,13 +167,14 @@ function crimson_rose_read_more_link( $output ) {
 		$class = ' no-excerpt';
 	}
 
-	return $output . sprintf( ' <a class="more-link%1$s" href="%2$s">%3$s<i class="genericons-neue genericons-neue-next"></i></a>',
+	return $output . sprintf(
+		' <a class="more-link%1$s" href="%2$s">%3$s<i class="genericons-neue genericons-neue-next"></i></a>',
 		esc_attr( $class ),
 		esc_url( get_permalink( get_the_ID() ) ),
 		esc_html( $crimson_rose['read_more_label'] )
 	);
 }
-add_filter('the_excerpt', 'crimson_rose_read_more_link');
+add_filter( 'the_excerpt', 'crimson_rose_read_more_link' );
 
 /**
  * Conditional display of read more text.
@@ -196,7 +192,7 @@ function crimson_rose_read_more_text() {
 
 	return esc_html( $crimson_rose['read_more_label'] );
 }
-add_filter('crimson_rose_read_more_text', 'crimson_rose_read_more_text');
+add_filter( 'crimson_rose_read_more_text', 'crimson_rose_read_more_text' );
 
 /**
  * Convert single link line to button.
@@ -208,17 +204,17 @@ add_filter('crimson_rose_read_more_text', 'crimson_rose_read_more_text');
  * @return string
  */
 function crimson_rose_button_generation( $output, $button_style ) {
-	$search = array();
+	$search  = array();
 	$replace = array();
 
 	switch ( $button_style ) {
-		case 'button-1' :
+		case 'button-1':
 			$button_class = ' fancy-button';
 			break;
-		case 'button-2' :
+		case 'button-2':
 			$button_class = ' fancy2-button';
 			break;
-		default :
+		default:
 			$button_class = '';
 			break;
 	}
@@ -227,8 +223,8 @@ function crimson_rose_button_generation( $output, $button_style ) {
 		foreach ( $matches as $match ) {
 			foreach ( $match as $html ) {
 				if ( ! preg_match( '/class\=\"|\'/', $html ) ) {
-					$search[] = $html;
-					$replace[] = str_replace( '<a', '<a class="theme-generated-button button'.esc_attr( $button_class ).'"', $html );
+					$search[]  = $html;
+					$replace[] = str_replace( '<a', '<a class="theme-generated-button button' . esc_attr( $button_class ) . '"', $html );
 				}
 			}
 		}
@@ -263,7 +259,7 @@ function crimson_rose_the_content( $output ) {
 	return $output;
 
 }
-add_filter('the_content', 'crimson_rose_the_content', 11 );
+add_filter( 'the_content', 'crimson_rose_the_content', 11 );
 
 /**
  * Filter the except length to specified characters.
@@ -291,8 +287,7 @@ function crimson_rose_get_the_archive_title( $title ) {
 
 	if ( sizeof( $pieces ) == 2 ) {
 		$title = '<span class="archive-type">' . implode( '</span><span class="archive-title">', $pieces ) . '</span>';
-	}
-	else {
+	} else {
 		$title = '<span class="archive-type">' . $title . '</span>';
 	}
 

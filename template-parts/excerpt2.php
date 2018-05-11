@@ -13,7 +13,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('excerpt2'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'excerpt2' ); ?>>
 	<?php if ( has_post_thumbnail() ) : ?>
 		<div class="entry-image">
 			<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'large' ); ?></a>
@@ -30,11 +30,13 @@
 		<?php
 		the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 
-		if ( 'post' === get_post_type() ) : ?>
+		if ( 'post' === get_post_type() ) :
+		?>
 		<div class="entry-meta">
 			<?php crimson_rose_posted_on(); ?>
 		</div><!-- .entry-meta -->
 		<?php
-		endif; ?>
+		endif;
+		?>
 	</header><!-- .entry-header -->
 </article><!-- #post-<?php the_ID(); ?> -->

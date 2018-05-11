@@ -49,21 +49,23 @@
 		}
 	};
 
-	var menuParent = $(container).find('.menu-item-has-children > a, .page_item_has_children > a');
+	var menuParent = $( container ).find( '.menu-item-has-children > a, .page_item_has_children > a' );
 
-	var menuToggleButton = $(container).find('.menu-toggle');
+	var menuToggleButton = $( container ).find( '.menu-toggle' );
 
-	$(menuParent).click( function( event ) {
-		if ( ! $(menuToggleButton).is(':visible') ) {
-			return;
+	$( menuParent ).click(
+		function( event ) {
+			if ( ! $( menuToggleButton ).is( ':visible' ) ) {
+				return;
+			}
+
+				$parent = $( this ).parent();
+			if ( ! $parent.hasClass( 'focus' ) ) {
+				$parent.toggleClass( 'focus' );
+				return false;
+			}
 		}
-
-		$parent = $(this).parent();
-		if ( ! $parent.hasClass('focus') ) {
-			$parent.toggleClass('focus');
-			return false;
-		}
-	} );
+	);
 
 	/**
 	 * Toggles `focus` class to allow submenu access on tablets.
@@ -71,25 +73,25 @@
 	( function( container, menu ) {
 		var touchStartFn, i,
 			parentLinks = menu.querySelectorAll( '.menu-item-has-children > a, .page_item_has_children > a' ),
-			menuToggle = $(container).find('.menu-toggle'),
-			links = container.querySelectorAll( 'ul a' );
-			li = container.querySelectorAll( 'ul li' );
+			menuToggle  = $( container ).find( '.menu-toggle' ),
+			links       = container.querySelectorAll( 'ul a' );
+			li          = container.querySelectorAll( 'ul li' );
 
 		if ( 'ontouchstart' in window ) {
 			clickOutsideMenu = function ( event ) {
-				if (!$(event.target).closest('li.focus').length) {
-					$(li).removeClass('focus');
-					$(document).off( 'touchstart', clickOutsideMenu );
-				} 
+				if ( ! $( event.target ).closest( 'li.focus' ).length) {
+					$( li ).removeClass( 'focus' );
+					$( document ).off( 'touchstart', clickOutsideMenu );
+				}
 			};
 
 			touchStartFn = function( e ) {
-				if ( $(menuToggle).is(':visible') ) {
+				if ( $( menuToggle ).is( ':visible' ) ) {
 					return;
 				}
 
 				var menuItem = this.parentNode, i;
-				$(document).off( 'touchstart', clickOutsideMenu );
+				$( document ).off( 'touchstart', clickOutsideMenu );
 
 				if ( ! menuItem.classList.contains( 'focus' ) ) {
 					e.preventDefault();
@@ -100,7 +102,7 @@
 						menuItem.parentNode.children[i].classList.remove( 'focus' );
 					}
 					menuItem.classList.add( 'focus' );
-					$(document).on( 'touchstart', clickOutsideMenu );
+					$( document ).on( 'touchstart', clickOutsideMenu );
 				}
 			};
 
@@ -111,16 +113,20 @@
 	}( container, menu ) );
 
 	// Prevent action of dropdowns with href="#".
-	$('.menu').find( 'a[href="#"]' ).click( function( event ) {
-		return false;
-	});
+	$( '.menu' ).find( 'a[href="#"]' ).click(
+		function( event ) {
+				return false;
+		}
+	);
 
 	// animate scroll to anchor, and hide from address bar.
-	$('.content-widget a.slide-inner, .content-widget .button, .anchor-scroll').filter( 'a[href^="#"]' ).click( function( event ) {
-		event.preventDefault();
+	$( '.content-widget a.slide-inner, .content-widget .button, .anchor-scroll' ).filter( 'a[href^="#"]' ).click(
+		function( event ) {
+				event.preventDefault();
 
-		$('html,body').animate({scrollTop: $($(this).attr('href')).offset().top},'slow');
+				$( 'html,body' ).animate( {scrollTop: $( $( this ).attr( 'href' ) ).offset().top},'slow' );
 
-		return false;
-	});
+				return false;
+		}
+	);
 } )( jQuery );

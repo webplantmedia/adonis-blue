@@ -21,13 +21,13 @@ $error_page_id = $crimson_rose['404_custom_page'];
 
 	<?php
 	$post = get_post( $error_page_id );
-	setup_postdata($post);
-	$error_thumbnail = get_the_post_thumbnail_url( $error_page_id, 'full' );
+	setup_postdata( $post );
+	$error_thumbnail     = get_the_post_thumbnail_url( $error_page_id, 'full' );
 	$error_cover_opacity = $crimson_rose['404_cover_opacity'] / 100;
-	$error_cover_color = $crimson_rose['404_cover_color'];
+	$error_cover_color   = $crimson_rose['404_cover_color'];
 	?>
 
-	<div class="page-cover-bg" style="background-image:url('<?php echo esc_url( $error_thumbnail ) ?>');">
+	<div class="page-cover-bg" style="background-image:url('<?php echo esc_url( $error_thumbnail ); ?>');">
 		<span class="cover"></span>
 	</div>
 
@@ -42,8 +42,8 @@ $error_page_id = $crimson_rose['404_custom_page'];
 				<?php endif; ?>
 
 				<div class="entry-content">
-					<?php remove_filter( 'the_content', 'sharing_display',19 ); ?>
-					<?php remove_filter( 'the_excerpt', 'sharing_display',19 ); ?>
+					<?php remove_filter( 'the_content', 'sharing_display', 19 ); ?>
+					<?php remove_filter( 'the_excerpt', 'sharing_display', 19 ); ?>
 					<?php the_content(); ?>
 				</div><!-- .entry-content -->
 
@@ -69,7 +69,7 @@ $error_page_id = $crimson_rose['404_custom_page'];
 
 	<?php wp_reset_postdata(); ?>
 
-<?php else: ?>
+<?php else : ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
@@ -91,13 +91,15 @@ $error_page_id = $crimson_rose['404_custom_page'];
 						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'crimson-rose' ); ?></h2>
 						<ul>
 						<?php
-							wp_list_categories( array(
-								'orderby'    => 'count',
-								'order'      => 'DESC',
-								'show_count' => 1,
-								'title_li'   => '',
-								'number'     => 10,
-							) );
+							wp_list_categories(
+								array(
+									'orderby'    => 'count',
+									'order'      => 'DESC',
+									'show_count' => 1,
+									'title_li'   => '',
+									'number'     => 10,
+								)
+							);
 						?>
 						</ul>
 					</div><!-- .widget -->

@@ -13,9 +13,9 @@
  * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
-$footer_1 = is_active_sidebar( 'footer-1' );
-$footer_2 = is_active_sidebar( 'footer-2' );
-$footer_3 = is_active_sidebar( 'footer-3' );
+$footer_1           = is_active_sidebar( 'footer-1' );
+$footer_2           = is_active_sidebar( 'footer-2' );
+$footer_3           = is_active_sidebar( 'footer-3' );
 $has_footer_widgets = false;
 
 if ( $footer_1 || $footer_2 || $footer_3 ) {

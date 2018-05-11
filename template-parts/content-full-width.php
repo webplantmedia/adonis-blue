@@ -26,10 +26,14 @@
 				<div class="grid__col grid__col--1-of-2">
 					<?php the_content(); ?>
 
-					<?php wp_link_pages( array(
-						'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'crimson-rose' ),
-						'after'  => '</div>',
-					) );?>
+					<?php
+					wp_link_pages(
+						array(
+							'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'crimson-rose' ),
+							'after'  => '</div>',
+						)
+					);
+					?>
 				</div>
 				<div class="grid__col grid__col--1-of-2">
 					<div class="entry-image">
@@ -37,14 +41,16 @@
 					</div><!-- .entry-image -->
 				</div>
 			</div>
-		<?php else: ?>
+		<?php else : ?>
 			<?php
 				the_content();
 
-				wp_link_pages( array(
-					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'crimson-rose' ),
-					'after'  => '</div>',
-				) );
+				wp_link_pages(
+					array(
+						'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'crimson-rose' ),
+						'after'  => '</div>',
+					)
+				);
 			?>
 		<?php endif; ?>
 	</div><!-- .entry-content -->

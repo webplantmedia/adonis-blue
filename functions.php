@@ -56,12 +56,14 @@ if ( ! function_exists( 'crimson_rose_setup' ) ) :
 		add_theme_support( 'post-thumbnails' );
 
 		// This theme uses wp_nav_menu() in four location.
-		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'crimson-rose' ),
-			'menu-2' => esc_html__( 'Top Header Left', 'crimson-rose' ),
-			'menu-3' => esc_html__( 'Top Header Right', 'crimson-rose' ),
-			'social' => esc_html__( 'Social Menu', 'crimson-rose' ),
-		) );
+		register_nav_menus(
+			array(
+				'menu-1' => esc_html__( 'Primary', 'crimson-rose' ),
+				'menu-2' => esc_html__( 'Top Header Left', 'crimson-rose' ),
+				'menu-3' => esc_html__( 'Top Header Right', 'crimson-rose' ),
+				'social' => esc_html__( 'Social Menu', 'crimson-rose' ),
+			)
+		);
 
 		// This theme styles the visual editor with editor-style.css to match the theme style.
 		add_editor_style( array( 'css/admin/editor-style.css', get_parent_theme_file_uri() . '/fonts/lato/stylesheet.css' ) );
@@ -70,19 +72,25 @@ if ( ! function_exists( 'crimson_rose_setup' ) ) :
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
 		 */
-		add_theme_support( 'html5', array(
-			'search-form',
-			'comment-form',
-			'comment-list',
-			'gallery',
-			'caption',
-		) );
+		add_theme_support(
+			'html5', array(
+				'search-form',
+				'comment-form',
+				'comment-list',
+				'gallery',
+				'caption',
+			)
+		);
 
 		// Set up the WordPress core custom background feature.
-		add_theme_support( 'custom-background', apply_filters( 'crimson_rose_custom_background_args', array(
-			'default-color' => '#ffffff',
-			'default-image' => '',
-		) ) );
+		add_theme_support(
+			'custom-background', apply_filters(
+				'crimson_rose_custom_background_args', array(
+					'default-color' => '#ffffff',
+					'default-image' => '',
+				)
+			)
+		);
 
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
@@ -92,42 +100,46 @@ if ( ! function_exists( 'crimson_rose_setup' ) ) :
 		 *
 		 * @link https://codex.wordpress.org/Theme_Logo
 		 */
-		add_theme_support( 'custom-logo', array(
-			'height'      => 250,
-			'width'       => 400,
-			'flex-width'  => true,
-			'flex-height' => true,
-			'header-text' => array( 'site-title', 'site-description' ),
-		) );
+		add_theme_support(
+			'custom-logo', array(
+				'height'      => 250,
+				'width'       => 400,
+				'flex-width'  => true,
+				'flex-height' => true,
+				'header-text' => array( 'site-title', 'site-description' ),
+			)
+		);
 
 		/**
 		 * Add support for up-sell fonts plugin
 		 *
 		 * @link https://webplantmedia.com/product/designer-fonts-wordpress-plugin/
 		 */
-		add_theme_support( 'wpm-fonts', array(
-			'logo' => array(
-				'font'	=> 'Lato', /* This is a lookup value, and should not be translated. */
-				'selectors' => '.site-title',
-			),
-			'body' => array(
-				'font'	=> 'Lato', /* This is a lookup value, and should not be translated. */
-				'selectors' => 'body, button, input, select, optgroup, textarea',
-			),
-			'heading' => array(
-				'font'	=> 'Lato', /* This is a lookup value, and should not be translated. */
-				'selectors' => '#master .h1, #master .h2, #master .h3, #master .h4, #master .h5, #master .h6, h1, h2, h3, h4, h5, h6',
-			),
-			'accent' => array(
-				'font'	=> 'Mrs Saint Delafield', /* This is a lookup value, and should not be translated. */
-				'selectors' => array(
-					'.search .archive-page-header .page-title .archive-type',
-					'.archive .archive-page-header .page-title .archive-type',
-					'.site-branding .site-description',
+		add_theme_support(
+			'wpm-fonts', array(
+				'logo'             => array(
+					'font'      => 'Lato', /* This is a lookup value, and should not be translated. */
+					'selectors' => '.site-title',
 				),
-			),
-			'customizer_panel' => 'theme_options',
-		) );
+				'body'             => array(
+					'font'      => 'Lato', /* This is a lookup value, and should not be translated. */
+					'selectors' => 'body, button, input, select, optgroup, textarea',
+				),
+				'heading'          => array(
+					'font'      => 'Lato', /* This is a lookup value, and should not be translated. */
+					'selectors' => '#master .h1, #master .h2, #master .h3, #master .h4, #master .h5, #master .h6, h1, h2, h3, h4, h5, h6',
+				),
+				'accent'           => array(
+					'font'      => 'Mrs Saint Delafield', /* This is a lookup value, and should not be translated. */
+					'selectors' => array(
+						'.search .archive-page-header .page-title .archive-type',
+						'.archive .archive-page-header .page-title .archive-type',
+						'.site-branding .site-description',
+					),
+				),
+				'customizer_panel' => 'theme_options',
+			)
+		);
 	}
 endif;
 add_action( 'after_setup_theme', 'crimson_rose_setup' );
@@ -167,75 +179,89 @@ add_action( 'template_redirect', 'crimson_rose_content_width_check' );
  * @return void
  */
 function crimson_rose_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'crimson-rose' ),
-		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'crimson-rose' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Sidebar', 'crimson-rose' ),
+			'id'            => 'sidebar-1',
+			'description'   => esc_html__( 'Add widgets here.', 'crimson-rose' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
 
-	register_sidebar( array(
-		'name'          => esc_html__( 'Footer 1', 'crimson-rose' ),
-		'id'            => 'footer-1',
-		'description'   => esc_html__( 'Add widgets here.', 'crimson-rose' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer 1', 'crimson-rose' ),
+			'id'            => 'footer-1',
+			'description'   => esc_html__( 'Add widgets here.', 'crimson-rose' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
 
-	register_sidebar( array(
-		'name'          => esc_html__( 'Footer 2', 'crimson-rose' ),
-		'id'            => 'footer-2',
-		'description'   => esc_html__( 'Add widgets here.', 'crimson-rose' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer 2', 'crimson-rose' ),
+			'id'            => 'footer-2',
+			'description'   => esc_html__( 'Add widgets here.', 'crimson-rose' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
 
-	register_sidebar( array(
-		'name'          => esc_html__( 'Footer 3', 'crimson-rose' ),
-		'id'            => 'footer-3',
-		'description'   => esc_html__( 'Add widgets here.', 'crimson-rose' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer 3', 'crimson-rose' ),
+			'id'            => 'footer-3',
+			'description'   => esc_html__( 'Add widgets here.', 'crimson-rose' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
 
-	register_sidebar( array(
-		'name'          => esc_html__( 'Footer Bottom', 'crimson-rose' ),
-		'id'            => 'footer-bottom',
-		'description'   => esc_html__( 'Add a text or HTML widget here with your site credit and copyright information. Doing so will override the default footer credit at the bottom of your pages.', 'crimson-rose' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer Bottom', 'crimson-rose' ),
+			'id'            => 'footer-bottom',
+			'description'   => esc_html__( 'Add a text or HTML widget here with your site credit and copyright information. Doing so will override the default footer credit at the bottom of your pages.', 'crimson-rose' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
 
-	register_sidebar( array(
-		'name'          => esc_html__( 'Instagram Gallery', 'crimson-rose' ),
-		'id'            => 'gallery-1',
-		'description'   => esc_html__( 'Add Instagram widget here.', 'crimson-rose' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Instagram Gallery', 'crimson-rose' ),
+			'id'            => 'gallery-1',
+			'description'   => esc_html__( 'Add Instagram widget here.', 'crimson-rose' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
 
-	register_sidebar( array(
-		'name'          => esc_html__( 'Widgetized Page', 'crimson-rose' ),
-		'id'            => 'widgetized-page',
-		'description'   => esc_html__( 'Add content widgets here.', 'crimson-rose' ),
-		'before_widget' => '<section id="%1$s" class="content-widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title content-widget-title">',
-		'after_title'   => '</h2>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Widgetized Page', 'crimson-rose' ),
+			'id'            => 'widgetized-page',
+			'description'   => esc_html__( 'Add content widgets here.', 'crimson-rose' ),
+			'before_widget' => '<section id="%1$s" class="content-widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title content-widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
 }
 add_action( 'widgets_init', 'crimson_rose_widgets_init' );
 
@@ -257,7 +283,7 @@ function crimson_rose_customizer_css_wrap() {
 	 */
 	require get_template_directory() . '/css/css-theme.php';
 
-	$out = '/* WP Customizer start */' . PHP_EOL;
+	$out  = '/* WP Customizer start */' . PHP_EOL;
 	$out .= crimson_rose_custom_css();
 	$out .= PHP_EOL . '/* WP Customizer end */';
 
@@ -287,7 +313,7 @@ function crimson_rose_scripts() {
 			wp_enqueue_style( 'crimson-rose-accent-font', get_parent_theme_file_uri() . '/fonts/mrs-saint-delafield/stylesheet.css', array(), CRIMSON_ROSE_VERSION );
 		}
 	}
-	
+
 	// Add genericons.
 	wp_enqueue_style( 'genericons-neue', get_parent_theme_file_uri() . '/fonts/genericons-neue/genericons-neue.css', array(), CRIMSON_ROSE_VERSION );
 
@@ -415,7 +441,7 @@ function crimson_rose_display_sidebar() {
 
 		return $crimson_rose['display_sidebar_blog'];
 	}
-	
+
 	if ( crimson_rose_is_woocommerce_activated() ) {
 		if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 			return false;
@@ -423,8 +449,7 @@ function crimson_rose_display_sidebar() {
 
 		if ( is_shop() ) {
 			return $crimson_rose['display_sidebar_shop'];
-		}
-		else if ( is_product_taxonomy() ) {
+		} elseif ( is_product_taxonomy() ) {
 			return $crimson_rose['display_sidebar_shop_archive'];
 		}
 	}
@@ -436,7 +461,7 @@ function crimson_rose_display_sidebar() {
 
 		return $crimson_rose['display_sidebar_search'];
 	}
-	
+
 	if ( is_archive() ) {
 		if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 			return false;
@@ -444,7 +469,7 @@ function crimson_rose_display_sidebar() {
 
 		return $crimson_rose['display_sidebar_archive'];
 	}
-	
+
 	if ( is_attachment() ) {
 		if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 			return false;
@@ -452,7 +477,7 @@ function crimson_rose_display_sidebar() {
 
 		return $crimson_rose['display_sidebar_attachment'];
 	}
-	
+
 	return false;
 }
 
@@ -469,7 +494,11 @@ function crimson_rose_display_sidebar_footer() {
 	$footer_3 = is_active_sidebar( 'footer-3' );
 
 	if ( $footer_1 || $footer_2 || $footer_3 ) {
-		return array( 1 => $footer_1, 2 => $footer_2, 3 => $footer_3 );
+		return array(
+			1 => $footer_1,
+			2 => $footer_2,
+			3 => $footer_3,
+		);
 	}
 
 	return false;
@@ -510,11 +539,9 @@ function crimson_rose_get_blog_part() {
 
 	if ( is_home() ) {
 		get_template_part( 'template-parts/' . $crimson_rose['blog_display'] );
-	}
-	else if ( is_archive() ) {
+	} elseif ( is_archive() ) {
 		get_template_part( 'template-parts/' . $crimson_rose['archive_display'] );
-	}
-	else if ( is_search() ) {
+	} elseif ( is_search() ) {
 		get_template_part( 'template-parts/' . $crimson_rose['search_display'] );
 	}
 }
@@ -529,29 +556,31 @@ function crimson_rose_get_blog_part() {
  * @return bool
  */
 function crimson_rose_jetpack_featured_image_display() {
-    if ( ! function_exists( 'jetpack_featured_images_remove_post_thumbnail' ) ) {
-        return true;
-    } else {
-        $options         = get_theme_support( 'jetpack-content-options' );
-        $featured_images = ( ! empty( $options[0]['featured-images'] ) ) ? $options[0]['featured-images'] : null;
- 
-        $settings = array(
-            'post-default' => ( isset( $featured_images['post-default'] ) && false === $featured_images['post-default'] ) ? '' : 1,
-            'page-default' => ( isset( $featured_images['page-default'] ) && false === $featured_images['page-default'] ) ? '' : 1,
-        );
- 
-        $settings = array_merge( $settings, array(
-            'post-option'  => get_option( 'jetpack_content_featured_images_post', $settings['post-default'] ),
-            'page-option'  => get_option( 'jetpack_content_featured_images_page', $settings['page-default'] ),
-        ) );
- 
-        if ( ( ! $settings['post-option'] && is_single() )
-            || ( ! $settings['page-option'] && is_singular() && is_page() ) ) {
-            return false;
-        } else {
-            return true;
-        }
-    }
+	if ( ! function_exists( 'jetpack_featured_images_remove_post_thumbnail' ) ) {
+		return true;
+	} else {
+		$options         = get_theme_support( 'jetpack-content-options' );
+		$featured_images = ( ! empty( $options[0]['featured-images'] ) ) ? $options[0]['featured-images'] : null;
+
+		$settings = array(
+			'post-default' => ( isset( $featured_images['post-default'] ) && false === $featured_images['post-default'] ) ? '' : 1,
+			'page-default' => ( isset( $featured_images['page-default'] ) && false === $featured_images['page-default'] ) ? '' : 1,
+		);
+
+		$settings = array_merge(
+			$settings, array(
+				'post-option' => get_option( 'jetpack_content_featured_images_post', $settings['post-default'] ),
+				'page-option' => get_option( 'jetpack_content_featured_images_page', $settings['page-default'] ),
+			)
+		);
+
+		if ( ( ! $settings['post-option'] && is_single() )
+			|| ( ! $settings['page-option'] && is_singular() && is_page() ) ) {
+			return false;
+		} else {
+			return true;
+		}
+	}
 }
 
 /**
@@ -681,7 +710,7 @@ require get_template_directory() . '/inc/class-widget.php';
  * Load Each Individual Widget
  */
 foreach ( glob( get_template_directory() . '/inc/widgets/*.php' ) as $filename ) {
-    require_once( $filename );
+	require_once $filename;
 }
 
 /**

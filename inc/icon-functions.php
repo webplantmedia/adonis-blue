@@ -17,22 +17,22 @@
  * @since Crimson_Rose 1.01
  *
  * @param string $item_output
- * @param mixed $item
- * @param int $depth
+ * @param mixed  $item
+ * @param int    $depth
  * @param object $args
  * @return string
  */
 function crimson_rose_nav_menu_social_icons( $item_output, $item, $depth, $args ) {
 	// Get supported social icons.
 	$social_icons = crimson_rose_social_links_icons();
-	$known = false;
+	$known        = false;
 
 	// Change icon inside social links menu if there is supported URL.
 	if ( 'social' === $args->theme_location ) {
 		foreach ( $social_icons as $attr => $value ) {
 			if ( false !== strpos( $item_output, $attr ) ) {
 				$item_output = str_replace( '<a ', '<a class="social-logo social-logo__' . esc_attr( $value ) . '" ', $item_output );
-				$known = true;
+				$known       = true;
 			}
 		}
 
@@ -99,7 +99,7 @@ function crimson_rose_social_links_icons() {
 	 * twitter
 	 * vimeo
 	 * whatsapp
-	 * wordpress
+	 * WordPress
 	 * xanga
 	 * youtube
 	 */

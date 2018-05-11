@@ -17,7 +17,8 @@ get_header(); ?>
 		<main id="main" class="site-main">
 
 		<?php
-		if ( have_posts() ) : ?>
+		if ( have_posts() ) :
+		?>
 
 			<?php crimson_rose_get_blog_part(); ?>
 			<?php
@@ -28,7 +29,8 @@ get_header(); ?>
 
 			get_template_part( 'template-parts/content', 'none' );
 
-		endif; ?>
+		endif;
+		?>
 
 		</main><!-- #main -->
 	</section><!-- #primary -->

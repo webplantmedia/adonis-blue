@@ -44,14 +44,12 @@
 						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 					<?php else : ?>
 						<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-					<?php
-					endif;
+					<?php endif; ?>
 
-					$description = get_bloginfo( 'description', 'display' );
-					if ( $description || is_customize_preview() ) : ?>
+					<?php $description = get_bloginfo( 'description', 'display' ); ?>
+					<?php if ( $description || is_customize_preview() ) : ?>
 						<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-					<?php
-					endif; ?>
+					<?php endif; ?>
 				</div><!-- .site-boundary -->
 			</div><!-- .site-branding -->
 		</div><!-- .site-header-inner -->
@@ -63,10 +61,12 @@
 				<?php get_template_part( 'template-parts/menu', 'mobile-cart' ); ?>
 				<nav class="main-menu in-menu-bar">
 					<?php
-						wp_nav_menu( array(
-							'theme_location' => 'menu-1',
-							'menu_id'        => 'primary-menu',
-						) );
+						wp_nav_menu(
+							array(
+								'theme_location' => 'menu-1',
+								'menu_id'        => 'primary-menu',
+							)
+						);
 					?>
 				</nav>
 

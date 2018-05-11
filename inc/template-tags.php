@@ -27,7 +27,8 @@ if ( ! function_exists( 'crimson_rose_posted_on' ) ) :
 			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
 		}
 
-		$time_string = sprintf( $time_string,
+		$time_string = sprintf(
+			$time_string,
 			esc_attr( get_the_date( 'c' ) ),
 			esc_html( get_the_date() ),
 			esc_attr( get_the_modified_date( 'c' ) ),
@@ -175,7 +176,7 @@ if ( ! function_exists( 'crimson_rose_get_the_attachment' ) ) :
 			$meta = wp_get_attachment_metadata( get_the_ID() );
 			$atts = array( 'src' => wp_get_attachment_url() );
 			if ( ! empty( $meta['width'] ) && ! empty( $meta['height'] ) ) {
-				$atts['width'] = (int) $meta['width'];
+				$atts['width']  = (int) $meta['width'];
 				$atts['height'] = (int) $meta['height'];
 			}
 			if ( has_post_thumbnail() ) {
@@ -186,8 +187,8 @@ if ( ! function_exists( 'crimson_rose_get_the_attachment' ) ) :
 			$p = wp_audio_shortcode( array( 'src' => wp_get_attachment_url() ) );
 		} else {
 			// show the medium sized image representation of the attachment if available, and link to the raw file.
-			$image_size = apply_filters( 'crimson_rose_attachment_size', 'large' ); 
-			$p = wp_get_attachment_link(0, $image_size, false);
+			$image_size = apply_filters( 'crimson_rose_attachment_size', 'large' );
+			$p          = wp_get_attachment_link( 0, $image_size, false );
 		}
 
 		return $p;
@@ -218,7 +219,6 @@ if ( ! function_exists( 'crimson_rose_featured_post_navigation' ) ) :
 	function crimson_rose_featured_post_navigation() {
 		global $crimson_rose;
 
-
 		if ( $crimson_rose['blog_single_hide_post_navigation'] ) {
 			return;
 		}
@@ -232,11 +232,11 @@ if ( ! function_exists( 'crimson_rose_featured_post_navigation' ) ) :
 
 		// Previous/next post navigation.
 		if ( $next_post = get_next_post() ) {
-			$next_text .= get_the_post_thumbnail($next_post->ID,'thumbnail');
+			$next_text .= get_the_post_thumbnail( $next_post->ID, 'thumbnail' );
 		}
 
 		if ( $previous_post = get_previous_post() ) {
-			$prev_text .= get_the_post_thumbnail($previous_post->ID,'thumbnail');
+			$prev_text .= get_the_post_thumbnail( $previous_post->ID, 'thumbnail' );
 		}
 
 		$next_text .= '<span class="meta-nav" aria-hidden="true">' . esc_html__( 'Next', 'crimson-rose' ) . '</span> ' .
@@ -247,10 +247,12 @@ if ( ! function_exists( 'crimson_rose_featured_post_navigation' ) ) :
 			'<span class="screen-reader-text">' . esc_html__( 'Previous post:', 'crimson-rose' ) . '</span> ' .
 			'<span class="post-title">%title</span>';
 
-		the_post_navigation( array(
-			'next_text' => $next_text,
-			'prev_text' => $prev_text,
-		) );
+		the_post_navigation(
+			array(
+				'next_text' => $next_text,
+				'prev_text' => $prev_text,
+			)
+		);
 	}
 endif;
 
@@ -282,15 +284,17 @@ if ( ! function_exists( 'crimson_rose_parent_post_navigation' ) ) :
 		}
 
 		if ( $parent_post = get_post( $parent_post_id ) ) {
-			$prev_text .= get_the_post_thumbnail($parent_post->ID,'thumbnail');
+			$prev_text .= get_the_post_thumbnail( $parent_post->ID, 'thumbnail' );
 		}
 
 		$prev_text .= '<span class="meta-nav" aria-hidden="true">' . esc_html__( 'Post', 'crimson-rose' ) . '</span> ' .
 			'<span class="screen-reader-text">' . esc_html__( 'Parent post:', 'crimson-rose' ) . '</span> ' .
 			'<span class="post-title">%title</span>';
 
-		the_post_navigation( array(
-			'prev_text' => $prev_text,
-		) );
+		the_post_navigation(
+			array(
+				'prev_text' => $prev_text,
+			)
+		);
 	}
 endif;

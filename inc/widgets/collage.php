@@ -32,138 +32,138 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 			$this->widget_description = esc_html__( 'Displays a collage on your widgetized page.', 'crimson-rose' );
 			$this->widget_name        = esc_html__( 'Crimson Rose: Collage', 'crimson-rose' );
 			$this->settings           = array(
-				'panels' => array(
+				'panels'   => array(
 					array(
-						'title' => esc_html__( 'Slider Settings', 'crimson-rose' ),
+						'title'  => esc_html__( 'Slider Settings', 'crimson-rose' ),
 						'fields' => array(
-							'slider_mode' => array(
-								'type'  => 'select',
-								'std'   => 'horizontal',
-								'label' => esc_html__( 'Transition Effect:', 'crimson-rose' ),
-								'options' => array(
+							'slider_mode'      => array(
+								'type'     => 'select',
+								'std'      => 'horizontal',
+								'label'    => esc_html__( 'Transition Effect:', 'crimson-rose' ),
+								'options'  => array(
 									'horizontal' => esc_html__( 'Slide', 'crimson-rose' ),
-									'fade' => esc_html__( 'Fade', 'crimson-rose' ),
+									'fade'       => esc_html__( 'Fade', 'crimson-rose' ),
 								),
 								'sanitize' => 'text',
 							),
-							'slider_pause' => array(
-								'type'  => 'number',
-								'std'   => 9,
-								'step'  => 1,
-								'min'   => 1,
-								'max'   => 100,
-								'label' => esc_html__( 'Speed of the slideshow change in seconds:', 'crimson-rose' ),
+							'slider_pause'     => array(
+								'type'     => 'number',
+								'std'      => 9,
+								'step'     => 1,
+								'min'      => 1,
+								'max'      => 100,
+								'label'    => esc_html__( 'Speed of the slideshow change in seconds:', 'crimson-rose' ),
 								'sanitize' => 'number',
 							),
-							'slider_auto' => array(
-								'type'  => 'checkbox',
-								'std'   => 1,
-								'label' => esc_html__( 'Auto start slider transitions?', 'crimson-rose' ),
+							'slider_auto'      => array(
+								'type'     => 'checkbox',
+								'std'      => 1,
+								'label'    => esc_html__( 'Auto start slider transitions?', 'crimson-rose' ),
 								'sanitize' => 'checkbox',
 							),
 							'slider_autohover' => array(
-								'type'  => 'checkbox',
-								'std'   => 1,
-								'label' => esc_html__( 'Pause slideshow when hovering?', 'crimson-rose' ),
+								'type'     => 'checkbox',
+								'std'      => 1,
+								'label'    => esc_html__( 'Pause slideshow when hovering?', 'crimson-rose' ),
 								'sanitize' => 'checkbox',
 							),
-							'slider_controls' => array(
-								'type'  => 'checkbox',
-								'std'   => 1,
-								'label' => esc_html__( 'Show slide control?', 'crimson-rose' ),
+							'slider_controls'  => array(
+								'type'     => 'checkbox',
+								'std'      => 1,
+								'label'    => esc_html__( 'Show slide control?', 'crimson-rose' ),
 								'sanitize' => 'checkbox',
 							),
-							'slider_pager' => array(
-								'type'  => 'checkbox',
-								'std'   => 1,
-								'label' => esc_html__( 'Show slide pagination?', 'crimson-rose' ),
+							'slider_pager'     => array(
+								'type'     => 'checkbox',
+								'std'      => 1,
+								'label'    => esc_html__( 'Show slide pagination?', 'crimson-rose' ),
 								'sanitize' => 'checkbox',
 							),
-							'margin_bottom' => array(
-								'type'  => 'number',
-								'std'   => 40,
-								'step'  => 1,
-								'min'   => 0,
-								'max'   => 300,
-								'label' => esc_html__( 'Bottom margin of widget:', 'crimson-rose' ),
+							'margin_bottom'    => array(
+								'type'     => 'number',
+								'std'      => 40,
+								'step'     => 1,
+								'min'      => 0,
+								'max'      => 300,
+								'label'    => esc_html__( 'Bottom margin of widget:', 'crimson-rose' ),
 								'sanitize' => 'number',
 							),
 						),
 					),
 				),
 				'repeater' => array(
-					'title' => esc_html__( 'Slide', 'crimson-rose' ),
-					'fields' => array(
-						'page' => array(
-							'type'  => 'page',
-							'std'   => '',
-							'label' => esc_html__( 'Select Page:', 'crimson-rose' ),
+					'title'   => esc_html__( 'Slide', 'crimson-rose' ),
+					'fields'  => array(
+						'page'                    => array(
+							'type'        => 'page',
+							'std'         => '',
+							'label'       => esc_html__( 'Select Page:', 'crimson-rose' ),
 							'description' => esc_html__( 'The post content and featured image will be grabbed from the selected post. If no featured image is set, then the collage panel will display only the background color selected.', 'crimson-rose' ),
-							'sanitize' => 'text',
+							'sanitize'    => 'text',
 						),
-						'background_color' => array(
-							'type'  => 'colorpicker',
-							'std'   => '#ffece3',
-							'label' => esc_html__( 'Background Color:', 'crimson-rose' ),
+						'background_color'        => array(
+							'type'     => 'colorpicker',
+							'std'      => '#ffece3',
+							'label'    => esc_html__( 'Background Color:', 'crimson-rose' ),
 							'sanitize' => 'color',
 						),
-						'background_size' => array(
-							'type'  => 'select',
-							'std'   => 'cover',
-							'label' => esc_html__( 'Background Size:', 'crimson-rose' ),
-							'options' => $this->options_background_size(),
+						'background_size'         => array(
+							'type'     => 'select',
+							'std'      => 'cover',
+							'label'    => esc_html__( 'Background Size:', 'crimson-rose' ),
+							'options'  => $this->options_background_size(),
 							'sanitize' => 'background_size',
 						),
-						'text_color' => array(
-							'type'  => 'colorpicker',
-							'std'   => '',
-							'label' => esc_html__( 'Text Color:', 'crimson-rose' ),
+						'text_color'              => array(
+							'type'        => 'colorpicker',
+							'std'         => '',
+							'label'       => esc_html__( 'Text Color:', 'crimson-rose' ),
 							'description' => esc_html__( 'Leave blank to use default theme color.', 'crimson-rose' ),
-							'sanitize' => 'color',
+							'sanitize'    => 'color',
 						),
-						'text_background_color' => array(
-							'type'  => 'colorpicker',
-							'std'   => '',
-							'label' => esc_html__( 'Text Background Color:', 'crimson-rose' ),
+						'text_background_color'   => array(
+							'type'        => 'colorpicker',
+							'std'         => '',
+							'label'       => esc_html__( 'Text Background Color:', 'crimson-rose' ),
 							'description' => esc_html__( 'Leave blank to use default theme color.', 'crimson-rose' ),
-							'sanitize' => 'color',
+							'sanitize'    => 'color',
 						),
 						'text_background_opacity' => array(
-							'type'  => 'number',
-							'std'   => '80',
-							'step'  => '1',
-							'min'   => '0',
-							'max'   => '100',
-							'label' => esc_html__( 'Text Background Color Opacity:', 'crimson-rose' ),
+							'type'     => 'number',
+							'std'      => '80',
+							'step'     => '1',
+							'min'      => '0',
+							'max'      => '100',
+							'label'    => esc_html__( 'Text Background Color Opacity:', 'crimson-rose' ),
 							'sanitize' => 'absint',
 						),
-						'max_width' => array(
-							'type'  => 'number',
-							'std'   => '400',
-							'step'  => '1',
-							'min'   => '0',
-							'label' => esc_html__( 'Max Width of Content Box:', 'crimson-rose' ),
+						'max_width'               => array(
+							'type'        => 'number',
+							'std'         => '400',
+							'step'        => '1',
+							'min'         => '0',
+							'label'       => esc_html__( 'Max Width of Content Box:', 'crimson-rose' ),
 							'description' => esc_html__( 'Leave blank to set max width to none.', 'crimson-rose' ),
-							'sanitize' => 'number_blank',
+							'sanitize'    => 'number_blank',
 						),
-						'button_text' => array(
-							'type'  => 'text',
-							'std'   => '',
-							'label' => esc_html__( 'Button Text:', 'crimson-rose' ),
+						'button_text'             => array(
+							'type'     => 'text',
+							'std'      => '',
+							'label'    => esc_html__( 'Button Text:', 'crimson-rose' ),
 							'sanitize' => 'text',
 						),
-						'button_link' => array(
-							'type'  => 'text',
-							'std'   => '',
-							'label' => esc_html__( 'Button URL:', 'crimson-rose' ),
+						'button_link'             => array(
+							'type'     => 'text',
+							'std'      => '',
+							'label'    => esc_html__( 'Button URL:', 'crimson-rose' ),
 							'sanitize' => 'url',
 						),
-						'button_style' => array(
-							'type'  => 'select',
-							'std'   => 'default',
-							'label' => esc_html__( 'Button Style:', 'crimson-rose' ),
-							'options' => array(
-								'default' => esc_html__( 'Default Button', 'crimson-rose' ),
+						'button_style'            => array(
+							'type'     => 'select',
+							'std'      => 'default',
+							'label'    => esc_html__( 'Button Style:', 'crimson-rose' ),
+							'options'  => array(
+								'default'  => esc_html__( 'Default Button', 'crimson-rose' ),
 								'button-1' => esc_html__( 'Image Button 1', 'crimson-rose' ),
 								'button-2' => esc_html__( 'Image Button 2', 'crimson-rose' ),
 							),
@@ -172,75 +172,75 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 					),
 					'default' => array(
 						array(
-							'background_color' => '#ffede4',
-							'background_size' => 'cover',
-							'text_color' => '',
-							'text_background_color' => '#ffffff',
+							'background_color'        => '#ffede4',
+							'background_size'         => 'cover',
+							'text_color'              => '',
+							'text_background_color'   => '#ffffff',
 							'text_background_opacity' => '70',
-							'max_width' => '300',
-							'button_link' => home_url('/'),
-							'button_text' => _x( 'Order Now', 'Theme starter content', 'crimson-rose' ),
-							'button_style' => 'default',
+							'max_width'               => '300',
+							'button_link'             => home_url( '/' ),
+							'button_text'             => _x( 'Order Now', 'Theme starter content', 'crimson-rose' ),
+							'button_style'            => 'default',
 						),
 						array(
-							'background_color' => '#ffffff',
-							'background_size' => 'cover',
-							'text_color' => '',
-							'text_background_color' => '#ffffff',
+							'background_color'        => '#ffffff',
+							'background_size'         => 'cover',
+							'text_color'              => '',
+							'text_background_color'   => '#ffffff',
 							'text_background_opacity' => '70',
-							'max_width' => '300',
-							'button_link' => home_url('/'),
-							'button_text' => _x( 'Shop Now', 'Theme starter content', 'crimson-rose' ),
+							'max_width'               => '300',
+							'button_link'             => home_url( '/' ),
+							'button_text'             => _x( 'Shop Now', 'Theme starter content', 'crimson-rose' ),
 						),
 						array(
-							'background_color' => '#fdf3ec',
-							'background_size' => 'cover',
-							'text_color' => '',
-							'text_background_color' => '#ffffff',
+							'background_color'        => '#fdf3ec',
+							'background_size'         => 'cover',
+							'text_color'              => '',
+							'text_background_color'   => '#ffffff',
 							'text_background_opacity' => '70',
-							'max_width' => '300',
-							'button_link' => home_url('/'),
-							'button_text' => _x( 'Join Now', 'Theme starter content', 'crimson-rose' ),
+							'max_width'               => '300',
+							'button_link'             => home_url( '/' ),
+							'button_text'             => _x( 'Join Now', 'Theme starter content', 'crimson-rose' ),
 						),
 						array(
-							'background_color' => '#fcf7f7',
-							'background_size' => 'cover',
-							'text_color' => '',
-							'text_background_color' => '',
+							'background_color'        => '#fcf7f7',
+							'background_size'         => 'cover',
+							'text_color'              => '',
+							'text_background_color'   => '',
 							'text_background_opacity' => '70',
-							'max_width' => '350',
-							'button_link' => home_url('/'),
-							'button_text' => '',
+							'max_width'               => '350',
+							'button_link'             => home_url( '/' ),
+							'button_text'             => '',
 						),
 						array(
-							'background_color' => '#ffffff',
-							'background_size' => 'cover',
-							'text_color' => '',
-							'text_background_color' => '',
+							'background_color'        => '#ffffff',
+							'background_size'         => 'cover',
+							'text_color'              => '',
+							'text_background_color'   => '',
 							'text_background_opacity' => '70',
-							'max_width' => '',
-							'button_link' => home_url('/'),
-							'button_text' => '',
+							'max_width'               => '',
+							'button_link'             => home_url( '/' ),
+							'button_text'             => '',
 						),
 						array(
-							'background_color' => '#fde2e2',
-							'background_size' => 'fit-width',
-							'text_color' => '',
-							'text_background_color' => '',
+							'background_color'        => '#fde2e2',
+							'background_size'         => 'fit-width',
+							'text_color'              => '',
+							'text_background_color'   => '',
 							'text_background_opacity' => '70',
-							'max_width' => '',
-							'button_link' => home_url('/'),
-							'button_text' => '',
+							'max_width'               => '',
+							'button_link'             => home_url( '/' ),
+							'button_text'             => '',
 						),
 						array(
-							'background_color' => '#fffdfc',
-							'background_size' => 'cover',
-							'text_color' => '',
-							'text_background_color' => '#ffffff',
+							'background_color'        => '#fffdfc',
+							'background_size'         => 'cover',
+							'text_color'              => '',
+							'text_background_color'   => '#ffffff',
 							'text_background_opacity' => '100',
-							'max_width' => '',
-							'button_link' => home_url('/'),
-							'button_text' => '',
+							'max_width'               => '',
+							'button_link'             => home_url( '/' ),
+							'button_text'             => '',
 						),
 					),
 				),
@@ -268,7 +268,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 			}
 
 			$slider_size = max( sizeof( $o['repeater'] ), 5 );
-			$repeater = $o['repeater'];
+			$repeater    = $o['repeater'];
 
 			$style = array();
 			if ( ! empty( $o['margin_bottom'] ) ) {
@@ -285,7 +285,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 				<?php if ( $slider_size > 5 ) : ?>
 					<div class="slide carousel slide-5">
 						<div class="slide-gutter">
-							<div class="carousel-container slide-overflow" data-sliderauto="<?php echo esc_attr( $o['slider_auto'] ); ?>" data-slidermode="<?php echo esc_attr( $o['slider_mode'] ); ?>" data-sliderpause="<?php echo esc_attr( $o['slider_pause'] ); ?>" data-sliderautohover="<?php echo esc_attr( $o['slider_autohover'] ) ?>" data-slidercontrols="<?php echo esc_attr( $o['slider_controls'] ) ?>" data-sliderpager="<?php echo esc_attr( $o['slider_pager'] ) ?>">
+							<div class="carousel-container slide-overflow" data-sliderauto="<?php echo esc_attr( $o['slider_auto'] ); ?>" data-slidermode="<?php echo esc_attr( $o['slider_mode'] ); ?>" data-sliderpause="<?php echo esc_attr( $o['slider_pause'] ); ?>" data-sliderautohover="<?php echo esc_attr( $o['slider_autohover'] ); ?>" data-slidercontrols="<?php echo esc_attr( $o['slider_controls'] ); ?>" data-sliderpager="<?php echo esc_attr( $o['slider_pager'] ); ?>">
 								<?php foreach ( $o['repeater'] as $key => $slide_setting ) : ?>
 									<div class="carousel-item">
 										<?php $this->widget_get_slide( $slide_setting ); ?>
@@ -373,7 +373,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 			<?php
 			echo $after_widget; /* WPCS: XSS OK. HTML output. */
 		}
-		
+
 		/**
 		 * Generate slide HTML
 		 *
@@ -385,7 +385,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 		function widget_get_slide( $slide_setting ) {
 			global $crimson_rose;
 
-			$p = null;
+			$p                  = null;
 			$featured_image_url = null;
 
 			if ( ! empty( $slide_setting['page'] ) ) {
@@ -396,16 +396,16 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 				$featured_image_url = get_the_post_thumbnail_url( $p->ID, 'full' );
 			}
 
-			$tag = 'div';
-			$classes[] = 'slide-inner';
-			$attr = array();
-			$style = array();
+			$tag        = 'div';
+			$classes[]  = 'slide-inner';
+			$attr       = array();
+			$style      = array();
 			$text_style = array();
 			$text_class = '';
 
 			if ( ! empty( $slide_setting['button_link'] ) && empty( $slide_setting['button_text'] ) ) {
-				$attr[] = 'data-slide-url="' . esc_url( $slide_setting['button_link'] ) . '"';
-				$style[] = 'cursor:pointer;';
+				$attr[]    = 'data-slide-url="' . esc_url( $slide_setting['button_link'] ) . '"';
+				$style[]   = 'cursor:pointer;';
 				$classes[] = 'div-click';
 			}
 
@@ -423,27 +423,24 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 
 			if ( ! empty( $slide_setting['text_color'] ) ) {
 				$text_style[] = 'color:' . $slide_setting['text_color'] . ';';
-				$text_class .= ' custom-color';
-			}
-			else {
+				$text_class  .= ' custom-color';
+			} else {
 				$text_class .= ' no-custom-color';
 			}
 
 			if ( ! empty( $slide_setting['text_background_color'] ) ) {
-				$rgb = $this->hex2rgb( $slide_setting['text_background_color'] );
-				$opacity = absint( $slide_setting['text_background_opacity'] ) / 100;
+				$rgb          = $this->hex2rgb( $slide_setting['text_background_color'] );
+				$opacity      = absint( $slide_setting['text_background_opacity'] ) / 100;
 				$text_style[] = 'background-color: rgb(' . $rgb['red'] . ',' . $rgb['green'] . ',' . $rgb['blue'] . ');';
 				$text_style[] = 'background-color: rgba(' . $rgb['red'] . ',' . $rgb['green'] . ',' . $rgb['blue'] . ',' . $opacity . ');';
-				$text_class .= ' text-background-color';
-			}
-			else {
+				$text_class  .= ' text-background-color';
+			} else {
 				$text_class .= ' no-text-background-color';
 			}
 
 			if ( ! empty( $slide_setting['max_width'] ) ) {
 				$text_style[] = 'max-width:' . $slide_setting['max_width'] . 'px;';
 			}
-
 
 			if ( ! empty( $style ) ) {
 				$attr[] = 'style="' . esc_attr( implode( '', $style ) ) . '"';
@@ -479,13 +476,13 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 					<?php if ( ! empty( $slide_setting['button_link'] ) && ! empty( $slide_setting['button_text'] ) ) : ?>
 						<?php
 						switch ( $slide_setting['button_style'] ) {
-							case 'button-1' :
+							case 'button-1':
 								$button_class = ' fancy-button';
 								break;
-							case 'button-2' :
+							case 'button-2':
 								$button_class = ' fancy2-button';
 								break;
-							default :
+							default:
 								$button_class = '';
 								break;
 						}

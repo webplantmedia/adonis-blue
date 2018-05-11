@@ -21,36 +21,35 @@
 			contentWidth,
 			margin;
 
-		$this = $(this);
-		$site = $('body');
+		$this = $( this );
+		$site = $( 'body' );
 
-		$content = $('.site-main .entry-content');
+		$content = $( '.site-main .entry-content' );
 		if ( $site.length && $content.length ) {
 			// get width.
-			siteWidth = $site.outerWidth(false);
+			siteWidth    = $site.outerWidth( false );
 			contentWidth = $content.outerWidth( false );
 
 			if ( siteWidth <= 700 ) {
 				$this.css( {'margin-left': '', 'margin-right': ''} );
-			}
-			else {
+			} else {
 				// used for centering.
 				margin = ( ( siteWidth - contentWidth ) / 2 );
 
-				if ( $this.hasClass('alignwide') ) {
+				if ( $this.hasClass( 'alignwide' ) ) {
 					margin -= 20;
-					margin = Math.max( margin, 0 );
-					margin = Math.min( margin, 200 );
+					margin  = Math.max( margin, 0 );
+					margin  = Math.min( margin, 200 );
 				}
 
-				if ( $this.hasClass('wp-block-gallery') ) {
+				if ( $this.hasClass( 'wp-block-gallery' ) ) {
 					margin += 8; /* 8px offset for gallery margin. */
 				}
 
 				margin *= -1;
 
 				// apply margin offset.
-				$this.css( {'margin-left': margin+'px', 'margin-right': margin+'px'} );
+				$this.css( {'margin-left': margin + 'px', 'margin-right': margin + 'px'} );
 			}
 		}
 	};
@@ -63,22 +62,22 @@
 			x,
 			margin;
 
-		$this = $(this);
+		$this = $( this );
 
-		$window = $(window);
-		$content = $('.site-main .entry-content');
+		$window  = $( window );
+		$content = $( '.site-main .entry-content' );
 		if ( $content.length && $window.length ) {
 			// get width.
 			windowWidth = $window.width();
 
-			x = $content.offset();
+			x      = $content.offset();
 			margin = x.left;
 
-			if ( $this.hasClass('alignwide') ) {
+			if ( $this.hasClass( 'alignwide' ) ) {
 				margin = Math.max( ( margin - 20 ), 20 );
 			}
 
-			if ( $this.hasClass('wp-block-gallery') ) {
+			if ( $this.hasClass( 'wp-block-gallery' ) ) {
 				margin += 8; /* 8px offset for gallery margin. */
 			}
 
@@ -86,24 +85,22 @@
 
 			if ( windowWidth <= 780 ) {
 				$this.css( {'margin-left':'','margin-right':''} );
-			}
-			else if ( windowWidth <= 1024 ) {
-				$this.css( {'margin-left': margin+'px','margin-right': margin+'px'} );
-			}
-			else {
-				$this.css( {'margin-left': margin+'px','margin-right':''} );
+			} else if ( windowWidth <= 1024 ) {
+				$this.css( {'margin-left': margin + 'px','margin-right': margin + 'px'} );
+			} else {
+				$this.css( {'margin-left': margin + 'px','margin-right':''} );
 			}
 		}
 	}
 
 	var widthAlign = function() {
-		$('.no-sidebar .entry-content > .alignfull, .no-sidebar .entry-content > .alignwide').each( widthCalc );
+		$( '.no-sidebar .entry-content > .alignfull, .no-sidebar .entry-content > .alignwide' ).each( widthCalc );
 
-		$('.display-sidebar .entry-content > .alignfull, .display-sidebar .entry-content > .alignwide').each( widthSideCalc );
+		$( '.display-sidebar .entry-content > .alignfull, .display-sidebar .entry-content > .alignwide' ).each( widthSideCalc );
 	};
 
 	widthAlign();
 
-	$(window).resize( widthAlign );
+	$( window ).resize( widthAlign );
 
 } )( jQuery );

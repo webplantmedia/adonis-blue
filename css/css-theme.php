@@ -19,9 +19,9 @@
  * @return string
  */
 function crimson_rose_custom_css() {
-global $crimson_rose;
+	global $crimson_rose;
 
-$css = '
+	$css = '
 .entry-content a:visited,
 .entry-content a:focus,
 .entry-content a:active,
@@ -219,23 +219,23 @@ a:hover {
 	}
 }';
 
-if ( $crimson_rose['thumb_grid_max_height'] > 0 ) {
-$css .= '
+	if ( $crimson_rose['thumb_grid_max_height'] > 0 ) {
+		$css .= '
 #master .wc-shortcodes-entry-thumbnail,
 #master .excerpt2 .entry-image {
 	max-height: ' . $crimson_rose['thumb_grid_max_height'] . 'px; /*id:thumb_grid_max_height*/
 }';
-}
+	}
 
-if ( $crimson_rose['thumb_excerpt_max_height'] > 0 ) {
-$css .= '
+	if ( $crimson_rose['thumb_excerpt_max_height'] > 0 ) {
+		$css .= '
 #master .excerpt .entry-image {
 	max-height: ' . $crimson_rose['thumb_excerpt_max_height'] . 'px; /*id:thumb_excerpt_max_height*/
 }';
-}
+	}
 
-if ( ! empty( $crimson_rose['body_font_name'] ) ) {
-$css .= '
+	if ( ! empty( $crimson_rose['body_font_name'] ) ) {
+		$css .= '
 body,
 button,
 input,
@@ -244,26 +244,26 @@ optgroup,
 textarea {
 	font-family: "' . sanitize_text_field( $crimson_rose['body_font_name'] ) . '";
 }';
-}
+	}
 
-if ( ! empty( $crimson_rose['accent_font_name'] ) ) {
-$css .= '
+	if ( ! empty( $crimson_rose['accent_font_name'] ) ) {
+		$css .= '
 #master .site-branding .site-description,
 #master .search .archive-page-header .page-title .archive-type,
 #master .archive .archive-page-header .page-title .archive-type {
 	font-family: "' . sanitize_text_field( $crimson_rose['accent_font_name'] ) . '";
 }';
-}
+	}
 
-if ( is_404() ) {
-$css .= '
+	if ( is_404() ) {
+		$css .= '
 #master .has-custom-404-page .page-cover-bg .cover {
 	background-color: ' . $crimson_rose['404_cover_color'] . '; /*id:404_cover_color*/
 	opacity: ' . ( $crimson_rose['404_cover_opacity'] / 100 ) . '; /*id:404_cover_opacity*/
 }';
 
-if ( $crimson_rose['404_text_white'] ) {
-$css .= '
+		if ( $crimson_rose['404_text_white'] ) {
+			$css .= '
 #master .has-custom-404-page .entry-footer a,
 #master .has-custom-404-page .entry-footer a:hover,
 #master .has-custom-404-page .entry-footer a:visited,
@@ -285,8 +285,8 @@ $css .= '
 #master .has-custom-404-page .entry-title {
 	color: #ffffff;
 }';
-}
-}
+		}
+	}
 
 	return $css;
 }

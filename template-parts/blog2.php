@@ -15,9 +15,10 @@
 
 <?php
 /* Start the Loop */
-while ( have_posts() ) : the_post();
+while ( have_posts() ) :
+	the_post();
 
 	get_template_part( 'template-parts/excerpt', get_post_format() );
 
 endwhile;
-?>
+

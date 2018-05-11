@@ -60,45 +60,45 @@ function crimson_rose_register_required_plugins() {
 	$plugins = array(
 
 		array(
-			'name'      => 'Gutenberg',
-			'slug'      => 'gutenberg',
-			'required'  => false,
+			'name'     => 'Gutenberg',
+			'slug'     => 'gutenberg',
+			'required' => false,
 		),
 
 		array(
-			'name'      => 'Jetpack',
-			'slug'      => 'jetpack',
-			'required'  => false,
+			'name'     => 'Jetpack',
+			'slug'     => 'jetpack',
+			'required' => false,
 		),
 
 		array(
-			'name'      => 'WooCommerce',
-			'slug'      => 'woocommerce',
-			'required'  => false,
+			'name'     => 'WooCommerce',
+			'slug'     => 'woocommerce',
+			'required' => false,
 		),
 
 		array(
-			'name'      => 'Contact Form 7',
-			'slug'      => 'contact-form-7',
-			'required'  => false,
+			'name'     => 'Contact Form 7',
+			'slug'     => 'contact-form-7',
+			'required' => false,
 		),
 
 		array(
-			'name'      => 'MailChimp',
-			'slug'      => 'mailchimp-for-wp',
-			'required'  => false,
+			'name'     => 'MailChimp',
+			'slug'     => 'mailchimp-for-wp',
+			'required' => false,
 		),
 
 		array(
-			'name'      => 'WP Instagram Widget',
-			'slug'      => 'wp-instagram-widget',
-			'required'  => false,
+			'name'     => 'WP Instagram Widget',
+			'slug'     => 'wp-instagram-widget',
+			'required' => false,
 		),
 
 		array(
-			'name'      => 'One Click Demo Import',
-			'slug'      => 'one-click-demo-import',
-			'required'  => false,
+			'name'     => 'One Click Demo Import',
+			'slug'     => 'one-click-demo-import',
+			'required' => false,
 		),
 	);
 

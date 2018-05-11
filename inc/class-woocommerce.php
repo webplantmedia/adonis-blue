@@ -31,17 +31,17 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 		 */
 		public function __construct() {
 			add_filter( 'woocommerce_product_get_image', array( $this, 'woocommerce_product_get_image' ) );
-			
+
 			add_action( 'wp', array( $this, 'disable_jetpack_infinite_scroll' ) );
 
 			add_filter( 'woocommerce_pagination_args', array( $this, 'woocommerce_pagination_args' ) );
 			add_filter( 'woocommerce_comment_pagination_args', array( $this, 'woocommerce_pagination_args' ) );
-			
+
 			add_filter( 'loop_shop_per_page', array( $this, 'loop_shop_per_page' ), 20 );
 
-			add_filter('loop_shop_columns', array( $this, 'loop_columns' ) );
+			add_filter( 'loop_shop_columns', array( $this, 'loop_columns' ) );
 
-			add_filter( 'woocommerce_show_page_title' , array( $this, 'hide_title' ) );
+			add_filter( 'woocommerce_show_page_title', array( $this, 'hide_title' ) );
 
 			add_filter( 'get_the_archive_title', array( $this, 'get_the_archive_title' ), 10, 1 );
 
@@ -71,7 +71,7 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 			// Add header for payment info.
 			add_action( 'woocommerce_review_order_before_payment', array( $this, 'before_shipping_title' ), 10 );
 
-			add_filter('woocommerce_short_description', 'crimson_rose_the_content', 11 );
+			add_filter( 'woocommerce_short_description', 'crimson_rose_the_content', 11 );
 		}
 
 		/**
@@ -143,9 +143,11 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 		 */
 		function woocommerce_setup() {
 			// Declare WooCommerce support.
-			add_theme_support( 'woocommerce', array(
+			add_theme_support(
+				'woocommerce', array(
 				// 'gallery_thumbnail_image_width' => 100,
-			) );
+				)
+			);
 			add_theme_support( 'wc-product-gallery-zoom' );
 			add_theme_support( 'wc-product-gallery-lightbox' );
 			add_theme_support( 'wc-product-gallery-slider' );
@@ -196,7 +198,7 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 			if ( $crimson_rose['shop_product_hide_meta'] ) {
 				remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
 			}
-			
+
 		}
 
 		/**
@@ -214,20 +216,17 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 					add_filter( 'single_product_archive_thumbnail_size', array( $this, 'return_shop_single_image_size' ) );
 					add_filter( 'subcategory_archive_thumbnail_size', array( $this, 'return_shop_single_image_size' ) );
 				}
-			}
-			else if ( is_shop() ) {
+			} elseif ( is_shop() ) {
 				if ( $crimson_rose['shop_columns'] < 4 ) {
 					add_filter( 'single_product_archive_thumbnail_size', array( $this, 'return_shop_single_image_size' ) );
 					add_filter( 'subcategory_archive_thumbnail_size', array( $this, 'return_shop_single_image_size' ) );
 				}
-			}
-			else if ( is_product() ) {
+			} elseif ( is_product() ) {
 				if ( $crimson_rose['shop_related_products_columns'] < 4 ) {
 					add_filter( 'single_product_archive_thumbnail_size', array( $this, 'return_shop_single_image_size' ) );
 					add_filter( 'subcategory_archive_thumbnail_size', array( $this, 'return_shop_single_image_size' ) );
 				}
-			}
-			else {
+			} else {
 				add_filter( 'single_product_archive_thumbnail_size', array( $this, 'return_shop_single_image_size' ) );
 				add_filter( 'subcategory_archive_thumbnail_size', array( $this, 'return_shop_single_image_size' ) );
 			}
@@ -285,13 +284,12 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 		function get_the_archive_title( $title ) {
 			if ( is_shop() ) {
 				$title = woocommerce_page_title( false );
-			}
-			else if ( is_product_taxonomy() ) {
+			} elseif ( is_product_taxonomy() ) {
 				$pieces = explode( ': ', $title );
 				if ( sizeof( $pieces ) == 2 ) {
 					$shop_page_id = wc_get_page_id( 'shop' );
 					$page_title   = get_the_title( $shop_page_id );
-					$page_title = apply_filters( 'woocommerce_page_title', $page_title );
+					$page_title   = apply_filters( 'woocommerce_page_title', $page_title );
 
 					$pieces[0] = $page_title;
 
@@ -327,11 +325,15 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 		 */
 		public function related_products_args( $args ) {
 			global $crimson_rose;
-			
-			$args = array_merge( $args, apply_filters( 'crimson_rose_related_products_args', array(
-				'posts_per_page' => $crimson_rose['shop_related_products_columns'],
-				'columns'        => $crimson_rose['shop_related_products_columns'],
-			) ) );
+
+			$args = array_merge(
+				$args, apply_filters(
+					'crimson_rose_related_products_args', array(
+						'posts_per_page' => $crimson_rose['shop_related_products_columns'],
+						'columns'        => $crimson_rose['shop_related_products_columns'],
+					)
+				)
+			);
 
 			return $args;
 		}
@@ -376,12 +378,12 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 		public function woocommerce_cart_dropdown() {
 			global $woocommerce;
 
-			$cart_subtotal    = $woocommerce->cart->get_cart_subtotal();
-			$link             = wc_get_cart_url();
+			$cart_subtotal = $woocommerce->cart->get_cart_subtotal();
+			$link          = wc_get_cart_url();
 			// $link             = get_permalink( wc_get_page_id( 'shop' ));
 			$cart_items_count = $woocommerce->cart->cart_contents_count;
 
-			$output = '';
+			$output  = '';
 			$output .= '<li class="cart">';
 			$output .= "<a class='cart_dropdown_link' href='" . esc_url( $link ) . "'>";
 			$output .= "<i class='genericons-neue genericons-neue-cart'></i>";
@@ -408,8 +410,8 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 		public function woocommerce_header_cart_fragments( $fragments ) {
 			global $woocommerce;
 
-			$cart_subtotal    = $woocommerce->cart->get_cart_subtotal();
-			$link             = wc_get_cart_url();
+			$cart_subtotal = $woocommerce->cart->get_cart_subtotal();
+			$link          = wc_get_cart_url();
 			// $link             = get_permalink( wc_get_page_id( 'shop' ));
 			$cart_items_count = $woocommerce->cart->cart_contents_count;
 
@@ -462,9 +464,9 @@ return new Crimson_Rose_WooCommerce();
 function woocommerce_subcategory_thumbnail( $category ) {
 	global $crimson_rose;
 
-	$small_thumbnail_size  	= apply_filters( 'subcategory_archive_thumbnail_size', 'shop_catalog' );
-	$dimensions    			= wc_get_image_size( $small_thumbnail_size );
-	$thumbnail_id  			= get_woocommerce_term_meta( $category->term_id, 'thumbnail_id', true );
+	$small_thumbnail_size = apply_filters( 'subcategory_archive_thumbnail_size', 'shop_catalog' );
+	$dimensions           = wc_get_image_size( $small_thumbnail_size );
+	$thumbnail_id         = get_woocommerce_term_meta( $category->term_id, 'thumbnail_id', true );
 
 	if ( $thumbnail_id ) {
 		$image        = wp_get_attachment_image_src( $thumbnail_id, $small_thumbnail_size );

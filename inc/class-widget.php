@@ -36,8 +36,8 @@ class Crimson_Rose_Widget extends WP_Widget {
 	 */
 	public function __construct() {
 		$widget_ops = array(
-			'classname' => $this->widget_id,
-			'description' => $this->widget_description,
+			'classname'                   => $this->widget_id,
+			'description'                 => $this->widget_description,
 			'customize_selective_refresh' => $this->selective_refresh,
 		);
 
@@ -59,7 +59,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 		global $wpdb; /* get access to the WordPress database object variable. */
 
 		// get names of all businesses.
-		$request = '%' . $wpdb->esc_like( stripslashes( sanitize_text_field( $_POST['request'] ) ) ) . '%'; /* escape for use in LIKE statement. */
+		$request   = '%' . $wpdb->esc_like( stripslashes( sanitize_text_field( $_POST['request'] ) ) ) . '%'; /* escape for use in LIKE statement. */
 		$post_type = stripslashes( sanitize_text_field( $_POST['post_type'] ) );
 
 		$sql = "
@@ -78,16 +78,16 @@ class Crimson_Rose_Widget extends WP_Widget {
 				0,30
 		";
 
-		$sql = $wpdb->prepare($sql, $request, $post_type);
+		$sql = $wpdb->prepare( $sql, $request, $post_type );
 
-		$results = $wpdb->get_results($sql);
+		$results = $wpdb->get_results( $sql );
 
 		// copy the business titles to a simple array.
 		$titles = array();
-		$i = 0;
-		foreach( $results as $r ) {
-			$titles[ $i ][ 'label' ] = $r->post_title . ' (' . $r->ID . ')';
-			$titles[ $i ][ 'value' ] = $r->ID;
+		$i      = 0;
+		foreach ( $results as $r ) {
+			$titles[ $i ]['label'] = $r->post_title . ' (' . $r->ID . ')';
+			$titles[ $i ]['value'] = $r->ID;
 			$i++;
 		}
 
@@ -95,8 +95,8 @@ class Crimson_Rose_Widget extends WP_Widget {
 			$titles[0]['label'] = 'No results found in post type "' . $post_type . '."';
 			$titles[0]['value'] = '0';
 		}
-			
-		echo json_encode($titles); /* encode into JSON format and output. */
+
+		echo json_encode( $titles ); /* encode into JSON format and output. */
 
 		die(); /* stop "0" from being output. */
 	}
@@ -143,12 +143,10 @@ class Crimson_Rose_Widget extends WP_Widget {
 			unset( $instance['repeater'] );
 			// turn on to test default widget settings.
 			/* $repeater_instances = $this->settings['repeater']['default']; */
-		}
-		else {
+		} else {
 			if ( isset( $this->settings['repeater']['default'] ) ) {
 				$repeater_instances = $this->settings['repeater']['default'];
-			}
-			else {
+			} else {
 				$repeater_instances[1] = array();
 			}
 		}
@@ -157,20 +155,18 @@ class Crimson_Rose_Widget extends WP_Widget {
 			if ( $key == 'panels' ) {
 				foreach ( $setting as $panel ) {
 					foreach ( $panel['fields'] as $panel_field_key => $panel_field_setting ) {
-						$value = $this->default_sanitize_value( $panel_field_key, $instance, $panel_field_setting );
+						$value                        = $this->default_sanitize_value( $panel_field_key, $instance, $panel_field_setting );
 						$instance[ $panel_field_key ] = $this->sanitize_instance( $panel_field_setting, $value, 'display' );
 					}
 				}
-			}
-			else if ( $key == 'repeater' ) {
+			} elseif ( $key == 'repeater' ) {
 				foreach ( $repeater_instances as $repeater_count => $repeater_instance ) {
 					foreach ( $setting['fields'] as $repeater_field_key => $repeater_field_setting ) {
 						$value = $this->default_sanitize_value( $repeater_field_key, $repeater_instance, $repeater_field_setting );
 						$instance['repeater'][ $repeater_count ][ $repeater_field_key ] = $this->sanitize_instance( $repeater_field_setting, $value, 'display' );
 					}
 				}
-			}
-			else {
+			} else {
 				$value = $this->default_sanitize_value( $key, $instance, $setting );
 				// turn on to test default widget settings.
 				/* $value = $setting['std']; */
@@ -187,15 +183,14 @@ class Crimson_Rose_Widget extends WP_Widget {
 	 * @since Crimson_Rose 1.01
 	 *
 	 * @param string $key
-	 * @param array $instance
-	 * @param array $setting
+	 * @param array  $instance
+	 * @param array  $setting
 	 * @return array
 	 */
 	function default_sanitize_value( $key, $instance, $setting ) {
 		if ( array_key_exists( $key, $instance ) ) {
 			return $instance[ $key ];
-		}
-		else {
+		} else {
 			return $setting['std'];
 		}
 	}
@@ -206,19 +201,17 @@ class Crimson_Rose_Widget extends WP_Widget {
 	 * @since Crimson_Rose 1.01
 	 *
 	 * @param string $key
-	 * @param array $instance
-	 * @param array $setting
+	 * @param array  $instance
+	 * @param array  $setting
 	 * @return mixed
 	 */
 	function default_update_value( $key, $instance, $setting ) {
 		if ( array_key_exists( $key, $instance ) ) {
 			return $instance[ $key ];
-		}
-		else {
+		} else {
 			if ( $setting['type'] == 'checkbox' ) {
 				return 0;
-			}
-			else {
+			} else {
 				return $setting['std'];
 			}
 		}
@@ -234,7 +227,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 	 * @return array
 	 */
 	function update( $new_instance, $old_instance ) {
-		$instance = array();
+		$instance       = array();
 		$repeater_count = 0;
 
 		if ( ! $this->settings ) {
@@ -244,12 +237,10 @@ class Crimson_Rose_Widget extends WP_Widget {
 		if ( isset( $new_instance['repeater'] ) && is_array( $new_instance['repeater'] ) ) {
 			$repeater_instances = $new_instance['repeater'];
 			unset( $new_instance['repeater'] );
-		}
-		else {
+		} else {
 			if ( isset( $this->settings['repeater']['default'] ) ) {
 				$repeater_instances = $this->settings['repeater']['default'];
-			}
-			else {
+			} else {
 				$repeater_instances[1] = array();
 			}
 		}
@@ -258,12 +249,11 @@ class Crimson_Rose_Widget extends WP_Widget {
 			if ( $key == 'panels' ) {
 				foreach ( $setting as $panel ) {
 					foreach ( $panel['fields'] as $panel_field_key => $panel_field_setting ) {
-						$value = $this->default_update_value( $panel_field_key, $new_instance, $panel_field_setting );
+						$value                        = $this->default_update_value( $panel_field_key, $new_instance, $panel_field_setting );
 						$instance[ $panel_field_key ] = $this->sanitize_instance( $panel_field_setting, $value );
 					}
 				}
-			}
-			else if ( $key == 'repeater' ) {
+			} elseif ( $key == 'repeater' ) {
 				foreach ( $repeater_instances as $repeater_instance ) {
 					$repeater_count++;
 					foreach ( $setting['fields'] as $repeater_field_key => $repeater_field_setting ) {
@@ -271,9 +261,8 @@ class Crimson_Rose_Widget extends WP_Widget {
 						$instance['repeater'][ $repeater_count ][ $repeater_field_key ] = $this->sanitize_instance( $repeater_field_setting, $value );
 					}
 				}
-			}
-			else {
-				$value = $this->default_update_value( $key, $new_instance, $setting );
+			} else {
+				$value            = $this->default_update_value( $key, $new_instance, $setting );
 				$instance[ $key ] = $this->sanitize_instance( $setting, $value );
 			}
 		}
@@ -286,8 +275,8 @@ class Crimson_Rose_Widget extends WP_Widget {
 	 *
 	 * @since Crimson_Rose 1.01
 	 *
-	 * @param array $setting
-	 * @param mixed $new_value
+	 * @param array  $setting
+	 * @param mixed  $new_value
 	 * @param string $action
 	 * @return mixed
 	 */
@@ -299,44 +288,43 @@ class Crimson_Rose_Widget extends WP_Widget {
 		$value = '';
 
 		switch ( $setting['sanitize'] ) {
-			case 'html' :
+			case 'html':
 				$value = wp_kses_post( $new_value );
 				break;
 
-			case 'multicheck' :
+			case 'multicheck':
 				$value = maybe_serialize( $new_value );
 				break;
 
-			case 'checkbox' :
+			case 'checkbox':
 				$value = $new_value == 1 ? 1 : 0;
 				break;
 
-			case 'text' :
+			case 'text':
 				$value = sanitize_text_field( $new_value );
 				break;
 
-			case 'absint' :
+			case 'absint':
 				$value = absint( $new_value );
 				break;
 
-			case 'number' :
+			case 'number':
 				$value = intval( $new_value );
 				break;
 
-			case 'number_blank' :
+			case 'number_blank':
 				if ( $new_value === '' ) {
 					$value = '';
-				}
-				else {
+				} else {
 					$value = intval( $new_value );
 				}
 				break;
 
-			case 'color' :
+			case 'color':
 				$value = sanitize_hex_color( $new_value );
 				break;
 
-			case 'url' :
+			case 'url':
 				$value = esc_url_raw( $new_value );
 
 				if ( $action == 'display' ) {
@@ -344,20 +332,20 @@ class Crimson_Rose_Widget extends WP_Widget {
 				}
 				break;
 
-			case 'background_size' :
+			case 'background_size':
 				$value = $this->sanitize_background_size( $new_value );
 				break;
 
-			case 'ids' :
-			case 'post_ids' :
+			case 'ids':
+			case 'post_ids':
 				$value = $this->sanitize_ids( $new_value );
 				break;
 
-			case 'slugs' :
+			case 'slugs':
 				$value = $this->sanitize_slugs( $new_value );
 				break;
 
-			default :
+			default:
 				$value = $new_value;
 				break;
 		}
@@ -367,7 +355,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 
 	/**
 	 * This functions provides the big picture logic
-	 * for displaying each type of user input field. 
+	 * for displaying each type of user input field.
 	 *
 	 * @since Crimson_Rose 1.01
 	 *
@@ -379,19 +367,17 @@ class Crimson_Rose_Widget extends WP_Widget {
 		if ( ! $this->settings ) {
 			return;
 		}
-		$display_panels = false;
+		$display_panels   = false;
 		$display_repeater = false;
-		$panel_count = 0;
+		$panel_count      = 0;
 
 		if ( isset( $instance['repeater'] ) && is_array( $instance['repeater'] ) ) {
 			$repeater_instances = $instance['repeater'];
 			unset( $instance['repeater'] );
-		}
-		else {
+		} else {
 			if ( isset( $this->settings['repeater']['default'] ) ) {
 				$repeater_instances = $this->settings['repeater']['default'];
-			}
-			else {
+			} else {
 				$repeater_instances[1] = array();
 			}
 		}
@@ -420,8 +406,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 					}
 
 					$this->display_after_panel_repeater( $panel_count );
-				}
-				else if ( 'panels' == $key ) {
+				} elseif ( 'panels' == $key ) {
 					$display_panels = true;
 
 					$this->display_before_panels();
@@ -438,8 +423,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 					}
 
 					$this->display_after_panels();
-				}
-				else {
+				} else {
 					$this->display_settings( $instance, $key, $setting );
 				}
 			}
@@ -595,31 +579,30 @@ class Crimson_Rose_Widget extends WP_Widget {
 	 *
 	 * @since Crimson_Rose 1.01
 	 *
-	 * @param array $instance
+	 * @param array  $instance
 	 * @param string $key
-	 * @param array $setting
-	 * @param bool $display_repeater
-	 * @param int $count
+	 * @param array  $setting
+	 * @param bool   $display_repeater
+	 * @param int    $count
 	 * @return void
 	 */
 	public function display_settings( $instance, $key, $setting, $display_repeater = false, $count = 1 ) {
 		$value = array_key_exists( $key, $instance ) ? $instance[ $key ] : $setting['std'];
 
 		if ( $display_repeater ) {
-			$field_id = $this->get_field_id('repeater') . '-'.$count.'-' .$key;
-			$field_name = $this->get_field_name('repeater') . '['.$count.']' . '['.$key.']';
-		}
-		else {
-			$field_id = $this->get_field_id( $key );
+			$field_id   = $this->get_field_id( 'repeater' ) . '-' . $count . '-' . $key;
+			$field_name = $this->get_field_name( 'repeater' ) . '[' . $count . ']' . '[' . $key . ']';
+		} else {
+			$field_id   = $this->get_field_id( $key );
 			$field_name = $this->get_field_name( $key );
 		}
 
 		switch ( $setting['type'] ) {
-			case 'description' :
+			case 'description':
 				?>
 				<p class="description"><?php echo $value; /* WPCS: XSS OK. HTML output */ ?></p>
 				<?php
-			break;
+				break;
 
 			case 'text':
 				?>
@@ -631,9 +614,9 @@ class Crimson_Rose_Widget extends WP_Widget {
 					<?php endif; ?>
 				</p>
 				<?php
-			break;
+				break;
 
-			case 'image' :
+			case 'image':
 				wp_enqueue_media();
 				wp_enqueue_script( 'crimson-rose-widget-image', get_template_directory_uri() . '/js/admin/admin-image.js', array( 'jquery' ), '', true );
 				$id_prefix = $this->get_field_id( '' );
@@ -654,15 +637,21 @@ class Crimson_Rose_Widget extends WP_Widget {
 
 					<input type="text" class="widefat image-sel-value" id="<?php echo esc_attr( $field_id ); ?>" name="<?php echo esc_attr( $field_name ); ?>"value="<?php echo esc_attr( $value ); ?>" placeholder="http://" style="margin-bottom:5px;" />
 					<a href="#" class="button-secondary image-sel-add" onclick="imageWidget.uploader( this ); return false;"><?php esc_html_e( 'Choose Image', 'crimson-rose' ); ?></a>
-					<a href="#" style="display:inline-block;margin:5px 0 0 3px;<?php if ( empty( $value ) ) echo 'display:none;'; ?>" class="image-sel-remove" onclick="imageWidget.remove( this ); return false;"><?php esc_html_e( 'Remove', 'crimson-rose' ); ?></a>
+					<?php
+					$a_style = '';
+					if ( empty( $value ) ) {
+						$a_style = 'display:none;';
+					}
+					?>
+					<a href="#" style="display:inline-block;margin:5px 0 0 3px;<?php echo esc_attr( $a_style ); ?>" class="image-sel-remove" onclick="imageWidget.remove( this ); return false;"><?php esc_html_e( 'Remove', 'crimson-rose' ); ?></a>
 				</div>
 				<?php if ( isset( $setting['description'] ) ) : ?>
 					<span class="description"><?php echo esc_html( $setting['description'] ); ?></span>
 				<?php endif; ?>
 			<?php
-			break;
+				break;
 
-			case 'checkbox' :
+			case 'checkbox':
 				?>
 				<p>
 					<label for="<?php echo esc_attr( $field_id ); ?>">
@@ -674,9 +663,9 @@ class Crimson_Rose_Widget extends WP_Widget {
 					<?php endif; ?>
 				</p>
 				<?php
-			break;
+				break;
 
-			case 'multicheck' :
+			case 'multicheck':
 				$value = maybe_unserialize( $value );
 
 				if ( ! is_array( $value ) ) {
@@ -687,7 +676,11 @@ class Crimson_Rose_Widget extends WP_Widget {
 				<p>
 					<?php foreach ( $setting['options'] as $id => $label ) : ?>
 						<label for="<?php echo esc_attr( sanitize_title( $label ) ); ?>-<?php echo esc_attr( $id ); ?>">
-							<input type="checkbox" id="<?php echo esc_attr( sanitize_title( $label ) ); ?>-<?php echo esc_attr( $id ); ?>" name="<?php echo esc_attr( $field_name ); ?>[]" value="<?php echo esc_attr( $id ); ?>" <?php if ( in_array( $id, $value ) ) : ?>checked="checked"<?php endif; ?>/>
+							<input type="checkbox" id="<?php echo esc_attr( sanitize_title( $label ) ); ?>-<?php echo esc_attr( $id ); ?>" name="<?php echo esc_attr( $field_name ); ?>[]" value="<?php echo esc_attr( $id ); ?>" 
+																	<?php
+																	if ( in_array( $id, $value ) ) :
+										?>
+										checked="checked"<?php endif; ?>/>
 							<?php echo esc_attr( $label ); ?><br />
 						</label>
 					<?php endforeach; ?>
@@ -696,9 +689,9 @@ class Crimson_Rose_Widget extends WP_Widget {
 					<?php endif; ?>
 				</p>
 				<?php
-			break;
+				break;
 
-			case 'select' :
+			case 'select':
 				?>
 				<p>
 					<label for="<?php echo esc_attr( $field_id ); ?>"><?php echo esc_html( $setting['label'] ); ?></label>
@@ -712,7 +705,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 					<?php endif; ?>
 				</p>
 				<?php
-			break;
+				break;
 
 			case 'page':
 				$pages = get_pages( 'sort_order=ASC&sort_column=post_title&post_status=publish' );
@@ -730,7 +723,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 					<?php endif; ?>
 				</p>
 				<?php
-			break;
+				break;
 
 			case 'post':
 				$post_type = 'post';
@@ -753,35 +746,46 @@ class Crimson_Rose_Widget extends WP_Widget {
 					/* ]]> */
 				</script>
 				<?php
-			break;
+				break;
 
-			case 'number' :
+			case 'number':
 				?>
 				<p>
 					<label for="<?php echo esc_attr( $field_id ); ?>"><?php echo esc_html( $setting['label'] ); ?></label>
-					<input class="widefat" id="<?php echo esc_attr( $field_id ); ?>" name="<?php echo esc_attr( $field_name ); ?>" type="number" step="<?php echo esc_attr( $setting['step'] ); ?>" <?php if ( isset( $setting['min'] ) ) : ?> min="<?php echo esc_attr( $setting['min'] ); ?>" <?php endif; ?> <?php if ( isset( $setting['max'] ) ) : ?> max="<?php echo esc_attr( $setting['max'] ); ?>" <?php endif; ?> value="<?php echo esc_attr( $value ); ?>" />
+					<input class="widefat" id="<?php echo esc_attr( $field_id ); ?>" name="<?php echo esc_attr( $field_name ); ?>" type="number" step="<?php echo esc_attr( $setting['step'] ); ?>" 
+															<?php
+															if ( isset( $setting['min'] ) ) :
+										?>
+										 min="<?php echo esc_attr( $setting['min'] ); ?>" <?php endif; ?> <?php
+											if ( isset( $setting['max'] ) ) :
+											?>
+											 max="<?php echo esc_attr( $setting['max'] ); ?>" <?php endif; ?> value="<?php echo esc_attr( $value ); ?>" />
 					<?php if ( isset( $setting['description'] ) ) : ?>
 						<span class="description"><?php echo esc_html( $setting['description'] ); ?></span>
 					<?php endif; ?>
 				</p>
 				<?php
-			break;
+				break;
 
-			case 'textarea' :
+			case 'textarea':
 				?>
 				<p>
 					<label for="<?php echo esc_attr( $field_id ); ?>"><?php echo esc_html( $setting['label'] ); ?></label>
 					<textarea class="widefat" id="<?php echo esc_attr( $field_id ); ?>"
-					name="<?php echo esc_attr( $field_name ); ?>" rows="<?php echo isset( $setting['rows'] )
-					? esc_attr( $setting['rows'] ) : 3; ?>"><?php echo esc_html( $value ); ?></textarea>
+					name="<?php echo esc_attr( $field_name ); ?>" rows="
+										<?php
+										echo isset( $setting['rows'] )
+										? esc_attr( $setting['rows'] ) : 3;
+					?>
+					"><?php echo esc_html( $value ); ?></textarea>
 					<?php if ( isset( $setting['description'] ) ) : ?>
 						<span class="description"><?php echo esc_html( $setting['description'] ); ?></span>
 					<?php endif; ?>
 				</p>
 				<?php
-			break;
+				break;
 
-			case 'colorpicker' :
+			case 'colorpicker':
 					wp_enqueue_script( 'wp-color-picker' );
 					wp_enqueue_style( 'wp-color-picker' );
 				?>
@@ -809,30 +813,32 @@ class Crimson_Rose_Widget extends WP_Widget {
 				<?php endif; ?>
 				<p></p>
 				<?php
-			break;
+				break;
 
 			case 'category':
-				$categories_dropdown = wp_dropdown_categories( array(
-					'name'            => $this->get_field_name( 'category' ),
-					'selected'        => $value,
-					'show_option_all' => esc_html__( 'All Categories', 'crimson-rose' ),
-					'show_count'      => true,
-					'orderby'         => 'slug',
-					'hierarchical'    => true,
-					'class'           => 'widefat',
-					'echo'            => false,
-				) );
+				$categories_dropdown = wp_dropdown_categories(
+					array(
+						'name'            => $this->get_field_name( 'category' ),
+						'selected'        => $value,
+						'show_option_all' => esc_html__( 'All Categories', 'crimson-rose' ),
+						'show_count'      => true,
+						'orderby'         => 'slug',
+						'hierarchical'    => true,
+						'class'           => 'widefat',
+						'echo'            => false,
+					)
+				);
 				?>
 
 				<label for="<?php echo esc_attr( $field_id ); ?>"><?php echo esc_html( $setting['label'] ); ?></label>
 				<?php echo $categories_dropdown; /* WPCS: XSS OK. HTML output. */ ?>
 
 				<?php
-			break;
+				break;
 
-			default :
+			default:
 				do_action( 'crimson_rose_widget_type_' . $setting['type'], $this, $key, $setting, $instance );
-			break;
+				break;
 		}
 	}
 
@@ -858,7 +864,11 @@ class Crimson_Rose_Widget extends WP_Widget {
 		$r = hexdec( $r );
 		$g = hexdec( $g );
 		$b = hexdec( $b );
-		return array( 'red' => $r, 'green' => $g, 'blue' => $b );
+		return array(
+			'red'   => $r,
+			'green' => $g,
+			'blue'  => $b,
+		);
 	}
 
 	/**
@@ -1003,12 +1013,12 @@ class Crimson_Rose_Widget extends WP_Widget {
 	 */
 	function options_background_size() {
 		return array(
-			'cover' => esc_html__( 'Cover', 'crimson-rose' ),
-			'contain' => esc_html__( 'Contain', 'crimson-rose' ),
-			'stretch' => esc_html__( 'Stretch', 'crimson-rose' ),
-			'fit-width' => esc_html__( 'Fit Width', 'crimson-rose' ),
+			'cover'      => esc_html__( 'Cover', 'crimson-rose' ),
+			'contain'    => esc_html__( 'Contain', 'crimson-rose' ),
+			'stretch'    => esc_html__( 'Stretch', 'crimson-rose' ),
+			'fit-width'  => esc_html__( 'Fit Width', 'crimson-rose' ),
 			'fit-height' => esc_html__( 'Fit Height', 'crimson-rose' ),
-			'auto' => esc_html__( 'Auto', 'crimson-rose' ),
+			'auto'       => esc_html__( 'Auto', 'crimson-rose' ),
 		);
 	}
 
@@ -1022,13 +1032,13 @@ class Crimson_Rose_Widget extends WP_Widget {
 	 */
 	function get_background_size( $value ) {
 		switch ( $value ) {
-			case 'stretch' :
+			case 'stretch':
 				$value = '100% 100%';
 				break;
-			case 'fit-width' :
+			case 'fit-width':
 				$value = '100% auto';
 				break;
-			case 'fit-height' :
+			case 'fit-height':
 				$value = 'auto 100%';
 				break;
 		}

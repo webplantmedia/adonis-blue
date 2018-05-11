@@ -29,12 +29,14 @@ global $crimson_rose;
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
 
-		if ( 'post' === get_post_type() ) : ?>
+		if ( 'post' === get_post_type() ) :
+		?>
 		<div class="entry-meta">
 			<?php crimson_rose_posted_on(); ?>
 		</div><!-- .entry-meta -->
 		<?php
-		endif; ?>
+		endif;
+		?>
 	</header><!-- .entry-header -->
 
 	<?php if ( has_post_thumbnail() ) : ?>
@@ -45,17 +47,21 @@ global $crimson_rose;
 
 	<div class="entry-content">
 		<?php
-			the_content( sprintf(
-				/* translators: %s: Name of current post. Only visible to screen readers */
-				__( '%1$s<i class="genericons-neue genericons-neue-next"></i><span class="screen-reader-text">"%2$s"</span>', 'crimson-rose' ),
-				esc_html( $crimson_rose['read_more_label'] ),
-				get_the_title()
-			) );
+			the_content(
+				sprintf(
+					/* translators: %s: Name of current post. Only visible to screen readers */
+					__( '%1$s<i class="genericons-neue genericons-neue-next"></i><span class="screen-reader-text">"%2$s"</span>', 'crimson-rose' ),
+					esc_html( $crimson_rose['read_more_label'] ),
+					get_the_title()
+				)
+			);
 
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'crimson-rose' ),
-				'after'  => '</div>',
-			) );
+			wp_link_pages(
+				array(
+					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'crimson-rose' ),
+					'after'  => '</div>',
+				)
+			);
 		?>
 	</div><!-- .entry-content -->
 
