@@ -92,7 +92,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 		}
 
 		if ( empty( $titles ) ) {
-			$titles[0]['label'] = "No results found in post type \"$post_type\".";
+			$titles[0]['label'] = 'No results found in post type "' . $post_type . '."';
 			$titles[0]['value'] = '0';
 		}
 			
