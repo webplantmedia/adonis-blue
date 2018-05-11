@@ -14,7 +14,7 @@
 /**
  * Rem units.
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @param string $property
  * @param int $pixel

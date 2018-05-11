@@ -17,7 +17,7 @@ if ( ! function_exists( 'crimson_rose_posted_on' ) ) :
 	/**
 	 * Prints HTML with meta information for the current post-date/time and author.
 	 *
-	 * @since Crimson_Rose 1.0
+	 * @since Crimson_Rose 1.01
 	 *
 	 * @return void
 	 */
@@ -45,7 +45,7 @@ if ( ! function_exists( 'crimson_rose_entry_header' ) ) :
 	/**
 	 * Prints HTML with meta information for the categories, tags and comments.
 	 *
-	 * @since Crimson_Rose 1.0
+	 * @since Crimson_Rose 1.01
 	 *
 	 * @param string $delimeter
 	 * @return void
@@ -67,7 +67,7 @@ if ( ! function_exists( 'crimson_rose_entry_footer' ) ) :
 	/**
 	 * Prints HTML with meta information for the categories, tags and comments.
 	 *
-	 * @since Crimson_Rose 1.0
+	 * @since Crimson_Rose 1.01
 	 *
 	 * @return void
 	 */
@@ -120,7 +120,7 @@ if ( ! function_exists( 'crimson_rose_the_term_description' ) ) :
 	/**
 	 * Display term description
 	 *
-	 * @since Crimson_Rose 1.0
+	 * @since Crimson_Rose 1.01
 	 *
 	 * @return void
 	 */
@@ -142,7 +142,7 @@ if ( ! function_exists( 'crimson_rose_mobile_menu_button' ) ) :
 	/**
 	 * Display mobile menu button
 	 *
-	 * @since Crimson_Rose 1.0
+	 * @since Crimson_Rose 1.01
 	 *
 	 * @return void
 	 */
@@ -166,7 +166,7 @@ if ( ! function_exists( 'crimson_rose_get_the_attachment' ) ) :
 	/**
 	 * Display attachment image
 	 *
-	 * @since Crimson_Rose 1.0
+	 * @since Crimson_Rose 1.01
 	 *
 	 * @return void
 	 */
@@ -198,7 +198,7 @@ if ( ! function_exists( 'crimson_rose_the_attachment' ) ) :
 	/**
 	 * Display attachment image wrapper
 	 *
-	 * @since Crimson_Rose 1.0
+	 * @since Crimson_Rose 1.01
 	 *
 	 * @return void
 	 */
@@ -211,7 +211,7 @@ if ( ! function_exists( 'crimson_rose_featured_post_navigation' ) ) :
 	/**
 	 * Display post navigation.
 	 *
-	 * @since Crimson_Rose 1.0
+	 * @since Crimson_Rose 1.01
 	 *
 	 * @return void
 	 */
@@ -258,7 +258,7 @@ if ( ! function_exists( 'crimson_rose_parent_post_navigation' ) ) :
 	/**
 	 * Display parent post navigation
 	 *
-	 * @since Crimson_Rose 1.0
+	 * @since Crimson_Rose 1.01
 	 *
 	 * @return void
 	 */

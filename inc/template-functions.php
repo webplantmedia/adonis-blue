@@ -14,7 +14,7 @@
 /**
  * Adds custom classes to the array of body classes.
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @param array $classes
  * @return array
@@ -110,7 +110,7 @@ add_filter( 'body_class', 'crimson_rose_body_classes' );
 /**
  * Add a pingback url auto-discovery header for singularly identifiable articles.
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @return void
  */
@@ -124,7 +124,7 @@ add_action( 'wp_head', 'crimson_rose_pingback_header' );
 /**
  * Add retina src image to custom logo
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @param string $html
  * @param int $blog_id
@@ -154,7 +154,7 @@ add_filter( 'get_custom_logo', 'crimson_rose_get_custom_logo', 10, 2 );
 /**
  * Add "read more" link on all excerpts.
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @param string $output
  * @return string Appended "Read More" link
@@ -183,7 +183,7 @@ add_filter('the_excerpt', 'crimson_rose_read_more_link');
 /**
  * Conditional display of read more text.
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @return string
  */
@@ -201,7 +201,7 @@ add_filter('crimson_rose_read_more_text', 'crimson_rose_read_more_text');
 /**
  * Convert single link line to button.
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @param string $output
  * @param string $button_style
@@ -244,7 +244,7 @@ function crimson_rose_button_generation( $output, $button_style ) {
 /**
  * Parse content, and convert single link line to button.
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @param string $output
  * @return string
@@ -268,7 +268,7 @@ add_filter('the_content', 'crimson_rose_the_content', 11 );
 /**
  * Filter the except length to specified characters.
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @param int $length Excerpt length.
  * @return int (Maybe) modified excerpt length.
@@ -281,7 +281,7 @@ add_filter( 'excerpt_length', 'crimson_rose_custom_excerpt_length', 999 );
 /**
  * Custom display of archive title
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @param string $title
  * @return string

@@ -30,7 +30,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 	/**
 	 * __construct
 	 *
-	 * @since Crimson_Rose 1.0
+	 * @since Crimson_Rose 1.01
 	 *
 	 * @return void
 	 */
@@ -51,7 +51,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 	 * Echo post title and id for ajax request. Used in widget for searching
 	 * for post by title.
 	 *
-	 * @since Crimson_Rose 1.0
+	 * @since Crimson_Rose 1.01
 	 *
 	 * @return void
 	 */
@@ -104,7 +104,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 	/**
 	 * Enqueue Scripts
 	 *
-	 * @since Crimson_Rose 1.0
+	 * @since Crimson_Rose 1.01
 	 *
 	 * @param string $hook_suffix
 	 * @return void
@@ -128,7 +128,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 	/**
 	 * Sanitize options.
 	 *
-	 * @since Crimson_Rose 1.0
+	 * @since Crimson_Rose 1.01
 	 *
 	 * @param array $instance
 	 * @return array
@@ -184,7 +184,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 	/**
 	 * Check if default value needs to be returned.
 	 *
-	 * @since Crimson_Rose 1.0
+	 * @since Crimson_Rose 1.01
 	 *
 	 * @param string $key
 	 * @param array $instance
@@ -203,7 +203,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 	/**
 	 * Properly save user input.
 	 *
-	 * @since Crimson_Rose 1.0
+	 * @since Crimson_Rose 1.01
 	 *
 	 * @param string $key
 	 * @param array $instance
@@ -227,7 +227,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 	/**
 	 * Update
 	 *
-	 * @since Crimson_Rose 1.0
+	 * @since Crimson_Rose 1.01
 	 *
 	 * @param array $new_instance
 	 * @param array $old_instance
@@ -284,7 +284,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 	/**
 	 * Sanitize Instance
 	 *
-	 * @since Crimson_Rose 1.0
+	 * @since Crimson_Rose 1.01
 	 *
 	 * @param array $setting
 	 * @param mixed $new_value
@@ -369,7 +369,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 	 * This functions provides the big picture logic
 	 * for displaying each type of user input field. 
 	 *
-	 * @since Crimson_Rose 1.0
+	 * @since Crimson_Rose 1.01
 	 *
 	 * @param array $instance
 	 * @return void
@@ -494,7 +494,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 	/**
 	 * Display HTML before panels start
 	 *
-	 * @since Crimson_Rose 1.0
+	 * @since Crimson_Rose 1.01
 	 *
 	 * @return void
 	 */
@@ -507,7 +507,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 	/**
 	 * Display HTML after panels start
 	 *
-	 * @since Crimson_Rose 1.0
+	 * @since Crimson_Rose 1.01
 	 *
 	 * @return void
 	 */
@@ -520,7 +520,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 	/**
 	 * Display HTML before panel repeater start
 	 *
-	 * @since Crimson_Rose 1.0
+	 * @since Crimson_Rose 1.01
 	 *
 	 * @return void
 	 */
@@ -533,7 +533,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 	/**
 	 * Display HTML after panel repeater start
 	 *
-	 * @since Crimson_Rose 1.0
+	 * @since Crimson_Rose 1.01
 	 *
 	 * @param int $panel_count
 	 * @return void
@@ -549,7 +549,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 	/**
 	 * Display HTML before panel start
 	 *
-	 * @since Crimson_Rose 1.0
+	 * @since Crimson_Rose 1.01
 	 *
 	 * @param string $title
 	 * @return void
@@ -565,7 +565,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 	/**
 	 * Display HTML after panel start
 	 *
-	 * @since Crimson_Rose 1.0
+	 * @since Crimson_Rose 1.01
 	 *
 	 * @param bool $display_repeater
 	 * @return void
@@ -593,7 +593,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 	/**
 	 * Display Setting
 	 *
-	 * @since Crimson_Rose 1.0
+	 * @since Crimson_Rose 1.01
 	 *
 	 * @param array $instance
 	 * @param string $key
@@ -839,7 +839,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 	/**
 	 * Helper method to go from hex to rgb color.
 	 *
-	 * @since Crimson_Rose 1.0
+	 * @since Crimson_Rose 1.01
 	 *
 	 * @param string $colour
 	 * @return array
@@ -864,7 +864,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 	/**
 	 * Convert post_ids string to array of ints.
 	 *
-	 * @since Crimson_Rose 1.0
+	 * @since Crimson_Rose 1.01
 	 *
 	 * @param string $post_ids
 	 * @return array
@@ -893,7 +893,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 	/**
 	 * Wrapper function to sanitize string of comma delimited ids.
 	 *
-	 * @since Crimson_Rose 1.0
+	 * @since Crimson_Rose 1.01
 	 *
 	 * @param mixed $post_ids
 	 * @return void
@@ -913,7 +913,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 	/**
 	 * Comma delimited post slugs string to array
 	 *
-	 * @since Crimson_Rose 1.0
+	 * @since Crimson_Rose 1.01
 	 *
 	 * @param string $post_ids
 	 * @return void
@@ -942,7 +942,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 	/**
 	 * Wrapper function to sanitize post slugs in comma delimited string.
 	 *
-	 * @since Crimson_Rose 1.0
+	 * @since Crimson_Rose 1.01
 	 *
 	 * @param string $post_ids
 	 * @return void
@@ -962,7 +962,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 	/**
 	 * Sanitize URL. This fixes a link bug in the Customizer.
 	 *
-	 * @since Crimson_Rose 1.0
+	 * @since Crimson_Rose 1.01
 	 *
 	 * @param string $value
 	 * @return string
@@ -979,7 +979,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 	/**
 	 * Sanitize background size
 	 *
-	 * @since Crimson_Rose 1.0
+	 * @since Crimson_Rose 1.01
 	 *
 	 * @param mixed $value
 	 * @return mixed
@@ -997,7 +997,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 	/**
 	 * Background size CSS options
 	 *
-	 * @since Crimson_Rose 1.0
+	 * @since Crimson_Rose 1.01
 	 *
 	 * @return array
 	 */
@@ -1015,7 +1015,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 	/**
 	 * Get CSS background size options
 	 *
-	 * @since Crimson_Rose 1.0
+	 * @since Crimson_Rose 1.01
 	 *
 	 * @param string $value
 	 * @return array

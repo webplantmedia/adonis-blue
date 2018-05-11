@@ -24,7 +24,7 @@ if ( ! function_exists( 'crimson_rose_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 *
-	 * @since Crimson_Rose 1.0
+	 * @since Crimson_Rose 1.01
 	 *
 	 * @return void
 	 */
@@ -135,7 +135,7 @@ add_action( 'after_setup_theme', 'crimson_rose_setup' );
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @global int $content_width
  * @return void
@@ -148,7 +148,7 @@ add_action( 'after_setup_theme', 'crimson_rose_content_width', 0 );
 /**
  * Change content width for full site width pages.
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @global int $content_width
  * @return void
@@ -242,7 +242,7 @@ add_action( 'widgets_init', 'crimson_rose_widgets_init' );
 /**
  * Display customizer CSS.
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @return void
  */
@@ -268,7 +268,7 @@ add_action( 'wp_enqueue_scripts', 'crimson_rose_customizer_css_wrap', 20 );
 /**
  * Enqueue scripts and styles.
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @return void
  */
@@ -341,7 +341,7 @@ add_action( 'wp_enqueue_scripts', 'crimson_rose_scripts' );
 /**
  * Check if blog is on first page.
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @return bool
  */
@@ -359,7 +359,7 @@ function crimson_rose_show_full_post() {
 /**
  * Check is h2 element exists so we can hide WooCommerce default heading element.
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @return bool
  */
@@ -376,7 +376,7 @@ function crimson_rose_display_sub_header() {
 /**
  * Check if h1 element exists so we can hide default page title on page.
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @return bool
  */
@@ -393,7 +393,7 @@ function crimson_rose_display_header() {
 /**
  * Check to load sidebar depending on page load
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @return bool
  */
@@ -459,7 +459,7 @@ function crimson_rose_display_sidebar() {
 /**
  * Check if any footer sidebars are loaded.
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @return array 1:bool, 2:bool, 3:bool
  */
@@ -478,7 +478,7 @@ function crimson_rose_display_sidebar_footer() {
 /**
  * Check if fullwidth layout is activated
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @return bool
  */
@@ -501,7 +501,7 @@ function crimson_rose_display_fullwidth() {
 /**
  * Check and load the correct blog template according to Customizer option.
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @return void
  */
@@ -524,7 +524,7 @@ function crimson_rose_get_blog_part() {
  *
  * @link https://jetpack.com/support/content-options/
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @return bool
  */
@@ -558,7 +558,7 @@ function crimson_rose_jetpack_featured_image_display() {
  * Check to see if page can display a header image using the posts
  * featured image.
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @return bool
  */
@@ -577,7 +577,7 @@ function crimson_rose_display_header_image() {
 /**
  * Query WooCommerce activation
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @return bool
  */
@@ -588,7 +588,7 @@ function crimson_rose_is_woocommerce_activated() {
 /**
  * Check Jetpack activation
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @return bool
  */
@@ -603,7 +603,7 @@ function crimson_rose_is_jetpack_activated() {
 /**
  * Check WPM Fonts is activated
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @return bool
  */
@@ -618,7 +618,7 @@ function crimson_rose_is_wpm_fonts_activated() {
 /**
  * Check WPM Fonts id deactivated
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @return bool
  */
@@ -629,7 +629,7 @@ function crimson_rose_is_wpm_fonts_deactivated() {
 /**
  * Check Crimson Rose Watercolor Backgrounds activation
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @return bool
  */
@@ -644,7 +644,7 @@ function crimson_rose_is_watercolor_backgrounds_activated() {
 /**
  * Check One Click Demo Import (ocdi) activation
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @return bool
  */

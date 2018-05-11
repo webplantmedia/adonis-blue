@@ -14,7 +14,7 @@
 /**
  * Return custom CSS from Customizer options.
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @return string
  */

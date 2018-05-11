@@ -269,7 +269,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Static_Content' ) ) :
 		/**
 		 * Registers the widget with the WordPress Widget API.
 		 *
-		 * @since Crimson_Rose 1.0
+		 * @since Crimson_Rose 1.01
 		 *
 		 * @return void
 		 */

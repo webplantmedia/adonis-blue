@@ -23,7 +23,7 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Image_Banner_Widget' ) ) :
 		/**
 		 * __construct
 		 *
-		 * @since Crimson_Rose 1.0
+		 * @since Crimson_Rose 1.01
 		 *
 		 * @return void
 		 */
@@ -85,7 +85,7 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Image_Banner_Widget' ) ) :
 		/**
 		 * Widget function.
 		 *
-		 * @since Crimson_Rose 1.0
+		 * @since Crimson_Rose 1.01
 		 *
 		 * @param array $args
 		 * @param array $instance
@@ -178,7 +178,7 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Image_Banner_Widget' ) ) :
 		/**
 		 * Registers the widget with the WordPress Widget API.
 		 *
-		 * @since Crimson_Rose 1.0
+		 * @since Crimson_Rose 1.01
 		 *
 		 * @return void
 		 */

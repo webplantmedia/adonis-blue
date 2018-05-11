@@ -14,7 +14,7 @@
 /**
  * Store service text in array for reuse. Used in theme inc/theme-info.php
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @return array
  */
@@ -51,7 +51,7 @@ function crimson_rose_dashboard_get_services() {
 /**
  * Static feed to helpful posts for first time WordPress users.
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @return void
  */
@@ -91,7 +91,7 @@ function crimson_rose_dashboard_static_feed() {
 /**
  * Add theme page for up-sell
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @return void
  */
@@ -103,7 +103,7 @@ add_action('admin_menu', 'crimson_rose_theme_info');
 /**
  * Load theme info page. Modified from core.
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @return void
  */

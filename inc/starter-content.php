@@ -14,7 +14,7 @@
 /**
  * Set starter content for fresh installs.
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @return void
  */

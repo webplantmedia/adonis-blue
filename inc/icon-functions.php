@@ -14,7 +14,7 @@
 /**
  * Parse social menu
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @param string $item_output
  * @param mixed $item
@@ -48,7 +48,7 @@ add_filter( 'walker_nav_menu_start_el', 'crimson_rose_nav_menu_social_icons', 10
 /**
  * Returns an array of supported social links (URL and icon name).
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @return array $social_links_icons
  */

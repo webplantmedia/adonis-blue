@@ -22,7 +22,7 @@ class Crimson_Rose_Content_Widget_Callout extends Crimson_Rose_Widget {
 	/**
 	 * __construct
 	 *
-	 * @since Crimson_Rose 1.0
+	 * @since Crimson_Rose 1.01
 	 *
 	 * @return void
 	 */
@@ -150,7 +150,7 @@ class Crimson_Rose_Content_Widget_Callout extends Crimson_Rose_Widget {
 	/**
 	 * Widget function.
 	 *
-	 * @since Crimson_Rose 1.0
+	 * @since Crimson_Rose 1.01
 	 *
 	 * @param array $args
 	 * @param array $instance
@@ -254,7 +254,7 @@ class Crimson_Rose_Content_Widget_Callout extends Crimson_Rose_Widget {
 	/**
 	 * Callout Content
 	 *
-	 * @since Crimson_Rose 1.0
+	 * @since Crimson_Rose 1.01
 	 *
 	 * @param array $o
 	 * @param object $p

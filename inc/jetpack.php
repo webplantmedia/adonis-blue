@@ -18,7 +18,7 @@
  * See: https://jetpack.com/support/responsive-videos/
  * See: https://jetpack.com/support/content-options/
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @return void
  */
@@ -62,7 +62,7 @@ add_action( 'after_setup_theme', 'crimson_rose_jetpack_setup' );
 /**
  * Custom render function for Infinite Scroll.
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @return void
  */
@@ -73,7 +73,7 @@ function crimson_rose_infinite_scroll_render() {
 /**
  * Enqueue Jetpack Scripts
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @return void
  */
@@ -85,7 +85,7 @@ add_action( 'wp_enqueue_scripts', 'crimson_rose_jetpack_enqueue' );
 /**
  * Replace footer credits for JetPack Inifite Scroll
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @return string
  */
@@ -99,7 +99,7 @@ add_filter('infinite_scroll_credit','crimson_rose_infinite_scroll_credit');
 /**
  * Remove related posts. Inserting function instead in desired location.
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @return void
  */
@@ -115,7 +115,7 @@ add_filter( 'wp', 'crimson_rose_jetpackme_remove_rp', 20 );
 /**
  * Remove share. Inserting function instead in desired location.
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @return void
  */
@@ -137,7 +137,7 @@ remove_filter( 'get_the_author_description', 'wpautop' );
 /**
  * Customize share and prepent comment count.
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @param string $html
  * @param string $label
@@ -156,7 +156,7 @@ add_filter( 'jetpack_sharing_headline_html', 'crimson_rose_jetpack_sharing_headl
 /**
  * Display comment with share buttons
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @param string $label
  * @return void
@@ -191,7 +191,7 @@ function crimson_rose_get_comment_display( $label ) {
 /**
  * Change avatar size
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @param array $get_image_options
  * @return array
@@ -211,7 +211,7 @@ add_filter( 'jetpack_top_posts_widget_image_options', 'crimson_rose_custom_thumb
  * sizes="(max-width:***)" doesn't pull a size smaller than desired 
  * [what jetpack_content_width controls])
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @return int
  */
@@ -224,7 +224,7 @@ add_filter( 'tiled_gallery_content_width', 'crimson_rose_jetpack_overwrite_image
 /**
  * Add wrapper around author bio
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @return void
  */

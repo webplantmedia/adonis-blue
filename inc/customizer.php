@@ -14,7 +14,7 @@
 /**
  * Customizer support
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @param object $wp_customize
  * @return void
@@ -988,7 +988,7 @@ add_action( 'customize_register', 'crimson_rose_customize_register' );
 /**
  * Render the site title for the selective refresh partial.
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @return void
  */
@@ -999,7 +999,7 @@ function crimson_rose_customize_partial_blogname() {
 /**
  * Render the site tagline for the selective refresh partial.
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @return void
  */
@@ -1010,7 +1010,7 @@ function crimson_rose_customize_partial_blogdescription() {
 /**
  * Render the site logo for the selective refresh partial.
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @return void
  */
@@ -1021,7 +1021,7 @@ function crimson_rose_customize_partial_custom_logo() {
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @return void
  */
@@ -1035,7 +1035,7 @@ add_action( 'customize_preview_init', 'crimson_rose_customize_preview_js' );
 /**
  * Sanitize the page layout options.
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @param mixed $input
  * @return void

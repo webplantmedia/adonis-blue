@@ -22,7 +22,7 @@ class Crimson_Rose_Content_Widget_Jetpack_Testimonials extends Crimson_Rose_Widg
 	/**
 	 * __construct
 	 *
-	 * @since Crimson_Rose 1.0
+	 * @since Crimson_Rose 1.01
 	 *
 	 * @return void
 	 */
@@ -422,7 +422,7 @@ class Crimson_Rose_Content_Widget_Jetpack_Testimonials extends Crimson_Rose_Widg
 	/**
 	 * Display the featured image if it's available
 	 *
-	 * @since Crimson_Rose 1.0
+	 * @since Crimson_Rose 1.01
 	 *
 	 * @param int $post_id
 	 * @return void
@@ -445,7 +445,7 @@ class Crimson_Rose_Content_Widget_Jetpack_Testimonials extends Crimson_Rose_Widg
 	/**
 	 * Registers the widget with the WordPress Widget API.
 	 *
-	 * @since Crimson_Rose 1.0
+	 * @since Crimson_Rose 1.01
 	 *
 	 * @return void
 	 */

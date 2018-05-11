@@ -14,7 +14,7 @@
 /**
  * Advanced Gutenberg block features that require opt-in support in the theme.
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @return void
  */
@@ -28,7 +28,7 @@ add_action( 'after_setup_theme', 'crimson_rose_gutenberg_supported_features' );
 /**
  * Enqueue theme styles to use inside Gutenberg editor.
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @return void
  */

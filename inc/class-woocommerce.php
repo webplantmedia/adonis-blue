@@ -26,7 +26,7 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 		/**
 		 * __construct
 		 *
-		 * @since Crimson_Rose 1.0
+		 * @since Crimson_Rose 1.01
 		 *
 		 * @return void
 		 */
@@ -78,7 +78,7 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 		/**
 		 * Shop image backdrop
 		 *
-		 * @since Crimson_Rose 1.0
+		 * @since Crimson_Rose 1.01
 		 *
 		 * @param string $image
 		 * @return string
@@ -96,7 +96,7 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 		/**
 		 * No need for infinit scroll on WooCommerce pages.
 		 *
-		 * @since Crimson_Rose 1.0
+		 * @since Crimson_Rose 1.01
 		 *
 		 * @return void
 		 */
@@ -109,7 +109,7 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 		/**
 		 * Add font icons to pagination
 		 *
-		 * @since Crimson_Rose 1.0
+		 * @since Crimson_Rose 1.01
 		 *
 		 * @param array $args
 		 * @return array
@@ -124,7 +124,7 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 		/**
 		 * Change products per page
 		 *
-		 * @since Crimson_Rose 1.0
+		 * @since Crimson_Rose 1.01
 		 *
 		 * @param int $cols
 		 * @return int
@@ -138,7 +138,7 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 		/**
 		 * Add theme support
 		 *
-		 * @since Crimson_Rose 1.0
+		 * @since Crimson_Rose 1.01
 		 *
 		 * @return void
 		 */
@@ -155,7 +155,7 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 		/**
 		 * Check features with user selected options from Customizer
 		 *
-		 * @since Crimson_Rose 1.0
+		 * @since Crimson_Rose 1.01
 		 *
 		 * @return void
 		 */
@@ -203,7 +203,7 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 		/**
 		 * Change image size depending on columns
 		 *
-		 * @since Crimson_Rose 1.0
+		 * @since Crimson_Rose 1.01
 		 *
 		 * @return void
 		 */
@@ -237,7 +237,7 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 		/**
 		 * Change product image size
 		 *
-		 * @since Crimson_Rose 1.0
+		 * @since Crimson_Rose 1.01
 		 *
 		 * @return void
 		 */
@@ -248,7 +248,7 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 		/**
 		 * Set columns depending on type of page.
 		 *
-		 * @since Crimson_Rose 1.0
+		 * @since Crimson_Rose 1.01
 		 *
 		 * @param int $number_columns
 		 * @return int
@@ -266,7 +266,7 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 		/**
 		 * Hide Title
 		 *
-		 * @since Crimson_Rose 1.0
+		 * @since Crimson_Rose 1.01
 		 *
 		 * @param mixed $title
 		 * @return bool
@@ -278,7 +278,7 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 		/**
 		 * Adjust shop title
 		 *
-		 * @since Crimson_Rose 1.0
+		 * @since Crimson_Rose 1.01
 		 *
 		 * @param string $title
 		 * @return string
@@ -308,7 +308,7 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 		/**
 		 * Enqueue scripts and styles
 		 *
-		 * @since Crimson_Rose 1.0
+		 * @since Crimson_Rose 1.01
 		 *
 		 * @return void
 		 */
@@ -321,7 +321,7 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 		/**
 		 * Set related products args
 		 *
-		 * @since Crimson_Rose 1.0
+		 * @since Crimson_Rose 1.01
 		 *
 		 * @param array $args
 		 * @return array
@@ -340,7 +340,7 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 		/**
 		 * Set before content wrapper
 		 *
-		 * @since Crimson_Rose 1.0
+		 * @since Crimson_Rose 1.01
 		 *
 		 * @return void
 		 */
@@ -359,7 +359,7 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 		/**
 		 * Set after content wrapper
 		 *
-		 * @since Crimson_Rose 1.0
+		 * @since Crimson_Rose 1.01
 		 *
 		 * @return void
 		 */
@@ -370,7 +370,7 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 		/**
 		 * Add cart button dropdown
 		 *
-		 * @since Crimson_Rose 1.0
+		 * @since Crimson_Rose 1.01
 		 *
 		 * @return void
 		 */
@@ -401,7 +401,7 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 		/**
 		 * Ajax update for item count in cart
 		 *
-		 * @since Crimson_Rose 1.0
+		 * @since Crimson_Rose 1.01
 		 *
 		 * @param array $fragments
 		 * @return array
@@ -424,7 +424,7 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 		/**
 		 * Add header mini cart
 		 *
-		 * @since Crimson_Rose 1.0
+		 * @since Crimson_Rose 1.01
 		 *
 		 * @return void
 		 */
@@ -440,7 +440,7 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 		/**
 		 * Add header for payment info
 		 *
-		 * @since Crimson_Rose 1.0
+		 * @since Crimson_Rose 1.01
 		 *
 		 * @return void
 		 */
@@ -455,7 +455,7 @@ return new Crimson_Rose_WooCommerce();
 /**
  * Show subcategory thumbnails.
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @param object $category
  * @return void

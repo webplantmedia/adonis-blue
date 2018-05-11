@@ -14,7 +14,7 @@
 /**
  * Set import files
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @return void
  */
@@ -33,7 +33,7 @@ add_filter( 'pt-ocdi/import_files', 'crimson_rose_ocdi_import_files' );
 /**
  * Clear sidebars during import
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @param array $selected_import
  * @return void
@@ -78,7 +78,7 @@ add_action( 'pt-ocdi/before_widgets_import', 'crimson_rose_ocdi_before_widgets_i
 /**
  * Cleared problem with refreshing page after import.
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @param object $current_screen
  * @return void
@@ -93,7 +93,7 @@ add_action( 'current_screen', 'crimson_rose_current_screen' );
 /**
  * Set nav menu in widgets.
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @param int $sidebar_id
  * @param int $menu_term_id
@@ -124,7 +124,7 @@ function crimson_rose_update_widget_nav_menu( $sidebar_id, $menu_term_id ) {
 /**
  * Automate common changes after import
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @return void
  */
@@ -202,7 +202,7 @@ add_action( 'pt-ocdi/after_import', 'crimson_rose_ocdi_after_import_setup' );
 /**
  * Set into text
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @param string $default_text
  * @return string
@@ -245,7 +245,7 @@ add_filter( 'pt-ocdi/disable_pt_branding', '__return_true' );
  *
  * https://github.com/proteusthemes/one-click-demo-import/blob/master/docs/import-problems.md
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @return int
  */

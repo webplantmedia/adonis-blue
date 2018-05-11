@@ -112,7 +112,7 @@ $crimson_rose_default['404_text_white'] = 0;
  *
  * Also, if we call get_theme_mod any sooner, then we can't live preview.
  *
- * @since Crimson_Rose 1.0
+ * @since Crimson_Rose 1.01
  *
  * @return void
  */
