@@ -86,7 +86,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 		$titles = array();
 		$i = 0;
 		foreach( $results as $r ) {
-			$titles[ $i ][ 'label' ] = $r->post_title . " (" . $r->ID . ")";
+			$titles[ $i ][ 'label' ] = $r->post_title . ' (' . $r->ID . ')';
 			$titles[ $i ][ 'value' ] = $r->ID;
 			$i++;
 		}
