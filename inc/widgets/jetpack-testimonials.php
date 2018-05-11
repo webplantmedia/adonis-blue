@@ -242,7 +242,7 @@ class Crimson_Rose_Content_Widget_Jetpack_Testimonials extends Crimson_Rose_Widg
 		$options['order'] = $this->settings['order']['std'];
 		$options['orderby'] = $this->settings['orderby']['std'];
 
-		$options['post_type'] = 'jetpack-testimonial'; // Force this post type
+		$options['post_type'] = 'jetpack-testimonial'; /* Force this post type. */
 
 		$query = new WP_Query( $options );
 
@@ -253,7 +253,7 @@ class Crimson_Rose_Content_Widget_Jetpack_Testimonials extends Crimson_Rose_Widg
 		?>
 
 		<?php if ( $query->have_posts() ) : ?>
-			<?php  // open .jetpack-testimonial-shortcode
+			<?php /* open .jetpack-testimonial-shortcode */
 
 			// Construct the loop...
 			while ( $query->have_posts() ) {
@@ -261,7 +261,7 @@ class Crimson_Rose_Content_Widget_Jetpack_Testimonials extends Crimson_Rose_Widg
 				$post_id = get_the_ID();
 				$temp = '<div class="testimonial-entry-wrapper" style="' . esc_attr( implode( '', $testimonial_style ) ) . '">';
 					$temp .= '<div class="testimonial-entry">';
-						// Featured image
+						// Featured image.
 						$class = ' no-testimonial-image';
 						if ( $image = $this->get_testimonial_thumbnail_link( $post_id ) ) {
 							$temp .= $image;
@@ -316,7 +316,7 @@ class Crimson_Rose_Content_Widget_Jetpack_Testimonials extends Crimson_Rose_Widg
 					$column++;
 				}
 				$testimonial_index_number++;
-			} // end of while loop
+			} /* end of while loop. */
 			?>
 		<?php endif; ?>
 

@@ -168,7 +168,7 @@ function crimson_rose_get_comment_display( $label ) {
 
 		if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 
-			$num_comments = get_comments_number(); // get_comments_number returns only a numeric value
+			$num_comments = get_comments_number(); /* get_comments_number returns only a numeric value. */
 
 			if ( $num_comments == 0 ) {
 				$comments = esc_html__( 'leave a Comment', 'crimson-rose' );
@@ -216,10 +216,10 @@ add_filter( 'jetpack_top_posts_widget_image_options', 'crimson_rose_custom_thumb
  * @return int
  */
 function crimson_rose_jetpack_overwrite_image_width() {
-	return 1320; // twice the size of normal content width
+	return 1320; /* twice the size of normal content width. */
 }
 add_filter( 'tiled_gallery_content_width', 'crimson_rose_jetpack_overwrite_image_width' );
-// add_filter( 'jetpack_content_width', 'crimson_rose_jetpack_overwrite_image_width' );
+/* add_filter( 'jetpack_content_width', 'crimson_rose_jetpack_overwrite_image_width' ); */
 
 /**
  * Add wrapper around author bio

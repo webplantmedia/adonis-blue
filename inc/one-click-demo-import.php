@@ -47,9 +47,9 @@ function crimson_rose_ocdi_before_widgets_import( $selected_import ) {
 		'sidebar-1',
 	);
 
-	// if ( $selected_import['import_file_name'] == 'Full Demo Import' ) {
-		// array_unshift( $clear_sidebars, 'sidebar-1' );
-	// }
+	/* if ( $selected_import['import_file_name'] == 'Full Demo Import' ) {
+		array_unshift( $clear_sidebars, 'sidebar-1' );
+	} */
 
 	$sidebars_widgets = get_option( 'sidebars_widgets' );
 
@@ -168,7 +168,7 @@ function crimson_rose_ocdi_after_import_setup() {
 		set_theme_mod( 'nav_menu_locations', $menus );
 	}
 
-	// update custom menu widget with correct menu
+	// update custom menu widget with correct menu.
 	$footer_menu = get_term_by( 'name', 'Quick Links', 'nav_menu' );
 	if ( isset( $footer_menu->term_id ) ) {
 		$sidebar_id = 'footer-2';
@@ -176,7 +176,7 @@ function crimson_rose_ocdi_after_import_setup() {
 
 	}
 
-	// posts or page
+	// posts or page.
 	$front_page_display = 'page';
 
 	if ( 'posts' == $front_page_display ) {

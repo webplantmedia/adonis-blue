@@ -59,7 +59,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, $setting_id, array(
 		'label' => esc_html__( 'Retina Logo', 'crimson-rose' ),
-		'priority' => 8, // below the logo media selector
+		'priority' => 8, /* below the logo media selector. */
 		'section' => $section_id,
 		'button_labels' => array(
 			'select'       => esc_html__( 'Select Retina Logo', 'crimson-rose' ),

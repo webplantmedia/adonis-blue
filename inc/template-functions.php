@@ -27,7 +27,7 @@ function crimson_rose_body_classes( $classes ) {
 		$classes[] = 'hfeed';
 	}
 
-	// Sidebar
+	// Sidebar.
 	if ( crimson_rose_display_sidebar() ) {
 		$classes[] = 'display-sidebar';
 	}
@@ -39,12 +39,12 @@ function crimson_rose_body_classes( $classes ) {
 		$classes[] = 'no-sidebar';
 	}
 
-	// Footer
+	// Footer.
 	if ( crimson_rose_display_sidebar_footer() ) {
 		$classes[] = 'display-sidebar-footer';
 	}
 
-	// Widgetized Pages
+	// Widgetized Pages.
 	if ( is_page_template( 'templates/widgetized-page.php' ) ) {
 		$classes[] = 'widgetized-page';
 	}

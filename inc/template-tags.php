@@ -185,7 +185,7 @@ if ( ! function_exists( 'crimson_rose_get_the_attachment' ) ) :
 		} elseif ( wp_attachment_is( 'audio' ) ) {
 			$p = wp_audio_shortcode( array( 'src' => wp_get_attachment_url() ) );
 		} else {
-			// show the medium sized image representation of the attachment if available, and link to the raw file
+			// show the medium sized image representation of the attachment if available, and link to the raw file.
 			$image_size = apply_filters( 'crimson_rose_attachment_size', 'large' ); 
 			$p = wp_get_attachment_link(0, $image_size, false);
 		}

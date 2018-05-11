@@ -146,7 +146,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Blog_Post' ) ) :
 				$post_args['orderby'] = 'rand';
 			}
 
-			// add_filter( 'excerpt_length', array( $this, 'custom_excerpt_length' ), 999 );
+			/* add_filter( 'excerpt_length', array( $this, 'custom_excerpt_length' ), 999 ); */
 
 			$post = new WP_Query( $post_args );
 
@@ -219,7 +219,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Blog_Post' ) ) :
 
 			<?php echo $after_widget; /* WPCS: XSS OK. HTML output. */ ?>
 
-			<?php // remove_filter( 'excerpt_length', array( $this, 'custom_excerpt_length' ) ); ?>
+			<?php /* remove_filter( 'excerpt_length', array( $this, 'custom_excerpt_length' ) ); */ ?>
 
 			<?php wp_reset_postdata();
 		}

@@ -114,7 +114,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Static_Content' ) ) :
 
 			extract( $args );
 
-			$post = null; // no default page is set for starter-content
+			$post = null; /* no default page is set for starter-content. */
 			$featured_image_url = null;
 
 			if ( ! empty( $o['page'] ) ) {

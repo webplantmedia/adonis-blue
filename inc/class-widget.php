@@ -56,10 +56,10 @@ class Crimson_Rose_Widget extends WP_Widget {
 	 * @return void
 	 */
 	public function post_lookup_callback() {
-		global $wpdb; // get access to the WordPress database object variable
+		global $wpdb; /* get access to the WordPress database object variable. */
 
-		// get names of all businesses
-		$request = '%' . $wpdb->esc_like( stripslashes( sanitize_text_field( $_POST['request'] ) ) ) . '%'; // escape for use in LIKE statement
+		// get names of all businesses.
+		$request = '%' . $wpdb->esc_like( stripslashes( sanitize_text_field( $_POST['request'] ) ) ) . '%'; /* escape for use in LIKE statement. */
 		$post_type = stripslashes( sanitize_text_field( $_POST['post_type'] ) );
 
 		$sql = "
@@ -82,7 +82,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 
 		$results = $wpdb->get_results($sql);
 
-		// copy the business titles to a simple array
+		// copy the business titles to a simple array.
 		$titles = array();
 		$i = 0;
 		foreach( $results as $r ) {
@@ -96,9 +96,9 @@ class Crimson_Rose_Widget extends WP_Widget {
 			$titles[0]['value'] = "0";
 		}
 			
-		echo json_encode($titles); // encode into JSON format and output
+		echo json_encode($titles); /* encode into JSON format and output. */
 
-		die(); // stop "0" from being output
+		die(); /* stop "0" from being output. */
 	}
 
 	/**
@@ -141,8 +141,8 @@ class Crimson_Rose_Widget extends WP_Widget {
 		if ( isset( $instance['repeater'] ) && is_array( $instance['repeater'] ) ) {
 			$repeater_instances = $instance['repeater'];
 			unset( $instance['repeater'] );
-			// turn on to test default widget settings
-			// $repeater_instances = $this->settings['repeater']['default'];
+			// turn on to test default widget settings.
+			/* $repeater_instances = $this->settings['repeater']['default']; */
 		}
 		else {
 			if ( isset( $this->settings['repeater']['default'] ) ) {
@@ -172,8 +172,8 @@ class Crimson_Rose_Widget extends WP_Widget {
 			}
 			else {
 				$value = $this->default_sanitize_value( $key, $instance, $setting );
-				// turn on to test default widget settings
-				// $value = $setting['std'];
+				// turn on to test default widget settings.
+				/* $value = $setting['std']; */
 				$instance[ $key ] = $this->sanitize_instance( $setting, $value, 'display' );
 			}
 		}
@@ -795,7 +795,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 						( function( $ ){
 							$( document ).ready( function() {
 								$('#widgets-right #<?php echo esc_attr( $field_id ); ?>').wpColorPicker({
-									change: _.throttle( function() { // For Customizer
+									change: _.throttle( function() { /* For Customizer */
 										$(this).trigger( 'change' );
 									}, 3000 )
 								});
