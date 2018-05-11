@@ -83,7 +83,7 @@ if ( ! function_exists( 'crimson_rose_setup' ) ) :
 			'default-color' => '#ffffff',
 			'default-image' => '',
 		) ) );
-		
+
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
@@ -226,7 +226,7 @@ function crimson_rose_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
-	
+
 	register_sidebar( array(
 		'name'          => esc_html__( 'Widgetized Page', 'crimson-rose' ),
 		'id'            => 'widgetized-page',
@@ -281,7 +281,7 @@ function crimson_rose_scripts() {
 			// Add custom fonts, used in the main stylesheet.
 			wp_enqueue_style( 'crimson-rose-body-font', get_parent_theme_file_uri() . '/fonts/lato/stylesheet.css', array(), CRIMSON_ROSE_VERSION );
 		}
-		
+
 		if ( ! $crimson_rose['disable_accent_font'] ) {
 			// Add custom fonts, used in the main stylesheet.
 			wp_enqueue_style( 'crimson-rose-accent-font', get_parent_theme_file_uri() . '/fonts/mrs-saint-delafield/stylesheet.css', array(), CRIMSON_ROSE_VERSION );
@@ -471,7 +471,7 @@ function crimson_rose_display_sidebar_footer() {
 	if ( $footer_1 || $footer_2 || $footer_3 ) {
 		return array( 1 => $footer_1, 2 => $footer_2, 3 => $footer_3 );
 	}
-	
+
 	return false;
 }
 
