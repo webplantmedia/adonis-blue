@@ -44,7 +44,7 @@
 				}
 
 				if ( $this.hasClass('wp-block-gallery') ) {
-					margin += 8; //8px offset for gallery margin.
+					margin += 8; // 8px offset for gallery margin.
 				}
 
 				margin *= -1;
@@ -79,7 +79,7 @@
 			}
 
 			if ( $this.hasClass('wp-block-gallery') ) {
-				margin += 8; //8px offset for gallery margin.
+				margin += 8; // 8px offset for gallery margin.
 			}
 
 			margin *= -1;

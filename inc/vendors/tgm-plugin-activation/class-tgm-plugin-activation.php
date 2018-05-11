@@ -3294,7 +3294,7 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 							if ( false === $result ) {
 								break;
 							}
-						} //end foreach $plugins
+						} // end foreach $plugins
 
 						$this->maintenance_mode( false );
 

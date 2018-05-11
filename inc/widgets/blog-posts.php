@@ -219,7 +219,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Blog_Post' ) ) :
 
 			<?php echo $after_widget; /* WPCS: XSS OK. HTML output. */ ?>
 
-			<?php //remove_filter( 'excerpt_length', array( $this, 'custom_excerpt_length' ) ); ?>
+			<?php // remove_filter( 'excerpt_length', array( $this, 'custom_excerpt_length' ) ); ?>
 
 			<?php wp_reset_postdata();
 		}

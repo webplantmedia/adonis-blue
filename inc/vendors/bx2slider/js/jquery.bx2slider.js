@@ -89,7 +89,7 @@
     onSlideNext: function() { return true; },
     onSlidePrev: function() { return true; },
     onSliderResize: function() { return true; },
-	onAutoChange: function() { return true; } //calls when auto slides starts and stops
+	onAutoChange: function() { return true; } // calls when auto slides starts and stops
   };
 
   $.fn.bx2Slider = function(options) {
@@ -256,7 +256,7 @@
       slider.active.last = slider.settings.startSlide === getPagerQty() - 1;
       // if video is true, set up the fitVids plugin
       if (slider.settings.video) { el.fitVids(); }
-	  //preloadImages
+	  // preloadImages
 	  if (slider.settings.preloadImages === 'none') { 
 		  preloadSelector = null; 
 	  }
@@ -572,13 +572,13 @@
           if (duration !== 0) {
             // add a callback method - executes when CSS transition completes
             el.on('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd', function(e) {
-              //make sure it's the correct one
+              // make sure it's the correct one
               if (!$(e.target).is(el)) { return; }
               // remove the callback
               el.off('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd');
               updateAfterSlideTransition();
             });
-          } else { //duration = 0
+          } else { // duration = 0
             updateAfterSlideTransition();
           }
         } else if (type === 'reset') {
@@ -589,7 +589,7 @@
           el.css(slider.animProp, propValue);
           if (duration !== 0) {
             el.on('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd', function(e) {
-              //make sure it's the correct one
+              // make sure it's the correct one
               if (!$(e.target).is(el)) { return; }
               // remove the callback
               el.off('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd');
@@ -598,7 +598,7 @@
               // start the loop again
               tickerLoop();
             });
-          } else { //duration = 0
+          } else { // duration = 0
             setPositionProperty(params.resetValue, 'reset', 0);
             tickerLoop();
           }
@@ -921,7 +921,7 @@
       } else {
         el.startAuto();
 
-        //add focus and blur events to ensure its running if timeout gets paused
+        // add focus and blur events to ensure its running if timeout gets paused
         $(window).focus(windowFocusHandler).blur(windowBlurHandler);
       }
       // if autoHover is requested
@@ -1084,8 +1084,8 @@
       };
       slider.viewport.on('touchstart MSPointerDown pointerdown', onTouchStart);
 
-      //for browsers that have implemented pointer events and fire a click after
-      //every pointerup regardless of whether pointerup is on same screen location as pointerdown or not
+      // for browsers that have implemented pointer events and fire a click after
+      // every pointerup regardless of whether pointerup is on same screen location as pointerdown or not
       slider.viewport.on('click', '.bx2slider a', function(e) {
         if (slider.viewport.hasClass('click-disabled')) {
           e.preventDefault();
@@ -1107,7 +1107,7 @@
         return;
       }
       e.preventDefault();
-      //disable slider controls while user is interacting with slides to avoid slider freeze that happens on touch devices when a slide swipe happens immediately after interacting with slider controls
+      // disable slider controls while user is interacting with slides to avoid slider freeze that happens on touch devices when a slide swipe happens immediately after interacting with slider controls
       slider.controls.el.addClass('disabled');
 
       if (slider.working) {
@@ -1158,7 +1158,7 @@
       doesn't fire after a touchstart (this happens on windows phones only) */
       setPositionProperty(slider.touch.originalPos.left, 'reset', 0);
 
-      //remove handlers
+      // remove handlers
       slider.controls.el.removeClass('disabled');
       slider.viewport.off('MSPointerCancel pointercancel', onPointerCancel);
       slider.viewport.off('touchmove MSPointerMove pointermove', onTouchMove);
@@ -1219,7 +1219,7 @@
     var onTouchEnd = function(e) {
       e.preventDefault();
       slider.viewport.off('touchmove MSPointerMove pointermove', onTouchMove);
-      //enable slider controls as soon as user stops interacing with slides
+      // enable slider controls as soon as user stops interacing with slides
       slider.controls.el.removeClass('disabled');
       var orig    = e.originalEvent,
       touchPoints = (typeof orig.changedTouches !== 'undefined') ? orig.changedTouches : [orig],
@@ -1339,7 +1339,7 @@
         if (slider.settings.infiniteLoop) {
           return getPagerQty() - 1;
         }else {
-          //we don't go to undefined slides
+          // we don't go to undefined slides
           return slider.active.index;
         }
       // if slideIndex is greater than children length, set active index to 0 (this happens during infinite loop)
@@ -1347,7 +1347,7 @@
         if (slider.settings.infiniteLoop) {
           return 0;
         } else {
-          //we don't move to undefined pages
+          // we don't move to undefined pages
           return slider.active.index;
         }
       // set active index to requested slide
@@ -1381,7 +1381,7 @@
       lastShowingIndex, eq, value, requestEl;
       // store the old index
       slider.oldIndex = slider.active.index;
-      //set new index
+      // set new index
       slider.active.index = setSlideIndex(slideIndex);
 
       // if plugin is currently in motion, ignore request
@@ -1461,7 +1461,7 @@
           slider.active.last = false;
         // normal non-zero requests
         } else if (slideIndex >= 0) {
-          //parseInt is applied to allow floats for slides/page
+          // parseInt is applied to allow floats for slides/page
           requestEl = slideIndex * parseInt(getMoveBy());
           position = slider.children.eq(requestEl).position();
         }
@@ -1519,7 +1519,7 @@
           el.goToPrevSlide();
         }
       }, slider.settings.pause);
-	  //allback for when the auto rotate status changes
+	  // allback for when the auto rotate status changes
 	  slider.settings.onAutoChange.call(el, true);
       // if auto controls are displayed and preventControlUpdate is not true
       if (slider.settings.autoControls && preventControlUpdate !== true) { updateAutoControls('stop'); }
@@ -1539,7 +1539,7 @@
       // clear the interval
       clearInterval(slider.interval);
       slider.interval = null;
-	  //allback for when the auto rotate status changes
+	  // allback for when the auto rotate status changes
 	  slider.settings.onAutoChange.call(el, false);
       // if auto controls are displayed and preventControlUpdate is not true
       if (slider.settings.autoControls && preventControlUpdate !== true) { updateAutoControls('start'); }
@@ -1635,7 +1635,7 @@
       clearInterval(slider.interval);
       if (slider.settings.responsive) { $(window).off('resize', resizeWindow); }
       if (slider.settings.keyboardEnabled) { $(document).off('keydown', keyPress); }
-      //remove self reference in data
+      // remove self reference in data
       $(this).removeData('bx2Slider');
 	  // remove global window handlers
 	  $(window).off('blur', windowBlurHandler).off('focus', windowFocusHandler);
@@ -1648,7 +1648,7 @@
       if (settings !== undefined) { options = settings; }
       el.destroySlider();
       init();
-      //store reference to self in order to access public functions later
+      // store reference to self in order to access public functions later
       $(el).data('bx2Slider', this);
     };
 
