@@ -771,13 +771,8 @@ class Crimson_Rose_Widget extends WP_Widget {
 				?>
 				<p>
 					<label for="<?php echo esc_attr( $field_id ); ?>"><?php echo esc_html( $setting['label'] ); ?></label>
-					<textarea class="widefat" id="<?php echo esc_attr( $field_id ); ?>"
-					name="<?php echo esc_attr( $field_name ); ?>" rows="
-										<?php
-										echo isset( $setting['rows'] )
-										? esc_attr( $setting['rows'] ) : 3;
-					?>
-					"><?php echo esc_html( $value ); ?></textarea>
+					<?php $rows = isset( $setting['rows'] ) ? $setting['rows'] : 3; ?>
+					<textarea class="widefat" id="<?php echo esc_attr( $field_id ); ?>" name="<?php echo esc_attr( $field_name ); ?>" rows="<?php echo esc_attr( $rows ); ?>"><?php echo esc_html( $value ); ?></textarea>
 					<?php if ( isset( $setting['description'] ) ) : ?>
 						<span class="description"><?php echo esc_html( $setting['description'] ); ?></span>
 					<?php endif; ?>

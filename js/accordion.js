@@ -42,9 +42,9 @@
 
 				$title.click(
 					function() {
-							var $_title   = $( this );
-							var $_content = $_title.next( '.wpm-accordion-content' );
-							var $_inner   = $_content.children( '.wpm-accordion-content-inner' );
+						var $_title   = $( this );
+						var $_content = $_title.next( '.wpm-accordion-content' );
+						var $_inner   = $_content.children( '.wpm-accordion-content-inner' );
 						if ( $_content.length ) {
 							if ( '0px' === $_content.css( 'height' ) ) {
 								var height = get_height( $_inner );
