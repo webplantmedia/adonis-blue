@@ -28,12 +28,6 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Static_Content' ) ) :
 			$this->widget_description = esc_html__( 'Displays content from a specified page on your widgetized page.', 'crimson-rose' );
 			$this->widget_name        = esc_html__( 'Crimson Rose: Static Content', 'crimson-rose' );
 			$this->settings           = array(
-				'title'              => array(
-					'type'     => 'text',
-					'std'      => '',
-					'label'    => esc_html__( 'Title:', 'crimson-rose' ),
-					'sanitize' => 'text',
-				),
 				'page'               => array(
 					'type'        => 'page',
 					'std'         => '',
@@ -187,8 +181,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Static_Content' ) ) :
 				#<?php echo esc_html( $this->id ); ?> .entry-content h6,
 				#<?php echo esc_html( $this->id ); ?> .entry-content p,
 				#<?php echo esc_html( $this->id ); ?> .entry-content a,
-				#<?php echo esc_html( $this->id ); ?> .entry-content,
-				#<?php echo esc_html( $this->id ); ?> .widget-title {
+				#<?php echo esc_html( $this->id ); ?> .entry-content {
 					color: <?php echo esc_html( $o['text_color'] ); ?>;
 				}
 				<?php endif; ?>
@@ -218,10 +211,6 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Static_Content' ) ) :
 								<?php $post->the_post(); ?>
 
 								<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-									<?php if ( $o['title'] ) : ?>
-										<?php echo $before_title . esc_html( $o['title'] ) . $after_title; /* WPCS: XSS OK. HTML output. */ ?>
-									<?php endif; ?>
-
 									<div class="entry-content">
 										<?php the_content( $read_more ); ?>
 									</div>
