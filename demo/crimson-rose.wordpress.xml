@@ -16,7 +16,7 @@
 <!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 <!--    contained in this file into your site. -->
 
-<!-- generator="WordPress/4.9.5" created="2018-05-08 14:20" -->
+<!-- generator="WordPress/4.9.5" created="2018-05-12 04:55" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -29,13 +29,13 @@
 	<title>Crimson Rose</title>
 	<link>https://crimson-rose.webplantmedia.com</link>
 	<description>Easy To Use, Fast To Install, Small Business WordPress Themes</description>
-	<pubDate>Tue, 08 May 2018 14:20:28 +0000</pubDate>
+	<pubDate>Sat, 12 May 2018 04:55:08 +0000</pubDate>
 	<language>en-US</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
 	<wp:base_site_url>https://crimson-rose.webplantmedia.com</wp:base_site_url>
 	<wp:base_blog_url>https://crimson-rose.webplantmedia.com</wp:base_blog_url>
 
-	<wp:author><wp:author_id>2</wp:author_id><wp:author_login><![CDATA[wpmcrimsonrose]]></wp:author_login><wp:author_email><![CDATA[name@your-address.com]]></wp:author_email><wp:author_display_name><![CDATA[Chris]]></wp:author_display_name><wp:author_first_name><![CDATA[Chris]]></wp:author_first_name><wp:author_last_name><![CDATA[]]></wp:author_last_name></wp:author>
+	<wp:author><wp:author_id>2</wp:author_id><wp:author_login><![CDATA[wpmcrimsonrose]]></wp:author_login><wp:author_email><![CDATA[chris@webplantmedia.com]]></wp:author_email><wp:author_display_name><![CDATA[Chris]]></wp:author_display_name><wp:author_first_name><![CDATA[Chris]]></wp:author_first_name><wp:author_last_name><![CDATA[]]></wp:author_last_name></wp:author>
 
 	<wp:category>
 		<wp:term_id>220</wp:term_id>
@@ -4142,9 +4142,10 @@ This allows you to denote <var>variables</var>.]]></content:encoded>
 		<dc:creator><![CDATA[wpmcrimsonrose]]></dc:creator>
 		<guid isPermaLink="false">https://crimson-rose.webplantmedia.com/?page_id=158</guid>
 		<description></description>
-		<content:encoded><![CDATA[<p style="text-align: center;">Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.</p>
+		<content:encoded><![CDATA[<h2 style="text-align: center;">OUR DEDICATION</h2>
+<p style="text-align: center;">Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.</p>
 <p style="text-align: center;"><strong>Written by Founder of Crimson Rose</strong></p>
-<p style="text-align: center;"><img class="alignnone wp-image-159" src="https://crimson-rose.webplantmedia.com/wp-content/uploads/2017/12/quote-signature-2x.png" alt="" width="200" height="43" /></p>]]></content:encoded>
+<p style="text-align: center;"><img class="alignnone wp-image-159" src="https://crimson-rose.webplantmedia.com/wp-content/uploads/2017/12/quote-signature-2x.png" alt="" width="200" height="43"></p>]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>158</wp:post_id>
 		<wp:post_date><![CDATA[2017-12-23 23:51:11]]></wp:post_date>
@@ -8730,7 +8731,7 @@ Message Body:
 
 -- 
 This e-mail was sent from a contact form on Crimson Rose (https://crimson-rose.webplantmedia.com)
-Reply-To: name@your-address.com
+Reply-To: chris@webplantmedia.com
 
 
 
@@ -8800,6 +8801,14 @@ Message Body:
 
 -- 
 This e-mail was sent from a contact form on Crimson Rose";s:18:"additional_headers";s:22:"Reply-To: [your-email]";s:11:"attachments";s:0:"";s:8:"use_html";b:0;s:13:"exclude_blank";b:0;}]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_mail_2]]></wp:meta_key>
+			<wp:meta_value><![CDATA[a:9:{s:6:"active";b:0;s:7:"subject";s:29:"Crimson Rose "[your-subject]"";s:6:"sender";s:55:"Crimson Rose <wordpress@crimson-rose.webplantmedia.com>";s:9:"recipient";s:12:"[your-email]";s:4:"body";s:131:"Message Body:
+[your-message]
+
+-- 
+This e-mail was sent from a contact form on Crimson Rose (https://crimson-rose.webplantmedia.com)";s:18:"additional_headers";s:33:"Reply-To: chris@webplantmedia.com";s:11:"attachments";s:0:"";s:8:"use_html";b:0;s:13:"exclude_blank";b:0;}]]></wp:meta_value>
 		</wp:postmeta>
 		<wp:postmeta>
 			<wp:meta_key><![CDATA[_messages]]></wp:meta_key>
