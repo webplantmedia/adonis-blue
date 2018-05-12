@@ -135,6 +135,6 @@ Source: https://www.pexels.com/photo/adult-cold-face-fashion-370013/
 
 == Changelog ==
 
-= 2.14 =
+= 2.15 =
 
 * Initial release
