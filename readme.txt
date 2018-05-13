@@ -135,6 +135,10 @@ Source: https://www.pexels.com/photo/adult-cold-face-fashion-370013/
 
 == Changelog ==
 
+= 2.16 =
+
+* Updated language pot file.
+
 = 2.15 =
 
 * Initial release
