@@ -135,6 +135,10 @@ Source: https://www.pexels.com/photo/adult-cold-face-fashion-370013/
 
 ## Changelog ##
 
+### 2.17 ###
+
+* Changed footer collapse media query max-width
+
 ### 2.16 ###
 
 * Updated language pot file.
