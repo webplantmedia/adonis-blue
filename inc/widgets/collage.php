@@ -464,7 +464,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 					<?php if ( $p && isset( $p->post_content ) ) : ?>
 						<?php if ( ! empty( $p->post_content ) ) : ?>
 							<div class="content-text">
-								<?php echo apply_filters( 'wpautop', $p->post_content ); /* WPCS: XSS OK. HTML output. */ ?>
+								<?php echo wpautop( $p->post_content ); /* WPCS: XSS OK. HTML output. */ ?>
 							</div>
 						<?php endif; ?>
 					<?php else : ?>

@@ -146,7 +146,7 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Image_Banner_Widget' ) ) :
 
 					<?php if ( ! empty( $p->post_content ) ) : ?>
 						<div class="image-banner-description">
-							<?php echo apply_filters( 'wpautop', $p->post_content ); /* WPCS: XSS OK. HTML output. */ ?>
+							<?php echo wpautop( $p->post_content ); /* WPCS: XSS OK. HTML output. */ ?>
 						</div>
 					<?php endif; ?>
 				<?php else : ?>

@@ -276,7 +276,7 @@ class Crimson_Rose_Content_Widget_Callout extends Crimson_Rose_Widget {
 
 		if ( $p ) {
 			if ( isset( $p->post_content ) && ! empty( $p->post_content ) ) {
-				$output .= apply_filters( 'wpautop', $p->post_content );
+				$output .= wpautop( $p->post_content );
 			}
 
 			if ( ! empty( $o['button_text'] ) && ! empty( $o['button_link'] ) ) {
