@@ -77,6 +77,7 @@ function crimson_rose_body_classes( $classes ) {
 
 	if ( crimson_rose_is_woocommerce_activated() ) {
 		if ( is_shop() ) {
+			$classes[] = 'woocommerce-shop';
 			$classes[] = 'woocommerce-shop-columns-' . esc_attr( $crimson_rose['shop_columns'] );
 		} elseif ( is_product_taxonomy() ) {
 			$classes[] = 'woocommerce-shop-columns-' . esc_attr( $crimson_rose['shop_archive_columns'] );
