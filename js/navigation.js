@@ -115,18 +115,25 @@
 	// Prevent action of dropdowns with href="#".
 	$( '.menu' ).find( 'a[href="#"]' ).click(
 		function( event ) {
-				return false;
+			return false;
 		}
 	);
 
+	function anchorScroll( anchor ) {
+		$anchor = $( anchor );
+		if ( $anchor.length ) {
+			$( 'html,body' ).animate( {scrollTop: $anchor.offset().top},'slow' );
+		}
+	}
+
 	// animate scroll to anchor, and hide from address bar.
-	$( '.content-widget a.slide-inner, .content-widget .button, .anchor-scroll' ).filter( 'a[href^="#"]' ).click(
+	$( '.content-widget .button, .anchor-scroll' ).filter( 'a[href^="#"]' ).click(
 		function( event ) {
-				event.preventDefault();
+			event.preventDefault();
 
-				$( 'html,body' ).animate( {scrollTop: $( $( this ).attr( 'href' ) ).offset().top},'slow' );
+			anchorScroll( $( this ).attr( 'href' ) );
 
-				return false;
+			return false;
 		}
 	);
 } )( jQuery );

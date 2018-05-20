@@ -362,7 +362,17 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 						$divclick.click( function(e) {
 							if ( $(e.target).hasClass('div-click')) {
 								var slideUrl = $(this).data('slideUrl');
-								window.location.href = slideUrl;
+								if ( slideUrl.startsWith( '#' ) ) {
+									e.preventDefault();
+									var $anchor = $( slideUrl );
+									if ( $anchor.length ) {
+										$( 'html,body' ).animate( {scrollTop: $anchor.offset().top},'slow' );
+									}
+									return false;
+								}
+								else {
+									window.location.href = slideUrl;
+								}
 							}
 						});
 					});
