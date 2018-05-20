@@ -362,7 +362,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 						$divclick.click( function(e) {
 							if ( $(e.target).hasClass('div-click')) {
 								var slideUrl = $(this).data('slideUrl');
-								if ( slideUrl.startsWith( '#' ) ) {
+								if ( slideUrl.lastIndexOf('#', 0) === 0 ) {
 									e.preventDefault();
 									var $anchor = $( slideUrl );
 									if ( $anchor.length ) {
