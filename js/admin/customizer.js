@@ -47,6 +47,22 @@
 		return em + 'rem';
 	}
 
+	// Background color
+	wp.customize(
+		'background_color', function( value ) {
+			value.bind(
+				function( to ) {
+					if ( ( '#ffffff' == to || '#fff' == to || '' == to ) ) {
+						changeInlineCSS( 'background_color', '#ffffff' );
+					}
+					else {
+						changeInlineCSS( 'background_color', to );
+					}
+				}
+			);
+		}
+	);
+
 	// Site title and description.
 	wp.customize(
 		'blogname', function( value ) {

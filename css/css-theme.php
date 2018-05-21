@@ -21,7 +21,22 @@
 function crimson_rose_custom_css() {
 	global $crimson_rose;
 
-	$css = '
+	$css = '';
+
+	// $color is the saved custom color.
+	// A default has to be specified in style.css. It will not be printed here.
+	$color = get_background_color();
+
+	if ( $color !== get_theme_support( 'custom-background', 'default-color' ) ) {
+		$css .= '
+#master .page.has-post-thumbnail .site-content .content-area,
+#master .page.has-post-thumbnail .site-content .site-boundary {
+	background-color: #' . $color . '; /*id:background_color*/
+}
+';
+	}
+	
+	$css .= '
 .entry-content a:visited,
 .entry-content a:focus,
 .entry-content a:active,
