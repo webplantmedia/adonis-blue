@@ -135,6 +135,13 @@ Source: https://www.pexels.com/photo/adult-cold-face-fashion-370013/
 
 ## Changelog ##
 
+### 2.18 ###
+
+* Fixed background color bug not being applied to content area.
+* Better anchor scroll logic.
+* changed how wpautop was called.
+* added WooCommerce shop class to body element.
+
 ### 2.17 ###
 
 * Changed footer collapse media query max-width
