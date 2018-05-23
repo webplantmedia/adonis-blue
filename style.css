@@ -3858,7 +3858,8 @@ body:not(.single-post) .entry-footer,
 }
 
 body.widgetized-page .site-content {
-  padding-top: 0;
+  padding-top: 20px;
+  padding-top: 1.25rem;
 }
 
 .break-to-full-width {
