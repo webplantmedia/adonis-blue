@@ -1708,12 +1708,14 @@ a:hover, a:active {
   outline: none;
 }
 
+.content-widget p > a,
 .widget p > a,
 .entry-summary a,
 .entry-content a {
   text-decoration: underline;
 }
 
+.content-widget p > a:hover,
 .widget p > a:hover,
 .entry-summary a:hover,
 .entry-content a:hover {
@@ -3176,7 +3178,7 @@ a:hover, a:active {
   vertical-align: bottom;
 }
 
-.content-callout .content-callout__content .content-callout__text {
+.content-callout .content-callout__content .content-callout__text h1, .content-callout .content-callout__content .content-callout__text h2, .content-callout .content-callout__content .content-callout__text h3, .content-callout .content-callout__content .content-callout__text h4, .content-callout .content-callout__content .content-callout__text h5, .content-callout .content-callout__content .content-callout__text h6, .content-callout .content-callout__content .content-callout__text li, .content-callout .content-callout__content .content-callout__text dl {
   line-height: 1.375;
 }
 
@@ -3475,11 +3477,6 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 ## Collage Widget
 --------------------------------------------------------------*/
-.site-content > .site-boundary > .crimson-rose-content-widget-collage:first-child {
-  margin-top: -30px;
-  margin-top: -1.875rem;
-}
-
 @media (min-width: 1300px) {
   #master .crimson-rose-content-widget-collage {
     padding-left: 0;
@@ -3489,6 +3486,14 @@ a:hover, a:active {
 
 #master .crimson-rose-content-widget-collage .collage .slide-inner {
   position: relative;
+}
+
+#master .crimson-rose-content-widget-collage .collage .slide-inner .div-link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
 }
 
 #master .crimson-rose-content-widget-collage .collage .slide-inner .content-text {
@@ -3850,6 +3855,10 @@ body:not(.single-post) .entry-footer,
   padding-bottom: 50px;
   padding-bottom: 3.125rem;
   position: relative;
+}
+
+body.widgetized-page .site-content {
+  padding-top: 0;
 }
 
 .break-to-full-width {
