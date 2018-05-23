@@ -71,7 +71,7 @@ body:not(.single-post) .entry-footer,
 
 body.widgetized-page {
 	.site-content {
-		padding-top: 0;
+		@include rem('padding-top', 20px);
 	}
 }
 
