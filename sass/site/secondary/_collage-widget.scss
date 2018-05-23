@@ -9,6 +9,14 @@
 		.slide-inner {
 			position: relative;
 
+			.div-link {
+				position: absolute;
+				top: 0;
+				right: 0;
+				left: 0;
+				bottom: 0;
+			}
+
 			.content-text {
 				line-height: $font__line-height-heading;
 

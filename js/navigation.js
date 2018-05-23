@@ -127,7 +127,7 @@
 	}
 
 	// animate scroll to anchor, and hide from address bar.
-	$( '.content-widget .button, .anchor-scroll' ).filter( 'a[href^="#"]' ).click(
+	$( '.content-widget .button, .anchor-scroll, .content-widget .div-link' ).filter( 'a[href^="#"]' ).click(
 		function( event ) {
 			event.preventDefault();
 

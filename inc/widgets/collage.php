@@ -320,7 +320,6 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 
 					$(document).ready(function(){
 						var $slider = $('#<?php echo esc_attr( $this->id ); ?> .carousel-container');
-						var $divclick = $('#<?php echo esc_attr( $this->id ); ?> .div-click');
 						var sliderauto = $slider.data('sliderauto');
 						var slidermode = $slider.data('slidermode');
 						var sliderpause = $slider.data('sliderpause');
@@ -356,23 +355,6 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 									else {
 										$slider.startAuto();
 									}
-								}
-							}
-						});
-
-						$divclick.click( function(e) {
-							if ( $(e.target).hasClass('div-click')) {
-								var slideUrl = $(this).data('slideUrl');
-								if ( slideUrl.lastIndexOf('#', 0) === 0 ) {
-									e.preventDefault();
-									var $anchor = $( slideUrl );
-									if ( $anchor.length ) {
-										$( 'html,body' ).animate( {scrollTop: $anchor.offset().top},'slow' );
-									}
-									return false;
-								}
-								else {
-									window.location.href = slideUrl;
 								}
 							}
 						});
@@ -417,7 +399,6 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 			if ( ! empty( $slide_setting['button_link'] ) && empty( $slide_setting['button_text'] ) ) {
 				$attr[]    = 'data-slide-url="' . esc_url( $slide_setting['button_link'] ) . '"';
 				$style[]   = 'cursor:pointer;';
-				$classes[] = 'div-click';
 			}
 
 			if ( ! empty( $featured_image_url ) ) {
@@ -466,12 +447,6 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 			<div <?php echo implode( ' ', $attr ); /* WPCS: XSS OK. Escaped above. */ ?>>
 					
 				<div class="content-wrapper<?php echo esc_attr( $text_class ); ?>" style="<?php echo esc_attr( implode( '', $text_style ) ); ?>">
-					<?php if ( ! empty( $slide_setting['button_link'] ) ) : ?>
-						<a class="screen-reader-text" href="<?php echo esc_url( $slide_setting['button_link'] ); ?>">
-							<?php echo esc_html( $crimson_rose['read_more_label'] ); ?>
-						</a>
-					<?php endif; ?>
-
 					<?php if ( $p && isset( $p->post_content ) ) : ?>
 						<?php if ( ! empty( $p->post_content ) ) : ?>
 							<div class="content-text">
@@ -480,7 +455,8 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 						<?php endif; ?>
 					<?php else : ?>
 						<div class="content-text">
-							<center><em><a href="<?php echo esc_url( admin_url( 'customize.php?autofocus[panel]=widgets' ) ); ?>"><?php echo esc_html__( 'Select a page', 'crimson-rose' ); ?></a></em></center>
+							<?php $slide_setting['button_link'] = admin_url( 'customize.php?autofocus[panel]=widgets' ); ?>
+							<center><em><a class="select-page-link" href="<?php echo esc_url( $slide_setting['button_link'] ); ?>"><?php echo esc_html__( 'Select a page', 'crimson-rose' ); ?></a></em></center>
 						</div>
 					<?php endif; ?>
 
@@ -505,6 +481,14 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 						</div>
 					<?php endif; ?>
 				</div>
+
+				<?php if ( ! empty( $slide_setting['button_link'] ) && empty( $slide_setting['button_text'] ) ) : ?>
+					<a class="div-link" href="<?php echo esc_url( $slide_setting['button_link'] ); ?>">
+						<span class="screen-reader-text">
+							<?php echo esc_html( $crimson_rose['read_more_label'] ); ?>
+						</span>
+					</a>
+				<?php endif; ?>
 
 				<?php if ( $p && get_edit_post_link( $p->ID ) ) : ?>
 					<footer class="entry-footer">
