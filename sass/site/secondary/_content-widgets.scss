@@ -47,7 +47,9 @@
 
 	.content-callout__content {
 		.content-callout__text {
-			line-height: $font__line-height-heading;
+			h1, h2, h3, h4, h5, h6, li, dl {
+				line-height: $font__line-height-heading;
+			}
 
 			&.custom-color {
 				* {
