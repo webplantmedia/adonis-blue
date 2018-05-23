@@ -135,7 +135,7 @@ Source: https://www.pexels.com/photo/adult-cold-face-fashion-370013/
 
 == Changelog ==
 
-= 2.19 =
+= 2.20 =
 
 * Better link support for collage widget.
 * Disabled touch start on collage slider.
