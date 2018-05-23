@@ -135,6 +135,14 @@ Source: https://www.pexels.com/photo/adult-cold-face-fashion-370013/
 
 == Changelog ==
 
+= 2.19 =
+
+* Better link support for collage widget.
+* Disabled touch start on collage slider.
+* Better style logic for top content padding on widgetized pages.
+* Fixed line-height style rule for content widgets.
+* Display link style in content widget.
+
 = 2.18 =
 
 * Fixed background color bug not being applied to content area.
