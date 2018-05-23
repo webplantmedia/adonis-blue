@@ -344,6 +344,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 							autoHover: sliderautohover,
 							controls: slidercontrols,
 							pager: sliderpager,
+							touchEnabled: false,
 							onSliderResize: function() {
 								if ( sliderauto ) {
 									var $el = $(this);
