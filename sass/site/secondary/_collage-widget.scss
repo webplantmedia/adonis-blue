@@ -1,7 +1,3 @@
-.site-content > .site-boundary > .crimson-rose-content-widget-collage:first-child {
-	@include rem('margin-top',-30px);
-}
-
 #master .crimson-rose-content-widget-collage {
 	@media (min-width: 1300px) {
 		padding-left: 0;
