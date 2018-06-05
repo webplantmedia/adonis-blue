@@ -24,7 +24,7 @@
 
 			<div class="grid__col grid__col--1-of-2">
 
-				<?php get_template_part( 'template-parts/excerpt2', get_post_format() ); ?>
+				<?php get_template_part( 'template-parts/excerpt2' ); ?>
 
 			</div>
 

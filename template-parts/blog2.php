@@ -18,7 +18,7 @@
 while ( have_posts() ) :
 	the_post();
 
-	get_template_part( 'template-parts/excerpt', get_post_format() );
+	get_template_part( 'template-parts/excerpt' );
 
 endwhile;
 
