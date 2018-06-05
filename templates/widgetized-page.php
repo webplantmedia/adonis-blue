@@ -13,12 +13,7 @@
 
 get_header(); ?>
 
-	<?php while ( have_posts() ) : ?>
-		<?php the_post(); ?>
-
-		<?php dynamic_sidebar( 'widgetized-page' ); ?>
-
-	<?php endwhile; ?>
+	<?php dynamic_sidebar( 'widgetized-page' ); ?>
 
 <?php
 get_footer();
