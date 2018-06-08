@@ -14,6 +14,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'excerpt2' ); ?>>
+
 	<?php if ( has_post_thumbnail() ) : ?>
 		<div class="entry-image">
 			<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'large' ); ?></a>
@@ -39,4 +40,5 @@
 		endif;
 		?>
 	</header><!-- .entry-header -->
+
 </article><!-- #post-<?php the_ID(); ?> -->
