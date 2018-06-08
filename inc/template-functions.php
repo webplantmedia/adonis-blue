@@ -191,6 +191,10 @@ function crimson_rose_read_more_text() {
 		return '';
 	}
 
+	if ( empty( get_the_excerpt() ) ) {
+		return '';
+	}
+
 	return esc_html( $crimson_rose['read_more_label'] );
 }
 add_filter( 'crimson_rose_read_more_text', 'crimson_rose_read_more_text' );

@@ -40,7 +40,11 @@
 		</div><!-- .entry-image -->
 	<?php endif; ?>
 
-	<div class="entry-content">
-		<?php the_excerpt(); ?>
-	</div><!-- .entry-content -->
+	<?php $excerpt = get_the_excerpt(); ?>
+	<?php if ( ! empty( $excerpt ) ) : ?>
+		<div class="entry-content">
+			<?php echo apply_filters( 'the_excerpt', $excerpt ); ?>
+		</div><!-- .entry-content -->
+	<?php endif; ?>
+
 </article><!-- #post-<?php the_ID(); ?> -->
