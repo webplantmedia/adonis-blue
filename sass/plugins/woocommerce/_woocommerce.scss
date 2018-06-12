@@ -248,6 +248,14 @@
 	.woocommerce-MyAccount-orders .woocommerce-button {
 		margin: 5px 5px 5px 0;
 	}
+	.woocommerce-variation-availability {
+		.stock {
+			margin: 0;
+		}
+	}
+	.woocommerce-variation-add-to-cart {
+		margin-top: 2em;
+	}
 	// apple pay
 	/* #wc-stripe-payment-request-wrapper, */
 	// #wc-stripe-payment-request-button-separator {
