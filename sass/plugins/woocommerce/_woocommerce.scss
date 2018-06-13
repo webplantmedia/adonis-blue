@@ -1734,5 +1734,16 @@
 				border-width: 0;
 			}
 		}
+		//Stripe
+		.woocommerce form .form-row-first,
+		.woocommerce form .form-row-last,
+		.woocommerce-page form .form-row-first,
+		.woocommerce-page form .form-row-last {
+			width: 100%;
+		}
+		.woocommerce-checkout #payment ul.payment_methods li img.stripe-icon,
+		#add_payment_method #payment ul.payment_methods li img.stripe-icon {
+			display: none;
+		}
 	}
 }
