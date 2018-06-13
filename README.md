@@ -135,6 +135,17 @@ Source: https://www.pexels.com/photo/adult-cold-face-fashion-370013/
 
 ## Changelog ##
 
+### 2.21 ###
+
+* Stripe CSS update for WooCommerce.
+* Fixed spacing with variation pricing in WooCommerce page.
+* Added support for content container width for all WooCommerce tabs.
+* Added media-post page template.
+* Display excerpt if not empty.
+* Code cleanup.
+* No need to loop posts for widgetized page template.
+* Removed get_post_format function call.
+
 ### 2.20 ###
 
 * Better link support for collage widget.
