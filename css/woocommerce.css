@@ -532,6 +532,14 @@ WooCommerce styling
   margin: 5px 5px 5px 0;
 }
 
+#master .woocommerce-variation-availability .stock {
+  margin: 0;
+}
+
+#master .woocommerce-variation-add-to-cart {
+  margin-top: 2em;
+}
+
 #master .woocommerce-store-notice,
 #master p.demo_store {
   color: #ffffff;
@@ -1053,16 +1061,16 @@ WooCommerce styling
   padding: 0;
 }
 
-#master #add_payment_method #payment ul.payment_methods li,
-#master .woocommerce-cart #payment ul.payment_methods li,
-#master .woocommerce-checkout #payment ul.payment_methods li {
+#master #add_payment_method #payment ul.payment_methods > li,
+#master .woocommerce-cart #payment ul.payment_methods > li,
+#master .woocommerce-checkout #payment ul.payment_methods > li {
   padding: 30px 0;
   border-bottom: 2px solid #ececec;
 }
 
-#master #add_payment_method #payment ul.payment_methods li:first-child,
-#master .woocommerce-cart #payment ul.payment_methods li:first-child,
-#master .woocommerce-checkout #payment ul.payment_methods li:first-child {
+#master #add_payment_method #payment ul.payment_methods > li:first-child,
+#master .woocommerce-cart #payment ul.payment_methods > li:first-child,
+#master .woocommerce-checkout #payment ul.payment_methods > li:first-child {
   padding-top: 0;
 }
 
@@ -1128,6 +1136,27 @@ WooCommerce styling
   color: #959595;
 }
 
+#master .woocommerce-checkout #payment input#payment_method_stripe,
+#master #add_payment_method #payment input#payment_method_stripe {
+  top: 38px;
+}
+
+#master #page #content .wc-credit-card-form .form-row {
+  margin-top: 0;
+}
+
+#master #page .wc-stripe-elements-field {
+  height: auto;
+}
+
+#master .stripe-source-errors .wc-stripe-error {
+  border-width: 0;
+}
+
+#master .stripe-source-errors .wc-stripe-error:before {
+  top: 1.2em;
+}
+
 @media screen and (min-width: 769px) {
   .woocommerce-shop-columns-2 ul.products li.product {
     width: 48.1%;
@@ -1180,6 +1209,16 @@ WooCommerce styling
   #master .woocommerce div.product .woocommerce-tabs ul.tabs li a {
     display: block;
     border-width: 0;
+  }
+  #master .woocommerce form .form-row-first,
+  #master .woocommerce form .form-row-last,
+  #master .woocommerce-page form .form-row-first,
+  #master .woocommerce-page form .form-row-last {
+    width: 100%;
+  }
+  #master .woocommerce-checkout #payment ul.payment_methods li img.stripe-icon,
+  #master #add_payment_method #payment ul.payment_methods li img.stripe-icon {
+    display: none;
   }
 }
 

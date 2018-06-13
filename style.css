@@ -1085,6 +1085,7 @@ button {
   background: transparent;
 }
 
+#master .wc-stripe-checkout-button,
 #master .wp-block-button__link,
 #master .widget.null-instagram-feed > p.clear a,
 #master .woocommerce-product-search button[type="submit"],
@@ -1151,6 +1152,8 @@ button {
   padding: 12px 30px;
 }
 
+#master .wc-stripe-checkout-button:active,
+#master .wc-stripe-checkout-button:focus,
 #master .wp-block-button__link:active,
 #master .wp-block-button__link:focus,
 #master .widget.null-instagram-feed > p.clear a:active,
@@ -1187,6 +1190,7 @@ button {
   background: #252323;
 }
 
+#master .wc-stripe-checkout-button:hover,
 #master .wp-block-button__link:hover,
 #master .widget.null-instagram-feed > p.clear a:hover,
 #master .woocommerce-product-search button[type="submit"]:hover,
@@ -1389,6 +1393,7 @@ button {
   padding-bottom: 1.25rem;
 }
 
+#master .wc-stripe-elements-field,
 #master input[type="text"],
 #master input[type="email"],
 #master input[type="url"],
@@ -1525,6 +1530,7 @@ button {
   pointer-events: none;
 }
 
+#master .wc-stripe-elements-field,
 #master input[type="text"],
 #master input[type="email"],
 #master input[type="url"],
@@ -3804,8 +3810,7 @@ body {
   padding-right: 0;
 }
 
-#master #tab-description,
-#master #tab-reviews,
+#master #page .woocommerce-Tabs-panel,
 .comments-area .comments-title,
 .comments-area .comment-list,
 .comments-area .comment-respond,
