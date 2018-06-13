@@ -4170,6 +4170,12 @@ body.widgetized-page .site-content {
   margin-bottom: 2.5rem;
 }
 
+.search .site-main article > *:last-child,
+.archive .hentry > *:last-child,
+.blog .hentry > *:last-child {
+  margin-bottom: 0;
+}
+
 h1.h1-title,
 .page-header h1,
 .hentry h1 {
@@ -4606,6 +4612,10 @@ h1.h1-title,
   margin-bottom: 0.625rem;
 }
 
+.entry-content .wp-block-embed > * {
+  margin-bottom: 0;
+}
+
 .entry-image {
   text-align: center;
   margin-bottom: 2em;
@@ -4614,6 +4624,10 @@ h1.h1-title,
 
 .entry-image img {
   vertical-align: top;
+}
+
+.entry-image > * {
+  margin: 0;
 }
 
 .entry-author {
