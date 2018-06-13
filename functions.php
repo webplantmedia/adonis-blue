@@ -595,12 +595,31 @@ function crimson_rose_display_header_image() {
 	if ( is_page() && has_post_thumbnail() && crimson_rose_jetpack_featured_image_display() ) {
 		if ( ! is_page_template( 'templates/widgetized-page.php' ) ) {
 			if ( ! is_page_template( 'templates/no-featured-image-page.php' ) ) {
-				return true;
+				if ( ! is_page_template( 'templates/media-post.php' ) ) {
+					return true;
+				}
 			}
 		}
 	}
 
 	return false;
+}
+
+/**
+ * Get page template when inside loop.
+ *
+ * @since Crimson_Rose 2.20
+ *
+ * @return bool
+ */
+function crimson_rose_get_page_template_in_loop() {
+	$page_template = get_page_template_slug( get_the_ID() );
+
+	if ( 'templates/media-post.php' == $page_template ) {
+		return 'media';
+	}
+
+	return '';
 }
 
 /**

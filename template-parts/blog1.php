@@ -16,7 +16,7 @@
 <?php if ( have_posts() ) : ?>
 	<?php the_post(); ?>
 	<div class="lead-post">
-		<?php get_template_part( 'template-parts/excerpt' ); ?>
+		<?php get_template_part( 'template-parts/excerpt', crimson_rose_get_page_template_in_loop() ); ?>
 	</div>
 <?php endif; ?>
 
@@ -31,7 +31,7 @@
 
 			<div class="grid__col grid__col--1-of-2">
 
-				<?php get_template_part( 'template-parts/excerpt2' ); ?>
+				<?php get_template_part( 'template-parts/excerpt2', crimson_rose_get_page_template_in_loop() ); ?>
 
 			</div>
 

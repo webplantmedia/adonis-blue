@@ -83,6 +83,10 @@
 	.entry-header {
 		@include rem('margin-bottom',40px);
 	}
+
+	> *:last-child {
+		margin-bottom: 0;
+	}
 }
 
 // Entry Title & Page Title
@@ -528,6 +532,12 @@ h1.h1-title,
 	}
 }
 
+.entry-content .wp-block-embed {
+	> * {
+		margin-bottom: 0;
+	}
+}
+
 // Entry image
 .entry-image {
 	text-align: center;
@@ -536,6 +546,10 @@ h1.h1-title,
 
 	img {
 		vertical-align: top;
+	}
+
+	> * {
+		margin: 0;
 	}
 }
 

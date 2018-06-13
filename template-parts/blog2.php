@@ -18,7 +18,7 @@
 while ( have_posts() ) :
 	the_post();
 
-	get_template_part( 'template-parts/excerpt' );
+	get_template_part( 'template-parts/excerpt', crimson_rose_get_page_template_in_loop() );
 
 endwhile;
 
