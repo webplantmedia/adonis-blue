@@ -6,6 +6,7 @@ button {
 }
 
 #master {
+	.wc-stripe-checkout-button,
 	.wp-block-button__link,
 	.widget.null-instagram-feed > p.clear a,
 	.woocommerce-product-search button[type="submit"],
@@ -66,6 +67,8 @@ button {
 		}
 	}
 
+	.wc-stripe-checkout-button:active,
+	.wc-stripe-checkout-button:focus,
 	.wp-block-button__link:active,
 	.wp-block-button__link:focus,
 	.widget.null-instagram-feed > p.clear a:active,
@@ -102,6 +105,7 @@ button {
 		background: #252323;
 	}
 
+	.wc-stripe-checkout-button:hover,
 	.wp-block-button__link:hover,
 	.widget.null-instagram-feed > p.clear a:hover,
 	.woocommerce-product-search button[type="submit"]:hover,
