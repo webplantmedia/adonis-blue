@@ -1671,6 +1671,20 @@
 			top: 1.2em;
 		}
 	}
+	//Square
+	#page .woocommerce-checkout-payment .payment_box fieldset {
+		border-width: 0;
+		padding: 0;
+	}
+	#page .sq-input {
+		height: 61px;
+		padding-top: 0;
+		padding-bottom: 0;
+
+		@media screen and (max-width: 1200px) {
+			height: 51px;
+		}
+	}
 }
 @media screen and (min-width: 769px) {
 	.woocommerce-shop-columns-2 ul.products li.product {
