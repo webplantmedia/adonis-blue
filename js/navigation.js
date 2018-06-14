@@ -95,7 +95,8 @@
 
 				if ( ! menuItem.classList.contains( 'focus' ) ) {
 					e.preventDefault();
-					for ( i = 0; i < menuItem.parentNode.children.length; ++i ) {
+					var menuItemLength = menuItem.parentNode.children.length;
+					for ( i = 0; i < menuItemLength; ++i ) {
 						if ( menuItem === menuItem.parentNode.children[i] ) {
 							continue;
 						}
@@ -106,7 +107,8 @@
 				}
 			};
 
-			for ( i = 0; i < parentLinks.length; ++i ) {
+			var parentLinksLength = parentLinks.length;
+			for ( i = 0; i < parentLinksLength; ++i ) {
 				parentLinks[i].addEventListener( 'click', touchStartFn, false );
 			}
 		}
