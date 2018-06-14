@@ -54,8 +54,7 @@
 				function( to ) {
 					if ( ( '#ffffff' == to || '#fff' == to || '' == to ) ) {
 						changeInlineCSS( 'background_color', '#ffffff' );
-					}
-					else {
+					} else {
 						changeInlineCSS( 'background_color', to );
 					}
 				}

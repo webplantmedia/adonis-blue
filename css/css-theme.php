@@ -35,7 +35,7 @@ function crimson_rose_custom_css() {
 }
 ';
 	}
-	
+
 	$css .= '
 .entry-content a:visited,
 .entry-content a:focus,

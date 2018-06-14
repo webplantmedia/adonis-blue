@@ -397,8 +397,8 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 			$text_class = '';
 
 			if ( ! empty( $slide_setting['button_link'] ) && empty( $slide_setting['button_text'] ) ) {
-				$attr[]    = 'data-slide-url="' . esc_url( $slide_setting['button_link'] ) . '"';
-				$style[]   = 'cursor:pointer;';
+				$attr[]  = 'data-slide-url="' . esc_url( $slide_setting['button_link'] ) . '"';
+				$style[] = 'cursor:pointer;';
 			}
 
 			if ( ! empty( $featured_image_url ) ) {
