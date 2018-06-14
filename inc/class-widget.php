@@ -676,11 +676,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 				<p>
 					<?php foreach ( $setting['options'] as $id => $label ) : ?>
 						<label for="<?php echo esc_attr( sanitize_title( $label ) ); ?>-<?php echo esc_attr( $id ); ?>">
-							<input type="checkbox" id="<?php echo esc_attr( sanitize_title( $label ) ); ?>-<?php echo esc_attr( $id ); ?>" name="<?php echo esc_attr( $field_name ); ?>[]" value="<?php echo esc_attr( $id ); ?>" 
-																	<?php
-																	if ( in_array( $id, $value ) ) :
-										?>
-										checked="checked"<?php endif; ?>/>
+							<input type="checkbox" id="<?php echo esc_attr( sanitize_title( $label ) ); ?>-<?php echo esc_attr( $id ); ?>" name="<?php echo esc_attr( $field_name ); ?>[]" value="<?php echo esc_attr( $id ); ?>" <?php if ( in_array( $id, $value ) ) : ?> checked="checked"<?php endif; ?>/>
 							<?php echo esc_attr( $label ); ?><br />
 						</label>
 					<?php endforeach; ?>
