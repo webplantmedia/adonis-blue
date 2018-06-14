@@ -62,25 +62,25 @@ class Crimson_Rose_Widget extends WP_Widget {
 		$request   = '%' . $wpdb->esc_like( stripslashes( sanitize_text_field( $_POST['request'] ) ) ) . '%'; /* escape for use in LIKE statement. */
 		$post_type = stripslashes( sanitize_text_field( $_POST['post_type'] ) );
 
-		$sql = "
-			select
-				ID,
-				post_title
-			from
-				$wpdb->posts
-			where
-				post_title like %s
-				and post_type='%s'
-				and post_status='publish'
-			order by
-				post_title ASC
-			limit
-				0,30
-		";
-
-		$sql = $wpdb->prepare( $sql, $request, $post_type );
-
-		$results = $wpdb->get_results( $sql );
+		$results = $wpdb->get_results(
+			$wpdb->prepare(
+				"select
+					ID,
+					post_title
+				from $wpdb->posts
+				where
+					post_title like %s
+					and post_type=%s
+					and post_status='publish'
+				order by
+					post_title ASC
+				limit
+					0,30
+				", 
+				$request,
+				$post_type
+			)
+		);
 
 		// copy the business titles to a simple array.
 		$titles = array();
