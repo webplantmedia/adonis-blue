@@ -135,6 +135,10 @@ Source: https://www.pexels.com/photo/adult-cold-face-fashion-370013/
 
 ## Changelog ##
 
+### 2.23 ###
+
+* WPCS clean up.
+
 ### 2.22 ###
 
 * Updated POT file.
