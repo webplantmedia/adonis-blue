@@ -43,7 +43,7 @@
 	<?php $excerpt = get_the_excerpt(); ?>
 	<?php if ( ! empty( $excerpt ) ) : ?>
 		<div class="entry-content">
-			<?php echo apply_filters( 'the_excerpt', $excerpt ); ?>
+			<?php echo apply_filters( 'the_excerpt', $excerpt ); /* WPCS: XSS OK. HTML output. */ ?>
 		</div><!-- .entry-content -->
 	<?php endif; ?>
 

@@ -191,7 +191,8 @@ function crimson_rose_read_more_text() {
 		return '';
 	}
 
-	if ( empty( get_the_excerpt() ) ) {
+	$excerpt = get_the_excerpt();
+	if ( empty( $excerpt ) ) {
 		return '';
 	}
 
