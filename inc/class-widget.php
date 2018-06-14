@@ -76,7 +76,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 					post_title ASC
 				limit
 					0,30
-				", 
+				",
 				$request,
 				$post_type
 			)
