@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Crimson Rose 2.22\n"
+"Project-Id-Version: Crimson Rose 2.23\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/crimson-rose\n"
-"POT-Creation-Date: 2018-06-14 03:06:21+00:00\n"
+"POT-Creation-Date: 2018-06-14 15:56:53+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -63,7 +63,7 @@ msgstr ""
 msgid "by"
 msgstr ""
 
-#. #-#-#-#-#  crimson-rose.pot (Crimson Rose 2.22)  #-#-#-#-#
+#. #-#-#-#-#  crimson-rose.pot (Crimson Rose 2.23)  #-#-#-#-#
 #. Author of the plugin/theme
 #: footer.php:89 inc/theme-info.php:38 inc/theme-info.php:39
 msgid "Web Plant Media"
@@ -124,7 +124,7 @@ msgstr ""
 msgid "Add Instagram widget here."
 msgstr ""
 
-#. #-#-#-#-#  crimson-rose.pot (Crimson Rose 2.22)  #-#-#-#-#
+#. #-#-#-#-#  crimson-rose.pot (Crimson Rose 2.23)  #-#-#-#-#
 #. Template Name of the plugin/theme
 #: functions.php:256
 msgid "Widgetized Page"
@@ -166,35 +166,35 @@ msgstr ""
 msgid "Remove"
 msgstr ""
 
-#: inc/class-widget.php:716
+#: inc/class-widget.php:712
 msgid "No Page"
 msgstr ""
 
-#: inc/class-widget.php:818
+#: inc/class-widget.php:814
 msgid "All Categories"
 msgstr ""
 
-#: inc/class-widget.php:1011
+#: inc/class-widget.php:1007
 msgid "Cover"
 msgstr ""
 
-#: inc/class-widget.php:1012
+#: inc/class-widget.php:1008
 msgid "Contain"
 msgstr ""
 
-#: inc/class-widget.php:1013
+#: inc/class-widget.php:1009
 msgid "Stretch"
 msgstr ""
 
-#: inc/class-widget.php:1014
+#: inc/class-widget.php:1010
 msgid "Fit Width"
 msgstr ""
 
-#: inc/class-widget.php:1015
+#: inc/class-widget.php:1011
 msgid "Fit Height"
 msgstr ""
 
-#: inc/class-widget.php:1016
+#: inc/class-widget.php:1012
 msgid "Auto"
 msgstr ""
 
