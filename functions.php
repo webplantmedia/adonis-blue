@@ -176,6 +176,9 @@ add_action( 'template_redirect', 'crimson_rose_content_width_check' );
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
+ *
+ * @since Crimson_Rose 1.01
+ *
  * @return void
  */
 function crimson_rose_widgets_init() {
