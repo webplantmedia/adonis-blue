@@ -137,6 +137,7 @@ Source: https://www.pexels.com/photo/adult-cold-face-fashion-370013/
 
 = 2.22 =
 
+* Updated POT file.
 * Fixed font weight bug with cart buttons.
 * Style support for Square Credit Cards in WooCommerce.
 
