@@ -1393,6 +1393,7 @@ button {
   padding-bottom: 1.25rem;
 }
 
+#master .sq-input,
 #master .wc-stripe-elements-field,
 #master input[type="text"],
 #master input[type="email"],
@@ -1530,6 +1531,7 @@ button {
   pointer-events: none;
 }
 
+#master .sq-input,
 #master .wc-stripe-elements-field,
 #master input[type="text"],
 #master input[type="email"],
