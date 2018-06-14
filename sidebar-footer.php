@@ -11,7 +11,8 @@
  * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
-if ( ! $footer = crimson_rose_display_sidebar_footer() ) {
+$footer = crimson_rose_display_sidebar_footer();
+if ( ! $footer ) {
 	return;
 }
 $column = 1;
