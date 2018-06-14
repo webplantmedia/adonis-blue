@@ -135,6 +135,11 @@ Source: https://www.pexels.com/photo/adult-cold-face-fashion-370013/
 
 ## Changelog ##
 
+### 2.22 ###
+
+* Fixed font weight bug with cart buttons.
+* Style support for Square Credit Cards in WooCommerce.
+
 ### 2.21 ###
 
 * Stripe CSS update for WooCommerce.
