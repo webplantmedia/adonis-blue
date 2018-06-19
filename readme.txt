@@ -135,6 +135,13 @@ Source: https://www.pexels.com/photo/adult-cold-face-fashion-370013/
 
 == Changelog ==
 
+= 2.24 =
+
+* Fixed bug with string being echoed.
+* Updated to strict conditional statements.
+* Added wpnonce security check for post select in widgets.
+* Code cleanup.
+
 = 2.23 =
 
 * WPCS clean up.
