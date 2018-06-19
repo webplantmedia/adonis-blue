@@ -32,6 +32,7 @@
 							var $parent = $this.parent();
 							$parent.css( {'position':'relative'} );
 							var type      = $this.data( 'autocompleteType' );
+							var wpnonce   = $this.data( 'autocompleteNonce' );
 							var lookup    = $this.data( 'autocompleteLookup' );
 							var taxonomy  = $this.data( 'autocompleteTaxonomy' );
 							var post_type = $this.data( 'autocompletePostType' );
@@ -48,7 +49,7 @@
 												type: 'POST',
 												dataType: 'json',
 												url: ajaxurl,
-												data: 'action=crimson_rose_' + lookup + '_lookup&request=' + term + '&post_type=' + post_type + '&taxonomy=' + taxonomy,
+												data: 'action=crimson_rose_' + lookup + '_lookup&_wpnonce=' + wpnonce + '&request=' + term + '&post_type=' + post_type + '&taxonomy=' + taxonomy,
 												success: function(data) {
 													response( data );
 												}
