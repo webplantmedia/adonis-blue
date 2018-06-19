@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Crimson Rose 2.23\n"
+"Project-Id-Version: Crimson Rose 2.24\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/crimson-rose\n"
-"POT-Creation-Date: 2018-06-14 15:56:53+00:00\n"
+"POT-Creation-Date: 2018-06-19 20:33:30+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -63,7 +63,7 @@ msgstr ""
 msgid "by"
 msgstr ""
 
-#. #-#-#-#-#  crimson-rose.pot (Crimson Rose 2.23)  #-#-#-#-#
+#. #-#-#-#-#  crimson-rose.pot (Crimson Rose 2.24)  #-#-#-#-#
 #. Author of the plugin/theme
 #: footer.php:89 inc/theme-info.php:38 inc/theme-info.php:39
 msgid "Web Plant Media"
@@ -85,52 +85,52 @@ msgstr ""
 msgid "Social Menu"
 msgstr ""
 
-#: functions.php:184
+#: functions.php:187
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:186 functions.php:198 functions.php:210 functions.php:222
+#: functions.php:189 functions.php:201 functions.php:213 functions.php:225
 msgid "Add widgets here."
 msgstr ""
 
-#: functions.php:196
+#: functions.php:199
 msgid "Footer 1"
 msgstr ""
 
-#: functions.php:208
+#: functions.php:211
 msgid "Footer 2"
 msgstr ""
 
-#: functions.php:220
+#: functions.php:223
 msgid "Footer 3"
 msgstr ""
 
-#: functions.php:232
+#: functions.php:235
 msgid "Footer Bottom"
 msgstr ""
 
-#: functions.php:234
+#: functions.php:237
 msgid ""
 "Add a text or HTML widget here with your site credit and copyright "
 "information. Doing so will override the default footer credit at the bottom "
 "of your pages."
 msgstr ""
 
-#: functions.php:244
+#: functions.php:247
 msgid "Instagram Gallery"
 msgstr ""
 
-#: functions.php:246
+#: functions.php:249
 msgid "Add Instagram widget here."
 msgstr ""
 
-#. #-#-#-#-#  crimson-rose.pot (Crimson Rose 2.23)  #-#-#-#-#
+#. #-#-#-#-#  crimson-rose.pot (Crimson Rose 2.24)  #-#-#-#-#
 #. Template Name of the plugin/theme
-#: functions.php:256
+#: functions.php:259
 msgid "Widgetized Page"
 msgstr ""
 
-#: functions.php:258
+#: functions.php:261
 msgid "Add content widgets here."
 msgstr ""
 
@@ -142,59 +142,59 @@ msgstr ""
 msgid "Search Results for:"
 msgstr ""
 
-#: inc/class-widget.php:529
+#: inc/class-widget.php:533
 msgid "Add New Item"
 msgstr ""
 
-#: inc/class-widget.php:567
+#: inc/class-widget.php:571
 msgid "Delete Slide?"
 msgstr ""
 
-#: inc/class-widget.php:568
+#: inc/class-widget.php:572
 msgid "Yes"
 msgstr ""
 
-#: inc/class-widget.php:569
+#: inc/class-widget.php:573
 msgid "No"
 msgstr ""
 
-#: inc/class-widget.php:639
+#: inc/class-widget.php:643
 msgid "Choose Image"
 msgstr ""
 
-#: inc/class-widget.php:646
+#: inc/class-widget.php:650
 msgid "Remove"
 msgstr ""
 
-#: inc/class-widget.php:712
+#: inc/class-widget.php:722
 msgid "No Page"
 msgstr ""
 
-#: inc/class-widget.php:814
+#: inc/class-widget.php:828
 msgid "All Categories"
 msgstr ""
 
-#: inc/class-widget.php:1007
+#: inc/class-widget.php:1021
 msgid "Cover"
 msgstr ""
 
-#: inc/class-widget.php:1008
+#: inc/class-widget.php:1022
 msgid "Contain"
 msgstr ""
 
-#: inc/class-widget.php:1009
+#: inc/class-widget.php:1023
 msgid "Stretch"
 msgstr ""
 
-#: inc/class-widget.php:1010
+#: inc/class-widget.php:1024
 msgid "Fit Width"
 msgstr ""
 
-#: inc/class-widget.php:1011
+#: inc/class-widget.php:1025
 msgid "Fit Height"
 msgstr ""
 
-#: inc/class-widget.php:1012
+#: inc/class-widget.php:1026
 msgid "Auto"
 msgstr ""
 
