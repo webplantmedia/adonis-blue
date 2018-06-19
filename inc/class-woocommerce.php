@@ -387,7 +387,7 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 			$output .= '<li class="cart">';
 			$output .= "<a class='cart_dropdown_link' href='" . esc_url( $link ) . "'>";
 			$output .= "<i class='genericons-neue genericons-neue-cart'></i>";
-			if ( 0 !== WC()->cart->get_cart_contents_count() ) {
+			if ( 0 !== intval( WC()->cart->get_cart_contents_count() ) ) {
 				$output .= "<span class='alert-count'>" . intval( $cart_items_count ) . '</span>';
 			}
 			$output .= '</a>';

@@ -172,7 +172,7 @@ function crimson_rose_get_comment_display( $label ) {
 
 	if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 
-		$num_comments = get_comments_number(); /* get_comments_number returns only a numeric value. */
+		$num_comments = intval( get_comments_number() ); /* get_comments_number returns only a numeric value. */
 
 		if ( $num_comments == 0 ) {
 			$comments = esc_html__( 'leave a Comment', 'crimson-rose' );
