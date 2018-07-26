@@ -1137,7 +1137,6 @@ function crimson_rose_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control(
 		$setting_id, array(
-			'type'           => 'input',
 			'label'          => esc_html__( 'Select 404 Page', 'crimson-rose' ),
 			'description'    => esc_html__( 'Set the page\'s featured image for the background image to display.', 'crimson-rose' ),
 			'type'           => 'dropdown-pages',
