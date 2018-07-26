@@ -135,6 +135,11 @@ Source: https://www.pexels.com/photo/adult-cold-face-fashion-370013/
 
 ## Changelog ##
 
+### 2.25 ###
+
+* Fixed bug with Jetpack infinite sroll.
+* Code cleanup.
+
 ### 2.24 ###
 
 * Fixed bug with string being echoed.
