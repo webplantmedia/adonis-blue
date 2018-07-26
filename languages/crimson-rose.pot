@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Crimson Rose 2.24\n"
+"Project-Id-Version: Crimson Rose 2.25\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/crimson-rose\n"
-"POT-Creation-Date: 2018-06-19 20:33:30+00:00\n"
+"POT-Creation-Date: 2018-07-26 23:30:55+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -55,17 +55,18 @@ msgstr[1] ""
 msgid "Comments are closed."
 msgstr ""
 
-#: footer.php:89
+#: footer.php:89 inc/default-options.php:72
 msgid "Site crafted with"
 msgstr ""
 
-#: footer.php:89
+#: footer.php:89 inc/default-options.php:72
 msgid "by"
 msgstr ""
 
-#. #-#-#-#-#  crimson-rose.pot (Crimson Rose 2.24)  #-#-#-#-#
+#. #-#-#-#-#  crimson-rose.pot (Crimson Rose 2.25)  #-#-#-#-#
 #. Author of the plugin/theme
-#: footer.php:89 inc/theme-info.php:38 inc/theme-info.php:39
+#: footer.php:89 inc/default-options.php:72 inc/theme-info.php:38
+#: inc/theme-info.php:39
 msgid "Web Plant Media"
 msgstr ""
 
@@ -124,7 +125,7 @@ msgstr ""
 msgid "Add Instagram widget here."
 msgstr ""
 
-#. #-#-#-#-#  crimson-rose.pot (Crimson Rose 2.24)  #-#-#-#-#
+#. #-#-#-#-#  crimson-rose.pot (Crimson Rose 2.25)  #-#-#-#-#
 #. Template Name of the plugin/theme
 #: functions.php:259
 msgid "Widgetized Page"
@@ -381,7 +382,7 @@ msgid ""
 "This changes the height of your featured image in your page header area."
 msgstr ""
 
-#: inc/customizer.php:489 inc/customizer.php:964
+#: inc/customizer.php:489 inc/customizer.php:981
 msgid "Blog"
 msgstr ""
 
@@ -449,180 +450,184 @@ msgstr ""
 msgid "Hide Share Button Count"
 msgstr ""
 
-#: inc/customizer.php:662 inc/customizer.php:1033
+#: inc/customizer.php:668
+msgid "Infinite Scroll Credit Text"
+msgstr ""
+
+#: inc/customizer.php:679 inc/customizer.php:1050
 msgid "Shop"
 msgstr ""
 
-#: inc/customizer.php:680
+#: inc/customizer.php:697
 msgid "Shop Columns"
 msgstr ""
 
-#: inc/customizer.php:683 inc/customizer.php:705 inc/customizer.php:727
+#: inc/customizer.php:700 inc/customizer.php:722 inc/customizer.php:744
 #: inc/widgets/jetpack-testimonials.php:65
 #: inc/widgets/woocommerce-products.php:54
 msgid "2"
 msgstr ""
 
-#: inc/customizer.php:684 inc/customizer.php:706 inc/customizer.php:728
+#: inc/customizer.php:701 inc/customizer.php:723 inc/customizer.php:745
 #: inc/widgets/woocommerce-products.php:55
 msgid "3"
 msgstr ""
 
-#: inc/customizer.php:685 inc/customizer.php:707 inc/customizer.php:729
+#: inc/customizer.php:702 inc/customizer.php:724 inc/customizer.php:746
 #: inc/widgets/woocommerce-products.php:56
 msgid "4"
 msgstr ""
 
-#: inc/customizer.php:702
+#: inc/customizer.php:719
 msgid "Shop Archive Columns"
 msgstr ""
 
-#: inc/customizer.php:724
+#: inc/customizer.php:741
 msgid "Related Products Columns"
 msgstr ""
 
-#: inc/customizer.php:746
+#: inc/customizer.php:763
 msgid "Display Product Image Backdrop"
 msgstr ""
 
-#: inc/customizer.php:747
+#: inc/customizer.php:764
 msgid ""
 "Add a light gray backdrop with a dropshadow for your product images. "
 "Visually helpful for images with light colored backgrounds."
 msgstr ""
 
-#: inc/customizer.php:764
+#: inc/customizer.php:781
 msgid "Hide Shop Title From Main Shop Page"
 msgstr ""
 
-#: inc/customizer.php:781
+#: inc/customizer.php:798
 msgid "Hide Breadcrumbs From Shop Page"
 msgstr ""
 
-#: inc/customizer.php:798
+#: inc/customizer.php:815
 msgid "Hide Product Reviews From Shop Page"
 msgstr ""
 
-#: inc/customizer.php:815
+#: inc/customizer.php:832
 msgid "Hide Result Count String From Shop Page"
 msgstr ""
 
-#: inc/customizer.php:832
+#: inc/customizer.php:849
 msgid "Hide Ordering Dropdown From Shop Page"
 msgstr ""
 
-#: inc/customizer.php:849
+#: inc/customizer.php:866
 msgid "Truncate Product Titles"
 msgstr ""
 
-#: inc/customizer.php:850
+#: inc/customizer.php:867
 msgid "This will cause product titles to appear in one line."
 msgstr ""
 
-#: inc/customizer.php:867
+#: inc/customizer.php:884
 msgid "Hide Product Reviews From Product Page"
 msgstr ""
 
-#: inc/customizer.php:884
+#: inc/customizer.php:901
 msgid "Hide Product Meta From Product Page"
 msgstr ""
 
-#: inc/customizer.php:901
+#: inc/customizer.php:918
 msgid "Disable Gallery Zoom on Product Page"
 msgstr ""
 
-#: inc/customizer.php:918
+#: inc/customizer.php:935
 msgid "Disable Gallery Lightbox on Product Page"
 msgstr ""
 
-#: inc/customizer.php:935
+#: inc/customizer.php:952
 msgid "Disable Gallery Slider on Product Page"
 msgstr ""
 
-#: inc/customizer.php:946
+#: inc/customizer.php:963
 msgid "Display Sidebar"
 msgstr ""
 
-#: inc/customizer.php:948
+#: inc/customizer.php:965
 msgid "Check the pages where you want the sidebar to display."
 msgstr ""
 
-#: inc/customizer.php:981 inc/template-tags.php:290
+#: inc/customizer.php:998 inc/template-tags.php:290
 msgid "Post"
 msgstr ""
 
-#: inc/customizer.php:998
+#: inc/customizer.php:1015
 msgid "Archive"
 msgstr ""
 
-#: inc/customizer.php:1015 searchform.php:31
+#: inc/customizer.php:1032 searchform.php:31
 msgid "Search"
 msgstr ""
 
-#: inc/customizer.php:1051
+#: inc/customizer.php:1068
 msgid "Shop Archive"
 msgstr ""
 
-#: inc/customizer.php:1068
+#: inc/customizer.php:1085
 msgid "Attachment Page"
 msgstr ""
 
-#: inc/customizer.php:1079
+#: inc/customizer.php:1096
 msgid "Labels"
 msgstr ""
 
-#: inc/customizer.php:1096
+#: inc/customizer.php:1113
 msgid "Mobile Menu Label"
 msgstr ""
 
-#: inc/customizer.php:1113
+#: inc/customizer.php:1130
 msgid "Read More Label"
 msgstr ""
 
-#: inc/customizer.php:1124
+#: inc/customizer.php:1141
 msgid "404 Error Page"
 msgstr ""
 
-#: inc/customizer.php:1141
+#: inc/customizer.php:1157
 msgid "Select 404 Page"
 msgstr ""
 
-#: inc/customizer.php:1142
+#: inc/customizer.php:1158
 msgid "Set the page's featured image for the background image to display."
 msgstr ""
 
-#: inc/customizer.php:1161
+#: inc/customizer.php:1177
 msgid "Page Cover Opacity"
 msgstr ""
 
-#: inc/customizer.php:1162
+#: inc/customizer.php:1178
 msgid "Set opacity for 404 Page Cover's featured image."
 msgstr ""
 
-#: inc/customizer.php:1185
+#: inc/customizer.php:1201
 msgid "Page Cover Color"
 msgstr ""
 
-#: inc/customizer.php:1203
+#: inc/customizer.php:1219
 msgid "Display White Text"
 msgstr ""
 
-#: inc/customizer.php:1215
+#: inc/customizer.php:1231
 msgid "Fonts"
 msgstr ""
 
-#: inc/customizer.php:1235
+#: inc/customizer.php:1251
 msgid "Font Customization"
 msgstr ""
 
 #. Translators: this string is a link to a self hosted WordPress plugin.
-#: inc/customizer.php:1238
+#: inc/customizer.php:1254
 msgid ""
 "To easily change the font styles for your theme, please download our %s "
 "plugin."
 msgstr ""
 
-#: inc/customizer.php:1239
+#: inc/customizer.php:1255
 msgid "Designer Fonts"
 msgstr ""
 
@@ -705,23 +710,23 @@ msgstr ""
 msgid "Theme Add-ons"
 msgstr ""
 
-#: inc/default-options.php:98
+#: inc/default-options.php:101
 msgid "Menu"
 msgstr ""
 
-#: inc/default-options.php:99
+#: inc/default-options.php:102
 msgid "Continue Reading"
 msgstr ""
 
-#: inc/jetpack.php:178
+#: inc/jetpack.php:182
 msgid "leave a Comment"
 msgstr ""
 
-#: inc/jetpack.php:180
+#: inc/jetpack.php:184
 msgid " Comments"
 msgstr ""
 
-#: inc/jetpack.php:182
+#: inc/jetpack.php:186
 msgid "1 Comment"
 msgstr ""
 
