@@ -653,6 +653,23 @@ function crimson_rose_customize_register( $wp_customize ) {
 		)
 	);
 
+	$setting_id = 'jetpack_scroll_credit';
+	$wp_customize->add_setting(
+		$setting_id, array(
+			'default'           => $crimson_rose_default[ $setting_id ],
+			'transport'         => 'refresh',
+			'sanitize_callback' => 'wp_kses_post',
+		)
+	);
+
+	$wp_customize->add_control(
+		$setting_id, array(
+			'type'    => 'text',
+			'label'   => esc_html__( 'Infinite Scroll Credit Text', 'crimson-rose' ),
+			'section' => $section_id,
+		)
+	);
+
 	/**
 	 * Shop
 	 */

@@ -66,7 +66,10 @@ $crimson_rose_default['search_display']                   = 'blog2';
 $crimson_rose_default['thumb_excerpt_max_height']         = 0;
 $crimson_rose_default['thumb_grid_max_height']            = 0;
 $crimson_rose_default['blog_single_hide_post_navigation'] = 0;
-$crimson_rose_default['jetpack_hide_share_count']         = 0;
+
+// Jetpack.
+$crimson_rose_default['jetpack_hide_share_count'] = 0;
+$crimson_rose_default['jetpack_scroll_credit'] = sprintf( esc_html__( 'Site crafted with', 'crimson-rose' ) . ' <i class="genericons-neue genericons-neue-heart"></i> ' . esc_html__( 'by', 'crimson-rose' ) . ' <a href="https://webplantmedia.com/">' . esc_html__( 'Web Plant Media', 'crimson-rose' ) . '</a>' );
 
 // Shop.
 $crimson_rose_default['shop_columns']                  = 2;

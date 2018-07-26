@@ -93,10 +93,14 @@ add_action( 'wp_enqueue_scripts', 'crimson_rose_jetpack_enqueue' );
  *
  * @return string
  */
-function crimson_rose_infinite_scroll_credit() {
-	$content = crimson_rose_get_site_info();
+function crimson_rose_infinite_scroll_credit( $credits ) {
+	global $crimson_rose;
 
-	return $content;
+	if ( ! empty( $crimson_rose['jetpack_scroll_credit'] ) ) {
+		return $crimson_rose['jetpack_scroll_credit'];
+	}
+
+	return $credits;
 }
 add_filter( 'infinite_scroll_credit', 'crimson_rose_infinite_scroll_credit' );
 
