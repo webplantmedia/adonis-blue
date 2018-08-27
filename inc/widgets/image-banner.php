@@ -43,7 +43,7 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Image_Banner_Widget' ) ) :
 				'image_width'    => array(
 					'type'        => 'number',
 					'std'         => '',
-					'step'        => 5,
+					'step'        => 1,
 					'min'         => 100,
 					'max'         => 1600,
 					'label'       => esc_html__( 'Image Width (in pixels)', 'crimson-rose' ),

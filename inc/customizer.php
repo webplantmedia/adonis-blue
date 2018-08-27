@@ -578,7 +578,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 			'section'     => $section_id,
 			'input_attrs' => array(
 				'min'  => 0,
-				'step' => 5,
+				'step' => 1,
 			),
 		)
 	);
@@ -601,7 +601,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 			'section'     => $section_id,
 			'input_attrs' => array(
 				'min'  => 0,
-				'step' => 5,
+				'step' => 1,
 			),
 		)
 	);
