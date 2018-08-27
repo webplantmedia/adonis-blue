@@ -121,10 +121,9 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Blog_Post' ) ) :
 		 * @param array $instance
 		 * @return void
 		 */
-		function widget( $args, $instance ) {
+		public function widget( $args, $instance ) {
 			$o = $this->sanitize( $instance );
 
-			extract( $args );
 			$paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
 
 			$post_args = array(
@@ -155,7 +154,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Blog_Post' ) ) :
 				$style[] = 'margin-bottom:' . $o['margin_bottom'] . 'px;';
 			}
 
-			echo $before_widget; /* WPCS: XSS OK. HTML output. */
+			echo $args['before_widget']; /* WPCS: XSS OK. HTML output. */
 
 			// Allow site-wide customization of the 'Read more' link text.
 			$read_more = apply_filters( 'crimson_rose_read_more_text', esc_html__( 'Read more', 'crimson-rose' ) );
@@ -165,7 +164,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Blog_Post' ) ) :
 
 				<?php
 				if ( $o['title'] ) {
-					echo $before_title . esc_html( $o['title'] ) . $after_title; /* WPCS: XSS OK. HTML output. */
+					echo $args['before_title'] . esc_html( $o['title'] ) . $args['after_title']; /* WPCS: XSS OK. HTML output. */
 				}
 				?>
 
@@ -218,7 +217,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Blog_Post' ) ) :
 
 			</div>
 
-			<?php echo $after_widget; /* WPCS: XSS OK. HTML output. */ ?>
+			<?php echo $args['after_widget']; /* WPCS: XSS OK. HTML output. */ ?>
 
 			<?php /* remove_filter( 'excerpt_length', array( $this, 'custom_excerpt_length' ) ); */ ?>
 
@@ -234,7 +233,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Blog_Post' ) ) :
 		 * @param int $length
 		 * @return int
 		 */
-		function custom_excerpt_length( $length ) {
+		public function custom_excerpt_length( $length ) {
 			return 20;
 		}
 

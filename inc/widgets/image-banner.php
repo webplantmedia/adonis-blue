@@ -37,7 +37,11 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Image_Banner_Widget' ) ) :
 					'type'        => 'page',
 					'std'         => '',
 					'label'       => esc_html__( 'Select Page:', 'crimson-rose' ),
-					'description' => esc_html__( 'The post content and featured image will be grabbed from the selected post.', 'crimson-rose' ),
+					'description' => sprintf(
+						'<a target="_blank" href="' . admin_url( 'post-new.php?post_type=page' ) . '">%1$s</a> %2$s',
+						esc_html__( 'Create a new page', 'crimson-rose' ),
+						esc_html__( 'with the the content and featured image you want to display.', 'crimson-rose' )
+					),
 					'sanitize'    => 'text',
 				),
 				'image_width'    => array(
@@ -73,7 +77,7 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Image_Banner_Widget' ) ) :
 				),
 				'link'           => array(
 					'type'     => 'text',
-					'std'      => home_url( '/' ),
+					'std'      => esc_url( home_url( '/' ) ),
 					'label'    => esc_html__( 'Link:', 'crimson-rose' ),
 					'sanitize' => 'url',
 				),
@@ -91,10 +95,8 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Image_Banner_Widget' ) ) :
 		 * @param array $instance
 		 * @return void
 		 */
-		function widget( $args, $instance ) {
+		public function widget( $args, $instance ) {
 			$o = $this->sanitize( $instance );
-
-			extract( $args );
 
 			$p              = null;
 			$featured_image = null;
@@ -110,7 +112,7 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Image_Banner_Widget' ) ) :
 				$featured_image = get_the_post_thumbnail( $p->ID, $size );
 			}
 
-			echo $before_widget; /* WPCS: XSS OK. HTML output. */
+			echo $args['before_widget']; /* WPCS: XSS OK. HTML output. */
 
 			$class   = array();
 			$class[] = 'image-banner-wrapper';
@@ -120,8 +122,8 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Image_Banner_Widget' ) ) :
 
 			<div class="<?php echo esc_attr( implode( ' ', $class ) ); ?>">
 				<?php if ( $p ) : ?>
-					<?php if ( ! empty( $p->post_title ) && ( $o['title_position'] == 'above' ) ) : ?>
-						<?php echo $before_title . esc_html( $p->post_title ) . $after_title; /* WPCS: XSS OK. HTML output. */ ?>
+					<?php if ( ! empty( $p->post_title ) && ( 'above' === $o['title_position'] ) ) : ?>
+						<?php echo $args['before_title'] . esc_html( $p->post_title ) . $args['after_title']; /* WPCS: XSS OK. HTML output. */ ?>
 					<?php endif; ?>
 
 					<?php if ( ! empty( $o['link'] ) ) : ?>
@@ -134,8 +136,8 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Image_Banner_Widget' ) ) :
 							<?php echo $featured_image; /* WPCS: XSS OK. HTML output. */ ?>
 						<?php endif; ?>
 
-						<?php if ( ! empty( $p->post_title ) && ( $o['title_position'] != 'above' ) ) : ?>
-							<?php echo $before_title . '<span>' . esc_html( $p->post_title ) . '</span>' . $after_title; /* WPCS: XSS OK. HTML output. */ ?>
+						<?php if ( ! empty( $p->post_title ) && ( 'above' !== $o['title_position'] ) ) : ?>
+							<?php echo $args['before_title'] . '<span>' . esc_html( $p->post_title ) . '</span>' . $args['after_title']; /* WPCS: XSS OK. HTML output. */ ?>
 						<?php endif; ?>
 
 					<?php if ( ! empty( $o['link'] ) ) : ?>
@@ -171,7 +173,7 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Image_Banner_Widget' ) ) :
 				<?php endif; ?>
 			</div>
 
-			<?php echo $after_widget; /* WPCS: XSS OK. HTML output. */ ?>
+			<?php echo $args['after_widget']; /* WPCS: XSS OK. HTML output. */ ?>
 			<?php
 		}
 

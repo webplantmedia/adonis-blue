@@ -1,4 +1,8 @@
 <?php
+if ( ! crimson_rose_is_jetpack_activated() ) {
+	return;
+}
+
 /**
  * Content Widget: Jetpack Testimonials for widgetized pages.
  *
@@ -207,10 +211,8 @@ class Crimson_Rose_Content_Widget_Jetpack_Testimonials extends Crimson_Rose_Widg
 	 * @param array $instance
 	 * @return void
 	 */
-	function widget( $args, $instance ) {
+	public function widget( $args, $instance ) {
 		wp_enqueue_script( 'bx2slider' );
-
-		extract( $args );
 
 		$o = $this->sanitize( $instance );
 
@@ -259,18 +261,21 @@ class Crimson_Rose_Content_Widget_Jetpack_Testimonials extends Crimson_Rose_Widg
 			// Construct the loop...
 			while ( $query->have_posts() ) {
 				$query->the_post();
-				$post_id   = get_the_ID();
-				$temp      = '<div class="testimonial-entry-wrapper" style="' . esc_attr( implode( '', $testimonial_style ) ) . '">';
-					$temp .= '<div class="testimonial-entry">';
-						// Featured image.
-						$class = ' no-testimonial-image';
-				if ( $image = $this->get_testimonial_thumbnail_link( $post_id ) ) {
+				$post_id = get_the_ID();
+				$temp    = '<div class="testimonial-entry-wrapper" style="' . esc_attr( implode( '', $testimonial_style ) ) . '">';
+				$temp   .= '<div class="testimonial-entry">';
+
+				// Featured image.
+				$class = ' no-testimonial-image';
+
+				$image = $this->get_testimonial_thumbnail_link( $post_id );
+				if ( $image ) {
 					$temp .= $image;
 					$class = ' has-testimonial-image';
 				}
 
-						$temp     .= '<div class="testimonial-entry-content-wrapper' . esc_attr( $class ) . '">';
-							$temp .= '<div class="testimonial-entry-content">' . get_the_excerpt() . '</div>';
+				$temp .= '<div class="testimonial-entry-content-wrapper' . esc_attr( $class ) . '">';
+				$temp .= '<div class="testimonial-entry-content">' . get_the_excerpt() . '</div>';
 
 				if ( $o['display_signature'] ) {
 					switch ( $o['signature_icon'] ) {
@@ -298,16 +303,18 @@ class Crimson_Rose_Content_Widget_Jetpack_Testimonials extends Crimson_Rose_Widg
 						$temp .= '</div><!-- close .testimonial-entry-content-wrapper -->';
 					$temp     .= '</div><!-- close .testimonial-entry -->';
 
-					$temp         .= '<footer class="entry-footer">';
-						$temp     .= '<div class="entry-footer-meta"><span class="edit-link">';
-							$temp .= sprintf(
-								'<a class="post-edit-link" href="%1$s">%2$s <span class="screen-reader-text">%3$s</span></a>',
-								esc_url( get_edit_post_link( $post_id ) ),
-								esc_html__( 'Edit', 'crimson-rose' ),
-								get_the_title()
-							);
-						$temp     .= '</span></div>';
-					$temp         .= '</footer><!-- .entry-footer -->';
+					if ( get_edit_post_link( $post_id ) ) {
+						$temp         .= '<footer class="entry-footer">';
+							$temp     .= '<div class="entry-footer-meta"><span class="edit-link">';
+								$temp .= sprintf(
+									'<a class="post-edit-link" href="%1$s">%2$s <span class="screen-reader-text">%3$s</span></a>',
+									esc_url( get_edit_post_link( $post_id ) ),
+									esc_html__( 'Edit', 'crimson-rose' ),
+									get_the_title()
+								);
+							$temp     .= '</span></div>';
+						$temp         .= '</footer><!-- .entry-footer -->';
+					}
 
 				$temp .= '</div><!-- close .testimonial-entry-wrapper -->';
 
@@ -321,13 +328,13 @@ class Crimson_Rose_Content_Widget_Jetpack_Testimonials extends Crimson_Rose_Widg
 			?>
 		<?php endif; ?>
 
-		<?php $before_widget = str_replace( 'class="content-widget', 'class="content-widget full-width-bar', $before_widget ); ?>
-		<?php echo $before_widget; /* WPCS: XSS OK. HTML output. */ ?>
+		<?php $args['before_widget'] = str_replace( 'class="content-widget', 'class="content-widget full-width-bar', $args['before_widget'] ); ?>
+		<?php echo $args['before_widget']; /* WPCS: XSS OK. HTML output. */ ?>
 
 			<div class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>" style="<?php echo esc_attr( implode( '', $style ) ); ?>">
 				<div class="site-boundary">
 					<?php if ( ! empty( $o['title'] ) ) : ?>
-						<?php echo $before_title . esc_html( $o['title'] ) . $after_title; /* WPCS: XSS OK. HTML output. */ ?>
+						<?php echo $args['before_title'] . esc_html( $o['title'] ) . $args['after_title']; /* WPCS: XSS OK. HTML output. */ ?>
 					<?php endif; ?>
 
 					<?php if ( ! empty( $testimonials ) ) : ?>
@@ -335,12 +342,12 @@ class Crimson_Rose_Content_Widget_Jetpack_Testimonials extends Crimson_Rose_Widg
 						<div class="testimonial-slider" data-sliderauto="<?php echo esc_attr( $o['slider_auto'] ); ?>" data-slidermode="<?php echo esc_attr( $o['slider_mode'] ); ?>" data-sliderpause="<?php echo esc_attr( $o['slider_pause'] ); ?>" data-sliderautohover="<?php echo esc_attr( $o['slider_autohover'] ); ?>" data-slidercontrols="<?php echo esc_attr( $o['slider_controls'] ); ?>" data-sliderpager="<?php echo esc_attr( $o['slider_pager'] ); ?>">
 							<?php
 							foreach ( $testimonials as $slide ) :
-								$size = sizeof( $slide );
+								$size = count( $slide );
 								?>
 								<div class="testimonial-slide testimonial-slide-size-<?php echo esc_attr( $size ); ?>">
 									<div class="grid">
 										<?php foreach ( $slide as $key => $testimonial ) : ?>
-											<?php if ( $size == 1 ) : ?>
+											<?php if ( 1 === $size ) : ?>
 												<div class="grid__col grid__col--2-of-2 testimonial-position-<?php echo esc_attr( $key ); ?>">
 													<?php echo $testimonial; /* WPCS: XSS OK. HTML output. */ ?>
 												</div>
@@ -416,7 +423,7 @@ class Crimson_Rose_Content_Widget_Jetpack_Testimonials extends Crimson_Rose_Widg
 				</div><!-- .site-boundary -->
 			</div><!-- .content-jetpack-testimonial -->
 
-		<?php echo $after_widget; /* WPCS: XSS OK. HTML output. */ ?>
+		<?php echo $args['after_widget']; /* WPCS: XSS OK. HTML output. */ ?>
 
 		<?php
 		wp_reset_postdata();

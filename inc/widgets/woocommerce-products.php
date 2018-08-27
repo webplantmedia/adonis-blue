@@ -1,4 +1,8 @@
 <?php
+if ( ! crimson_rose_is_woocommerce_activated() ) {
+	return;
+}
+
 /**
  * Content Widget: WooCommerce Products
  *
@@ -172,9 +176,7 @@ class Crimson_Rose_Content_Widget_WooCommerce_Products extends Crimson_Rose_Widg
 	 * @param array $instance
 	 * @return void
 	 */
-	function widget( $args, $instance ) {
-		extract( $args );
-
+	public function widget( $args, $instance ) {
 		$o = $this->sanitize( $instance );
 
 		$style             = array();
@@ -232,11 +234,11 @@ class Crimson_Rose_Content_Widget_WooCommerce_Products extends Crimson_Rose_Widg
 		}
 		?>
 
-		<?php echo $before_widget; /* WPCS: XSS OK. HTML output. */ ?>
+		<?php echo $args['before_widget']; /* WPCS: XSS OK. HTML output. */ ?>
 
 			<div class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>" style="<?php echo esc_attr( implode( '', $style ) ); ?>">
 				<?php if ( ! empty( $o['title'] ) ) : ?>
-					<?php echo $before_title . esc_html( $o['title'] ) . $after_title; /* WPCS: XSS OK. HTML output. */ ?>
+					<?php echo $args['before_title'] . esc_html( $o['title'] ) . $args['after_title']; /* WPCS: XSS OK. HTML output. */ ?>
 				<?php endif; ?>
 
 				<?php if ( ! crimson_rose_is_woocommerce_activated() ) : ?>
@@ -246,7 +248,7 @@ class Crimson_Rose_Content_Widget_WooCommerce_Products extends Crimson_Rose_Widg
 				<?php endif; ?>
 			</div><!-- .content-woocommerce-products -->
 
-		<?php echo $after_widget; /* WPCS: XSS OK. HTML output. */ ?>
+		<?php echo $args['after_widget']; /* WPCS: XSS OK. HTML output. */ ?>
 		<?php
 	}
 

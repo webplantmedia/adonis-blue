@@ -35,12 +35,16 @@ class Crimson_Rose_Content_Widget_Callout extends Crimson_Rose_Widget {
 				'type'        => 'page',
 				'std'         => '',
 				'label'       => esc_html__( 'Select Page:', 'crimson-rose' ),
-				'description' => esc_html__( 'The post content and featured image will be grabbed from the selected post. If no featured image is set, then the text will display in full width.', 'crimson-rose' ),
+				'description' => sprintf(
+					'<a target="_blank" href="' . admin_url( 'post-new.php?post_type=page' ) . '">%1$s</a> %2$s',
+					esc_html__( 'Create a new page', 'crimson-rose' ),
+					esc_html__( 'with the the content and featured image you want to display for this callout item. If no featured image is set, then the text will display in full width.', 'crimson-rose' )
+				),
 				'sanitize'    => 'text',
 			),
 			'image_width'      => array(
 				'type'        => 'number',
-				'std'         => '',
+				'std'         => '410',
 				'step'        => 1,
 				'min'         => 100,
 				'max'         => 1600,
@@ -71,7 +75,7 @@ class Crimson_Rose_Content_Widget_Callout extends Crimson_Rose_Widget {
 			),
 			'background_color' => array(
 				'type'     => 'colorpicker',
-				'std'      => '#fcf7f7',
+				'std'      => '#ffffff',
 				'label'    => esc_html__( 'Background Color:', 'crimson-rose' ),
 				'sanitize' => 'color',
 			),
@@ -84,13 +88,13 @@ class Crimson_Rose_Content_Widget_Callout extends Crimson_Rose_Widget {
 			),
 			'button_text'      => array(
 				'type'     => 'text',
-				'std'      => 'SHOP FLOWERS',
+				'std'      => 'BUTTON',
 				'label'    => esc_html__( 'Button Text:', 'crimson-rose' ),
 				'sanitize' => 'text',
 			),
 			'button_link'      => array(
 				'type'     => 'text',
-				'std'      => home_url( '/' ),
+				'std'      => esc_url( home_url( '/' ) ),
 				'label'    => esc_html__( 'Button URL:', 'crimson-rose' ),
 				'sanitize' => 'url',
 			),
@@ -107,7 +111,7 @@ class Crimson_Rose_Content_Widget_Callout extends Crimson_Rose_Widget {
 			),
 			'style'            => array(
 				'type'     => 'select',
-				'std'      => 'border',
+				'std'      => 'plain',
 				'label'    => esc_html__( 'Box Style:', 'crimson-rose' ),
 				'options'  => array(
 					'plain'  => esc_html__( 'Plain', 'crimson-rose' ),
@@ -156,9 +160,7 @@ class Crimson_Rose_Content_Widget_Callout extends Crimson_Rose_Widget {
 	 * @param array $instance
 	 * @return void
 	 */
-	function widget( $args, $instance ) {
-		extract( $args );
-
+	public function widget( $args, $instance ) {
 		$o = $this->sanitize( $instance );
 
 		$p              = null;
@@ -177,7 +179,7 @@ class Crimson_Rose_Content_Widget_Callout extends Crimson_Rose_Widget {
 		}
 
 		if ( ! empty( $o['margin_bottom'] ) ) {
-			if ( 'border' == $o['style'] ) {
+			if ( 'border' === $o['style'] ) {
 				$wrap_style[] = 'margin-bottom:' . $o['margin_bottom'] . 'px;';
 			} else {
 				$style[] = 'margin-bottom:' . $o['margin_bottom'] . 'px;';
@@ -200,12 +202,12 @@ class Crimson_Rose_Content_Widget_Callout extends Crimson_Rose_Widget {
 			$featured_image = get_the_post_thumbnail( $p->ID, $size );
 		}
 
-		$before_widget = str_replace( 'class="content-widget', 'class="content-widget full-width-bar', $before_widget );
+		$args['before_widget'] = str_replace( 'class="content-widget', 'class="content-widget full-width-bar', $args['before_widget'] );
 		?>
 
-		<?php echo $before_widget; /* WPCS: XSS OK. HTML output. */ ?>
+		<?php echo $args['before_widget']; /* WPCS: XSS OK. HTML output. */ ?>
 
-		<?php if ( 'border' == $o['style'] ) : ?>
+		<?php if ( 'border' === $o['style'] ) : ?>
 			<div class="content-callout-border-wrap" style="<?php echo esc_attr( implode( '', $wrap_style ) ); ?>">
 		<?php endif; ?>
 
@@ -241,11 +243,11 @@ class Crimson_Rose_Content_Widget_Callout extends Crimson_Rose_Widget {
 					</div>
 				</div>
 
-		<?php if ( 'border' == $o['style'] ) : ?>
+		<?php if ( 'border' === $o['style'] ) : ?>
 			</div>
 		<?php endif; ?>
 
-		<?php echo $after_widget; /* WPCS: XSS OK. HTML output. */ ?>
+		<?php echo $args['after_widget']; /* WPCS: XSS OK. HTML output. */ ?>
 
 		<?php
 	}
@@ -298,7 +300,8 @@ class Crimson_Rose_Content_Widget_Callout extends Crimson_Rose_Widget {
 				$output         .= '</div>';
 			}
 		} else {
-			$output .= '<center><em>' . esc_html__( 'Select a page in your widget settings for content to display.', 'crimson-rose' ) . '</em></center>';
+			$select_link = admin_url( 'customize.php?autofocus[panel]=widgets' );
+			$output     .= '<center><em><a href="' . $select_link . '">' . esc_html__( 'Select a page in your widget settings for content to display.', 'crimson-rose' ) . '</a></em></center>';
 		}
 
 			$output .= '</div>';

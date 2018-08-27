@@ -78,16 +78,14 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Social_Menu' ) ) :
 		 * @param array $instance
 		 * @return void
 		 */
-		function widget( $args, $instance ) {
+		public function widget( $args, $instance ) {
 			$o = $this->sanitize( $instance );
 
-			extract( $args );
-
 			if ( empty( $o['title'] ) ) {
-				$before_widget = str_replace( 'class="widget', 'class="widget no-title', $before_widget );
+				$args['before_widget'] = str_replace( 'class="widget', 'class="widget no-title', $args['before_widget'] );
 			}
 
-			echo $before_widget; /* WPCS: XSS OK. HTML output. */
+			echo $args['before_widget']; /* WPCS: XSS OK. HTML output. */
 			?>
 
 			<style type="text/css">
@@ -107,7 +105,7 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Social_Menu' ) ) :
 			</style>
 
 			<?php if ( ! empty( $o['title'] ) ) : ?>
-				<?php echo $before_title . esc_html( $o['title'] ) . $after_title; /* WPCS: XSS OK. HTML output. */ ?>
+				<?php echo $args['before_title'] . esc_html( $o['title'] ) . $args['after_title']; /* WPCS: XSS OK. HTML output. */ ?>
 			<?php endif; ?>
 
 			<div class="social-menu-wrapper social-menu-align-<?php echo esc_attr( $o['align'] ); ?>">
@@ -130,7 +128,7 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Social_Menu' ) ) :
 				<?php endif; ?>
 			</div>
 
-			<?php echo $after_widget; /* WPCS: XSS OK. HTML output. */ ?>
+			<?php echo $args['after_widget']; /* WPCS: XSS OK. HTML output. */ ?>
 			<?php
 		}
 
