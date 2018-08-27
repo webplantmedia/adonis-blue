@@ -1038,13 +1038,13 @@ class Crimson_Rose_Widget extends WP_Widget {
 	public function get_background_size( $value ) {
 		switch ( $value ) {
 			case 'stretch':
-				$value = '100% 100%';
+				$value = esc_html( '100% 100%', 'crimson-rose' );
 				break;
 			case 'fit-width':
-				$value = '100% auto';
+				$value = esc_html( '100% auto', 'crimson-rose' );
 				break;
 			case 'fit-height':
-				$value = 'auto 100%';
+				$value = esc_html( 'auto 100%', 'crimson-rose' );
 				break;
 		}
 
