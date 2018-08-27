@@ -741,11 +741,6 @@ foreach ( glob( get_template_directory() . '/inc/widgets/*.php' ) as $filename )
 require get_template_directory() . '/inc/customizer.php';
 
 /**
- * Implement starter content.
- */
-require get_template_directory() . '/inc/starter-content.php';
-
-/**
  * Load Jetpack compatibility file.
  */
 if ( crimson_rose_is_jetpack_activated() ) {
