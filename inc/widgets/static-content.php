@@ -32,7 +32,11 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Static_Content' ) ) :
 					'type'        => 'page',
 					'std'         => '',
 					'label'       => esc_html__( 'Select Page:', 'crimson-rose' ),
-					'description' => esc_html__( 'The post content and featured image will be grabbed from the selected post.', 'crimson-rose' ),
+					'description' => sprintf(
+						'<a target="_blank" href="' . admin_url( 'post-new.php?post_type=page' ) . '">%1$s</a> %2$s',
+						esc_html__( 'Create a new page', 'crimson-rose' ),
+						esc_html__( 'with the the content and featured image you want to display.', 'crimson-rose' )
+					),
 					'sanitize'    => 'text',
 				),
 				'background_color'   => array(
@@ -103,10 +107,8 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Static_Content' ) ) :
 		 * @param array $instance
 		 * @return void
 		 */
-		function widget( $args, $instance ) {
+		public function widget( $args, $instance ) {
 			$o = $this->sanitize( $instance );
-
-			extract( $args );
 
 			$post               = null; /* no default page is set for starter-content. */
 			$featured_image_url = null;
@@ -146,18 +148,22 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Static_Content' ) ) :
 			}
 
 			$page_template = get_page_template_slug( $o['page'] );
-			if ( ( 'templates/full-width-page.php' == $page_template ) ) {
+			if ( ( 'templates/full-width-page.php' === $page_template ) ) {
 				$classes[] = 'full-width-static-content';
+			}
+
+			if ( ( '#ffffff' === $o['text_color'] ) || ( '#fff' === $o['text_color'] ) ) {
+				$classes[] = 'option-white-text';
 			}
 
 			// Allow site-wide customization of the 'Read more' link text.
 			$read_more = apply_filters( 'crimson_rose_read_more_text', esc_html__( 'Read more', 'crimson-rose' ) );
 
 			if ( $fullwidth ) {
-				$before_widget = str_replace( 'class="content-widget', 'class="content-widget full-width-bar', $before_widget );
+				$args['before_widget'] = str_replace( 'class="content-widget', 'class="content-widget full-width-bar', $args['before_widget'] );
 			}
 
-			echo $before_widget; /* WPCS: XSS OK. HTML output. */
+			echo $args['before_widget']; /* WPCS: XSS OK. HTML output. */
 			?>
 
 			<style type="text/css">
@@ -236,9 +242,9 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Static_Content' ) ) :
 
 						<?php else : ?>
 							<article>
-								<?php echo $before_title . esc_html__( 'Static Content Widget', 'crimson-rose' ) . $after_title; /* WPCS: XSS OK. HTML output. */ ?>
+								<?php echo $args['before_title'] . esc_html__( 'Static Content Widget', 'crimson-rose' ) . $args['after_title']; /* WPCS: XSS OK. HTML output. */ ?>
 								<div class="entry-content">
-									<center><em><?php echo esc_html__( 'Select a page in your widget settings for content to display.', 'crimson-rose' ); ?></em></center>
+									<center><em><a href="<?php echo esc_url( admin_url( 'customize.php?autofocus[panel]=widgets' ) ); ?>"><?php echo esc_html__( 'Select a page in your widget settings for content to display.', 'crimson-rose' ); ?></a></em></center>
 								</div>
 							</article>
 						<?php endif; ?>
@@ -253,7 +259,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Static_Content' ) ) :
 			</div>
 			<?php endif; ?>
 
-			<?php echo $after_widget; /* WPCS: XSS OK. HTML output. */ ?>
+			<?php echo $args['after_widget']; /* WPCS: XSS OK. HTML output. */ ?>
 
 			<?php
 			wp_reset_postdata();

@@ -295,4 +295,38 @@ button {
 	.fancy2-button:hover {
 		// background-image: url("img/button2-bg-dark.jpg");
 	}
+
+	#page #content .option-white-text input[type="button"],
+	#page #content .option-white-text input[type="reset"],
+	#page #content .option-white-text input[type="submit"],
+	#page #content .option-white-text .button,
+	.white-border-button {
+		&,
+		&:active,
+		&:visited,
+		&:focus,
+		&:hover {
+			background-color: transparent;
+			border: 2px solid $color__white;
+			padding: 14px 24px;
+			border-radius: $button__radius;
+			text-transform: none;
+			@include rem('font-size',$font__main-size);
+			font-weight: bold;
+			line-height: 1.2;
+		}
+
+		&:after {
+			display: none;
+			content: "";
+		}
+
+		&:hover {
+			text-decoration: underline;
+
+			&:after {
+				text-decoration: none;
+			}
+		}
+	}
 }

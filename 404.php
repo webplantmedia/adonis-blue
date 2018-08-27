@@ -22,9 +22,14 @@ $error_page_id = $crimson_rose['404_custom_page'];
 	<?php
 	$post = get_post( $error_page_id );
 	setup_postdata( $post );
-	$error_thumbnail     = get_the_post_thumbnail_url( $error_page_id, 'full' );
-	$error_cover_opacity = $crimson_rose['404_cover_opacity'] / 100;
-	$error_cover_color   = $crimson_rose['404_cover_color'];
+	$error_thumbnail  = get_the_post_thumbnail_url( $error_page_id, 'full' );
+	$error_text_white = $crimson_rose['404_text_white'];
+
+	$post_class = array( 'error-404', 'not-found', 'has-background' );
+
+	if ( $error_text_white ) {
+		$post_class[] = 'option-white-text';
+	}
 	?>
 
 	<div class="page-cover-bg" style="background-image:url('<?php echo esc_url( $error_thumbnail ); ?>');">
@@ -34,7 +39,7 @@ $error_page_id = $crimson_rose['404_custom_page'];
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
-			<section id="post-<?php the_ID(); ?>" <?php post_class( 'error-404 not-found has-background' ); ?>>
+			<section id="post-<?php the_ID(); ?>" <?php post_class( implode( ' ', $post_class ) ); ?>>
 				<?php if ( crimson_rose_display_header() ) : ?>
 					<header class="entry-header">
 						<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
