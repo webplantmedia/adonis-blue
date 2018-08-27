@@ -5553,6 +5553,10 @@ h1.h1-title,
 /*--------------------------------------------------------------
 # Gutenberg
 --------------------------------------------------------------*/
+p.has-drop-cap:not(:focus):first-letter {
+  margin: .09em .1em 0 0;
+}
+
 @media (max-width: 700px) {
   .wp-block-text-columns.alignwide,
   .wp-block-text-columns.alignfull,
@@ -5575,8 +5579,13 @@ h1.h1-title,
 }
 
 @media (min-width: 701px) {
+  .wp-block-columns .wp-block-column,
   .wp-block-text-columns .wp-block-column {
     margin: 0 25px;
+  }
+  .wp-block-columns {
+    margin-left: -25px;
+    margin-right: -25px;
   }
   .wp-block-text-columns.alignfull,
   .wp-block-columns.alignfull {
@@ -5589,11 +5598,11 @@ h1.h1-title,
     padding-right: 20px;
   }
   .wp-block-text-columns .wp-block-column > *:first-child,
-  .wp-block-columns > *:first-child {
+  .wp-block-columns .wp-block-column > *:first-child {
     margin-top: 0;
   }
   .wp-block-text-columns .wp-block-column > *:last-child,
-  .wp-block-columns > *:last-child {
+  .wp-block-columns .wp-block-column > *:last-child {
     margin-bottom: 0;
   }
 }
