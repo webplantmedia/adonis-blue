@@ -1333,6 +1333,63 @@ button {
   }
 }
 
+#master body #page #content .option-white-text input[type="button"], #master body #page #content .option-white-text input[type="button"]:active, #master body #page #content .option-white-text input[type="button"]:visited, #master body #page #content .option-white-text input[type="button"]:focus, #master body #page #content .option-white-text input[type="button"]:hover,
+#master body #page #content .option-white-text input[type="reset"],
+#master body #page #content .option-white-text input[type="reset"]:active,
+#master body #page #content .option-white-text input[type="reset"]:visited,
+#master body #page #content .option-white-text input[type="reset"]:focus,
+#master body #page #content .option-white-text input[type="reset"]:hover,
+#master body #page #content .option-white-text input[type="submit"],
+#master body #page #content .option-white-text input[type="submit"]:active,
+#master body #page #content .option-white-text input[type="submit"]:visited,
+#master body #page #content .option-white-text input[type="submit"]:focus,
+#master body #page #content .option-white-text input[type="submit"]:hover,
+#master body #page #content .option-white-text .button,
+#master body #page #content .option-white-text .button:active,
+#master body #page #content .option-white-text .button:visited,
+#master body #page #content .option-white-text .button:focus,
+#master body #page #content .option-white-text .button:hover,
+#master body .white-border-button,
+#master body .white-border-button:active,
+#master body .white-border-button:visited,
+#master body .white-border-button:focus,
+#master body .white-border-button:hover {
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  padding: 14px 24px;
+  border-radius: 3px;
+  text-transform: none;
+  font-size: 18px;
+  font-size: 1.125rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+#master body #page #content .option-white-text input[type="button"]:after,
+#master body #page #content .option-white-text input[type="reset"]:after,
+#master body #page #content .option-white-text input[type="submit"]:after,
+#master body #page #content .option-white-text .button:after,
+#master body .white-border-button:after {
+  display: none;
+  content: "";
+}
+
+#master body #page #content .option-white-text input[type="button"]:hover,
+#master body #page #content .option-white-text input[type="reset"]:hover,
+#master body #page #content .option-white-text input[type="submit"]:hover,
+#master body #page #content .option-white-text .button:hover,
+#master body .white-border-button:hover {
+  text-decoration: underline;
+}
+
+#master body #page #content .option-white-text input[type="button"]:hover:after,
+#master body #page #content .option-white-text input[type="reset"]:hover:after,
+#master body #page #content .option-white-text input[type="submit"]:hover:after,
+#master body #page #content .option-white-text .button:hover:after,
+#master body .white-border-button:hover:after {
+  text-decoration: none;
+}
+
 /*--------------------------------------------------------------
 ## Fields
 --------------------------------------------------------------*/
@@ -1422,6 +1479,25 @@ button {
   font-weight: normal;
   text-transform: none;
   box-shadow: none;
+}
+
+#master .option-white-text input[type="text"],
+#master .option-white-text input[type="email"],
+#master .option-white-text input[type="url"],
+#master .option-white-text input[type="password"],
+#master .option-white-text input[type="search"],
+#master .option-white-text input[type="number"],
+#master .option-white-text input[type="tel"],
+#master .option-white-text input[type="range"],
+#master .option-white-text input[type="date"],
+#master .option-white-text input[type="month"],
+#master .option-white-text input[type="week"],
+#master .option-white-text input[type="time"],
+#master .option-white-text input[type="datetime"],
+#master .option-white-text input[type="datetime-local"],
+#master .option-white-text input[type="color"],
+#master .option-white-text textarea {
+  border-color: #ffffff;
 }
 
 #master select,
