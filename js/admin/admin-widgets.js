@@ -56,6 +56,38 @@
 		temp.parentNode.removeChild( temp );
 	}
 
+	window.widgetPanelSubTitleRefresh = function( el ) {
+		var $this  = $( el );
+		var text   = $this.find( 'option:selected' ).text();
+		var $title = $this.parent().parent().prev( '.widget-panel-title' );
+
+		if ( $title.length ) {
+			$title.find( '.widget-panel-sub-title' ).text( text );
+		}
+	}
+
+	window.widgetPanelTitleRefresh = function( $container ) {
+		var $title = $container.find( '.widget-panel-title' );
+
+		$title.each(
+			function() {
+				var $this     = $( this );
+				var $subTitle = $this.find( '.widget-panel-sub-title' );
+				var $first    = $this.next().find( 'select[name]:first' );
+
+				if ( $first.length ) {
+					$first.attr( 'onchange', 'widgetPanelSubTitleRefresh( this ); return false;' );
+					var $selected = $first.find( 'option:selected' );
+
+					if ( $selected.length ) {
+						var text = $selected.text();
+						$subTitle.text( text );
+					}
+				}
+			}
+		);
+	}
+
 	window.widgetPanelMoveRefresh = function( $container ) {
 		var $move = $container.find( '.panel-move' );
 		$move.removeClass( 'panel-move-hide' );
