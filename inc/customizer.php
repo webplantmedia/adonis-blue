@@ -83,6 +83,40 @@ function crimson_rose_customize_register( $wp_customize ) {
 		)
 	);
 
+	$setting_id = 'display_site_title';
+	$wp_customize->add_setting(
+		$setting_id, array(
+			'default'           => $crimson_rose_default[ $setting_id ],
+			'transport'         => 'refresh',
+			'sanitize_callback' => 'crimson_rose_sanitize_checkbox',
+		)
+	);
+
+	$wp_customize->add_control(
+		$setting_id, array(
+			'type'     => 'checkbox',
+			'label'    => __( 'Display Site Title', 'crimson-rose' ),
+			'section'  => $section_id,
+		)
+	);
+
+	$setting_id = 'display_site_tagline';
+	$wp_customize->add_setting(
+		$setting_id, array(
+			'default'           => $crimson_rose_default[ $setting_id ],
+			'transport'         => 'refresh',
+			'sanitize_callback' => 'crimson_rose_sanitize_checkbox',
+		)
+	);
+
+	$wp_customize->add_control(
+		$setting_id, array(
+			'type'     => 'checkbox',
+			'label'    => __( 'Display Site Tagline', 'crimson-rose' ),
+			'section'  => $section_id,
+		)
+	);
+	
 	$setting_id = 'heading_padding_top';
 	$wp_customize->add_setting(
 		$setting_id, array(

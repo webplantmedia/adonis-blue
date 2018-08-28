@@ -36,6 +36,24 @@ function crimson_rose_custom_css() {
 ';
 	}
 
+	if ( ! $brimstone['display_site_title'] ) {
+		$css .= '
+.site-branding .site-title {
+	position: absolute;
+	clip: rect(1px, 1px, 1px, 1px);
+}
+';
+	}
+
+	if ( ! $brimstone['display_site_tagline'] ) {
+		$css .= '
+.site-branding .site-description {
+	position: absolute;
+	clip: rect(1px, 1px, 1px, 1px);
+}
+';
+	}
+
 	$css .= '
 .entry-content a:visited,
 .entry-content a:focus,

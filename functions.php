@@ -106,7 +106,7 @@ if ( ! function_exists( 'crimson_rose_setup' ) ) :
 				'width'       => 400,
 				'flex-width'  => true,
 				'flex-height' => true,
-				'header-text' => array( 'site-title', 'site-description' ),
+				// 'header-text' => array( 'site-title', 'site-description' ),
 			)
 		);
 
