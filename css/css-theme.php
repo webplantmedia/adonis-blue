@@ -1,6 +1,6 @@
 <?php
 /**
- * Generated CSS
+ * Generated CSS.
  *
  * @package WordPress
  * @subpackage Crimson_Rose
@@ -27,7 +27,7 @@ function crimson_rose_custom_css() {
 	// A default has to be specified in style.css. It will not be printed here.
 	$color = get_background_color();
 
-	if ( $color !== get_theme_support( 'custom-background', 'default-color' ) ) {
+	if ( get_theme_support( 'custom-background', 'default-color' ) !== $color ) {
 		$css .= '
 #master .page.has-post-thumbnail .site-content .content-area,
 #master .page.has-post-thumbnail .site-content .site-boundary {
@@ -36,7 +36,7 @@ function crimson_rose_custom_css() {
 ';
 	}
 
-	if ( ! $brimstone['display_site_title'] ) {
+	if ( ! $crimson_rose['display_site_title'] ) {
 		$css .= '
 .site-branding .site-title {
 	position: absolute;
@@ -45,7 +45,7 @@ function crimson_rose_custom_css() {
 ';
 	}
 
-	if ( ! $brimstone['display_site_tagline'] ) {
+	if ( ! $crimson_rose['display_site_tagline'] ) {
 		$css .= '
 .site-branding .site-description {
 	position: absolute;
