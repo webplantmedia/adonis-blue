@@ -43,6 +43,8 @@ $size__menu-collapse-width: 960px;
 $size__site-main-no-sidebar: $size__site-container-no-padding - $size__site-sidebar - $size__site-gutter;
 $size__content-side-spacing: max( (( $size__site-container-no-padding - $size__content-container ) / 2), 80px );
 
+// media query widths
+
 // Typography
 $font__main: 'Lato', sans-serif;
 $font__heading: 'Lato', sans-serif;

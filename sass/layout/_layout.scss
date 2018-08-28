@@ -18,6 +18,8 @@ body {
 	padding-right: 0;
 }
 
+.woocommerce-account .entry-content .woocommerce > h2,
+.woocommerce-account .entry-content .woocommerce > .woocommerce-form-login,
 #master #page .woocommerce-Tabs-panel,
 .comments-area .comments-title,
 .comments-area .comment-list,
@@ -32,12 +34,13 @@ body:not(.single-post) .entry-footer,
 	display: block;
 }
 
+#master body.woocommerce-page,
 #master .display-fullwidth {
 	.site-main,
 	.entry-content {
 		max-width: none;
 	}
-
+	
 	& #master .entry-content > h1 {
 		@include rem('max-width', $size__content-container);
 	}
