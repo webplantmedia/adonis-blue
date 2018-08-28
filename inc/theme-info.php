@@ -26,7 +26,7 @@ $display_version = CRIMSON_ROSE_VERSION;
 				background-size: 80px 80px !important;
 			}
 		</style>
-		
+
 		<h1>
 		<?php
 			/* Translators: this string is the currenty theme version number. */

@@ -21,7 +21,7 @@
 function crimson_rose_ocdi_import_files() {
 	return array(
 		array(
-			'import_file_name'             => 'Full Demo Import',
+			'import_file_name'             => __( 'Full Demo Import', 'crimson-rose' ),
 			'local_import_file'            => trailingslashit( get_template_directory() ) . 'demo/crimson-rose.wordpress.xml',
 			'local_import_widget_file'     => trailingslashit( get_template_directory() ) . 'demo/crimson-rose.widgets.wie',
 			'local_import_customizer_file' => trailingslashit( get_template_directory() ) . 'demo/crimson-rose.customizer.dat',
@@ -47,17 +47,11 @@ function crimson_rose_ocdi_before_widgets_import( $selected_import ) {
 		'sidebar-1',
 	);
 
-	/*
-	 * if ( $selected_import['import_file_name'] == 'Full Demo Import' ) {
-	 *     array_unshift( $clear_sidebars, 'sidebar-1' );
-	 * }
-	 */
-
 	$sidebars_widgets = get_option( 'sidebars_widgets' );
 
 	if ( is_array( $sidebars_widgets ) ) {
 		foreach ( $sidebars_widgets as $sidebar_id => $widgets ) {
-			if ( in_array( $sidebar_id, $clear_sidebars ) ) {
+			if ( in_array( $sidebar_id, $clear_sidebars, true ) ) {
 				if ( is_array( $widgets ) ) {
 					foreach ( $widgets as $key => $widget_id ) {
 						$pieces       = explode( '-', $widget_id );
@@ -86,7 +80,7 @@ add_action( 'pt-ocdi/before_widgets_import', 'crimson_rose_ocdi_before_widgets_i
  * @return void
  */
 function crimson_rose_current_screen( $current_screen ) {
-	if ( 'appearance_page_pt-one-click-demo-import' == $current_screen->base ) {
+	if ( 'appearance_page_pt-one-click-demo-import' === $current_screen->base ) {
 		delete_transient( 'ocdi_importer_data' );
 	}
 }
@@ -181,7 +175,7 @@ function crimson_rose_ocdi_after_import_setup() {
 	// posts or page.
 	$front_page_display = 'page';
 
-	if ( 'posts' == $front_page_display ) {
+	if ( 'posts' === $front_page_display ) {
 		// Assign front page to display posts.
 		update_option( 'show_on_front', 'posts' );
 	} else {

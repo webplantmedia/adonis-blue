@@ -228,14 +228,17 @@ if ( ! function_exists( 'crimson_rose_featured_post_navigation' ) ) :
 			remove_filter( 'get_post_metadata', 'jetpack_featured_images_remove_post_thumbnail', true, 4 );
 		}
 
-		$prev_text = $next_text = '';
+		$prev_text = '';
+		$next_text = '';
 
 		// Previous/next post navigation.
-		if ( $next_post = get_next_post() ) {
+		$next_post = get_next_post();
+		if ( $next_post ) {
 			$next_text .= get_the_post_thumbnail( $next_post->ID, 'thumbnail' );
 		}
 
-		if ( $previous_post = get_previous_post() ) {
+		$previous_post = get_previous_post();
+		if ( $previous_post ) {
 			$prev_text .= get_the_post_thumbnail( $previous_post->ID, 'thumbnail' );
 		}
 
@@ -283,7 +286,8 @@ if ( ! function_exists( 'crimson_rose_parent_post_navigation' ) ) :
 			return;
 		}
 
-		if ( $parent_post = get_post( $parent_post_id ) ) {
+		$parent_post = get_post( $parent_post_id );
+		if ( $parent_post ) {
 			$prev_text .= get_the_post_thumbnail( $parent_post->ID, 'thumbnail' );
 		}
 

@@ -23,6 +23,8 @@ $crimson_rose_default = array();
 
 // Title & Tagline.
 $crimson_rose_default['custom_logo_2x']         = '';
+$crimson_rose_default['display_site_title']     = 1;
+$crimson_rose_default['display_site_tagline']   = 1;
 $crimson_rose_default['heading_padding_top']    = '50';
 $crimson_rose_default['heading_padding_bottom'] = '50';
 
@@ -81,25 +83,25 @@ $crimson_rose_default['shop_hide_breadcrumbs']         = 0;
 $crimson_rose_default['shop_hide_stars']               = 0;
 $crimson_rose_default['shop_hide_result_count']        = 0;
 $crimson_rose_default['shop_hide_catalog_ordering']    = 0;
+$crimson_rose_default['shop_truncate_titles']          = 1;
 $crimson_rose_default['shop_product_hide_stars']       = 0;
 $crimson_rose_default['shop_product_hide_meta']        = 0;
 $crimson_rose_default['shop_disable_gallery_zoom']     = 0;
 $crimson_rose_default['shop_disable_gallery_lightbox'] = 0;
 $crimson_rose_default['shop_disable_gallery_slider']   = 0;
-$crimson_rose_default['shop_truncate_titles']          = 1;
 
 // Display Sidebar.
 $crimson_rose_default['display_sidebar_blog']         = 1;
 $crimson_rose_default['display_sidebar_post']         = 1;
-$crimson_rose_default['display_sidebar_shop']         = 0;
 $crimson_rose_default['display_sidebar_archive']      = 1;
 $crimson_rose_default['display_sidebar_search']       = 0;
+$crimson_rose_default['display_sidebar_shop']         = 0;
 $crimson_rose_default['display_sidebar_shop_archive'] = 0;
 $crimson_rose_default['display_sidebar_attachment']   = 0;
 
 // Labels.
-$crimson_rose_default['mobile_menu_label'] = esc_html__( 'Menu', 'crimson-rose' );
-$crimson_rose_default['read_more_label']   = esc_html__( 'Continue Reading', 'crimson-rose' );
+$crimson_rose_default['mobile_menu_label'] = __( 'Menu', 'crimson-rose' );
+$crimson_rose_default['read_more_label']   = __( 'Continue Reading', 'crimson-rose' );
 
 // 404 Page.
 $crimson_rose_default['404_custom_page']   = 0;

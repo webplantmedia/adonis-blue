@@ -138,8 +138,8 @@ function crimson_rose_social_links_icons() {
 		'twitter.com'     => 'twitter-alt',
 		'vimeo.com'       => 'vimeo',
 		'whatsapp.com'    => 'whatsapp',
-		'wordpress.org'   => 'wordpress',
-		'wordpress.com'   => 'wordpress',
+		'wordpress.org'   => 'wordpress', /* WPCS: XSS OK. Is a class name. */
+		'wordpress.com'   => 'wordpress', /* WPCS: XSS OK. Is a class name. */
 		'xanga.com'       => 'xanga',
 		'youtube.com'     => 'youtube',
 	);

@@ -187,7 +187,7 @@ add_filter( 'the_excerpt', 'crimson_rose_read_more_link' );
 function crimson_rose_read_more_text() {
 	global $crimson_rose;
 
-	if ( 'post' != get_post_type() ) {
+	if ( 'post' !== get_post_type() ) {
 		return '';
 	}
 
@@ -256,7 +256,7 @@ function crimson_rose_the_content( $output ) {
 
 	$post_type = get_post_type();
 
-	if ( 'post' != $post_type && 'page' != $post_type && 'product' != $post_type ) {
+	if ( 'post' !== $post_type && 'page' !== $post_type && 'product' !== $post_type ) {
 		return $output;
 	}
 
@@ -291,7 +291,7 @@ add_filter( 'excerpt_length', 'crimson_rose_custom_excerpt_length', 999 );
 function crimson_rose_get_the_archive_title( $title ) {
 	$pieces = explode( ': ', $title );
 
-	if ( sizeof( $pieces ) == 2 ) {
+	if ( 2 === count( $pieces ) ) {
 		$title = '<span class="archive-type">' . implode( '</span><span class="archive-title">', $pieces ) . '</span>';
 	} else {
 		$title = '<span class="archive-type">' . $title . '</span>';

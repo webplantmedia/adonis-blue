@@ -153,7 +153,7 @@ remove_filter( 'get_the_author_description', 'wpautop' );
  * @return string
  */
 function crimson_rose_jetpack_sharing_headline_html( $html, $label, $type ) {
-	if ( is_single() && 'post' === get_post_type() && 'sharing' == $type ) {
+	if ( is_single() && 'post' === get_post_type() && 'sharing' === $type ) {
 		$html .= crimson_rose_get_comment_display( $label );
 	}
 
@@ -178,7 +178,7 @@ function crimson_rose_get_comment_display( $label ) {
 
 		$num_comments = intval( get_comments_number() ); /* get_comments_number returns only a numeric value. */
 
-		if ( $num_comments == 0 ) {
+		if ( 0 === $num_comments ) {
 			$comments = esc_html__( 'leave a Comment', 'crimson-rose' );
 		} elseif ( $num_comments > 1 ) {
 			$comments = $num_comments . esc_html__( ' Comments', 'crimson-rose' );

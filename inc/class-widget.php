@@ -59,7 +59,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 		global $wpdb; /* get access to the WordPress database object variable. */
 
 		if ( ! isset( $_POST['_wpnonce'] ) || ! wp_verify_nonce( sanitize_key( $_POST['_wpnonce'] ), 'crimson-rose-admin-post-select' ) ) {
-			die( 'Security check' );
+			die( __( 'Security check', 'crimson-rose' ) );
 		}
 
 		// get names of all businesses.
@@ -96,7 +96,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 		}
 
 		if ( empty( $titles ) ) {
-			$titles[0]['label'] = 'No results found in post type "' . $post_type . '."';
+			$titles[0]['label'] = sprintf( __( 'No results found in post type "%s".', 'crimson-rose' ), $post_type );
 			$titles[0]['value'] = '0';
 		}
 
@@ -451,6 +451,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 
 							widgetPanelRepeaterButtons( $('<?php echo esc_attr( $selector ); ?>') );
 							widgetPanelMoveRefresh( $('<?php echo esc_attr( $selector ); ?>') );
+							widgetPanelTitleRefresh( $('<?php echo esc_attr( $selector ); ?>') );
 						});
 					} )( jQuery );
 					/* ]]> */
@@ -545,7 +546,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 	public function display_before_panel( $title ) {
 		?>
 		<div class="widget-panel">
-			<h3 class="widget-panel-title"><?php echo esc_html( $title ); ?></h3>
+			<h3 class="widget-panel-title"><?php echo esc_html( $title ); ?>:&nbsp;<span class="widget-panel-sub-title"></span></h3>
 			<div class="widget-panel-body">
 		<?php
 	}
@@ -614,7 +615,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 					<label for="<?php echo esc_attr( $field_id ); ?>"><?php echo esc_html( $setting['label'] ); ?></label>
 					<input class="widefat" id="<?php echo esc_attr( $field_id ); ?>" name="<?php echo esc_attr( $field_name ); ?>" type="text" value="<?php echo esc_attr( $value ); ?>" />
 					<?php if ( isset( $setting['description'] ) ) : ?>
-						<span class="description"><?php echo esc_html( $setting['description'] ); ?></span>
+						<span class="description"><?php echo $setting['description']; /* WPCS: XSS OK. HTML output */ ?></span>
 					<?php endif; ?>
 				</p>
 				<?php
@@ -650,7 +651,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 					<a href="#" style="display:inline-block;margin:5px 0 0 3px;<?php echo esc_attr( $a_style ); ?>" class="image-sel-remove" onclick="imageWidget.remove( this ); return false;"><?php esc_html_e( 'Remove', 'crimson-rose' ); ?></a>
 				</div>
 				<?php if ( isset( $setting['description'] ) ) : ?>
-					<span class="description"><?php echo esc_html( $setting['description'] ); ?></span>
+					<span class="description"><?php echo $setting['description']; /* WPCS: XSS OK. HTML output */ ?></span>
 				<?php endif; ?>
 			<?php
 				break;
@@ -663,7 +664,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 						<?php echo esc_html( $setting['label'] ); ?>
 					</label>
 					<?php if ( isset( $setting['description'] ) ) : ?>
-						<span class="description"><?php echo esc_html( $setting['description'] ); ?></span>
+						<span class="description"><?php echo $setting['description']; /* WPCS: XSS OK. HTML output */ ?></span>
 					<?php endif; ?>
 				</p>
 				<?php
@@ -691,7 +692,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 						</label>
 					<?php endforeach; ?>
 					<?php if ( isset( $setting['description'] ) ) : ?>
-						<span class="description"><?php echo esc_html( $setting['description'] ); ?></span>
+						<span class="description"><?php echo $setting['description']; /* WPCS: XSS OK. HTML output */ ?></span>
 					<?php endif; ?>
 				</p>
 				<?php
@@ -707,7 +708,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 						<?php endforeach; ?>
 					</select>
 					<?php if ( isset( $setting['description'] ) ) : ?>
-						<span class="description"><?php echo esc_html( $setting['description'] ); ?></span>
+						<span class="description"><?php echo $setting['description']; /* WPCS: XSS OK. HTML output */ ?></span>
 					<?php endif; ?>
 				</p>
 				<?php
@@ -725,7 +726,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 						<?php endforeach; ?>
 					</select>
 					<?php if ( isset( $setting['description'] ) ) : ?>
-						<span class="description"><?php echo esc_html( $setting['description'] ); ?></span>
+						<span class="description"><?php echo $setting['description']; /* WPCS: XSS OK. HTML output */ ?></span>
 					<?php endif; ?>
 				</p>
 				<?php
@@ -742,7 +743,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 					<?php $nonce = wp_create_nonce( 'crimson-rose-admin-post-select' ); ?>
 					<input class="widefat post-autocomplete-select" id="<?php echo esc_attr( $field_id ); ?>" data-autocomplete-type="multi" data-autocomplete-taxonomy="" data-autocomplete-nonce="<?php echo esc_attr( $nonce ); ?>" data-autocomplete-lookup="post" data-autocomplete-post-type="<?php echo esc_attr( $post_type ); ?>" name="<?php echo esc_attr( $field_name ); ?>" type="text" value="<?php echo esc_attr( $value ); ?>" />
 					<?php if ( isset( $setting['description'] ) ) : ?>
-						<span class="description"><?php echo esc_html( $setting['description'] ); ?></span>
+						<span class="description"><?php echo $setting['description']; /* WPCS: XSS OK. HTML output */ ?></span>
 					<?php endif; ?>
 				</p>
 				<script type="text/javascript">
@@ -771,7 +772,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 					?>
 					<input class="widefat" id="<?php echo esc_attr( $field_id ); ?>" name="<?php echo esc_attr( $field_name ); ?>" type="number" step="<?php echo esc_attr( $setting['step'] ); ?>" value="<?php echo esc_attr( $value ); ?>" <?php echo $min_attr . $max_attr; /* WPCS: XSS OK. Escaped above. */ ?>/>
 					<?php if ( isset( $setting['description'] ) ) : ?>
-						<span class="description"><?php echo esc_html( $setting['description'] ); ?></span>
+						<span class="description"><?php echo $setting['description']; /* WPCS: XSS OK. HTML output */ ?></span>
 					<?php endif; ?>
 				</p>
 				<?php
@@ -784,7 +785,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 					<?php $rows = isset( $setting['rows'] ) ? $setting['rows'] : 3; ?>
 					<textarea class="widefat" id="<?php echo esc_attr( $field_id ); ?>" name="<?php echo esc_attr( $field_name ); ?>" rows="<?php echo esc_attr( $rows ); ?>"><?php echo esc_html( $value ); ?></textarea>
 					<?php if ( isset( $setting['description'] ) ) : ?>
-						<span class="description"><?php echo esc_html( $setting['description'] ); ?></span>
+						<span class="description"><?php echo $setting['description']; /* WPCS: XSS OK. HTML output */ ?></span>
 					<?php endif; ?>
 				</p>
 				<?php
@@ -814,7 +815,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 					</script>
 				</div>
 				<?php if ( isset( $setting['description'] ) ) : ?>
-					<span class="description"><?php echo esc_html( $setting['description'] ); ?></span>
+					<span class="description"><?php echo $setting['description']; /* WPCS: XSS OK. HTML output */ ?></span>
 				<?php endif; ?>
 				<p></p>
 				<?php
@@ -1038,13 +1039,13 @@ class Crimson_Rose_Widget extends WP_Widget {
 	public function get_background_size( $value ) {
 		switch ( $value ) {
 			case 'stretch':
-				$value = esc_html( '100% 100%', 'crimson-rose' );
+				$value = esc_html__( '100% 100%', 'crimson-rose' );
 				break;
 			case 'fit-width':
-				$value = esc_html( '100% auto', 'crimson-rose' );
+				$value = esc_html__( '100% auto', 'crimson-rose' );
 				break;
 			case 'fit-height':
-				$value = esc_html( 'auto 100%', 'crimson-rose' );
+				$value = esc_html__( 'auto 100%', 'crimson-rose' );
 				break;
 		}
 
