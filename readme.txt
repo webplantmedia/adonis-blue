@@ -135,6 +135,12 @@ Source: https://www.pexels.com/photo/adult-cold-face-fashion-370013/
 
 == Changelog ==
 
+= 2.26 =
+
+* Bug fixes and code clean up
+* White button support for content widgets
+* Added new content slider widget.
+
 = 2.25 =
 
 * Fixed bug with Jetpack infinite sroll.
