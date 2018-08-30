@@ -147,6 +147,8 @@ add_action( 'after_setup_theme', 'crimson_rose_setup' );
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
+ * Priority 0 to make it available to lower priority callbacks.
+ *
  * @since Crimson_Rose 1.01
  *
  * @global int $content_width
@@ -429,7 +431,7 @@ function crimson_rose_display_header() {
 function crimson_rose_display_sidebar() {
 	global $crimson_rose;
 
-	if ( is_single() && 'post' == get_post_type() ) {
+	if ( is_single() && 'post' === get_post_type() ) {
 		if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 			return false;
 		}
@@ -618,7 +620,7 @@ function crimson_rose_display_header_image() {
 function crimson_rose_get_page_template_in_loop() {
 	$page_template = get_page_template_slug( get_the_ID() );
 
-	if ( 'templates/media-post.php' == $page_template ) {
+	if ( 'templates/media-post.php' === $page_template ) {
 		return 'media';
 	}
 

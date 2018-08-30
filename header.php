@@ -87,7 +87,7 @@
 		<header class="archive-page-header">
 			<div class="site-boundary">
 				<h1 class="page-title">
-					<span class="archive-type"><?php esc_html_e( 'Search Results for:', 'crimson-rose' ); ?></span>
+					<span class="archive-type"><?php echo esc_html__( 'Search Results for:', 'crimson-rose' ); ?></span>
 					<span class="archive-title"><?php echo get_search_query(); ?></span>
 				</h1>
 			</div>
