@@ -296,25 +296,26 @@ class Crimson_Rose_Content_Widget_Jetpack_Testimonials extends Crimson_Rose_Widg
 							break;
 					}
 
-					$temp     .= '<div class="testimonial-entry-signature">';
-						$temp .= $icon . '<span class="testimonial-signature">' . get_the_title() . '</span>';
-					$temp     .= '</div>';
+					$temp .= '<div class="testimonial-entry-signature">';
+					$temp .= $icon . '<span class="testimonial-signature">' . get_the_title() . '</span>';
+					$temp .= '</div>';
 				}
-						$temp .= '</div><!-- close .testimonial-entry-content-wrapper -->';
-					$temp     .= '</div><!-- close .testimonial-entry -->';
 
-					if ( get_edit_post_link( $post_id ) ) {
-						$temp         .= '<footer class="entry-footer">';
-							$temp     .= '<div class="entry-footer-meta"><span class="edit-link">';
-								$temp .= sprintf(
-									'<a class="post-edit-link" href="%1$s">%2$s <span class="screen-reader-text">%3$s</span></a>',
-									esc_url( get_edit_post_link( $post_id ) ),
-									esc_html__( 'Edit', 'crimson-rose' ),
-									get_the_title()
-								);
-							$temp     .= '</span></div>';
-						$temp         .= '</footer><!-- .entry-footer -->';
-					}
+				$temp .= '</div><!-- close .testimonial-entry-content-wrapper -->';
+				$temp .= '</div><!-- close .testimonial-entry -->';
+
+				if ( get_edit_post_link( $post_id ) ) {
+					$temp         .= '<footer class="entry-footer">';
+						$temp     .= '<div class="entry-footer-meta"><span class="edit-link">';
+							$temp .= sprintf(
+								'<a class="post-edit-link" href="%1$s">%2$s <span class="screen-reader-text">%3$s</span></a>',
+								esc_url( get_edit_post_link( $post_id ) ),
+								esc_html__( 'Edit', 'crimson-rose' ),
+								get_the_title()
+							);
+						$temp     .= '</span></div>';
+					$temp         .= '</footer><!-- .entry-footer -->';
+				}
 
 				$temp .= '</div><!-- close .testimonial-entry-wrapper -->';
 
