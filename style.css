@@ -2586,6 +2586,10 @@ a:hover, a:active {
   margin-right: auto;
 }
 
+#master .wp-block-image .alignfull,
+#master .wp-block-image.alignfull,
+#master .wp-block-image .alignwide,
+#master .wp-block-image.alignwide,
 .alignfull,
 .alignwide {
   margin-top: 2.2em;
