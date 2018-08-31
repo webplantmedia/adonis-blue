@@ -41,6 +41,10 @@
 	@include center-block;
 }
 
+#master .wp-block-image .alignfull,
+#master .wp-block-image.alignfull,
+#master .wp-block-image .alignwide,
+#master .wp-block-image.alignwide,
 .alignfull,
 .alignwide {
 	margin-top: 2.2em;
