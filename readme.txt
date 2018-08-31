@@ -61,18 +61,6 @@ Bundled starter image, Copyright Pixabay
 License: Creative Commons Zero (CC0) license
 Source: https://www.pexels.com/photo/bouquet-of-pink-roses-68570/
 
-Bundled starter image, Copyright Pixabay
-License: Creative Commons Zero (CC0) license
-Source: https://www.pexels.com/photo/beautiful-blank-bloom-blooming-267360/
-
-Bundled starter image, Copyright Pixabay
-License: Creative Commons Zero (CC0) license
-Source: https://www.pexels.com/photo/gray-concrete-pathway-besides-pink-flower-during-day-158028/
-
-Bundled starter image, Copyright Rosie Ann
-License: Creative Commons Zero (CC0) license
-Source: https://www.pexels.com/photo/beautiful-beautiful-flowers-bouquet-color-424670/
-
 Bundled starter image, Copyright Anton Mislawsky
 License: Creative Commons Zero (CC0) license
 Source: https://www.pexels.com/photo/yellow-pink-and-orange-flower-bouquet-226145/
@@ -81,17 +69,9 @@ Bundled starter image, Copyright Pixabay
 License: Creative Commons Zero (CC0) license
 Source: https://www.pexels.com/photo/road-flowers-spring-tree-54630/
 
-Bundled starter image, Copyright Pixabay
-License: Creative Commons Zero (CC0) license
-Source: https://www.pexels.com/photo/anniversary-basket-beautiful-blooming-415490/
-
 Bundled starter image, Copyright rawpixels.com
 License: Creative Commons Zero (CC0) license
 Source: https://www.pexels.com/photo/arrangement-bloom-blossom-bouquet-395132/
-
-Bundled starter image, Copyright Valeria Boltneva
-License: Creative Commons Zero (CC0) license
-Source: https://www.pexels.com/photo/girl-woman-person-hand-88647/
 
 Bundled starter image, Copyright Ibrahim Asad
 License: Creative Commons Zero (CC0) license
@@ -105,40 +85,17 @@ Bundled starter image, Copyright Pixabay
 License: Creative Commons Zero (CC0) license
 Source: https://www.pexels.com/photo/orange-and-red-flower-36473/
 
-Bundled starter image, Copyright Daria Shevtsova
-License: Creative Commons Zero (CC0) license
-Source: https://www.pexels.com/photo/assorted-flowers-with-brown-wooden-rack-709824/
-
-Bundled starter image, Copyright Pixabay
-License: Creative Commons Zero (CC0) license
-Source: https://www.pexels.com/photo/brown-wooden-door-near-green-plant-outside-the-house-159869/
-
-Bundled starter image, Copyright Konstantin Stupak
-License: Creative Commons Zero (CC0) license
-Source: https://www.pexels.com/photo/green-cruiser-beach-bike-with-yellow-flower-on-basket-190335/
-
-Bundled starter image, Copyright Stefan Stefancik
-License: Creative Commons Zero (CC0) license
-Source: https://www.pexels.com/photo/man-young-happy-smiling-91227/
-
-Bundled starter image, Copyright Thorn Yang
-License: Creative Commons Zero (CC0) license
-Source: https://www.pexels.com/photo/portrait-of-smiling-girl-against-white-background-253758/
-
-Bundled starter image, Copyright Pixabay
-License: Creative Commons Zero (CC0) license
-Source: https://www.pexels.com/photo/adult-attractive-blue-casual-415326/
-
 Bundled starter image, Copyright freestocks.org
 License: Creative Commons Zero (CC0) license
 Source: https://www.pexels.com/photo/adult-cold-face-fashion-370013/
 
 == Changelog ==
 
-= 2.26 =
+= 2.27 =
 
-* Bug fixes and code clean up
-* White button support for content widgets
+* Updated demo content.
+* Bug fixes and code clean up.
+* White button support for content widgets.
 * Added new content slider widget.
 
 = 2.25 =
