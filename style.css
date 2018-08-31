@@ -2541,6 +2541,7 @@ a:hover, a:active {
 # Alignments
 --------------------------------------------------------------*/
 @media (min-width: 600px) {
+  #master .wp-block-image.alignleft,
   .alignleft {
     display: inline;
     float: left;
@@ -2548,6 +2549,7 @@ a:hover, a:active {
     margin-top: .5em;
     margin-bottom: .5em;
   }
+  #master .wp-block-image.alignright,
   .alignright {
     display: inline;
     float: right;
@@ -2558,6 +2560,8 @@ a:hover, a:active {
 }
 
 @media (max-width: 599px) {
+  #master .wp-block-image.alignright,
+  #master .wp-block-image.alignleft,
   .alignright,
   .alignleft {
     display: block;
@@ -2569,6 +2573,7 @@ a:hover, a:active {
   }
 }
 
+#master .wp-block-image.aligncenter,
 .aligncenter {
   clear: both;
   display: block;
@@ -2585,6 +2590,11 @@ a:hover, a:active {
 .entry-content > .alignfull {
   margin-left: -20px;
   margin-right: -20px;
+}
+
+.entry-content > .alignfull,
+.entry-content > .alignwide {
+  max-width: none;
 }
 
 @media only screen and (min-width: 700px) {
