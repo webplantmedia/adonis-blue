@@ -369,7 +369,8 @@ Jetpack styling
   font-size: 0.875rem;
 }
 
-#master .jetpack-video-wrapper {
+#master .excerpt-media .jetpack-video-wrapper,
+#master .excerpt2-media .jetpack-video-wrapper {
   margin: 0;
 }
 
