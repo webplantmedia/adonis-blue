@@ -327,7 +327,7 @@ function crimson_rose_scripts() {
 	wp_enqueue_style( 'social-logos', get_parent_theme_file_uri() . '/fonts/social-logos/social-logos.css', array(), CRIMSON_ROSE_VERSION );
 
 	// Add theme stylesheet.
-	wp_enqueue_style( 'crimson-rose-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'crimson-rose-style', get_stylesheet_uri(), array(), CRIMSON_ROSE_VERSION );
 
 	// Add bxslider style.
 	wp_enqueue_style( 'bx2slider', get_parent_theme_file_uri() . '/inc/vendors/bx2slider/css/jquery.bx2slider.css', array(), CRIMSON_ROSE_VERSION );
