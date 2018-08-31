@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Crimson Rose 2.27\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/crimson-rose\n"
-"POT-Creation-Date: 2018-08-31 21:16:42+00:00\n"
+"POT-Creation-Date: 2018-08-31 21:52:46+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1723,7 +1723,7 @@ msgstr ""
 #: inc/widgets/jetpack-testimonials.php:420
 msgid ""
 "Your Testimonial Archive currently has no entries. You can start creating "
-"them on your dashboard."
+"them in your dashboard."
 msgstr ""
 
 #: inc/widgets/slider.php:32
