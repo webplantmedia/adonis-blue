@@ -91,6 +91,10 @@ Source: https://www.pexels.com/photo/adult-cold-face-fashion-370013/
 
 == Changelog ==
 
+= 2.28 =
+
+* Fixed style bug with jetpack video wrapper.
+
 = 2.27 =
 
 * Updated demo content.
