@@ -1,4 +1,5 @@
 @media (min-width: 600px) {
+	#master .wp-block-image.alignleft,
 	.alignleft {
 		display: inline;
 		float: left;
@@ -7,6 +8,7 @@
 		margin-bottom: .5em;
 	}
 
+	#master .wp-block-image.alignright,
 	.alignright {
 		display: inline;
 		float: right;
@@ -17,6 +19,8 @@
 }
 
 @media (max-width: 599px) {
+	#master .wp-block-image.alignright,
+	#master .wp-block-image.alignleft,
 	.alignright,
 	.alignleft {
 		display: block;
@@ -26,6 +30,7 @@
 	}
 }
 
+#master .wp-block-image.aligncenter,
 .aligncenter {
 	clear: both;
 	@include center-block;
@@ -44,6 +49,8 @@
 
 .entry-content > .alignfull,
 .entry-content > .alignwide {
+	max-width: none;
+
 	@media only screen and (min-width: 700px) {
 		margin-left: -40px;
 		margin-right: -40px;
