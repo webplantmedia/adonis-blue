@@ -77,6 +77,7 @@ $crimson_rose_default['jetpack_scroll_credit']    = sprintf( esc_html__( 'Site c
 $crimson_rose_default['shop_columns']                  = 2;
 $crimson_rose_default['shop_archive_columns']          = 3;
 $crimson_rose_default['shop_related_products_columns'] = 2;
+$crimson_rose_default['shop_products_per_page']        = 12;
 $crimson_rose_default['shop_image_backdrop']           = 0;
 $crimson_rose_default['shop_hide_title']               = 1;
 $crimson_rose_default['shop_hide_breadcrumbs']         = 0;

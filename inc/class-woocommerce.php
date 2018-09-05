@@ -129,9 +129,9 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 		 * @return int
 		 */
 		public function loop_shop_per_page( $cols ) {
-			$cols = 12;
+			global $crimson_rose;
 
-			return $cols;
+			return $crimson_rose['shop_products_per_page'];
 		}
 
 		/**

@@ -782,6 +782,23 @@ function crimson_rose_customize_register( $wp_customize ) {
 		)
 	);
 
+	$setting_id = 'shop_products_per_page';
+	$wp_customize->add_setting(
+		$setting_id, array(
+			'default'           => $crimson_rose_default[ $setting_id ],
+			'transport'         => 'refresh',
+			'sanitize_callback' => 'absint',
+		)
+	);
+
+	$wp_customize->add_control(
+		$setting_id, array(
+			'type'    => 'number',
+			'label'   => esc_html__( 'Products Per Page', 'crimson-rose' ),
+			'section' => $section_id,
+		)
+	);
+
 	$setting_id = 'shop_image_backdrop';
 	$wp_customize->add_setting(
 		$setting_id, array(
