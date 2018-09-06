@@ -91,6 +91,12 @@ Source: https://www.pexels.com/photo/adult-cold-face-fashion-370013/
 
 ## Changelog ##
 
+### 2.29 ###
+
+* Added Customizer shop option for products per page.
+* Added Customizer options for shop images sizes.
+* Added image size option to WooCommerce products widget.
+
 ### 2.28 ###
 
 * Fixed style bug with jetpack video wrapper.
