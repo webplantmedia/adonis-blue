@@ -24,6 +24,15 @@ if ( ! crimson_rose_is_woocommerce_activated() ) {
  */
 class Crimson_Rose_Content_Widget_WooCommerce_Products extends Crimson_Rose_Widget {
 	/**
+	 * Call image size from any member function.
+	 *
+	 * @since Crimson_Rose 1.01
+	 *
+	 * @var string
+	 */
+	private $image_size = 'woocommerce_single';
+
+	/**
 	 * __construct
 	 *
 	 * @since Crimson_Rose 1.01
@@ -60,6 +69,16 @@ class Crimson_Rose_Content_Widget_WooCommerce_Products extends Crimson_Rose_Widg
 					'4' => esc_html__( '4', 'crimson-rose' ),
 				),
 				'sanitize' => 'text',
+			),
+			'image_size'        => array(
+				'type'     => 'select',
+				'std'      => 'woocommerce_single',
+				'label'    => esc_html__( 'Image Size:', 'crimson-rose' ),
+				'options'  => array(
+					'woocommerce_thumbnail' => esc_html__( 'Thumbnail', 'crimson-rose' ),
+					'woocommerce_single'    => esc_html__( 'Main Image', 'crimson-rose' ),
+				),
+				'sanitize' => 'woocommerce_image_sizes',
 			),
 			'orderby'        => array(
 				'type'     => 'select',
@@ -183,6 +202,8 @@ class Crimson_Rose_Content_Widget_WooCommerce_Products extends Crimson_Rose_Widg
 		$testimonial_style = array();
 		$classes[]         = 'content-woocommerce-products';
 
+		$this->image_size = $o['image_size'];
+
 		if ( ! empty( $o['margin_bottom'] ) ) {
 			$style[] = 'margin-bottom:' . $o['margin_bottom'] . 'px;';
 		}
@@ -244,12 +265,28 @@ class Crimson_Rose_Content_Widget_WooCommerce_Products extends Crimson_Rose_Widg
 				<?php if ( ! crimson_rose_is_woocommerce_activated() ) : ?>
 					<p><center><em><?php echo esc_html__( 'Activate WooCommerce and begin adding products.', 'crimson-rose' ); ?></em></center></p>
 				<?php else : ?>
+					<?php add_filter( 'single_product_archive_thumbnail_size', array( $this, 'single_product_archive_thumbnail_size' ), 10, 1 ); ?>
+
 					<?php echo do_shortcode( $shortcode ); ?>
+
+					<?php remove_filter( 'single_product_archive_thumbnail_size', array( $this, 'single_product_archive_thumbnail_size' ), 10 ); ?>
 				<?php endif; ?>
 			</div><!-- .content-woocommerce-products -->
 
 		<?php echo $args['after_widget']; /* WPCS: XSS OK. HTML output. */ ?>
 		<?php
+	}
+
+	/**
+	 * Return WooCommerce image size.
+	 *
+	 * @since Crimson_Rose 1.01
+	 *
+	 * @param string $size
+	 * @return string
+	 */
+	public function single_product_archive_thumbnail_size( $size ) {
+		return $this->image_size;
 	}
 
 	/**

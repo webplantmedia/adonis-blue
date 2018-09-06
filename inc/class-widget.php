@@ -340,6 +340,10 @@ class Crimson_Rose_Widget extends WP_Widget {
 				$value = $this->sanitize_background_size( $new_value );
 				break;
 
+			case 'woocommerce_image_sizes':
+				$value = $this->sanitize_woocommerce_image_sizes( $new_value );
+				break;
+
 			case 'ids':
 			case 'post_ids':
 				$value = $this->sanitize_ids( $new_value );
@@ -1008,6 +1012,22 @@ class Crimson_Rose_Widget extends WP_Widget {
 		}
 
 		return '';
+	}
+
+	/**
+	 * Sanitize the WooCommerce image sizes.
+	 *
+	 * @since Crimson_Rose 1.01
+	 *
+	 * @param string $input
+	 * @return string
+	 */
+	public function sanitize_woocommerce_image_sizes( $input ) {
+		if ( 'woocommerce_single' === $input ) {
+			return 'woocommerce_single';
+		}
+
+		return 'woocommerce_thumbnail';
 	}
 
 	/**
