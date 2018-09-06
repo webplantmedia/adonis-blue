@@ -798,7 +798,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 			'section' => $section_id,
 			'choices' => array(
 				'woocommerce_thumbnail' => esc_html__( 'Thumbnail', 'crimson-rose' ),
-				'woocommerce_single' => esc_html__( 'Main Image', 'crimson-rose' ),
+				'woocommerce_single'    => esc_html__( 'Main Image', 'crimson-rose' ),
 			),
 		)
 	);
@@ -819,7 +819,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 			'section' => $section_id,
 			'choices' => array(
 				'woocommerce_thumbnail' => esc_html__( 'Thumbnail', 'crimson-rose' ),
-				'woocommerce_single' => esc_html__( 'Main Image', 'crimson-rose' ),
+				'woocommerce_single'    => esc_html__( 'Main Image', 'crimson-rose' ),
 			),
 		)
 	);
@@ -840,7 +840,7 @@ function crimson_rose_customize_register( $wp_customize ) {
 			'section' => $section_id,
 			'choices' => array(
 				'woocommerce_thumbnail' => esc_html__( 'Thumbnail', 'crimson-rose' ),
-				'woocommerce_single' => esc_html__( 'Main Image', 'crimson-rose' ),
+				'woocommerce_single'    => esc_html__( 'Main Image', 'crimson-rose' ),
 			),
 		)
 	);
