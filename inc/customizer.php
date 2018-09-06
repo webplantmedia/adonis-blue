@@ -782,6 +782,69 @@ function crimson_rose_customize_register( $wp_customize ) {
 		)
 	);
 
+	$setting_id = 'shop_image_size';
+	$wp_customize->add_setting(
+		$setting_id, array(
+			'default'           => $crimson_rose_default[ $setting_id ],
+			'transport'         => 'refresh',
+			'sanitize_callback' => 'crimson_rose_sanitize_woocommerce_image_sizes',
+		)
+	);
+
+	$wp_customize->add_control(
+		$setting_id, array(
+			'type'    => 'select',
+			'label'   => esc_html__( 'Shop Image Size', 'crimson-rose' ),
+			'section' => $section_id,
+			'choices' => array(
+				'woocommerce_thumbnail' => esc_html__( 'Thumbnail', 'crimson-rose' ),
+				'woocommerce_single' => esc_html__( 'Main Image', 'crimson-rose' ),
+			),
+		)
+	);
+
+	$setting_id = 'shop_archive_image_size';
+	$wp_customize->add_setting(
+		$setting_id, array(
+			'default'           => $crimson_rose_default[ $setting_id ],
+			'transport'         => 'refresh',
+			'sanitize_callback' => 'crimson_rose_sanitize_woocommerce_image_sizes',
+		)
+	);
+
+	$wp_customize->add_control(
+		$setting_id, array(
+			'type'    => 'select',
+			'label'   => esc_html__( 'Shop Archive Image Size', 'crimson-rose' ),
+			'section' => $section_id,
+			'choices' => array(
+				'woocommerce_thumbnail' => esc_html__( 'Thumbnail', 'crimson-rose' ),
+				'woocommerce_single' => esc_html__( 'Main Image', 'crimson-rose' ),
+			),
+		)
+	);
+
+	$setting_id = 'shop_related_products_image_size';
+	$wp_customize->add_setting(
+		$setting_id, array(
+			'default'           => $crimson_rose_default[ $setting_id ],
+			'transport'         => 'refresh',
+			'sanitize_callback' => 'crimson_rose_sanitize_woocommerce_image_sizes',
+		)
+	);
+
+	$wp_customize->add_control(
+		$setting_id, array(
+			'type'    => 'select',
+			'label'   => esc_html__( 'Related Products Image Size', 'crimson-rose' ),
+			'section' => $section_id,
+			'choices' => array(
+				'woocommerce_thumbnail' => esc_html__( 'Thumbnail', 'crimson-rose' ),
+				'woocommerce_single' => esc_html__( 'Main Image', 'crimson-rose' ),
+			),
+		)
+	);
+
 	$setting_id = 'shop_products_per_page';
 	$wp_customize->add_setting(
 		$setting_id, array(
@@ -1375,4 +1438,20 @@ function crimson_rose_sanitize_checkbox( $input ) {
 	}
 
 	return 0;
+}
+
+/**
+ * Sanitize the WooCommerce image sizes.
+ *
+ * @since Crimson_Rose 1.01
+ *
+ * @param string $input
+ * @return string
+ */
+function crimson_rose_sanitize_woocommerce_image_sizes( $input ) {
+	if ( 'woocommerce_single' === $input ) {
+		return 'woocommerce_single';
+	}
+
+	return 'woocommerce_thumbnail';
 }

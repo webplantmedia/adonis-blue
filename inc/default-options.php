@@ -74,22 +74,25 @@ $crimson_rose_default['jetpack_hide_share_count'] = 0;
 $crimson_rose_default['jetpack_scroll_credit']    = sprintf( esc_html__( 'Site crafted with', 'crimson-rose' ) . ' <i class="genericons-neue genericons-neue-heart"></i> ' . esc_html__( 'by', 'crimson-rose' ) . ' <a href="https://webplantmedia.com/">' . esc_html__( 'Web Plant Media', 'crimson-rose' ) . '</a>' );
 
 // Shop.
-$crimson_rose_default['shop_columns']                  = 2;
-$crimson_rose_default['shop_archive_columns']          = 3;
-$crimson_rose_default['shop_related_products_columns'] = 2;
-$crimson_rose_default['shop_products_per_page']        = 12;
-$crimson_rose_default['shop_image_backdrop']           = 0;
-$crimson_rose_default['shop_hide_title']               = 1;
-$crimson_rose_default['shop_hide_breadcrumbs']         = 0;
-$crimson_rose_default['shop_hide_stars']               = 0;
-$crimson_rose_default['shop_hide_result_count']        = 0;
-$crimson_rose_default['shop_hide_catalog_ordering']    = 0;
-$crimson_rose_default['shop_truncate_titles']          = 1;
-$crimson_rose_default['shop_product_hide_stars']       = 0;
-$crimson_rose_default['shop_product_hide_meta']        = 0;
-$crimson_rose_default['shop_disable_gallery_zoom']     = 0;
-$crimson_rose_default['shop_disable_gallery_lightbox'] = 0;
-$crimson_rose_default['shop_disable_gallery_slider']   = 0;
+$crimson_rose_default['shop_columns']                     = 2;
+$crimson_rose_default['shop_archive_columns']             = 3;
+$crimson_rose_default['shop_related_products_columns']    = 2;
+$crimson_rose_default['shop_image_size']                  = 'woocommerce_single';
+$crimson_rose_default['shop_archive_image_size']          = 'woocommerce_single';
+$crimson_rose_default['shop_related_products_image_size'] = 'woocommerce_single';
+$crimson_rose_default['shop_products_per_page']           = 12;
+$crimson_rose_default['shop_image_backdrop']              = 0;
+$crimson_rose_default['shop_hide_title']                  = 1;
+$crimson_rose_default['shop_hide_breadcrumbs']            = 0;
+$crimson_rose_default['shop_hide_stars']                  = 0;
+$crimson_rose_default['shop_hide_result_count']           = 0;
+$crimson_rose_default['shop_hide_catalog_ordering']       = 0;
+$crimson_rose_default['shop_truncate_titles']             = 1;
+$crimson_rose_default['shop_product_hide_stars']          = 0;
+$crimson_rose_default['shop_product_hide_meta']           = 0;
+$crimson_rose_default['shop_disable_gallery_zoom']        = 0;
+$crimson_rose_default['shop_disable_gallery_lightbox']    = 0;
+$crimson_rose_default['shop_disable_gallery_slider']      = 0;
 
 // Display Sidebar.
 $crimson_rose_default['display_sidebar_blog']         = 1;

@@ -211,25 +211,8 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 		public function check_image_size() {
 			global $crimson_rose;
 
-			if ( is_product_taxonomy() ) {
-				if ( $crimson_rose['shop_archive_columns'] < 5 ) {
-					add_filter( 'single_product_archive_thumbnail_size', array( $this, 'return_shop_single_image_size' ) );
-					add_filter( 'subcategory_archive_thumbnail_size', array( $this, 'return_shop_single_image_size' ) );
-				}
-			} elseif ( is_shop() ) {
-				if ( $crimson_rose['shop_columns'] < 5 ) {
-					add_filter( 'single_product_archive_thumbnail_size', array( $this, 'return_shop_single_image_size' ) );
-					add_filter( 'subcategory_archive_thumbnail_size', array( $this, 'return_shop_single_image_size' ) );
-				}
-			} elseif ( is_product() ) {
-				if ( $crimson_rose['shop_related_products_columns'] < 5 ) {
-					add_filter( 'single_product_archive_thumbnail_size', array( $this, 'return_shop_single_image_size' ) );
-					add_filter( 'subcategory_archive_thumbnail_size', array( $this, 'return_shop_single_image_size' ) );
-				}
-			} else {
-				add_filter( 'single_product_archive_thumbnail_size', array( $this, 'return_shop_single_image_size' ) );
-				add_filter( 'subcategory_archive_thumbnail_size', array( $this, 'return_shop_single_image_size' ) );
-			}
+			add_filter( 'single_product_archive_thumbnail_size', array( $this, 'single_product_archive_thumbnail_size' ) );
+			add_filter( 'subcategory_archive_thumbnail_size', array( $this, 'single_product_archive_thumbnail_size' ) );
 		}
 
 		/**
@@ -239,8 +222,18 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 		 *
 		 * @return string
 		 */
-		public function return_shop_single_image_size() {
-			return 'shop_single';
+		public function single_product_archive_thumbnail_size() {
+			global $crimson_rose;
+
+			if ( is_product_taxonomy() ) {
+				return $crimson_rose['shop_archive_image_size'];
+			}
+			else if ( is_shop() ) {
+				return $crimson_rose['shop_image_size'];
+			}
+			else if ( is_product() ) {
+				return $crimson_rose['shop_related_products_image_size'];
+			}
 		}
 
 		/**
