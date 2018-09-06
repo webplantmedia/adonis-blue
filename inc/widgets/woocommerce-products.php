@@ -70,7 +70,7 @@ class Crimson_Rose_Content_Widget_WooCommerce_Products extends Crimson_Rose_Widg
 				),
 				'sanitize' => 'text',
 			),
-			'image_size'        => array(
+			'image_size'     => array(
 				'type'     => 'select',
 				'std'      => 'woocommerce_single',
 				'label'    => esc_html__( 'Image Size:', 'crimson-rose' ),

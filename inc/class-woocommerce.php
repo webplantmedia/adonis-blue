@@ -227,11 +227,9 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 
 			if ( is_product_taxonomy() ) {
 				return $crimson_rose['shop_archive_image_size'];
-			}
-			else if ( is_shop() ) {
+			} elseif ( is_shop() ) {
 				return $crimson_rose['shop_image_size'];
-			}
-			else if ( is_product() ) {
+			} elseif ( is_product() ) {
 				return $crimson_rose['shop_related_products_image_size'];
 			}
 
