@@ -91,6 +91,10 @@ Source: https://www.pexels.com/photo/adult-cold-face-fashion-370013/
 
 ## Changelog ##
 
+### 2.30 ###
+
+* Updated demo files.
+
 ### 2.29 ###
 
 * Added Customizer shop option for products per page.
