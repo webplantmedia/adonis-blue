@@ -751,6 +751,8 @@ function crimson_rose_customize_register( $wp_customize ) {
 				2 => esc_html__( '2', 'crimson-rose' ),
 				3 => esc_html__( '3', 'crimson-rose' ),
 				4 => esc_html__( '4', 'crimson-rose' ),
+				5 => esc_html__( '5', 'crimson-rose' ),
+				6 => esc_html__( '6', 'crimson-rose' ),
 			),
 		)
 	);
@@ -773,6 +775,8 @@ function crimson_rose_customize_register( $wp_customize ) {
 				2 => esc_html__( '2', 'crimson-rose' ),
 				3 => esc_html__( '3', 'crimson-rose' ),
 				4 => esc_html__( '4', 'crimson-rose' ),
+				5 => esc_html__( '5', 'crimson-rose' ),
+				6 => esc_html__( '6', 'crimson-rose' ),
 			),
 		)
 	);
@@ -795,6 +799,8 @@ function crimson_rose_customize_register( $wp_customize ) {
 				2 => esc_html__( '2', 'crimson-rose' ),
 				3 => esc_html__( '3', 'crimson-rose' ),
 				4 => esc_html__( '4', 'crimson-rose' ),
+				5 => esc_html__( '5', 'crimson-rose' ),
+				6 => esc_html__( '6', 'crimson-rose' ),
 			),
 		)
 	);

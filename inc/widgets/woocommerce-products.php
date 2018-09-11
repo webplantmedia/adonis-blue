@@ -67,6 +67,8 @@ class Crimson_Rose_Content_Widget_WooCommerce_Products extends Crimson_Rose_Widg
 					'2' => esc_html__( '2', 'crimson-rose' ),
 					'3' => esc_html__( '3', 'crimson-rose' ),
 					'4' => esc_html__( '4', 'crimson-rose' ),
+					'5' => esc_html__( '5', 'crimson-rose' ),
+					'6' => esc_html__( '6', 'crimson-rose' ),
 				),
 				'sanitize' => 'text',
 			),
