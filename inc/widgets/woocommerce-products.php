@@ -264,15 +264,12 @@ class Crimson_Rose_Content_Widget_WooCommerce_Products extends Crimson_Rose_Widg
 					<?php echo $args['before_title'] . esc_html( $o['title'] ) . $args['after_title']; /* WPCS: XSS OK. HTML output. */ ?>
 				<?php endif; ?>
 
-				<?php if ( ! crimson_rose_is_woocommerce_activated() ) : ?>
-					<p><center><em><?php echo esc_html__( 'Activate WooCommerce and begin adding products.', 'crimson-rose' ); ?></em></center></p>
-				<?php else : ?>
-					<?php add_filter( 'single_product_archive_thumbnail_size', array( $this, 'single_product_archive_thumbnail_size' ), 10, 1 ); ?>
+				<?php add_filter( 'single_product_archive_thumbnail_size', array( $this, 'single_product_archive_thumbnail_size' ), 10, 1 ); ?>
 
-					<?php echo do_shortcode( $shortcode ); ?>
+				<?php echo do_shortcode( $shortcode ); ?>
 
-					<?php remove_filter( 'single_product_archive_thumbnail_size', array( $this, 'single_product_archive_thumbnail_size' ), 10 ); ?>
-				<?php endif; ?>
+				<?php remove_filter( 'single_product_archive_thumbnail_size', array( $this, 'single_product_archive_thumbnail_size' ), 10 ); ?>
+
 			</div><!-- .content-woocommerce-products -->
 
 		<?php echo $args['after_widget']; /* WPCS: XSS OK. HTML output. */ ?>
