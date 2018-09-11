@@ -59,6 +59,9 @@
 				<?php crimson_rose_mobile_menu_button(); ?>
 
 				<?php get_template_part( 'template-parts/menu', 'mobile-cart' ); ?>
+
+				<?php get_template_part( 'template-parts/menu', 'mobile-search' ); ?>
+
 				<nav class="main-menu in-menu-bar">
 					<?php
 						wp_nav_menu(
@@ -71,6 +74,8 @@
 				</nav>
 
 				<?php get_template_part( 'template-parts/menu', 'cart' ); ?>
+
+				<?php get_template_part( 'template-parts/menu', 'search' ); ?>
 
 				<?php get_template_part( 'template-parts/menu', 'mobile' ); ?>
 			</div><!-- .site-boundary -->

@@ -628,6 +628,19 @@ function crimson_rose_get_page_template_in_loop() {
 }
 
 /**
+ * Check if search form should be in main menu bar.
+ *
+ * @since Crimson_Rose 1.01
+ *
+ * @return bool
+ */
+function crimson_rose_is_menu_search_activated() {
+	global $crimson_rose;
+
+	return $crimson_rose['show_menu_search'] ? true : false;
+}
+
+/**
  * Query WooCommerce activation
  *
  * @since Crimson_Rose 1.01

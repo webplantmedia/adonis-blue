@@ -428,6 +428,23 @@ function crimson_rose_customize_register( $wp_customize ) {
 		)
 	);
 
+	$setting_id = 'show_menu_search';
+	$wp_customize->add_setting(
+		$setting_id, array(
+			'default'           => $crimson_rose_default[ $setting_id ],
+			'transport'         => 'refresh',
+			'sanitize_callback' => 'crimson_rose_sanitize_checkbox',
+		)
+	);
+
+	$wp_customize->add_control(
+		$setting_id, array(
+			'type'    => 'checkbox',
+			'label'   => esc_html__( 'Show Menu Search Button', 'crimson-rose' ),
+			'section' => $section_id,
+		)
+	);
+
 	$setting_id = 'default_button_style';
 	$wp_customize->add_setting(
 		$setting_id, array(

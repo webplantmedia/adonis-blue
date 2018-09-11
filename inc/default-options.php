@@ -53,6 +53,7 @@ $crimson_rose_default['top_header_background_offset'] = 460;
 
 // Menu.
 $crimson_rose_default['show_menu_arrows'] = 1;
+$crimson_rose_default['show_menu_search'] = 0;
 
 // Site.
 $crimson_rose_default['default_button_style']     = 'button-2';

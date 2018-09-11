@@ -12,7 +12,7 @@
  */
 
 ( function($) {
-	var container, button, menu, links, i, lenn, menuParent;
+	var container, button, menu, links, i, lenn, $menuParent;
 
 	container = document.getElementById( 'site-navigation' );
 	if ( ! container ) {
@@ -49,23 +49,59 @@
 		}
 	};
 
-	var menuParent = $( container ).find( '.menu-item-has-children > a, .page_item_has_children > a' );
+	var $menuParent = $( container ).find( '.menu-item-has-children > a, .page_item_has_children > a' );
 
 	var menuToggleButton = $( container ).find( '.menu-toggle' );
 
-	$( menuParent ).click(
+	$menuParent.click(
 		function( event ) {
 			if ( ! $( menuToggleButton ).is( ':visible' ) ) {
 				return;
 			}
 
-				$parent = $( this ).parent();
+			$parent = $( this ).parent();
+
 			if ( ! $parent.hasClass( 'focus' ) ) {
 				$parent.toggleClass( 'focus' );
 				return false;
 			}
 		}
 	);
+
+	/**
+	 * Toggles search form in menu.
+	 */
+	var $searchButton = $( container ).find( '.menu-search-button' );
+
+	if ( $searchButton.length ) {
+		var $searchMenu = $searchButton.find( '.menu-search-link' );
+
+		var $searchField = $searchButton.find( '.search-field' );
+
+		var $searchIcon = $searchMenu.find( '.genericons-neue' );
+
+		$searchMenu.click(
+			function( event ) {
+				event.preventDefault();
+
+				if ( $searchButton.hasClass( 'focus' ) ) {
+					$searchButton.removeClass( 'focus' );
+				}
+				else {
+					$searchButton.addClass( 'focus' );
+					$searchField.focus();
+				}
+
+				return false;
+			}
+		);
+
+		$( document ).click( function( e ) {
+			if ( ! $searchButton.is( e.target ) && $searchButton.has( e.target ).length === 0) {
+				$searchButton.removeClass( 'focus' );
+			}
+		} );
+	}
 
 	/**
 	 * Toggles `focus` class to allow submenu access on tablets.
