@@ -1192,6 +1192,51 @@ WooCommerce styling
   #master .woocommerce-shop-image-backdrop.woocommerce-shop-columns-3 ul.products li.product .woocommerce-product-image-wrapper {
     padding: 40px 40px 0 40px;
   }
+  #master .woocommerce ul.products.columns-5 li.product,
+  #master .woocommerce-page ul.products.columns-5 li.product,
+  #master .woocommerce ul.products.columns-6 li.product,
+  #master .woocommerce-page ul.products.columns-6 li.product {
+    margin-right: 2%;
+    margin-bottom: 2%;
+  }
+  #master .woocommerce ul.products.columns-5 li.product .woocommerce-loop-product__link,
+  #master .woocommerce-page ul.products.columns-5 li.product .woocommerce-loop-product__link,
+  #master .woocommerce ul.products.columns-6 li.product .woocommerce-loop-product__link,
+  #master .woocommerce-page ul.products.columns-6 li.product .woocommerce-loop-product__link {
+    display: block;
+  }
+  #master .woocommerce ul.products.columns-5 li.product .woocommerce-loop-product__title,
+  #master .woocommerce ul.products.columns-5 li.product .price,
+  #master .woocommerce ul.products.columns-5 li.product .star-rating,
+  #master .woocommerce ul.products.columns-5 li.product .button,
+  #master .woocommerce-page ul.products.columns-5 li.product .woocommerce-loop-product__title,
+  #master .woocommerce-page ul.products.columns-5 li.product .price,
+  #master .woocommerce-page ul.products.columns-5 li.product .star-rating,
+  #master .woocommerce-page ul.products.columns-5 li.product .button,
+  #master .woocommerce ul.products.columns-6 li.product .woocommerce-loop-product__title,
+  #master .woocommerce ul.products.columns-6 li.product .price,
+  #master .woocommerce ul.products.columns-6 li.product .star-rating,
+  #master .woocommerce ul.products.columns-6 li.product .button,
+  #master .woocommerce-page ul.products.columns-6 li.product .woocommerce-loop-product__title,
+  #master .woocommerce-page ul.products.columns-6 li.product .price,
+  #master .woocommerce-page ul.products.columns-6 li.product .star-rating,
+  #master .woocommerce-page ul.products.columns-6 li.product .button {
+    display: none;
+  }
+  #master .woocommerce ul.products.columns-5 li.product.last,
+  #master .woocommerce-page ul.products.columns-5 li.product.last,
+  #master .woocommerce ul.products.columns-6 li.product.last,
+  #master .woocommerce-page ul.products.columns-6 li.product.last {
+    margin-right: 0;
+  }
+  #master .woocommerce-page ul.products.columns-6 li.product,
+  #master .woocommerce ul.products.columns-6 li.product {
+    width: 15%;
+  }
+  #master .woocommerce-page ul.products.columns-5 li.product,
+  #master .woocommerce ul.products.columns-5 li.product {
+    width: 18%;
+  }
 }
 
 @media screen and (max-width: 768px) {
