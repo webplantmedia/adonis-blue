@@ -2323,6 +2323,93 @@ a:hover, a:active {
 }
 
 /*--------------------------------------------------------------
+## Menu Search
+--------------------------------------------------------------*/
+#master .menu-search ul.menu {
+  float: left;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
+  text-align: left;
+}
+
+#master .menu-search ul.menu li.menu-search-button {
+  position: relative;
+  padding-left: 10px;
+  padding-left: 0.625rem;
+  padding-right: 10px;
+  padding-right: 0.625rem;
+}
+
+#master .menu-search ul.menu li.menu-search-button a.menu-search-link {
+  position: relative;
+  padding: 0;
+  text-decoration: none;
+  display: block;
+}
+
+#master .menu-search ul.menu li.menu-search-button a.menu-search-link:hover {
+  color: #333333;
+}
+
+#master .menu-search ul.menu li.menu-search-button i,
+#master .menu-search ul.menu li.menu-search-button i:before {
+  font-size: 23px;
+  font-size: 1.4375rem;
+  line-height: 52px;
+  line-height: 3.25rem;
+}
+
+#master .menu-search ul.menu li.menu-search-button .menu-search-form-container {
+  width: 260px;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  border-top: 2px solid #bab8b9;
+  border-bottom: 2px solid #ececec;
+  float: left;
+  list-style: none;
+  vertical-align: top;
+  text-align: left;
+  position: absolute;
+  left: -999em;
+  top: 100%;
+  z-index: 99998;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.08);
+}
+
+#master .menu-search ul.menu li.menu-search-button .menu-search-form-container .search-field {
+  padding: 14px;
+  border-width: 0;
+}
+
+#master .menu-search ul.menu li.menu-search-button.focus .menu-search-form-container {
+  left: auto;
+  right: 0;
+}
+
+#master .mobile-search-navigation {
+  display: none;
+  border-bottom: 2px solid #ececec;
+}
+
+#master .mobile-search-navigation .search-field {
+  border-width: 0;
+  padding-left: 20px;
+  padding-left: 1.25rem;
+}
+
+@media screen and (max-width: 960px) {
+  #site-navigation .menu-search {
+    display: none;
+  }
+  #site-navigation.toggled .mobile-search-navigation {
+    display: block;
+  }
+}
+
+/*--------------------------------------------------------------
 ## Top Menus
 --------------------------------------------------------------*/
 .top-header .top-left-header {
