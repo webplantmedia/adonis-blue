@@ -40,6 +40,10 @@
 .aligncenter {
 	clear: both;
 	@include center-block;
+
+	img[class*="wp-image-"] {
+		@include center-block;
+	}
 }
 
 #master .wp-block-image .alignfull,
