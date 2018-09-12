@@ -156,6 +156,29 @@ class Crimson_Rose_Content_Widget_WooCommerce_Products extends Crimson_Rose_Widg
 				'description' => esc_html__( 'Products that are marked as Featured Products.', 'crimson-rose' ),
 				'sanitize'    => 'checkbox',
 			),
+			'button_text'   => array(
+				'type'     => 'text',
+				'std'      => esc_html__( 'Shop All', 'crimson-rose' ),
+				'label'    => esc_html__( 'Button Text:', 'crimson-rose' ),
+				'sanitize' => 'text',
+			),
+			'button_link'   => array(
+				'type'     => 'text',
+				'std'      => '',
+				'label'    => esc_html__( 'Button Link:', 'crimson-rose' ),
+				'sanitize' => 'url',
+			),
+			'button_style'  => array(
+				'type'     => 'select',
+				'std'      => 'button-2',
+				'label'    => esc_html__( 'Button Style:', 'crimson-rose' ),
+				'options'  => array(
+					'default'  => esc_html__( 'Default Button', 'crimson-rose' ),
+					'button-1' => esc_html__( 'Image Button 1', 'crimson-rose' ),
+					'button-2' => esc_html__( 'Image Button 2', 'crimson-rose' ),
+				),
+				'sanitize' => 'text',
+			),
 			'padding_top'    => array(
 				'type'     => 'number',
 				'std'      => 40,
@@ -269,6 +292,25 @@ class Crimson_Rose_Content_Widget_WooCommerce_Products extends Crimson_Rose_Widg
 				<?php echo do_shortcode( $shortcode ); ?>
 
 				<?php remove_filter( 'single_product_archive_thumbnail_size', array( $this, 'single_product_archive_thumbnail_size' ), 10 ); ?>
+
+				<?php if ( '' !== $o['button_text'] ) : ?>
+					<?php
+					switch ( $o['button_style'] ) {
+						case 'button-1':
+							$button_class = ' fancy-button';
+							break;
+						case 'button-2':
+							$button_class = ' fancy2-button';
+							break;
+						default:
+							$button_class = '';
+							break;
+					}
+					?>
+					<p class="button-wrapper">
+						<a class="button<?php echo esc_attr( $button_class ); ?>" href="<?php echo esc_url( $o['button_link'] ); ?>"><?php echo $o['button_text']; /* WPCS: XSS OK. HTML output. */ ?></a>
+					</p>
+				<?php endif; ?>
 
 			</div><!-- .content-woocommerce-products -->
 
