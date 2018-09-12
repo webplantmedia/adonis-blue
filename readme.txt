@@ -91,6 +91,13 @@ Source: https://www.pexels.com/photo/adult-cold-face-fashion-370013/
 
 == Changelog ==
 
+= 2.31 =
+
+* Added menu search button.
+* Added support for 5 and 6 columns for WooCommerce products.
+* Removed extra plugin check in widgets.
+* Added button option to WooCommerce Product Widget.
+
 = 2.30 =
 
 * Updated demo files.
