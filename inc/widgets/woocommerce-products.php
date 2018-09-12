@@ -158,7 +158,7 @@ class Crimson_Rose_Content_Widget_WooCommerce_Products extends Crimson_Rose_Widg
 			),
 			'button_text'   => array(
 				'type'     => 'text',
-				'std'      => esc_html__( 'Shop All', 'crimson-rose' ),
+				'std'      => '',
 				'label'    => esc_html__( 'Button Text:', 'crimson-rose' ),
 				'sanitize' => 'text',
 			),
