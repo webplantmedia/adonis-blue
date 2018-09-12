@@ -2674,6 +2674,14 @@ a:hover, a:active {
   margin-right: auto;
 }
 
+#master .wp-block-image .aligncenter img[class*="wp-image-"],
+#master .wp-block-image.aligncenter img[class*="wp-image-"],
+.aligncenter img[class*="wp-image-"] {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 #master .wp-block-image .alignfull,
 #master .wp-block-image.alignfull,
 #master .wp-block-image .alignwide,
