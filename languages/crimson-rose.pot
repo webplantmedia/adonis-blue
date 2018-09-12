@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Crimson Rose 2.30\n"
+"Project-Id-Version: Crimson Rose 2.31\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/crimson-rose\n"
-"POT-Creation-Date: 2018-09-07 16:02:59+00:00\n"
+"POT-Creation-Date: 2018-09-12 13:34:23+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -56,17 +56,17 @@ msgstr[1] ""
 msgid "Comments are closed."
 msgstr ""
 
-#: footer.php:89 inc/default-options.php:74
+#: footer.php:89 inc/default-options.php:75
 msgid "Site crafted with"
 msgstr ""
 
-#: footer.php:89 inc/default-options.php:74
+#: footer.php:89 inc/default-options.php:75
 msgid "by"
 msgstr ""
 
-#. #-#-#-#-#  crimson-rose.pot (Crimson Rose 2.30)  #-#-#-#-#
+#. #-#-#-#-#  crimson-rose.pot (Crimson Rose 2.31)  #-#-#-#-#
 #. Author of the plugin/theme
-#: footer.php:89 inc/default-options.php:74 inc/theme-info.php:38
+#: footer.php:89 inc/default-options.php:75 inc/theme-info.php:38
 #: inc/theme-info.php:39
 msgid "Web Plant Media"
 msgstr ""
@@ -126,7 +126,7 @@ msgstr ""
 msgid "Add Instagram widget here."
 msgstr ""
 
-#. #-#-#-#-#  crimson-rose.pot (Crimson Rose 2.30)  #-#-#-#-#
+#. #-#-#-#-#  crimson-rose.pot (Crimson Rose 2.31)  #-#-#-#-#
 #. Template Name of the plugin/theme
 #: functions.php:261
 msgid "Widgetized Page"
@@ -140,7 +140,7 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:90
+#: header.php:95
 msgid "Search Results for:"
 msgstr ""
 
@@ -358,332 +358,347 @@ msgid "Show Menu Arrows"
 msgstr ""
 
 #: inc/customizer.php:443
+msgid "Show Menu Search Button"
+msgstr ""
+
+#: inc/customizer.php:460
 msgid "Default Button Style"
 msgstr ""
 
-#: inc/customizer.php:444
+#: inc/customizer.php:461
 msgid ""
 "When you insert a link on its own line in the WP Editor, the theme turns it "
 "into a button. Choose the default style of your button to display in your "
 "post and pages."
 msgstr ""
 
-#: inc/customizer.php:447 inc/widgets/blog-posts.php:95
+#: inc/customizer.php:464 inc/widgets/blog-posts.php:95
 #: inc/widgets/callout.php:106 inc/widgets/collage.php:180
-#: inc/widgets/slider.php:180
+#: inc/widgets/slider.php:180 inc/widgets/woocommerce-products.php:176
 msgid "Default Button"
 msgstr ""
 
-#: inc/customizer.php:448
+#: inc/customizer.php:465
 msgid "Button Style 1"
 msgstr ""
 
-#: inc/customizer.php:449
+#: inc/customizer.php:466
 msgid "Button Style 2"
 msgstr ""
 
-#: inc/customizer.php:466
+#: inc/customizer.php:483
 msgid "Disable Body Font"
 msgstr ""
 
-#: inc/customizer.php:467
+#: inc/customizer.php:484
 msgid ""
 "If you are using a Google Font plugin, then you can disable the load of the "
 "body font."
 msgstr ""
 
-#: inc/customizer.php:485
+#: inc/customizer.php:502
 msgid "Disable Accent Font"
 msgstr ""
 
-#: inc/customizer.php:486
+#: inc/customizer.php:503
 msgid ""
 "The accent font is a cursive font used in places such as your archive title. "
 "If you are using a Google Font plugin, then you can disable the load of this "
 "accent font."
 msgstr ""
 
-#: inc/customizer.php:505
+#: inc/customizer.php:522
 msgid "Page Image Header Height"
 msgstr ""
 
-#: inc/customizer.php:506
+#: inc/customizer.php:523
 msgid ""
 "This changes the height of your featured image in your page header area."
 msgstr ""
 
-#: inc/customizer.php:523 inc/customizer.php:1095
+#: inc/customizer.php:540 inc/customizer.php:1118
 msgid "Blog"
 msgstr ""
 
-#: inc/customizer.php:540
+#: inc/customizer.php:557
 msgid "Blog Display"
 msgstr ""
 
-#: inc/customizer.php:543 inc/customizer.php:566 inc/customizer.php:589
+#: inc/customizer.php:560 inc/customizer.php:583 inc/customizer.php:606
 msgid "Lead Excerpt + Grid"
 msgstr ""
 
-#: inc/customizer.php:544 inc/customizer.php:567 inc/customizer.php:590
+#: inc/customizer.php:561 inc/customizer.php:584 inc/customizer.php:607
 msgid "Grid"
 msgstr ""
 
-#: inc/customizer.php:545 inc/customizer.php:568 inc/customizer.php:591
+#: inc/customizer.php:562 inc/customizer.php:585 inc/customizer.php:608
 msgid "Excerpt"
 msgstr ""
 
-#: inc/customizer.php:546 inc/customizer.php:569 inc/customizer.php:592
+#: inc/customizer.php:563 inc/customizer.php:586 inc/customizer.php:609
 msgid "Content"
 msgstr ""
 
-#: inc/customizer.php:563
+#: inc/customizer.php:580
 msgid "Archive Display"
 msgstr ""
 
-#: inc/customizer.php:586
+#: inc/customizer.php:603
 msgid "Search Display"
 msgstr ""
 
-#: inc/customizer.php:610
+#: inc/customizer.php:627
 msgid "Thumb Excerpt Max Height"
 msgstr ""
 
-#: inc/customizer.php:611
+#: inc/customizer.php:628
 msgid ""
 "If you have long featured images in your excerpts, set a max-height on your "
 "image. Enter 0 for no max-height"
 msgstr ""
 
-#: inc/customizer.php:633
+#: inc/customizer.php:650
 msgid "Thumb Grid Max Height"
 msgstr ""
 
-#: inc/customizer.php:634
+#: inc/customizer.php:651
 msgid ""
 "If you have long featured images in your grid, set a max-height on your "
 "image. Enter 0 for no max-height"
 msgstr ""
 
-#: inc/customizer.php:655
+#: inc/customizer.php:672
 msgid "Hide Post Navigation"
 msgstr ""
 
-#: inc/customizer.php:656
+#: inc/customizer.php:673
 msgid "Hide the post navigation buttons at the bottom of each post."
 msgstr ""
 
-#: inc/customizer.php:667
+#: inc/customizer.php:684
 msgid "Jetpack"
 msgstr ""
 
-#: inc/customizer.php:685
+#: inc/customizer.php:702
 msgid "Hide Share Button Count"
 msgstr ""
 
-#: inc/customizer.php:702
+#: inc/customizer.php:719
 msgid "Infinite Scroll Credit Text"
 msgstr ""
 
-#: inc/customizer.php:713 inc/customizer.php:1164
+#: inc/customizer.php:730 inc/customizer.php:1187
 msgid "Shop"
 msgstr ""
 
-#: inc/customizer.php:731
+#: inc/customizer.php:748
 msgid "Shop Columns"
 msgstr ""
 
-#: inc/customizer.php:734 inc/customizer.php:756 inc/customizer.php:778
+#: inc/customizer.php:751 inc/customizer.php:775 inc/customizer.php:799
 #: inc/widgets/jetpack-testimonials.php:69
 #: inc/widgets/woocommerce-products.php:67
 msgid "2"
 msgstr ""
 
-#: inc/customizer.php:735 inc/customizer.php:757 inc/customizer.php:779
+#: inc/customizer.php:752 inc/customizer.php:776 inc/customizer.php:800
 #: inc/widgets/woocommerce-products.php:68
 msgid "3"
 msgstr ""
 
-#: inc/customizer.php:736 inc/customizer.php:758 inc/customizer.php:780
+#: inc/customizer.php:753 inc/customizer.php:777 inc/customizer.php:801
 #: inc/widgets/woocommerce-products.php:69
 msgid "4"
 msgstr ""
 
-#: inc/customizer.php:753
+#: inc/customizer.php:754 inc/customizer.php:778 inc/customizer.php:802
+#: inc/widgets/woocommerce-products.php:70
+msgid "5"
+msgstr ""
+
+#: inc/customizer.php:755 inc/customizer.php:779 inc/customizer.php:803
+#: inc/widgets/woocommerce-products.php:71
+msgid "6"
+msgstr ""
+
+#: inc/customizer.php:772
 msgid "Shop Archive Columns"
 msgstr ""
 
-#: inc/customizer.php:775
+#: inc/customizer.php:796
 msgid "Related Products Columns"
 msgstr ""
 
-#: inc/customizer.php:797
+#: inc/customizer.php:820
 msgid "Shop Image Size"
 msgstr ""
 
-#: inc/customizer.php:800 inc/customizer.php:821 inc/customizer.php:842
-#: inc/widgets/woocommerce-products.php:78
+#: inc/customizer.php:823 inc/customizer.php:844 inc/customizer.php:865
+#: inc/widgets/woocommerce-products.php:80
 msgid "Thumbnail"
 msgstr ""
 
-#: inc/customizer.php:801 inc/customizer.php:822 inc/customizer.php:843
-#: inc/widgets/woocommerce-products.php:79
+#: inc/customizer.php:824 inc/customizer.php:845 inc/customizer.php:866
+#: inc/widgets/woocommerce-products.php:81
 msgid "Main Image"
 msgstr ""
 
-#: inc/customizer.php:818
+#: inc/customizer.php:841
 msgid "Shop Archive Image Size"
 msgstr ""
 
-#: inc/customizer.php:839
+#: inc/customizer.php:862
 msgid "Related Products Image Size"
 msgstr ""
 
-#: inc/customizer.php:860
+#: inc/customizer.php:883
 msgid "Products Per Page"
 msgstr ""
 
-#: inc/customizer.php:877
+#: inc/customizer.php:900
 msgid "Display Product Image Backdrop"
 msgstr ""
 
-#: inc/customizer.php:878
+#: inc/customizer.php:901
 msgid ""
 "Add a light gray backdrop with a dropshadow for your product images. "
 "Visually helpful for images with light colored backgrounds."
 msgstr ""
 
-#: inc/customizer.php:895
+#: inc/customizer.php:918
 msgid "Hide Shop Title From Main Shop Page"
 msgstr ""
 
-#: inc/customizer.php:912
+#: inc/customizer.php:935
 msgid "Hide Breadcrumbs From Shop Page"
 msgstr ""
 
-#: inc/customizer.php:929
+#: inc/customizer.php:952
 msgid "Hide Product Reviews From Shop Page"
 msgstr ""
 
-#: inc/customizer.php:946
+#: inc/customizer.php:969
 msgid "Hide Result Count String From Shop Page"
 msgstr ""
 
-#: inc/customizer.php:963
+#: inc/customizer.php:986
 msgid "Hide Ordering Dropdown From Shop Page"
 msgstr ""
 
-#: inc/customizer.php:980
+#: inc/customizer.php:1003
 msgid "Truncate Product Titles"
 msgstr ""
 
-#: inc/customizer.php:981
+#: inc/customizer.php:1004
 msgid "This will cause product titles to appear in one line."
 msgstr ""
 
-#: inc/customizer.php:998
+#: inc/customizer.php:1021
 msgid "Hide Product Reviews From Product Page"
 msgstr ""
 
-#: inc/customizer.php:1015
+#: inc/customizer.php:1038
 msgid "Hide Product Meta From Product Page"
 msgstr ""
 
-#: inc/customizer.php:1032
+#: inc/customizer.php:1055
 msgid "Disable Gallery Zoom on Product Page"
 msgstr ""
 
-#: inc/customizer.php:1049
+#: inc/customizer.php:1072
 msgid "Disable Gallery Lightbox on Product Page"
 msgstr ""
 
-#: inc/customizer.php:1066
+#: inc/customizer.php:1089
 msgid "Disable Gallery Slider on Product Page"
 msgstr ""
 
-#: inc/customizer.php:1077
+#: inc/customizer.php:1100
 msgid "Display Sidebar"
 msgstr ""
 
-#: inc/customizer.php:1079
+#: inc/customizer.php:1102
 msgid "Check the pages where you want the sidebar to display."
 msgstr ""
 
-#: inc/customizer.php:1112 inc/template-tags.php:294
+#: inc/customizer.php:1135 inc/template-tags.php:294
 msgid "Post"
 msgstr ""
 
-#: inc/customizer.php:1129
+#: inc/customizer.php:1152
 msgid "Archive"
 msgstr ""
 
-#: inc/customizer.php:1146 searchform.php:31
+#: inc/customizer.php:1169 searchform.php:31
+#: template-parts/menu-mobile-search.php:33
 msgid "Search"
 msgstr ""
 
-#: inc/customizer.php:1182
+#: inc/customizer.php:1205
 msgid "Shop Archive"
 msgstr ""
 
-#: inc/customizer.php:1199
+#: inc/customizer.php:1222
 msgid "Attachment Page"
 msgstr ""
 
-#: inc/customizer.php:1210
+#: inc/customizer.php:1233
 msgid "Labels"
 msgstr ""
 
-#: inc/customizer.php:1227
+#: inc/customizer.php:1250
 msgid "Mobile Menu Label"
 msgstr ""
 
-#: inc/customizer.php:1244
+#: inc/customizer.php:1267
 msgid "Read More Label"
 msgstr ""
 
-#: inc/customizer.php:1255
+#: inc/customizer.php:1278
 msgid "404 Error Page"
 msgstr ""
 
-#: inc/customizer.php:1271
+#: inc/customizer.php:1294
 msgid "Select 404 Page"
 msgstr ""
 
-#: inc/customizer.php:1272
+#: inc/customizer.php:1295
 msgid "Set the page's featured image for the background image to display."
 msgstr ""
 
-#: inc/customizer.php:1291
+#: inc/customizer.php:1314
 msgid "Page Cover Opacity"
 msgstr ""
 
-#: inc/customizer.php:1292
+#: inc/customizer.php:1315
 msgid "Set opacity for 404 Page Cover's featured image."
 msgstr ""
 
-#: inc/customizer.php:1315
+#: inc/customizer.php:1338
 msgid "Page Cover Color"
 msgstr ""
 
-#: inc/customizer.php:1333
+#: inc/customizer.php:1356
 msgid "Display White Text"
 msgstr ""
 
-#: inc/customizer.php:1345
+#: inc/customizer.php:1368
 msgid "Fonts"
 msgstr ""
 
-#: inc/customizer.php:1365
+#: inc/customizer.php:1388
 msgid "Font Customization"
 msgstr ""
 
 #. Translators: this string is a link to a self hosted WordPress plugin.
-#: inc/customizer.php:1368
+#: inc/customizer.php:1391
 msgid ""
 "To easily change the font styles for your theme, please download our %s "
 "plugin."
 msgstr ""
 
-#: inc/customizer.php:1369
+#: inc/customizer.php:1392
 msgid "Designer Fonts"
 msgstr ""
 
@@ -766,11 +781,11 @@ msgstr ""
 msgid "Theme Add-ons"
 msgstr ""
 
-#: inc/default-options.php:107
+#: inc/default-options.php:108
 msgid "Menu"
 msgstr ""
 
-#: inc/default-options.php:108
+#: inc/default-options.php:109
 msgid "Continue Reading"
 msgstr ""
 
@@ -1306,11 +1321,11 @@ msgstr ""
 msgid "Title:"
 msgstr ""
 
-#: inc/widgets/blog-posts.php:44 inc/widgets/woocommerce-products.php:102
+#: inc/widgets/blog-posts.php:44 inc/widgets/woocommerce-products.php:104
 msgid "Post ID's:"
 msgstr ""
 
-#: inc/widgets/blog-posts.php:50 inc/widgets/woocommerce-products.php:115
+#: inc/widgets/blog-posts.php:50 inc/widgets/woocommerce-products.php:117
 msgid "Category:"
 msgstr ""
 
@@ -1341,32 +1356,36 @@ msgstr ""
 
 #: inc/widgets/blog-posts.php:81 inc/widgets/callout.php:92
 #: inc/widgets/collage.php:166 inc/widgets/slider.php:166
+#: inc/widgets/woocommerce-products.php:162
 msgid "Button Text:"
 msgstr ""
 
-#: inc/widgets/blog-posts.php:87
+#: inc/widgets/blog-posts.php:87 inc/widgets/woocommerce-products.php:168
 msgid "Button Link:"
 msgstr ""
 
 #: inc/widgets/blog-posts.php:93 inc/widgets/callout.php:104
 #: inc/widgets/collage.php:178 inc/widgets/slider.php:178
+#: inc/widgets/woocommerce-products.php:174
 msgid "Button Style:"
 msgstr ""
 
 #: inc/widgets/blog-posts.php:96 inc/widgets/callout.php:107
 #: inc/widgets/collage.php:181 inc/widgets/slider.php:181
+#: inc/widgets/woocommerce-products.php:177
 msgid "Image Button 1"
 msgstr ""
 
 #: inc/widgets/blog-posts.php:97 inc/widgets/callout.php:108
 #: inc/widgets/collage.php:182 inc/widgets/slider.php:182
+#: inc/widgets/woocommerce-products.php:178
 msgid "Image Button 2"
 msgstr ""
 
 #: inc/widgets/blog-posts.php:107 inc/widgets/callout.php:146
 #: inc/widgets/collage.php:98 inc/widgets/jetpack-testimonials.php:147
 #: inc/widgets/slider.php:98 inc/widgets/static-content.php:93
-#: inc/widgets/woocommerce-products.php:181
+#: inc/widgets/woocommerce-products.php:206
 msgid "Bottom margin of widget:"
 msgstr ""
 
@@ -1475,12 +1494,12 @@ msgid "Border"
 msgstr ""
 
 #: inc/widgets/callout.php:128 inc/widgets/jetpack-testimonials.php:129
-#: inc/widgets/static-content.php:75 inc/widgets/woocommerce-products.php:163
+#: inc/widgets/static-content.php:75 inc/widgets/woocommerce-products.php:188
 msgid "Top padding of widget:"
 msgstr ""
 
 #: inc/widgets/callout.php:137 inc/widgets/jetpack-testimonials.php:138
-#: inc/widgets/static-content.php:84 inc/widgets/woocommerce-products.php:172
+#: inc/widgets/static-content.php:84 inc/widgets/woocommerce-products.php:197
 msgid "Bottom padding of widget:"
 msgstr ""
 
@@ -1700,32 +1719,32 @@ msgid "Set to zero to display all."
 msgstr ""
 
 #: inc/widgets/jetpack-testimonials.php:85
-#: inc/widgets/woocommerce-products.php:122
+#: inc/widgets/woocommerce-products.php:124
 msgid "Order:"
 msgstr ""
 
 #: inc/widgets/jetpack-testimonials.php:87
-#: inc/widgets/woocommerce-products.php:124
+#: inc/widgets/woocommerce-products.php:126
 msgid "ASC"
 msgstr ""
 
 #: inc/widgets/jetpack-testimonials.php:88
-#: inc/widgets/woocommerce-products.php:125
+#: inc/widgets/woocommerce-products.php:127
 msgid "DESC"
 msgstr ""
 
 #: inc/widgets/jetpack-testimonials.php:95
-#: inc/widgets/woocommerce-products.php:86
+#: inc/widgets/woocommerce-products.php:88
 msgid "Order By:"
 msgstr ""
 
 #: inc/widgets/jetpack-testimonials.php:97
-#: inc/widgets/woocommerce-products.php:89
+#: inc/widgets/woocommerce-products.php:91
 msgid "Date"
 msgstr ""
 
 #: inc/widgets/jetpack-testimonials.php:98
-#: inc/widgets/woocommerce-products.php:88
+#: inc/widgets/woocommerce-products.php:90
 msgid "Title"
 msgstr ""
 
@@ -1734,7 +1753,7 @@ msgid "Author"
 msgstr ""
 
 #: inc/widgets/jetpack-testimonials.php:100
-#: inc/widgets/woocommerce-products.php:93
+#: inc/widgets/woocommerce-products.php:95
 msgid "Random"
 msgstr ""
 
@@ -1742,11 +1761,7 @@ msgstr ""
 msgid "Height of testimonials:"
 msgstr ""
 
-#: inc/widgets/jetpack-testimonials.php:418
-msgid "Activate Jetpack and enable testimonials."
-msgstr ""
-
-#: inc/widgets/jetpack-testimonials.php:420
+#: inc/widgets/jetpack-testimonials.php:417
 msgid ""
 "Your Testimonial Archive currently has no entries. You can start creating "
 "them in your dashboard."
@@ -1855,91 +1870,94 @@ msgstr ""
 msgid "The number of products to display. Defaults to display all (-1)"
 msgstr ""
 
-#: inc/widgets/woocommerce-products.php:76
+#: inc/widgets/woocommerce-products.php:78
 msgid "Image Size:"
 msgstr ""
 
-#: inc/widgets/woocommerce-products.php:90
+#: inc/widgets/woocommerce-products.php:92
 msgid "ID"
 msgstr ""
 
-#: inc/widgets/woocommerce-products.php:91
+#: inc/widgets/woocommerce-products.php:93
 msgid "Menu Order"
 msgstr ""
 
-#: inc/widgets/woocommerce-products.php:92
+#: inc/widgets/woocommerce-products.php:94
 msgid "Popularity"
 msgstr ""
 
-#: inc/widgets/woocommerce-products.php:94
+#: inc/widgets/woocommerce-products.php:96
 msgid "Rating"
 msgstr ""
 
-#: inc/widgets/woocommerce-products.php:108
+#: inc/widgets/woocommerce-products.php:110
 msgid "Skus:"
 msgstr ""
 
-#: inc/widgets/woocommerce-products.php:109
+#: inc/widgets/woocommerce-products.php:111
 msgid "Comma separated list of product SKUs."
 msgstr ""
 
-#: inc/widgets/woocommerce-products.php:116
+#: inc/widgets/woocommerce-products.php:118
 msgid "Comma separated list of category slugs."
 msgstr ""
 
-#: inc/widgets/woocommerce-products.php:132
+#: inc/widgets/woocommerce-products.php:134
 msgid "On Sale:"
 msgstr ""
 
-#: inc/widgets/woocommerce-products.php:133
+#: inc/widgets/woocommerce-products.php:135
 msgid ""
 "Retrieve on sale products. Not to be used in conjunction with best_selling "
 "or top_rated."
 msgstr ""
 
-#: inc/widgets/woocommerce-products.php:139
+#: inc/widgets/woocommerce-products.php:141
 msgid "Best Selling:"
 msgstr ""
 
-#: inc/widgets/woocommerce-products.php:140
+#: inc/widgets/woocommerce-products.php:142
 msgid ""
 "Retrieve best selling products. Not to be used in conjunction with on_sale "
 "or top_rated."
 msgstr ""
 
-#: inc/widgets/woocommerce-products.php:146
+#: inc/widgets/woocommerce-products.php:148
 msgid "Top Rated:"
 msgstr ""
 
-#: inc/widgets/woocommerce-products.php:147
+#: inc/widgets/woocommerce-products.php:149
 msgid ""
 "Retrieve top rated products. Not to be used in conjunction with on_sale or "
 "best_selling."
 msgstr ""
 
-#: inc/widgets/woocommerce-products.php:153
+#: inc/widgets/woocommerce-products.php:155
 msgid "Featured:"
 msgstr ""
 
-#: inc/widgets/woocommerce-products.php:154
+#: inc/widgets/woocommerce-products.php:156
 msgid "Products that are marked as Featured Products."
 msgstr ""
 
-#: inc/widgets/woocommerce-products.php:266
-msgid "Activate WooCommerce and begin adding products."
+#: inc/widgets/woocommerce-products.php:161
+msgid "Shop All"
 msgstr ""
 
 #. Translators: this string is a label for a search input that is only visible
 #. to screen readers.
-#: searchform.php:22
+#: searchform.php:22 template-parts/menu-mobile-search.php:24
+#: template-parts/menu-search.php:30
 msgid "Search for:"
 msgstr ""
 
-#: searchform.php:26
+#: searchform.php:26 template-parts/menu-mobile-search.php:28
+#: template-parts/menu-search.php:34
 msgid "Type keyword"
 msgstr ""
 
-#: searchform.php:26
+#: searchform.php:26 template-parts/menu-mobile-search.php:28
+#: template-parts/menu-search.php:34
 msgid "Press Enter to submit your search"
 msgstr ""
 
