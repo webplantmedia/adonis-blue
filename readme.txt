@@ -91,6 +91,10 @@ Source: https://www.pexels.com/photo/adult-cold-face-fashion-370013/
 
 == Changelog ==
 
+= 2.33 =
+
+* Fixed style bug with center aligned images.
+
 = 2.32 =
 
 * Added menu search button.
