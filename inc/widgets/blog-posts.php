@@ -103,7 +103,6 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Blog_Post' ) ) :
 					'std'      => 80,
 					'step'     => 1,
 					'min'      => 0,
-					'max'      => 300,
 					'label'    => esc_html__( 'Bottom margin of widget:', 'crimson-rose' ),
 					'sanitize' => 'number',
 				),
