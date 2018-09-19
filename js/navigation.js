@@ -86,8 +86,7 @@
 
 				if ( $searchButton.hasClass( 'focus' ) ) {
 					$searchButton.removeClass( 'focus' );
-				}
-				else {
+				} else {
 					$searchButton.addClass( 'focus' );
 					$searchField.focus();
 				}
@@ -96,11 +95,13 @@
 			}
 		);
 
-		$( document ).click( function( e ) {
-			if ( ! $searchButton.is( e.target ) && $searchButton.has( e.target ).length === 0) {
-				$searchButton.removeClass( 'focus' );
+		$( document ).click(
+			function( e ) {
+				if ( ! $searchButton.is( e.target ) && $searchButton.has( e.target ).length === 0) {
+					$searchButton.removeClass( 'focus' );
+				}
 			}
-		} );
+		);
 	}
 
 	/**
