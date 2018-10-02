@@ -469,7 +469,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 					( function( $ ) {
 						"use strict";
 						$(document).ready(function($){
-							$('#widgets-right <?php echo esc_attr( $selector ); ?>').accordion({
+							$('.widget-inside <?php echo esc_attr( $selector ); ?>').accordion({
 								header: '.widget-panel-title',
 								heightStyle: 'content',
 								collapsible: true,
