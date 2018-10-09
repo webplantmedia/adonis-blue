@@ -184,7 +184,7 @@
 			copy = copy.replace( /\[repeater\]\[\d+\]/g,'[repeater][' + nextPanelCount + ']' );
 			copy = copy.replace( /repeater\-\d+\-/g,'repeater-' + nextPanelCount + '-' );
 
-			var $copy = $(copy);
+			var $copy = $( copy );
 
 			$copy.find( '.widget-panel-title' ).removeClass( 'ui-accordion-header-active ui-state-active' );
 			$copy.find( '.widget-panel-body' ).removeClass( 'ui-accordion-content-active' );
@@ -202,7 +202,7 @@
 					var $inputElement = $( this );
 					if ( $inputElement.is( '.wp-color-picker' ) ) {
 						var $wrapper = $inputElement.closest( '.color-picker-wrapper' );
-						var $script = $wrapper.find( 'script' );
+						var $script  = $wrapper.find( 'script' );
 						$wrapper.empty();
 						$wrapper.append( $inputElement );
 						$wrapper.append( $script );

@@ -156,19 +156,19 @@ class Crimson_Rose_Content_Widget_WooCommerce_Products extends Crimson_Rose_Widg
 				'description' => esc_html__( 'Products that are marked as Featured Products.', 'crimson-rose' ),
 				'sanitize'    => 'checkbox',
 			),
-			'button_text'   => array(
+			'button_text'    => array(
 				'type'     => 'text',
 				'std'      => '',
 				'label'    => esc_html__( 'Button Text:', 'crimson-rose' ),
 				'sanitize' => 'text',
 			),
-			'button_link'   => array(
+			'button_link'    => array(
 				'type'     => 'text',
 				'std'      => '',
 				'label'    => esc_html__( 'Button Link:', 'crimson-rose' ),
 				'sanitize' => 'url',
 			),
-			'button_style'  => array(
+			'button_style'   => array(
 				'type'     => 'select',
 				'std'      => 'button-2',
 				'label'    => esc_html__( 'Button Style:', 'crimson-rose' ),
