@@ -32,11 +32,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Static_Content' ) ) :
 					'type'        => 'page',
 					'std'         => '',
 					'label'       => esc_html__( 'Select Page:', 'crimson-rose' ),
-					'description' => sprintf(
-						'<a target="_blank" href="' . admin_url( 'post-new.php?post_type=page' ) . '">%1$s</a> %2$s',
-						esc_html__( 'Create a new page', 'crimson-rose' ),
-						esc_html__( 'with the the content and featured image you want to display.', 'crimson-rose' )
-					),
+					'description' => esc_html__( 'Create a new page with the the content and featured image you want to display.', 'crimson-rose' ),
 					'sanitize'    => 'text',
 				),
 				'background_color'   => array(

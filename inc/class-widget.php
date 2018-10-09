@@ -45,6 +45,30 @@ class Crimson_Rose_Widget extends WP_Widget {
 
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 		add_action( 'wp_ajax_crimson_rose_post_lookup', array( &$this, 'post_lookup_callback' ) );
+		add_action( 'wp_ajax_crimson_rose_page_list_refresh', array( &$this, 'page_list_refresh' ) );
+	}
+
+	/**
+	 * Echo post title and id for ajax request. Used in widget for searching
+	 * for post by title.
+	 *
+	 * @since Crimson_Rose 1.01
+	 *
+	 * @return void
+	 */
+	public function page_list_refresh() {
+		global $wpdb; /* get access to the WordPress database object variable. */
+
+		if ( ! isset( $_POST['_wpnonce'] ) || ! wp_verify_nonce( sanitize_key( $_POST['_wpnonce'] ), 'crimson-rose-admin-page-list-refresh' ) ) {
+			die( __( 'Security check', 'crimson-rose' ) );
+		}
+
+		// get names of all businesses.
+		$page_value = stripslashes( sanitize_text_field( $_POST['value'] ) );
+
+		$this->the_pages_options_list( $page_value );
+
+		die(); /* stop "0" from being output. */
 	}
 
 	/**
@@ -127,6 +151,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 
 		wp_enqueue_script( 'crimson-rose-admin-widgets', get_template_directory_uri() . '/js/admin/admin-widgets.js', array(), CRIMSON_ROSE_VERSION, true );
 		wp_enqueue_script( 'crimson-rose-post-select', get_template_directory_uri() . '/js/admin/admin-post-select.js', array(), CRIMSON_ROSE_VERSION, true );
+		wp_enqueue_script( 'crimson-rose-page-refresh', get_template_directory_uri() . '/js/admin/admin-page-refresh.js', array(), CRIMSON_ROSE_VERSION, true );
 	}
 
 	/**
@@ -549,9 +574,21 @@ class Crimson_Rose_Widget extends WP_Widget {
 	 */
 	public function display_before_panel( $title ) {
 		?>
-		<div class="widget-panel">
-			<h3 class="widget-panel-title"><?php echo esc_html( $title ); ?>:&nbsp;<span class="widget-panel-sub-title"></span></h3>
-			<div class="widget-panel-body">
+
+		<?php if ( empty( $title ) ) : ?>
+
+			<div class="widget-panel">
+				<h3 class="widget-panel-title"><span class="widget-panel-sub-title"></span></h3>
+				<div class="widget-panel-body">
+
+		<?php else : ?>
+
+			<div class="widget-panel">
+				<h3 class="widget-panel-title"><?php echo esc_html( $title ); ?>:&nbsp;<span class="widget-panel-sub-title"></span></h3>
+				<div class="widget-panel-body">
+
+		<?php endif; ?>
+
 		<?php
 	}
 
@@ -719,20 +756,32 @@ class Crimson_Rose_Widget extends WP_Widget {
 				break;
 
 			case 'page':
-				$pages = get_pages( 'sort_order=ASC&sort_column=post_title&post_status=publish' );
 				?>
 				<p>
 					<label for="<?php echo esc_attr( $field_id ); ?>"><?php echo esc_html( $setting['label'] ); ?></label>
 					<select class="widefat" id="<?php echo esc_attr( $field_id ); ?>" name="<?php echo esc_attr( $field_name ); ?>">
-						<option value="" <?php selected( '', $value ); ?>><?php echo esc_html__( 'No Page', 'crimson-rose' ); ?></option>
-						<?php foreach ( $pages as $page ) : ?>
-							<option value="<?php echo esc_attr( $page->ID ); ?>" <?php selected( $page->ID, $value ); ?>><?php echo esc_attr( $page->post_title ); ?></option>
-						<?php endforeach; ?>
+						<?php $this->the_pages_options_list( $value ); ?>
 					</select>
+					<span class="widget-page-controls">
+						<a target="_blank" href="<?php echo admin_url( 'post-new.php?post_type=page' ); ?>">
+							<?php echo esc_html__( 'New Page', 'crimson-rose' ); ?>
+						</a>
+						<?php $nonce = wp_create_nonce( 'crimson-rose-admin-page-list-refresh' ); ?>
+						<a id="<?php echo esc_attr( $field_id ) . '-refresh-list'; ?>" class="refresh-page-list" href="#" data-page-value="<?php echo esc_attr( $value ); ?>" data-page-target="#<?php echo esc_attr( $field_id ); ?>" data-page-nonce="<?php echo esc_attr( $nonce ); ?>">
+							<?php echo esc_html__( 'Refresh List', 'crimson-rose' ); ?>
+						</a>
+					</span>
 					<?php if ( isset( $setting['description'] ) ) : ?>
 						<span class="description"><?php echo $setting['description']; /* WPCS: XSS OK. HTML output */ ?></span>
 					<?php endif; ?>
 				</p>
+				<script type="text/javascript">
+					/* <![CDATA[ */
+					jQuery(document).ready(function($){
+						$('#<?php echo esc_attr( $field_id ); ?>-refresh-list').pageRefreshOptionsList();
+					});
+					/* ]]> */
+				</script>
 				<?php
 				break;
 
@@ -808,7 +857,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 						/* <![CDATA[ */
 						( function( $ ){
 							$( document ).ready( function() {
-								$('#widgets-right #<?php echo esc_attr( $field_id ); ?>').wpColorPicker({
+								$('.widget-inside #<?php echo esc_attr( $field_id ); ?>').wpColorPicker({
 									change: _.throttle( function() { /* For Customizer */
 										$(this).trigger( 'change' );
 									}, 3000 )
@@ -850,6 +899,24 @@ class Crimson_Rose_Widget extends WP_Widget {
 				do_action( 'crimson_rose_widget_type_' . $setting['type'], $this, $key, $setting, $instance );
 				break;
 		}
+	}
+
+	/**
+	 * Return list of pages in options tag.
+	 *
+	 * @since Crimson_Rose 2.34
+	 *
+	 * @param mixed $value
+	 * @return void
+	 */
+	public function the_pages_options_list( $value ) {
+		$pages = get_pages( 'sort_order=ASC&sort_column=post_title&post_status=publish' );
+		?>
+		<option value="" <?php selected( '', $value ); ?>><?php echo esc_html__( 'No Page', 'crimson-rose' ); ?></option>
+		<?php foreach ( $pages as $page ) : ?>
+			<option value="<?php echo esc_attr( $page->ID ); ?>" <?php selected( $page->ID, $value ); ?>><?php echo esc_attr( $page->post_title ); ?></option>
+		<?php endforeach; ?>
+		<?php
 	}
 
 	/**

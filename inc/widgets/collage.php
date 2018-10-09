@@ -101,17 +101,13 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Collage' ) ) :
 					),
 				),
 				'repeater' => array(
-					'title'   => esc_html__( 'Page', 'crimson-rose' ),
+					'title'   => '',
 					'fields'  => array(
 						'page'                    => array(
 							'type'        => 'page',
 							'std'         => '',
 							'label'       => esc_html__( 'Select Page:', 'crimson-rose' ),
-							'description' => sprintf(
-								'<a target="_blank" href="' . admin_url( 'post-new.php?post_type=page' ) . '">%1$s</a> %2$s',
-								esc_html__( 'Create a new page', 'crimson-rose' ),
-								esc_html__( 'with the the content and featured image you want to display for this collage item. If no featured image is set, then this collage item will display only the background color selected.', 'crimson-rose' )
-							),
+							'description' => esc_html__( 'Create a new page with the the content and featured image you want to display for this collage item. If no featured image is set, then this collage item will display only the background color selected.', 'crimson-rose' ),
 							'sanitize'    => 'text',
 						),
 						'background_color'        => array(

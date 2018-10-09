@@ -88,6 +88,11 @@
 		);
 	}
 
+	window.widgetPanelCustomizerUpdate = function( $panel ) {
+		// var $input = $panel.find( '.widget-panel-body :input:first' );
+		// $input.trigger( 'change' );
+	}
+
 	window.widgetPanelMoveRefresh = function( $container ) {
 		var $move = $container.find( '.panel-move' );
 		$move.removeClass( 'panel-move-hide' );
@@ -116,6 +121,8 @@
 			$this.focus();
 			widgetPanelMoveRefresh( $container );
 		}
+
+		// widgetPanelCustomizerUpdate( $panel );
 	}
 
 	window.widgetPanelMoveDown = function( el ) {
@@ -135,6 +142,8 @@
 			$this.focus();
 			widgetPanelMoveRefresh( $container );
 		}
+
+		// widgetPanelCustomizerUpdate( $panel );
 	}
 
 	window.widgetPanelDelete = function( el ) {
@@ -170,39 +179,15 @@
 		var nextPanelCount = panelCount + 1;
 
 		if ( $panel.length ) {
-			var $copy = $panel.clone();
+			var copy = $panel[0].outerHTML;
+
+			copy = copy.replace( /\[repeater\]\[\d+\]/g,'[repeater][' + nextPanelCount + ']' );
+			copy = copy.replace( /repeater\-\d+\-/g,'repeater-' + nextPanelCount + '-' );
+
+			var $copy = $(copy);
+
 			$copy.find( '.widget-panel-title' ).removeClass( 'ui-accordion-header-active ui-state-active' );
 			$copy.find( '.widget-panel-body' ).removeClass( 'ui-accordion-content-active' );
-
-			var $names = $copy.find( '[name]' );
-			if ( $names.length ) {
-				$names.each(
-					function() {
-							var $this = $( this );
-
-							var name = $this.attr( 'name' );
-							name     = name.replace( /\[repeater\]\[\d+\]/,'[repeater][' + nextPanelCount + ']' );
-							$this.attr( 'name',name );
-
-							var id = $this.attr( 'id' );
-							id     = id.replace( /repeater\-\d+\-/,'repeater-' + nextPanelCount + '-' );
-							$this.attr( 'id',id );
-					}
-				);
-			}
-
-			var $fors = $copy.find( '[for]' );
-			if ( $fors.length ) {
-				$fors.each(
-					function() {
-							var $this = $( this );
-
-							var id = $this.attr( 'for' );
-							id     = id.replace( /repeater\-\d+\-/,'repeater-' + nextPanelCount + '-' );
-							$this.attr( 'for',id );
-					}
-				);
-			}
 
 			$copy.appendTo( $container );
 			$panelCount.val( nextPanelCount );
@@ -211,16 +196,16 @@
 				$copy.removeClass( 'panel-delete-confirm' );
 			}
 
+			// Remove HTML added by js, and reinitialize from fresh state.
 			$copy.find( '.color-picker' ).each(
 				function () {
 					var $inputElement = $( this );
 					if ( $inputElement.is( '.wp-color-picker' ) ) {
-						var $wpPickerContainer = $inputElement.closest( '.wp-picker-container' );
-						var $wrapper           = $inputElement.closest( '.color-picker-wrapper' );
-						$wrapper.append( $inputElement.remove() );
-						$wrapper.find( 'script' ).remove();
-						$wpPickerContainer.remove();
-						$inputElement.wpColorPicker();
+						var $wrapper = $inputElement.closest( '.color-picker-wrapper' );
+						var $script = $wrapper.find( 'script' );
+						$wrapper.empty();
+						$wrapper.append( $inputElement );
+						$wrapper.append( $script );
 					}
 				}
 			);
@@ -243,11 +228,5 @@
 			}
 		);
 	}
-
-	function onFormUpdate( event, widget ) {
-		initColorPicker( widget );
-	}
-
-	/* $( document ).on( 'widget-added widget-updated', onFormUpdate ); */
 
 } )( jQuery );
