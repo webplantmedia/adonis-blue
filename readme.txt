@@ -91,7 +91,7 @@ Source: https://www.pexels.com/photo/adult-cold-face-fashion-370013/
 
 == Changelog ==
 
-= 2.35 =
+= 2.36 =
 
 * Fixed bug with widgets not working inside accessibility mode.
 * Fixed style bug with video wrapper in Gutebnerg
