@@ -91,6 +91,12 @@ Source: https://www.pexels.com/photo/adult-cold-face-fashion-370013/
 
 == Changelog ==
 
+= 2.35 =
+
+* Fixed bug with widgets not working inside accessibility mode.
+* Fixed style bug with video wrapper in Gutebnerg
+* Added dynamic page creation.
+
 = 2.34 =
 
 * Removed max width restriction from padding and margin options.
