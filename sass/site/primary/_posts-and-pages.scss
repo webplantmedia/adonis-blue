@@ -531,7 +531,9 @@ h1.h1-title,
 	}
 }
 
-.entry-content .wp-block-embed {
+// For video embed and jetpack video wrapper
+.entry-content .wp-block-embed,
+.entry-content .wp-block-embed__wrapper {
 	> * {
 		margin-bottom: 0;
 	}
