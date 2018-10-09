@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Crimson Rose 2.34\n"
+"Project-Id-Version: Crimson Rose 2.35\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/crimson-rose\n"
-"POT-Creation-Date: 2018-09-18 14:53:00+00:00\n"
+"POT-Creation-Date: 2018-10-09 20:37:21+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -12,10 +12,10 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: 404.php:61 inc/template-tags.php:111 inc/widgets/callout.php:230
-#: inc/widgets/collage.php:517 inc/widgets/image-banner.php:164
-#: inc/widgets/jetpack-testimonials.php:310 inc/widgets/slider.php:463
-#: inc/widgets/static-content.php:227 template-parts/content-full-width.php:64
+#: 404.php:61 inc/template-tags.php:111 inc/widgets/callout.php:226
+#: inc/widgets/collage.php:513 inc/widgets/image-banner.php:160
+#: inc/widgets/jetpack-testimonials.php:310 inc/widgets/slider.php:459
+#: inc/widgets/static-content.php:223 template-parts/content-full-width.php:64
 #: template-parts/content-page.php:43
 msgid "Edit"
 msgstr ""
@@ -64,7 +64,7 @@ msgstr ""
 msgid "by"
 msgstr ""
 
-#. #-#-#-#-#  crimson-rose.pot (Crimson Rose 2.34)  #-#-#-#-#
+#. #-#-#-#-#  crimson-rose.pot (Crimson Rose 2.35)  #-#-#-#-#
 #. Author of the plugin/theme
 #: footer.php:89 inc/default-options.php:75 inc/theme-info.php:38
 #: inc/theme-info.php:39
@@ -126,7 +126,7 @@ msgstr ""
 msgid "Add Instagram widget here."
 msgstr ""
 
-#. #-#-#-#-#  crimson-rose.pot (Crimson Rose 2.34)  #-#-#-#-#
+#. #-#-#-#-#  crimson-rose.pot (Crimson Rose 2.35)  #-#-#-#-#
 #. Template Name of the plugin/theme
 #: functions.php:261
 msgid "Widgetized Page"
@@ -144,79 +144,87 @@ msgstr ""
 msgid "Search Results for:"
 msgstr ""
 
-#: inc/class-widget.php:62
+#: inc/class-widget.php:63 inc/class-widget.php:86
 msgid "Security check"
 msgstr ""
 
-#: inc/class-widget.php:99
+#: inc/class-widget.php:123
 msgid "No results found in post type \"%s\"."
 msgstr ""
 
-#: inc/class-widget.php:538
+#: inc/class-widget.php:563
 msgid "Add New Item"
 msgstr ""
 
-#: inc/class-widget.php:576
+#: inc/class-widget.php:613
 msgid "Delete Slide?"
 msgstr ""
 
-#: inc/class-widget.php:577
+#: inc/class-widget.php:614
 msgid "Yes"
 msgstr ""
 
-#: inc/class-widget.php:578
+#: inc/class-widget.php:615
 msgid "No"
 msgstr ""
 
-#: inc/class-widget.php:648
+#: inc/class-widget.php:685
 msgid "Choose Image"
 msgstr ""
 
-#: inc/class-widget.php:655
+#: inc/class-widget.php:692
 msgid "Remove"
 msgstr ""
 
-#: inc/class-widget.php:727
-msgid "No Page"
+#: inc/class-widget.php:767
+msgid "New Page"
 msgstr ""
 
-#: inc/class-widget.php:833
+#: inc/class-widget.php:771
+msgid "Refresh List"
+msgstr ""
+
+#: inc/class-widget.php:882
 msgid "All Categories"
 msgstr ""
 
-#: inc/class-widget.php:1042
+#: inc/class-widget.php:915
+msgid "No Page"
+msgstr ""
+
+#: inc/class-widget.php:1109
 msgid "Cover"
 msgstr ""
 
-#: inc/class-widget.php:1043
+#: inc/class-widget.php:1110
 msgid "Contain"
 msgstr ""
 
-#: inc/class-widget.php:1044
+#: inc/class-widget.php:1111
 msgid "Stretch"
 msgstr ""
 
-#: inc/class-widget.php:1045
+#: inc/class-widget.php:1112
 msgid "Fit Width"
 msgstr ""
 
-#: inc/class-widget.php:1046
+#: inc/class-widget.php:1113
 msgid "Fit Height"
 msgstr ""
 
-#: inc/class-widget.php:1047
+#: inc/class-widget.php:1114
 msgid "Auto"
 msgstr ""
 
-#: inc/class-widget.php:1062
+#: inc/class-widget.php:1129
 msgid "100% 100%"
 msgstr ""
 
-#: inc/class-widget.php:1065
+#: inc/class-widget.php:1132
 msgid "100% auto"
 msgstr ""
 
-#: inc/class-widget.php:1068
+#: inc/class-widget.php:1135
 msgid "auto 100%"
 msgstr ""
 
@@ -373,8 +381,8 @@ msgid ""
 msgstr ""
 
 #: inc/customizer.php:464 inc/widgets/blog-posts.php:95
-#: inc/widgets/callout.php:106 inc/widgets/collage.php:179
-#: inc/widgets/slider.php:179 inc/widgets/woocommerce-products.php:176
+#: inc/widgets/callout.php:102 inc/widgets/collage.php:175
+#: inc/widgets/slider.php:175 inc/widgets/woocommerce-products.php:176
 msgid "Default Button"
 msgstr ""
 
@@ -1354,8 +1362,8 @@ msgstr ""
 msgid "See All Posts"
 msgstr ""
 
-#: inc/widgets/blog-posts.php:81 inc/widgets/callout.php:92
-#: inc/widgets/collage.php:165 inc/widgets/slider.php:165
+#: inc/widgets/blog-posts.php:81 inc/widgets/callout.php:88
+#: inc/widgets/collage.php:161 inc/widgets/slider.php:161
 #: inc/widgets/woocommerce-products.php:162
 msgid "Button Text:"
 msgstr ""
@@ -1364,32 +1372,32 @@ msgstr ""
 msgid "Button Link:"
 msgstr ""
 
-#: inc/widgets/blog-posts.php:93 inc/widgets/callout.php:104
-#: inc/widgets/collage.php:177 inc/widgets/slider.php:177
+#: inc/widgets/blog-posts.php:93 inc/widgets/callout.php:100
+#: inc/widgets/collage.php:173 inc/widgets/slider.php:173
 #: inc/widgets/woocommerce-products.php:174
 msgid "Button Style:"
 msgstr ""
 
-#: inc/widgets/blog-posts.php:96 inc/widgets/callout.php:107
-#: inc/widgets/collage.php:180 inc/widgets/slider.php:180
+#: inc/widgets/blog-posts.php:96 inc/widgets/callout.php:103
+#: inc/widgets/collage.php:176 inc/widgets/slider.php:176
 #: inc/widgets/woocommerce-products.php:177
 msgid "Image Button 1"
 msgstr ""
 
-#: inc/widgets/blog-posts.php:97 inc/widgets/callout.php:108
-#: inc/widgets/collage.php:181 inc/widgets/slider.php:181
+#: inc/widgets/blog-posts.php:97 inc/widgets/callout.php:104
+#: inc/widgets/collage.php:177 inc/widgets/slider.php:177
 #: inc/widgets/woocommerce-products.php:178
 msgid "Image Button 2"
 msgstr ""
 
-#: inc/widgets/blog-posts.php:106 inc/widgets/callout.php:143
+#: inc/widgets/blog-posts.php:106 inc/widgets/callout.php:139
 #: inc/widgets/collage.php:97 inc/widgets/jetpack-testimonials.php:144
-#: inc/widgets/slider.php:97 inc/widgets/static-content.php:90
+#: inc/widgets/slider.php:97 inc/widgets/static-content.php:86
 #: inc/widgets/woocommerce-products.php:203
 msgid "Bottom margin of widget:"
 msgstr ""
 
-#: inc/widgets/blog-posts.php:159 inc/widgets/static-content.php:157
+#: inc/widgets/blog-posts.php:159 inc/widgets/static-content.php:153
 msgid "Read more"
 msgstr ""
 
@@ -1411,99 +1419,94 @@ msgstr ""
 msgid "Select Page:"
 msgstr ""
 
-#: inc/widgets/callout.php:40 inc/widgets/collage.php:112
-#: inc/widgets/image-banner.php:42 inc/widgets/slider.php:112
-#: inc/widgets/static-content.php:37
-msgid "Create a new page"
-msgstr ""
-
-#: inc/widgets/callout.php:41
+#: inc/widgets/callout.php:38
 msgid ""
-"with the the content and featured image you want to display for this callout "
-"item. If no featured image is set, then the text will display in full width."
+"Create a new page with the the content and featured image you want to "
+"display for this callout item. If no featured image is set, then the text "
+"will display in full width."
 msgstr ""
 
-#: inc/widgets/callout.php:51 inc/widgets/image-banner.php:53
+#: inc/widgets/callout.php:47 inc/widgets/image-banner.php:49
 msgid "Image Width (in pixels)"
 msgstr ""
 
-#: inc/widgets/callout.php:52 inc/widgets/image-banner.php:54
+#: inc/widgets/callout.php:48 inc/widgets/image-banner.php:50
 msgid ""
 "Set custom size for featured image. Leave blank to use large image display."
 msgstr ""
 
-#: inc/widgets/callout.php:58
+#: inc/widgets/callout.php:54
 msgid "Text Position:"
 msgstr ""
 
-#: inc/widgets/callout.php:60 inc/widgets/social-menu.php:47
+#: inc/widgets/callout.php:56 inc/widgets/social-menu.php:47
 msgid "Left"
 msgstr ""
 
-#: inc/widgets/callout.php:61 inc/widgets/social-menu.php:49
+#: inc/widgets/callout.php:57 inc/widgets/social-menu.php:49
 msgid "Right"
 msgstr ""
 
-#: inc/widgets/callout.php:68
+#: inc/widgets/callout.php:64
 msgid "Vertical Alignment:"
 msgstr ""
 
-#: inc/widgets/callout.php:70
+#: inc/widgets/callout.php:66
 msgid "Top"
 msgstr ""
 
-#: inc/widgets/callout.php:71 inc/widgets/image-banner.php:73
+#: inc/widgets/callout.php:67 inc/widgets/image-banner.php:69
 msgid "Middle"
 msgstr ""
 
-#: inc/widgets/callout.php:72
+#: inc/widgets/callout.php:68
 msgid "Bottom"
 msgstr ""
 
-#: inc/widgets/callout.php:79 inc/widgets/collage.php:120
-#: inc/widgets/slider.php:120 inc/widgets/static-content.php:45
+#: inc/widgets/callout.php:75 inc/widgets/collage.php:116
+#: inc/widgets/slider.php:116 inc/widgets/static-content.php:41
 msgid "Background Color:"
 msgstr ""
 
-#: inc/widgets/callout.php:85 inc/widgets/collage.php:133
-#: inc/widgets/slider.php:133 inc/widgets/social-menu.php:56
-#: inc/widgets/static-content.php:60
+#: inc/widgets/callout.php:81 inc/widgets/collage.php:129
+#: inc/widgets/slider.php:129 inc/widgets/social-menu.php:56
+#: inc/widgets/static-content.php:56
 msgid "Text Color:"
 msgstr ""
 
-#: inc/widgets/callout.php:86 inc/widgets/collage.php:134
-#: inc/widgets/slider.php:134
+#: inc/widgets/callout.php:82 inc/widgets/collage.php:130
+#: inc/widgets/slider.php:130
 msgid "Leave blank to use default theme color."
 msgstr ""
 
-#: inc/widgets/callout.php:98 inc/widgets/collage.php:171
-#: inc/widgets/slider.php:171
+#: inc/widgets/callout.php:94 inc/widgets/collage.php:167
+#: inc/widgets/slider.php:167
 msgid "Button URL:"
 msgstr ""
 
-#: inc/widgets/callout.php:115 inc/widgets/jetpack-testimonials.php:107
+#: inc/widgets/callout.php:111 inc/widgets/jetpack-testimonials.php:107
 msgid "Box Style:"
 msgstr ""
 
-#: inc/widgets/callout.php:117 inc/widgets/jetpack-testimonials.php:109
+#: inc/widgets/callout.php:113 inc/widgets/jetpack-testimonials.php:109
 msgid "Plain"
 msgstr ""
 
-#: inc/widgets/callout.php:118 inc/widgets/jetpack-testimonials.php:110
+#: inc/widgets/callout.php:114 inc/widgets/jetpack-testimonials.php:110
 msgid "Border"
 msgstr ""
 
-#: inc/widgets/callout.php:127 inc/widgets/jetpack-testimonials.php:128
-#: inc/widgets/static-content.php:74 inc/widgets/woocommerce-products.php:187
+#: inc/widgets/callout.php:123 inc/widgets/jetpack-testimonials.php:128
+#: inc/widgets/static-content.php:70 inc/widgets/woocommerce-products.php:187
 msgid "Top padding of widget:"
 msgstr ""
 
-#: inc/widgets/callout.php:135 inc/widgets/jetpack-testimonials.php:136
-#: inc/widgets/static-content.php:82 inc/widgets/woocommerce-products.php:195
+#: inc/widgets/callout.php:131 inc/widgets/jetpack-testimonials.php:136
+#: inc/widgets/static-content.php:78 inc/widgets/woocommerce-products.php:195
 msgid "Bottom padding of widget:"
 msgstr ""
 
-#: inc/widgets/callout.php:301 inc/widgets/static-content.php:244
+#: inc/widgets/callout.php:297 inc/widgets/static-content.php:240
 msgid "Select a page in your widget settings for content to display."
 msgstr ""
 
@@ -1572,57 +1575,53 @@ msgstr ""
 msgid "Dark"
 msgstr ""
 
-#: inc/widgets/collage.php:104 inc/widgets/slider.php:104
-msgid "Page"
-msgstr ""
-
-#: inc/widgets/collage.php:113
+#: inc/widgets/collage.php:110
 msgid ""
-"with the the content and featured image you want to display for this collage "
-"item. If no featured image is set, then this collage item will display only "
-"the background color selected."
+"Create a new page with the the content and featured image you want to "
+"display for this collage item. If no featured image is set, then this "
+"collage item will display only the background color selected."
 msgstr ""
 
-#: inc/widgets/collage.php:126 inc/widgets/slider.php:126
+#: inc/widgets/collage.php:122 inc/widgets/slider.php:122
 msgid "Background Size:"
 msgstr ""
 
-#: inc/widgets/collage.php:140 inc/widgets/slider.php:140
+#: inc/widgets/collage.php:136 inc/widgets/slider.php:136
 msgid "Text Background Color:"
 msgstr ""
 
-#: inc/widgets/collage.php:141 inc/widgets/slider.php:141
+#: inc/widgets/collage.php:137 inc/widgets/slider.php:137
 msgid "Leave blank for no background color."
 msgstr ""
 
-#: inc/widgets/collage.php:150 inc/widgets/slider.php:150
+#: inc/widgets/collage.php:146 inc/widgets/slider.php:146
 msgid "Text Background Color Opacity:"
 msgstr ""
 
-#: inc/widgets/collage.php:158 inc/widgets/slider.php:158
+#: inc/widgets/collage.php:154 inc/widgets/slider.php:154
 msgid "Max Width of Content Box:"
 msgstr ""
 
-#: inc/widgets/collage.php:159 inc/widgets/slider.php:159
+#: inc/widgets/collage.php:155 inc/widgets/slider.php:155
 msgid "Leave blank to set max width to none."
 msgstr ""
 
-#: inc/widgets/collage.php:195
+#: inc/widgets/collage.php:191
 msgctxt "Theme starter content"
 msgid "Slide 1"
 msgstr ""
 
-#: inc/widgets/collage.php:206
+#: inc/widgets/collage.php:202
 msgctxt "Theme starter content"
 msgid "Slide 2"
 msgstr ""
 
-#: inc/widgets/collage.php:216
+#: inc/widgets/collage.php:212
 msgctxt "Theme starter content"
 msgid "Slide 3"
 msgstr ""
 
-#: inc/widgets/collage.php:477 inc/widgets/slider.php:418
+#: inc/widgets/collage.php:473 inc/widgets/slider.php:414
 msgid "Select a page"
 msgstr ""
 
@@ -1634,39 +1633,41 @@ msgstr ""
 msgid "Crimson Rose: Image Banner"
 msgstr ""
 
-#: inc/widgets/image-banner.php:43 inc/widgets/static-content.php:38
-msgid "with the the content and featured image you want to display."
+#: inc/widgets/image-banner.php:40 inc/widgets/static-content.php:35
+msgid ""
+"Create a new page with the the content and featured image you want to "
+"display."
 msgstr ""
 
-#: inc/widgets/image-banner.php:60
+#: inc/widgets/image-banner.php:56
 msgid "Image Style:"
 msgstr ""
 
-#: inc/widgets/image-banner.php:62 inc/widgets/jetpack-testimonials.php:59
+#: inc/widgets/image-banner.php:58 inc/widgets/jetpack-testimonials.php:59
 msgid "None"
 msgstr ""
 
-#: inc/widgets/image-banner.php:63
+#: inc/widgets/image-banner.php:59
 msgid "Round"
 msgstr ""
 
-#: inc/widgets/image-banner.php:70
+#: inc/widgets/image-banner.php:66
 msgid "Title Position:"
 msgstr ""
 
-#: inc/widgets/image-banner.php:72
+#: inc/widgets/image-banner.php:68
 msgid "Above"
 msgstr ""
 
-#: inc/widgets/image-banner.php:74
+#: inc/widgets/image-banner.php:70
 msgid "Below"
 msgstr ""
 
-#: inc/widgets/image-banner.php:81
+#: inc/widgets/image-banner.php:77
 msgid "Link:"
 msgstr ""
 
-#: inc/widgets/image-banner.php:155
+#: inc/widgets/image-banner.php:151
 msgid "Select a page."
 msgstr ""
 
@@ -1775,28 +1776,32 @@ msgstr ""
 msgid "Crimson Rose: Slider"
 msgstr ""
 
-#: inc/widgets/slider.php:113
-msgid ""
-"with the the content and featured image you want to display for this slide "
-"item. If no featured image is set, then this slide item will display only "
-"the background color selected."
+#: inc/widgets/slider.php:104
+msgid "Page"
 msgstr ""
 
-#: inc/widgets/slider.php:182
+#: inc/widgets/slider.php:110
+msgid ""
+"Create a new page with the the content and featured image you want to "
+"display for this slide item. If no featured image is set, then this slide "
+"item will display only the background color selected."
+msgstr ""
+
+#: inc/widgets/slider.php:178
 msgid "White Border Button"
 msgstr ""
 
-#: inc/widgets/slider.php:196
+#: inc/widgets/slider.php:192
 msgctxt "Theme starter content"
 msgid "SLIDE 1"
 msgstr ""
 
-#: inc/widgets/slider.php:207
+#: inc/widgets/slider.php:203
 msgctxt "Theme starter content"
 msgid "SLIDE 2"
 msgstr ""
 
-#: inc/widgets/slider.php:218
+#: inc/widgets/slider.php:214
 msgctxt "Theme starter content"
 msgid "SLIDE 3"
 msgstr ""
@@ -1821,7 +1826,7 @@ msgstr ""
 msgid "Leave blank to use default text color."
 msgstr ""
 
-#: inc/widgets/social-menu.php:63 inc/widgets/static-content.php:66
+#: inc/widgets/social-menu.php:63 inc/widgets/static-content.php:62
 msgid "Link Color:"
 msgstr ""
 
@@ -1842,11 +1847,11 @@ msgstr ""
 msgid "Crimson Rose: Static Content"
 msgstr ""
 
-#: inc/widgets/static-content.php:54
+#: inc/widgets/static-content.php:50
 msgid "Background Color Opacity:"
 msgstr ""
 
-#: inc/widgets/static-content.php:242
+#: inc/widgets/static-content.php:238
 msgid "Static Content Widget"
 msgstr ""
 
