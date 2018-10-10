@@ -72,7 +72,7 @@ $crimson_rose_default['blog_single_hide_post_navigation'] = 0;
 
 // Jetpack.
 $crimson_rose_default['jetpack_hide_share_count'] = 0;
-$crimson_rose_default['jetpack_scroll_credit']    = sprintf( esc_html__( 'Site crafted with', 'crimson-rose' ) . ' <i class="genericons-neue genericons-neue-heart"></i> ' . esc_html__( 'by', 'crimson-rose' ) . ' <a href="https://webplantmedia.com/">' . esc_html__( 'Web Plant Media', 'crimson-rose' ) . '</a>' );
+$crimson_rose_default['jetpack_scroll_credit']    = sprintf( esc_html__( 'Site crafted with', 'crimson-rose' ) . ' <i class="genericons-neue genericons-neue-heart"></i> ' . esc_html__( 'by', 'crimson-rose' ) . ' <a href="' . get_home_url() . '">' . get_bloginfo( 'name' ) . '</a>' );
 
 // Shop.
 $crimson_rose_default['shop_columns']                     = 2;
