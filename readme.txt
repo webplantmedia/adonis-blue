@@ -91,6 +91,10 @@ Source: https://www.pexels.com/photo/adult-cold-face-fashion-370013/
 
 == Changelog ==
 
+= 2.39 =
+
+* Used correct home url function.
+
 = 2.38 =
 
 * Updated demo files.
