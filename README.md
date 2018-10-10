@@ -91,6 +91,10 @@ Source: https://www.pexels.com/photo/adult-cold-face-fashion-370013/
 
 ## Changelog ##
 
+### 2.41 ###
+
+* Fixed js bug from previous update.
+
 ### 2.40 ###
 
 * Fixed bug with widget javascript not being applied in Customizer.
