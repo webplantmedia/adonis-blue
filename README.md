@@ -91,6 +91,10 @@ Source: https://www.pexels.com/photo/adult-cold-face-fashion-370013/
 
 ## Changelog ##
 
+### 2.38 ###
+
+* Updated demo files.
+
 ### 2.37 ###
 
 * Updated footer info and removed back link.
