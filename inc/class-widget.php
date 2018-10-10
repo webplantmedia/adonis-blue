@@ -471,7 +471,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 					( function( $ ) {
 						"use strict";
 						$(document).ready(function($){
-							$('#widgets-right #<?php echo esc_attr( $field_id ); ?>, .editwidget #<?php echo esc_attr( $field_id ); ?>').accordion({
+							$('#widgets-right <?php echo esc_attr( $selector ); ?>, .editwidget <?php echo esc_attr( $selector ); ?>').accordion({
 								header: '.widget-panel-title',
 								heightStyle: 'content',
 								collapsible: true,
@@ -494,7 +494,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 					( function( $ ) {
 						"use strict";
 						$(document).ready(function($){
-							$('#widgets-right #<?php echo esc_attr( $field_id ); ?>, .editwidget #<?php echo esc_attr( $field_id ); ?>').accordion({
+							$('#widgets-right <?php echo esc_attr( $selector ); ?>, .editwidget <?php echo esc_attr( $selector ); ?>').accordion({
 								header: '.widget-panel-title',
 								heightStyle: 'content',
 								collapsible: true,
