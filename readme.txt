@@ -91,6 +91,10 @@ Source: https://www.pexels.com/photo/adult-cold-face-fashion-370013/
 
 == Changelog ==
 
+= 2.37 =
+
+* Updated footer info and removed back link.
+
 = 2.36 =
 
 * Fixed bug with widgets not working inside accessibility mode.
