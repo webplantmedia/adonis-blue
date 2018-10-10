@@ -86,7 +86,7 @@ $column = 1;
 						<?php if ( is_active_sidebar( 'footer-bottom' ) ) : ?>
 							<?php dynamic_sidebar( 'footer-bottom' ); ?>
 						<?php else : ?>
-							<p><?php printf( esc_html__( 'Site crafted with', 'crimson-rose' ) . ' <i class="genericons-neue genericons-neue-heart"></i> ' . esc_html__( 'by', 'crimson-rose' ) . ' <a href="' . get_home_url() . '">' . get_bloginfo( 'name' ) . '</a>' ); ?></p>
+							<p><?php printf( esc_html__( 'Site crafted with', 'crimson-rose' ) . ' <i class="genericons-neue genericons-neue-heart"></i> ' . esc_html__( 'by', 'crimson-rose' ) . ' <a href="' . esc_url( home_url( '/' ) ) . '">' . get_bloginfo( 'name' ) . '</a>' ); ?></p>
 						<?php endif; ?>
 					</div><!-- .site-info -->
 				</div><!-- .site-boundary -->
