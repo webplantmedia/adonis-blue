@@ -390,6 +390,7 @@ class Crimson_Rose_Content_Widget_Jetpack_Testimonials extends Crimson_Rose_Widg
 										autoHover: sliderautohover,
 										controls: slidercontrols,
 										pager: sliderpager,
+										touchEnabled: false,
 										onSliderResize: function() {
 											if ( sliderauto ) {
 												var $el = $(this);
