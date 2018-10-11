@@ -179,7 +179,11 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Static_Content' ) ) :
 				#<?php echo esc_html( $this->id ); ?> .entry-content h5,
 				#<?php echo esc_html( $this->id ); ?> .entry-content h6,
 				#<?php echo esc_html( $this->id ); ?> .entry-content p,
-				#<?php echo esc_html( $this->id ); ?> .entry-content a,
+				#<?php echo esc_html( $this->id ); ?> .entry-content a:not(.theme-generated-button),
+				#<?php echo esc_html( $this->id ); ?> .entry-content a:not(.theme-generated-button):hover,
+				#<?php echo esc_html( $this->id ); ?> .entry-content a:not(.theme-generated-button):visited,
+				#<?php echo esc_html( $this->id ); ?> .entry-content a:not(.theme-generated-button):focus,
+				#<?php echo esc_html( $this->id ); ?> .entry-content a:not(.theme-generated-button):active,
 				#<?php echo esc_html( $this->id ); ?> .entry-content {
 					color: <?php echo esc_html( $o['text_color'] ); ?>;
 				}
