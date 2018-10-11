@@ -5583,6 +5583,8 @@ h1.h1-title,
 
 .comment-form .form-submit {
   margin-bottom: 1em;
+  margin-top: 20px;
+  margin-top: 1.25rem;
 }
 
 .comment-form input,
