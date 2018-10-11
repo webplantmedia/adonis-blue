@@ -273,6 +273,7 @@
 
 .comment-form .form-submit {
 	margin-bottom: 1em;
+	@include rem('margin-top',20px);
 }
 
 .comment-form input,
