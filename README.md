@@ -91,6 +91,12 @@ Source: https://www.pexels.com/photo/adult-cold-face-fashion-370013/
 
 ## Changelog ##
 
+### 2.42 ###
+
+* Better trigger logic for color picker in customizer.
+* Disabled mobile touch from testimonial slider.
+* Fixed style bug with buttons in static content widget.
+
 ### 2.41 ###
 
 * Fixed js bug from previous update.
