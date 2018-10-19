@@ -1813,7 +1813,7 @@ a:hover, a:active {
   clear: both;
   display: block;
   width: 100%;
-  border-bottom: 2px solid #bab8b9;
+  border-bottom: 2px solid #ececec;
   text-align: center;
 }
 
@@ -1836,7 +1836,7 @@ a:hover, a:active {
 }
 
 .main-menu ul ul {
-  border-top: 2px solid #bab8b9;
+  border-top: 2px solid #ececec;
   float: left;
   position: absolute;
   top: 100%;
@@ -1924,7 +1924,7 @@ a:hover, a:active {
 .main-menu .nav-menu > li > ul > li:first-child > ul,
 .main-menu .nav-menu > li > ul > li:first-child > ul > li:first-child > ul,
 .main-menu .nav-menu > li > ul > li:first-child > ul > li:first-child > ul > li:first-child > ul {
-  border-top-color: #bab8b9;
+  border-top-color: #ececec;
 }
 
 .main-menu a, .main-menu a:focus, .main-menu a:active, .main-menu a:visited {
@@ -2197,7 +2197,7 @@ a:hover, a:active {
     border-bottom-width: 0;
   }
   #master #site-navigation.toggled .menu-toggle {
-    border-bottom: 2px solid #bab8b9;
+    border-bottom: 2px solid #ececec;
   }
   #master #site-navigation.toggled .menu-toggle i:before {
     content: "\f406";
@@ -2373,7 +2373,7 @@ a:hover, a:active {
   margin: 0;
   padding: 0;
   background-color: #ffffff;
-  border-top: 2px solid #bab8b9;
+  border-top: 2px solid #ececec;
   border-bottom: 2px solid #ececec;
   float: left;
   list-style: none;
@@ -4433,6 +4433,7 @@ body.widgetized-page .site-content {
 --------------------------------------------------------------*/
 .site-header {
   position: relative;
+  border-bottom: 0 solid #ececec;
 }
 
 .site-header-inner {
