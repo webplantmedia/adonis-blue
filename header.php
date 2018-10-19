@@ -34,52 +34,80 @@
 
 			<div class="site-branding">
 				<div class="site-boundary">
-					<?php if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) : ?>
-						<div class="site-logo">
-							<?php the_custom_logo(); ?>
-						</div>
-					<?php endif; ?>
+					<div class="site-logo-container">
+						<?php if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) : ?>
+							<div class="site-logo">
+								<?php the_custom_logo(); ?>
+							</div>
+						<?php endif; ?>
 
-					<?php if ( is_front_page() && is_home() ) : ?>
-						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-					<?php else : ?>
-						<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-					<?php endif; ?>
+						<?php if ( is_front_page() && is_home() ) : ?>
+							<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+						<?php else : ?>
+							<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+						<?php endif; ?>
 
-					<?php $description = get_bloginfo( 'description', 'display' ); ?>
-					<?php if ( $description || is_customize_preview() ) : ?>
-						<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-					<?php endif; ?>
+						<?php $description = get_bloginfo( 'description', 'display' ); ?>
+						<?php if ( $description || is_customize_preview() ) : ?>
+							<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+						<?php endif; ?>
+					</div><!-- .site-logo-container -->
 				</div><!-- .site-boundary -->
 			</div><!-- .site-branding -->
 		</div><!-- .site-header-inner -->
 
 		<div id="site-navigation" class="main-navigation">
-			<div class="site-boundary">
-				<?php painted_lady_mobile_menu_button(); ?>
 
-				<?php get_template_part( 'template-parts/menu', 'mobile-cart' ); ?>
+			<?php painted_lady_mobile_menu_button(); ?>
 
-				<?php get_template_part( 'template-parts/menu', 'mobile-search' ); ?>
+			<?php get_template_part( 'template-parts/menu', 'mobile-cart' ); ?>
 
-				<nav class="main-menu in-menu-bar">
-					<?php
-						wp_nav_menu(
-							array(
-								'theme_location' => 'menu-1',
-								'menu_id'        => 'primary-menu',
-							)
-						);
-					?>
-				</nav>
+			<?php get_template_part( 'template-parts/menu', 'mobile-search' ); ?>
 
-				<?php get_template_part( 'template-parts/menu', 'cart' ); ?>
+			<div class="split-menu">
 
-				<?php get_template_part( 'template-parts/menu', 'search' ); ?>
+				<div class="split-menu-part split-menu-part-left">
 
-				<?php get_template_part( 'template-parts/menu', 'mobile' ); ?>
-			</div><!-- .site-boundary -->
+					<nav class="main-menu in-menu-bar">
+						<?php
+							wp_nav_menu(
+								array(
+									'theme_location' => 'menu-1',
+									'menu_id'        => 'primary-menu',
+								)
+							);
+						?>
+					</nav>
+
+				</div><!-- .split-menu-part -->
+
+				<div class="split-menu-part split-menu-part-middle"></div>
+
+				<div class="split-menu-part split-menu-part-right">
+
+					<nav class="main-menu in-menu-bar">
+						<?php
+							wp_nav_menu(
+								array(
+									'theme_location' => 'menu-4',
+									'menu_id'        => 'primary-menu-right',
+								)
+							);
+						?>
+					</nav>
+
+					<?php get_template_part( 'template-parts/menu', 'cart' ); ?>
+
+					<?php get_template_part( 'template-parts/menu', 'search' ); ?>
+
+				</div><!-- .split-menu-part -->
+
+			</div><!-- .split-menu -->
+
+			<?php get_template_part( 'template-parts/menu', 'mobile' ); ?>
+
 		</div><!-- #site-navigation -->
+
 	</header><!-- #masthead -->
 
 	<?php if ( is_category() || is_tag() || is_tax() || is_date() || is_author() ) : ?>

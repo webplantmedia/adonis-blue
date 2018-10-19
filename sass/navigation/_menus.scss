@@ -11,6 +11,12 @@
 	vertical-align: top;
 }
 
+.split-menu {
+	.split-menu-part {
+		display: inline-block;
+	}
+}
+
 .main-menu {
 	ul {
 		float: left;
@@ -235,6 +241,10 @@
 		.site-boundary {
 			padding-left: 0;
 			padding-right: 0;
+		}
+
+		.split-menu-part {
+			display: block;
 		}
 
 		.top-mobile-header,

@@ -16,6 +16,22 @@
 
 ( function( $ ) {
 
+	function changeMediaQuery( id, value) {
+		if ( value === '' ) {
+			return;
+		}
+
+		var stylesheet = '#painted-lady-style-inline-css';
+		var $css       = $( 'head ' + stylesheet );
+		if ( $css.length ) {
+			var css     = $css.html();
+			var regexp  = new RegExp( ':.+?(?=\\))\\)\\s\\{\\s*\\/\\*id:' + id + '\\*\\/', 'g' );
+			var replace = ': ' + value + ') { /*id:' + id + '*/';
+			css         = css.replace( regexp,replace );
+			$css.html( css );
+		}
+	}
+
 	function changeInlineCSS( id, value) {
 		if ( value === '' ) {
 			value = 'initial';
@@ -223,6 +239,34 @@
 							'padding-bottom': to + 'px'
 						}
 					);
+				}
+			);
+		}
+	);
+	wp.customize(
+		'split_menu_top_offset', function( value ) {
+			value.bind(
+				function( to ) {
+					changeInlineCSS( 'split_menu_top_offset', '-' + to + 'px' );
+				}
+			);
+		}
+	);
+	wp.customize(
+		'split_menu_logo_width', function( value ) {
+			value.bind(
+				function( to ) {
+					changeInlineCSS( 'split_menu_logo_width', to + 'px' );
+					changeInlineCSS( 'split_menu_logo_width_2', 'calc(50% - ' + ( to / 2 ) + 'px)' );
+				}
+			);
+		}
+	);
+	wp.customize(
+		'split_menu_collapse_width', function( value ) {
+			value.bind(
+				function( to ) {
+					changeMediaQuery( 'split_menu_collapse_width', to + 'px' );
 				}
 			);
 		}

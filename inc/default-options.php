@@ -25,8 +25,11 @@ $painted_lady_default = array();
 $painted_lady_default['custom_logo_2x']         = '';
 $painted_lady_default['display_site_title']     = 1;
 $painted_lady_default['display_site_tagline']   = 1;
-$painted_lady_default['heading_padding_top']    = '50';
-$painted_lady_default['heading_padding_bottom'] = '50';
+$painted_lady_default['heading_padding_top']    = '55';
+$painted_lady_default['heading_padding_bottom'] = '55';
+$painted_lady_default['split_menu_logo_width'] = '200';
+$painted_lady_default['split_menu_top_offset'] = '120';
+$painted_lady_default['split_menu_collapse_width'] = '1200';
 
 /**
  * Colors Section in Customizer
@@ -53,7 +56,7 @@ $painted_lady_default['top_header_background_offset'] = 460;
 
 // Menu.
 $painted_lady_default['show_menu_arrows'] = 1;
-$painted_lady_default['show_menu_search'] = 0;
+$painted_lady_default['show_menu_search'] = 1;
 
 // Site.
 $painted_lady_default['default_button_style']     = 'button-2';
@@ -78,9 +81,9 @@ $painted_lady_default['jetpack_scroll_credit']    = sprintf( esc_html__( 'Site c
 $painted_lady_default['shop_columns']                     = 2;
 $painted_lady_default['shop_archive_columns']             = 3;
 $painted_lady_default['shop_related_products_columns']    = 2;
-$painted_lady_default['shop_image_size']                  = 'woocommerce_single';
-$painted_lady_default['shop_archive_image_size']          = 'woocommerce_single';
-$painted_lady_default['shop_related_products_image_size'] = 'woocommerce_single';
+$painted_lady_default['shop_image_size']                  = 'woocommerce_thumbnail';
+$painted_lady_default['shop_archive_image_size']          = 'woocommerce_thumbnail';
+$painted_lady_default['shop_related_products_image_size'] = 'woocommerce_thumbnail';
 $painted_lady_default['shop_products_per_page']           = 12;
 $painted_lady_default['shop_image_backdrop']              = 0;
 $painted_lady_default['shop_hide_title']                  = 1;

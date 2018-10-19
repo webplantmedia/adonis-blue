@@ -58,9 +58,10 @@ if ( ! function_exists( 'painted_lady_setup' ) ) :
 		// This theme uses wp_nav_menu() in four location.
 		register_nav_menus(
 			array(
-				'menu-1' => esc_html__( 'Primary', 'painted-lady' ),
+				'menu-1' => esc_html__( 'Primary Left', 'painted-lady' ),
 				'menu-2' => esc_html__( 'Top Header Left', 'painted-lady' ),
 				'menu-3' => esc_html__( 'Top Header Right', 'painted-lady' ),
+				'menu-4' => esc_html__( 'Primary Right', 'painted-lady' ),
 				'social' => esc_html__( 'Social Menu', 'painted-lady' ),
 			)
 		);

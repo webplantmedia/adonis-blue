@@ -151,6 +151,58 @@ function painted_lady_customize_register( $wp_customize ) {
 		)
 	);
 
+	$setting_id = 'split_menu_logo_width';
+	$wp_customize->add_setting(
+		$setting_id, array(
+			'default'           => $painted_lady_default[ $setting_id ],
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'absint',
+		)
+	);
+
+	$wp_customize->add_control(
+		$setting_id, array(
+			'type'    => 'number',
+			'label'   => esc_html__( 'Split Menu Logo Width', 'painted-lady' ),
+			'section' => $section_id,
+		)
+	);
+
+	$setting_id = 'split_menu_top_offset';
+	$wp_customize->add_setting(
+		$setting_id, array(
+			'default'           => $painted_lady_default[ $setting_id ],
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'absint',
+		)
+	);
+
+	$wp_customize->add_control(
+		$setting_id, array(
+			'type'    => 'number',
+			'label'   => esc_html__( 'Split Menu Top Offset', 'painted-lady' ),
+			'section' => $section_id,
+		)
+	);
+
+	$setting_id = 'split_menu_collapse_width';
+	$wp_customize->add_setting(
+		$setting_id, array(
+			'default'           => $painted_lady_default[ $setting_id ],
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'absint',
+		)
+	);
+
+	$wp_customize->add_control(
+		$setting_id, array(
+			'type'        => 'number',
+			'label'       => esc_html__( 'Split Menu Collapse Width', 'painted-lady' ),
+			'description' => esc_html__( 'At what width do you want the split menu to fall under the logo as one menu bar?', 'painted-lady' ),
+			'section'     => $section_id,
+		)
+	);
+
 	/**
 	 * Custom colors.
 	 */
