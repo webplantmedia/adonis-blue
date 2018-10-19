@@ -13,7 +13,8 @@ body {
 }
 
 html, body {
-	overflow-x: hidden;
+	/* Problems with scroll bar appearing. */
+	// overflow-x: hidden;
 }
 
 blockquote:before,
