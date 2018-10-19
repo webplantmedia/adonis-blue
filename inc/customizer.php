@@ -480,6 +480,23 @@ function painted_lady_customize_register( $wp_customize ) {
 		)
 	);
 
+	$setting_id = 'show_menu_cart';
+	$wp_customize->add_setting(
+		$setting_id, array(
+			'default'           => $painted_lady_default[ $setting_id ],
+			'transport'         => 'refresh',
+			'sanitize_callback' => 'painted_lady_sanitize_checkbox',
+		)
+	);
+
+	$wp_customize->add_control(
+		$setting_id, array(
+			'type'    => 'checkbox',
+			'label'   => esc_html__( 'Show Menu Cart Button', 'painted-lady' ),
+			'section' => $section_id,
+		)
+	);
+
 	$setting_id = 'show_menu_search';
 	$wp_customize->add_setting(
 		$setting_id, array(

@@ -57,6 +57,7 @@ $painted_lady_default['top_header_background_offset'] = 460;
 // Menu.
 $painted_lady_default['show_menu_arrows'] = 1;
 $painted_lady_default['show_menu_search'] = 1;
+$painted_lady_default['show_menu_cart']   = 1;
 
 // Site.
 $painted_lady_default['default_button_style']     = 'button-2';

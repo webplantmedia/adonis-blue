@@ -13,7 +13,7 @@
 
 ?>
 
-<?php if ( painted_lady_is_woocommerce_activated() ) : ?>
+<?php if ( painted_lady_is_menu_cart_activated() ) : ?>
 	<nav class="mobile-cart-navigation">
 		<p class="buttons clear">
 			<?php

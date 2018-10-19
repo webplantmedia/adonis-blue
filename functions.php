@@ -629,6 +629,23 @@ function painted_lady_get_page_template_in_loop() {
 }
 
 /**
+ * Check if cart button should be in main menu bar.
+ *
+ * @since Painted_Lady 1.01
+ *
+ * @return bool
+ */
+function painted_lady_is_menu_cart_activated() {
+	global $painted_lady;
+
+	if ( painted_lady_is_woocommerce_activated() ) {
+		return $painted_lady['show_menu_cart'] ? true : false;
+	}
+
+	return false;
+}
+
+/**
  * Check if search form should be in main menu bar.
  *
  * @since Painted_Lady 1.01
