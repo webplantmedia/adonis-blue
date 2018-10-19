@@ -107,7 +107,7 @@ h1.h1-title,
 	.entry-title {
 		margin-top: 0;
 		margin-bottom: 15px;
-		@include rem('font-size',$font__h1-size);
+		// @include rem('font-size',$font__h1-size);
 		font-weight: normal;
 		text-align: center;
 		text-transform: none;
