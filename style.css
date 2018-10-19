@@ -563,7 +563,7 @@ body {
 }
 
 html, body {
-  overflow-x: hidden;
+  /* Problems with scroll bar appearing. */
 }
 
 blockquote:before,
@@ -1822,6 +1822,10 @@ a:hover, a:active {
   vertical-align: top;
 }
 
+.split-menu .split-menu-part {
+  display: inline-block;
+}
+
 .main-menu ul {
   float: left;
   list-style: none;
@@ -2035,6 +2039,9 @@ a:hover, a:active {
   #site-navigation .site-boundary {
     padding-left: 0;
     padding-right: 0;
+  }
+  #site-navigation .split-menu-part {
+    display: block;
   }
   #site-navigation .top-mobile-header,
   #site-navigation .main-menu {
