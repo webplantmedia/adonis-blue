@@ -1442,7 +1442,6 @@ function crimson_rose_customize_partial_custom_logo() {
  */
 function crimson_rose_customize_preview_js() {
 	wp_enqueue_script( 'crimson-rose-customizer', get_template_directory_uri() . '/js/admin/customizer.js', array( 'customize-preview' ), CRIMSON_ROSE_VERSION, true );
-	wp_enqueue_script( 'crimson-rose-admin-notifier', get_template_directory_uri() . '/js/admin/admin-notifier.js', array( 'customize-preview' ), CRIMSON_ROSE_VERSION, true );
 	wp_enqueue_style( 'crimson-rose-customizer-style', get_parent_theme_file_uri() . '/css/admin/customizer.css', array(), CRIMSON_ROSE_VERSION );
 }
 add_action( 'customize_preview_init', 'crimson_rose_customize_preview_js' );
