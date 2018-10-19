@@ -3,51 +3,51 @@
  * Content Widget: Blog Posts Widget
  *
  * @package WordPress
- * @subpackage Crimson_Rose
+ * @subpackage Painted_Lady
  * @since 1.01
  * @author Chris Baldelomar <chris@webplantmedia.com>
  * @copyright Copyright (c) 2018, Chris Baldelomar
- * @link https://webplantmedia.com/product/crimson-rose-wordpress-theme/
+ * @link https://webplantmedia.com/product/painted-lady-wordpress-theme/
  * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
-if ( ! class_exists( 'Crimson_Rose_Content_Widget_Blog_Post' ) ) :
+if ( ! class_exists( 'Painted_Lady_Content_Widget_Blog_Post' ) ) :
 	/**
 	 * Class: Display static content from an specific page.
 	 *
-	 * @since Crimson_Rose 1.01
+	 * @since Painted_Lady 1.01
 	 *
-	 * @see Crimson_Rose_Widget
+	 * @see Painted_Lady_Widget
 	 */
-	class Crimson_Rose_Content_Widget_Blog_Post extends Crimson_Rose_Widget {
+	class Painted_Lady_Content_Widget_Blog_Post extends Painted_Lady_Widget {
 		/**
 		 * __construct
 		 *
-		 * @since Crimson_Rose 1.01
+		 * @since Painted_Lady 1.01
 		 *
 		 * @return void
 		 */
 		public function __construct() {
-			$this->widget_id          = 'crimson-rose-content-widget-blog-posts';
-			$this->widget_description = esc_html__( 'Displays content from blog posts on your widgetized page.', 'crimson-rose' );
-			$this->widget_name        = esc_html__( 'Crimson Rose: Blog Posts', 'crimson-rose' );
+			$this->widget_id          = 'painted-lady-content-widget-blog-posts';
+			$this->widget_description = esc_html__( 'Displays content from blog posts on your widgetized page.', 'painted-lady' );
+			$this->widget_name        = esc_html__( 'Painted Lady: Blog Posts', 'painted-lady' );
 			$this->settings           = array(
 				'title'         => array(
 					'type'     => 'text',
-					'std'      => esc_html__( 'BLOG', 'crimson-rose' ),
-					'label'    => esc_html__( 'Title:', 'crimson-rose' ),
+					'std'      => esc_html__( 'BLOG', 'painted-lady' ),
+					'label'    => esc_html__( 'Title:', 'painted-lady' ),
 					'sanitize' => 'text',
 				),
 				'post_ids'      => array(
 					'type'     => 'post',
 					'std'      => '',
-					'label'    => esc_html__( 'Post ID\'s:', 'crimson-rose' ),
+					'label'    => esc_html__( 'Post ID\'s:', 'painted-lady' ),
 					'sanitize' => 'post_ids',
 				),
 				'category'      => array(
 					'type'     => 'category',
 					'std'      => 0,
-					'label'    => esc_html__( 'Category:', 'crimson-rose' ),
+					'label'    => esc_html__( 'Category:', 'painted-lady' ),
 					'sanitize' => 'number',
 				),
 				'post_count'    => array(
@@ -56,45 +56,45 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Blog_Post' ) ) :
 					'step'     => 1,
 					'min'      => 1,
 					'max'      => 100,
-					'label'    => esc_html__( 'Number of Posts:', 'crimson-rose' ),
+					'label'    => esc_html__( 'Number of Posts:', 'painted-lady' ),
 					'sanitize' => 'number',
 				),
 				'columns'       => array(
 					'type'     => 'select',
 					'std'      => 3,
-					'label'    => esc_html__( 'Columns:', 'crimson-rose' ),
+					'label'    => esc_html__( 'Columns:', 'painted-lady' ),
 					'options'  => array(
-						2 => esc_html__( '2 Columns', 'crimson-rose' ),
-						3 => esc_html__( '3 Columns', 'crimson-rose' ),
+						2 => esc_html__( '2 Columns', 'painted-lady' ),
+						3 => esc_html__( '3 Columns', 'painted-lady' ),
 					),
 					'sanitize' => 'number',
 				),
 				'random_order'  => array(
 					'type'     => 'checkbox',
 					'std'      => 0,
-					'label'    => esc_html__( 'Random order?', 'crimson-rose' ),
+					'label'    => esc_html__( 'Random order?', 'painted-lady' ),
 					'sanitize' => 'checkbox',
 				),
 				'button_text'   => array(
 					'type'     => 'text',
-					'std'      => esc_html__( 'See All Posts', 'crimson-rose' ),
-					'label'    => esc_html__( 'Button Text:', 'crimson-rose' ),
+					'std'      => esc_html__( 'See All Posts', 'painted-lady' ),
+					'label'    => esc_html__( 'Button Text:', 'painted-lady' ),
 					'sanitize' => 'text',
 				),
 				'button_link'   => array(
 					'type'     => 'text',
 					'std'      => '',
-					'label'    => esc_html__( 'Button Link:', 'crimson-rose' ),
+					'label'    => esc_html__( 'Button Link:', 'painted-lady' ),
 					'sanitize' => 'url',
 				),
 				'button_style'  => array(
 					'type'     => 'select',
 					'std'      => 'button-2',
-					'label'    => esc_html__( 'Button Style:', 'crimson-rose' ),
+					'label'    => esc_html__( 'Button Style:', 'painted-lady' ),
 					'options'  => array(
-						'default'  => esc_html__( 'Default Button', 'crimson-rose' ),
-						'button-1' => esc_html__( 'Image Button 1', 'crimson-rose' ),
-						'button-2' => esc_html__( 'Image Button 2', 'crimson-rose' ),
+						'default'  => esc_html__( 'Default Button', 'painted-lady' ),
+						'button-1' => esc_html__( 'Image Button 1', 'painted-lady' ),
+						'button-2' => esc_html__( 'Image Button 2', 'painted-lady' ),
 					),
 					'sanitize' => 'text',
 				),
@@ -103,7 +103,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Blog_Post' ) ) :
 					'std'      => 80,
 					'step'     => 1,
 					'min'      => 0,
-					'label'    => esc_html__( 'Bottom margin of widget:', 'crimson-rose' ),
+					'label'    => esc_html__( 'Bottom margin of widget:', 'painted-lady' ),
 					'sanitize' => 'number',
 				),
 			);
@@ -114,7 +114,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Blog_Post' ) ) :
 		/**
 		 * Widget function.
 		 *
-		 * @since Crimson_Rose 1.01
+		 * @since Painted_Lady 1.01
 		 *
 		 * @param array $args
 		 * @param array $instance
@@ -156,7 +156,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Blog_Post' ) ) :
 			echo $args['before_widget']; /* WPCS: XSS OK. HTML output. */
 
 			// Allow site-wide customization of the 'Read more' link text.
-			$read_more = apply_filters( 'crimson_rose_read_more_text', esc_html__( 'Read more', 'crimson-rose' ) );
+			$read_more = apply_filters( 'painted_lady_read_more_text', esc_html__( 'Read more', 'painted-lady' ) );
 			?>
 
 			<div class="container" style="<?php echo esc_attr( implode( '', $style ) ); ?>">
@@ -210,7 +210,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Blog_Post' ) ) :
 
 				<?php else : ?>
 
-					<p><center><em><?php echo esc_html__( 'No blog posts found.', 'crimson-rose' ); ?></em></center></p>
+					<p><center><em><?php echo esc_html__( 'No blog posts found.', 'painted-lady' ); ?></em></center></p>
 
 				<?php endif; ?>
 
@@ -227,7 +227,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Blog_Post' ) ) :
 		/**
 		 * Change excerpt length
 		 *
-		 * @since Crimson_Rose 1.01
+		 * @since Painted_Lady 1.01
 		 *
 		 * @param int $length
 		 * @return int
@@ -239,7 +239,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Blog_Post' ) ) :
 		/**
 		 * Registers the widget with the WordPress Widget API.
 		 *
-		 * @since Crimson_Rose 1.01
+		 * @since Painted_Lady 1.01
 		 *
 		 * @return void
 		 */
@@ -249,4 +249,4 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Blog_Post' ) ) :
 	}
 endif;
 
-add_action( 'widgets_init', array( 'Crimson_Rose_Content_Widget_Blog_Post', 'register' ) );
+add_action( 'widgets_init', array( 'Painted_Lady_Content_Widget_Blog_Post', 'register' ) );

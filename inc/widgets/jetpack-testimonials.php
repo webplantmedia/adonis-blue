@@ -1,5 +1,5 @@
 <?php
-if ( ! crimson_rose_is_jetpack_activated() ) {
+if ( ! painted_lady_is_jetpack_activated() ) {
 	return;
 }
 
@@ -7,66 +7,66 @@ if ( ! crimson_rose_is_jetpack_activated() ) {
  * Content Widget: Jetpack Testimonials for widgetized pages.
  *
  * @package WordPress
- * @subpackage Crimson_Rose
+ * @subpackage Painted_Lady
  * @since 1.01
  * @author Chris Baldelomar <chris@webplantmedia.com>
  * @copyright Copyright (c) 2018, Chris Baldelomar
- * @link https://webplantmedia.com/product/crimson-rose-wordpress-theme/
+ * @link https://webplantmedia.com/product/painted-lady-wordpress-theme/
  * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
 /**
  * Class: Jetpack Testimonials
  *
- * @since Crimson_Rose 1.01
+ * @since Painted_Lady 1.01
  *
- * @see Crimson_Rose_Widget
+ * @see Painted_Lady_Widget
  */
-class Crimson_Rose_Content_Widget_Jetpack_Testimonials extends Crimson_Rose_Widget {
+class Painted_Lady_Content_Widget_Jetpack_Testimonials extends Painted_Lady_Widget {
 	/**
 	 * __construct
 	 *
-	 * @since Crimson_Rose 1.01
+	 * @since Painted_Lady 1.01
 	 *
 	 * @return void
 	 */
 	public function __construct() {
-		$this->widget_id          = 'crimson-rose-content-widget-jetpack-testimonials';
-		$this->widget_description = esc_html__( 'Displays Jetpack testimonials on your widgetized page.', 'crimson-rose' );
-		$this->widget_name        = esc_html__( 'Crimson Rose: Jetpack Testimonials', 'crimson-rose' );
+		$this->widget_id          = 'painted-lady-content-widget-jetpack-testimonials';
+		$this->widget_description = esc_html__( 'Displays Jetpack testimonials on your widgetized page.', 'painted-lady' );
+		$this->widget_name        = esc_html__( 'Painted Lady: Jetpack Testimonials', 'painted-lady' );
 		$this->settings           = array(
 			'title'             => array(
 				'type'     => 'text',
-				'std'      => esc_html__( 'THOUSANDS OF HAPPY CUSTOMERS AND COUNTING', 'crimson-rose' ),
-				'label'    => esc_html__( 'Title:', 'crimson-rose' ),
+				'std'      => esc_html__( 'THOUSANDS OF HAPPY CUSTOMERS AND COUNTING', 'painted-lady' ),
+				'label'    => esc_html__( 'Title:', 'painted-lady' ),
 				'sanitize' => 'text',
 			),
 			'display_signature' => array(
 				'type'     => 'checkbox',
 				'std'      => 1,
-				'label'    => esc_html__( 'Display Signature:', 'crimson-rose' ),
+				'label'    => esc_html__( 'Display Signature:', 'painted-lady' ),
 				'sanitize' => 'checkbox',
 			),
 			'signature_icon'    => array(
 				'type'     => 'select',
 				'std'      => 'heart',
-				'label'    => esc_html__( 'Icon to display before signature:', 'crimson-rose' ),
+				'label'    => esc_html__( 'Icon to display before signature:', 'painted-lady' ),
 				'options'  => array(
-					'short-dash'  => esc_html__( 'Short Dash', 'crimson-rose' ),
-					'medium-dash' => esc_html__( 'Medium Dash', 'crimson-rose' ),
-					'long-dash'   => esc_html__( 'Long Dash', 'crimson-rose' ),
-					'heart'       => esc_html__( 'Heart', 'crimson-rose' ),
-					''            => esc_html__( 'None', 'crimson-rose' ),
+					'short-dash'  => esc_html__( 'Short Dash', 'painted-lady' ),
+					'medium-dash' => esc_html__( 'Medium Dash', 'painted-lady' ),
+					'long-dash'   => esc_html__( 'Long Dash', 'painted-lady' ),
+					'heart'       => esc_html__( 'Heart', 'painted-lady' ),
+					''            => esc_html__( 'None', 'painted-lady' ),
 				),
 				'sanitize' => 'text',
 			),
 			'columns'           => array(
 				'type'     => 'select',
 				'std'      => '2',
-				'label'    => esc_html__( 'Columns:', 'crimson-rose' ),
+				'label'    => esc_html__( 'Columns:', 'painted-lady' ),
 				'options'  => array(
-					'1' => esc_html__( '1', 'crimson-rose' ),
-					'2' => esc_html__( '2', 'crimson-rose' ),
+					'1' => esc_html__( '1', 'painted-lady' ),
+					'2' => esc_html__( '2', 'painted-lady' ),
 				),
 				'sanitize' => 'text',
 			),
@@ -75,39 +75,39 @@ class Crimson_Rose_Content_Widget_Jetpack_Testimonials extends Crimson_Rose_Widg
 				'std'         => 0,
 				'step'        => 1,
 				'min'         => 0,
-				'label'       => esc_html__( 'Number of testimonials to display:', 'crimson-rose' ),
-				'description' => esc_html__( 'Set to zero to display all.', 'crimson-rose' ),
+				'label'       => esc_html__( 'Number of testimonials to display:', 'painted-lady' ),
+				'description' => esc_html__( 'Set to zero to display all.', 'painted-lady' ),
 				'sanitize'    => 'number',
 			),
 			'order'             => array(
 				'type'     => 'select',
 				'std'      => 'asc',
-				'label'    => esc_html__( 'Order:', 'crimson-rose' ),
+				'label'    => esc_html__( 'Order:', 'painted-lady' ),
 				'options'  => array(
-					'asc'  => esc_html__( 'ASC', 'crimson-rose' ),
-					'desc' => esc_html__( 'DESC', 'crimson-rose' ),
+					'asc'  => esc_html__( 'ASC', 'painted-lady' ),
+					'desc' => esc_html__( 'DESC', 'painted-lady' ),
 				),
 				'sanitize' => 'text',
 			),
 			'orderby'           => array(
 				'type'     => 'select',
 				'std'      => 'date',
-				'label'    => esc_html__( 'Order By:', 'crimson-rose' ),
+				'label'    => esc_html__( 'Order By:', 'painted-lady' ),
 				'options'  => array(
-					'date'   => esc_html__( 'Date', 'crimson-rose' ),
-					'title'  => esc_html__( 'Title', 'crimson-rose' ),
-					'author' => esc_html__( 'Author', 'crimson-rose' ),
-					'rand'   => esc_html__( 'Random', 'crimson-rose' ),
+					'date'   => esc_html__( 'Date', 'painted-lady' ),
+					'title'  => esc_html__( 'Title', 'painted-lady' ),
+					'author' => esc_html__( 'Author', 'painted-lady' ),
+					'rand'   => esc_html__( 'Random', 'painted-lady' ),
 				),
 				'sanitize' => 'text',
 			),
 			'style'             => array(
 				'type'     => 'select',
 				'std'      => 'plain',
-				'label'    => esc_html__( 'Box Style:', 'crimson-rose' ),
+				'label'    => esc_html__( 'Box Style:', 'painted-lady' ),
 				'options'  => array(
-					'plain'  => esc_html__( 'Plain', 'crimson-rose' ),
-					'border' => esc_html__( 'Border', 'crimson-rose' ),
+					'plain'  => esc_html__( 'Plain', 'painted-lady' ),
+					'border' => esc_html__( 'Border', 'painted-lady' ),
 				),
 				'sanitize' => 'text',
 			),
@@ -117,7 +117,7 @@ class Crimson_Rose_Content_Widget_Jetpack_Testimonials extends Crimson_Rose_Widg
 				'step'     => 1,
 				'min'      => 0,
 				'max'      => 1000,
-				'label'    => esc_html__( 'Height of testimonials:', 'crimson-rose' ),
+				'label'    => esc_html__( 'Height of testimonials:', 'painted-lady' ),
 				'sanitize' => 'number',
 			),
 			'padding_top'       => array(
@@ -125,7 +125,7 @@ class Crimson_Rose_Content_Widget_Jetpack_Testimonials extends Crimson_Rose_Widg
 				'std'      => 40,
 				'step'     => 1,
 				'min'      => 0,
-				'label'    => esc_html__( 'Top padding of widget:', 'crimson-rose' ),
+				'label'    => esc_html__( 'Top padding of widget:', 'painted-lady' ),
 				'sanitize' => 'number',
 			),
 			'padding_bottom'    => array(
@@ -133,7 +133,7 @@ class Crimson_Rose_Content_Widget_Jetpack_Testimonials extends Crimson_Rose_Widg
 				'std'      => 40,
 				'step'     => 1,
 				'min'      => 0,
-				'label'    => esc_html__( 'Bottom padding of widget:', 'crimson-rose' ),
+				'label'    => esc_html__( 'Bottom padding of widget:', 'painted-lady' ),
 				'sanitize' => 'number',
 			),
 			'margin_bottom'     => array(
@@ -141,20 +141,20 @@ class Crimson_Rose_Content_Widget_Jetpack_Testimonials extends Crimson_Rose_Widg
 				'std'      => 80,
 				'step'     => 1,
 				'min'      => 0,
-				'label'    => esc_html__( 'Bottom margin of widget:', 'crimson-rose' ),
+				'label'    => esc_html__( 'Bottom margin of widget:', 'painted-lady' ),
 				'sanitize' => 'number',
 			),
 			'panels'            => array(
 				array(
-					'title'  => esc_html__( 'Slider Settings', 'crimson-rose' ),
+					'title'  => esc_html__( 'Slider Settings', 'painted-lady' ),
 					'fields' => array(
 						'slider_mode'      => array(
 							'type'     => 'select',
 							'std'      => 'horizontal',
-							'label'    => esc_html__( 'Transition Effect:', 'crimson-rose' ),
+							'label'    => esc_html__( 'Transition Effect:', 'painted-lady' ),
 							'options'  => array(
-								'horizontal' => esc_html__( 'Slide', 'crimson-rose' ),
-								'fade'       => esc_html__( 'Fade', 'crimson-rose' ),
+								'horizontal' => esc_html__( 'Slide', 'painted-lady' ),
+								'fade'       => esc_html__( 'Fade', 'painted-lady' ),
 							),
 							'sanitize' => 'text',
 						),
@@ -164,31 +164,31 @@ class Crimson_Rose_Content_Widget_Jetpack_Testimonials extends Crimson_Rose_Widg
 							'step'     => 1,
 							'min'      => 1,
 							'max'      => 100,
-							'label'    => esc_html__( 'Speed of the slideshow change in seconds:', 'crimson-rose' ),
+							'label'    => esc_html__( 'Speed of the slideshow change in seconds:', 'painted-lady' ),
 							'sanitize' => 'number',
 						),
 						'slider_auto'      => array(
 							'type'     => 'checkbox',
 							'std'      => 1,
-							'label'    => esc_html__( 'Auto start slider transitions?', 'crimson-rose' ),
+							'label'    => esc_html__( 'Auto start slider transitions?', 'painted-lady' ),
 							'sanitize' => 'checkbox',
 						),
 						'slider_autohover' => array(
 							'type'     => 'checkbox',
 							'std'      => 1,
-							'label'    => esc_html__( 'Pause slideshow when hovering?', 'crimson-rose' ),
+							'label'    => esc_html__( 'Pause slideshow when hovering?', 'painted-lady' ),
 							'sanitize' => 'checkbox',
 						),
 						'slider_controls'  => array(
 							'type'     => 'checkbox',
 							'std'      => 1,
-							'label'    => esc_html__( 'Show slide control?', 'crimson-rose' ),
+							'label'    => esc_html__( 'Show slide control?', 'painted-lady' ),
 							'sanitize' => 'checkbox',
 						),
 						'slider_pager'     => array(
 							'type'     => 'checkbox',
 							'std'      => 1,
-							'label'    => esc_html__( 'Show slide pagination?', 'crimson-rose' ),
+							'label'    => esc_html__( 'Show slide pagination?', 'painted-lady' ),
 							'sanitize' => 'checkbox',
 						),
 					),
@@ -307,7 +307,7 @@ class Crimson_Rose_Content_Widget_Jetpack_Testimonials extends Crimson_Rose_Widg
 							$temp .= sprintf(
 								'<a class="post-edit-link" href="%1$s">%2$s <span class="screen-reader-text">%3$s</span></a>',
 								esc_url( get_edit_post_link( $post_id ) ),
-								esc_html__( 'Edit', 'crimson-rose' ),
+								esc_html__( 'Edit', 'painted-lady' ),
 								get_the_title()
 							);
 						$temp     .= '</span></div>';
@@ -412,7 +412,7 @@ class Crimson_Rose_Content_Widget_Jetpack_Testimonials extends Crimson_Rose_Widg
 
 					<?php else : ?>
 
-						<p><center><em><?php echo esc_html__( 'Your Testimonial Archive currently has no entries. You can start creating them in your dashboard.', 'crimson-rose' ); ?></em></center></p>
+						<p><center><em><?php echo esc_html__( 'Your Testimonial Archive currently has no entries. You can start creating them in your dashboard.', 'painted-lady' ); ?></em></center></p>
 
 					<?php endif; ?>
 				</div><!-- .site-boundary -->
@@ -427,7 +427,7 @@ class Crimson_Rose_Content_Widget_Jetpack_Testimonials extends Crimson_Rose_Widg
 	/**
 	 * Display the featured image if it's available
 	 *
-	 * @since Crimson_Rose 1.01
+	 * @since Painted_Lady 1.01
 	 *
 	 * @param int $post_id
 	 * @return string
@@ -450,7 +450,7 @@ class Crimson_Rose_Content_Widget_Jetpack_Testimonials extends Crimson_Rose_Widg
 	/**
 	 * Registers the widget with the WordPress Widget API.
 	 *
-	 * @since Crimson_Rose 1.01
+	 * @since Painted_Lady 1.01
 	 *
 	 * @return void
 	 */
@@ -459,4 +459,4 @@ class Crimson_Rose_Content_Widget_Jetpack_Testimonials extends Crimson_Rose_Widg
 	}
 }
 
-add_action( 'widgets_init', array( 'Crimson_Rose_Content_Widget_Jetpack_Testimonials', 'register' ) );
+add_action( 'widgets_init', array( 'Painted_Lady_Content_Widget_Jetpack_Testimonials', 'register' ) );

@@ -22,11 +22,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 global $post;
 
-$heading = esc_html( apply_filters( 'woocommerce_product_description_heading', __( 'Description', 'crimson-rose' ) ) );
+$heading = esc_html( apply_filters( 'woocommerce_product_description_heading', __( 'Description', 'painted-lady' ) ) );
 
 ?>
 
-<?php if ( $heading && crimson_rose_display_sub_header() ) : ?>
+<?php if ( $heading && painted_lady_display_sub_header() ) : ?>
   <h2><?php echo $heading; /* WPCS: XSS OK. HTML output. */ ?></h2>
 <?php endif; ?>
 

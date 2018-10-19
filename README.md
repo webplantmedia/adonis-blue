@@ -1,4 +1,4 @@
-# Crimson Rose #
+# Painted Lady #
 
 **Contributors:** cbaldelomar  
 **Tags:** two-columns, three-columns, four-columns, right-sidebar, grid-layout, custom-background, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-image-header, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, e-commerce, blog, photography
@@ -12,7 +12,7 @@ Easy To Use, Fast To Install, Small Business Feminine WordPress Theme
 
 ## Description ##
 
-Crimson Rose is an easy to use WordPress theme with a feminine and watercolor design for female entrepreneurs. Quickly change the color scheme, set up a beautiful homepage using widgets, and create grid based content using page templates. This theme is specially designed to integrate with Jetpack, WooCommerce, and AffiliateWP, which is all you need to get your shopping site online, marketed, and social. This theme provides you with the necessary Customizer options so you can easily brand your site, and make it your own. Spend less time configuring your theme, and more time writing great content, and communicating to your audience.  
+Painted Lady is an easy to use WordPress theme with a feminine and watercolor design for female entrepreneurs. Quickly change the color scheme, set up a beautiful homepage using widgets, and create grid based content using page templates. This theme is specially designed to integrate with Jetpack, WooCommerce, and AffiliateWP, which is all you need to get your shopping site online, marketed, and social. This theme provides you with the necessary Customizer options so you can easily brand your site, and make it your own. Spend less time configuring your theme, and more time writing great content, and communicating to your audience.  
 
 ## Installation ##
 
@@ -22,8 +22,8 @@ Crimson Rose is an easy to use WordPress theme with a feminine and watercolor de
 
 ## Copyright ##
 
-Crimson Rose WordPress Theme, Copyright 2018 Chris Baldelomar  
-Crimson Rose is distributed under the terms of the GNU GPL  
+Painted Lady WordPress Theme, Copyright 2018 Chris Baldelomar  
+Painted Lady is distributed under the terms of the GNU GPL  
 
 This program is free software: you can redistribute it and/or modify  
 it under the terms of the GNU General Public License as published by  
@@ -35,7 +35,7 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the  
 GNU General Public License for more details.  
 
-Crimson Rose bundles the following third-party resources:  
+Painted Lady bundles the following third-party resources:  
 
 TGM-Plugin-Activation, Copyright (c) 2011, Thomas Griffin  
 Licenses: GPL-2.0+  

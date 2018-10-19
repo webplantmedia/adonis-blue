@@ -3,20 +3,20 @@
  * Display WooCommerce menu cart.
  *
  * @package WordPress
- * @subpackage Crimson_Rose
+ * @subpackage Painted_Lady
  * @since 1.01
  * @author Chris Baldelomar <chris@webplantmedia.com>
  * @copyright Copyright (c) 2018, Chris Baldelomar
- * @link https://webplantmedia.com/product/crimson-rose-wordpress-theme/
+ * @link https://webplantmedia.com/product/painted-lady-wordpress-theme/
  * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
 ?>
 
-<?php if ( crimson_rose_is_woocommerce_activated() ) : ?>
+<?php if ( painted_lady_is_woocommerce_activated() ) : ?>
 	<nav class="cart-menu in-menu-bar">
 		<ul class="menu">
-			<?php do_action( 'crimson_rose_cart' ); ?>
+			<?php do_action( 'painted_lady_cart' ); ?>
 		</ul>
 	</nav>
 <?php endif; ?>

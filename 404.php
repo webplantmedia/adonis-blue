@@ -3,18 +3,18 @@
  * The template for displaying 404 pages (not found)
  *
  * @package WordPress
- * @subpackage Crimson_Rose
+ * @subpackage Painted_Lady
  * @since 1.01
  * @author Chris Baldelomar <chris@webplantmedia.com>
  * @copyright Copyright (c) 2018, Chris Baldelomar
- * @link https://webplantmedia.com/product/crimson-rose-wordpress-theme/
+ * @link https://webplantmedia.com/product/painted-lady-wordpress-theme/
  * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
-global $crimson_rose;
+global $painted_lady;
 get_header();
 
-$error_page_id = $crimson_rose['404_custom_page'];
+$error_page_id = $painted_lady['404_custom_page'];
 ?>
 
 <?php if ( 0 !== $error_page_id ) : ?>
@@ -23,7 +23,7 @@ $error_page_id = $crimson_rose['404_custom_page'];
 	$post = get_post( $error_page_id );
 	setup_postdata( $post );
 	$error_thumbnail  = get_the_post_thumbnail_url( $error_page_id, 'full' );
-	$error_text_white = $crimson_rose['404_text_white'];
+	$error_text_white = $painted_lady['404_text_white'];
 
 	$post_class = array( 'error-404', 'not-found', 'has-background' );
 
@@ -40,7 +40,7 @@ $error_page_id = $crimson_rose['404_custom_page'];
 		<main id="main" class="site-main">
 
 			<section id="post-<?php the_ID(); ?>" <?php post_class( implode( ' ', $post_class ) ); ?>>
-				<?php if ( crimson_rose_display_header() ) : ?>
+				<?php if ( painted_lady_display_header() ) : ?>
 					<header class="entry-header">
 						<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 					</header><!-- .entry-header -->
@@ -58,7 +58,7 @@ $error_page_id = $crimson_rose['404_custom_page'];
 							edit_post_link(
 								sprintf(
 									'%1$s <span class="screen-reader-text">%2$s</span>',
-									esc_html__( 'Edit', 'crimson-rose' ),
+									esc_html__( 'Edit', 'painted-lady' ),
 									get_the_title()
 								),
 								'<div class="entry-footer-meta"><span class="edit-link">',
@@ -81,11 +81,11 @@ $error_page_id = $crimson_rose['404_custom_page'];
 
 			<section class="error-404 not-found">
 				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'crimson-rose' ); ?></h1>
+					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'painted-lady' ); ?></h1>
 				</header><!-- .page-header -->
 
 				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'crimson-rose' ); ?></p>
+					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'painted-lady' ); ?></p>
 
 					<?php
 						get_search_form();
@@ -93,7 +93,7 @@ $error_page_id = $crimson_rose['404_custom_page'];
 					?>
 
 					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'crimson-rose' ); ?></h2>
+						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'painted-lady' ); ?></h2>
 						<ul>
 						<?php
 							wp_list_categories(
@@ -112,7 +112,7 @@ $error_page_id = $crimson_rose['404_custom_page'];
 					<?php
 
 						/* translators: %1$s: smiley */
-						$archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'crimson-rose' ), convert_smilies( ':)' ) ) . '</p>';
+						$archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'painted-lady' ), convert_smilies( ':)' ) ) . '</p>';
 						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
 
 						the_widget( 'WP_Widget_Tag_Cloud' );

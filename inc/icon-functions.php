@@ -3,18 +3,18 @@
  * Icon related functions and filters
  *
  * @package WordPress
- * @subpackage Crimson_Rose
+ * @subpackage Painted_Lady
  * @since 1.01
  * @author Chris Baldelomar <chris@webplantmedia.com>
  * @copyright Copyright (c) 2018, Chris Baldelomar
- * @link https://webplantmedia.com/product/crimson-rose-wordpress-theme/
+ * @link https://webplantmedia.com/product/painted-lady-wordpress-theme/
  * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
 /**
  * Parse social menu
  *
- * @since Crimson_Rose 1.01
+ * @since Painted_Lady 1.01
  *
  * @param string $item_output
  * @param mixed  $item
@@ -22,9 +22,9 @@
  * @param object $args
  * @return string
  */
-function crimson_rose_nav_menu_social_icons( $item_output, $item, $depth, $args ) {
+function painted_lady_nav_menu_social_icons( $item_output, $item, $depth, $args ) {
 	// Get supported social icons.
-	$social_icons = crimson_rose_social_links_icons();
+	$social_icons = painted_lady_social_links_icons();
 	$known        = false;
 
 	// Change icon inside social links menu if there is supported URL.
@@ -43,16 +43,16 @@ function crimson_rose_nav_menu_social_icons( $item_output, $item, $depth, $args 
 
 	return $item_output;
 }
-add_filter( 'walker_nav_menu_start_el', 'crimson_rose_nav_menu_social_icons', 10, 4 );
+add_filter( 'walker_nav_menu_start_el', 'painted_lady_nav_menu_social_icons', 10, 4 );
 
 /**
  * Returns an array of supported social links (URL and icon name).
  *
- * @since Crimson_Rose 1.01
+ * @since Painted_Lady 1.01
  *
  * @return array $social_links_icons
  */
-function crimson_rose_social_links_icons() {
+function painted_lady_social_links_icons() {
 	/*
 	 * Supported social links icons.
 	 *
@@ -145,11 +145,11 @@ function crimson_rose_social_links_icons() {
 	);
 
 	/**
-	 * Filter Crimson Rose social links icons.
+	 * Filter Painted Lady social links icons.
 	 *
-	 * @since Crimson Rose 1.0
+	 * @since Painted Lady 1.0
 	 *
 	 * @param array $social_links_icons Array of social links icons.
 	 */
-	return apply_filters( 'crimson_rose_social_links_icons', $social_links_icons );
+	return apply_filters( 'painted_lady_social_links_icons', $social_links_icons );
 }

@@ -5,11 +5,11 @@
  * This is the template that displays all of the <head> section and everything up until <div id="content">
  *
  * @package WordPress
- * @subpackage Crimson_Rose
+ * @subpackage Painted_Lady
  * @since 1.01
  * @author Chris Baldelomar <chris@webplantmedia.com>
  * @copyright Copyright (c) 2018, Chris Baldelomar
- * @link https://webplantmedia.com/product/crimson-rose-wordpress-theme/
+ * @link https://webplantmedia.com/product/painted-lady-wordpress-theme/
  * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
@@ -26,7 +26,7 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'crimson-rose' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'painted-lady' ); ?></a>
 
 	<header id="masthead" class="site-header">
 		<div class="site-header-inner">
@@ -56,7 +56,7 @@
 
 		<div id="site-navigation" class="main-navigation">
 			<div class="site-boundary">
-				<?php crimson_rose_mobile_menu_button(); ?>
+				<?php painted_lady_mobile_menu_button(); ?>
 
 				<?php get_template_part( 'template-parts/menu', 'mobile-cart' ); ?>
 
@@ -92,7 +92,7 @@
 		<header class="archive-page-header">
 			<div class="site-boundary">
 				<h1 class="page-title">
-					<span class="archive-type"><?php echo esc_html__( 'Search Results for:', 'crimson-rose' ); ?></span>
+					<span class="archive-type"><?php echo esc_html__( 'Search Results for:', 'painted-lady' ); ?></span>
 					<span class="archive-title"><?php echo get_search_query(); ?></span>
 				</h1>
 			</div>
@@ -100,7 +100,7 @@
 
 	<?php endif; ?>
 
-	<?php if ( crimson_rose_display_header_image() ) : ?>
+	<?php if ( painted_lady_display_header_image() ) : ?>
 		<?php $url = get_the_post_thumbnail_url( get_the_ID(), 'full' ); ?>
 		<div class="page-image-header">
 			<div class="page-image-header-background" style="background-image:url('<?php echo esc_url( $url ); ?>');"></div>

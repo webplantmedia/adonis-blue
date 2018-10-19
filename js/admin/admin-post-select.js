@@ -2,11 +2,11 @@
  * Used for ajax post selection by inc/class-widget.php
  *
  * @package WordPress
- * @subpackage Crimson_Rose
+ * @subpackage Painted_Lady
  * @since 1.01
  * @author Chris Baldelomar <chris@webplantmedia.com>
  * @copyright Copyright (c) 2018, Chris Baldelomar
- * @link https://webplantmedia.com/product/crimson-rose-wordpress-theme/
+ * @link https://webplantmedia.com/product/painted-lady-wordpress-theme/
  * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
@@ -49,7 +49,7 @@
 												type: 'POST',
 												dataType: 'json',
 												url: ajaxurl,
-												data: 'action=crimson_rose_' + lookup + '_lookup&_wpnonce=' + wpnonce + '&request=' + term + '&post_type=' + post_type + '&taxonomy=' + taxonomy,
+												data: 'action=painted_lady_' + lookup + '_lookup&_wpnonce=' + wpnonce + '&request=' + term + '&post_type=' + post_type + '&taxonomy=' + taxonomy,
 												success: function(data) {
 													response( data );
 												}
@@ -97,7 +97,7 @@
 												type: 'POST',
 												dataType: 'json',
 												url: ajaxurl,
-												data: 'action=crimson_rose_' + lookup + '_lookup&request=' + term + '&post_type=' + post_type + '&taxonomy=' + taxonomy,
+												data: 'action=painted_lady_' + lookup + '_lookup&request=' + term + '&post_type=' + post_type + '&taxonomy=' + taxonomy,
 												success: function(data) {
 													response( data );
 												}

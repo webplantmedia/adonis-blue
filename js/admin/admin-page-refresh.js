@@ -2,11 +2,11 @@
  * Used for ajax page refresh by inc/class-widget.php
  *
  * @package WordPress
- * @subpackage Crimson_Rose
+ * @subpackage Painted_Lady
  * @since 1.01
  * @author Chris Baldelomar <chris@webplantmedia.com>
  * @copyright Copyright (c) 2018, Chris Baldelomar
- * @link https://webplantmedia.com/product/crimson-rose-wordpress-theme/
+ * @link https://webplantmedia.com/product/painted-lady-wordpress-theme/
  * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
@@ -29,7 +29,7 @@
 									type: 'POST',
 									dataType: 'html',
 									url: ajaxurl,
-									data: 'action=crimson_rose_page_list_refresh&_wpnonce=' + wpnonce + '&value=' + value,
+									data: 'action=painted_lady_page_list_refresh&_wpnonce=' + wpnonce + '&value=' + value,
 									success: function(data) {
 										$( target ).html( data ).fadeTo( 100, 0.3, function() { $( this ).fadeTo( 500, 1.0 ); } );
 									},

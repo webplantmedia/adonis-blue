@@ -3,11 +3,11 @@
  * Template part for displaying posts
  *
  * @package WordPress
- * @subpackage Crimson_Rose
+ * @subpackage Painted_Lady
  * @since 1.01
  * @author Chris Baldelomar <chris@webplantmedia.com>
  * @copyright Copyright (c) 2018, Chris Baldelomar
- * @link https://webplantmedia.com/product/crimson-rose-wordpress-theme/
+ * @link https://webplantmedia.com/product/painted-lady-wordpress-theme/
  * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
@@ -24,7 +24,7 @@
 	<header class="entry-header">
 		<?php if ( 'post' === get_post_type() ) : ?>
 			<div class="entry-cat-meta">
-				<?php crimson_rose_entry_header( '<span class="cat-bull-delim">&bull;</span> ' ); ?>
+				<?php painted_lady_entry_header( '<span class="cat-bull-delim">&bull;</span> ' ); ?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 
@@ -34,7 +34,7 @@
 		if ( 'post' === get_post_type() ) :
 		?>
 		<div class="entry-meta">
-			<?php crimson_rose_posted_on(); ?>
+			<?php painted_lady_posted_on(); ?>
 		</div><!-- .entry-meta -->
 		<?php
 		endif;

@@ -3,11 +3,11 @@
  * WooCommerce Class.
  *
  * @package WordPress
- * @subpackage Crimson_Rose
+ * @subpackage Painted_Lady
  * @since 1.01
  * @author Chris Baldelomar <chris@webplantmedia.com>
  * @copyright Copyright (c) 2018, Chris Baldelomar
- * @link https://webplantmedia.com/product/crimson-rose-wordpress-theme/
+ * @link https://webplantmedia.com/product/painted-lady-wordpress-theme/
  * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
@@ -15,17 +15,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
+if ( ! class_exists( 'Painted_Lady_WooCommerce' ) ) :
 	/**
 	 * Class: WooCommerce Integration class.
 	 *
-	 * @since Crimson_Rose 1.01
+	 * @since Painted_Lady 1.01
 	 */
-	class Crimson_Rose_WooCommerce {
+	class Painted_Lady_WooCommerce {
 		/**
 		 * __construct
 		 *
-		 * @since Crimson_Rose 1.01
+		 * @since Painted_Lady 1.01
 		 *
 		 * @return void
 		 */
@@ -62,7 +62,7 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 			add_action( 'woocommerce_before_main_content', array( $this, 'output_content_wrapper' ), 10 );
 			add_action( 'woocommerce_after_main_content', array( $this, 'output_content_wrapper_end' ), 10 );
 
-			add_action( 'crimson_rose_cart', array( $this, 'woocommerce_cart_dropdown' ), 10 );
+			add_action( 'painted_lady_cart', array( $this, 'woocommerce_cart_dropdown' ), 10 );
 
 			add_filter( 'woocommerce_add_to_cart_fragments', array( $this, 'woocommerce_header_cart_fragments' ) );
 
@@ -71,21 +71,21 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 			// Add header for payment info.
 			add_action( 'woocommerce_review_order_before_payment', array( $this, 'before_shipping_title' ), 10 );
 
-			add_filter( 'woocommerce_short_description', 'crimson_rose_the_content', 11 );
+			add_filter( 'woocommerce_short_description', 'painted_lady_the_content', 11 );
 		}
 
 		/**
 		 * Shop image backdrop
 		 *
-		 * @since Crimson_Rose 1.01
+		 * @since Painted_Lady 1.01
 		 *
 		 * @param string $image
 		 * @return string
 		 */
 		public function woocommerce_product_get_image( $image ) {
-			global $crimson_rose;
+			global $painted_lady;
 
-			if ( $crimson_rose['shop_image_backdrop'] ) {
+			if ( $painted_lady['shop_image_backdrop'] ) {
 				return '<span class="woocommerce-product-image-wrapper">' . $image . '</span>';
 			}
 
@@ -95,7 +95,7 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 		/**
 		 * No need for infinit scroll on WooCommerce pages.
 		 *
-		 * @since Crimson_Rose 1.01
+		 * @since Painted_Lady 1.01
 		 *
 		 * @return void
 		 */
@@ -108,7 +108,7 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 		/**
 		 * Add font icons to pagination
 		 *
-		 * @since Crimson_Rose 1.01
+		 * @since Painted_Lady 1.01
 		 *
 		 * @param array $args
 		 * @return array
@@ -123,21 +123,21 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 		/**
 		 * Change products per page
 		 *
-		 * @since Crimson_Rose 1.01
+		 * @since Painted_Lady 1.01
 		 *
 		 * @param int $cols
 		 * @return int
 		 */
 		public function loop_shop_per_page( $cols ) {
-			global $crimson_rose;
+			global $painted_lady;
 
-			return $crimson_rose['shop_products_per_page'];
+			return $painted_lady['shop_products_per_page'];
 		}
 
 		/**
 		 * Add theme support
 		 *
-		 * @since Crimson_Rose 1.01
+		 * @since Painted_Lady 1.01
 		 *
 		 * @return void
 		 */
@@ -156,46 +156,46 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 		/**
 		 * Check features with user selected options from Customizer
 		 *
-		 * @since Crimson_Rose 1.01
+		 * @since Painted_Lady 1.01
 		 *
 		 * @return void
 		 */
 		public function check_features() {
-			global $crimson_rose;
+			global $painted_lady;
 
-			if ( $crimson_rose['shop_disable_gallery_zoom'] ) {
+			if ( $painted_lady['shop_disable_gallery_zoom'] ) {
 				remove_theme_support( 'wc-product-gallery-zoom' );
 			}
 
-			if ( $crimson_rose['shop_disable_gallery_lightbox'] ) {
+			if ( $painted_lady['shop_disable_gallery_lightbox'] ) {
 				remove_theme_support( 'wc-product-gallery-lightbox' );
 			}
 
-			if ( $crimson_rose['shop_disable_gallery_slider'] ) {
+			if ( $painted_lady['shop_disable_gallery_slider'] ) {
 				remove_theme_support( 'wc-product-gallery-slider' );
 			}
 
-			if ( $crimson_rose['shop_hide_stars'] ) {
+			if ( $painted_lady['shop_hide_stars'] ) {
 				remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
 			}
 
-			if ( $crimson_rose['shop_product_hide_stars'] ) {
+			if ( $painted_lady['shop_product_hide_stars'] ) {
 				remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10 );
 			}
 
-			if ( $crimson_rose['shop_hide_breadcrumbs'] ) {
+			if ( $painted_lady['shop_hide_breadcrumbs'] ) {
 				remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
 			}
 
-			if ( $crimson_rose['shop_hide_result_count'] ) {
+			if ( $painted_lady['shop_hide_result_count'] ) {
 				remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
 			}
 
-			if ( $crimson_rose['shop_hide_catalog_ordering'] ) {
+			if ( $painted_lady['shop_hide_catalog_ordering'] ) {
 				remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
 			}
 
-			if ( $crimson_rose['shop_product_hide_meta'] ) {
+			if ( $painted_lady['shop_product_hide_meta'] ) {
 				remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
 			}
 
@@ -204,12 +204,12 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 		/**
 		 * Change image size depending on columns
 		 *
-		 * @since Crimson_Rose 1.01
+		 * @since Painted_Lady 1.01
 		 *
 		 * @return void
 		 */
 		public function check_image_size() {
-			global $crimson_rose;
+			global $painted_lady;
 
 			add_filter( 'single_product_archive_thumbnail_size', array( $this, 'single_product_archive_thumbnail_size' ), 10, 1 );
 			add_filter( 'subcategory_archive_thumbnail_size', array( $this, 'single_product_archive_thumbnail_size' ), 10, 1 );
@@ -218,19 +218,19 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 		/**
 		 * Change product image size
 		 *
-		 * @since Crimson_Rose 1.01
+		 * @since Painted_Lady 1.01
 		 *
 		 * @return string
 		 */
 		public function single_product_archive_thumbnail_size( $size ) {
-			global $crimson_rose;
+			global $painted_lady;
 
 			if ( is_product_taxonomy() ) {
-				return $crimson_rose['shop_archive_image_size'];
+				return $painted_lady['shop_archive_image_size'];
 			} elseif ( is_shop() ) {
-				return $crimson_rose['shop_image_size'];
+				return $painted_lady['shop_image_size'];
 			} elseif ( is_product() ) {
-				return $crimson_rose['shop_related_products_image_size'];
+				return $painted_lady['shop_related_products_image_size'];
 			}
 
 			return $size;
@@ -239,25 +239,25 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 		/**
 		 * Set columns depending on type of page.
 		 *
-		 * @since Crimson_Rose 1.01
+		 * @since Painted_Lady 1.01
 		 *
 		 * @param int $number_columns
 		 * @return int
 		 */
 		public function loop_columns( $number_columns ) {
-			global $crimson_rose;
+			global $painted_lady;
 
 			if ( is_product_category() || is_product_taxonomy() ) {
-				return $crimson_rose['shop_archive_columns'];
+				return $painted_lady['shop_archive_columns'];
 			}
 
-			return $crimson_rose['shop_columns'];
+			return $painted_lady['shop_columns'];
 		}
 
 		/**
 		 * Hide Title
 		 *
-		 * @since Crimson_Rose 1.01
+		 * @since Painted_Lady 1.01
 		 *
 		 * @param mixed $title
 		 * @return bool
@@ -269,7 +269,7 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 		/**
 		 * Adjust shop title
 		 *
-		 * @since Crimson_Rose 1.01
+		 * @since Painted_Lady 1.01
 		 *
 		 * @param string $title
 		 * @return string
@@ -298,32 +298,32 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 		/**
 		 * Enqueue scripts and styles
 		 *
-		 * @since Crimson_Rose 1.01
+		 * @since Painted_Lady 1.01
 		 *
 		 * @return void
 		 */
 		public function woocommerce_enqueue() {
-			wp_enqueue_style( 'crimson-rose-woocommerce', get_template_directory_uri() . '/css/woocommerce.css', array( 'crimson-rose-style' ), CRIMSON_ROSE_VERSION );
+			wp_enqueue_style( 'painted-lady-woocommerce', get_template_directory_uri() . '/css/woocommerce.css', array( 'painted-lady-style' ), PAINTED_LADY_VERSION );
 
-			wp_enqueue_script( 'crimson-rose-woocommerce', get_template_directory_uri() . '/js/woocommerce.js', array(), CRIMSON_ROSE_VERSION, true );
+			wp_enqueue_script( 'painted-lady-woocommerce', get_template_directory_uri() . '/js/woocommerce.js', array(), PAINTED_LADY_VERSION, true );
 		}
 
 		/**
 		 * Set related products args
 		 *
-		 * @since Crimson_Rose 1.01
+		 * @since Painted_Lady 1.01
 		 *
 		 * @param array $args
 		 * @return array
 		 */
 		public function related_products_args( $args ) {
-			global $crimson_rose;
+			global $painted_lady;
 
 			$args = array_merge(
 				$args, apply_filters(
-					'crimson_rose_related_products_args', array(
-						'posts_per_page' => $crimson_rose['shop_related_products_columns'],
-						'columns'        => $crimson_rose['shop_related_products_columns'],
+					'painted_lady_related_products_args', array(
+						'posts_per_page' => $painted_lady['shop_related_products_columns'],
+						'columns'        => $painted_lady['shop_related_products_columns'],
 					)
 				)
 			);
@@ -334,16 +334,16 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 		/**
 		 * Set before content wrapper
 		 *
-		 * @since Crimson_Rose 1.01
+		 * @since Painted_Lady 1.01
 		 *
 		 * @return void
 		 */
 		public function output_content_wrapper() {
-			global $crimson_rose;
+			global $painted_lady;
 
 			echo '<div id="primary" class="content-area"><main id="main" class="site-main">';
 
-			if ( is_shop() && ! $crimson_rose['shop_hide_title'] ) {
+			if ( is_shop() && ! $painted_lady['shop_hide_title'] ) {
 				$title = woocommerce_page_title( false );
 				$title = '<h1 class="h1-title">' . $title . '</h1>';
 				echo $title; /* WPCS: XSS OK. HTML output. */
@@ -353,7 +353,7 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 		/**
 		 * Set after content wrapper
 		 *
-		 * @since Crimson_Rose 1.01
+		 * @since Painted_Lady 1.01
 		 *
 		 * @return void
 		 */
@@ -364,7 +364,7 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 		/**
 		 * Add cart button dropdown
 		 *
-		 * @since Crimson_Rose 1.01
+		 * @since Painted_Lady 1.01
 		 *
 		 * @return void
 		 */
@@ -395,7 +395,7 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 		/**
 		 * Ajax update for item count in cart
 		 *
-		 * @since Crimson_Rose 1.01
+		 * @since Painted_Lady 1.01
 		 *
 		 * @param array $fragments
 		 * @return array
@@ -418,7 +418,7 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 		/**
 		 * Add header mini cart
 		 *
-		 * @since Crimson_Rose 1.01
+		 * @since Painted_Lady 1.01
 		 *
 		 * @return void
 		 */
@@ -426,7 +426,7 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 			global $woocommerce;
 			$cart_items_count = $woocommerce->cart->cart_contents_count;
 
-			$output = '<h3 class="widget-sub-title">' . $cart_items_count . ' ' . esc_html__( 'items in your cart', 'crimson-rose' ) . '</h3>';
+			$output = '<h3 class="widget-sub-title">' . $cart_items_count . ' ' . esc_html__( 'items in your cart', 'painted-lady' ) . '</h3>';
 
 			echo $output; /* WPCS: XSS OK. HTML output. */
 		}
@@ -434,28 +434,28 @@ if ( ! class_exists( 'Crimson_Rose_WooCommerce' ) ) :
 		/**
 		 * Add header for payment info
 		 *
-		 * @since Crimson_Rose 1.01
+		 * @since Painted_Lady 1.01
 		 *
 		 * @return void
 		 */
 		public function before_shipping_title() {
-			echo '<h3 id="payment_method_heading">' . esc_html__( 'Payment info', 'crimson-rose' ) . '</h3>';
+			echo '<h3 id="payment_method_heading">' . esc_html__( 'Payment info', 'painted-lady' ) . '</h3>';
 		}
 	}
 endif;
 
-return new Crimson_Rose_WooCommerce();
+return new Painted_Lady_WooCommerce();
 
 /**
  * Show subcategory thumbnails.
  *
- * @since Crimson_Rose 1.01
+ * @since Painted_Lady 1.01
  *
  * @param object $category
  * @return void
  */
 function woocommerce_subcategory_thumbnail( $category ) {
-	global $crimson_rose;
+	global $painted_lady;
 
 	$small_thumbnail_size = apply_filters( 'subcategory_archive_thumbnail_size', 'shop_catalog' );
 	$dimensions           = wc_get_image_size( $small_thumbnail_size );
@@ -477,7 +477,7 @@ function woocommerce_subcategory_thumbnail( $category ) {
 		// Ref: https://core.trac.wordpress.org/ticket/23605.
 		$image = str_replace( ' ', '%20', $image );
 
-		if ( $crimson_rose['shop_image_backdrop'] ) {
+		if ( $painted_lady['shop_image_backdrop'] ) {
 			echo '<span class="woocommerce-product-image-wrapper">';
 		}
 
@@ -488,7 +488,7 @@ function woocommerce_subcategory_thumbnail( $category ) {
 			echo '<img src="' . esc_url( $image ) . '" alt="' . esc_attr( $category->name ) . '" width="' . esc_attr( $dimensions['width'] ) . '" height="' . esc_attr( $dimensions['height'] ) . '" />';
 		}
 
-		if ( $crimson_rose['shop_image_backdrop'] ) {
+		if ( $painted_lady['shop_image_backdrop'] ) {
 			echo '</span>';
 		}
 	}

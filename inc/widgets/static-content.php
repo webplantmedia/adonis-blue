@@ -3,42 +3,42 @@
  * Content Widget: Static Content Widget
  *
  * @package WordPress
- * @subpackage Crimson_Rose
+ * @subpackage Painted_Lady
  * @since 1.01
  * @author Chris Baldelomar <chris@webplantmedia.com>
  * @copyright Copyright (c) 2018, Chris Baldelomar
- * @link https://webplantmedia.com/product/crimson-rose-wordpress-theme/
+ * @link https://webplantmedia.com/product/painted-lady-wordpress-theme/
  * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
-if ( ! class_exists( 'Crimson_Rose_Content_Widget_Static_Content' ) ) :
+if ( ! class_exists( 'Painted_Lady_Content_Widget_Static_Content' ) ) :
 	/**
 	 * Class: Display static content from an specific page.
 	 *
-	 * @since Crimson_Rose 1.01
+	 * @since Painted_Lady 1.01
 	 *
-	 * @see Crimson_Rose_Widget
+	 * @see Painted_Lady_Widget
 	 */
-	class Crimson_Rose_Content_Widget_Static_Content extends Crimson_Rose_Widget {
+	class Painted_Lady_Content_Widget_Static_Content extends Painted_Lady_Widget {
 		/**
 		 * Constructor
 		 */
 		public function __construct() {
-			$this->widget_id          = 'crimson-rose-content-widget-static-content';
-			$this->widget_description = esc_html__( 'Displays content from a specified page on your widgetized page.', 'crimson-rose' );
-			$this->widget_name        = esc_html__( 'Crimson Rose: Static Content', 'crimson-rose' );
+			$this->widget_id          = 'painted-lady-content-widget-static-content';
+			$this->widget_description = esc_html__( 'Displays content from a specified page on your widgetized page.', 'painted-lady' );
+			$this->widget_name        = esc_html__( 'Painted Lady: Static Content', 'painted-lady' );
 			$this->settings           = array(
 				'page'               => array(
 					'type'        => 'page',
 					'std'         => '',
-					'label'       => esc_html__( 'Select Page:', 'crimson-rose' ),
-					'description' => esc_html__( 'Create a new page with the the content and featured image you want to display.', 'crimson-rose' ),
+					'label'       => esc_html__( 'Select Page:', 'painted-lady' ),
+					'description' => esc_html__( 'Create a new page with the the content and featured image you want to display.', 'painted-lady' ),
 					'sanitize'    => 'text',
 				),
 				'background_color'   => array(
 					'type'     => 'colorpicker',
 					'std'      => '#ffffff',
-					'label'    => esc_html__( 'Background Color:', 'crimson-rose' ),
+					'label'    => esc_html__( 'Background Color:', 'painted-lady' ),
 					'sanitize' => 'color',
 				),
 				'background_opacity' => array(
@@ -47,19 +47,19 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Static_Content' ) ) :
 					'step'     => '1',
 					'min'      => '0',
 					'max'      => '100',
-					'label'    => esc_html__( 'Background Color Opacity:', 'crimson-rose' ),
+					'label'    => esc_html__( 'Background Color Opacity:', 'painted-lady' ),
 					'sanitize' => 'absint',
 				),
 				'text_color'         => array(
 					'type'     => 'colorpicker',
 					'std'      => '',
-					'label'    => esc_html__( 'Text Color:', 'crimson-rose' ),
+					'label'    => esc_html__( 'Text Color:', 'painted-lady' ),
 					'sanitize' => 'color',
 				),
 				'link_color'         => array(
 					'type'     => 'colorpicker',
 					'std'      => '',
-					'label'    => esc_html__( 'Link Color:', 'crimson-rose' ),
+					'label'    => esc_html__( 'Link Color:', 'painted-lady' ),
 					'sanitize' => 'color',
 				),
 				'padding_top'        => array(
@@ -67,7 +67,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Static_Content' ) ) :
 					'std'      => 80,
 					'step'     => 1,
 					'min'      => 0,
-					'label'    => esc_html__( 'Top padding of widget:', 'crimson-rose' ),
+					'label'    => esc_html__( 'Top padding of widget:', 'painted-lady' ),
 					'sanitize' => 'number',
 				),
 				'padding_bottom'     => array(
@@ -75,7 +75,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Static_Content' ) ) :
 					'std'      => 80,
 					'step'     => 1,
 					'min'      => 0,
-					'label'    => esc_html__( 'Bottom padding of widget:', 'crimson-rose' ),
+					'label'    => esc_html__( 'Bottom padding of widget:', 'painted-lady' ),
 					'sanitize' => 'number',
 				),
 				'margin_bottom'      => array(
@@ -83,7 +83,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Static_Content' ) ) :
 					'std'      => 80,
 					'step'     => 1,
 					'min'      => 0,
-					'label'    => esc_html__( 'Bottom margin of widget:', 'crimson-rose' ),
+					'label'    => esc_html__( 'Bottom margin of widget:', 'painted-lady' ),
 					'sanitize' => 'number',
 				),
 			);
@@ -150,7 +150,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Static_Content' ) ) :
 			}
 
 			// Allow site-wide customization of the 'Read more' link text.
-			$read_more = apply_filters( 'crimson_rose_read_more_text', esc_html__( 'Read more', 'crimson-rose' ) );
+			$read_more = apply_filters( 'painted_lady_read_more_text', esc_html__( 'Read more', 'painted-lady' ) );
 
 			if ( $fullwidth ) {
 				$args['before_widget'] = str_replace( 'class="content-widget', 'class="content-widget full-width-bar', $args['before_widget'] );
@@ -224,7 +224,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Static_Content' ) ) :
 												edit_post_link(
 													sprintf(
 														'%1$s <span class="screen-reader-text">%2$s</span>',
-														esc_html__( 'Edit', 'crimson-rose' ),
+														esc_html__( 'Edit', 'painted-lady' ),
 														get_the_title()
 													),
 													'<div class="entry-footer-meta"><span class="edit-link">',
@@ -239,9 +239,9 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Static_Content' ) ) :
 
 						<?php else : ?>
 							<article>
-								<?php echo $args['before_title'] . esc_html__( 'Static Content Widget', 'crimson-rose' ) . $args['after_title']; /* WPCS: XSS OK. HTML output. */ ?>
+								<?php echo $args['before_title'] . esc_html__( 'Static Content Widget', 'painted-lady' ) . $args['after_title']; /* WPCS: XSS OK. HTML output. */ ?>
 								<div class="entry-content">
-									<center><em><a href="<?php echo esc_url( admin_url( 'customize.php?autofocus[panel]=widgets' ) ); ?>"><?php echo esc_html__( 'Select a page in your widget settings for content to display.', 'crimson-rose' ); ?></a></em></center>
+									<center><em><a href="<?php echo esc_url( admin_url( 'customize.php?autofocus[panel]=widgets' ) ); ?>"><?php echo esc_html__( 'Select a page in your widget settings for content to display.', 'painted-lady' ); ?></a></em></center>
 								</div>
 							</article>
 						<?php endif; ?>
@@ -265,7 +265,7 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Static_Content' ) ) :
 		/**
 		 * Registers the widget with the WordPress Widget API.
 		 *
-		 * @since Crimson_Rose 1.01
+		 * @since Painted_Lady 1.01
 		 *
 		 * @return void
 		 */
@@ -275,4 +275,4 @@ if ( ! class_exists( 'Crimson_Rose_Content_Widget_Static_Content' ) ) :
 	}
 endif;
 
-add_action( 'widgets_init', array( 'Crimson_Rose_Content_Widget_Static_Content', 'register' ) );
+add_action( 'widgets_init', array( 'Painted_Lady_Content_Widget_Static_Content', 'register' ) );

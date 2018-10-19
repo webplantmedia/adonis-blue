@@ -3,23 +3,23 @@
  * Generated CSS.
  *
  * @package WordPress
- * @subpackage Crimson_Rose
+ * @subpackage Painted_Lady
  * @since 1.01
  * @author Chris Baldelomar <chris@webplantmedia.com>
  * @copyright Copyright (c) 2018, Chris Baldelomar
- * @link https://webplantmedia.com/product/crimson-rose-wordpress-theme/
+ * @link https://webplantmedia.com/product/painted-lady-wordpress-theme/
  * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
 /**
  * Return custom CSS from Customizer options.
  *
- * @since Crimson_Rose 1.01
+ * @since Painted_Lady 1.01
  *
  * @return string
  */
-function crimson_rose_custom_css() {
-	global $crimson_rose;
+function painted_lady_custom_css() {
+	global $painted_lady;
 
 	$css = '';
 
@@ -36,7 +36,7 @@ function crimson_rose_custom_css() {
 ';
 	}
 
-	if ( ! $crimson_rose['display_site_title'] ) {
+	if ( ! $painted_lady['display_site_title'] ) {
 		$css .= '
 .site-branding .site-title {
 	position: absolute;
@@ -45,7 +45,7 @@ function crimson_rose_custom_css() {
 ';
 	}
 
-	if ( ! $crimson_rose['display_site_tagline'] ) {
+	if ( ! $painted_lady['display_site_tagline'] ) {
 		$css .= '
 .site-branding .site-description {
 	position: absolute;
@@ -59,7 +59,7 @@ function crimson_rose_custom_css() {
 .entry-content a:focus,
 .entry-content a:active,
 .entry-content a {
-	color: ' . $crimson_rose['link_color'] . '; /*id:link_color*/
+	color: ' . $painted_lady['link_color'] . '; /*id:link_color*/
 }
 
 .entry-content a:hover,
@@ -80,11 +80,11 @@ function crimson_rose_custom_css() {
 #master .post-navigation a:hover .post-title,
 #master .widget ul a:hover,
 a:hover {
-	color: ' . $crimson_rose['link_hover_color'] . '; /*id:link_hover_color*/
+	color: ' . $painted_lady['link_hover_color'] . '; /*id:link_hover_color*/
 }
 
 #master .woocommerce a.remove:hover {
-	color: ' . $crimson_rose['link_hover_color'] . ' !important; /*id:link_hover_color*/
+	color: ' . $painted_lady['link_hover_color'] . ' !important; /*id:link_hover_color*/
 }
 
 #master .affwp-affiliate-dashboard-tab.active a,
@@ -97,11 +97,11 @@ a:hover {
 #master .content-callout__content .content-callout__text ul li:before,
 #master .menu-toggle i,
 #master .entry-cat-meta span > a {
-	color: ' . $crimson_rose['primary_color'] . '; /*id:primary_color*/
+	color: ' . $painted_lady['primary_color'] . '; /*id:primary_color*/
 }
 
 #master .wc-shortcodes-box-inverse {
-	border-color: ' . $crimson_rose['primary_color'] . '; /*id:primary_color*/
+	border-color: ' . $painted_lady['primary_color'] . '; /*id:primary_color*/
 }
 
 #master #affwp-affiliate-dashboard-tabs .affwp-affiliate-dashboard-tab.active a:hover,
@@ -112,11 +112,11 @@ a:hover {
 #master .main-menu .current_page_ancestor > a:hover,
 #master .main-menu .current-menu-ancestor > a:hover,
 #master .entry-cat-meta span > a:hover {
-	color: ' . $crimson_rose['primary_hover_color'] . '; /*id:primary_hover_color*/
+	color: ' . $painted_lady['primary_hover_color'] . '; /*id:primary_hover_color*/
 }
 
 #master .site-footer.has-footer-widgets {
-	background-color: ' . $crimson_rose['footer_background_color'] . '; /*id:footer_background_color*/
+	background-color: ' . $painted_lady['footer_background_color'] . '; /*id:footer_background_color*/
 }
 
 #master .wc-stripe-checkout-button,
@@ -184,7 +184,7 @@ a:hover {
 #master input[type="button"]:active,
 #master input[type="reset"]:active,
 #master input[type="submit"]:active {
-	background-color: ' . $crimson_rose['primary_color'] . '; /*id:primary_color*/
+	background-color: ' . $painted_lady['primary_color'] . '; /*id:primary_color*/
 }
 
 #master .wc-stripe-checkout-button:hover,
@@ -212,66 +212,66 @@ a:hover {
 #master input[type="button"]:hover,
 #master input[type="reset"]:hover,
 #master input[type="submit"]:hover {
-	background-color: ' . $crimson_rose['primary_hover_color'] . '; /*id:primary_hover_color*/
+	background-color: ' . $painted_lady['primary_hover_color'] . '; /*id:primary_hover_color*/
 }
 
 .search .archive-page-header,
 .archive .archive-page-header {
-	background-color: ' . $crimson_rose['archive_background_color'] . '; /*id:archive_background_color*/
+	background-color: ' . $painted_lady['archive_background_color'] . '; /*id:archive_background_color*/
 }
 
 .site-branding {
-	' . crimson_rose_css_set_unit( 'padding-top', $crimson_rose['heading_padding_top'] ) . ' /*id:heading_padding_top*/
-	' . crimson_rose_css_set_unit( 'padding-bottom', $crimson_rose['heading_padding_bottom'] ) . ' /*id:heading_padding_bottom*/
+	' . painted_lady_css_set_unit( 'padding-top', $painted_lady['heading_padding_top'] ) . ' /*id:heading_padding_top*/
+	' . painted_lady_css_set_unit( 'padding-bottom', $painted_lady['heading_padding_bottom'] ) . ' /*id:heading_padding_bottom*/
 }
 
 .site-header-inner {
-	background-position: calc(50% + ' . $crimson_rose['top_header_background_offset'] . 'px) top; /*id:top_header_background_offset*/
+	background-position: calc(50% + ' . $painted_lady['top_header_background_offset'] . 'px) top; /*id:top_header_background_offset*/
 }
 
 @media screen and (max-width: 1050px) {
 	.site-header-inner {
-		background-position: calc(50% + ' . ( $crimson_rose['top_header_background_offset'] - 25 ) . 'px) top; /*id:top_header_background_offset_1*/
+		background-position: calc(50% + ' . ( $painted_lady['top_header_background_offset'] - 25 ) . 'px) top; /*id:top_header_background_offset_1*/
 	}
 }
 
 @media screen and (max-width: 1000px) {
 	.site-header-inner {
-		background-position: calc(50% + ' . ( $crimson_rose['top_header_background_offset'] - 50 ) . 'px) top; /*id:top_header_background_offset_2*/
+		background-position: calc(50% + ' . ( $painted_lady['top_header_background_offset'] - 50 ) . 'px) top; /*id:top_header_background_offset_2*/
 	}
 }
 
 @media screen and (max-width: 950px) {
 	.site-header-inner {
-		background-position: calc(50% + ' . ( $crimson_rose['top_header_background_offset'] - 75 ) . 'px) top; /*id:top_header_background_offset_3*/
+		background-position: calc(50% + ' . ( $painted_lady['top_header_background_offset'] - 75 ) . 'px) top; /*id:top_header_background_offset_3*/
 	}
 }
 @media (min-width: 800px) {
 	#master .page.has-post-thumbnail .page-image-header-background {
-		height: ' . $crimson_rose['page_image_header_height'] . 'px; /*id:page_image_header_height*/
+		height: ' . $painted_lady['page_image_header_height'] . 'px; /*id:page_image_header_height*/
 	}
 
 	#master .page.has-post-thumbnail .site-content {
-		padding-top: ' . max( ( $crimson_rose['page_image_header_height'] - 100 ), 0 ) . 'px; /*id:page_image_header_height_1*/
+		padding-top: ' . max( ( $painted_lady['page_image_header_height'] - 100 ), 0 ) . 'px; /*id:page_image_header_height_1*/
 	}
 }';
 
-	if ( $crimson_rose['thumb_grid_max_height'] > 0 ) {
+	if ( $painted_lady['thumb_grid_max_height'] > 0 ) {
 		$css .= '
 #master .wc-shortcodes-entry-thumbnail,
 #master .excerpt2 .entry-image {
-	max-height: ' . $crimson_rose['thumb_grid_max_height'] . 'px; /*id:thumb_grid_max_height*/
+	max-height: ' . $painted_lady['thumb_grid_max_height'] . 'px; /*id:thumb_grid_max_height*/
 }';
 	}
 
-	if ( $crimson_rose['thumb_excerpt_max_height'] > 0 ) {
+	if ( $painted_lady['thumb_excerpt_max_height'] > 0 ) {
 		$css .= '
 #master .excerpt .entry-image {
-	max-height: ' . $crimson_rose['thumb_excerpt_max_height'] . 'px; /*id:thumb_excerpt_max_height*/
+	max-height: ' . $painted_lady['thumb_excerpt_max_height'] . 'px; /*id:thumb_excerpt_max_height*/
 }';
 	}
 
-	if ( ! empty( $crimson_rose['body_font_name'] ) ) {
+	if ( ! empty( $painted_lady['body_font_name'] ) ) {
 		$css .= '
 body,
 button,
@@ -279,27 +279,27 @@ input,
 select,
 optgroup,
 textarea {
-	font-family: "' . sanitize_text_field( $crimson_rose['body_font_name'] ) . '";
+	font-family: "' . sanitize_text_field( $painted_lady['body_font_name'] ) . '";
 }';
 	}
 
-	if ( ! empty( $crimson_rose['accent_font_name'] ) ) {
+	if ( ! empty( $painted_lady['accent_font_name'] ) ) {
 		$css .= '
 #master .site-branding .site-description,
 #master .search .archive-page-header .page-title .archive-type,
 #master .archive .archive-page-header .page-title .archive-type {
-	font-family: "' . sanitize_text_field( $crimson_rose['accent_font_name'] ) . '";
+	font-family: "' . sanitize_text_field( $painted_lady['accent_font_name'] ) . '";
 }';
 	}
 
 	if ( is_404() ) {
 		$css .= '
 #master .has-custom-404-page .page-cover-bg .cover {
-	background-color: ' . $crimson_rose['404_cover_color'] . '; /*id:404_cover_color*/
-	opacity: ' . ( $crimson_rose['404_cover_opacity'] / 100 ) . '; /*id:404_cover_opacity*/
+	background-color: ' . $painted_lady['404_cover_color'] . '; /*id:404_cover_color*/
+	opacity: ' . ( $painted_lady['404_cover_opacity'] / 100 ) . '; /*id:404_cover_opacity*/
 }';
 
-		if ( $crimson_rose['404_text_white'] ) {
+		if ( $painted_lady['404_text_white'] ) {
 			$css .= '
 #master .has-custom-404-page .entry-footer a,
 #master .has-custom-404-page .entry-footer a:hover,

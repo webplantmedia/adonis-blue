@@ -3,22 +3,22 @@
  * Template part for displaying posts
  *
  * @package WordPress
- * @subpackage Crimson_Rose
+ * @subpackage Painted_Lady
  * @since 1.01
  * @author Chris Baldelomar <chris@webplantmedia.com>
  * @copyright Copyright (c) 2018, Chris Baldelomar
- * @link https://webplantmedia.com/product/crimson-rose-wordpress-theme/
+ * @link https://webplantmedia.com/product/painted-lady-wordpress-theme/
  * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
-global $crimson_rose;
+global $painted_lady;
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php if ( 'post' === get_post_type() ) : ?>
 			<div class="entry-cat-meta">
-				<?php crimson_rose_entry_header(); ?>
+				<?php painted_lady_entry_header(); ?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 
@@ -32,7 +32,7 @@ global $crimson_rose;
 		if ( 'post' === get_post_type() ) :
 		?>
 		<div class="entry-meta">
-			<?php crimson_rose_posted_on(); ?>
+			<?php painted_lady_posted_on(); ?>
 		</div><!-- .entry-meta -->
 		<?php
 		endif;
@@ -50,15 +50,15 @@ global $crimson_rose;
 			the_content(
 				sprintf(
 					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( '%1$s<i class="genericons-neue genericons-neue-next"></i><span class="screen-reader-text">"%2$s"</span>', 'crimson-rose' ),
-					esc_html( $crimson_rose['read_more_label'] ),
+					__( '%1$s<i class="genericons-neue genericons-neue-next"></i><span class="screen-reader-text">"%2$s"</span>', 'painted-lady' ),
+					esc_html( $painted_lady['read_more_label'] ),
 					get_the_title()
 				)
 			);
 
 			wp_link_pages(
 				array(
-					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'crimson-rose' ),
+					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'painted-lady' ),
 					'after'  => '</div>',
 				)
 			);
@@ -67,7 +67,7 @@ global $crimson_rose;
 
 	<footer class="entry-footer">
 		<div class="entry-footer-meta">
-			<?php crimson_rose_entry_footer(); ?>
+			<?php painted_lady_entry_footer(); ?>
 		</div>
 		<?php
 		if ( function_exists( 'sharing_display' ) ) {

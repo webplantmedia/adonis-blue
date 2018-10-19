@@ -143,7 +143,7 @@
 		}
 	}
 
-	.widget.crimson-rose-social-menu.no-title:first-child {
+	.widget.painted-lady-social-menu.no-title:first-child {
 		@include rem('margin-top',65px);
 	}
 }
@@ -197,7 +197,7 @@
 }
 
 // RSS Widget
-#master .crimson-rose-image-banner {
+#master .painted-lady-image-banner {
 	.image-banner-title-position-middle {
 		a {
 			&:hover {
@@ -210,7 +210,7 @@
 }
 
 // Image Banner
-.crimson-rose-image-banner {
+.painted-lady-image-banner {
 	.image-banner-wrapper {
 		position: relative;
 
@@ -266,7 +266,7 @@
 	}
 }
 
-.widget.crimson-rose-social-menu {
+.widget.painted-lady-social-menu {
 	.social-menu-align-center {
 		.menu {
 			text-align: center;

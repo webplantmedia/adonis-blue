@@ -5,11 +5,11 @@
  * Contains the closing of the #content div and all content after.
  *
  * @package WordPress
- * @subpackage Crimson_Rose
+ * @subpackage Painted_Lady
  * @since 1.01
  * @author Chris Baldelomar <chris@webplantmedia.com>
  * @copyright Copyright (c) 2018, Chris Baldelomar
- * @link https://webplantmedia.com/product/crimson-rose-wordpress-theme/
+ * @link https://webplantmedia.com/product/painted-lady-wordpress-theme/
  * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
@@ -86,7 +86,7 @@ $column = 1;
 						<?php if ( is_active_sidebar( 'footer-bottom' ) ) : ?>
 							<?php dynamic_sidebar( 'footer-bottom' ); ?>
 						<?php else : ?>
-							<p><?php printf( esc_html__( 'Site crafted with', 'crimson-rose' ) . ' <i class="genericons-neue genericons-neue-heart"></i> ' . esc_html__( 'by', 'crimson-rose' ) . ' <a href="' . esc_url( home_url( '/' ) ) . '">' . get_bloginfo( 'name' ) . '</a>' ); ?></p>
+							<p><?php printf( esc_html__( 'Site crafted with', 'painted-lady' ) . ' <i class="genericons-neue genericons-neue-heart"></i> ' . esc_html__( 'by', 'painted-lady' ) . ' <a href="' . esc_url( home_url( '/' ) ) . '">' . get_bloginfo( 'name' ) . '</a>' ); ?></p>
 						<?php endif; ?>
 					</div><!-- .site-info -->
 				</div><!-- .site-boundary -->

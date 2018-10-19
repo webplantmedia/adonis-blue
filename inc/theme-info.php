@@ -3,19 +3,19 @@
  * Content to display for add_theme_page.
  *
  * @package WordPress
- * @subpackage Crimson_Rose
+ * @subpackage Painted_Lady
  * @since 1.01
  * @author Chris Baldelomar <chris@webplantmedia.com>
  * @copyright Copyright (c) 2018, Chris Baldelomar
- * @link https://webplantmedia.com/product/crimson-rose-wordpress-theme/
+ * @link https://webplantmedia.com/product/painted-lady-wordpress-theme/
  * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
 wp_enqueue_script( 'underscore' );
 
-$title = esc_html__( 'Theme Info', 'crimson-rose' );
+$title = esc_html__( 'Theme Info', 'painted-lady' );
 
-$display_version = CRIMSON_ROSE_VERSION;
+$display_version = PAINTED_LADY_VERSION;
 ?>
 	<div class="wrap about-wrap full-width-layout">
 
@@ -30,13 +30,13 @@ $display_version = CRIMSON_ROSE_VERSION;
 		<h1>
 		<?php
 			/* Translators: this string is the currenty theme version number. */
-			printf( esc_html__( 'Crimson Rose WordPress Theme - Version&nbsp;%s', 'crimson-rose' ), esc_html( $display_version ) );
+			printf( esc_html__( 'Painted Lady WordPress Theme - Version&nbsp;%s', 'painted-lady' ), esc_html( $display_version ) );
 		?>
 		</h1>
 
 		<?php /* Translators: this string is a link to the theme authors page. */ ?>
-		<p class="about-text"><?php printf( esc_html__( 'Thank you for using a WordPress theme by %s! We are dedicated to making premium coded themes with beautiful designs that are open source, easy to use, and fast to install.', 'crimson-rose' ), '<a href="https://webplantmedia.com" target="_blank">' . esc_html__( 'Web Plant Media', 'crimson-rose' ) . '</a>' ); ?></p>
-		<div class="wp-badge"><?php esc_html_e( 'Web Plant Media', 'crimson-rose' ); ?></div>
+		<p class="about-text"><?php printf( esc_html__( 'Thank you for using a WordPress theme by %s! We are dedicated to making premium coded themes with beautiful designs that are open source, easy to use, and fast to install.', 'painted-lady' ), '<a href="https://webplantmedia.com" target="_blank">' . esc_html__( 'Web Plant Media', 'painted-lady' ) . '</a>' ); ?></p>
+		<div class="wp-badge"><?php esc_html_e( 'Web Plant Media', 'painted-lady' ); ?></div>
 
 		<div style="margin-bottom:40px;">
 
@@ -44,13 +44,13 @@ $display_version = CRIMSON_ROSE_VERSION;
 			<?php
 				printf(
 					/* translators: %s: smiling face with smiling eyes emoji */
-					esc_html__( 'Premium Themes with Support %s', 'crimson-rose' ),
+					esc_html__( 'Premium Themes with Support %s', 'painted-lady' ),
 					'&#x1F60A'
 				);
 			?>
 			</h2>
 
-			<?php $services = crimson_rose_dashboard_get_services(); ?>
+			<?php $services = painted_lady_dashboard_get_services(); ?>
 
 			<div class="under-the-hood two-col">
 
@@ -75,13 +75,13 @@ $display_version = CRIMSON_ROSE_VERSION;
 
 		<div style="margin-bottom:40px;">
 
-			<h2 style="font-size:1.4em;font-weight:600;text-align:left;"><?php echo esc_html__( 'Help Articles by WordPress Experts', 'crimson-rose' ); ?></h2>
+			<h2 style="font-size:1.4em;font-weight:600;text-align:left;"><?php echo esc_html__( 'Help Articles by WordPress Experts', 'painted-lady' ); ?></h2>
 
 			<div class="under-the-hood two-col">
 
 				<div class="col">
 
-					<?php crimson_rose_dashboard_static_feed(); ?>
+					<?php painted_lady_dashboard_static_feed(); ?>
 
 				</div>
 

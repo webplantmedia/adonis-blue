@@ -1,22 +1,22 @@
 <?php
 /**
- * Crimson Rose functions and definitions
+ * Painted Lady functions and definitions
  *
  * @package WordPress
- * @subpackage Crimson_Rose
+ * @subpackage Painted_Lady
  * @since 1.01
  * @author Chris Baldelomar <chris@webplantmedia.com>
  * @copyright Copyright (c) 2018, Chris Baldelomar
- * @link https://webplantmedia.com/product/crimson-rose-wordpress-theme/
+ * @link https://webplantmedia.com/product/painted-lady-wordpress-theme/
  * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
 /**
  * The current version of the theme.
  */
-define( 'CRIMSON_ROSE_VERSION', '2.42' );
+define( 'PAINTED_LADY_VERSION', '2.42' );
 
-if ( ! function_exists( 'crimson_rose_setup' ) ) :
+if ( ! function_exists( 'painted_lady_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -24,18 +24,18 @@ if ( ! function_exists( 'crimson_rose_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 *
-	 * @since Crimson_Rose 1.01
+	 * @since Painted_Lady 1.01
 	 *
 	 * @return void
 	 */
-	function crimson_rose_setup() {
+	function painted_lady_setup() {
 		/**
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on Crimson Rose, use a find and replace
-		 * to change 'crimson-rose' to the name of your theme in all the template files.
+		 * If you're building a theme based on Painted Lady, use a find and replace
+		 * to change 'painted-lady' to the name of your theme in all the template files.
 		 */
-		load_theme_textdomain( 'crimson-rose', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'painted-lady', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -58,10 +58,10 @@ if ( ! function_exists( 'crimson_rose_setup' ) ) :
 		// This theme uses wp_nav_menu() in four location.
 		register_nav_menus(
 			array(
-				'menu-1' => esc_html__( 'Primary', 'crimson-rose' ),
-				'menu-2' => esc_html__( 'Top Header Left', 'crimson-rose' ),
-				'menu-3' => esc_html__( 'Top Header Right', 'crimson-rose' ),
-				'social' => esc_html__( 'Social Menu', 'crimson-rose' ),
+				'menu-1' => esc_html__( 'Primary', 'painted-lady' ),
+				'menu-2' => esc_html__( 'Top Header Left', 'painted-lady' ),
+				'menu-3' => esc_html__( 'Top Header Right', 'painted-lady' ),
+				'social' => esc_html__( 'Social Menu', 'painted-lady' ),
 			)
 		);
 
@@ -85,7 +85,7 @@ if ( ! function_exists( 'crimson_rose_setup' ) ) :
 		// Set up the WordPress core custom background feature.
 		add_theme_support(
 			'custom-background', apply_filters(
-				'crimson_rose_custom_background_args', array(
+				'painted_lady_custom_background_args', array(
 					'default-color' => '#ffffff',
 					'default-image' => '',
 				)
@@ -142,53 +142,53 @@ if ( ! function_exists( 'crimson_rose_setup' ) ) :
 		);
 	}
 endif;
-add_action( 'after_setup_theme', 'crimson_rose_setup' );
+add_action( 'after_setup_theme', 'painted_lady_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
  * Priority 0 to make it available to lower priority callbacks.
  *
- * @since Crimson_Rose 1.01
+ * @since Painted_Lady 1.01
  *
  * @global int $content_width
  * @return void
  */
-function crimson_rose_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'crimson_rose_content_width', 660 );
+function painted_lady_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'painted_lady_content_width', 660 );
 }
-add_action( 'after_setup_theme', 'crimson_rose_content_width', 0 );
+add_action( 'after_setup_theme', 'painted_lady_content_width', 0 );
 
 /**
  * Change content width for full site width pages.
  *
- * @since Crimson_Rose 1.01
+ * @since Painted_Lady 1.01
  *
  * @global int $content_width
  * @return void
  */
-function crimson_rose_content_width_check() {
-	if ( crimson_rose_display_fullwidth() ) {
-		$GLOBALS['content_width'] = apply_filters( 'crimson_rose_content_width', 1060 );
+function painted_lady_content_width_check() {
+	if ( painted_lady_display_fullwidth() ) {
+		$GLOBALS['content_width'] = apply_filters( 'painted_lady_content_width', 1060 );
 	}
 }
-add_action( 'template_redirect', 'crimson_rose_content_width_check' );
+add_action( 'template_redirect', 'painted_lady_content_width_check' );
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  *
- * @since Crimson_Rose 1.01
+ * @since Painted_Lady 1.01
  *
  * @return void
  */
-function crimson_rose_widgets_init() {
+function painted_lady_widgets_init() {
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Sidebar', 'crimson-rose' ),
+			'name'          => esc_html__( 'Sidebar', 'painted-lady' ),
 			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'Add widgets here.', 'crimson-rose' ),
+			'description'   => esc_html__( 'Add widgets here.', 'painted-lady' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -198,9 +198,9 @@ function crimson_rose_widgets_init() {
 
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Footer 1', 'crimson-rose' ),
+			'name'          => esc_html__( 'Footer 1', 'painted-lady' ),
 			'id'            => 'footer-1',
-			'description'   => esc_html__( 'Add widgets here.', 'crimson-rose' ),
+			'description'   => esc_html__( 'Add widgets here.', 'painted-lady' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -210,9 +210,9 @@ function crimson_rose_widgets_init() {
 
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Footer 2', 'crimson-rose' ),
+			'name'          => esc_html__( 'Footer 2', 'painted-lady' ),
 			'id'            => 'footer-2',
-			'description'   => esc_html__( 'Add widgets here.', 'crimson-rose' ),
+			'description'   => esc_html__( 'Add widgets here.', 'painted-lady' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -222,9 +222,9 @@ function crimson_rose_widgets_init() {
 
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Footer 3', 'crimson-rose' ),
+			'name'          => esc_html__( 'Footer 3', 'painted-lady' ),
 			'id'            => 'footer-3',
-			'description'   => esc_html__( 'Add widgets here.', 'crimson-rose' ),
+			'description'   => esc_html__( 'Add widgets here.', 'painted-lady' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -234,9 +234,9 @@ function crimson_rose_widgets_init() {
 
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Footer Bottom', 'crimson-rose' ),
+			'name'          => esc_html__( 'Footer Bottom', 'painted-lady' ),
 			'id'            => 'footer-bottom',
-			'description'   => esc_html__( 'Add a text or HTML widget here with your site credit and copyright information. Doing so will override the default footer credit at the bottom of your pages.', 'crimson-rose' ),
+			'description'   => esc_html__( 'Add a text or HTML widget here with your site credit and copyright information. Doing so will override the default footer credit at the bottom of your pages.', 'painted-lady' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -246,9 +246,9 @@ function crimson_rose_widgets_init() {
 
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Instagram Gallery', 'crimson-rose' ),
+			'name'          => esc_html__( 'Instagram Gallery', 'painted-lady' ),
 			'id'            => 'gallery-1',
-			'description'   => esc_html__( 'Add Instagram widget here.', 'crimson-rose' ),
+			'description'   => esc_html__( 'Add Instagram widget here.', 'painted-lady' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -258,9 +258,9 @@ function crimson_rose_widgets_init() {
 
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Widgetized Page', 'crimson-rose' ),
+			'name'          => esc_html__( 'Widgetized Page', 'painted-lady' ),
 			'id'            => 'widgetized-page',
-			'description'   => esc_html__( 'Add content widgets here.', 'crimson-rose' ),
+			'description'   => esc_html__( 'Add content widgets here.', 'painted-lady' ),
 			'before_widget' => '<section id="%1$s" class="content-widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title content-widget-title">',
@@ -268,16 +268,16 @@ function crimson_rose_widgets_init() {
 		)
 	);
 }
-add_action( 'widgets_init', 'crimson_rose_widgets_init' );
+add_action( 'widgets_init', 'painted_lady_widgets_init' );
 
 /**
  * Display customizer CSS.
  *
- * @since Crimson_Rose 1.01
+ * @since Painted_Lady 1.01
  *
  * @return void
  */
-function crimson_rose_customizer_css_wrap() {
+function painted_lady_customizer_css_wrap() {
 	/**
 	 * Load CSS mixins
 	 */
@@ -289,63 +289,63 @@ function crimson_rose_customizer_css_wrap() {
 	require get_template_directory() . '/css/css-theme.php';
 
 	$out  = '/* WP Customizer start */' . PHP_EOL;
-	$out .= crimson_rose_custom_css();
+	$out .= painted_lady_custom_css();
 	$out .= PHP_EOL . '/* WP Customizer end */';
 
-	wp_add_inline_style( 'crimson-rose-style', $out );
+	wp_add_inline_style( 'painted-lady-style', $out );
 }
-add_action( 'wp_enqueue_scripts', 'crimson_rose_customizer_css_wrap', 20 );
+add_action( 'wp_enqueue_scripts', 'painted_lady_customizer_css_wrap', 20 );
 
 /**
  * Enqueue scripts and styles.
  *
- * @since Crimson_Rose 1.01
+ * @since Painted_Lady 1.01
  *
  * @return void
  */
-function crimson_rose_scripts() {
-	global $crimson_rose;
+function painted_lady_scripts() {
+	global $painted_lady;
 
 	// Is up-sell designer font plugin installed and activated?
-	if ( crimson_rose_is_wpm_fonts_deactivated() ) {
-		if ( ! $crimson_rose['disable_body_font'] ) {
+	if ( painted_lady_is_wpm_fonts_deactivated() ) {
+		if ( ! $painted_lady['disable_body_font'] ) {
 			// Add custom fonts, used in the main stylesheet.
-			wp_enqueue_style( 'crimson-rose-body-font', get_parent_theme_file_uri() . '/fonts/lato/stylesheet.css', array(), CRIMSON_ROSE_VERSION );
+			wp_enqueue_style( 'painted-lady-body-font', get_parent_theme_file_uri() . '/fonts/lato/stylesheet.css', array(), PAINTED_LADY_VERSION );
 		}
 
-		if ( ! $crimson_rose['disable_accent_font'] ) {
+		if ( ! $painted_lady['disable_accent_font'] ) {
 			// Add custom fonts, used in the main stylesheet.
-			wp_enqueue_style( 'crimson-rose-accent-font', get_parent_theme_file_uri() . '/fonts/mrs-saint-delafield/stylesheet.css', array(), CRIMSON_ROSE_VERSION );
+			wp_enqueue_style( 'painted-lady-accent-font', get_parent_theme_file_uri() . '/fonts/mrs-saint-delafield/stylesheet.css', array(), PAINTED_LADY_VERSION );
 		}
 	}
 
 	// Add genericons.
-	wp_enqueue_style( 'genericons-neue', get_parent_theme_file_uri() . '/fonts/genericons-neue/genericons-neue.css', array(), CRIMSON_ROSE_VERSION );
+	wp_enqueue_style( 'genericons-neue', get_parent_theme_file_uri() . '/fonts/genericons-neue/genericons-neue.css', array(), PAINTED_LADY_VERSION );
 
 	// Add social logos.
 	wp_deregister_style( 'social-logos' ); // remove any plugins that try and use social icons, and use the themes.
-	wp_enqueue_style( 'social-logos', get_parent_theme_file_uri() . '/fonts/social-logos/social-logos.css', array(), CRIMSON_ROSE_VERSION );
+	wp_enqueue_style( 'social-logos', get_parent_theme_file_uri() . '/fonts/social-logos/social-logos.css', array(), PAINTED_LADY_VERSION );
 
 	// Add theme stylesheet.
-	wp_enqueue_style( 'crimson-rose-style', get_stylesheet_uri(), array(), CRIMSON_ROSE_VERSION );
+	wp_enqueue_style( 'painted-lady-style', get_stylesheet_uri(), array(), PAINTED_LADY_VERSION );
 
 	// Add bxslider style.
-	wp_enqueue_style( 'bx2slider', get_parent_theme_file_uri() . '/inc/vendors/bx2slider/css/jquery.bx2slider.css', array(), CRIMSON_ROSE_VERSION );
+	wp_enqueue_style( 'bx2slider', get_parent_theme_file_uri() . '/inc/vendors/bx2slider/css/jquery.bx2slider.css', array(), PAINTED_LADY_VERSION );
 
 	// Register bxslider.
 	wp_register_script( 'bx2slider', get_template_directory_uri() . '/inc/vendors/bx2slider/js/jquery.bx2slider.js', array( 'jquery' ), '4.2.14', true );
 
 	// Register accordion.
-	wp_enqueue_script( 'crimson-rose-accordion', get_template_directory_uri() . '/js/accordion.js', array( 'jquery' ), CRIMSON_ROSE_VERSION, true );
+	wp_enqueue_script( 'painted-lady-accordion', get_template_directory_uri() . '/js/accordion.js', array( 'jquery' ), PAINTED_LADY_VERSION, true );
 
 	// Add menu script.
-	wp_enqueue_script( 'crimson-rose-navigation', get_template_directory_uri() . '/js/navigation.js', array( 'jquery' ), CRIMSON_ROSE_VERSION, true );
+	wp_enqueue_script( 'painted-lady-navigation', get_template_directory_uri() . '/js/navigation.js', array( 'jquery' ), PAINTED_LADY_VERSION, true );
 
 	// Add theme script.
-	wp_enqueue_script( 'crimson-rose-theme', get_template_directory_uri() . '/js/theme.js', array( 'jquery' ), CRIMSON_ROSE_VERSION, true );
+	wp_enqueue_script( 'painted-lady-theme', get_template_directory_uri() . '/js/theme.js', array( 'jquery' ), PAINTED_LADY_VERSION, true );
 
 	// Helps with accessibility for keyboard only users.
-	wp_enqueue_script( 'crimson-rose-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), CRIMSON_ROSE_VERSION, true );
+	wp_enqueue_script( 'painted-lady-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), PAINTED_LADY_VERSION, true );
 
 	// Load comment script.
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -354,29 +354,29 @@ function crimson_rose_scripts() {
 
 	// Load if Affiliate Royale plugin is activated.
 	if ( defined( 'WAFP_VERSION' ) ) {
-		wp_enqueue_style( 'crimson-rose-affiliate-royale', get_parent_theme_file_uri() . '/css/affiliate-royale.css', array(), CRIMSON_ROSE_VERSION );
+		wp_enqueue_style( 'painted-lady-affiliate-royale', get_parent_theme_file_uri() . '/css/affiliate-royale.css', array(), PAINTED_LADY_VERSION );
 	}
 
 	// Load if Affiliate WP plugin is activated.
 	if ( class_exists( 'Affiliate_WP' ) ) {
-		wp_enqueue_style( 'crimson-rose-affiliate-wp', get_parent_theme_file_uri() . '/css/affiliate-wp.css', array(), CRIMSON_ROSE_VERSION );
+		wp_enqueue_style( 'painted-lady-affiliate-wp', get_parent_theme_file_uri() . '/css/affiliate-wp.css', array(), PAINTED_LADY_VERSION );
 	}
 
 	// Load if WC SHORTCODES plugin is activated.
 	if ( defined( 'WC_SHORTCODES_VERSION' ) ) {
-		wp_enqueue_style( 'crimson-rose-wc-shortcodes', get_parent_theme_file_uri() . '/css/wc-shortcodes.css', array(), CRIMSON_ROSE_VERSION );
+		wp_enqueue_style( 'painted-lady-wc-shortcodes', get_parent_theme_file_uri() . '/css/wc-shortcodes.css', array(), PAINTED_LADY_VERSION );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'crimson_rose_scripts' );
+add_action( 'wp_enqueue_scripts', 'painted_lady_scripts' );
 
 /**
  * Check if blog is on first page.
  *
- * @since Crimson_Rose 1.01
+ * @since Painted_Lady 1.01
  *
  * @return bool
  */
-function crimson_rose_show_full_post() {
+function painted_lady_show_full_post() {
 	global $paged;
 
 	// should only show on first page.
@@ -390,11 +390,11 @@ function crimson_rose_show_full_post() {
 /**
  * Check is h2 element exists so we can hide WooCommerce default heading element.
  *
- * @since Crimson_Rose 1.01
+ * @since Painted_Lady 1.01
  *
  * @return bool
  */
-function crimson_rose_display_sub_header() {
+function painted_lady_display_sub_header() {
 	global $post;
 
 	if ( preg_match( '/\<h2/', $post->post_content ) ) {
@@ -407,11 +407,11 @@ function crimson_rose_display_sub_header() {
 /**
  * Check if h1 element exists so we can hide default page title on page.
  *
- * @since Crimson_Rose 1.01
+ * @since Painted_Lady 1.01
  *
  * @return bool
  */
-function crimson_rose_display_header() {
+function painted_lady_display_header() {
 	global $post;
 
 	if ( preg_match( '/\<h1/', $post->post_content ) ) {
@@ -424,19 +424,19 @@ function crimson_rose_display_header() {
 /**
  * Check to load sidebar depending on page load
  *
- * @since Crimson_Rose 1.01
+ * @since Painted_Lady 1.01
  *
  * @return bool
  */
-function crimson_rose_display_sidebar() {
-	global $crimson_rose;
+function painted_lady_display_sidebar() {
+	global $painted_lady;
 
 	if ( is_single() && 'post' === get_post_type() ) {
 		if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 			return false;
 		}
 
-		return $crimson_rose['display_sidebar_post'];
+		return $painted_lady['display_sidebar_post'];
 	}
 
 	if ( is_home() ) {
@@ -444,18 +444,18 @@ function crimson_rose_display_sidebar() {
 			return false;
 		}
 
-		return $crimson_rose['display_sidebar_blog'];
+		return $painted_lady['display_sidebar_blog'];
 	}
 
-	if ( crimson_rose_is_woocommerce_activated() ) {
+	if ( painted_lady_is_woocommerce_activated() ) {
 		if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 			return false;
 		}
 
 		if ( is_shop() ) {
-			return $crimson_rose['display_sidebar_shop'];
+			return $painted_lady['display_sidebar_shop'];
 		} elseif ( is_product_taxonomy() ) {
-			return $crimson_rose['display_sidebar_shop_archive'];
+			return $painted_lady['display_sidebar_shop_archive'];
 		}
 	}
 
@@ -464,7 +464,7 @@ function crimson_rose_display_sidebar() {
 			return false;
 		}
 
-		return $crimson_rose['display_sidebar_search'];
+		return $painted_lady['display_sidebar_search'];
 	}
 
 	if ( is_archive() ) {
@@ -472,7 +472,7 @@ function crimson_rose_display_sidebar() {
 			return false;
 		}
 
-		return $crimson_rose['display_sidebar_archive'];
+		return $painted_lady['display_sidebar_archive'];
 	}
 
 	if ( is_attachment() ) {
@@ -480,7 +480,7 @@ function crimson_rose_display_sidebar() {
 			return false;
 		}
 
-		return $crimson_rose['display_sidebar_attachment'];
+		return $painted_lady['display_sidebar_attachment'];
 	}
 
 	return false;
@@ -489,11 +489,11 @@ function crimson_rose_display_sidebar() {
 /**
  * Check if any footer sidebars are loaded.
  *
- * @since Crimson_Rose 1.01
+ * @since Painted_Lady 1.01
  *
  * @return array 1:bool, 2:bool, 3:bool
  */
-function crimson_rose_display_sidebar_footer() {
+function painted_lady_display_sidebar_footer() {
 	$footer_1 = is_active_sidebar( 'footer-1' );
 	$footer_2 = is_active_sidebar( 'footer-2' );
 	$footer_3 = is_active_sidebar( 'footer-3' );
@@ -512,14 +512,14 @@ function crimson_rose_display_sidebar_footer() {
 /**
  * Check if fullwidth layout is activated
  *
- * @since Crimson_Rose 1.01
+ * @since Painted_Lady 1.01
  *
  * @return bool
  */
-function crimson_rose_display_fullwidth() {
-	global $crimson_rose;
+function painted_lady_display_fullwidth() {
+	global $painted_lady;
 
-	if ( crimson_rose_is_woocommerce_activated() ) {
+	if ( painted_lady_is_woocommerce_activated() ) {
 		if ( is_woocommerce() || is_cart() || is_checkout() ) {
 			return true;
 		}
@@ -535,19 +535,19 @@ function crimson_rose_display_fullwidth() {
 /**
  * Check and load the correct blog template according to Customizer option.
  *
- * @since Crimson_Rose 1.01
+ * @since Painted_Lady 1.01
  *
  * @return void
  */
-function crimson_rose_get_blog_part() {
-	global $crimson_rose;
+function painted_lady_get_blog_part() {
+	global $painted_lady;
 
 	if ( is_home() ) {
-		get_template_part( 'template-parts/' . $crimson_rose['blog_display'] );
+		get_template_part( 'template-parts/' . $painted_lady['blog_display'] );
 	} elseif ( is_archive() ) {
-		get_template_part( 'template-parts/' . $crimson_rose['archive_display'] );
+		get_template_part( 'template-parts/' . $painted_lady['archive_display'] );
 	} elseif ( is_search() ) {
-		get_template_part( 'template-parts/' . $crimson_rose['search_display'] );
+		get_template_part( 'template-parts/' . $painted_lady['search_display'] );
 	}
 }
 
@@ -556,11 +556,11 @@ function crimson_rose_get_blog_part() {
  *
  * @link https://jetpack.com/support/content-options/
  *
- * @since Crimson_Rose 1.01
+ * @since Painted_Lady 1.01
  *
  * @return bool
  */
-function crimson_rose_jetpack_featured_image_display() {
+function painted_lady_jetpack_featured_image_display() {
 	if ( ! function_exists( 'jetpack_featured_images_remove_post_thumbnail' ) ) {
 		return true;
 	} else {
@@ -592,12 +592,12 @@ function crimson_rose_jetpack_featured_image_display() {
  * Check to see if page can display a header image using the posts
  * featured image.
  *
- * @since Crimson_Rose 1.01
+ * @since Painted_Lady 1.01
  *
  * @return bool
  */
-function crimson_rose_display_header_image() {
-	if ( is_page() && has_post_thumbnail() && crimson_rose_jetpack_featured_image_display() ) {
+function painted_lady_display_header_image() {
+	if ( is_page() && has_post_thumbnail() && painted_lady_jetpack_featured_image_display() ) {
 		if ( ! is_page_template( 'templates/widgetized-page.php' ) ) {
 			if ( ! is_page_template( 'templates/no-featured-image-page.php' ) ) {
 				if ( ! is_page_template( 'templates/media-post.php' ) ) {
@@ -613,11 +613,11 @@ function crimson_rose_display_header_image() {
 /**
  * Get page template when inside loop.
  *
- * @since Crimson_Rose 2.20
+ * @since Painted_Lady 2.20
  *
  * @return bool
  */
-function crimson_rose_get_page_template_in_loop() {
+function painted_lady_get_page_template_in_loop() {
 	$page_template = get_page_template_slug( get_the_ID() );
 
 	if ( 'templates/media-post.php' === $page_template ) {
@@ -630,35 +630,35 @@ function crimson_rose_get_page_template_in_loop() {
 /**
  * Check if search form should be in main menu bar.
  *
- * @since Crimson_Rose 1.01
+ * @since Painted_Lady 1.01
  *
  * @return bool
  */
-function crimson_rose_is_menu_search_activated() {
-	global $crimson_rose;
+function painted_lady_is_menu_search_activated() {
+	global $painted_lady;
 
-	return $crimson_rose['show_menu_search'] ? true : false;
+	return $painted_lady['show_menu_search'] ? true : false;
 }
 
 /**
  * Query WooCommerce activation
  *
- * @since Crimson_Rose 1.01
+ * @since Painted_Lady 1.01
  *
  * @return bool
  */
-function crimson_rose_is_woocommerce_activated() {
+function painted_lady_is_woocommerce_activated() {
 	return class_exists( 'woocommerce' ) ? true : false;
 }
 
 /**
  * Check Jetpack activation
  *
- * @since Crimson_Rose 1.01
+ * @since Painted_Lady 1.01
  *
  * @return bool
  */
-function crimson_rose_is_jetpack_activated() {
+function painted_lady_is_jetpack_activated() {
 	if ( defined( 'JETPACK__VERSION' ) ) {
 		return true;
 	}
@@ -669,11 +669,11 @@ function crimson_rose_is_jetpack_activated() {
 /**
  * Check WPM Fonts is activated
  *
- * @since Crimson_Rose 1.01
+ * @since Painted_Lady 1.01
  *
  * @return bool
  */
-function crimson_rose_is_wpm_fonts_activated() {
+function painted_lady_is_wpm_fonts_activated() {
 	if ( defined( 'WPM_FONTS_VERSION' ) ) {
 		return true;
 	}
@@ -684,23 +684,23 @@ function crimson_rose_is_wpm_fonts_activated() {
 /**
  * Check WPM Fonts id deactivated
  *
- * @since Crimson_Rose 1.01
+ * @since Painted_Lady 1.01
  *
  * @return bool
  */
-function crimson_rose_is_wpm_fonts_deactivated() {
-	return ! crimson_rose_is_wpm_fonts_activated();
+function painted_lady_is_wpm_fonts_deactivated() {
+	return ! painted_lady_is_wpm_fonts_activated();
 }
 
 /**
- * Check Crimson Rose Watercolor Backgrounds activation
+ * Check Painted Lady Watercolor Backgrounds activation
  *
- * @since Crimson_Rose 1.01
+ * @since Painted_Lady 1.01
  *
  * @return bool
  */
-function crimson_rose_is_watercolor_backgrounds_activated() {
-	if ( defined( 'CRIMSON_ROSE_WATERCOLOR_BACKGROUNDS_VERSION' ) ) {
+function painted_lady_is_watercolor_backgrounds_activated() {
+	if ( defined( 'PAINTED_LADY_WATERCOLOR_BACKGROUNDS_VERSION' ) ) {
 		return true;
 	}
 
@@ -710,11 +710,11 @@ function crimson_rose_is_watercolor_backgrounds_activated() {
 /**
  * Check One Click Demo Import (ocdi) activation
  *
- * @since Crimson_Rose 1.01
+ * @since Painted_Lady 1.01
  *
  * @return bool
  */
-function crimson_rose_is_ocdi_activated() {
+function painted_lady_is_ocdi_activated() {
 	return class_exists( 'OCDI_Plugin' ) ? true : false;
 }
 
@@ -758,14 +758,14 @@ require get_template_directory() . '/inc/customizer.php';
 /**
  * Load Jetpack compatibility file.
  */
-if ( crimson_rose_is_jetpack_activated() ) {
+if ( painted_lady_is_jetpack_activated() ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
 /**
  * Load WooCommerce class
  */
-if ( crimson_rose_is_woocommerce_activated() ) {
+if ( painted_lady_is_woocommerce_activated() ) {
 	require get_parent_theme_file_path() . '/inc/class-woocommerce.php';
 }
 
@@ -787,6 +787,6 @@ require get_parent_theme_file_path() . '/inc/dashboard.php';
 /**
  * One Click Demo Import
  */
-if ( crimson_rose_is_ocdi_activated() ) {
+if ( painted_lady_is_ocdi_activated() ) {
 	require get_parent_theme_file_path() . '/inc/one-click-demo-import.php';
 }

@@ -5,23 +5,23 @@
  * Eventually, some of the functionality here could be replaced by core features.
  *
  * @package WordPress
- * @subpackage Crimson_Rose
+ * @subpackage Painted_Lady
  * @since 1.01
  * @author Chris Baldelomar <chris@webplantmedia.com>
  * @copyright Copyright (c) 2018, Chris Baldelomar
- * @link https://webplantmedia.com/product/crimson-rose-wordpress-theme/
+ * @link https://webplantmedia.com/product/painted-lady-wordpress-theme/
  * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
-if ( ! function_exists( 'crimson_rose_posted_on' ) ) :
+if ( ! function_exists( 'painted_lady_posted_on' ) ) :
 	/**
 	 * Prints HTML with meta information for the current post-date/time and author.
 	 *
-	 * @since Crimson_Rose 1.01
+	 * @since Painted_Lady 1.01
 	 *
 	 * @return void
 	 */
-	function crimson_rose_posted_on() {
+	function painted_lady_posted_on() {
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
@@ -42,20 +42,20 @@ if ( ! function_exists( 'crimson_rose_posted_on' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'crimson_rose_entry_header' ) ) :
+if ( ! function_exists( 'painted_lady_entry_header' ) ) :
 	/**
 	 * Prints HTML with meta information for the categories, tags and comments.
 	 *
-	 * @since Crimson_Rose 1.01
+	 * @since Painted_Lady 1.01
 	 *
 	 * @param string $delimeter
 	 * @return void
 	 */
-	function crimson_rose_entry_header( $delimeter = '' ) {
+	function painted_lady_entry_header( $delimeter = '' ) {
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
 			/* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list( $delimeter, 'crimson-rose' );
+			$categories_list = get_the_category_list( $delimeter, 'painted-lady' );
 			if ( $categories_list ) {
 				/* translators: 1: list of categories. */
 				printf( '<span class="cat-links">%1$s</span>', $categories_list ); // WPCS: XSS OK.
@@ -64,43 +64,43 @@ if ( ! function_exists( 'crimson_rose_entry_header' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'crimson_rose_entry_footer' ) ) :
+if ( ! function_exists( 'painted_lady_entry_footer' ) ) :
 	/**
 	 * Prints HTML with meta information for the categories, tags and comments.
 	 *
-	 * @since Crimson_Rose 1.01
+	 * @since Painted_Lady 1.01
 	 *
 	 * @return void
 	 */
-	function crimson_rose_entry_footer() {
+	function painted_lady_entry_footer() {
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
 			$byline = sprintf(
 				/* translators: %s: post author. */
-				esc_html_x( 'By %s', 'post author', 'crimson-rose' ),
+				esc_html_x( 'By %s', 'post author', 'painted-lady' ),
 				'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 			);
 			echo '<span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
 
 			/* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list( esc_html__( ', ', 'crimson-rose' ) );
+			$categories_list = get_the_category_list( esc_html__( ', ', 'painted-lady' ) );
 			if ( $categories_list ) {
 				/* translators: 1: list of categories. */
-				printf( '<span class="cat-links">' . esc_html__( 'In %1$s', 'crimson-rose' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+				printf( '<span class="cat-links">' . esc_html__( 'In %1$s', 'painted-lady' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 			}
 
 			/* translators: used between list items, there is a space after the comma */
-			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'crimson-rose' ) );
+			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'painted-lady' ) );
 			if ( $tags_list ) {
 				/* translators: 1: list of tags. */
-				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'crimson-rose' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'painted-lady' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 			}
 		}
 
 		if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 			echo '<span class="comments-link">';
 				comments_popup_link(
-					esc_html__( 'Leave a Comment', 'crimson-rose' )
+					esc_html__( 'Leave a Comment', 'painted-lady' )
 				);
 			echo '</span>';
 		}
@@ -108,7 +108,7 @@ if ( ! function_exists( 'crimson_rose_entry_footer' ) ) :
 		edit_post_link(
 			sprintf(
 				'%1$s <span class="screen-reader-text">%2$s</span>',
-				esc_html__( 'Edit', 'crimson-rose' ),
+				esc_html__( 'Edit', 'painted-lady' ),
 				get_the_title()
 			),
 			'<span class="edit-link">',
@@ -117,15 +117,15 @@ if ( ! function_exists( 'crimson_rose_entry_footer' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'crimson_rose_the_term_description' ) ) :
+if ( ! function_exists( 'painted_lady_the_term_description' ) ) :
 	/**
 	 * Display term description
 	 *
-	 * @since Crimson_Rose 1.01
+	 * @since Painted_Lady 1.01
 	 *
 	 * @return void
 	 */
-	function crimson_rose_the_term_description() {
+	function painted_lady_the_term_description() {
 		$description = term_description();
 		?>
 
@@ -139,23 +139,23 @@ if ( ! function_exists( 'crimson_rose_the_term_description' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'crimson_rose_mobile_menu_button' ) ) :
+if ( ! function_exists( 'painted_lady_mobile_menu_button' ) ) :
 	/**
 	 * Display mobile menu button
 	 *
-	 * @since Crimson_Rose 1.01
+	 * @since Painted_Lady 1.01
 	 *
 	 * @return void
 	 */
-	function crimson_rose_mobile_menu_button() {
-		global $crimson_rose;
+	function painted_lady_mobile_menu_button() {
+		global $painted_lady;
 
 		?>
 		<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-			<?php if ( empty( $crimson_rose['mobile_menu_label'] ) ) : ?>
+			<?php if ( empty( $painted_lady['mobile_menu_label'] ) ) : ?>
 				<span class="menu-label menu-label-empty"></span>
 			<?php else : ?>
-				<span class="menu-label"><?php echo esc_html( $crimson_rose['mobile_menu_label'] ); ?></span>
+				<span class="menu-label"><?php echo esc_html( $painted_lady['mobile_menu_label'] ); ?></span>
 			<?php endif; ?>
 			<i class="genericons-neue"></i>
 		</button>
@@ -163,15 +163,15 @@ if ( ! function_exists( 'crimson_rose_mobile_menu_button' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'crimson_rose_get_the_attachment' ) ) :
+if ( ! function_exists( 'painted_lady_get_the_attachment' ) ) :
 	/**
 	 * Display attachment image
 	 *
-	 * @since Crimson_Rose 1.01
+	 * @since Painted_Lady 1.01
 	 *
 	 * @return string
 	 */
-	function crimson_rose_get_the_attachment() {
+	function painted_lady_get_the_attachment() {
 		if ( wp_attachment_is( 'video' ) ) {
 			$meta = wp_get_attachment_metadata( get_the_ID() );
 			$atts = array( 'src' => wp_get_attachment_url() );
@@ -187,7 +187,7 @@ if ( ! function_exists( 'crimson_rose_get_the_attachment' ) ) :
 			$p = wp_audio_shortcode( array( 'src' => wp_get_attachment_url() ) );
 		} else {
 			// show the medium sized image representation of the attachment if available, and link to the raw file.
-			$image_size = apply_filters( 'crimson_rose_attachment_size', 'large' );
+			$image_size = apply_filters( 'painted_lady_attachment_size', 'large' );
 			$p          = wp_get_attachment_link( 0, $image_size, false );
 		}
 
@@ -195,31 +195,31 @@ if ( ! function_exists( 'crimson_rose_get_the_attachment' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'crimson_rose_the_attachment' ) ) :
+if ( ! function_exists( 'painted_lady_the_attachment' ) ) :
 	/**
 	 * Display attachment image wrapper
 	 *
-	 * @since Crimson_Rose 1.01
+	 * @since Painted_Lady 1.01
 	 *
 	 * @return void
 	 */
-	function crimson_rose_the_attachment() {
-		echo crimson_rose_get_the_attachment(); /* WPCS: XSS OK. HTML output. */
+	function painted_lady_the_attachment() {
+		echo painted_lady_get_the_attachment(); /* WPCS: XSS OK. HTML output. */
 	}
 endif;
 
-if ( ! function_exists( 'crimson_rose_featured_post_navigation' ) ) :
+if ( ! function_exists( 'painted_lady_featured_post_navigation' ) ) :
 	/**
 	 * Display post navigation.
 	 *
-	 * @since Crimson_Rose 1.01
+	 * @since Painted_Lady 1.01
 	 *
 	 * @return void
 	 */
-	function crimson_rose_featured_post_navigation() {
-		global $crimson_rose;
+	function painted_lady_featured_post_navigation() {
+		global $painted_lady;
 
-		if ( $crimson_rose['blog_single_hide_post_navigation'] ) {
+		if ( $painted_lady['blog_single_hide_post_navigation'] ) {
 			return;
 		}
 
@@ -242,12 +242,12 @@ if ( ! function_exists( 'crimson_rose_featured_post_navigation' ) ) :
 			$prev_text .= get_the_post_thumbnail( $previous_post->ID, 'thumbnail' );
 		}
 
-		$next_text .= '<span class="meta-nav" aria-hidden="true">' . esc_html__( 'Next', 'crimson-rose' ) . '</span> ' .
-			'<span class="screen-reader-text">' . esc_html__( 'Next post:', 'crimson-rose' ) . '</span> ' .
+		$next_text .= '<span class="meta-nav" aria-hidden="true">' . esc_html__( 'Next', 'painted-lady' ) . '</span> ' .
+			'<span class="screen-reader-text">' . esc_html__( 'Next post:', 'painted-lady' ) . '</span> ' .
 			'<span class="post-title">%title</span>';
 
-		$prev_text .= '<span class="meta-nav" aria-hidden="true">' . esc_html__( 'Previous', 'crimson-rose' ) . '</span> ' .
-			'<span class="screen-reader-text">' . esc_html__( 'Previous post:', 'crimson-rose' ) . '</span> ' .
+		$prev_text .= '<span class="meta-nav" aria-hidden="true">' . esc_html__( 'Previous', 'painted-lady' ) . '</span> ' .
+			'<span class="screen-reader-text">' . esc_html__( 'Previous post:', 'painted-lady' ) . '</span> ' .
 			'<span class="post-title">%title</span>';
 
 		the_post_navigation(
@@ -259,16 +259,16 @@ if ( ! function_exists( 'crimson_rose_featured_post_navigation' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'crimson_rose_parent_post_navigation' ) ) :
+if ( ! function_exists( 'painted_lady_parent_post_navigation' ) ) :
 	/**
 	 * Display parent post navigation
 	 *
-	 * @since Crimson_Rose 1.01
+	 * @since Painted_Lady 1.01
 	 *
 	 * @return void
 	 */
-	function crimson_rose_parent_post_navigation() {
-		global $crimson_rose;
+	function painted_lady_parent_post_navigation() {
+		global $painted_lady;
 
 		$post = get_post();
 
@@ -291,8 +291,8 @@ if ( ! function_exists( 'crimson_rose_parent_post_navigation' ) ) :
 			$prev_text .= get_the_post_thumbnail( $parent_post->ID, 'thumbnail' );
 		}
 
-		$prev_text .= '<span class="meta-nav" aria-hidden="true">' . esc_html__( 'Post', 'crimson-rose' ) . '</span> ' .
-			'<span class="screen-reader-text">' . esc_html__( 'Parent post:', 'crimson-rose' ) . '</span> ' .
+		$prev_text .= '<span class="meta-nav" aria-hidden="true">' . esc_html__( 'Post', 'painted-lady' ) . '</span> ' .
+			'<span class="screen-reader-text">' . esc_html__( 'Parent post:', 'painted-lady' ) . '</span> ' .
 			'<span class="post-title">%title</span>';
 
 		the_post_navigation(

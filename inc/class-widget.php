@@ -3,22 +3,22 @@
  * Widget base class.
  *
  * @package WordPress
- * @subpackage Crimson_Rose
+ * @subpackage Painted_Lady
  * @since 1.01
  * @author Chris Baldelomar <chris@webplantmedia.com>
  * @copyright Copyright (c) 2018, Chris Baldelomar
- * @link https://webplantmedia.com/product/crimson-rose-wordpress-theme/
+ * @link https://webplantmedia.com/product/painted-lady-wordpress-theme/
  * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
 /**
  * Class: Widget base.
  *
- * @since Crimson_Rose 1.01
+ * @since Painted_Lady 1.01
  *
  * @see WP_Widget
  */
-class Crimson_Rose_Widget extends WP_Widget {
+class Painted_Lady_Widget extends WP_Widget {
 
 	public $widget_description;
 	public $widget_id;
@@ -30,7 +30,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 	/**
 	 * __construct
 	 *
-	 * @since Crimson_Rose 1.01
+	 * @since Painted_Lady 1.01
 	 *
 	 * @return void
 	 */
@@ -44,23 +44,23 @@ class Crimson_Rose_Widget extends WP_Widget {
 		parent::__construct( $this->widget_id, $this->widget_name, $widget_ops, $this->control_ops );
 
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
-		add_action( 'wp_ajax_crimson_rose_post_lookup', array( &$this, 'post_lookup_callback' ) );
-		add_action( 'wp_ajax_crimson_rose_page_list_refresh', array( &$this, 'page_list_refresh' ) );
+		add_action( 'wp_ajax_painted_lady_post_lookup', array( &$this, 'post_lookup_callback' ) );
+		add_action( 'wp_ajax_painted_lady_page_list_refresh', array( &$this, 'page_list_refresh' ) );
 	}
 
 	/**
 	 * Echo post title and id for ajax request. Used in widget for searching
 	 * for post by title.
 	 *
-	 * @since Crimson_Rose 1.01
+	 * @since Painted_Lady 1.01
 	 *
 	 * @return void
 	 */
 	public function page_list_refresh() {
 		global $wpdb; /* get access to the WordPress database object variable. */
 
-		if ( ! isset( $_POST['_wpnonce'] ) || ! wp_verify_nonce( sanitize_key( $_POST['_wpnonce'] ), 'crimson-rose-admin-page-list-refresh' ) ) {
-			die( __( 'Security check', 'crimson-rose' ) );
+		if ( ! isset( $_POST['_wpnonce'] ) || ! wp_verify_nonce( sanitize_key( $_POST['_wpnonce'] ), 'painted-lady-admin-page-list-refresh' ) ) {
+			die( __( 'Security check', 'painted-lady' ) );
 		}
 
 		// get names of all businesses.
@@ -75,15 +75,15 @@ class Crimson_Rose_Widget extends WP_Widget {
 	 * Echo post title and id for ajax request. Used in widget for searching
 	 * for post by title.
 	 *
-	 * @since Crimson_Rose 1.01
+	 * @since Painted_Lady 1.01
 	 *
 	 * @return void
 	 */
 	public function post_lookup_callback() {
 		global $wpdb; /* get access to the WordPress database object variable. */
 
-		if ( ! isset( $_POST['_wpnonce'] ) || ! wp_verify_nonce( sanitize_key( $_POST['_wpnonce'] ), 'crimson-rose-admin-post-select' ) ) {
-			die( __( 'Security check', 'crimson-rose' ) );
+		if ( ! isset( $_POST['_wpnonce'] ) || ! wp_verify_nonce( sanitize_key( $_POST['_wpnonce'] ), 'painted-lady-admin-post-select' ) ) {
+			die( __( 'Security check', 'painted-lady' ) );
 		}
 
 		// get names of all businesses.
@@ -120,7 +120,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 		}
 
 		if ( empty( $titles ) ) {
-			$titles[0]['label'] = sprintf( __( 'No results found in post type "%s".', 'crimson-rose' ), $post_type );
+			$titles[0]['label'] = sprintf( __( 'No results found in post type "%s".', 'painted-lady' ), $post_type );
 			$titles[0]['value'] = '0';
 		}
 
@@ -132,7 +132,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 	/**
 	 * Enqueue Scripts
 	 *
-	 * @since Crimson_Rose 1.01
+	 * @since Painted_Lady 1.01
 	 *
 	 * @param string $hook_suffix
 	 * @return void
@@ -142,22 +142,22 @@ class Crimson_Rose_Widget extends WP_Widget {
 			return;
 		}
 		wp_enqueue_style( 'wp-color-picker' );
-		wp_enqueue_style( 'crimson-rose-admin-widgets', get_parent_theme_file_uri() . '/css/admin/admin-widgets.css', array(), CRIMSON_ROSE_VERSION );
+		wp_enqueue_style( 'painted-lady-admin-widgets', get_parent_theme_file_uri() . '/css/admin/admin-widgets.css', array(), PAINTED_LADY_VERSION );
 
 		wp_enqueue_script( 'wp-color-picker' );
 		wp_enqueue_script( 'jquery-ui' );
 		wp_enqueue_script( 'jquery-ui-autocomplete' );
 		wp_enqueue_script( 'jquery-ui-accordion' );
 
-		wp_enqueue_script( 'crimson-rose-admin-widgets', get_template_directory_uri() . '/js/admin/admin-widgets.js', array(), CRIMSON_ROSE_VERSION, true );
-		wp_enqueue_script( 'crimson-rose-post-select', get_template_directory_uri() . '/js/admin/admin-post-select.js', array(), CRIMSON_ROSE_VERSION, true );
-		wp_enqueue_script( 'crimson-rose-page-refresh', get_template_directory_uri() . '/js/admin/admin-page-refresh.js', array(), CRIMSON_ROSE_VERSION, true );
+		wp_enqueue_script( 'painted-lady-admin-widgets', get_template_directory_uri() . '/js/admin/admin-widgets.js', array(), PAINTED_LADY_VERSION, true );
+		wp_enqueue_script( 'painted-lady-post-select', get_template_directory_uri() . '/js/admin/admin-post-select.js', array(), PAINTED_LADY_VERSION, true );
+		wp_enqueue_script( 'painted-lady-page-refresh', get_template_directory_uri() . '/js/admin/admin-page-refresh.js', array(), PAINTED_LADY_VERSION, true );
 	}
 
 	/**
 	 * Sanitize options.
 	 *
-	 * @since Crimson_Rose 1.01
+	 * @since Painted_Lady 1.01
 	 *
 	 * @param array $instance
 	 * @return array
@@ -209,7 +209,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 	/**
 	 * Check if default value needs to be returned.
 	 *
-	 * @since Crimson_Rose 1.01
+	 * @since Painted_Lady 1.01
 	 *
 	 * @param string $key
 	 * @param array  $instance
@@ -227,7 +227,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 	/**
 	 * Properly save user input.
 	 *
-	 * @since Crimson_Rose 1.01
+	 * @since Painted_Lady 1.01
 	 *
 	 * @param string $key
 	 * @param array  $instance
@@ -249,7 +249,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 	/**
 	 * Update
 	 *
-	 * @since Crimson_Rose 1.01
+	 * @since Painted_Lady 1.01
 	 *
 	 * @param array $new_instance
 	 * @param array $old_instance
@@ -302,7 +302,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 	/**
 	 * Sanitize Instance
 	 *
-	 * @since Crimson_Rose 1.01
+	 * @since Painted_Lady 1.01
 	 *
 	 * @param array  $setting
 	 * @param mixed  $new_value
@@ -390,7 +390,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 	 * This functions provides the big picture logic
 	 * for displaying each type of user input field.
 	 *
-	 * @since Crimson_Rose 1.01
+	 * @since Painted_Lady 1.01
 	 *
 	 * @param array $instance
 	 * @return void
@@ -512,7 +512,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 	/**
 	 * Display HTML before panels start
 	 *
-	 * @since Crimson_Rose 1.01
+	 * @since Painted_Lady 1.01
 	 *
 	 * @return void
 	 */
@@ -525,7 +525,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 	/**
 	 * Display HTML after panels start
 	 *
-	 * @since Crimson_Rose 1.01
+	 * @since Painted_Lady 1.01
 	 *
 	 * @return void
 	 */
@@ -538,7 +538,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 	/**
 	 * Display HTML before panel repeater start
 	 *
-	 * @since Crimson_Rose 1.01
+	 * @since Painted_Lady 1.01
 	 *
 	 * @return void
 	 */
@@ -551,7 +551,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 	/**
 	 * Display HTML after panel repeater start
 	 *
-	 * @since Crimson_Rose 1.01
+	 * @since Painted_Lady 1.01
 	 *
 	 * @param int $panel_count
 	 * @return void
@@ -560,14 +560,14 @@ class Crimson_Rose_Widget extends WP_Widget {
 		?>
 		</div>
 		<input type="hidden" id="widget-panel-repeater-count" value="<?php echo esc_attr( $panel_count ); ?>" />
-		<a href="#" class="button-secondary widget-panel-repeater" onclick="widgetPanelRepeater( '<?php echo esc_attr( $this->id ); ?>' ); return false;"><?php esc_html_e( 'Add New Item', 'crimson-rose' ); ?></a>
+		<a href="#" class="button-secondary widget-panel-repeater" onclick="widgetPanelRepeater( '<?php echo esc_attr( $this->id ); ?>' ); return false;"><?php esc_html_e( 'Add New Item', 'painted-lady' ); ?></a>
 		<?php
 	}
 
 	/**
 	 * Display HTML before panel start
 	 *
-	 * @since Crimson_Rose 1.01
+	 * @since Painted_Lady 1.01
 	 *
 	 * @param string $title
 	 * @return void
@@ -595,7 +595,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 	/**
 	 * Display HTML after panel start
 	 *
-	 * @since Crimson_Rose 1.01
+	 * @since Painted_Lady 1.01
 	 *
 	 * @param bool $display_repeater
 	 * @return void
@@ -610,9 +610,9 @@ class Crimson_Rose_Widget extends WP_Widget {
 			<a onclick="widgetPanelMoveDown( this ); return false;" href="#" class="dashicons-before dashicons-arrow-down-alt2 panel-move panel-move-down panel-button"></a>
 			<a onclick="widgetPanelDelete( this ); return false;" href="#" class="dashicons-before dashicons-no panel-delete panel-button"></a>
 			<span class="panel-delete-final">
-				<?php echo esc_html__( 'Delete Slide?', 'crimson-rose' ); ?>
-				<a href="#" onclick="widgetPanelDeleteYes( this ); return false;"><?php echo esc_html__( 'Yes', 'crimson-rose' ); ?></a>
-				<a href="#" onclick="widgetPanelDeleteNo( this ); return false;"><?php echo esc_html__( 'No', 'crimson-rose' ); ?></a>
+				<?php echo esc_html__( 'Delete Slide?', 'painted-lady' ); ?>
+				<a href="#" onclick="widgetPanelDeleteYes( this ); return false;"><?php echo esc_html__( 'Yes', 'painted-lady' ); ?></a>
+				<a href="#" onclick="widgetPanelDeleteNo( this ); return false;"><?php echo esc_html__( 'No', 'painted-lady' ); ?></a>
 			</span>
 
 			<?php endif; ?>
@@ -623,7 +623,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 	/**
 	 * Display Setting
 	 *
-	 * @since Crimson_Rose 1.01
+	 * @since Painted_Lady 1.01
 	 *
 	 * @param array  $instance
 	 * @param string $key
@@ -664,7 +664,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 
 			case 'image':
 				wp_enqueue_media();
-				wp_enqueue_script( 'crimson-rose-widget-image', get_template_directory_uri() . '/js/admin/admin-image.js', array( 'jquery' ), '', true );
+				wp_enqueue_script( 'painted-lady-widget-image', get_template_directory_uri() . '/js/admin/admin-image.js', array( 'jquery' ), '', true );
 				$id_prefix = $this->get_field_id( '' );
 			?>
 				<p style="margin-bottom: 0;">
@@ -682,14 +682,14 @@ class Crimson_Rose_Widget extends WP_Widget {
 					</div>
 
 					<input type="text" class="widefat image-sel-value" id="<?php echo esc_attr( $field_id ); ?>" name="<?php echo esc_attr( $field_name ); ?>"value="<?php echo esc_attr( $value ); ?>" placeholder="http://" style="margin-bottom:5px;" />
-					<a href="#" class="button-secondary image-sel-add" onclick="imageWidget.uploader( this ); return false;"><?php esc_html_e( 'Choose Image', 'crimson-rose' ); ?></a>
+					<a href="#" class="button-secondary image-sel-add" onclick="imageWidget.uploader( this ); return false;"><?php esc_html_e( 'Choose Image', 'painted-lady' ); ?></a>
 					<?php
 					$a_style = '';
 					if ( empty( $value ) ) {
 						$a_style = 'display:none;';
 					}
 					?>
-					<a href="#" style="display:inline-block;margin:5px 0 0 3px;<?php echo esc_attr( $a_style ); ?>" class="image-sel-remove" onclick="imageWidget.remove( this ); return false;"><?php esc_html_e( 'Remove', 'crimson-rose' ); ?></a>
+					<a href="#" style="display:inline-block;margin:5px 0 0 3px;<?php echo esc_attr( $a_style ); ?>" class="image-sel-remove" onclick="imageWidget.remove( this ); return false;"><?php esc_html_e( 'Remove', 'painted-lady' ); ?></a>
 				</div>
 				<?php if ( isset( $setting['description'] ) ) : ?>
 					<span class="description"><?php echo $setting['description']; /* WPCS: XSS OK. HTML output */ ?></span>
@@ -764,11 +764,11 @@ class Crimson_Rose_Widget extends WP_Widget {
 					</select>
 					<span class="widget-page-controls">
 						<a target="_blank" href="<?php echo admin_url( 'post-new.php?post_type=page' ); ?>">
-							<?php echo esc_html__( 'New Page', 'crimson-rose' ); ?>
+							<?php echo esc_html__( 'New Page', 'painted-lady' ); ?>
 						</a>
-						<?php $nonce = wp_create_nonce( 'crimson-rose-admin-page-list-refresh' ); ?>
+						<?php $nonce = wp_create_nonce( 'painted-lady-admin-page-list-refresh' ); ?>
 						<a id="<?php echo esc_attr( $field_id ) . '-refresh-list'; ?>" class="refresh-page-list" href="#" data-page-value="<?php echo esc_attr( $value ); ?>" data-page-target="#<?php echo esc_attr( $field_id ); ?>" data-page-nonce="<?php echo esc_attr( $nonce ); ?>">
-							<?php echo esc_html__( 'Refresh List', 'crimson-rose' ); ?>
+							<?php echo esc_html__( 'Refresh List', 'painted-lady' ); ?>
 						</a>
 					</span>
 					<?php if ( isset( $setting['description'] ) ) : ?>
@@ -793,7 +793,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 				?>
 				<p>
 					<label for="<?php echo esc_attr( $field_id ); ?>"><?php echo esc_html( $setting['label'] ); ?></label>
-					<?php $nonce = wp_create_nonce( 'crimson-rose-admin-post-select' ); ?>
+					<?php $nonce = wp_create_nonce( 'painted-lady-admin-post-select' ); ?>
 					<input class="widefat post-autocomplete-select" id="<?php echo esc_attr( $field_id ); ?>" data-autocomplete-type="multi" data-autocomplete-taxonomy="" data-autocomplete-nonce="<?php echo esc_attr( $nonce ); ?>" data-autocomplete-lookup="post" data-autocomplete-post-type="<?php echo esc_attr( $post_type ); ?>" name="<?php echo esc_attr( $field_name ); ?>" type="text" value="<?php echo esc_attr( $value ); ?>" />
 					<?php if ( isset( $setting['description'] ) ) : ?>
 						<span class="description"><?php echo $setting['description']; /* WPCS: XSS OK. HTML output */ ?></span>
@@ -881,7 +881,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 					array(
 						'name'            => $this->get_field_name( 'category' ),
 						'selected'        => $value,
-						'show_option_all' => esc_html__( 'All Categories', 'crimson-rose' ),
+						'show_option_all' => esc_html__( 'All Categories', 'painted-lady' ),
 						'show_count'      => true,
 						'orderby'         => 'slug',
 						'hierarchical'    => true,
@@ -898,7 +898,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 				break;
 
 			default:
-				do_action( 'crimson_rose_widget_type_' . $setting['type'], $this, $key, $setting, $instance );
+				do_action( 'painted_lady_widget_type_' . $setting['type'], $this, $key, $setting, $instance );
 				break;
 		}
 	}
@@ -906,7 +906,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 	/**
 	 * Return list of pages in options tag.
 	 *
-	 * @since Crimson_Rose 2.34
+	 * @since Painted_Lady 2.34
 	 *
 	 * @param mixed $value
 	 * @return void
@@ -914,7 +914,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 	public function the_pages_options_list( $value ) {
 		$pages = get_pages( 'sort_order=ASC&sort_column=post_title&post_status=publish' );
 		?>
-		<option value="" <?php selected( '', $value ); ?>><?php echo esc_html__( 'No Page', 'crimson-rose' ); ?></option>
+		<option value="" <?php selected( '', $value ); ?>><?php echo esc_html__( 'No Page', 'painted-lady' ); ?></option>
 		<?php foreach ( $pages as $page ) : ?>
 			<option value="<?php echo esc_attr( $page->ID ); ?>" <?php selected( $page->ID, $value ); ?>><?php echo esc_attr( $page->post_title ); ?></option>
 		<?php endforeach; ?>
@@ -924,7 +924,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 	/**
 	 * Helper method to go from hex to rgb color.
 	 *
-	 * @since Crimson_Rose 1.01
+	 * @since Painted_Lady 1.01
 	 *
 	 * @param string $colour
 	 * @return array
@@ -953,7 +953,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 	/**
 	 * Convert post_ids string to array of ints.
 	 *
-	 * @since Crimson_Rose 1.01
+	 * @since Painted_Lady 1.01
 	 *
 	 * @param string $post_ids
 	 * @return array
@@ -982,7 +982,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 	/**
 	 * Wrapper function to sanitize string of comma delimited ids.
 	 *
-	 * @since Crimson_Rose 1.01
+	 * @since Painted_Lady 1.01
 	 *
 	 * @param mixed $post_ids
 	 * @return string
@@ -1002,7 +1002,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 	/**
 	 * Comma delimited post slugs string to array
 	 *
-	 * @since Crimson_Rose 1.01
+	 * @since Painted_Lady 1.01
 	 *
 	 * @param string $post_ids
 	 * @return array
@@ -1031,7 +1031,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 	/**
 	 * Wrapper function to sanitize post slugs in comma delimited string.
 	 *
-	 * @since Crimson_Rose 1.01
+	 * @since Painted_Lady 1.01
 	 *
 	 * @param string $post_ids
 	 * @return string
@@ -1051,7 +1051,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 	/**
 	 * Sanitize URL. This fixes a link bug in the Customizer.
 	 *
-	 * @since Crimson_Rose 1.01
+	 * @since Painted_Lady 1.01
 	 *
 	 * @param string $value
 	 * @return string
@@ -1068,7 +1068,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 	/**
 	 * Sanitize background size
 	 *
-	 * @since Crimson_Rose 1.01
+	 * @since Painted_Lady 1.01
 	 *
 	 * @param mixed $value
 	 * @return mixed
@@ -1086,7 +1086,7 @@ class Crimson_Rose_Widget extends WP_Widget {
 	/**
 	 * Sanitize the WooCommerce image sizes.
 	 *
-	 * @since Crimson_Rose 1.01
+	 * @since Painted_Lady 1.01
 	 *
 	 * @param string $input
 	 * @return string
@@ -1102,25 +1102,25 @@ class Crimson_Rose_Widget extends WP_Widget {
 	/**
 	 * Background size CSS options
 	 *
-	 * @since Crimson_Rose 1.01
+	 * @since Painted_Lady 1.01
 	 *
 	 * @return array
 	 */
 	public function options_background_size() {
 		return array(
-			'cover'      => esc_html__( 'Cover', 'crimson-rose' ),
-			'contain'    => esc_html__( 'Contain', 'crimson-rose' ),
-			'stretch'    => esc_html__( 'Stretch', 'crimson-rose' ),
-			'fit-width'  => esc_html__( 'Fit Width', 'crimson-rose' ),
-			'fit-height' => esc_html__( 'Fit Height', 'crimson-rose' ),
-			'auto'       => esc_html__( 'Auto', 'crimson-rose' ),
+			'cover'      => esc_html__( 'Cover', 'painted-lady' ),
+			'contain'    => esc_html__( 'Contain', 'painted-lady' ),
+			'stretch'    => esc_html__( 'Stretch', 'painted-lady' ),
+			'fit-width'  => esc_html__( 'Fit Width', 'painted-lady' ),
+			'fit-height' => esc_html__( 'Fit Height', 'painted-lady' ),
+			'auto'       => esc_html__( 'Auto', 'painted-lady' ),
 		);
 	}
 
 	/**
 	 * Get CSS background size options
 	 *
-	 * @since Crimson_Rose 1.01
+	 * @since Painted_Lady 1.01
 	 *
 	 * @param string $value
 	 * @return array
@@ -1128,13 +1128,13 @@ class Crimson_Rose_Widget extends WP_Widget {
 	public function get_background_size( $value ) {
 		switch ( $value ) {
 			case 'stretch':
-				$value = esc_html__( '100% 100%', 'crimson-rose' );
+				$value = esc_html__( '100% 100%', 'painted-lady' );
 				break;
 			case 'fit-width':
-				$value = esc_html__( '100% auto', 'crimson-rose' );
+				$value = esc_html__( '100% auto', 'painted-lady' );
 				break;
 			case 'fit-height':
-				$value = esc_html__( 'auto 100%', 'crimson-rose' );
+				$value = esc_html__( 'auto 100%', 'painted-lady' );
 				break;
 		}
 

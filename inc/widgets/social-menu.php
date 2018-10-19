@@ -3,65 +3,65 @@
  * Social Menu Widget
  *
  * @package WordPress
- * @subpackage Crimson_Rose
+ * @subpackage Painted_Lady
  * @since 1.01
  * @author Chris Baldelomar <chris@webplantmedia.com>
  * @copyright Copyright (c) 2018, Chris Baldelomar
- * @link https://webplantmedia.com/product/crimson-rose-wordpress-theme/
+ * @link https://webplantmedia.com/product/painted-lady-wordpress-theme/
  * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
-if ( ! class_exists( 'Crimson_Rose_Widget_Social_Menu' ) ) :
+if ( ! class_exists( 'Painted_Lady_Widget_Social_Menu' ) ) :
 	/**
 	 * Class: Display static content from an specific page.
 	 *
-	 * @since Crimson_Rose 1.01
+	 * @since Painted_Lady 1.01
 	 *
-	 * @see Crimson_Rose_Widget
+	 * @see Painted_Lady_Widget
 	 */
-	class Crimson_Rose_Widget_Social_Menu extends Crimson_Rose_Widget {
+	class Painted_Lady_Widget_Social_Menu extends Painted_Lady_Widget {
 		/**
 		 * __construct
 		 *
-		 * @since Crimson_Rose 1.01
+		 * @since Painted_Lady 1.01
 		 *
 		 * @return void
 		 */
 		public function __construct() {
-			$this->widget_id          = 'crimson-rose-social-menu';
-			$this->widget_cssclass    = 'crimson-rose-social-menu';
-			$this->widget_description = esc_html__( 'Displays your social menu icons in your footer or sidebar.', 'crimson-rose' );
-			$this->widget_name        = esc_html__( 'Crimson Rose: Social Menu', 'crimson-rose' );
+			$this->widget_id          = 'painted-lady-social-menu';
+			$this->widget_cssclass    = 'painted-lady-social-menu';
+			$this->widget_description = esc_html__( 'Displays your social menu icons in your footer or sidebar.', 'painted-lady' );
+			$this->widget_name        = esc_html__( 'Painted Lady: Social Menu', 'painted-lady' );
 			$this->settings           = array(
 				'title'            => array(
 					'type'     => 'text',
 					'std'      => '',
-					'label'    => esc_html__( 'Title:', 'crimson-rose' ),
+					'label'    => esc_html__( 'Title:', 'painted-lady' ),
 					'sanitize' => 'text',
 				),
 				'align'            => array(
 					'type'     => 'select',
 					'std'      => 'center',
-					'label'    => esc_html__( 'Align:', 'crimson-rose' ),
+					'label'    => esc_html__( 'Align:', 'painted-lady' ),
 					'options'  => array(
-						'left'   => esc_html__( 'Left', 'crimson-rose' ),
-						'center' => esc_html__( 'Center', 'crimson-rose' ),
-						'right'  => esc_html__( 'Right', 'crimson-rose' ),
+						'left'   => esc_html__( 'Left', 'painted-lady' ),
+						'center' => esc_html__( 'Center', 'painted-lady' ),
+						'right'  => esc_html__( 'Right', 'painted-lady' ),
 					),
 					'sanitize' => 'text',
 				),
 				'link_color'       => array(
 					'type'        => 'colorpicker',
 					'std'         => '',
-					'label'       => esc_html__( 'Text Color:', 'crimson-rose' ),
-					'description' => esc_html__( 'Leave blank to use default text color.', 'crimson-rose' ),
+					'label'       => esc_html__( 'Text Color:', 'painted-lady' ),
+					'description' => esc_html__( 'Leave blank to use default text color.', 'painted-lady' ),
 					'sanitize'    => 'color',
 				),
 				'link_hover_color' => array(
 					'type'        => 'colorpicker',
 					'std'         => '',
-					'label'       => esc_html__( 'Link Color:', 'crimson-rose' ),
-					'description' => esc_html__( 'Leave blank to use default hover color.', 'crimson-rose' ),
+					'label'       => esc_html__( 'Link Color:', 'painted-lady' ),
+					'description' => esc_html__( 'Leave blank to use default hover color.', 'painted-lady' ),
 					'sanitize'    => 'color',
 				),
 			);
@@ -72,7 +72,7 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Social_Menu' ) ) :
 		/**
 		 * Widget function.
 		 *
-		 * @since Crimson_Rose 1.01
+		 * @since Painted_Lady 1.01
 		 *
 		 * @param array $args
 		 * @param array $instance
@@ -110,7 +110,7 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Social_Menu' ) ) :
 
 			<div class="social-menu-wrapper social-menu-align-<?php echo esc_attr( $o['align'] ); ?>">
 				<?php if ( has_nav_menu( 'social' ) ) : ?>
-					<nav class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Footer Social Links Menu', 'crimson-rose' ); ?>">
+					<nav class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Footer Social Links Menu', 'painted-lady' ); ?>">
 						<?php
 							wp_nav_menu(
 								array(
@@ -135,7 +135,7 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Social_Menu' ) ) :
 		/**
 		 * Registers the widget with the WordPress Widget API.
 		 *
-		 * @since Crimson_Rose 1.01
+		 * @since Painted_Lady 1.01
 		 *
 		 * @return void
 		 */
@@ -145,4 +145,4 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Social_Menu' ) ) :
 	}
 endif;
 
-add_action( 'widgets_init', array( 'Crimson_Rose_Widget_Social_Menu', 'register' ) );
+add_action( 'widgets_init', array( 'Painted_Lady_Widget_Social_Menu', 'register' ) );

@@ -6,11 +6,11 @@
  * Contains handlers to make Theme Customizer preview reload changes asynchronously.
  *
  * @package WordPress
- * @subpackage Crimson_Rose
+ * @subpackage Painted_Lady
  * @since 1.01
  * @author Chris Baldelomar <chris@webplantmedia.com>
  * @copyright Copyright (c) 2018, Chris Baldelomar
- * @link https://webplantmedia.com/product/crimson-rose-wordpress-theme/
+ * @link https://webplantmedia.com/product/painted-lady-wordpress-theme/
  * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
@@ -21,7 +21,7 @@
 			value = 'initial';
 		}
 
-		var stylesheet = '#crimson-rose-style-inline-css';
+		var stylesheet = '#painted-lady-style-inline-css';
 		var $css       = $( 'head ' + stylesheet );
 		if ( $css.length ) {
 			var css     = $css.html();

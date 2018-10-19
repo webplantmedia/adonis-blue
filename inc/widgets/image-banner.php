@@ -3,41 +3,41 @@
  * Content Widget: Image Banner Widget
  *
  * @package WordPress
- * @subpackage Crimson_Rose
+ * @subpackage Painted_Lady
  * @since 1.01
  * @author Chris Baldelomar <chris@webplantmedia.com>
  * @copyright Copyright (c) 2018, Chris Baldelomar
- * @link https://webplantmedia.com/product/crimson-rose-wordpress-theme/
+ * @link https://webplantmedia.com/product/painted-lady-wordpress-theme/
  * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
-if ( ! class_exists( 'Crimson_Rose_Widget_Image_Banner_Widget' ) ) :
+if ( ! class_exists( 'Painted_Lady_Widget_Image_Banner_Widget' ) ) :
 	/**
 	 * Class: Display static content from an specific page.
 	 *
-	 * @since Crimson_Rose 1.01
+	 * @since Painted_Lady 1.01
 	 *
-	 * @see Crimson_Rose_Widget
+	 * @see Painted_Lady_Widget
 	 */
-	class Crimson_Rose_Widget_Image_Banner_Widget extends Crimson_Rose_Widget {
+	class Painted_Lady_Widget_Image_Banner_Widget extends Painted_Lady_Widget {
 		/**
 		 * __construct
 		 *
-		 * @since Crimson_Rose 1.01
+		 * @since Painted_Lady 1.01
 		 *
 		 * @return void
 		 */
 		public function __construct() {
-			$this->widget_id          = 'crimson-rose-image-banner';
-			$this->widget_cssclass    = 'crimson-rose-image-banner';
-			$this->widget_description = esc_html__( 'Display an image banner in your footer or sidebar.', 'crimson-rose' );
-			$this->widget_name        = esc_html__( 'Crimson Rose: Image Banner', 'crimson-rose' );
+			$this->widget_id          = 'painted-lady-image-banner';
+			$this->widget_cssclass    = 'painted-lady-image-banner';
+			$this->widget_description = esc_html__( 'Display an image banner in your footer or sidebar.', 'painted-lady' );
+			$this->widget_name        = esc_html__( 'Painted Lady: Image Banner', 'painted-lady' );
 			$this->settings           = array(
 				'page'           => array(
 					'type'        => 'page',
 					'std'         => '',
-					'label'       => esc_html__( 'Select Page:', 'crimson-rose' ),
-					'description' => esc_html__( 'Create a new page with the the content and featured image you want to display.', 'crimson-rose' ),
+					'label'       => esc_html__( 'Select Page:', 'painted-lady' ),
+					'description' => esc_html__( 'Create a new page with the the content and featured image you want to display.', 'painted-lady' ),
 					'sanitize'    => 'text',
 				),
 				'image_width'    => array(
@@ -46,35 +46,35 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Image_Banner_Widget' ) ) :
 					'step'        => 1,
 					'min'         => 100,
 					'max'         => 1600,
-					'label'       => esc_html__( 'Image Width (in pixels)', 'crimson-rose' ),
-					'description' => esc_html__( 'Set custom size for featured image. Leave blank to use large image display.', 'crimson-rose' ),
+					'label'       => esc_html__( 'Image Width (in pixels)', 'painted-lady' ),
+					'description' => esc_html__( 'Set custom size for featured image. Leave blank to use large image display.', 'painted-lady' ),
 					'sanitize'    => 'number_blank',
 				),
 				'image_style'    => array(
 					'type'     => 'select',
 					'std'      => 'round',
-					'label'    => esc_html__( 'Image Style:', 'crimson-rose' ),
+					'label'    => esc_html__( 'Image Style:', 'painted-lady' ),
 					'options'  => array(
-						'none'  => esc_html__( 'None', 'crimson-rose' ),
-						'round' => esc_html__( 'Round', 'crimson-rose' ),
+						'none'  => esc_html__( 'None', 'painted-lady' ),
+						'round' => esc_html__( 'Round', 'painted-lady' ),
 					),
 					'sanitize' => 'text',
 				),
 				'title_position' => array(
 					'type'     => 'select',
 					'std'      => 'below',
-					'label'    => esc_html__( 'Title Position:', 'crimson-rose' ),
+					'label'    => esc_html__( 'Title Position:', 'painted-lady' ),
 					'options'  => array(
-						'above'  => esc_html__( 'Above', 'crimson-rose' ),
-						'middle' => esc_html__( 'Middle', 'crimson-rose' ),
-						'below'  => esc_html__( 'Below', 'crimson-rose' ),
+						'above'  => esc_html__( 'Above', 'painted-lady' ),
+						'middle' => esc_html__( 'Middle', 'painted-lady' ),
+						'below'  => esc_html__( 'Below', 'painted-lady' ),
 					),
 					'sanitize' => 'text',
 				),
 				'link'           => array(
 					'type'     => 'text',
 					'std'      => esc_url( home_url( '/' ) ),
-					'label'    => esc_html__( 'Link:', 'crimson-rose' ),
+					'label'    => esc_html__( 'Link:', 'painted-lady' ),
 					'sanitize' => 'url',
 				),
 			);
@@ -85,7 +85,7 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Image_Banner_Widget' ) ) :
 		/**
 		 * Widget function.
 		 *
-		 * @since Crimson_Rose 1.01
+		 * @since Painted_Lady 1.01
 		 *
 		 * @param array $args
 		 * @param array $instance
@@ -148,7 +148,7 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Image_Banner_Widget' ) ) :
 						</div>
 					<?php endif; ?>
 				<?php else : ?>
-					<center><em><a href="<?php echo esc_url( admin_url( 'customize.php?autofocus[panel]=widgets' ) ); ?>"><?php echo esc_html__( 'Select a page.', 'crimson-rose' ); ?></a></em></center>
+					<center><em><a href="<?php echo esc_url( admin_url( 'customize.php?autofocus[panel]=widgets' ) ); ?>"><?php echo esc_html__( 'Select a page.', 'painted-lady' ); ?></a></em></center>
 				<?php endif; ?>
 
 				<?php if ( $p && get_edit_post_link( $p->ID ) ) : ?>
@@ -157,7 +157,7 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Image_Banner_Widget' ) ) :
 							edit_post_link(
 								sprintf(
 									'%1$s <span class="screen-reader-text">%2$s</span>',
-									esc_html__( 'Edit', 'crimson-rose' ),
+									esc_html__( 'Edit', 'painted-lady' ),
 									get_the_title()
 								),
 								'<div class="entry-footer-meta"><span class="edit-link">',
@@ -176,7 +176,7 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Image_Banner_Widget' ) ) :
 		/**
 		 * Registers the widget with the WordPress Widget API.
 		 *
-		 * @since Crimson_Rose 1.01
+		 * @since Painted_Lady 1.01
 		 *
 		 * @return void
 		 */
@@ -186,4 +186,4 @@ if ( ! class_exists( 'Crimson_Rose_Widget_Image_Banner_Widget' ) ) :
 	}
 endif;
 
-add_action( 'widgets_init', array( 'Crimson_Rose_Widget_Image_Banner_Widget', 'register' ) );
+add_action( 'widgets_init', array( 'Painted_Lady_Widget_Image_Banner_Widget', 'register' ) );
