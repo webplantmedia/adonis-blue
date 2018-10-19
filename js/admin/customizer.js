@@ -247,7 +247,7 @@
 		'split_menu_top_offset', function( value ) {
 			value.bind(
 				function( to ) {
-					changeInlineCSS( 'split_menu_top_offset', '-' + to + 'px' );
+					changeInlineCSS( 'split_menu_top_offset', to + 'px' );
 				}
 			);
 		}

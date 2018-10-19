@@ -329,8 +329,12 @@ $css .= '
 @media (min-width: ' . $painted_lady['split_menu_collapse_width'] . 'px) { /*id:split_menu_collapse_width*/
 	#site-navigation.main-navigation {
 		border-bottom-width: 0;
-		position: relative;
-		top: -' . $painted_lady['split_menu_top_offset'] . 'px; /*id:split_menu_top_offset*/
+		position: absolute;
+		top: ' . $painted_lady['split_menu_top_offset'] . 'px; /*id:split_menu_top_offset*/
+	}
+
+	#masthead {
+		border-bottom-width: 2px;
 	}
 
 	.site-logo-container {
