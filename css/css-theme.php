@@ -156,7 +156,6 @@ a:hover {
 #master .sd-social-text .sd-content ul li a,
 #master .sd-social-icon-text .sd-content ul li a,
 #master .sd-social-icon .sd-content ul li a,
-#master .content-divider .line,
 #master #secondary .widget:before,
 #master .button.alt,
 #master .button,
