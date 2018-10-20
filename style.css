@@ -5060,11 +5060,6 @@ h1.h1-title,
   margin-bottom: 0.625rem;
 }
 
-.entry-content .wp-block-embed > *,
-.entry-content .wp-block-embed__wrapper > * {
-  margin-bottom: 0;
-}
-
 .entry-image {
   text-align: center;
   margin-bottom: 2em;
@@ -6013,6 +6008,11 @@ h1.h1-title,
 --------------------------------------------------------------*/
 p.has-drop-cap:not(:focus):first-letter {
   margin: .09em .1em 0 0;
+}
+
+.entry-content .wp-block-embed > *,
+.entry-content .wp-block-embed__wrapper > * {
+  margin-bottom: 0;
 }
 
 @media (max-width: 700px) {
