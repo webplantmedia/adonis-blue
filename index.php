@@ -18,6 +18,8 @@
 
 get_header(); ?>
 
+	<?php dynamic_sidebar( 'blog-page' ); ?>
+
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
