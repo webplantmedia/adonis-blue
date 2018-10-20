@@ -154,9 +154,6 @@ if ( ! class_exists( 'Painted_Lady_Content_Widget_Blog_Post' ) ) :
 			}
 
 			echo $args['before_widget']; /* WPCS: XSS OK. HTML output. */
-
-			// Allow site-wide customization of the 'Read more' link text.
-			$read_more = apply_filters( 'painted_lady_read_more_text', esc_html__( 'Read more', 'painted-lady' ) );
 			?>
 
 			<div class="container" style="<?php echo esc_attr( implode( '', $style ) ); ?>">

@@ -149,9 +149,6 @@ if ( ! class_exists( 'Painted_Lady_Content_Widget_Static_Content' ) ) :
 				$classes[] = 'option-white-text';
 			}
 
-			// Allow site-wide customization of the 'Read more' link text.
-			$read_more = apply_filters( 'painted_lady_read_more_text', esc_html__( 'Read more', 'painted-lady' ) );
-
 			if ( $fullwidth ) {
 				$args['before_widget'] = str_replace( 'class="content-widget', 'class="content-widget full-width-bar', $args['before_widget'] );
 			}
@@ -215,6 +212,11 @@ if ( ! class_exists( 'Painted_Lady_Content_Widget_Static_Content' ) ) :
 
 								<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 									<div class="entry-content">
+										<?php
+										// Allow site-wide customization of the 'Read more' link text.
+										$read_more = apply_filters( 'painted_lady_read_more_text', esc_html__( 'Read more', 'painted-lady' ) );
+										?>
+
 										<?php the_content( $read_more ); ?>
 									</div>
 
