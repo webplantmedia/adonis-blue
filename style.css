@@ -5050,6 +5050,12 @@ h1.h1-title,
   margin-bottom: 0;
 }
 
+#master .grid .excerpt2 {
+  position: relative;
+  height: 500px;
+  height: 31.25rem;
+}
+
 #master .grid .excerpt2 .entry-title {
   font-size: 22px;
   font-size: 1.375rem;
