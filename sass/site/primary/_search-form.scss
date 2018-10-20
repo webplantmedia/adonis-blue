@@ -1,0 +1,4 @@
+.search .search-form-container {
+	@include rem('margin-top',30px);
+	@include rem('margin-bottom',70px);
+}

@@ -1,0 +1,50 @@
+#master .has-custom-404-page {
+	.site-content {
+		position: relative;
+		padding: 0;
+		@include rem('padding-top',200px);
+		@include rem('padding-bottom',240px);
+
+		.site-boundary {
+			max-width: none;
+		}
+	}
+
+	.page-cover-bg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-position: center center;
+		background-size: cover;
+
+		.cover {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+		}
+	}
+
+	.hentry {
+		margin: 0;
+	}
+
+	.error-404 {
+		&.has-background {
+			position: relative;
+
+			.entry-footer {
+				margin: 0;
+
+				.post-edit-link {
+					position: absolute;
+					top: 102%;
+					left: 0;
+				}
+			}
+		}
+	}
+}

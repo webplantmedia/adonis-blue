@@ -1,0 +1,41 @@
+.entry-author {
+	@include rem('margin-top', 70px);
+	@include rem('padding-bottom', 70px);
+	border-bottom: 2px solid $color__border;
+
+	.author-avatar {
+		margin-top: 5px;
+		float: left;
+
+		img {
+			vertical-align: top;
+			border-radius: 100%;
+		}
+	}
+
+	.author-heading {
+		margin-left: 70px;
+		overflow: hidden;
+
+		.author-title {
+			margin: 0;
+			@include rem('margin-bottom', 10px);
+			@include rem('font-size',$font__large-size);
+		}
+	}
+
+	.author-bio {
+		margin: 0;
+		margin-left: 70px;
+		overflow: hidden;
+		@include rem('font-size',$font__medium-size);
+		
+		p {
+			margin-bottom: 1em;
+		}
+
+		.author-link {
+			display: none;
+		}
+	}
+}

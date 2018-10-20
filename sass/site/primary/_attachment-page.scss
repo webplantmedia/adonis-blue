@@ -1,0 +1,12 @@
+.attachment {
+	.wp-caption a {
+		display: block;
+		text-align: center;
+	}
+
+	.mejs-container,
+	.wp-video {
+		margin-left: auto;
+		margin-right: auto;
+	}
+}

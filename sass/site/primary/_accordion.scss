@@ -1,0 +1,77 @@
+#master {
+	.wpm-accordion {
+		cursor: pointer;
+		margin: 0;
+		@include rem('margin-top',40px);
+		@include rem('padding-left',30px);
+		position: relative;
+		font-weight: normal;
+
+		&:before {
+			vertical-align: middle;
+			text-align: center;
+			-webkit-transition: -webkit-transform .2s;
+			-moz-transition: -moz-transform .2s;
+			-ms-transition: -ms-transform .2s;
+			-o-transition: -o-transform .2s;
+			transition: transform .2s;
+
+			font-family:"Genericons-Neue";
+			
+			display:inline-block;
+			vertical-align:top;
+			line-height: ($font__h3-size * $font__line-height-heading);
+			font-weight:normal;
+			font-style:normal;
+			speak:none;
+			text-decoration:inherit;
+			text-transform:none;
+			text-rendering:auto;
+			-webkit-font-smoothing:antialiased;
+			-moz-osx-font-smoothing:grayscale;
+
+			content: "\f431";
+			-webkit-transform: rotate(-90deg);
+			-moz-transform: rotate(-90deg);
+			-ms-transform: rotate(-90deg);
+			-o-transform: rotate(-90deg);
+			transform: rotate(-90deg);
+			filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+
+			position: absolute;
+			left: 0;
+			top: 0;
+			@include rem('font-size',$font__medium-size);
+		}
+
+		&.wpm-accordion-item-open {
+			&:before {
+				-webkit-transform: rotate(0deg);
+				-moz-transform: rotate(0deg);
+				-ms-transform: rotate(0deg);
+				-o-transform: rotate(0deg);
+				transform: rotate(0deg);
+				filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0);
+			}
+		}
+
+	}
+
+	.wpm-accordion-content {
+		height: 0;
+		overflow: hidden;
+	}
+
+	.wpm-accordion-content-inner {
+		@include rem('padding-top',40px);
+		@include rem('padding-left',30px);
+
+		> *:first-child {
+			margin-top: 0;
+		}
+
+		> *:last-child {
+			margin-bottom: 0;
+		}
+	}
+}

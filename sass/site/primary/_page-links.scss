@@ -1,0 +1,5 @@
+.page-links {
+	clear: both;
+	margin: 0;
+	@include rem('margin-bottom',70px);
+}

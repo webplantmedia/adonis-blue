@@ -1,0 +1,30 @@
+.sticky {
+	display: block;
+}
+
+.search .site-main article,
+.archive .hentry,
+.blog .hentry,
+.single .hentry {
+	@include rem('padding-bottom',70px);
+	@include rem('margin-bottom',70px);
+	border-bottom: 2px solid $color__border;
+}
+
+.updated:not(.published) {
+	display: none;
+}
+
+.infinite-wrap {
+	.lead-post {
+		.hentry {
+			@include rem('padding-top',70px);
+			border-top: 2px solid $color__border;
+		}
+	}
+}
+
+.hentry {
+	margin: 0;
+	@include rem('margin-bottom',70px);
+}

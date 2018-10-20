@@ -1,0 +1,133 @@
+// Entry cat header
+.entry-cat-meta {
+	text-align: center;
+	@include rem('font-size',$font__tiny-size - 4);
+	text-transform: uppercase;
+	font-weight: bold;
+	@include rem('margin-bottom',8px);
+	vertical-align: middle;
+
+	span > a {
+		@include rem('font-size',$font__xsmall_size);
+		vertical-align: middle;
+	}
+
+	.cat-bull-delim {
+		padding-left: .5em;
+		padding-right: .5em;
+		color: $color__gray;
+	}
+	
+	ul {
+		@include rem('font-size',$font__tiny-size);
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		
+		li {
+			display: inline-block;
+			@include rem('padding-right',5px);
+			@include rem('margin-bottom',7px);
+
+			&:last-child {
+				padding-right: 0;
+			}
+			
+			a {
+				display: block;
+			}
+		}
+
+		a {
+			padding: 4px 14px;
+			border-radius: $button__radius;
+			color: $color__white;
+		}
+	}
+	
+	a {
+		letter-spacing: 0.07em;
+	}
+}
+
+.entry-meta {
+	text-align: center;
+	@include rem('font-size',$font__xsmall_size);
+	text-transform: uppercase;
+	font-weight: normal;
+	@include rem('margin-top',15px);
+	color: $color__text-light;
+	letter-spacing: 0.07em;
+	
+	a {
+		&,
+		&:visited,
+		&:focus,
+		&:active {
+			color: $color__text-light;
+		}
+		
+		&:hover,
+		&:hover time {
+			color: $color__text;
+		}
+	}
+}
+
+#master .entry-footer {
+	> *:first-child {
+		margin-top: 0;
+	}
+	> *:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.entry-footer {
+	@include rem('margin-top',100px);
+
+	> div {
+		@include rem('margin-top',40px);
+		@include rem('margin-bottom',40px);
+	}
+
+	.comment-display,
+	.entry-footer-meta {
+		@include rem('font-size',$font__tiny-size);
+		text-transform: uppercase;
+		font-weight: bold;
+		color: $color__text-light;
+		letter-spacing: 0.07em;
+
+		a {
+			&,
+			&:active,
+			&:visited,
+			&:focus {
+				color: $color__text-light;
+			}
+		}
+
+		span {
+			color: $color__text-light;
+
+		}
+
+		a {
+			&:hover {
+				color: $color__text;
+			}
+		}
+	}
+
+	.entry-footer-meta {
+		> span:before {
+			content: " | ";
+
+		}
+		> span:first-child:before {
+			display: none;
+			content: "";
+		}
+	}
+}
