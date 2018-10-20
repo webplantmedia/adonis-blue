@@ -114,15 +114,3 @@
 		}
 	}
 }
-
-#master .grid {
-	.excerpt2 {
-		.entry-title {
-			@include rem('font-size',$font__entry-title-size);
-		}
-		
-		.entry-image {
-			@include rem('margin-bottom', 10px);
-		}
-	}
-}

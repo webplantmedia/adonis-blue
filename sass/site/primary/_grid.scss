@@ -1,0 +1,17 @@
+#master .grid {
+	.excerpt2 {
+		position: relative;
+		@include rem('height', 500px);
+
+		.entry-header {
+		}
+
+		.entry-title {
+			@include rem('font-size',$font__entry-title-size);
+		}
+		
+		.entry-image {
+			@include rem('margin-bottom', 10px);
+		}
+	}
+}
