@@ -3,7 +3,6 @@ body {
 }
 
 .blog .content-widget,
-.content-area,
 .widgetized-page .site-content .content-widget,
 .site-boundary-no-padding,
 .site-boundary {
@@ -91,7 +90,7 @@ body.widgetized-page {
 }
 
 @media (max-width: 700px) {
-	.content-area,
+	.blog .content-widget,
 	.widgetized-page .site-content .content-widget,
 	.site-boundary,
 	.site-padding {
