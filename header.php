@@ -136,4 +136,4 @@
 	<?php endif; ?>
 
 	<div id="content" class="site-content">
-		<div class="site-boundary">
+		<div class="site-content-inner">

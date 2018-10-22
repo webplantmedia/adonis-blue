@@ -25,7 +25,7 @@ if ( $footer_1 || $footer_2 || $footer_3 ) {
 $column = 1;
 ?>
 
-		</div><!-- .site-boundary -->
+		</div><!-- .site-content-inner -->
 	</div><!-- #content -->
 
 	<?php if ( is_active_sidebar( 'gallery-1' ) ) : ?>

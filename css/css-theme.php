@@ -30,7 +30,7 @@ function painted_lady_custom_css() {
 	if ( get_theme_support( 'custom-background', 'default-color' ) !== $color ) {
 		$css .= '
 #master .page.has-post-thumbnail .site-content .content-area,
-#master .page.has-post-thumbnail .site-content .site-boundary {
+#master .page.has-post-thumbnail .site-content .site-content-inner {
 	background-color: #' . $color . '; /*id:background_color*/
 }
 ';

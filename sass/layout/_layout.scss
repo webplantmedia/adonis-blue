@@ -2,6 +2,8 @@ body {
 	background: $color__background-body;
 }
 
+.blog .content-widget,
+.content-area,
 .widgetized-page .site-content .content-widget,
 .site-boundary-no-padding,
 .site-boundary {
@@ -50,13 +52,16 @@ body:not(.single-post) .entry-footer,
 	max-width: none;
 }
 
-#master .widgetized-page {
-	.site-content .full-width-bar,
-	.site-content > .site-boundary {
-		max-width: none;
-		margin: 0;
-		display: block;
-		padding: 0;
+#master {
+	.blog,
+	.widgetized-page {
+		.site-content .full-width-bar,
+		.site-content > .site-content-inner {
+			max-width: none;
+			margin: 0;
+			display: block;
+			padding: 0;
+		}
 	}
 }
 
@@ -86,6 +91,7 @@ body.widgetized-page {
 }
 
 @media (max-width: 700px) {
+	.content-area,
 	.widgetized-page .site-content .content-widget,
 	.site-boundary,
 	.site-padding {
