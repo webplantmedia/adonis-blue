@@ -11,9 +11,13 @@
  * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
+$class = '';
+if ( has_post_thumbnail() ) {
+	$class = ' has-post-thumbnail';
+}
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'excerpt2' ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'excerpt2 div-href-link' . $class ); ?> data-href="<?php the_permalink(); ?>">
 
 	<?php if ( has_post_thumbnail() ) : ?>
 		<div class="entry-image">
@@ -22,23 +26,29 @@
 	<?php endif; ?>
 
 	<header class="entry-header">
-		<?php if ( 'post' === get_post_type() ) : ?>
-			<div class="entry-cat-meta">
-				<?php painted_lady_entry_header( '<span class="cat-bull-delim">&bull;</span> ' ); ?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
+		<div class="entry-header-overlay">
+			<div class="entry-header-inner">
 
-		<?php
-		the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+				<?php if ( 'post' === get_post_type() ) : ?>
+					<div class="entry-cat-meta">
+						<?php painted_lady_entry_header( '<span class="cat-bull-delim">&bull;</span> ' ); ?>
+					</div><!-- .entry-meta -->
+				<?php endif; ?>
 
-		if ( 'post' === get_post_type() ) :
-		?>
-		<div class="entry-meta">
-			<?php painted_lady_posted_on(); ?>
-		</div><!-- .entry-meta -->
-		<?php
-		endif;
-		?>
+				<?php
+				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+
+				if ( 'post' === get_post_type() ) :
+				?>
+				<div class="entry-meta">
+					<?php painted_lady_posted_on(); ?>
+				</div><!-- .entry-meta -->
+				<?php
+				endif;
+				?>
+
+			</div><!-- .entry-header-inner -->
+		</div><!-- .entry-header-overlay -->
 	</header><!-- .entry-header -->
 
 </article><!-- #post-<?php the_ID(); ?> -->

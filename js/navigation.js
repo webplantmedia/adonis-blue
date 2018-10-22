@@ -175,4 +175,25 @@
 			return false;
 		}
 	);
+
+	// Click div href links. HTML doesn't allow for nested anchor tags.
+	$( '.div-href-link' ).click(
+		function( event ) {
+			var $clicked = $( event.target );
+
+			if ( $clicked.length ) {
+				if ( ! $clicked.is('a, a *') ) {
+					event.preventDefault();
+
+					var href = $(this).data( 'href' );
+					if ( href.length ) {
+						window.location = href;
+					}
+				}
+			}
+
+			return true;
+		}
+	);
+
 } )( jQuery );
