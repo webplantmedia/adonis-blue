@@ -11,6 +11,10 @@
  * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
+$columns = 3;
+if ( painted_lady_display_sidebar() ) {
+	$columns = 2;
+}
 ?>
 
 <?php if ( have_posts() ) : ?>
@@ -22,7 +26,7 @@
 			the_post();
 			?>
 
-			<div class="grid__col grid__col--1-of-2">
+			<div class="grid__col grid__col--1-of-<?php echo $columns; ?> grid__col--m-1-of-2">
 
 				<?php get_template_part( 'template-parts/excerpt2' ); ?>
 

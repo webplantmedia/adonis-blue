@@ -10,6 +10,10 @@
 	margin: 0 auto;
 }
 
+.blog-display-blog4.no-sidebar .site-main {
+	max-width: none;
+}
+
 .display-sidebar .site-main {
 	margin: 0 $size__site-sidebar-with-padding 0 0;
 }
@@ -56,5 +60,9 @@
 			margin: 0 auto;
 			@include rem('margin-top',70px);
 		}
+	}
+
+	#master .blog-display-blog4.no-sidebar .site-main {
+		max-width: none;
 	}
 }
