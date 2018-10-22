@@ -703,29 +703,6 @@ function painted_lady_customize_register( $wp_customize ) {
 		)
 	);
 
-	$setting_id = 'thumb_grid_max_height';
-	$wp_customize->add_setting(
-		$setting_id, array(
-			'default'           => $painted_lady_default[ $setting_id ],
-			'transport'         => 'postMessage',
-			'sanitize_callback' => 'absint',
-		)
-	);
-
-	$wp_customize->add_control(
-		$setting_id, array(
-			'section'     => $section_id,
-			'type'        => 'number',
-			'label'       => esc_html__( 'Thumb Grid Max Height', 'painted-lady' ),
-			'description' => esc_html__( 'If you have long featured images in your grid, set a max-height on your image. Enter 0 for no max-height', 'painted-lady' ),
-			'section'     => $section_id,
-			'input_attrs' => array(
-				'min'  => 0,
-				'step' => 1,
-			),
-		)
-	);
-
 	$setting_id = 'blog_single_hide_post_navigation';
 	$wp_customize->add_setting(
 		$setting_id, array(

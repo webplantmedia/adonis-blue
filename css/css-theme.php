@@ -255,14 +255,6 @@ a:hover {
 	}
 }';
 
-	if ( $painted_lady['thumb_grid_max_height'] > 0 ) {
-		$css .= '
-#master .wc-shortcodes-entry-thumbnail,
-#master .excerpt2 .entry-image {
-	max-height: ' . $painted_lady['thumb_grid_max_height'] . 'px; /*id:thumb_grid_max_height*/
-}';
-	}
-
 	if ( $painted_lady['thumb_excerpt_max_height'] > 0 ) {
 		$css .= '
 #master .excerpt .entry-image {

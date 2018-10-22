@@ -194,28 +194,6 @@
 		}
 	);
 	wp.customize(
-		'thumb_grid_max_height', function( value ) {
-			value.bind(
-				function( to ) {
-					var selectors = '#master .excerpt2 .entry-image';
-					if ( to > 0 ) {
-						$( selectors ).css(
-							{
-								'max-height': to + 'px'
-							}
-						);
-					} else {
-						$( selectors ).css(
-							{
-								'max-height': ''
-							}
-						);
-					}
-				}
-			);
-		}
-	);
-	wp.customize(
 		'heading_padding_top', function( value ) {
 			value.bind(
 				function( to ) {

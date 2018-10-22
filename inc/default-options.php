@@ -71,7 +71,6 @@ $painted_lady_default['blog_display']                     = 'blog4';
 $painted_lady_default['archive_display']                  = 'blog1';
 $painted_lady_default['search_display']                   = 'blog2';
 $painted_lady_default['thumb_excerpt_max_height']         = 0;
-$painted_lady_default['thumb_grid_max_height']            = 0;
 $painted_lady_default['blog_single_hide_post_navigation'] = 0;
 
 // Jetpack.
