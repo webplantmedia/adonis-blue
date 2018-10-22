@@ -5052,8 +5052,56 @@ h1.h1-title,
 
 #master .grid .excerpt2 {
   position: relative;
-  height: 500px;
-  height: 31.25rem;
+  transition: all 0.5s ease 0s;
+  height: 400px;
+  height: 25rem;
+  background-color: #ececec;
+  margin-bottom: 50px;
+  margin-bottom: 3.125rem;
+  cursor: pointer;
+}
+
+#master .grid .excerpt2.has-post-thumbnail .entry-header {
+  opacity: 0;
+}
+
+#master .grid .excerpt2.has-post-thumbnail .entry-header:hover {
+  opacity: 1;
+}
+
+#master .grid .excerpt2 .entry-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  transition: opacity 0.5s ease 0s;
+}
+
+#master .grid .excerpt2 .entry-header .entry-header-overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+#master .grid .excerpt2 .entry-header .entry-header-inner {
+  position: absolute;
+  top: 50%;
+  width: 70%;
+  padding-left: 20px;
+  padding-left: 1.25rem;
+  padding-right: 20px;
+  padding-right: 1.25rem;
+  padding-top: 20px;
+  padding-top: 1.25rem;
+  padding-bottom: 20px;
+  padding-bottom: 1.25rem;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
 }
 
 #master .grid .excerpt2 .entry-title {
@@ -5062,8 +5110,18 @@ h1.h1-title,
 }
 
 #master .grid .excerpt2 .entry-image {
-  margin-bottom: 10px;
-  margin-bottom: 0.625rem;
+  margin-bottom: 0;
+}
+
+#master .grid .excerpt2 .entry-image a {
+  display: block;
+}
+
+#master .grid .excerpt2 .entry-image,
+#master .grid .excerpt2 .entry-image a,
+#master .grid .excerpt2 .entry-image a img {
+  height: 100%;
+  object-fit: cover;
 }
 
 .entry-image {
