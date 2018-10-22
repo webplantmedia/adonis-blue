@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
 Theme Name: Painted Lady
 Theme URI: https://webplantmedia.com/product/painted-lady-wordpress-theme/
@@ -705,6 +706,47 @@ table th {
 /*--------------------------------------------------------------
 # Grid
 --------------------------------------------------------------*/
+/*-----------------------------------*\
+
+  $TOAST-GRID
+
+  An insane grid.
+  You'd be mad to use it.
+
+  Usage
+  =====
+
+  Assuming default values:
+
+  <div class="grid">
+    <div class="grid__col grid__col--1-of-2">
+      A half-width column.
+    </div>
+    <div class="grid__col grid__col--1-of-4 grid__col--pull-1-of-4">
+      A quarter, pulled left by its own width. You get this, right?
+    </div>
+  </div>
+
+
+  Customisation
+  =============
+
+  $toast-grid-namespace and $toast-grid-column-namespace
+  adjusts the class names for the grid. With
+  default values, grid wrappers have a class
+  of '.grid' and columns '.grid__col'.
+
+  $toast-col-groups(n) adjusts column divisions.
+  For example, $toast-col-groups(12) will produce
+  a 12-column grid. $col-groups(3,6,8)
+  will produce a 3-, 6-, and 8-column grid.
+
+  $toast-gutter-width is—you guessed it—the gutter
+  width. Accepts any unit.
+
+  That's it. Have fun.
+
+\*-----------------------------------*/
 .grid {
   list-style: none;
   margin-left: -50px;
@@ -983,7 +1025,7 @@ table th {
   vertical-align: top;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 960px) {
   .grid__col {
     display: block;
     margin-left: 0;
@@ -992,7 +1034,7 @@ table th {
   }
 }
 
-@media (max-width: 700px) and (min-width: 480px) {
+@media (max-width: 960px) and (min-width: 580px) {
   .grid__col[class*="grid__col--m-"] {
     display: inline-block;
     margin-right: -.24em;
@@ -1014,7 +1056,7 @@ table th {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 580px) {
   .grid__col[class*="grid__col--s-"] {
     display: inline-block;
     margin-right: -.24em;
@@ -4381,6 +4423,10 @@ body.widgetized-page .site-content {
   margin: 0 auto;
 }
 
+.blog-display-blog4.no-sidebar .site-main {
+  max-width: none;
+}
+
 .display-sidebar .site-main {
   margin: 0 400px 0 0;
 }
@@ -4425,6 +4471,9 @@ body.widgetized-page .site-content {
     margin: 0 auto;
     margin-top: 70px;
     margin-top: 4.375rem;
+  }
+  #master .blog-display-blog4.no-sidebar .site-main {
+    max-width: none;
   }
 }
 
@@ -5061,12 +5110,13 @@ h1.h1-title,
   cursor: pointer;
 }
 
-#master .grid .excerpt2.has-post-thumbnail .entry-header {
-  opacity: 0;
-}
-
-#master .grid .excerpt2.has-post-thumbnail .entry-header:hover {
-  opacity: 1;
+@media (min-width: 961px) {
+  #master .grid .excerpt2.has-post-thumbnail .entry-header {
+    opacity: 0;
+  }
+  #master .grid .excerpt2.has-post-thumbnail .entry-header:hover {
+    opacity: 1;
+  }
 }
 
 #master .grid .excerpt2 .entry-header {
@@ -5081,7 +5131,12 @@ h1.h1-title,
 #master .grid .excerpt2 .entry-header .entry-header-overlay {
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.7);
+}
+
+@media (min-width: 961px) {
+  #master .grid .excerpt2 .entry-header .entry-header-overlay {
+    background-color: rgba(255, 255, 255, 0.7);
+  }
 }
 
 #master .grid .excerpt2 .entry-header .entry-header-inner {
