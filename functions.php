@@ -546,6 +546,27 @@ function painted_lady_display_fullwidth() {
 }
 
 /**
+ * Get blog display type depending on the blog type.
+ *
+ * @since Painted_Lady 1.01
+ *
+ * @return string
+ */
+function painted_lady_get_blog_display() {
+	global $painted_lady;
+
+	if ( is_home() ) {
+		return $painted_lady['blog_display'];
+	} elseif ( is_archive() ) {
+		return $painted_lady['archive_display'];
+	} elseif ( is_search() ) {
+		return $painted_lady['search_display'];
+	}
+
+	return '';
+}
+
+/**
  * Check and load the correct blog template according to Customizer option.
  *
  * @since Painted_Lady 1.01
@@ -553,14 +574,10 @@ function painted_lady_display_fullwidth() {
  * @return void
  */
 function painted_lady_get_blog_part() {
-	global $painted_lady;
+	$blog_display = painted_lady_get_blog_display();
 
-	if ( is_home() ) {
-		get_template_part( 'template-parts/' . $painted_lady['blog_display'] );
-	} elseif ( is_archive() ) {
-		get_template_part( 'template-parts/' . $painted_lady['archive_display'] );
-	} elseif ( is_search() ) {
-		get_template_part( 'template-parts/' . $painted_lady['search_display'] );
+	if ( ! empty( $blog_display ) ) {
+		get_template_part( 'template-parts/' . $blog_display );
 	}
 }
 

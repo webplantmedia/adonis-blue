@@ -100,6 +100,11 @@ function painted_lady_body_classes( $classes ) {
 		}
 	}
 
+	$blog_display = painted_lady_get_blog_display();
+	if ( ! empty( $blog_display ) ) {
+		$classes[] = 'blog-display-' . $blog_display;
+	}
+
 	return $classes;
 }
 add_filter( 'body_class', 'painted_lady_body_classes' );
