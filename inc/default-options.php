@@ -67,7 +67,7 @@ $painted_lady_default['disable_accent_font']      = 0;
 $painted_lady_default['page_image_header_height'] = 400;
 
 // Blog.
-$painted_lady_default['blog_display']                     = 'blog1';
+$painted_lady_default['blog_display']                     = 'blog4';
 $painted_lady_default['archive_display']                  = 'blog1';
 $painted_lady_default['search_display']                   = 'blog2';
 $painted_lady_default['thumb_excerpt_max_height']         = 0;
