@@ -74,6 +74,7 @@
 								array(
 									'theme_location' => 'menu-1',
 									'menu_id'        => 'primary-menu',
+									'fallback_cb'    => false,
 								)
 							);
 						?>
@@ -91,6 +92,7 @@
 								array(
 									'theme_location' => 'menu-4',
 									'menu_id'        => 'primary-menu-right',
+									'fallback_cb'    => false,
 								)
 							);
 						?>
