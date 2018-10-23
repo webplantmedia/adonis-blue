@@ -24,7 +24,6 @@
 		margin: 0;
 		padding: 0;
 		vertical-align: top;
-		text-align: left;
 
 		ul {
 			border-top: 2px solid $color__menu-border;
@@ -34,6 +33,7 @@
 			left: -999em;
 			z-index: 99999;
 			box-shadow: 0 1px 10px rgba(0, 0, 0, 0.08);
+			text-align: left;
 
 			ul {
 				left: -999em;
@@ -79,9 +79,8 @@
 		}
 
 		li {
-			float: left;
 			position: relative;
-			display: block;
+			display: inline-block;
 
 			&:hover > ul {
 				left: 0;
