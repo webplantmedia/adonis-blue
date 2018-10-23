@@ -4363,7 +4363,6 @@ body:not(.single-post) .entry-footer,
 }
 
 #master .blog .site-content .full-width-bar,
-#master .blog .site-content > .site-content-inner,
 #master .widgetized-page .site-content .full-width-bar,
 #master .widgetized-page .site-content > .site-content-inner {
   max-width: none;
