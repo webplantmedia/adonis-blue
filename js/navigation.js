@@ -182,10 +182,10 @@
 			var $clicked = $( event.target );
 
 			if ( $clicked.length ) {
-				if ( ! $clicked.is('a, a *') ) {
+				if ( ! $clicked.is( 'a, a *' ) ) {
 					event.preventDefault();
 
-					var href = $(this).data( 'href' );
+					var href = $( this ).data( 'href' );
 					if ( href.length ) {
 						window.location = href;
 					}

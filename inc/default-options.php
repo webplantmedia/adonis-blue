@@ -22,13 +22,13 @@ $painted_lady_default = array();
  */
 
 // Title & Tagline.
-$painted_lady_default['custom_logo_2x']         = '';
-$painted_lady_default['display_site_title']     = 1;
-$painted_lady_default['display_site_tagline']   = 1;
-$painted_lady_default['heading_padding_top']    = '55';
-$painted_lady_default['heading_padding_bottom'] = '55';
-$painted_lady_default['split_menu_logo_width'] = '200';
-$painted_lady_default['split_menu_top_offset'] = '120';
+$painted_lady_default['custom_logo_2x']            = '';
+$painted_lady_default['display_site_title']        = 1;
+$painted_lady_default['display_site_tagline']      = 1;
+$painted_lady_default['heading_padding_top']       = '55';
+$painted_lady_default['heading_padding_bottom']    = '55';
+$painted_lady_default['split_menu_logo_width']     = '200';
+$painted_lady_default['split_menu_top_offset']     = '120';
 $painted_lady_default['split_menu_collapse_width'] = '1200';
 
 /**

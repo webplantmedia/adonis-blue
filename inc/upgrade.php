@@ -21,7 +21,7 @@ if ( ! class_exists( 'Painted_Lady_Upgrade' ) ) :
 		private $template_name = 'painted-lady';
 
 		public function __construct() {
-			add_filter( 'site_transient_update_themes', array( $this, 'update_push' ), 10, 1 ); //most active one
+			add_filter( 'site_transient_update_themes', array( $this, 'update_push' ), 10, 1 ); // most active one
 			add_filter( 'transient_update_themes', array( $this, 'update_push' ), 10, 1 );
 
 			add_action( 'load-update-core.php', array( $this, 'clear_update_transient' ) );
@@ -69,26 +69,26 @@ if ( ! class_exists( 'Painted_Lady_Upgrade' ) ) :
 
 			// If transient has expired, do a fresh update check.
 			if ( ! $theme_update ) {
-				$installed_theme = wp_get_theme();
+				$installed_theme          = wp_get_theme();
 				$parent_theme_folder_name = $installed_theme->get_template();
-				$installed_theme = wp_get_theme( $parent_theme_folder_name );
+				$installed_theme          = wp_get_theme( $parent_theme_folder_name );
 
-				$template = $installed_theme->get_template();
+				$template   = $installed_theme->get_template();
 				$stylesheet = $installed_theme->get_stylesheet();
-				$version = $installed_theme->get('Version');
-				
-				$url = 'https://api.webplantmedia.com/themes/update-check/1.2/';
+				$version    = $installed_theme->get( 'Version' );
+
+				$url     = 'https://api.webplantmedia.com/themes/update-check/1.2/';
 				$options = apply_filters(
 					'painted_lady_update_remote_post_options',
 					array(
-						'user-agent'	=> 'WordPress/' . $wp_version . '; ' . home_url( '/' ),
-						'body' => array(
-							'php_version'    => phpversion(),
-							'wp_version'     => $wp_version,
-							'uri'            => home_url( '/' ),
-							'version'        => $version,
-							'template'       => $template,
-							'stylesheet'     => $stylesheet,
+						'user-agent' => 'WordPress/' . $wp_version . '; ' . home_url( '/' ),
+						'body'       => array(
+							'php_version' => phpversion(),
+							'wp_version'  => $wp_version,
+							'uri'         => home_url( '/' ),
+							'version'     => $version,
+							'template'    => $template,
+							'stylesheet'  => $stylesheet,
 						),
 					)
 				);
@@ -136,7 +136,7 @@ if ( ! class_exists( 'Painted_Lady_Upgrade' ) ) :
 				return $value;
 			}
 
-			if ( isset ( $value->response[ $this->template_name ] ) ) {
+			if ( isset( $value->response[ $this->template_name ] ) ) {
 				unset( $value->response[ $this->template_name ] );
 			}
 

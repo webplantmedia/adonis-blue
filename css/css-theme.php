@@ -316,7 +316,7 @@ textarea {
 		}
 	}
 
-$css .= '
+	$css .= '
 @media (min-width: ' . $painted_lady['split_menu_collapse_width'] . 'px) { /*id:split_menu_collapse_width*/
 	#site-navigation.main-navigation {
 		border-bottom-width: 0;
