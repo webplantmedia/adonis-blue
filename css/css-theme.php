@@ -338,7 +338,6 @@ textarea {
 
 	.split-menu {
 		display: table;
-		table-layout:fixed;
 		width: 100%;
 	}
 
