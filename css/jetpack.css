@@ -11,7 +11,7 @@ Jetpack styling
   margin-top: 4.375rem;
   padding-bottom: 54px;
   padding-bottom: 3.375rem;
-  border-bottom: 2px solid #ececec;
+  border-bottom: 1px solid #ececec;
 }
 
 #master #jp-relatedposts .jp-relatedposts-headline {
@@ -25,8 +25,8 @@ Jetpack styling
 
 #master #jp-relatedposts .jp-relatedposts-headline em {
   margin: 0;
-  font-size: 15px;
-  font-size: 0.9375rem;
+  font-size: 12px;
+  font-size: 0.75rem;
   text-transform: uppercase;
   text-align: center;
   font-weight: bold;
@@ -48,22 +48,22 @@ Jetpack styling
 
 #master #jp-relatedposts .jp-relatedposts-items-visual h4.jp-relatedposts-post-title {
   line-height: 1.375;
-  font-size: 14px;
-  font-size: 0.875rem;
+  font-size: 11px;
+  font-size: 0.6875rem;
   margin-bottom: 0.5em;
 }
 
 #master #jp-relatedposts .jp-relatedposts-items p {
-  font-size: 14px;
-  font-size: 0.875rem;
+  font-size: 11px;
+  font-size: 0.6875rem;
   line-height: 1.8;
 }
 
 #master #jp-relatedposts .jp-relatedposts-items p.jp-relatedposts-post-date,
 #master #jp-relatedposts .jp-relatedposts-items p.jp-relatedposts-post-context {
   text-transform: uppercase;
-  font-size: 12px;
-  font-size: 0.75rem;
+  font-size: 10px;
+  font-size: 0.625rem;
   font-weight: bold;
   line-height: 1.375;
 }
@@ -83,16 +83,16 @@ Jetpack styling
 
 #master div.sharedaddy .comment-display {
   display: none;
-  font-size: 12px;
-  font-size: 0.75rem;
+  font-size: 10px;
+  font-size: 0.625rem;
   text-transform: uppercase;
   font-weight: bold;
   color: #959595;
 }
 
 #master div.sharedaddy h3.sd-title {
-  font-size: 12px;
-  font-size: 0.75rem;
+  font-size: 10px;
+  font-size: 0.625rem;
   text-transform: uppercase;
   font-weight: bold;
   color: #959595;
@@ -100,7 +100,7 @@ Jetpack styling
 
 #master div.sharedaddy h3.sd-title:before {
   display: none;
-  border-top: 2px solid #ececec;
+  border-top: 1px solid #ececec;
 }
 
 #master .jetpack-hide-share-count .share-count {
@@ -134,8 +134,8 @@ Jetpack styling
 #master .sd-social-text .sd-content ul li a,
 #master .sd-social-icon-text .sd-content ul li a {
   color: #ffffff !important;
-  font-size: 12px;
-  font-size: 0.75rem;
+  font-size: 10px;
+  font-size: 0.625rem;
   line-height: 1.8;
   border-width: 0;
   box-shadow: none;
@@ -175,20 +175,20 @@ Jetpack styling
 }
 
 #master #infinite-footer .blog-info a {
-  font-size: 14px;
-  font-size: 0.875rem;
+  font-size: 11px;
+  font-size: 0.6875rem;
 }
 
 #master #infinite-footer .blog-credits a {
-  font-size: 12px;
-  font-size: 0.75rem;
+  font-size: 10px;
+  font-size: 0.625rem;
 }
 
 #master #infinite-footer .blog-credits {
   color: #6d686c;
   text-decoration: none;
-  font-size: 12px;
-  font-size: 0.75rem;
+  font-size: 10px;
+  font-size: 0.625rem;
 }
 
 #master #infinite-footer .blog-credits .genericons-neue {
@@ -252,8 +252,8 @@ Jetpack styling
 #master .widget_contact_info .confit-hours {
   padding-left: 25px;
   padding-left: 1.5625rem;
-  font-size: 16px;
-  font-size: 1rem;
+  font-size: 13px;
+  font-size: 0.8125rem;
   position: relative;
   line-height: 1.375;
   margin-top: 0.7em;
@@ -365,8 +365,8 @@ Jetpack styling
 }
 
 #master .widget_top-posts .widgets-list-layout .widgets-list-layout-links a {
-  font-size: 14px;
-  font-size: 0.875rem;
+  font-size: 11px;
+  font-size: 0.6875rem;
 }
 
 #master .excerpt-media .jetpack-video-wrapper,

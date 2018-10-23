@@ -41,18 +41,18 @@ WooCommerce styling
 
 .cart-menu ul.menu li.cart i,
 .cart-menu ul.menu li.cart i:before {
-  font-size: 30px;
-  font-size: 1.875rem;
-  line-height: 52px;
-  line-height: 3.25rem;
+  font-size: 24px;
+  font-size: 1.5rem;
+  line-height: 48px;
+  line-height: 3rem;
 }
 
 .cart-menu ul.menu li.cart .alert-count {
   position: absolute;
   top: 15%;
   left: 93%;
-  font-size: 12px;
-  font-size: 0.75rem;
+  font-size: 10px;
+  font-size: 0.625rem;
   font-weight: bold;
   line-height: 1;
 }
@@ -62,8 +62,8 @@ WooCommerce styling
   margin: 0;
   padding: 0;
   background-color: #ffffff;
-  border-top: 2px solid #ececec;
-  border-bottom: 2px solid #ececec;
+  border-top: 1px solid #ececec;
+  border-bottom: 1px solid #ececec;
   float: left;
   list-style: none;
   vertical-align: top;
@@ -106,7 +106,7 @@ WooCommerce styling
   padding-left: 1.25rem;
   padding-right: 20px;
   padding-right: 1.25rem;
-  border-bottom: 2px solid #ececec;
+  border-bottom: 1px solid #ececec;
 }
 
 .mobile-cart-navigation .buttons {
@@ -162,8 +162,8 @@ WooCommerce styling
 
 #master .woocommerce .widget_shopping_cart .cart_list li a,
 #master .woocommerce.widget_shopping_cart .cart_list li a {
-  font-size: 16px;
-  font-size: 1rem;
+  font-size: 13px;
+  font-size: 0.8125rem;
   line-height: 1.375;
 }
 
@@ -204,7 +204,7 @@ WooCommerce styling
 
 #master .woocommerce .widget_shopping_cart .total,
 #master .woocommerce.widget_shopping_cart .total {
-  border-top: 2px solid #ececec;
+  border-top: 1px solid #ececec;
 }
 
 #master .woocommerce .widget_shopping_cart .buttons a,
@@ -230,8 +230,8 @@ WooCommerce styling
 
 #master .woocommerce .woocommerce-mini-cart__total {
   font-weight: bold;
-  font-size: 12px;
-  font-size: 0.75rem;
+  font-size: 10px;
+  font-size: 0.625rem;
   text-transform: uppercase;
   margin-top: 20px;
   margin-top: 1.25rem;
@@ -241,8 +241,8 @@ WooCommerce styling
 
 #master .woocommerce .woocommerce-mini-cart-item .quantity {
   font-weight: bold;
-  font-size: 12px;
-  font-size: 0.75rem;
+  font-size: 10px;
+  font-size: 0.625rem;
   text-transform: uppercase;
   display: block;
 }
@@ -258,8 +258,8 @@ WooCommerce styling
 
 #master .woocommerce ul.products li.product .button {
   padding: 12px 22px;
-  font-size: 15px;
-  font-size: 0.9375rem;
+  font-size: 12px;
+  font-size: 0.75rem;
 }
 
 #master .woocommerce .summary .single_add_to_cart_button {
@@ -275,8 +275,8 @@ WooCommerce styling
 #master .woocommerce .quantity input {
   width: 60px;
   height: 40px;
-  font-size: 24px;
-  font-size: 1.5rem;
+  font-size: 22px;
+  font-size: 1.375rem;
   font-weight: normal;
   padding: 0;
   text-align: center;
@@ -303,8 +303,8 @@ WooCommerce styling
 }
 
 #master .woocommerce-result-count {
-  font-size: 15px;
-  font-size: 0.9375rem;
+  font-size: 12px;
+  font-size: 0.75rem;
   color: #959595;
 }
 
@@ -314,8 +314,8 @@ WooCommerce styling
   text-transform: uppercase;
   font-weight: bold;
   vertical-align: middle;
-  font-size: 12px;
-  font-size: 0.75rem;
+  font-size: 10px;
+  font-size: 0.625rem;
   color: #959595;
 }
 
@@ -355,8 +355,8 @@ WooCommerce styling
   text-transform: uppercase;
   font-weight: bold;
   vertical-align: middle;
-  font-size: 12px;
-  font-size: 0.75rem;
+  font-size: 10px;
+  font-size: 0.625rem;
   display: block;
 }
 
@@ -399,7 +399,7 @@ WooCommerce styling
 
 #master .woocommerce-pagination ul li a.prev i, #master .woocommerce-pagination ul li a.next i {
   font-size: 22px;
-  line-height: 50px;
+  line-height: 47px;
 }
 
 #master .woocommerce div.product p.price {
@@ -411,8 +411,8 @@ WooCommerce styling
 }
 
 #master .woocommerce-review-link {
-  font-size: 15px;
-  font-size: 0.9375rem;
+  font-size: 12px;
+  font-size: 0.75rem;
   text-transform: uppercase;
   font-weight: bold;
   text-decoration: none;
@@ -440,15 +440,15 @@ WooCommerce styling
 }
 
 #master .woocommerce .comment-reply-title {
-  font-size: 15px;
-  font-size: 0.9375rem;
+  font-size: 12px;
+  font-size: 0.75rem;
   margin-bottom: 0.7em;
 }
 
 #master .woocommerce-terms-and-conditions {
   background: #f7f7f7;
   box-shadow: none;
-  border: 2px solid #ececec;
+  border: 1px solid #ececec;
 }
 
 #master .woocommerce div.product .product_title {
@@ -473,12 +473,12 @@ WooCommerce styling
 
 #master .woocommerce-account .woocommerce-MyAccount-navigation ul li {
   margin: 0;
-  border-bottom: 2px solid #ececec;
-  border-right: 2px solid #ececec;
+  border-bottom: 1px solid #ececec;
+  border-right: 1px solid #ececec;
 }
 
 #master .woocommerce-account .woocommerce-MyAccount-navigation ul li:first-child {
-  border-top: 2px solid #ececec;
+  border-top: 1px solid #ececec;
 }
 
 #master .woocommerce-account .woocommerce-MyAccount-navigation ul li.is-active {
@@ -493,7 +493,7 @@ WooCommerce styling
 
 #master .woocommerce-account .woocommerce-MyAccount-content {
   padding: 1.5em 0 0 3em;
-  border-top: 2px solid #ececec;
+  border-top: 1px solid #ececec;
   width: 70%;
 }
 
@@ -566,8 +566,8 @@ WooCommerce styling
 #master .woocommerce div.product .stock {
   color: green;
   text-transform: uppercase;
-  font-size: 15px;
-  font-size: 0.9375rem;
+  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: bold;
 }
 
@@ -638,7 +638,7 @@ WooCommerce styling
 
 #master .woocommerce div.product .woocommerce-tabs ul.tabs li {
   border-width: 0;
-  border-top: 2px solid #ececec;
+  border-top: 1px solid #ececec;
   border-radius: 0;
   background-color: transparent;
   padding: 0;
@@ -648,11 +648,11 @@ WooCommerce styling
 
 #master .woocommerce div.product .woocommerce-tabs ul.tabs li a {
   padding: 0.7em 1.2em;
-  border-left: 2px solid #ececec;
-  border-right: 2px solid #ececec;
+  border-left: 1px solid #ececec;
+  border-right: 1px solid #ececec;
   text-transform: uppercase;
-  font-size: 16px;
-  font-size: 1rem;
+  font-size: 13px;
+  font-size: 0.8125rem;
   color: #6d686c;
 }
 
@@ -678,7 +678,7 @@ WooCommerce styling
 }
 
 #master .woocommerce div.product .woocommerce-tabs ul.tabs::before {
-  border-bottom-width: 2px;
+  border-bottom-width: 1px;
   border-color: #ececec;
 }
 
@@ -692,8 +692,8 @@ WooCommerce styling
   min-height: 0;
   border-radius: 3px;
   color: #ffffff;
-  font-size: 12px;
-  font-size: 0.75rem;
+  font-size: 10px;
+  font-size: 0.625rem;
   text-transform: uppercase;
 }
 
@@ -735,13 +735,17 @@ WooCommerce styling
 }
 
 #master .woocommerce #reviews h2 small {
-  font-size: 15px;
-  font-size: 0.9375rem;
+  font-size: 12px;
+  font-size: 0.75rem;
   color: #959595;
 }
 
 #master .woocommerce #reviews h2 small a {
   color: #959595;
+}
+
+#master .woocommerce #reviews #respond {
+  max-width: none;
 }
 
 #master .woocommerce #reviews #comments ol.commentlist {
@@ -759,19 +763,19 @@ WooCommerce styling
 }
 
 #master .woocommerce #reviews #comments ol.commentlist li .comment-text {
-  border: 2px solid #ececec;
+  border: 1px solid #ececec;
   margin-left: 80px;
   border-radius: 0;
 }
 
 #master .woocommerce #reviews #comments ol.commentlist li .comment-text p.meta {
-  font-size: 12px;
-  font-size: 0.75rem;
+  font-size: 10px;
+  font-size: 0.625rem;
   text-transform: uppercase;
 }
 
 #master .woocommerce #reviews #comments ol.commentlist #respond {
-  border: 2px solid #ececec;
+  border: 1px solid #ececec;
   border-radius: 3px;
 }
 
@@ -787,15 +791,15 @@ WooCommerce styling
 }
 
 #master .woocommerce table.shop_attributes {
-  border-top: 2px dotted rgba(0, 0, 0, 0.1);
+  border-top: 1px dotted rgba(0, 0, 0, 0.1);
 }
 
 #master .woocommerce table.shop_attributes th {
-  border-bottom: 2px dotted rgba(0, 0, 0, 0.1);
+  border-bottom: 1px dotted rgba(0, 0, 0, 0.1);
 }
 
 #master .woocommerce table.shop_attributes td {
-  border-bottom: 2px dotted rgba(0, 0, 0, 0.1);
+  border-bottom: 1px dotted rgba(0, 0, 0, 0.1);
 }
 
 #master .woocommerce table.shop_table {
@@ -812,7 +816,7 @@ WooCommerce styling
 }
 
 #master .woocommerce table.shop_table td {
-  border-top: 2px solid #ececec;
+  border-top: 1px solid #ececec;
   border-bottom: 0;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -822,7 +826,7 @@ WooCommerce styling
 #master .woocommerce table.shop_table tbody th,
 #master .woocommerce table.shop_table tfoot td,
 #master .woocommerce table.shop_table tfoot th {
-  border-top: 2px solid #ececec;
+  border-top: 1px solid #ececec;
   vertical-align: middle;
 }
 
@@ -839,8 +843,8 @@ WooCommerce styling
 #master .woocommerce ul.product_list_widget li > del,
 #master .woocommerce ul.product_list_widget li > ins {
   font-weight: bold;
-  font-size: 12px;
-  font-size: 0.75rem;
+  font-size: 10px;
+  font-size: 0.625rem;
   text-transform: uppercase;
   display: inline-block;
 }
@@ -850,8 +854,8 @@ WooCommerce styling
 #master .woocommerce ul.product_list_widget li > a,
 #master .woocommerce ul.product_list_widget .product-title {
   line-height: 1.375;
-  font-size: 16px;
-  font-size: 1rem;
+  font-size: 13px;
+  font-size: 0.8125rem;
 }
 
 #master .woocommerce ul.cart_list .reviewer,
@@ -873,13 +877,12 @@ WooCommerce styling
 }
 
 #master .widget_product_search .woocommerce-product-search .search-field {
-  margin-bottom: 20px;
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.7em;
 }
 
 #master .woocommerce ul.cart_list li dl,
 #master .woocommerce ul.product_list_widget li dl {
-  border-left: 2px solid rgba(0, 0, 0, 0.1);
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 #master .woocommerce form .form-row {
@@ -899,7 +902,7 @@ WooCommerce styling
 #master .woocommerce form .form-row.woocommerce-invalid input.input-text,
 #master .woocommerce form .form-row.woocommerce-invalid select {
   color: red;
-  border: 2px solid red;
+  border: 1px solid red;
 }
 
 #master .woocommerce form .form-row.woocommerce-validated .select2-container,
@@ -958,7 +961,7 @@ WooCommerce styling
 #master .woocommerce-info,
 #master .woocommerce-message {
   background: transparent;
-  border: 2px solid #ececec;
+  border: 1px solid #ececec;
 }
 
 #master .woocommerce-message {
@@ -1035,14 +1038,14 @@ WooCommerce styling
 #master .woocommerce-cart .cart-collaterals .cart_totals tr th,
 #master .woocommerce-checkout .cart-collaterals .cart_totals tr td,
 #master .woocommerce-checkout .cart-collaterals .cart_totals tr th {
-  border-top: 2px solid #ececec;
+  border-top: 1px solid #ececec;
 }
 
 #master #add_payment_method .checkout .create-account small,
 #master .woocommerce-cart .checkout .create-account small,
 #master .woocommerce-checkout .checkout .create-account small {
-  font-size: 12px;
-  font-size: 0.75rem;
+  font-size: 10px;
+  font-size: 0.625rem;
   color: #959595;
 }
 
@@ -1065,7 +1068,7 @@ WooCommerce styling
 #master .woocommerce-cart #payment ul.payment_methods > li,
 #master .woocommerce-checkout #payment ul.payment_methods > li {
   padding: 30px 0;
-  border-bottom: 2px solid #ececec;
+  border-bottom: 1px solid #ececec;
 }
 
 #master #add_payment_method #payment ul.payment_methods > li:first-child,
@@ -1079,8 +1082,8 @@ WooCommerce styling
 #master .woocommerce-checkout #payment ul.payment_methods li label {
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 16px;
-  font-size: 1rem;
+  font-size: 13px;
+  font-size: 0.8125rem;
   cursor: pointer;
 }
 
@@ -1096,8 +1099,8 @@ WooCommerce styling
 #master #add_payment_method #payment div.payment_box,
 #master .woocommerce-cart #payment div.payment_box,
 #master .woocommerce-checkout #payment div.payment_box {
-  font-size: 15px;
-  font-size: 0.9375rem;
+  font-size: 12px;
+  font-size: 0.75rem;
   background-color: transparent;
   padding: 0;
   margin: 0;
@@ -1130,8 +1133,8 @@ WooCommerce styling
 #master #add_payment_method #payment .payment_method_paypal .about_paypal,
 #master .woocommerce-cart #payment .payment_method_paypal .about_paypal,
 #master .woocommerce-checkout #payment .payment_method_paypal .about_paypal {
-  font-size: 12px;
-  font-size: 0.75rem;
+  font-size: 10px;
+  font-size: 0.625rem;
   margin-left: 1em;
   color: #959595;
 }
@@ -1259,14 +1262,14 @@ WooCommerce styling
   #master .woocommerce div.product .woocommerce-tabs ul.tabs li {
     margin: 0;
     display: block;
-    border: 2px solid #ececec;
+    border: 1px solid #ececec;
     border-top-width: 0;
   }
   #master .woocommerce div.product .woocommerce-tabs ul.tabs li.active {
     border-right-width: 0;
   }
   #master .woocommerce div.product .woocommerce-tabs ul.tabs li:first-child {
-    border-top-width: 2px;
+    border-top-width: 1px;
   }
   #master .woocommerce div.product .woocommerce-tabs ul.tabs li a {
     display: block;

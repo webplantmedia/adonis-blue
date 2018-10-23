@@ -656,6 +656,7 @@
 	.woocommerce #reviews h3 {
 	}
 	.woocommerce #reviews #respond {
+		max-width: none;
 	}
 	.woocommerce #reviews #comment {
 	}
@@ -896,7 +897,7 @@
 	.widget_product_search {
 		.woocommerce-product-search {
 			.search-field {
-				@include rem('margin-bottom',20px);
+				margin-bottom: 0.7em; // needs to match ".widget form p"
 			}
 		}
 	}

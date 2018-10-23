@@ -25,7 +25,7 @@ Affiliate Royale styling
 }
 
 #master .wafp-stats-table {
-  border-width: 2px;
+  border-width: 1px;
   border-left-width: 0;
   border-right-width: 0;
   border-bottom-width: 0;
@@ -39,15 +39,15 @@ Affiliate Royale styling
 }
 
 #master .wafp-stats-table thead th {
-  font-size: 12px;
-  font-size: 0.75rem;
+  font-size: 10px;
+  font-size: 0.625rem;
 }
 
 #master .wafp-stats-table th,
 #master .wafp-stats-table td {
   border-color: #ececec;
   padding: 20px 5px !important;
-  border-width: 2px;
+  border-width: 1px;
   border-left-width: 0;
   border-right-width: 0;
 }
@@ -56,7 +56,7 @@ Affiliate Royale styling
   display: table;
   width: 100%;
   margin-bottom: 2em;
-  border-bottom: 2px solid #ececec;
+  border-bottom: 1px solid #ececec;
 }
 
 #master ul.wafp-nav-bar > li {
@@ -65,7 +65,7 @@ Affiliate Royale styling
 }
 
 #master ul.wafp-nav-bar > li.wafp-nav-active {
-  border: 2px solid #ececec;
+  border: 1px solid #ececec;
   border-bottom-width: 0;
   position: relative;
 }
@@ -94,7 +94,7 @@ Affiliate Royale styling
 #master ul.wafp-link-list > li {
   margin-bottom: 3em;
   padding-bottom: 3em;
-  border-bottom: 2px solid #ececec;
+  border-bottom: 1px solid #ececec;
 }
 
 #master ul.wafp-link-list > li > div {
@@ -107,7 +107,7 @@ Affiliate Royale styling
 
 #master ul.wafp-link-list > li:first-child {
   padding-top: 3em;
-  border-top: 2px solid #ececec;
+  border-top: 1px solid #ececec;
 }
 
 #master ul.wafp-link-list > li:last-child {
@@ -122,11 +122,11 @@ Affiliate Royale styling
   #master ul.wafp-nav-bar li {
     display: block;
     text-align: center;
-    border-top: 2px solid #ececec;
-    border-right: 2px solid #ececec;
+    border-top: 1px solid #ececec;
+    border-right: 1px solid #ececec;
   }
   #master ul.wafp-nav-bar li.wafp-nav-active {
-    border-top: 2px solid #ececec;
+    border-top: 1px solid #ececec;
     border-right-width: 0;
     border-left-width: 0;
     border-bottom-width: 0;
@@ -146,15 +146,15 @@ Affiliate Royale styling
     background-color: #f7f7f7;
   }
   #master .wafp-stats-table thead th {
-    font-size: 16px;
-    font-size: 1rem;
+    font-size: 13px;
+    font-size: 0.8125rem;
   }
   #master .wafp-stats-table th,
   #master .wafp-stats-table td {
     display: block;
     text-align: center !important;
     width: 100%;
-    min-height: 72px;
+    min-height: 67px;
     border-top-width: 0;
   }
 }
