@@ -28,7 +28,7 @@
 		margin: 0;
 		margin-left: 70px;
 		overflow: hidden;
-		@include rem('font-size',$font__medium-size);
+		@include rem('font-size',$font__main-size);
 		
 		p {
 			margin-bottom: 1em;

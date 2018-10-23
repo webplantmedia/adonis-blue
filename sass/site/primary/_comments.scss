@@ -20,7 +20,7 @@
 	display: none;
 	min-width: 110px;
 	padding: 9px 9px;
-	@include rem('font-size',$font__tiny-size);
+	@include rem('font-size',$font__small-size);
 	text-transform: uppercase;
 }
 
@@ -88,7 +88,7 @@
 }
 .comment-list .pingback .comment-body .url {
 	display: block;
-	@include rem('font-size',$font__tiny-size);
+	@include rem('font-size',$font__small-size);
 	font-weight: bold;
 	line-height: 2.16666667;
 	text-transform: uppercase;
@@ -101,7 +101,7 @@
 
 .comment-list .pingback .comment-body .edit-link a {
 	display: block;
-	@include rem('font-size',$font__tiny-size);
+	@include rem('font-size',$font__small-size);
 	font-weight: bold;
 	text-transform: uppercase;
 	color: $color__text-light;
@@ -112,7 +112,7 @@
 }
 
 .comment-metadata {
-	@include rem('font-size',$font__tiny-size);
+	@include rem('font-size',$font__small-size);
 	font-weight: bold;
 	line-height: 2.16666667;
 	text-transform: uppercase;
@@ -424,7 +424,7 @@
 	padding: 5px 10px;
 	border-radius: $button__radius;
 	color: #fff;
-	@include rem('font-size',$font__tiny-size);
+	@include rem('font-size',$font__small-size);
 	font-weight: bold;
 	line-height: 1;
 	background-color: #000000;
@@ -451,7 +451,7 @@
 
 .logged-in-as,
 .comment-notes {
-	@include rem('font-size',$font__small-size);
+	@include rem('font-size',$font__medium-size);
 	margin-bottom: 0.7em;
 	text-align: center;
 }
