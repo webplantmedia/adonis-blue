@@ -8,7 +8,7 @@
 .single .hentry {
 	@include rem('padding-bottom',70px);
 	@include rem('margin-bottom',70px);
-	border-bottom: 2px solid $color__border;
+	border-bottom: $border__width solid $color__border;
 }
 
 .updated:not(.published) {
@@ -19,7 +19,7 @@
 	.lead-post {
 		.hentry {
 			@include rem('padding-top',70px);
-			border-top: 2px solid $color__border;
+			border-top: $border__width solid $color__border;
 		}
 	}
 }

@@ -3,7 +3,7 @@
 		width: 100%;
 		margin-bottom: 2em;
 		@include rem('padding-bottom',50px);
-		border-bottom: 2px solid $color__border;
+		border-bottom: $border__width solid $color__border;
 		text-align: center;
 
 		> li {
@@ -31,7 +31,7 @@
 	.affwp-creative {
 		@include rem('padding-bottom',70px);
 		@include rem('margin-bottom',70px);
-		border-bottom: 2px solid $color__border;
+		border-bottom: $border__width solid $color__border;
 
 		> *:first-child {
 			margin-top: 0;

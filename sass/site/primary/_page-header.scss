@@ -3,7 +3,7 @@
 	text-align: center;
 	@include rem('padding-top',40px);
 	@include rem('padding-bottom',40px);
-	// border-bottom: 2px solid $color__border;
+	// border-bottom: $border__width solid $color__border;
 	background-color: $color__lightest-gray;
 
 	.page-title {

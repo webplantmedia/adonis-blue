@@ -307,7 +307,7 @@ button {
 		&:focus,
 		&:hover {
 			background-color: transparent;
-			border: 2px solid $color__white;
+			border: $border__width solid $color__white;
 			padding: 14px 24px;
 			border-radius: $button__radius;
 			text-transform: none;

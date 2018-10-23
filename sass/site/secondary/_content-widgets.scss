@@ -27,8 +27,8 @@
 
 // Content Callout
 .content-callout-border-wrap {
-	border-top: 2px solid $color__border;
-	border-bottom: 2px solid $color__border;
+	border-top: $border__width solid $color__border;
+	border-bottom: $border__width solid $color__border;
 	padding-top: 15px;
 	padding-bottom: 15px;
 }
@@ -147,8 +147,8 @@
 // Content Jetpack Testimonial
 .content-jetpack-testimonial {
 	&.box-style-border {
-		border-top: 2px solid $color__border;
-		border-bottom: 2px solid $color__border;
+		border-top: $border__width solid $color__border;
+		border-bottom: $border__width solid $color__border;
 	}
 
 	.testimonial-featured-image,

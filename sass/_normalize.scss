@@ -190,7 +190,7 @@ input[type="search"]::-webkit-search-decoration {
 }
 
 fieldset {
-	border: 2px solid $color__border;
+	border: $border__width solid $color__border;
 	margin: 0 2px;
 	padding: 1em 12px 1em;
 }

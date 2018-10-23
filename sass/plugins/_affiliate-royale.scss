@@ -20,7 +20,7 @@
 	}
 
 	.wafp-stats-table {
-		border-width: 2px;
+		border-width: $border__width;
 		border-left-width: 0;
 		border-right-width: 0;
 		border-bottom-width: 0;
@@ -40,7 +40,7 @@
 		td {
 			border-color: $color__border;
 			padding: 20px 5px !important;
-			border-width: 2px;
+			border-width: $border__width;
 			border-left-width: 0;
 			border-right-width: 0;
 		}
@@ -50,14 +50,14 @@
 		display: table;
 		width: 100%;
 		margin-bottom: 2em;
-		border-bottom: 2px solid $color__border;
+		border-bottom: $border__width solid $color__border;
 
 		> li {
 			display: table-cell;
 			text-align: center;
 
 			&.wafp-nav-active {
-				border: 2px solid $color__border;
+				border: $border__width solid $color__border;
 				border-bottom-width: 0;
 				position: relative;
 
@@ -87,7 +87,7 @@
 		> li {
 			margin-bottom: 3em;
 			padding-bottom: 3em;
-			border-bottom: 2px solid $color__border;
+			border-bottom: $border__width solid $color__border;
 
 			> div {
 				margin-bottom: 0.7em;
@@ -99,7 +99,7 @@
 
 			&:first-child {
 				padding-top: 3em;
-				border-top: 2px solid $color__border;
+				border-top: $border__width solid $color__border;
 			}
 
 			&:last-child {
@@ -117,11 +117,11 @@
 		li {
 			display: block;
 			text-align: center;
-			border-top: 2px solid $color__border;
-			border-right: 2px solid $color__border;
+			border-top: $border__width solid $color__border;
+			border-right: $border__width solid $color__border;
 
 			&.wafp-nav-active {
-				border-top: 2px solid $color__border;
+				border-top: $border__width solid $color__border;
 				border-right-width: 0;
 				border-left-width: 0;
 				border-bottom-width: 0;

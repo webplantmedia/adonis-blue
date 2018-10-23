@@ -4,7 +4,7 @@
 		padding: 0;
 		@include rem('margin-top',70px);
 		@include rem('padding-bottom',54px); // - 1em
-		border-bottom: 2px solid $color__border;
+		border-bottom: $border__width solid $color__border;
 	}
 	#jp-relatedposts .jp-relatedposts-headline {
 		margin: 0 0 30px;
@@ -84,7 +84,7 @@
 
 		&:before {
 			display: none;
-			border-top: 2px solid $color__border;
+			border-top: $border__width solid $color__border;
 		}
 	}
 

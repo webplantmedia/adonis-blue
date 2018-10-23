@@ -35,8 +35,8 @@
 				margin: 0;
 				padding: 0;
 				background-color: $color__background-body;
-				border-top: 2px solid $color__menu-border;
-				border-bottom: 2px solid $color__border;
+				border-top: $border__width solid $color__menu-border;
+				border-bottom: $border__width solid $color__border;
 				float: left;
 				list-style: none;
 				vertical-align: top;
@@ -63,7 +63,7 @@
 
 #master .mobile-search-navigation {
 	display: none;
-	border-bottom: 2px solid $color__border;
+	border-bottom: $border__width solid $color__border;
 
 	.search-field {
 		border-width: 0;

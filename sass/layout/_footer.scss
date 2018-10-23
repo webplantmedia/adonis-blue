@@ -161,7 +161,7 @@
 			&:hover,
 			&:active,
 			&:focus {
-				border: 2px solid $color__white;
+				border: $border__width solid $color__white;
 				background-color: transparent;
 				color: $color__white;
 			}

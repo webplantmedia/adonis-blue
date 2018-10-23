@@ -2,7 +2,7 @@
 	clear: both;
 	display: block;
 	width: 100%;
-	border-bottom: 2px solid $color__menu-border;
+	border-bottom: $border__width solid $color__menu-border;
 	text-align: center;
 }
 	
@@ -26,7 +26,7 @@
 		vertical-align: top;
 
 		ul {
-			border-top: 2px solid $color__menu-border;
+			border-top: $border__width solid $color__menu-border;
 			float: left;
 			position: absolute;
 			top: 100%;
@@ -56,7 +56,7 @@
 			}
 
 			a {
-				border-bottom: 2px solid $color__border;
+				border-bottom: $border__width solid $color__border;
 				padding-top: 1em;
 				padding-bottom: 1em;
 				@include rem('font-size',$font__xsmall-size);
@@ -329,7 +329,7 @@
 				}
 
 				&:last-child > a {
-					border-bottom: 2px solid $color__border;
+					border-bottom: $border__width solid $color__border;
 				}
 
 				ul {
@@ -391,7 +391,7 @@
 			a {
 				position: relative;
 				@include rem('font-size',$font__main-size);
-				border-bottom: 2px solid $color__border;
+				border-bottom: $border__width solid $color__border;
 				@include rem('padding-left',20px);
 				@include rem('padding-right',20px);
 				@include rem('padding-top',20px);
@@ -449,7 +449,7 @@
 		border-bottom-width: 0;
 
 		.menu-toggle {
-			border-bottom: 2px solid $color__menu-border;
+			border-bottom: $border__width solid $color__menu-border;
 
 			i:before {
 				content: "\f406";
@@ -468,7 +468,7 @@
 		margin: 0;
 		@include rem('margin-top',70px);
 		@include rem('padding-bottom',70px);
-		border-bottom: 2px solid $color__border;
+		border-bottom: $border__width solid $color__border;
 		overflow: hidden;
 	}
 }

@@ -11,7 +11,7 @@ table {
 .comment-content,
 .entry-content {
 	> table {
-		border-top: 2px solid $color__border;
+		border-top: $border__width solid $color__border;
 
 		thead th {
 			background-color: $color__lightest-gray;
@@ -20,7 +20,7 @@ table {
 		th,
 		td {
 			padding: 20px 12px;
-			border-bottom: 2px solid $color__border;
+			border-bottom: $border__width solid $color__border;
 			text-align: left;
 		}
 	}

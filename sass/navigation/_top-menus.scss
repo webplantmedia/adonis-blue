@@ -20,7 +20,7 @@
 			text-align: left;
 
 			ul {
-				border-top: 2px solid $color__border;
+				border-top: $border__width solid $color__border;
 				float: left;
 				position: absolute;
 				top: 100%;
@@ -35,7 +35,7 @@
 				a {
 					padding-top: .5em;
 					padding-bottom: .5em;
-					border-bottom: 2px solid $color__border;
+					border-bottom: $border__width solid $color__border;
 					@include rem('min-width',150px);
 				}
 			}

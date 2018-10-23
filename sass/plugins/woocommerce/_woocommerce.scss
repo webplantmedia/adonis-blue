@@ -164,7 +164,7 @@
 	.woocommerce-terms-and-conditions {
 		background: $color__lightest-gray;
 		box-shadow: none;
-		border: 2px solid $color__border;
+		border: $border__width solid $color__border;
 	}
 	.woocommerce div.product .product_title {
 		color: $color__text-title;
@@ -188,7 +188,7 @@
 				li {
 
 					&:first-child {
-						border-top: 2px solid $color__border;
+						border-top: $border__width solid $color__border;
 					}
 
 					&.is-active {
@@ -202,15 +202,15 @@
 					}
 
 					margin: 0;
-					border-bottom: 2px solid $color__border;
-					border-right: 2px solid $color__border;
+					border-bottom: $border__width solid $color__border;
+					border-right: $border__width solid $color__border;
 				}
 			}
 		}
 
 		.woocommerce-MyAccount-content {
 			padding: 1.5em 0 0 3em;
-			border-top: 2px solid $color__border;
+			border-top: $border__width solid $color__border;
 			width: 70%;
 
 			.woocommerce-error,
@@ -374,7 +374,7 @@
 	}
 	.woocommerce div.product .woocommerce-tabs ul.tabs li {
 		border-width: 0;
-		border-top: 2px solid $color__border;
+		border-top: $border__width solid $color__border;
 		border-radius: 0;
 		background-color: transparent;
 		padding: 0;
@@ -383,8 +383,8 @@
 	}
 	.woocommerce div.product .woocommerce-tabs ul.tabs li a {
 		padding: 0.7em 1.2em;
-		border-left: 2px solid $color__border;
-		border-right: 2px solid $color__border;
+		border-left: $border__width solid $color__border;
+		border-right: $border__width solid $color__border;
 		text-transform: uppercase;
 		@include rem('font-size',$font__medium-size);
 		color: $color__text;
@@ -414,7 +414,7 @@
 	.woocommerce div.product .woocommerce-tabs ul.tabs li::after {
 	}
 	.woocommerce div.product .woocommerce-tabs ul.tabs::before {
-		border-bottom-width: 2px;
+		border-bottom-width: $border__width;
 		border-color: $color__border;
 	}
 	.woocommerce div.product .woocommerce-tabs .panel {
@@ -686,7 +686,7 @@
 		width: 60px;
 	}
 	.woocommerce #reviews #comments ol.commentlist li .comment-text {
-		border: 2px solid $color__border;
+		border: $border__width solid $color__border;
 		margin-left: 80px;
 		border-radius: 0;
 	}
@@ -706,7 +706,7 @@
 	.woocommerce #reviews #comments ol.commentlist ul.children .star-rating {
 	}
 	.woocommerce #reviews #comments ol.commentlist #respond {
-		border: 2px solid $color__border;
+		border: $border__width solid $color__border;
 		border-radius: $button__radius;
 	}
 	.woocommerce #reviews #comments .commentlist>li::before {
@@ -771,13 +771,13 @@
 	.woocommerce p.stars.selected a:not(.active)::before {
 	}
 	.woocommerce table.shop_attributes {
-		border-top: 2px dotted rgba(0, 0, 0, .1);
+		border-top: $border__width dotted rgba(0, 0, 0, .1);
 	}
 	.woocommerce table.shop_attributes th {
-		border-bottom: 2px dotted rgba(0, 0, 0, .1);
+		border-bottom: $border__width dotted rgba(0, 0, 0, .1);
 	}
 	.woocommerce table.shop_attributes td {
-		border-bottom: 2px dotted rgba(0, 0, 0, .1);
+		border-bottom: $border__width dotted rgba(0, 0, 0, .1);
 	}
 	.woocommerce table.shop_attributes td p {
 	}
@@ -797,7 +797,7 @@
 		border-bottom: 0;
 	}
 	.woocommerce table.shop_table td {
-		border-top: 2px solid $color__border;
+		border-top: $border__width solid $color__border;
 		border-bottom: 0;
 		padding-top: 20px;
 		padding-bottom: 20px;
@@ -811,7 +811,7 @@
 	.woocommerce table.shop_table tbody th,
 	.woocommerce table.shop_table tfoot td,
 	.woocommerce table.shop_table tfoot th {
-		border-top: 2px solid $color__border;
+		border-top: $border__width solid $color__border;
 		vertical-align: middle;
 	}
 	.woocommerce table.my_account_orders {
@@ -919,7 +919,7 @@
 	}
 	.woocommerce ul.cart_list li dl,
 	.woocommerce ul.product_list_widget li dl {
-		border-left: 2px solid rgba(0, 0, 0, .1)
+		border-left: $border__width solid rgba(0, 0, 0, .1)
 	}
 	.woocommerce ul.cart_list li dl::after,
 	.woocommerce ul.cart_list li dl::before,
@@ -1002,7 +1002,7 @@
 	.woocommerce form .form-row.woocommerce-invalid input.input-text,
 	.woocommerce form .form-row.woocommerce-invalid select {
 		color: $color__red;
-		border: 2px solid $color__red;
+		border: $border__width solid $color__red;
 	}
 	.woocommerce form .form-row.woocommerce-validated .select2-container,
 	.woocommerce form .form-row.woocommerce-validated input.input-text,
@@ -1154,7 +1154,7 @@
 	.woocommerce-message {
 		// background-color: $color__lightest-gray;
 		background: transparent;
-		border: 2px solid $color__border;
+		border: $border__width solid $color__border;
 	}
 	.woocommerce-error::after,
 	.woocommerce-error::before,
@@ -1330,7 +1330,7 @@
 	.woocommerce-cart .cart-collaterals .cart_totals tr th,
 	.woocommerce-checkout .cart-collaterals .cart_totals tr td,
 	.woocommerce-checkout .cart-collaterals .cart_totals tr th {
-		border-top: 2px solid $color__border;
+		border-top: $border__width solid $color__border;
 	}
 	#add_payment_method .cart-collaterals .cross-sells ul.products li.product,
 	.woocommerce-cart .cart-collaterals .cross-sells ul.products li.product,
@@ -1390,7 +1390,7 @@
 	.woocommerce-cart #payment ul.payment_methods > li,
 	.woocommerce-checkout #payment ul.payment_methods > li {
 		padding: 30px 0;
-		border-bottom: 2px solid $color__border;
+		border-bottom: $border__width solid $color__border;
 
 		&:first-child {
 			padding-top: 0;
@@ -1767,7 +1767,7 @@
 		.woocommerce div.product .woocommerce-tabs ul.tabs li {
 			margin: 0;
 			display: block;
-			border: 2px solid $color__border;
+			border: $border__width solid $color__border;
 			border-top-width: 0;
 
 			&.active {
@@ -1775,7 +1775,7 @@
 			}
 
 			&:first-child {
-				border-top-width: 2px;
+				border-top-width: $border__width;
 			}
 
 			a {

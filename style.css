@@ -5426,6 +5426,7 @@ h1.h1-title,
 
 .comments-title {
   padding-top: 5px;
+  text-align: center;
 }
 
 .comments-area > .button {
@@ -5457,7 +5458,8 @@ h1.h1-title,
 }
 
 .comment-list .children {
-  margin-left: 100px;
+  margin-left: 30px;
+  margin-left: 1.875rem;
   padding: 0;
   list-style: none;
 }
@@ -5642,17 +5644,21 @@ h1.h1-title,
   padding-top: 45px;
 }
 
-.comment-list > .comment:not(.parent) > .comment-body {
-  padding-bottom: 45px;
-}
-
 .comment-list .parent > .comment-body .comment-content,
 .comment-list .children .comment-content {
   margin-left: 100px;
 }
 
+.comment-list .children .comment-body {
+  border-left: 5px solid #ececec;
+}
+
 .comment-list .comment-body {
-  padding-bottom: 27px;
+  padding: 30px;
+  padding: 1.875rem;
+  background-color: #f7f7f7;
+  margin-bottom: 30px;
+  margin-bottom: 1.875rem;
 }
 
 @media screen and (max-width: 959px) {
