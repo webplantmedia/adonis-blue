@@ -826,6 +826,11 @@ require get_parent_theme_file_path() . '/inc/icon-functions.php';
  */
 require get_parent_theme_file_path() . '/inc/recommended-plugins.php';
 
+/*
+ * Check for theme update.
+ */
+require get_parent_theme_file_path() . '/inc/upgrade.php';
+
 /**
  * Add dashboard widget and info page.
  */
