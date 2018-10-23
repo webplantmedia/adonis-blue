@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Painted Lady 1.01\n"
+"Project-Id-Version: Painted Lady 1.02\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/painted-lady\n"
-"POT-Creation-Date: 2018-10-23 14:36:51+00:00\n"
+"POT-Creation-Date: 2018-10-23 15:09:33+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -123,7 +123,7 @@ msgstr ""
 msgid "Add Instagram widget here."
 msgstr ""
 
-#. #-#-#-#-#  painted-lady.pot (Painted Lady 1.01)  #-#-#-#-#
+#. #-#-#-#-#  painted-lady.pot (Painted Lady 1.02)  #-#-#-#-#
 #. Template Name of the plugin/theme
 #: functions.php:262
 msgid "Widgetized Page"
@@ -145,7 +145,7 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:123
+#: header.php:125
 msgid "Search Results for:"
 msgstr ""
 
@@ -945,7 +945,7 @@ msgid ""
 "use, and fast to install."
 msgstr ""
 
-#. #-#-#-#-#  painted-lady.pot (Painted Lady 1.01)  #-#-#-#-#
+#. #-#-#-#-#  painted-lady.pot (Painted Lady 1.02)  #-#-#-#-#
 #. Author of the plugin/theme
 #: inc/theme-info.php:38 inc/theme-info.php:39
 msgid "Web Plant Media"
