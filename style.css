@@ -1874,7 +1874,6 @@ a:hover, a:active {
   margin: 0;
   padding: 0;
   vertical-align: top;
-  text-align: left;
 }
 
 .main-menu ul ul {
@@ -1885,6 +1884,7 @@ a:hover, a:active {
   left: -999em;
   z-index: 99999;
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.08);
+  text-align: left;
 }
 
 .main-menu ul ul ul {
@@ -1925,9 +1925,8 @@ a:hover, a:active {
 }
 
 .main-menu ul li {
-  float: left;
   position: relative;
-  display: block;
+  display: inline-block;
 }
 
 .main-menu ul li:hover > ul {
