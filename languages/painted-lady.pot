@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Painted Lady 2.42\n"
+"Project-Id-Version: Painted Lady 1.01\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/painted-lady\n"
-"POT-Creation-Date: 2018-10-11 15:39:03+00:00\n"
+"POT-Creation-Date: 2018-10-23 14:36:17+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -12,30 +12,30 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: 404.php:61 inc/template-tags.php:111 inc/widgets/callout.php:226
+#: 404.php:63 inc/template-tags.php:111 inc/widgets/callout.php:226
 #: inc/widgets/collage.php:513 inc/widgets/image-banner.php:160
 #: inc/widgets/jetpack-testimonials.php:310 inc/widgets/slider.php:459
-#: inc/widgets/static-content.php:227 template-parts/content-full-width.php:64
+#: inc/widgets/static-content.php:229 template-parts/content-full-width.php:64
 #: template-parts/content-page.php:43
 msgid "Edit"
 msgstr ""
 
-#: 404.php:84
+#: 404.php:86
 msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
-#: 404.php:88
+#: 404.php:90
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links "
 "below or a search?"
 msgstr ""
 
-#: 404.php:96
+#: 404.php:98
 msgid "Most Used Categories"
 msgstr ""
 
 #. translators: %1$s: smiley
-#: 404.php:115
+#: 404.php:117
 msgid "Try looking in the monthly archives. %1$s"
 msgstr ""
 
@@ -56,16 +56,16 @@ msgstr[1] ""
 msgid "Comments are closed."
 msgstr ""
 
-#: footer.php:89 inc/default-options.php:75
+#: footer.php:89 inc/default-options.php:78
 msgid "Site crafted with"
 msgstr ""
 
-#: footer.php:89 inc/default-options.php:75
+#: footer.php:89 inc/default-options.php:78
 msgid "by"
 msgstr ""
 
 #: functions.php:61
-msgid "Primary"
+msgid "Primary Left"
 msgstr ""
 
 #: functions.php:62
@@ -77,63 +77,75 @@ msgid "Top Header Right"
 msgstr ""
 
 #: functions.php:64
+msgid "Primary Right"
+msgstr ""
+
+#: functions.php:65
 msgid "Social Menu"
 msgstr ""
 
-#: functions.php:189
+#: functions.php:190
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:191 functions.php:203 functions.php:215 functions.php:227
+#: functions.php:192 functions.php:204 functions.php:216 functions.php:228
 msgid "Add widgets here."
 msgstr ""
 
-#: functions.php:201
+#: functions.php:202
 msgid "Footer 1"
 msgstr ""
 
-#: functions.php:213
+#: functions.php:214
 msgid "Footer 2"
 msgstr ""
 
-#: functions.php:225
+#: functions.php:226
 msgid "Footer 3"
 msgstr ""
 
-#: functions.php:237
+#: functions.php:238
 msgid "Footer Bottom"
 msgstr ""
 
-#: functions.php:239
+#: functions.php:240
 msgid ""
 "Add a text or HTML widget here with your site credit and copyright "
 "information. Doing so will override the default footer credit at the bottom "
 "of your pages."
 msgstr ""
 
-#: functions.php:249
+#: functions.php:250
 msgid "Instagram Gallery"
 msgstr ""
 
-#: functions.php:251
+#: functions.php:252
 msgid "Add Instagram widget here."
 msgstr ""
 
-#. #-#-#-#-#  painted-lady.pot (Painted Lady 2.42)  #-#-#-#-#
+#. #-#-#-#-#  painted-lady.pot (Painted Lady 1.01)  #-#-#-#-#
 #. Template Name of the plugin/theme
-#: functions.php:261
+#: functions.php:262
 msgid "Widgetized Page"
 msgstr ""
 
-#: functions.php:263
+#: functions.php:264
 msgid "Add content widgets here."
+msgstr ""
+
+#: functions.php:274
+msgid "Blog Page"
+msgstr ""
+
+#: functions.php:276
+msgid "Add content widgets here to be displayed above your blog."
 msgstr ""
 
 #: header.php:29
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:95
+#: header.php:123
 msgid "Search Results for:"
 msgstr ""
 
@@ -271,435 +283,447 @@ msgstr ""
 msgid "Padding Bottom"
 msgstr ""
 
+#: inc/customizer.php:166
+msgid "Split Menu Logo Width"
+msgstr ""
+
+#: inc/customizer.php:183
+msgid "Split Menu Top Offset"
+msgstr ""
+
+#: inc/customizer.php:200
+msgid "Split Menu Collapse Width"
+msgstr ""
+
+#: inc/customizer.php:201
+msgid ""
+"At what width do you want the split menu to fall under the logo as one menu "
+"bar?"
+msgstr ""
+
 #. Translators: this string is a link to a self hosted WordPress plugin.
-#: inc/customizer.php:171 inc/customizer.php:294
+#: inc/customizer.php:223 inc/customizer.php:346
 msgid "To add more watercolor backgrounds, please download our %s plugin."
 msgstr ""
 
-#: inc/customizer.php:172 inc/customizer.php:295
+#: inc/customizer.php:224 inc/customizer.php:347
 msgid "Watercolor Backgrounds"
 msgstr ""
 
-#: inc/customizer.php:175
+#: inc/customizer.php:227
 msgid "Control the color of the watercolor background image in the header."
 msgstr ""
 
-#: inc/customizer.php:181
+#: inc/customizer.php:233
 msgid "Header Background Image Color"
 msgstr ""
 
-#: inc/customizer.php:186 inc/customizer.php:309
+#: inc/customizer.php:238 inc/customizer.php:361
 msgid "No Image"
 msgstr ""
 
-#: inc/customizer.php:187 inc/customizer.php:310
+#: inc/customizer.php:239 inc/customizer.php:362
 msgid "Red"
 msgstr ""
 
-#: inc/customizer.php:205
+#: inc/customizer.php:257
 msgid "Primary Color"
 msgstr ""
 
-#: inc/customizer.php:223
+#: inc/customizer.php:275
 msgid "Primary Hover Color"
 msgstr ""
 
-#: inc/customizer.php:241
+#: inc/customizer.php:293
 msgid "Archive Background Color"
 msgstr ""
 
-#: inc/customizer.php:259
+#: inc/customizer.php:311
 msgid "Display White Archive Title?"
 msgstr ""
 
-#: inc/customizer.php:276
+#: inc/customizer.php:328
 msgid "Footer Background Color"
 msgstr ""
 
-#: inc/customizer.php:298
+#: inc/customizer.php:350
 msgid "Control the color of the watercolor background image in the footer."
 msgstr ""
 
-#: inc/customizer.php:304
+#: inc/customizer.php:356
 msgid "Footer Background Image Color"
 msgstr ""
 
-#: inc/customizer.php:328
+#: inc/customizer.php:380
 msgid "Display White Footer Text?"
 msgstr ""
 
-#: inc/customizer.php:345
+#: inc/customizer.php:397
 msgid "Link Color"
 msgstr ""
 
-#: inc/customizer.php:363
+#: inc/customizer.php:415
 msgid "Link Hover Color"
 msgstr ""
 
-#: inc/customizer.php:374
+#: inc/customizer.php:426
 msgid "Theme Options"
 msgstr ""
 
-#: inc/customizer.php:385
+#: inc/customizer.php:437
 msgid "Site"
 msgstr ""
 
-#: inc/customizer.php:402
+#: inc/customizer.php:454
 msgid "Top Header Background Offset"
 msgstr ""
 
-#: inc/customizer.php:403
+#: inc/customizer.php:455
 msgid ""
 "This changes the position of your top header background so you can center it "
 "perfectly with your top header menu."
 msgstr ""
 
-#: inc/customizer.php:426
+#: inc/customizer.php:478
 msgid "Show Menu Arrows"
 msgstr ""
 
-#: inc/customizer.php:443
+#: inc/customizer.php:495
+msgid "Show Menu Cart Button"
+msgstr ""
+
+#: inc/customizer.php:512
 msgid "Show Menu Search Button"
 msgstr ""
 
-#: inc/customizer.php:460
+#: inc/customizer.php:529
 msgid "Default Button Style"
 msgstr ""
 
-#: inc/customizer.php:461
+#: inc/customizer.php:530
 msgid ""
 "When you insert a link on its own line in the WP Editor, the theme turns it "
 "into a button. Choose the default style of your button to display in your "
 "post and pages."
 msgstr ""
 
-#: inc/customizer.php:464 inc/widgets/blog-posts.php:95
+#: inc/customizer.php:533 inc/widgets/blog-posts.php:95
 #: inc/widgets/callout.php:102 inc/widgets/collage.php:175
 #: inc/widgets/slider.php:175 inc/widgets/woocommerce-products.php:176
 msgid "Default Button"
 msgstr ""
 
-#: inc/customizer.php:465
+#: inc/customizer.php:534
 msgid "Button Style 1"
 msgstr ""
 
-#: inc/customizer.php:466
+#: inc/customizer.php:535
 msgid "Button Style 2"
 msgstr ""
 
-#: inc/customizer.php:483
+#: inc/customizer.php:552
 msgid "Disable Body Font"
 msgstr ""
 
-#: inc/customizer.php:484
+#: inc/customizer.php:553
 msgid ""
 "If you are using a Google Font plugin, then you can disable the load of the "
 "body font."
 msgstr ""
 
-#: inc/customizer.php:502
+#: inc/customizer.php:571
 msgid "Disable Accent Font"
 msgstr ""
 
-#: inc/customizer.php:503
+#: inc/customizer.php:572
 msgid ""
 "The accent font is a cursive font used in places such as your archive title. "
 "If you are using a Google Font plugin, then you can disable the load of this "
 "accent font."
 msgstr ""
 
-#: inc/customizer.php:522
+#: inc/customizer.php:591
 msgid "Page Image Header Height"
 msgstr ""
 
-#: inc/customizer.php:523
+#: inc/customizer.php:592
 msgid ""
 "This changes the height of your featured image in your page header area."
 msgstr ""
 
-#: inc/customizer.php:540 inc/customizer.php:1118
+#: inc/customizer.php:609 inc/customizer.php:1164
 msgid "Blog"
 msgstr ""
 
-#: inc/customizer.php:557
+#: inc/customizer.php:626
 msgid "Blog Display"
 msgstr ""
 
-#: inc/customizer.php:560 inc/customizer.php:583 inc/customizer.php:606
+#: inc/customizer.php:629 inc/customizer.php:652 inc/customizer.php:675
 msgid "Lead Excerpt + Grid"
 msgstr ""
 
-#: inc/customizer.php:561 inc/customizer.php:584 inc/customizer.php:607
+#: inc/customizer.php:630 inc/customizer.php:653 inc/customizer.php:676
 msgid "Grid"
 msgstr ""
 
-#: inc/customizer.php:562 inc/customizer.php:585 inc/customizer.php:608
+#: inc/customizer.php:631 inc/customizer.php:654 inc/customizer.php:677
 msgid "Excerpt"
 msgstr ""
 
-#: inc/customizer.php:563 inc/customizer.php:586 inc/customizer.php:609
+#: inc/customizer.php:632 inc/customizer.php:655 inc/customizer.php:678
 msgid "Content"
 msgstr ""
 
-#: inc/customizer.php:580
+#: inc/customizer.php:649
 msgid "Archive Display"
 msgstr ""
 
-#: inc/customizer.php:603
+#: inc/customizer.php:672
 msgid "Search Display"
 msgstr ""
 
-#: inc/customizer.php:627
+#: inc/customizer.php:696
 msgid "Thumb Excerpt Max Height"
 msgstr ""
 
-#: inc/customizer.php:628
+#: inc/customizer.php:697
 msgid ""
 "If you have long featured images in your excerpts, set a max-height on your "
 "image. Enter 0 for no max-height"
 msgstr ""
 
-#: inc/customizer.php:650
-msgid "Thumb Grid Max Height"
-msgstr ""
-
-#: inc/customizer.php:651
-msgid ""
-"If you have long featured images in your grid, set a max-height on your "
-"image. Enter 0 for no max-height"
-msgstr ""
-
-#: inc/customizer.php:672
+#: inc/customizer.php:718
 msgid "Hide Post Navigation"
 msgstr ""
 
-#: inc/customizer.php:673
+#: inc/customizer.php:719
 msgid "Hide the post navigation buttons at the bottom of each post."
 msgstr ""
 
-#: inc/customizer.php:684
+#: inc/customizer.php:730
 msgid "Jetpack"
 msgstr ""
 
-#: inc/customizer.php:702
+#: inc/customizer.php:748
 msgid "Hide Share Button Count"
 msgstr ""
 
-#: inc/customizer.php:719
+#: inc/customizer.php:765
 msgid "Infinite Scroll Credit Text"
 msgstr ""
 
-#: inc/customizer.php:730 inc/customizer.php:1187
+#: inc/customizer.php:776 inc/customizer.php:1233
 msgid "Shop"
 msgstr ""
 
-#: inc/customizer.php:748
+#: inc/customizer.php:794
 msgid "Shop Columns"
 msgstr ""
 
-#: inc/customizer.php:751 inc/customizer.php:775 inc/customizer.php:799
+#: inc/customizer.php:797 inc/customizer.php:821 inc/customizer.php:845
 #: inc/widgets/jetpack-testimonials.php:69
 #: inc/widgets/woocommerce-products.php:67
 msgid "2"
 msgstr ""
 
-#: inc/customizer.php:752 inc/customizer.php:776 inc/customizer.php:800
+#: inc/customizer.php:798 inc/customizer.php:822 inc/customizer.php:846
 #: inc/widgets/woocommerce-products.php:68
 msgid "3"
 msgstr ""
 
-#: inc/customizer.php:753 inc/customizer.php:777 inc/customizer.php:801
+#: inc/customizer.php:799 inc/customizer.php:823 inc/customizer.php:847
 #: inc/widgets/woocommerce-products.php:69
 msgid "4"
 msgstr ""
 
-#: inc/customizer.php:754 inc/customizer.php:778 inc/customizer.php:802
+#: inc/customizer.php:800 inc/customizer.php:824 inc/customizer.php:848
 #: inc/widgets/woocommerce-products.php:70
 msgid "5"
 msgstr ""
 
-#: inc/customizer.php:755 inc/customizer.php:779 inc/customizer.php:803
+#: inc/customizer.php:801 inc/customizer.php:825 inc/customizer.php:849
 #: inc/widgets/woocommerce-products.php:71
 msgid "6"
 msgstr ""
 
-#: inc/customizer.php:772
+#: inc/customizer.php:818
 msgid "Shop Archive Columns"
 msgstr ""
 
-#: inc/customizer.php:796
+#: inc/customizer.php:842
 msgid "Related Products Columns"
 msgstr ""
 
-#: inc/customizer.php:820
+#: inc/customizer.php:866
 msgid "Shop Image Size"
 msgstr ""
 
-#: inc/customizer.php:823 inc/customizer.php:844 inc/customizer.php:865
+#: inc/customizer.php:869 inc/customizer.php:890 inc/customizer.php:911
 #: inc/widgets/woocommerce-products.php:80
 msgid "Thumbnail"
 msgstr ""
 
-#: inc/customizer.php:824 inc/customizer.php:845 inc/customizer.php:866
+#: inc/customizer.php:870 inc/customizer.php:891 inc/customizer.php:912
 #: inc/widgets/woocommerce-products.php:81
 msgid "Main Image"
 msgstr ""
 
-#: inc/customizer.php:841
+#: inc/customizer.php:887
 msgid "Shop Archive Image Size"
 msgstr ""
 
-#: inc/customizer.php:862
+#: inc/customizer.php:908
 msgid "Related Products Image Size"
 msgstr ""
 
-#: inc/customizer.php:883
+#: inc/customizer.php:929
 msgid "Products Per Page"
 msgstr ""
 
-#: inc/customizer.php:900
+#: inc/customizer.php:946
 msgid "Display Product Image Backdrop"
 msgstr ""
 
-#: inc/customizer.php:901
+#: inc/customizer.php:947
 msgid ""
 "Add a light gray backdrop with a dropshadow for your product images. "
 "Visually helpful for images with light colored backgrounds."
 msgstr ""
 
-#: inc/customizer.php:918
+#: inc/customizer.php:964
 msgid "Hide Shop Title From Main Shop Page"
 msgstr ""
 
-#: inc/customizer.php:935
+#: inc/customizer.php:981
 msgid "Hide Breadcrumbs From Shop Page"
 msgstr ""
 
-#: inc/customizer.php:952
+#: inc/customizer.php:998
 msgid "Hide Product Reviews From Shop Page"
 msgstr ""
 
-#: inc/customizer.php:969
+#: inc/customizer.php:1015
 msgid "Hide Result Count String From Shop Page"
 msgstr ""
 
-#: inc/customizer.php:986
+#: inc/customizer.php:1032
 msgid "Hide Ordering Dropdown From Shop Page"
 msgstr ""
 
-#: inc/customizer.php:1003
+#: inc/customizer.php:1049
 msgid "Truncate Product Titles"
 msgstr ""
 
-#: inc/customizer.php:1004
+#: inc/customizer.php:1050
 msgid "This will cause product titles to appear in one line."
 msgstr ""
 
-#: inc/customizer.php:1021
+#: inc/customizer.php:1067
 msgid "Hide Product Reviews From Product Page"
 msgstr ""
 
-#: inc/customizer.php:1038
+#: inc/customizer.php:1084
 msgid "Hide Product Meta From Product Page"
 msgstr ""
 
-#: inc/customizer.php:1055
+#: inc/customizer.php:1101
 msgid "Disable Gallery Zoom on Product Page"
 msgstr ""
 
-#: inc/customizer.php:1072
+#: inc/customizer.php:1118
 msgid "Disable Gallery Lightbox on Product Page"
 msgstr ""
 
-#: inc/customizer.php:1089
+#: inc/customizer.php:1135
 msgid "Disable Gallery Slider on Product Page"
 msgstr ""
 
-#: inc/customizer.php:1100
+#: inc/customizer.php:1146
 msgid "Display Sidebar"
 msgstr ""
 
-#: inc/customizer.php:1102
+#: inc/customizer.php:1148
 msgid "Check the pages where you want the sidebar to display."
 msgstr ""
 
-#: inc/customizer.php:1135 inc/template-tags.php:294
+#: inc/customizer.php:1181 inc/template-tags.php:294
 msgid "Post"
 msgstr ""
 
-#: inc/customizer.php:1152
+#: inc/customizer.php:1198
 msgid "Archive"
 msgstr ""
 
-#: inc/customizer.php:1169 searchform.php:31
+#: inc/customizer.php:1215 searchform.php:31
 #: template-parts/menu-mobile-search.php:33
 msgid "Search"
 msgstr ""
 
-#: inc/customizer.php:1205
+#: inc/customizer.php:1251
 msgid "Shop Archive"
 msgstr ""
 
-#: inc/customizer.php:1222
+#: inc/customizer.php:1268
 msgid "Attachment Page"
 msgstr ""
 
-#: inc/customizer.php:1233
+#: inc/customizer.php:1279
 msgid "Labels"
 msgstr ""
 
-#: inc/customizer.php:1250
+#: inc/customizer.php:1296
 msgid "Mobile Menu Label"
 msgstr ""
 
-#: inc/customizer.php:1267
+#: inc/customizer.php:1313
 msgid "Read More Label"
 msgstr ""
 
-#: inc/customizer.php:1278
+#: inc/customizer.php:1324
 msgid "404 Error Page"
 msgstr ""
 
-#: inc/customizer.php:1294
+#: inc/customizer.php:1340
 msgid "Select 404 Page"
 msgstr ""
 
-#: inc/customizer.php:1295
+#: inc/customizer.php:1341
 msgid "Set the page's featured image for the background image to display."
 msgstr ""
 
-#: inc/customizer.php:1314
+#: inc/customizer.php:1360
 msgid "Page Cover Opacity"
 msgstr ""
 
-#: inc/customizer.php:1315
+#: inc/customizer.php:1361
 msgid "Set opacity for 404 Page Cover's featured image."
 msgstr ""
 
-#: inc/customizer.php:1338
+#: inc/customizer.php:1384
 msgid "Page Cover Color"
 msgstr ""
 
-#: inc/customizer.php:1356
+#: inc/customizer.php:1402
 msgid "Display White Text"
 msgstr ""
 
-#: inc/customizer.php:1368
+#: inc/customizer.php:1414
 msgid "Fonts"
 msgstr ""
 
-#: inc/customizer.php:1388
+#: inc/customizer.php:1434
 msgid "Font Customization"
 msgstr ""
 
 #. Translators: this string is a link to a self hosted WordPress plugin.
-#: inc/customizer.php:1391
+#: inc/customizer.php:1437
 msgid ""
 "To easily change the font styles for your theme, please download our %s "
 "plugin."
 msgstr ""
 
-#: inc/customizer.php:1392
+#: inc/customizer.php:1438
 msgid "Designer Fonts"
 msgstr ""
 
@@ -782,11 +806,11 @@ msgstr ""
 msgid "Theme Add-ons"
 msgstr ""
 
-#: inc/default-options.php:108
+#: inc/default-options.php:111
 msgid "Menu"
 msgstr ""
 
-#: inc/default-options.php:109
+#: inc/default-options.php:112
 msgid "Continue Reading"
 msgstr ""
 
@@ -921,7 +945,7 @@ msgid ""
 "use, and fast to install."
 msgstr ""
 
-#. #-#-#-#-#  painted-lady.pot (Painted Lady 2.42)  #-#-#-#-#
+#. #-#-#-#-#  painted-lady.pot (Painted Lady 1.01)  #-#-#-#-#
 #. Author of the plugin/theme
 #: inc/theme-info.php:38 inc/theme-info.php:39
 msgid "Web Plant Media"
@@ -1396,11 +1420,7 @@ msgstr ""
 msgid "Bottom margin of widget:"
 msgstr ""
 
-#: inc/widgets/blog-posts.php:159 inc/widgets/static-content.php:153
-msgid "Read more"
-msgstr ""
-
-#: inc/widgets/blog-posts.php:213
+#: inc/widgets/blog-posts.php:210
 msgid "No blog posts found."
 msgstr ""
 
@@ -1505,7 +1525,7 @@ msgstr ""
 msgid "Bottom padding of widget:"
 msgstr ""
 
-#: inc/widgets/callout.php:297 inc/widgets/static-content.php:244
+#: inc/widgets/callout.php:297 inc/widgets/static-content.php:246
 msgid "Select a page in your widget settings for content to display."
 msgstr ""
 
@@ -1850,7 +1870,11 @@ msgstr ""
 msgid "Background Color Opacity:"
 msgstr ""
 
-#: inc/widgets/static-content.php:242
+#: inc/widgets/static-content.php:217
+msgid "Read more"
+msgstr ""
+
+#: inc/widgets/static-content.php:244
 msgid "Static Content Widget"
 msgstr ""
 
