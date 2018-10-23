@@ -5232,8 +5232,8 @@ h1.h1-title,
   margin: 0;
   margin-left: 70px;
   overflow: hidden;
-  font-size: 13px;
-  font-size: 0.8125rem;
+  font-size: 15px;
+  font-size: 0.9375rem;
 }
 
 .entry-author .author-bio p {
@@ -5435,8 +5435,8 @@ h1.h1-title,
   display: none;
   min-width: 110px;
   padding: 9px 9px;
-  font-size: 10px;
-  font-size: 0.625rem;
+  font-size: 12px;
+  font-size: 0.75rem;
   text-transform: uppercase;
 }
 
@@ -5503,8 +5503,8 @@ h1.h1-title,
 
 .comment-list .pingback .comment-body .url {
   display: block;
-  font-size: 10px;
-  font-size: 0.625rem;
+  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: bold;
   line-height: 2.16666667;
   text-transform: uppercase;
@@ -5517,8 +5517,8 @@ h1.h1-title,
 
 .comment-list .pingback .comment-body .edit-link a {
   display: block;
-  font-size: 10px;
-  font-size: 0.625rem;
+  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: bold;
   text-transform: uppercase;
   color: #959595;
@@ -5529,8 +5529,8 @@ h1.h1-title,
 }
 
 .comment-metadata {
-  font-size: 10px;
-  font-size: 0.625rem;
+  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: bold;
   line-height: 2.16666667;
   text-transform: uppercase;
@@ -5814,8 +5814,8 @@ h1.h1-title,
   padding: 5px 10px;
   border-radius: 3px;
   color: #fff;
-  font-size: 10px;
-  font-size: 0.625rem;
+  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: bold;
   line-height: 1;
   background-color: #000000;
@@ -5842,8 +5842,8 @@ h1.h1-title,
 
 .logged-in-as,
 .comment-notes {
-  font-size: 12px;
-  font-size: 0.75rem;
+  font-size: 13px;
+  font-size: 0.8125rem;
   margin-bottom: 0.7em;
   text-align: center;
 }
