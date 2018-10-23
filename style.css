@@ -5677,14 +5677,19 @@ h1.h1-title,
   margin-bottom: 62px;
 }
 
+#respond.comment-respond {
+  max-width: 560px;
+  max-width: 35rem;
+}
+
 .comment .comment-respond {
   margin-top: 0;
-  margin-left: 100px;
 }
 
 .comment-reply-title {
   margin-top: 0;
   display: block;
+  text-align: center;
 }
 
 .comment-form .comment-form-comment {
@@ -5842,6 +5847,7 @@ h1.h1-title,
   font-size: 15px;
   font-size: 0.9375rem;
   margin-bottom: 0.7em;
+  text-align: center;
 }
 
 .no-comments {
