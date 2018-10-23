@@ -1756,9 +1756,9 @@ button {
 }
 
 #master input[type="checkbox"]:checked:before {
-  margin-left: -6px;
-  font-size: 22px;
-  font-size: 1.375rem;
+  margin-left: -0.2em;
+  font-size: 15px;
+  font-size: 0.9375rem;
   line-height: 14px;
 }
 
@@ -5855,6 +5855,10 @@ h1.h1-title,
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
+.site-footer {
+  overflow: hidden;
+}
+
 .site-info-wrapper {
   background-size: 735px auto;
   background-position: top center;
@@ -5927,10 +5931,6 @@ h1.h1-title,
 
 .has-footer-widgets .site-info-wrapper {
   margin-top: 56px;
-}
-
-.footer-widget-area {
-  overflow: hidden;
 }
 
 .footer-container {
