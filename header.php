@@ -82,8 +82,6 @@
 
 				</div><!-- .split-menu-part -->
 
-				<div class="split-menu-part split-menu-part-middle"></div>
-
 				<div class="split-menu-part split-menu-part-right">
 
 					<nav class="main-menu in-menu-bar">

@@ -337,28 +337,24 @@ textarea {
 	}
 
 	.split-menu {
-		display: table;
 		width: 100%;
 	}
 
 	.split-menu .split-menu-part {
-			display: table-cell;
 		}
 
 	.split-menu .split-menu-part-left {
 		text-align: right;
 		width: calc(50% - ' . floor( $painted_lady['split_menu_logo_width'] / 2 ) . 'px); /*id:split_menu_logo_width_2*/
 		padding-right: 50px;
-	}
-
-	.split-menu .split-menu-part-middle {
-		width: ' . $painted_lady['split_menu_logo_width'] . 'px; /*id:split_menu_logo_width*/
+		float: left;
 	}
 
 	.split-menu .split-menu-part-right {
 		text-align: left;
 		width: calc(50% - ' . floor( $painted_lady['split_menu_logo_width'] / 2 ) . 'px); /*id:split_menu_logo_width_2*/
 		padding-left: 50px;
+		float: right;
 	}
 }
 ';
