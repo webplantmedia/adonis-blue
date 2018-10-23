@@ -13,28 +13,33 @@
 
 get_header(); ?>
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main">
+	<div class="site-boundary">
 
-		<?php
-		if ( have_posts() ) :
-		?>
+		<section id="primary" class="content-area">
+			<main id="main" class="site-main">
 
-			<?php painted_lady_get_blog_part(); ?>
 			<?php
+			if ( have_posts() ) :
+			?>
 
-			the_posts_navigation();
+				<?php painted_lady_get_blog_part(); ?>
+				<?php
 
-		else :
+				the_posts_navigation();
 
-			get_template_part( 'template-parts/content', 'none' );
+			else :
 
-		endif;
-		?>
+				get_template_part( 'template-parts/content', 'none' );
 
-		</main><!-- #main -->
-	</section><!-- #primary -->
+			endif;
+			?>
+
+			</main><!-- #main -->
+		</section><!-- #primary -->
+
+		<?php get_sidebar(); ?>
+
+	</div><!-- .site-boundary -->
 
 <?php
-get_sidebar();
 get_footer();

@@ -13,30 +13,35 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+	<div class="site-boundary">
 
-		<?php painted_lady_the_term_description(); ?>
+		<div id="primary" class="content-area">
+			<main id="main" class="site-main">
 
-		<?php
-		if ( have_posts() ) :
-		?>
+			<?php painted_lady_the_term_description(); ?>
 
-			<?php painted_lady_get_blog_part(); ?>
 			<?php
+			if ( have_posts() ) :
+			?>
 
-			the_posts_navigation();
+				<?php painted_lady_get_blog_part(); ?>
+				<?php
 
-		else :
+				the_posts_navigation();
 
-			get_template_part( 'template-parts/content', 'none' );
+			else :
 
-		endif;
-		?>
+				get_template_part( 'template-parts/content', 'none' );
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+			endif;
+			?>
+
+			</main><!-- #main -->
+		</div><!-- #primary -->
+
+		<?php get_sidebar(); ?>
+
+	</div><!-- .site-boundary -->
 
 <?php
-get_sidebar();
 get_footer();

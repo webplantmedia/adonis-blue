@@ -18,34 +18,43 @@
 
 get_header(); ?>
 
-	<?php dynamic_sidebar( 'blog-page' ); ?>
+	<?php if ( is_home() ) : ?>
+		<div id="blog-widget-area" class="blog-widget-area">
+			<?php dynamic_sidebar( 'blog-page' ); ?>
+		</div>
+	<?php endif; ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+	<div class="site-boundary">
 
-		<?php if ( have_posts() ) : ?>
+		<div id="primary" class="content-area">
+			<main id="main" class="site-main">
 
-			<?php if ( is_home() && ! is_front_page() ) : ?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-			<?php endif; ?>
+			<?php if ( have_posts() ) : ?>
 
-			<?php painted_lady_get_blog_part(); ?>
-			<?php
+				<?php if ( is_home() && ! is_front_page() ) : ?>
+					<header>
+						<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+					</header>
+				<?php endif; ?>
 
-			the_posts_navigation();
+				<?php painted_lady_get_blog_part(); ?>
+				<?php
 
-		else :
+				the_posts_navigation();
 
-			get_template_part( 'template-parts/content', 'none' );
+			else :
 
-		endif;
-		?>
+				get_template_part( 'template-parts/content', 'none' );
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+			endif;
+			?>
+
+			</main><!-- #main -->
+		</div><!-- #primary -->
+
+		<?php get_sidebar(); ?>
+
+	</div><!-- .site-boundary -->
 
 <?php
-get_sidebar();
 get_footer();

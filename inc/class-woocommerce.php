@@ -341,7 +341,7 @@ if ( ! class_exists( 'Painted_Lady_WooCommerce' ) ) :
 		public function output_content_wrapper() {
 			global $painted_lady;
 
-			echo '<div id="primary" class="content-area"><main id="main" class="site-main">';
+			echo '<div id="primary" class="content-area"><main id="main" class="site-main"><div class="site-boundary">';
 
 			if ( is_shop() && ! $painted_lady['shop_hide_title'] ) {
 				$title = woocommerce_page_title( false );
@@ -358,7 +358,7 @@ if ( ! class_exists( 'Painted_Lady_WooCommerce' ) ) :
 		 * @return void
 		 */
 		public function output_content_wrapper_end() {
-			echo '</main></div>';
+			echo '</div></main></div>';
 		}
 
 		/**

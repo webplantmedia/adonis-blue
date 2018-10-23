@@ -52,10 +52,9 @@ body:not(.single-post) .entry-footer,
 }
 
 #master {
-	.blog,
-	.widgetized-page {
-		.site-content .full-width-bar,
-		.site-content > .site-content-inner {
+	.blog .site-content .full-width-bar,
+	.widgetized-page .site-content .full-width-bar,
+	.widgetized-page .site-content > .site-content-inner {
 			max-width: none;
 			margin: 0;
 			display: block;
