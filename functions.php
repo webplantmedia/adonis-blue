@@ -374,11 +374,6 @@ function painted_lady_scripts() {
 	if ( class_exists( 'Affiliate_WP' ) ) {
 		wp_enqueue_style( 'painted-lady-affiliate-wp', get_parent_theme_file_uri() . '/css/affiliate-wp.css', array(), PAINTED_LADY_VERSION );
 	}
-
-	// Load if WC SHORTCODES plugin is activated.
-	if ( defined( 'WC_SHORTCODES_VERSION' ) ) {
-		wp_enqueue_style( 'painted-lady-wc-shortcodes', get_parent_theme_file_uri() . '/css/wc-shortcodes.css', array(), PAINTED_LADY_VERSION );
-	}
 }
 add_action( 'wp_enqueue_scripts', 'painted_lady_scripts' );
 
