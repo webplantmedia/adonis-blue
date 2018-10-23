@@ -14,7 +14,7 @@
 /**
  * The current version of the theme.
  */
-define( 'PAINTED_LADY_VERSION', '1.06' );
+define( 'PAINTED_LADY_VERSION', '1.07' );
 
 if ( ! function_exists( 'painted_lady_setup' ) ) :
 	/**
