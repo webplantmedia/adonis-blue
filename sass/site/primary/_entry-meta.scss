@@ -1,7 +1,7 @@
 // Entry cat header
 .entry-cat-meta {
 	text-align: center;
-	@include rem('font-size',$font__tiny-size - 4);
+	@include rem('font-size',$font__xsmall-size - 4);
 	text-transform: uppercase;
 	font-weight: bold;
 	@include rem('margin-bottom',8px);
@@ -19,7 +19,7 @@
 	}
 	
 	ul {
-		@include rem('font-size',$font__tiny-size);
+		@include rem('font-size',$font__xsmall-size);
 		list-style: none;
 		margin: 0;
 		padding: 0;
@@ -93,7 +93,7 @@
 
 	.comment-display,
 	.entry-footer-meta {
-		@include rem('font-size',$font__tiny-size);
+		@include rem('font-size',$font__xsmall-size);
 		text-transform: uppercase;
 		font-weight: bold;
 		color: $color__text-light;

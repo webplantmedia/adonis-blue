@@ -59,7 +59,7 @@
 				border-bottom: $border__width solid $color__border;
 				padding-top: 1em;
 				padding-bottom: 1em;
-				@include rem('font-size',$font__xsmall-size);
+				@include rem('font-size',$font__dropdown-size);
 				line-height: $font__line-height-heading;
 				text-transform: none;
 				font-weight: normal;
@@ -95,7 +95,7 @@
 			@include rem('padding-bottom',12px);
 			@include rem('padding-left',20px);
 			@include rem('padding-right',20px);
-			@include rem('font-size',$font__medium-size);
+			@include rem('font-size',$font__menu-size);
 			width: auto;
 			height: auto;
 			line-height: $font__line-height-menu-bar;
@@ -138,8 +138,8 @@
 	
 #master #site-navigation .menu-toggle {
 	display: none;
-	@include rem('font-size',$font__main-size);
-	@include rem('line-height',$font__super-size);
+	@include rem('font-size',$font__menu-size);
+	@include rem('line-height',$font__line-height-menu-bar);
 	text-transform: uppercase;
 	padding: 1em 1.2em;
 	background: none;
@@ -158,7 +158,7 @@
 
 	i {
 		vertical-align: middle;
-		@include rem('font-size',$font__super-size);
+		@include rem('font-size',$font__menu-mobile-icon-size);
 
 		&:before {
 			content: "\f419";
@@ -191,7 +191,7 @@
 							right: 1.4em;
 							margin: 0;
 							@include crossBrowser('transform',translateY(-50%) rotate(270deg));
-							@include rem('font-size',( $font__tiny-size - 3 ) );
+							@include rem('font-size',( $font__menu-size - 3 ) );
 						}
 					}
 				}
@@ -217,7 +217,7 @@
 						-webkit-font-smoothing:antialiased;
 						-moz-osx-font-smoothing:grayscale;
 
-						@include rem('font-size',$font__tiny-size);
+						@include rem('font-size',( $font__menu-size - 3 ) );
 
 						margin-left: 10px;
 
@@ -382,7 +382,7 @@
 						@include rem('padding-bottom',20px);
 						text-align: right;
 						line-height: $font__line-height-menu-bar;
-						@include rem('font-size',$font__main-size);
+						@include rem('font-size',$font__menu-size);
 						content: "\f510";
 					}
 				}
@@ -390,7 +390,7 @@
 			
 			a {
 				position: relative;
-				@include rem('font-size',$font__main-size);
+				@include rem('font-size',$font__menu-size);
 				border-bottom: $border__width solid $color__border;
 				@include rem('padding-left',20px);
 				@include rem('padding-right',20px);
@@ -543,7 +543,7 @@
 		}
 
 		&.post-title {
-			@include rem('font-size',$font__small_size);
+			@include rem('font-size',$font__medium-size);
 			color: $color__text-light;
 		}
 	}
@@ -566,12 +566,7 @@
 	@media (min-width: 700px) {
 		.nav-next {
 			padding-left: 10px;
-
-			&:after {
-				position: absolute;
-				height: 100%;
-				width: 2px;
-			}
+			padding-right: 0;
 
 			span {
 			}
@@ -579,6 +574,7 @@
 			img {
 				float: right;
 				padding-left: 20px;
+				padding-right: 0;
 			}
 		}
 	}

@@ -9,7 +9,7 @@
 
 	.social-navigation,
 	.header-menu {
-		@include rem('font-size',$font__tiny-size);
+		@include rem('font-size',$font__top-menu-size);
 
 		ul {
 			display: inline-block;
@@ -55,7 +55,7 @@
 			text-decoration: none;
 			text-transform: uppercase;
 			padding: 0 0.5em;
-			@include rem('font-size',$font__tiny-size);
+			@include rem('font-size',$font__top-menu-size);
 			width: auto;
 			height: auto;
 			font-weight: bold;
@@ -90,7 +90,7 @@
 
 			&:before {
 				@include rem('line-height',$font__line-height-top-menu);
-				@include rem('font-size',($font__main-size+3));
+				@include rem('font-size',($font__top-menu-social-size));
 			}
 		}
 	}
@@ -145,7 +145,7 @@
 						-webkit-font-smoothing:antialiased;
 						-moz-osx-font-smoothing:grayscale;
 
-						@include rem('font-size',($font__tiny-size - 2));
+						@include rem('font-size',($font__top-menu-size - 2));
 
 						margin-left: 5px;
 
