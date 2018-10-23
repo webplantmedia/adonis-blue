@@ -91,6 +91,6 @@ Source: https://www.pexels.com/photo/adult-cold-face-fashion-370013/
 
 ## Changelog ##
 
-### 1.02 ###
+### 1.03 ###
 
 * Initial release.
