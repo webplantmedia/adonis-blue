@@ -25,11 +25,6 @@ $painted_lady_default = array();
 $painted_lady_default['custom_logo_2x']            = '';
 $painted_lady_default['display_site_title']        = 1;
 $painted_lady_default['display_site_tagline']      = 1;
-$painted_lady_default['heading_padding_top']       = '55';
-$painted_lady_default['heading_padding_bottom']    = '55';
-$painted_lady_default['split_menu_logo_width']     = '200';
-$painted_lady_default['split_menu_top_offset']     = '120';
-$painted_lady_default['split_menu_collapse_width'] = '1200';
 
 /**
  * Colors Section in Customizer
@@ -51,20 +46,21 @@ $painted_lady_default['link_hover_color']              = '#d66c83';
  * New Theme Options Section in Customizer
  */
 
-// Top header.
-$painted_lady_default['top_header_background_offset'] = 460;
-
-// Menu.
-$painted_lady_default['show_menu_arrows'] = 1;
-$painted_lady_default['show_menu_search'] = 1;
-$painted_lady_default['show_menu_cart']   = 1;
-
 // Site.
-$painted_lady_default['default_button_style']     = 'button-2';
-$painted_lady_default['disable_body_font']        = 0;
-$painted_lady_default['disable_heading_font']     = 0;
-$painted_lady_default['disable_accent_font']      = 0;
-$painted_lady_default['page_image_header_height'] = 400;
+$painted_lady_default['top_header_background_offset'] = 460;
+$painted_lady_default['heading_padding_top']          = '55';
+$painted_lady_default['heading_padding_bottom']       = '55';
+$painted_lady_default['split_menu_logo_width']        = '200';
+$painted_lady_default['split_menu_top_offset']        = '120';
+$painted_lady_default['split_menu_collapse_width']    = '1200';
+$painted_lady_default['show_menu_arrows']             = 1;
+$painted_lady_default['show_menu_search']             = 1;
+$painted_lady_default['show_menu_cart']               = 1;
+$painted_lady_default['default_button_style']         = 'button-2';
+$painted_lady_default['disable_body_font']            = 0;
+$painted_lady_default['disable_heading_font']         = 0;
+$painted_lady_default['disable_accent_font']          = 0;
+$painted_lady_default['page_image_header_height']     = 400;
 
 // Blog.
 $painted_lady_default['blog_display']                     = 'blog4';
