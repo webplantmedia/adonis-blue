@@ -325,7 +325,7 @@ textarea {
 	}
 
 	#masthead {
-		border-bottom-width: 2px;
+		border-bottom-width: 1px;
 	}
 
 	.site-logo-container {
