@@ -1,3 +1,9 @@
+.site-footer {
+	// Needed to prevent horizontal scroll bars on third column padding.
+	// When put around child wrapper, cuts off any outline or shadow.
+	overflow: hidden;
+}
+
 .site-info-wrapper {
 	background-size: 735px auto;
 	background-position: top center;
@@ -70,7 +76,6 @@
 }
 
 .footer-widget-area {
-	overflow: hidden;
 }
 
 .footer-container {
