@@ -50,7 +50,7 @@ if ( ! class_exists( 'Painted_Lady_Upgrade' ) ) :
 		 *               theme does not support `painted-lady-auto-updates`.
 		 */
 		public function update_check() {
-			global $painted_lady;
+			// global $painted_lady;
 
 			// Use cache.
 			static $theme_update = null;
@@ -58,9 +58,9 @@ if ( ! class_exists( 'Painted_Lady_Upgrade' ) ) :
 			global $wp_version;
 
 			// If updates are disabled.
-			if ( ! $painted_lady['check_for_updates'] ) {
+			/* if ( ! $painted_lady['check_for_updates'] ) {
 				return array();
-			}
+			} */
 
 			// If cache is empty, pull transient.
 			if ( ! $theme_update ) {
