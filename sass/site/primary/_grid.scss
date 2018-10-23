@@ -74,3 +74,27 @@
 		}
 	}
 }
+
+#master {
+	.excerpt2 {
+		padding-bottom: 0;
+		border-bottom-width: 0;
+		
+		.entry-cat-meta {
+			@include rem('margin-bottom', 2px);
+		}
+
+		.entry-title {
+			@include rem('margin-bottom', 7px);
+		}
+
+		.entry-meta {
+			@include rem('margin-top', 7px);
+			@include rem('font-size',$font__tiny-size);
+		}
+
+		*:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
