@@ -9,6 +9,7 @@
 
 .comments-title {
 	padding-top: 5px;
+	text-align: center;
 }
 
 .comments-area > .button {
@@ -40,7 +41,7 @@
 }
 
 .comment-list .children {
-	margin-left: 100px;
+	@include rem('margin-left',30px);
 	padding: 0;
 	list-style: none;
 }
@@ -227,8 +228,6 @@
 }
 
 .comment-list > .comment:not(.parent) > .comment-body {
-	padding-bottom: 45px;
-	// border-top: 2px solid $color__border;
 }
 
 .comment-list .parent > .comment-body .comment-content,
@@ -236,9 +235,14 @@
 	margin-left: 100px;
 }
 
+.comment-list .children .comment-body {
+	border-left: 5px solid $color__border;
+}
+
 .comment-list .comment-body {
-	padding-bottom: 27px;
-	// border-top: 2px solid $color__border;
+	@include rem('padding',30px);
+	background-color: $color__lightest-gray;
+	@include rem('margin-bottom',30px);
 }
 
 @media screen and (max-width: 959px) {
@@ -257,14 +261,18 @@
 	margin-bottom: 62px;
 }
 
+#respond.comment-respond {
+	@include rem('max-width',($size__content-container - 100px));
+}
+
 .comment .comment-respond {
 	margin-top: 0;
-	margin-left: 100px;
 }
 
 .comment-reply-title {
 	margin-top: 0;
 	display: block;
+	text-align: center;
 }
 
 .comment-form .comment-form-comment {
@@ -445,6 +453,7 @@
 .comment-notes {
 	@include rem('font-size',$font__small-size);
 	margin-bottom: 0.7em;
+	text-align: center;
 }
 
 .no-comments {
