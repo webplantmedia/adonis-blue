@@ -38,6 +38,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 	## Links
 	## Menus
 	## Top Menus
+	## Posts
 # Accessibility
 # Alignments
 # Clearings
@@ -140,6 +141,11 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 ## Top Menus
 --------------------------------------------------------------*/
 @import "navigation/top-menus";
+
+/*--------------------------------------------------------------
+## Post Navigation
+--------------------------------------------------------------*/
+@import "navigation/posts";
 
 /*--------------------------------------------------------------
 # Accessibility
