@@ -74,32 +74,38 @@
 	var $searchButton = $( '.menu-search-button' );
 
 	if ( $searchButton.length ) {
-		var $searchMenu = $searchButton.find( '.menu-search-link' );
+		$.each( $searchButton,
+			function() {
+				var $this = $( this );
 
-		var $searchField = $searchButton.find( '.search-field' );
+				var $searchMenu = $this.find( '.menu-search-link' );
 
-		var $searchIcon = $searchMenu.find( '.genericons-neue' );
+				var $searchField = $this.find( '.search-field' );
 
-		$searchMenu.click(
-			function( event ) {
-				event.preventDefault();
+				var $searchIcon = $searchMenu.find( '.genericons-neue' );
 
-				if ( $searchButton.hasClass( 'focus' ) ) {
-					$searchButton.removeClass( 'focus' );
-				} else {
-					$searchButton.addClass( 'focus' );
-					$searchField.focus();
-				}
+				$searchMenu.click(
+					function( event ) {
+						event.preventDefault();
 
-				return false;
-			}
-		);
+						if ( $this.hasClass( 'focus' ) ) {
+							$this.removeClass( 'focus' );
+						} else {
+							$this.addClass( 'focus' );
+							$searchField.focus();
+						}
 
-		$( document ).click(
-			function( e ) {
-				if ( ! $searchButton.is( e.target ) && $searchButton.has( e.target ).length === 0) {
-					$searchButton.removeClass( 'focus' );
-				}
+						return false;
+					}
+				);
+
+				$( document ).click(
+					function( e ) {
+						if ( ! $this.is( e.target ) && $this.has( e.target ).length === 0) {
+							$this.removeClass( 'focus' );
+						}
+					}
+				);
 			}
 		);
 	}
