@@ -1,3 +1,24 @@
+.top-header {
+	.cart-menu {
+		ul.menu {
+			li.cart {
+				padding-left: 0;
+				padding-right: 0;
+
+				i,
+				i:before {
+					@include rem('font-size',$font__top-menu-social-size);
+					@include rem('line-height',$font__line-height-top-menu);
+				}
+				
+				.alert-count {
+					@include rem('font-size',$font__tiny-size);
+				}
+			}
+		}
+	}
+}
+
 .cart-menu {
 
 	ul.menu {
@@ -10,8 +31,14 @@
 
 		li.cart {
 			position: relative;
-			// @include rem('padding-left',10px);
-			// @include rem('padding-right',10px);
+			@include rem('padding-left',10px);
+			@include rem('padding-right',10px);
+
+			i,
+			i:before {
+				@include rem('font-size',$font__menu-cart-icon-size);
+				@include rem('line-height',$font__line-height-menu-icon);
+			}
 
 			a.cart_dropdown_link {
 				position: relative;
@@ -24,17 +51,11 @@
 				}
 			}
 
-			i,
-			i:before {
-				@include rem('font-size',$font__top-menu-social-size);
-				@include rem('line-height',$font__line-height-top-menu);
-			}
-
 			.alert-count {
 				position: absolute;
 				top: 15%;
 				left: 93%;
-				@include rem('font-size',( $font__top-menu-social-size - 10px ));
+				@include rem('font-size',$font__tiny-size);
 				font-weight: bold;
 				line-height: 1;
 			}

@@ -1,3 +1,18 @@
+html#master .top-header {
+	ul.menu {
+		li.menu-search-button {
+			padding-left: 0;
+			padding-right: 0;
+
+			i,
+			i:before {
+				@include rem('font-size',($font__top-menu-social-size - 5));
+				@include rem('line-height',$font__line-height-top-menu);
+			}
+		}
+	}
+}
+
 #master .menu-search {
 
 	ul.menu {
@@ -10,8 +25,8 @@
 
 		li.menu-search-button {
 			position: relative;
-			// @include rem('padding-left',10px);
-			// @include rem('padding-right',10px);
+			@include rem('padding-left',10px);
+			@include rem('padding-right',10px);
 
 			a.menu-search-link {
 				position: relative;
@@ -27,7 +42,7 @@
 			i,
 			i:before {
 				@include rem('font-size',$font__menu-search-icon-size);
-				@include rem('line-height',$font__line-height-top-menu);
+				@include rem('line-height',$font__line-height-menu-icon);
 			}
 
 			.menu-search-form-container {
