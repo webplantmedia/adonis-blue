@@ -71,7 +71,7 @@
 	/**
 	 * Toggles search form in menu.
 	 */
-	var $searchButton = $( container ).find( '.menu-search-button' );
+	var $searchButton = $( '.menu-search-button' );
 
 	if ( $searchButton.length ) {
 		var $searchMenu = $searchButton.find( '.menu-search-link' );
