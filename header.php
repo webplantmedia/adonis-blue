@@ -64,45 +64,7 @@
 
 			<?php get_template_part( 'template-parts/menu', 'mobile-search' ); ?>
 
-			<div class="split-menu">
-
-				<div class="split-menu-part split-menu-part-left">
-
-					<nav class="main-menu in-menu-bar">
-						<?php
-							wp_nav_menu(
-								array(
-									'theme_location' => 'menu-1',
-									'menu_id'        => 'primary-menu',
-									'fallback_cb'    => false,
-								)
-							);
-						?>
-					</nav>
-
-				</div><!-- .split-menu-part -->
-
-				<div class="split-menu-part split-menu-part-right">
-
-					<nav class="main-menu in-menu-bar">
-						<?php
-							wp_nav_menu(
-								array(
-									'theme_location' => 'menu-4',
-									'menu_id'        => 'primary-menu-right',
-									'fallback_cb'    => false,
-								)
-							);
-						?>
-					</nav>
-
-					<?php get_template_part( 'template-parts/menu', 'cart' ); ?>
-
-					<?php get_template_part( 'template-parts/menu', 'search' ); ?>
-
-				</div><!-- .split-menu-part -->
-
-			</div><!-- .split-menu -->
+			<?php get_template_part( 'template-parts/menu', 'main' ); ?>
 
 			<?php get_template_part( 'template-parts/menu', 'mobile' ); ?>
 
