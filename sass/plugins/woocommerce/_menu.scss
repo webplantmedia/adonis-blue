@@ -10,8 +10,8 @@
 
 		li.cart {
 			position: relative;
-			@include rem('padding-left',10px);
-			@include rem('padding-right',10px);
+			// @include rem('padding-left',10px);
+			// @include rem('padding-right',10px);
 
 			a.cart_dropdown_link {
 				position: relative;
@@ -26,15 +26,15 @@
 
 			i,
 			i:before {
-				@include rem('font-size',$font__menu-icon-size);
-				@include rem('line-height',$font__line-height-menu-icon);
+				@include rem('font-size',$font__top-menu-social-size);
+				@include rem('line-height',$font__line-height-top-menu);
 			}
 
 			.alert-count {
 				position: absolute;
 				top: 15%;
 				left: 93%;
-				@include rem('font-size',$font__tiny-size);
+				@include rem('font-size',( $font__top-menu-social-size - 10px ));
 				font-weight: bold;
 				line-height: 1;
 			}

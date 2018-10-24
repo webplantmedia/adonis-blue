@@ -22,10 +22,6 @@ WooCommerce styling
 
 .cart-menu ul.menu li.cart {
   position: relative;
-  padding-left: 10px;
-  padding-left: 0.625rem;
-  padding-right: 10px;
-  padding-right: 0.625rem;
 }
 
 .cart-menu ul.menu li.cart a.cart_dropdown_link {
@@ -41,18 +37,18 @@ WooCommerce styling
 
 .cart-menu ul.menu li.cart i,
 .cart-menu ul.menu li.cart i:before {
-  font-size: 28px;
-  font-size: 1.75rem;
-  line-height: 52px;
-  line-height: 3.25rem;
+  font-size: 21px;
+  font-size: 1.3125rem;
+  line-height: 36px;
+  line-height: 2.25rem;
 }
 
 .cart-menu ul.menu li.cart .alert-count {
   position: absolute;
   top: 15%;
   left: 93%;
-  font-size: 12px;
-  font-size: 0.75rem;
+  font-size: 11px;
+  font-size: 0.6875rem;
   font-weight: bold;
   line-height: 1;
 }

@@ -38,6 +38,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 	## Links
 	## Menus
 	## Top Menus
+	## Posts
 # Accessibility
 # Alignments
 # Clearings
@@ -2249,124 +2250,6 @@ a:hover, a:active {
   }
 }
 
-.site-main .posts-navigation, .site-main
-.post-navigation {
-  margin: 0;
-  margin-top: 70px;
-  margin-top: 4.375rem;
-  padding-bottom: 70px;
-  padding-bottom: 4.375rem;
-  border-bottom: 1px solid #ececec;
-  overflow: hidden;
-}
-
-.post-navigation .meta-nav {
-  color: #6d686c;
-}
-
-.site-main .comment-navigation {
-  margin: 0;
-  margin-top: 70px;
-  margin-top: 4.375rem;
-  margin-bottom: 70px;
-  margin-bottom: 4.375rem;
-  overflow: hidden;
-}
-
-.comment-navigation .nav-previous,
-.posts-navigation .nav-previous,
-.post-navigation .nav-previous {
-  float: left;
-  width: 50%;
-}
-
-.comment-navigation .nav-next,
-.posts-navigation .nav-next,
-.post-navigation .nav-next {
-  float: right;
-  text-align: right;
-  width: 50%;
-}
-
-@media (max-width: 699px) {
-  #master .comment-navigation .nav-next,
-  #master .posts-navigation .nav-next,
-  #master .post-navigation .nav-next {
-    margin-top: 20px;
-  }
-  #master .comment-navigation .nav-next,
-  #master .comment-navigation .nav-previous,
-  #master .posts-navigation .nav-next,
-  #master .posts-navigation .nav-previous,
-  #master .post-navigation .nav-next,
-  #master .post-navigation .nav-previous {
-    width: 100%;
-    float: none;
-    display: block;
-    padding-left: 0;
-    padding-right: 0;
-    text-align: left;
-    content: "";
-    display: table;
-    table-layout: fixed;
-  }
-  #master .comment-navigation .nav-next:after,
-  #master .comment-navigation .nav-previous:after,
-  #master .posts-navigation .nav-next:after,
-  #master .posts-navigation .nav-previous:after,
-  #master .post-navigation .nav-next:after,
-  #master .post-navigation .nav-previous:after {
-    clear: both;
-  }
-}
-
-.post-navigation span {
-  display: block;
-  overflow: hidden;
-}
-
-.post-navigation span.meta-nav {
-  font-size: 12px;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  font-weight: bold;
-  letter-spacing: 0.07em;
-}
-
-.post-navigation span.post-title {
-  font-size: 15px;
-  font-size: 0.9375rem;
-  color: #959595;
-}
-
-.post-navigation img {
-  width: 120px;
-  float: left;
-  margin-top: 0.2em;
-}
-
-.post-navigation .nav-next,
-.post-navigation .nav-previous {
-  padding-right: 10px;
-}
-
-.post-navigation .nav-next img,
-.post-navigation .nav-previous img {
-  padding-right: 20px;
-}
-
-@media (min-width: 700px) {
-  .post-navigation .nav-next {
-    padding-left: 10px;
-    padding-right: 0;
-  }
-  .post-navigation .nav-next img {
-    float: right;
-    padding-left: 20px;
-    padding-right: 0;
-  }
-}
-
 /*--------------------------------------------------------------
 ## Menu Search
 --------------------------------------------------------------*/
@@ -2381,10 +2264,6 @@ a:hover, a:active {
 
 #master .menu-search ul.menu li.menu-search-button {
   position: relative;
-  padding-left: 10px;
-  padding-left: 0.625rem;
-  padding-right: 10px;
-  padding-right: 0.625rem;
 }
 
 #master .menu-search ul.menu li.menu-search-button a.menu-search-link {
@@ -2400,10 +2279,10 @@ a:hover, a:active {
 
 #master .menu-search ul.menu li.menu-search-button i,
 #master .menu-search ul.menu li.menu-search-button i:before {
-  font-size: 22px;
-  font-size: 1.375rem;
-  line-height: 52px;
-  line-height: 3.25rem;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 36px;
+  line-height: 2.25rem;
 }
 
 #master .menu-search ul.menu li.menu-search-button .menu-search-form-container {
@@ -2548,12 +2427,16 @@ a:hover, a:active {
   padding-left: 0;
 }
 
+.top-header .top-left-header-menu {
+  float: left;
+}
+
 .top-header .top-right-header-menu {
   float: right;
 }
 
 .top-header .social-navigation {
-  float: right;
+  float: left;
 }
 
 .top-header .social-navigation a {
@@ -2571,6 +2454,15 @@ a:hover, a:active {
   font-size: 1.3125rem;
 }
 
+.top-header .top-left-header > nav {
+  padding-right: 10px;
+  padding-right: 0.625rem;
+}
+
+.top-header .top-left-header > nav:last-child {
+  padding-right: 0;
+}
+
 .top-header .top-right-header > nav {
   padding-left: 10px;
   padding-left: 0.625rem;
@@ -2578,6 +2470,10 @@ a:hover, a:active {
 
 .top-header .top-right-header > nav:last-child {
   padding-left: 0;
+}
+
+.top-header .top-right-header > nav.in-menu-bar {
+  float: right;
 }
 
 .top-header a, .top-header a:focus, .top-header a:active, .top-header a:visited {
@@ -2626,6 +2522,127 @@ a:hover, a:active {
 @media screen and (max-width: 960px) {
   .top-header {
     display: none;
+  }
+}
+
+/*--------------------------------------------------------------
+## Post Navigation
+--------------------------------------------------------------*/
+.site-main .posts-navigation, .site-main
+.post-navigation {
+  margin: 0;
+  margin-top: 70px;
+  margin-top: 4.375rem;
+  padding-bottom: 70px;
+  padding-bottom: 4.375rem;
+  border-bottom: 1px solid #ececec;
+  overflow: hidden;
+}
+
+.post-navigation .meta-nav {
+  color: #6d686c;
+}
+
+.site-main .comment-navigation {
+  margin: 0;
+  margin-top: 70px;
+  margin-top: 4.375rem;
+  margin-bottom: 70px;
+  margin-bottom: 4.375rem;
+  overflow: hidden;
+}
+
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+  float: left;
+  width: 50%;
+}
+
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+  float: right;
+  text-align: right;
+  width: 50%;
+}
+
+@media (max-width: 699px) {
+  #master .comment-navigation .nav-next,
+  #master .posts-navigation .nav-next,
+  #master .post-navigation .nav-next {
+    margin-top: 20px;
+  }
+  #master .comment-navigation .nav-next,
+  #master .comment-navigation .nav-previous,
+  #master .posts-navigation .nav-next,
+  #master .posts-navigation .nav-previous,
+  #master .post-navigation .nav-next,
+  #master .post-navigation .nav-previous {
+    width: 100%;
+    float: none;
+    display: block;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: left;
+    content: "";
+    display: table;
+    table-layout: fixed;
+  }
+  #master .comment-navigation .nav-next:after,
+  #master .comment-navigation .nav-previous:after,
+  #master .posts-navigation .nav-next:after,
+  #master .posts-navigation .nav-previous:after,
+  #master .post-navigation .nav-next:after,
+  #master .post-navigation .nav-previous:after {
+    clear: both;
+  }
+}
+
+.post-navigation span {
+  display: block;
+  overflow: hidden;
+}
+
+.post-navigation span.meta-nav {
+  font-size: 12px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.07em;
+}
+
+.post-navigation span.post-title {
+  font-size: 15px;
+  font-size: 0.9375rem;
+  color: #959595;
+}
+
+.post-navigation img {
+  width: 120px;
+  float: left;
+  margin-top: 0.2em;
+}
+
+.post-navigation .nav-next,
+.post-navigation .nav-previous {
+  padding-right: 10px;
+}
+
+.post-navigation .nav-next img,
+.post-navigation .nav-previous img {
+  padding-right: 20px;
+}
+
+@media (min-width: 700px) {
+  .post-navigation .nav-next {
+    padding-left: 10px;
+    padding-right: 0;
+  }
+  .post-navigation .nav-next img {
+    float: right;
+    padding-left: 20px;
+    padding-right: 0;
   }
 }
 
@@ -3370,8 +3387,8 @@ a:hover, a:active {
   padding: 0;
   border: none;
   background: none;
-  font-size: 22px;
-  font-size: 1.375rem;
+  font-size: 16px;
+  font-size: 1rem;
   line-height: 1;
 }
 

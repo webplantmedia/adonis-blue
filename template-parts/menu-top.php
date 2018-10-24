@@ -19,6 +19,24 @@ if ( ! has_nav_menu( 'menu-3' ) && ! has_nav_menu( 'menu-2' ) && ! has_nav_menu(
 <div class="top-header">
 	<div class="site-boundary">
 		<div class="top-left-header">
+			<?php if ( has_nav_menu( 'social' ) ) : ?>
+				<nav class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Footer Social Links Menu', 'painted-lady' ); ?>">
+					<?php
+						wp_nav_menu(
+							array(
+								'theme_location' => 'social',
+								'depth'          => 1,
+								'fallback_cb'    => false,
+								'container'      => 'ul',
+								'menu_class'     => 'menu social-links-menu',
+								'link_before'    => '<span class="screen-reader-text">',
+								'link_after'     => '</span>',
+							)
+						);
+					?>
+				</nav><!-- .social-navigation -->
+			<?php endif; ?>
+
 			<?php if ( has_nav_menu( 'menu-2' ) ) : ?>
 				<nav id="top-left-navigation" class="top-left-header-menu header-menu" role="navigation">
 					<?php
@@ -37,25 +55,9 @@ if ( ! has_nav_menu( 'menu-3' ) && ! has_nav_menu( 'menu-2' ) && ! has_nav_menu(
 			<?php endif; ?>
 		</div>
 		<div class="top-right-header">
-			<?php
-			if ( has_nav_menu( 'social' ) ) :
-			?>
-				<nav class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Footer Social Links Menu', 'painted-lady' ); ?>">
-					<?php
-						wp_nav_menu(
-							array(
-								'theme_location' => 'social',
-								'depth'          => 1,
-								'fallback_cb'    => false,
-								'container'      => 'ul',
-								'menu_class'     => 'menu social-links-menu',
-								'link_before'    => '<span class="screen-reader-text">',
-								'link_after'     => '</span>',
-							)
-						);
-					?>
-				</nav><!-- .social-navigation -->
-			<?php endif; ?>
+			<?php get_template_part( 'template-parts/menu', 'cart' ); ?>
+
+			<?php get_template_part( 'template-parts/menu', 'search' ); ?>
 
 			<?php if ( has_nav_menu( 'menu-3' ) ) : ?>
 				<nav id="top-right-navigation" class="top-right-header-menu header-menu" role="navigation">

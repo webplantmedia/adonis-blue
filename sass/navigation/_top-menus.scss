@@ -75,12 +75,16 @@
 		}
 	}
 
+	.top-left-header-menu {
+		float: left;
+	}
+
 	.top-right-header-menu {
 		float: right;
 	}
 
 	.social-navigation {
-		float: right;
+		float: left;
 
 		a {
 			font-weight: normal;
@@ -95,11 +99,23 @@
 		}
 	}
 
+	.top-left-header > nav {
+		@include rem('padding-right',10px);
+
+		&:last-child {
+			padding-right: 0;
+		}
+	}
+	
 	.top-right-header > nav {
 		@include rem('padding-left',10px);
 
 		&:last-child {
 			padding-left: 0;
+		}
+
+		&.in-menu-bar {
+			float: right;
 		}
 	}
 	

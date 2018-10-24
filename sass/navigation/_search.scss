@@ -10,8 +10,8 @@
 
 		li.menu-search-button {
 			position: relative;
-			@include rem('padding-left',10px);
-			@include rem('padding-right',10px);
+			// @include rem('padding-left',10px);
+			// @include rem('padding-right',10px);
 
 			a.menu-search-link {
 				position: relative;
@@ -27,7 +27,7 @@
 			i,
 			i:before {
 				@include rem('font-size',$font__menu-search-icon-size);
-				@include rem('line-height',$font__line-height-menu-icon);
+				@include rem('line-height',$font__line-height-top-menu);
 			}
 
 			.menu-search-form-container {
