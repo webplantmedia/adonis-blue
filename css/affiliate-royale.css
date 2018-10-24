@@ -39,8 +39,8 @@ Affiliate Royale styling
 }
 
 #master .wafp-stats-table thead th {
-  font-size: 10px;
-  font-size: 0.625rem;
+  font-size: 12px;
+  font-size: 0.75rem;
 }
 
 #master .wafp-stats-table th,
@@ -146,15 +146,15 @@ Affiliate Royale styling
     background-color: #f7f7f7;
   }
   #master .wafp-stats-table thead th {
-    font-size: 13px;
-    font-size: 0.8125rem;
+    font-size: 15px;
+    font-size: 0.9375rem;
   }
   #master .wafp-stats-table th,
   #master .wafp-stats-table td {
     display: block;
     text-align: center !important;
     width: 100%;
-    min-height: 67px;
+    min-height: 70px;
     border-top-width: 0;
   }
 }

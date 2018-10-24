@@ -41,18 +41,18 @@ WooCommerce styling
 
 .cart-menu ul.menu li.cart i,
 .cart-menu ul.menu li.cart i:before {
-  font-size: 24px;
-  font-size: 1.5rem;
-  line-height: 48px;
-  line-height: 3rem;
+  font-size: 28px;
+  font-size: 1.75rem;
+  line-height: 52px;
+  line-height: 3.25rem;
 }
 
 .cart-menu ul.menu li.cart .alert-count {
   position: absolute;
   top: 15%;
   left: 93%;
-  font-size: 10px;
-  font-size: 0.625rem;
+  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: bold;
   line-height: 1;
 }
@@ -162,8 +162,8 @@ WooCommerce styling
 
 #master .woocommerce .widget_shopping_cart .cart_list li a,
 #master .woocommerce.widget_shopping_cart .cart_list li a {
-  font-size: 13px;
-  font-size: 0.8125rem;
+  font-size: 15px;
+  font-size: 0.9375rem;
   line-height: 1.375;
 }
 
@@ -230,8 +230,8 @@ WooCommerce styling
 
 #master .woocommerce .woocommerce-mini-cart__total {
   font-weight: bold;
-  font-size: 10px;
-  font-size: 0.625rem;
+  font-size: 12px;
+  font-size: 0.75rem;
   text-transform: uppercase;
   margin-top: 20px;
   margin-top: 1.25rem;
@@ -241,8 +241,8 @@ WooCommerce styling
 
 #master .woocommerce .woocommerce-mini-cart-item .quantity {
   font-weight: bold;
-  font-size: 10px;
-  font-size: 0.625rem;
+  font-size: 12px;
+  font-size: 0.75rem;
   text-transform: uppercase;
   display: block;
 }
@@ -258,8 +258,8 @@ WooCommerce styling
 
 #master .woocommerce ul.products li.product .button {
   padding: 12px 22px;
-  font-size: 12px;
-  font-size: 0.75rem;
+  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 #master .woocommerce .summary .single_add_to_cart_button {
@@ -275,8 +275,8 @@ WooCommerce styling
 #master .woocommerce .quantity input {
   width: 60px;
   height: 40px;
-  font-size: 22px;
-  font-size: 1.375rem;
+  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: normal;
   padding: 0;
   text-align: center;
@@ -303,8 +303,8 @@ WooCommerce styling
 }
 
 #master .woocommerce-result-count {
-  font-size: 12px;
-  font-size: 0.75rem;
+  font-size: 14px;
+  font-size: 0.875rem;
   color: #959595;
 }
 
@@ -314,8 +314,8 @@ WooCommerce styling
   text-transform: uppercase;
   font-weight: bold;
   vertical-align: middle;
-  font-size: 10px;
-  font-size: 0.625rem;
+  font-size: 12px;
+  font-size: 0.75rem;
   color: #959595;
 }
 
@@ -355,8 +355,8 @@ WooCommerce styling
   text-transform: uppercase;
   font-weight: bold;
   vertical-align: middle;
-  font-size: 10px;
-  font-size: 0.625rem;
+  font-size: 12px;
+  font-size: 0.75rem;
   display: block;
 }
 
@@ -399,7 +399,7 @@ WooCommerce styling
 
 #master .woocommerce-pagination ul li a.prev i, #master .woocommerce-pagination ul li a.next i {
   font-size: 22px;
-  line-height: 47px;
+  line-height: 49px;
 }
 
 #master .woocommerce div.product p.price {
@@ -411,8 +411,8 @@ WooCommerce styling
 }
 
 #master .woocommerce-review-link {
-  font-size: 12px;
-  font-size: 0.75rem;
+  font-size: 14px;
+  font-size: 0.875rem;
   text-transform: uppercase;
   font-weight: bold;
   text-decoration: none;
@@ -440,8 +440,8 @@ WooCommerce styling
 }
 
 #master .woocommerce .comment-reply-title {
-  font-size: 12px;
-  font-size: 0.75rem;
+  font-size: 14px;
+  font-size: 0.875rem;
   margin-bottom: 0.7em;
 }
 
@@ -566,8 +566,8 @@ WooCommerce styling
 #master .woocommerce div.product .stock {
   color: green;
   text-transform: uppercase;
-  font-size: 12px;
-  font-size: 0.75rem;
+  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: bold;
 }
 
@@ -651,8 +651,8 @@ WooCommerce styling
   border-left: 1px solid #ececec;
   border-right: 1px solid #ececec;
   text-transform: uppercase;
-  font-size: 13px;
-  font-size: 0.8125rem;
+  font-size: 15px;
+  font-size: 0.9375rem;
   color: #6d686c;
 }
 
@@ -692,8 +692,8 @@ WooCommerce styling
   min-height: 0;
   border-radius: 3px;
   color: #ffffff;
-  font-size: 10px;
-  font-size: 0.625rem;
+  font-size: 12px;
+  font-size: 0.75rem;
   text-transform: uppercase;
 }
 
@@ -735,8 +735,8 @@ WooCommerce styling
 }
 
 #master .woocommerce #reviews h2 small {
-  font-size: 12px;
-  font-size: 0.75rem;
+  font-size: 14px;
+  font-size: 0.875rem;
   color: #959595;
 }
 
@@ -769,8 +769,8 @@ WooCommerce styling
 }
 
 #master .woocommerce #reviews #comments ol.commentlist li .comment-text p.meta {
-  font-size: 10px;
-  font-size: 0.625rem;
+  font-size: 12px;
+  font-size: 0.75rem;
   text-transform: uppercase;
 }
 
@@ -843,8 +843,8 @@ WooCommerce styling
 #master .woocommerce ul.product_list_widget li > del,
 #master .woocommerce ul.product_list_widget li > ins {
   font-weight: bold;
-  font-size: 10px;
-  font-size: 0.625rem;
+  font-size: 12px;
+  font-size: 0.75rem;
   text-transform: uppercase;
   display: inline-block;
 }
@@ -854,8 +854,8 @@ WooCommerce styling
 #master .woocommerce ul.product_list_widget li > a,
 #master .woocommerce ul.product_list_widget .product-title {
   line-height: 1.375;
-  font-size: 13px;
-  font-size: 0.8125rem;
+  font-size: 15px;
+  font-size: 0.9375rem;
 }
 
 #master .woocommerce ul.cart_list .reviewer,
@@ -1044,8 +1044,8 @@ WooCommerce styling
 #master #add_payment_method .checkout .create-account small,
 #master .woocommerce-cart .checkout .create-account small,
 #master .woocommerce-checkout .checkout .create-account small {
-  font-size: 10px;
-  font-size: 0.625rem;
+  font-size: 12px;
+  font-size: 0.75rem;
   color: #959595;
 }
 
@@ -1082,8 +1082,8 @@ WooCommerce styling
 #master .woocommerce-checkout #payment ul.payment_methods li label {
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 13px;
-  font-size: 0.8125rem;
+  font-size: 15px;
+  font-size: 0.9375rem;
   cursor: pointer;
 }
 
@@ -1099,8 +1099,8 @@ WooCommerce styling
 #master #add_payment_method #payment div.payment_box,
 #master .woocommerce-cart #payment div.payment_box,
 #master .woocommerce-checkout #payment div.payment_box {
-  font-size: 12px;
-  font-size: 0.75rem;
+  font-size: 14px;
+  font-size: 0.875rem;
   background-color: transparent;
   padding: 0;
   margin: 0;
@@ -1133,8 +1133,8 @@ WooCommerce styling
 #master #add_payment_method #payment .payment_method_paypal .about_paypal,
 #master .woocommerce-cart #payment .payment_method_paypal .about_paypal,
 #master .woocommerce-checkout #payment .payment_method_paypal .about_paypal {
-  font-size: 10px;
-  font-size: 0.625rem;
+  font-size: 12px;
+  font-size: 0.75rem;
   margin-left: 1em;
   color: #959595;
 }

@@ -56,21 +56,21 @@ $font__site-title-size: 30px;
 $font__site-description-size: 12px;
 $font__archive-type-size: 15px;
 $font__quote-size: 50px;
-$font__menu-size: 14px;
-$font__dropdown-size: 12px;
-$font__top-menu-size: 11px;
-$font__top-menu-social-size: 17px;
-$font__menu-icon-size: 24px;
-$font__menu-mobile-icon-size: 18px;
-$font__menu-search-icon-size: 18px;
-$font__super-size: 22px;
-$font__xlarge-size: 20px;
-$font__large-size: 18px;
-$font__main-size: 15px;
-$font__medium-size: 13px;
-$font__small-size: 12px;
-$font__xsmall-size: 11px;
-$font__tiny-size: 10px;
+$font__menu-size: 16px;
+$font__dropdown-size: 14px;
+$font__top-menu-size: 12px;
+$font__top-menu-social-size: 21px;
+$font__menu-icon-size: 28px;
+$font__menu-mobile-icon-size: 22px;
+$font__menu-search-icon-size: 22px;
+$font__super-size: 24px;
+$font__xlarge-size: 22px;
+$font__large-size: 20px;
+$font__main-size: 17px;
+$font__medium-size: 15px;
+$font__small-size: 14px;
+$font__xsmall-size: 13px;
+$font__tiny-size: 12px;
 
 $font__h1-size: 28px;
 $font__entry-title-size: 22px;
@@ -84,8 +84,8 @@ $font__line-height-body: 1.8;
 $font__line-height-pre: 1.6;
 $font__line-height-heading: 1.375;
 
-$font__line-height-top-menu: 32px;
-$font__line-height-menu-bar: 24px; // need to do pixels so cart icon height can be accurately calculated across browsers.
+$font__line-height-top-menu: 36px;
+$font__line-height-menu-bar: 28px; // need to do pixels so cart icon height can be accurately calculated across browsers.
 $font__line-height-sidebar: 22px;
 
 $font__line-height-menu-icon: $font__line-height-menu-bar + (12px + 12px); // base size * top bottom menu padding

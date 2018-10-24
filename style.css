@@ -296,8 +296,8 @@ select,
 optgroup,
 textarea {
   font-family: "Lato", sans-serif;
-  font-size: 15px;
-  font-size: 0.9375rem;
+  font-size: 17px;
+  font-size: 1.0625rem;
   line-height: 1.8;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -507,8 +507,8 @@ address {
 pre {
   background: #eee;
   font-family: "Courier 10 Pitch", Courier, monospace;
-  font-size: 15px;
-  font-size: 0.9375rem;
+  font-size: 17px;
+  font-size: 1.0625rem;
   line-height: 1.6;
   margin-bottom: 2em;
   max-width: 100%;
@@ -527,8 +527,8 @@ pre {
 
 code, kbd, tt, var {
   font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-  font-size: 15px;
-  font-size: 0.9375rem;
+  font-size: 17px;
+  font-size: 1.0625rem;
 }
 
 abbr, acronym {
@@ -662,8 +662,8 @@ table {
 }
 
 table th {
-  font-size: 13px;
-  font-size: 0.8125rem;
+  font-size: 15px;
+  font-size: 0.9375rem;
   text-transform: uppercase;
   font-weight: bold;
 }
@@ -699,7 +699,7 @@ table th {
     display: block;
     text-align: center;
     width: 100%;
-    min-height: 67px;
+    min-height: 70px;
   }
 }
 
@@ -1153,8 +1153,8 @@ button {
   color: #fff;
   background: none;
   background-color: #000000;
-  font-size: 15px;
-  font-size: 0.9375rem;
+  font-size: 17px;
+  font-size: 1.0625rem;
   /*font-size: 0.75rem;*/
   font-weight: bold;
   line-height: 1.2;
@@ -1168,8 +1168,8 @@ button {
 
 #master .woocommerce .checkout_coupon .input-text,
 #master .woocommerce .coupon .input-text {
-  height: 47px;
-  height: 2.9375rem;
+  height: 49px;
+  height: 3.0625rem;
 }
 
 #master #tertiary .widget.null-instagram-feed > p.clear a,
@@ -1188,8 +1188,8 @@ button {
 #master #secondary input[type="button"],
 #master #secondary input[type="reset"],
 #master #secondary input[type="submit"] {
-  font-size: 10px;
-  font-size: 0.625rem;
+  font-size: 12px;
+  font-size: 0.75rem;
   text-transform: uppercase;
   padding: 12px 30px;
 }
@@ -1266,8 +1266,8 @@ button {
 #master #eu-cookie-law input,
 #master .button.button-small {
   padding: 7px 14px;
-  font-size: 10px;
-  font-size: 0.625rem;
+  font-size: 12px;
+  font-size: 0.75rem;
   text-transform: uppercase;
 }
 
@@ -1291,8 +1291,8 @@ button {
   color: #ffffff;
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 18px;
-  font-size: 1.125rem;
+  font-size: 20px;
+  font-size: 1.25rem;
   padding: 22px 30px;
   cursor: pointer;
   border-radius: 0;
@@ -1310,8 +1310,8 @@ button {
 #master body .fancy2-button {
   border-width: 0;
   text-transform: uppercase;
-  font-size: 18px;
-  font-size: 1.125rem;
+  font-size: 20px;
+  font-size: 1.25rem;
   padding: 22px 30px;
   padding-right: 71px;
   cursor: pointer;
@@ -1345,8 +1345,8 @@ button {
   color: #6d686c;
   background-color: #ffffff;
   border-radius: 100%;
-  font-size: 12px;
-  font-size: 0.75rem;
+  font-size: 14px;
+  font-size: 0.875rem;
   vertical-align: middle;
   width: 26px;
   height: 26px;
@@ -1401,8 +1401,8 @@ button {
   padding: 14px 24px;
   border-radius: 3px;
   text-transform: none;
-  font-size: 15px;
-  font-size: 0.9375rem;
+  font-size: 17px;
+  font-size: 1.0625rem;
   font-weight: bold;
   line-height: 1.2;
 }
@@ -1438,16 +1438,16 @@ button {
 #master form label {
   display: block;
   margin-bottom: 7px;
-  font-size: 12px;
-  font-size: 0.75rem;
+  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: bold;
   text-transform: uppercase;
 }
 
 #master legend {
   display: block;
-  font-size: 12px;
-  font-size: 0.75rem;
+  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: bold;
   text-transform: uppercase;
   color: #cccccc;
@@ -1464,8 +1464,8 @@ button {
 #master form .forgetmenot label {
   display: inline-block;
   margin-bottom: 0;
-  font-size: 15px;
-  font-size: 0.9375rem;
+  font-size: 17px;
+  font-size: 1.0625rem;
   font-weight: normal;
   text-transform: none;
 }
@@ -1516,8 +1516,8 @@ button {
   border-radius: 3px;
   outline: none;
   background: #fff;
-  font-size: 15px;
-  font-size: 0.9375rem;
+  font-size: 17px;
+  font-size: 1.0625rem;
   font-weight: normal;
   text-transform: none;
   box-shadow: none;
@@ -1558,8 +1558,8 @@ button {
   background-repeat: no-repeat;
   background-position: 94% center;
   background-position: calc(100% - 20px) center;
-  font-size: 15px;
-  font-size: 0.9375rem;
+  font-size: 17px;
+  font-size: 1.0625rem;
   font-weight: normal;
   text-transform: none;
   -webkit-appearance: none;
@@ -1642,8 +1642,8 @@ button {
   width: 43px;
   height: 42px;
   border: 1px solid #ececec;
-  font-size: 18px;
-  font-size: 1.125rem;
+  font-size: 20px;
+  font-size: 1.25rem;
   line-height: 37px;
   text-align: center;
   pointer-events: none;
@@ -1750,15 +1750,15 @@ button {
 }
 
 #master input[type="radio"]:checked:before {
-  font-size: 15px;
-  font-size: 0.9375rem;
+  font-size: 17px;
+  font-size: 1.0625rem;
   line-height: 15px;
 }
 
 #master input[type="checkbox"]:checked:before {
   margin-left: -0.2em;
-  font-size: 15px;
-  font-size: 0.9375rem;
+  font-size: 17px;
+  font-size: 1.0625rem;
   line-height: 14px;
 }
 
@@ -1788,8 +1788,8 @@ button {
   margin-left: 10px;
   vertical-align: middle;
   letter-spacing: 0;
-  font-size: 12px;
-  font-size: 0.75rem;
+  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: bold;
   text-transform: uppercase;
   cursor: pointer;
@@ -1907,8 +1907,8 @@ a:hover, a:active {
   border-bottom: 1px solid #ececec;
   padding-top: 1em;
   padding-bottom: 1em;
-  font-size: 12px;
-  font-size: 0.75rem;
+  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.375;
   text-transform: none;
   font-weight: normal;
@@ -1945,11 +1945,11 @@ a:hover, a:active {
   padding-left: 1.25rem;
   padding-right: 20px;
   padding-right: 1.25rem;
-  font-size: 14px;
-  font-size: 0.875rem;
+  font-size: 16px;
+  font-size: 1rem;
   width: auto;
   height: auto;
-  line-height: 24px;
+  line-height: 28px;
   letter-spacing: 0.07em;
 }
 
@@ -1982,10 +1982,10 @@ a:hover, a:active {
 
 #master #site-navigation .menu-toggle {
   display: none;
-  font-size: 14px;
-  font-size: 0.875rem;
-  line-height: 24px;
-  line-height: 1.5rem;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 28px;
+  line-height: 1.75rem;
   text-transform: uppercase;
   padding: 1em 1.2em;
   background: none;
@@ -2006,8 +2006,8 @@ a:hover, a:active {
 
 #master #site-navigation .menu-toggle i {
   vertical-align: middle;
-  font-size: 18px;
-  font-size: 1.125rem;
+  font-size: 22px;
+  font-size: 1.375rem;
 }
 
 #master #site-navigation .menu-toggle i:before {
@@ -2038,8 +2038,8 @@ a:hover, a:active {
     -moz-transform: translateY(-50%) rotate(270deg);
     -ms-transform: translateY(-50%) rotate(270deg);
     transform: translateY(-50%) rotate(270deg);
-    font-size: 11px;
-    font-size: 0.6875rem;
+    font-size: 13px;
+    font-size: 0.8125rem;
   }
   .show-menu-arrows .main-menu ul li.page_item_has_children > a,
   .show-menu-arrows .main-menu ul li.menu-item-has-children > a {
@@ -2060,8 +2060,8 @@ a:hover, a:active {
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-size: 11px;
-    font-size: 0.6875rem;
+    font-size: 13px;
+    font-size: 0.8125rem;
     margin-left: 10px;
     position: absolute;
     top: 50%;
@@ -2091,8 +2091,8 @@ a:hover, a:active {
   #site-navigation .top-mobile-header #top-left-menu a,
   #site-navigation .top-mobile-header #top-right-menu a {
     text-transform: uppercase;
-    font-size: 11px;
-    font-size: 0.6875rem;
+    font-size: 13px;
+    font-size: 0.8125rem;
     font-weight: bold;
   }
   #site-navigation .top-mobile-header #top-left-menu a, #site-navigation .top-mobile-header #top-left-menu a:hover, #site-navigation .top-mobile-header #top-left-menu a:active, #site-navigation .top-mobile-header #top-left-menu a:visited, #site-navigation .top-mobile-header #top-left-menu a:focus,
@@ -2190,15 +2190,15 @@ a:hover, a:active {
     padding-bottom: 20px;
     padding-bottom: 1.25rem;
     text-align: right;
-    line-height: 24px;
-    font-size: 14px;
-    font-size: 0.875rem;
+    line-height: 28px;
+    font-size: 16px;
+    font-size: 1rem;
     content: "\f510";
   }
   #site-navigation ul a {
     position: relative;
-    font-size: 14px;
-    font-size: 0.875rem;
+    font-size: 16px;
+    font-size: 1rem;
     border-bottom: 1px solid #ececec;
     padding-left: 20px;
     padding-left: 1.25rem;
@@ -2208,7 +2208,7 @@ a:hover, a:active {
     padding-top: 1.25rem;
     padding-bottom: 20px;
     padding-bottom: 1.25rem;
-    line-height: 24px;
+    line-height: 28px;
     display: block;
     text-decoration: none;
     width: auto;
@@ -2244,8 +2244,8 @@ a:hover, a:active {
     content: "\f406";
   }
   .top-header + .site-branding {
-    margin-top: 32px;
-    margin-top: 2rem;
+    margin-top: 36px;
+    margin-top: 2.25rem;
   }
 }
 
@@ -2326,16 +2326,16 @@ a:hover, a:active {
 }
 
 .post-navigation span.meta-nav {
-  font-size: 10px;
-  font-size: 0.625rem;
+  font-size: 12px;
+  font-size: 0.75rem;
   text-transform: uppercase;
   font-weight: bold;
   letter-spacing: 0.07em;
 }
 
 .post-navigation span.post-title {
-  font-size: 13px;
-  font-size: 0.8125rem;
+  font-size: 15px;
+  font-size: 0.9375rem;
   color: #959595;
 }
 
@@ -2400,10 +2400,10 @@ a:hover, a:active {
 
 #master .menu-search ul.menu li.menu-search-button i,
 #master .menu-search ul.menu li.menu-search-button i:before {
-  font-size: 18px;
-  font-size: 1.125rem;
-  line-height: 48px;
-  line-height: 3rem;
+  font-size: 22px;
+  font-size: 1.375rem;
+  line-height: 52px;
+  line-height: 3.25rem;
 }
 
 #master .menu-search ul.menu li.menu-search-button .menu-search-form-container {
@@ -2467,8 +2467,8 @@ a:hover, a:active {
 
 .top-header .social-navigation,
 .top-header .header-menu {
-  font-size: 11px;
-  font-size: 0.6875rem;
+  font-size: 12px;
+  font-size: 0.75rem;
 }
 
 .top-header .social-navigation ul,
@@ -2524,8 +2524,8 @@ a:hover, a:active {
   text-decoration: none;
   text-transform: uppercase;
   padding: 0 0.5em;
-  font-size: 11px;
-  font-size: 0.6875rem;
+  font-size: 12px;
+  font-size: 0.75rem;
   width: auto;
   height: auto;
   font-weight: bold;
@@ -2534,8 +2534,8 @@ a:hover, a:active {
 
 .top-header .social-navigation .menu > li > a,
 .top-header .header-menu .menu > li > a {
-  line-height: 32px;
-  line-height: 2rem;
+  line-height: 36px;
+  line-height: 2.25rem;
 }
 
 .top-header .social-navigation .menu > li:last-child a,
@@ -2560,15 +2560,15 @@ a:hover, a:active {
   font-weight: normal;
   padding-left: 0.2em;
   padding-right: 0.2em;
-  height: 32px;
-  height: 2rem;
+  height: 36px;
+  height: 2.25rem;
 }
 
 .top-header .social-navigation a:before {
-  line-height: 32px;
-  line-height: 2rem;
-  font-size: 17px;
-  font-size: 1.0625rem;
+  line-height: 36px;
+  line-height: 2.25rem;
+  font-size: 21px;
+  font-size: 1.3125rem;
 }
 
 .top-header .top-right-header > nav {
@@ -2608,8 +2608,8 @@ a:hover, a:active {
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-size: 9px;
-    font-size: 0.5625rem;
+    font-size: 10px;
+    font-size: 0.625rem;
     margin-left: 5px;
     position: absolute;
     top: 50%;
@@ -2908,8 +2908,8 @@ a:hover, a:active {
 #secondary .widget {
   margin-bottom: 40px;
   margin-bottom: 2.5rem;
-  font-size: 13px;
-  font-size: 0.8125rem;
+  font-size: 15px;
+  font-size: 0.9375rem;
 }
 
 #secondary .widget:before {
@@ -2940,8 +2940,8 @@ a:hover, a:active {
   margin-top: 0;
   margin-bottom: 28px;
   margin-bottom: 1.75rem;
-  font-size: 15px;
-  font-size: 0.9375rem;
+  font-size: 17px;
+  font-size: 1.0625rem;
   font-weight: bold;
   text-transform: initial;
   text-align: center;
@@ -3072,14 +3072,14 @@ a:hover, a:active {
 .footer-column textarea,
 .footer-column input,
 .footer-column .widget {
-  font-size: 15px;
-  font-size: 0.9375rem;
+  font-size: 17px;
+  font-size: 1.0625rem;
   letter-spacing: 0.07em;
 }
 
 .widget_rss {
-  font-size: 13px;
-  font-size: 0.8125rem;
+  font-size: 15px;
+  font-size: 0.9375rem;
 }
 
 .widget_rss .rsswidget {
@@ -3088,8 +3088,8 @@ a:hover, a:active {
 }
 
 .widget_rss .rss-date {
-  font-size: 10px;
-  font-size: 0.625rem;
+  font-size: 12px;
+  font-size: 0.75rem;
   text-transform: uppercase;
   color: #959595;
 }
@@ -3162,8 +3162,8 @@ a:hover, a:active {
 
 .painted-lady-image-banner .image-banner-description {
   margin-top: 1em;
-  font-size: 13px;
-  font-size: 0.8125rem;
+  font-size: 15px;
+  font-size: 0.9375rem;
 }
 
 .painted-lady-image-banner .image-banner-description > *:last-child {
@@ -3308,8 +3308,8 @@ a:hover, a:active {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
   content: "\f431";
   line-height: 22px;
-  font-size: 10px;
-  font-size: 0.625rem;
+  font-size: 12px;
+  font-size: 0.75rem;
 }
 
 #master .widget_recent_comments .recentcomments {
@@ -3370,8 +3370,8 @@ a:hover, a:active {
   padding: 0;
   border: none;
   background: none;
-  font-size: 18px;
-  font-size: 1.125rem;
+  font-size: 22px;
+  font-size: 1.375rem;
   line-height: 1;
 }
 
@@ -3622,7 +3622,7 @@ a:hover, a:active {
     width: 70px;
   }
   #master .content-jetpack-testimonial .testimonial-entry-content-wrapper {
-    font-size: 13px;
+    font-size: 15px;
   }
   #master .content-jetpack-testimonial .testimonial-entry-content-wrapper.has-testimonial-image {
     width: calc( 100% - 74px);
@@ -3776,8 +3776,8 @@ a:hover, a:active {
 #master .painted-lady-content-widget-collage .collage h4,
 #master .painted-lady-content-widget-collage .collage h5,
 #master .painted-lady-content-widget-collage .collage h6 {
-  font-size: 15px;
-  font-size: 0.9375rem;
+  font-size: 17px;
+  font-size: 1.0625rem;
 }
 
 .painted-lady-content-widget-collage .collage {
@@ -4113,8 +4113,8 @@ a:hover, a:active {
 }
 
 #master .painted-lady-content-widget-slider .slider .content-text p {
-  font-size: 12px;
-  font-size: 0.75rem;
+  font-size: 14px;
+  font-size: 0.875rem;
   letter-spacing: 0.07em;
 }
 
@@ -4151,8 +4151,8 @@ a:hover, a:active {
     font-size: 0.9375rem;
   }
   #master .painted-lady-content-widget-slider .slider .content-text p {
-    font-size: 10px;
-    font-size: 0.625rem;
+    font-size: 12px;
+    font-size: 0.75rem;
   }
   #master .painted-lady-content-widget-slider .slider .content-text p,
   #master .painted-lady-content-widget-slider .slider .content-text div,
@@ -4782,8 +4782,8 @@ h1.h1-title,
 
 .entry-cat-meta {
   text-align: center;
-  font-size: 7px;
-  font-size: 0.4375rem;
+  font-size: 9px;
+  font-size: 0.5625rem;
   text-transform: uppercase;
   font-weight: bold;
   margin-bottom: 8px;
@@ -4792,8 +4792,8 @@ h1.h1-title,
 }
 
 .entry-cat-meta span > a {
-  font-size: 11px;
-  font-size: 0.6875rem;
+  font-size: 13px;
+  font-size: 0.8125rem;
   vertical-align: middle;
 }
 
@@ -4804,8 +4804,8 @@ h1.h1-title,
 }
 
 .entry-cat-meta ul {
-  font-size: 11px;
-  font-size: 0.6875rem;
+  font-size: 13px;
+  font-size: 0.8125rem;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -4839,8 +4839,8 @@ h1.h1-title,
 
 .entry-meta {
   text-align: center;
-  font-size: 11px;
-  font-size: 0.6875rem;
+  font-size: 13px;
+  font-size: 0.8125rem;
   text-transform: uppercase;
   font-weight: normal;
   margin-top: 15px;
@@ -4880,8 +4880,8 @@ h1.h1-title,
 
 .entry-footer .comment-display,
 .entry-footer .entry-footer-meta {
-  font-size: 11px;
-  font-size: 0.6875rem;
+  font-size: 13px;
+  font-size: 0.8125rem;
   text-transform: uppercase;
   font-weight: bold;
   color: #959595;
@@ -5064,8 +5064,8 @@ h1.h1-title,
 
 #master .more-link i {
   margin-left: 5px;
-  font-size: 20px;
-  font-size: 1.25rem;
+  font-size: 22px;
+  font-size: 1.375rem;
   vertical-align: middle;
   border-bottom-width: 0;
   text-decoration: none;
@@ -5175,8 +5175,8 @@ h1.h1-title,
 #master .excerpt2 .entry-meta {
   margin-top: 7px;
   margin-top: 0.4375rem;
-  font-size: 10px;
-  font-size: 0.625rem;
+  font-size: 12px;
+  font-size: 0.75rem;
 }
 
 #master .excerpt2 *:last-child {
@@ -5224,16 +5224,16 @@ h1.h1-title,
   margin: 0;
   margin-bottom: 10px;
   margin-bottom: 0.625rem;
-  font-size: 18px;
-  font-size: 1.125rem;
+  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 .entry-author .author-bio {
   margin: 0;
   margin-left: 70px;
   overflow: hidden;
-  font-size: 15px;
-  font-size: 0.9375rem;
+  font-size: 17px;
+  font-size: 1.0625rem;
 }
 
 .entry-author .author-bio p {
@@ -5285,8 +5285,8 @@ h1.h1-title,
   position: absolute;
   left: 0;
   top: 0;
-  font-size: 13px;
-  font-size: 0.8125rem;
+  font-size: 15px;
+  font-size: 0.9375rem;
 }
 
 #master .wpm-accordion.wpm-accordion-item-open:before {
@@ -5334,8 +5334,8 @@ h1.h1-title,
 
 .page-description,
 .term-description {
-  font-size: 13px;
-  font-size: 0.8125rem;
+  font-size: 15px;
+  font-size: 0.9375rem;
   margin-bottom: 70px;
   margin-bottom: 4.375rem;
 }
@@ -5435,8 +5435,8 @@ h1.h1-title,
   display: none;
   min-width: 110px;
   padding: 9px 9px;
-  font-size: 12px;
-  font-size: 0.75rem;
+  font-size: 14px;
+  font-size: 0.875rem;
   text-transform: uppercase;
 }
 
@@ -5472,8 +5472,8 @@ h1.h1-title,
 
 .pingback .comment-body,
 .comment-author {
-  font-size: 12px;
-  font-size: 0.75rem;
+  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: bold;
   line-height: 1;
   text-transform: uppercase;
@@ -5503,8 +5503,8 @@ h1.h1-title,
 
 .comment-list .pingback .comment-body .url {
   display: block;
-  font-size: 12px;
-  font-size: 0.75rem;
+  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: bold;
   line-height: 2.16666667;
   text-transform: uppercase;
@@ -5517,8 +5517,8 @@ h1.h1-title,
 
 .comment-list .pingback .comment-body .edit-link a {
   display: block;
-  font-size: 12px;
-  font-size: 0.75rem;
+  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: bold;
   text-transform: uppercase;
   color: #959595;
@@ -5529,8 +5529,8 @@ h1.h1-title,
 }
 
 .comment-metadata {
-  font-size: 12px;
-  font-size: 0.75rem;
+  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: bold;
   line-height: 2.16666667;
   text-transform: uppercase;
@@ -5582,8 +5582,8 @@ h1.h1-title,
   overflow: hidden;
   margin-left: 100px;
   padding-top: 10px;
-  font-size: 15px;
-  font-size: 0.9375rem;
+  font-size: 17px;
+  font-size: 1.0625rem;
   color: #6d686c;
 }
 
@@ -5804,8 +5804,8 @@ h1.h1-title,
 .comment-awaiting-moderation {
   display: inline-block;
   padding-top: 30px;
-  font-size: 12px;
-  font-size: 0.75rem;
+  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .comment-reply-link {
@@ -5814,8 +5814,8 @@ h1.h1-title,
   padding: 5px 10px;
   border-radius: 3px;
   color: #fff;
-  font-size: 12px;
-  font-size: 0.75rem;
+  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: bold;
   line-height: 1;
   background-color: #000000;
@@ -5842,8 +5842,8 @@ h1.h1-title,
 
 .logged-in-as,
 .comment-notes {
-  font-size: 13px;
-  font-size: 0.8125rem;
+  font-size: 15px;
+  font-size: 0.9375rem;
   margin-bottom: 0.7em;
   text-align: center;
 }
@@ -5911,8 +5911,8 @@ h1.h1-title,
   text-align: center;
   padding-top: 18px;
   padding-bottom: 8px;
-  font-size: 12px;
-  font-size: 0.75rem;
+  font-size: 14px;
+  font-size: 0.875rem;
   letter-spacing: .15em;
   color: #6d686c;
 }
@@ -6248,8 +6248,8 @@ object {
 .wp-block-image figcaption,
 .wp-caption-text {
   text-align: center;
-  font-size: 12px;
-  font-size: 0.75rem;
+  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: bold;
   margin: 0;
   color: #959595;
