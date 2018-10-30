@@ -364,6 +364,7 @@ textarea {
 
 	#master .split-menu {
 		display: table;
+		table-layout: fixed;
 	}
 
 	#master .split-menu-part {
@@ -404,11 +405,13 @@ textarea {
 	.split-menu .split-menu-part-left {
 		text-align: right;
 		padding-right: 50px;
+		width: 100%;
 	}
 
 	.split-menu .split-menu-part-right {
 		text-align: left;
 		padding-left: 50px;
+		width: 100%;
 	}
 }
 ';
