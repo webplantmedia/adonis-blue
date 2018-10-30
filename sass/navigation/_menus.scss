@@ -94,6 +94,22 @@
 			}
 		}
 
+		&#primary-menu-right {
+			li {
+				&:hover > ul {
+					left: auto;
+					right: 0;
+				}
+
+				li {
+					&:hover > ul {
+						left: auto;
+						right: 100%;
+					}
+				}
+			}
+		}
+
 		a {
 			display: block;
 			text-decoration: none;
@@ -234,6 +250,19 @@
 						display: inline-block;
 						line-height: 1;
 						content: "\f431";
+					}
+				}
+			}
+
+			&#primary-menu-right {
+				ul {
+					li {
+						&.page_item_has_children > a,
+						&.menu-item-has-children > a {
+							&:after {
+								@include crossBrowser('transform',translateY(-50%) rotate(90deg));
+							}
+						}
 					}
 				}
 			}
