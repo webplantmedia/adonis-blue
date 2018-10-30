@@ -27,20 +27,21 @@
 				left: -999em;
 				z-index: 99999;
 				box-shadow: 0 1px 10px rgba(0, 0, 0, 0.08);
-				padding-top: .5em;
-				padding-bottom: .5em;
+				padding-top: .8em;
+				padding-bottom: .8em;
 				background-color: $color__background-body; /* should be same as main background */
 
 				li {
 				}
 
 				a {
-					padding-top: .5em;
-					padding-bottom: .5em;
+					padding-top: .4em;
+					padding-bottom: .4em;
 					padding-left: 1em;
 					padding-right: 1em;
 					// border-bottom: $border__width solid $color__border;
 					@include rem('min-width',150px);
+					@include rem( 'font-size', ( $font__top-menu-size - 1 ) );
 				}
 			}
 

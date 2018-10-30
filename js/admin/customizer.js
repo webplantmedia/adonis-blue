@@ -235,7 +235,15 @@
 			value.bind(
 				function( to ) {
 					changeInlineCSS( 'split_menu_logo_width', to + 'px' );
-					changeInlineCSS( 'split_menu_logo_width_2', 'calc(50% - ' + ( to / 2 ) + 'px)' );
+				}
+			);
+		}
+	);
+	wp.customize(
+		'sticky_menu_logo_width', function( value ) {
+			value.bind(
+				function( to ) {
+					changeInlineCSS( 'sticky_menu_logo_width', to + 'px' );
 				}
 			);
 		}

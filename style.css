@@ -1918,8 +1918,8 @@ a:hover, a:active {
 .main-menu ul ul a {
   padding-top: .7em;
   padding-bottom: .7em;
-  font-size: 14px;
-  font-size: 0.875rem;
+  font-size: 13px;
+  font-size: 0.8125rem;
   line-height: 1.375;
   text-transform: none;
   font-weight: normal;
@@ -2413,20 +2413,22 @@ html#master .top-header ul.menu li.menu-search-button i:before {
   left: -999em;
   z-index: 99999;
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.08);
-  padding-top: .5em;
-  padding-bottom: .5em;
+  padding-top: .8em;
+  padding-bottom: .8em;
   background-color: #ffffff;
   /* should be same as main background */
 }
 
 .top-header .social-navigation ul ul a,
 .top-header .header-menu ul ul a {
-  padding-top: .5em;
-  padding-bottom: .5em;
+  padding-top: .4em;
+  padding-bottom: .4em;
   padding-left: 1em;
   padding-right: 1em;
   min-width: 150px;
   min-width: 9.375rem;
+  font-size: 11px;
+  font-size: 0.6875rem;
 }
 
 .top-header .social-navigation ul li:hover > ul,
