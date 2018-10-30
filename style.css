@@ -1944,6 +1944,16 @@ a:hover, a:active {
   left: 0;
 }
 
+.main-menu ul#primary-menu-right li:hover > ul {
+  left: auto;
+  right: 0;
+}
+
+.main-menu ul#primary-menu-right li li:hover > ul {
+  left: auto;
+  right: 100%;
+}
+
 .main-menu ul a {
   display: block;
   text-decoration: none;
@@ -2083,6 +2093,13 @@ a:hover, a:active {
     display: inline-block;
     line-height: 1;
     content: "\f431";
+  }
+  .show-menu-arrows .main-menu ul#primary-menu-right ul li.page_item_has_children > a:after,
+  .show-menu-arrows .main-menu ul#primary-menu-right ul li.menu-item-has-children > a:after {
+    -webkit-transform: translateY(-50%) rotate(90deg);
+    -moz-transform: translateY(-50%) rotate(90deg);
+    -ms-transform: translateY(-50%) rotate(90deg);
+    transform: translateY(-50%) rotate(90deg);
   }
 }
 
