@@ -202,4 +202,6 @@
 		}
 	);
 
+	$( '#site-navigation' ).sticky();
+
 } )( jQuery );

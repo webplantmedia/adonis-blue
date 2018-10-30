@@ -13,9 +13,9 @@
 
 ?>
 
-<div class="split-menu clear">
+<div class="sticky-menu">
 
-	<div class="split-menu-part split-menu-part-left">
+	<div class="sticky-menu-part sticky-menu-part-left">
 
 		<nav class="main-menu in-menu-bar">
 			<?php
@@ -29,15 +29,15 @@
 			?>
 		</nav>
 
-	</div><!-- .split-menu-part -->
+	</div><!-- .sticky-menu-part -->
 
-	<div class="split-menu-part split-menu-part-center">
+	<div class="sticky-menu-part sticky-menu-part-center">
 
 		<?php get_template_part( 'template-parts/sticky', 'branding' ); ?>
 
-	</div><!-- .split-menu-part -->
+	</div><!-- .sticky-menu-part -->
 
-	<div class="split-menu-part split-menu-part-right">
+	<div class="sticky-menu-part sticky-menu-part-right">
 
 		<nav class="main-menu in-menu-bar">
 			<?php
@@ -51,6 +51,14 @@
 			?>
 		</nav>
 
-	</div><!-- .split-menu-part -->
+	</div><!-- .sticky-menu-part -->
 
-</div><!-- .split-menu -->
+	<div class="sticky-icon-part">
+
+		<?php get_template_part( 'template-parts/menu', 'search' ); ?>
+
+		<?php get_template_part( 'template-parts/menu', 'cart' ); ?>
+
+	</div><!-- .sticky-icon-part -->
+
+</div><!-- .sticky-menu -->

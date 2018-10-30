@@ -15,6 +15,11 @@
 	.split-menu-part {
 		display: inline-block;
 	}
+
+}
+
+.split-menu-part-center {
+	@include clip();
 }
 
 .main-menu {
@@ -34,16 +39,18 @@
 			z-index: 99999;
 			box-shadow: 0 1px 10px rgba(0, 0, 0, 0.08);
 			text-align: left;
+			padding-top: 1em;
+			padding-bottom: 1em;
+			background-color: $color__background-body;
 
 			ul {
 				left: -999em;
-				top: 0;
+				top: -1em;
 				margin-top: -$border__width;
 				border-top-color: $color__border;
 			}
 
 			li {
-				background-color: $color__background-body;
 				float: none;
 
 				&:hover > ul {
@@ -56,9 +63,9 @@
 			}
 
 			a {
-				border-bottom: $border__width solid $color__border;
-				padding-top: 1em;
-				padding-bottom: 1em;
+				// border-bottom: $border__width solid $color__border;
+				padding-top: .7em;
+				padding-bottom: .7em;
 				@include rem('font-size',$font__dropdown-size);
 				line-height: $font__line-height-heading;
 				text-transform: none;
@@ -91,8 +98,8 @@
 			display: block;
 			text-decoration: none;
 			text-transform: uppercase;
-			@include rem('padding-top',12px);
-			@include rem('padding-bottom',12px);
+			@include rem('padding-top',20px);
+			@include rem('padding-bottom',20px);
 			@include rem('padding-left',20px);
 			@include rem('padding-right',20px);
 			@include rem('font-size',$font__menu-size);

@@ -317,23 +317,81 @@ textarea {
 	}
 
 	$css .= '
+.site-logo-container {
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	z-index: 2;
+	max-width: ' . $painted_lady['split_menu_logo_width'] . 'px; /*id:split_menu_logo_width*/
+	height: auto;
+	clip: auto;
+	overflow: visible;
+}
+
 @media (min-width: ' . $painted_lady['split_menu_collapse_width'] . 'px) { /*id:split_menu_collapse_width*/
-	#site-navigation.main-navigation {
+	#master .sticky {
+		position: fixed;
+		top: 0;
+	}
+
+	#master .admin-bar .sticky {
+		top: 32px;
+	}
+
+	#sticky-menu {
+		display: block;
+		transition: all 0.5s ease 0s;
+		position: fixed;
+		top: -100%;
+		left: 0;
+		right: 0;
+	}
+
+	#site-navigation {
+		' . painted_lady_css_set_unit( 'padding-top', $painted_lady['heading_padding_top'] ) . ' /*id:heading_padding_top*/
+		' . painted_lady_css_set_unit( 'padding-bottom', $painted_lady['heading_padding_bottom'] ) . ' /*id:heading_padding_bottom*/
+	}
+
+	#sticky-menu .split-menu .split-menu-part-center,
+	#sticky-menu .site-logo-container {
+		width: ' . $painted_lady['sticky_menu_logo_width'] . 'px; /*id:sticky_menu_logo_width*/
+	}
+
+	#master .main-navigation {
 		border-bottom-width: 0;
-		position: absolute;
-		top: ' . $painted_lady['split_menu_top_offset'] . 'px; /*id:split_menu_top_offset*/
+		z-index: 2;
+	}
+
+	#master .split-menu {
+		display: table;
+	}
+
+	#master .split-menu-part {
+		display: table-cell;
+		vertical-align: middle;
+	}
+
+	#master .custom-logo-link img {
+		vertical-align: middle;
 	}
 
 	#masthead {
 		border-bottom-width: 1px;
 	}
 
-	.site-logo-container {
-		width: ' . $painted_lady['split_menu_logo_width'] . 'px; /*id:split_menu_logo_width*/
+	.split-menu .split-menu-part-center {
 		margin-left: auto;
 		margin-right: auto;
 		position: relative;
 		z-index: 2;
+		width: ' . $painted_lady['split_menu_logo_width'] . 'px; /*id:split_menu_logo_width*/
+		height: auto;
+		clip: auto;
+		overflow: visible;
+	}
+
+	#master .site-branding {
+		display: none;
 	}
 
 	.split-menu {
@@ -341,20 +399,16 @@ textarea {
 	}
 
 	.split-menu .split-menu-part {
-		}
+	}
 
 	.split-menu .split-menu-part-left {
 		text-align: right;
-		width: calc(50% - ' . floor( $painted_lady['split_menu_logo_width'] / 2 ) . 'px); /*id:split_menu_logo_width_2*/
 		padding-right: 50px;
-		float: left;
 	}
 
 	.split-menu .split-menu-part-right {
 		text-align: left;
-		width: calc(50% - ' . floor( $painted_lady['split_menu_logo_width'] / 2 ) . 'px); /*id:split_menu_logo_width_2*/
 		padding-left: 50px;
-		float: right;
 	}
 }
 ';

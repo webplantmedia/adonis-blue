@@ -27,21 +27,25 @@
 				left: -999em;
 				z-index: 99999;
 				box-shadow: 0 1px 10px rgba(0, 0, 0, 0.08);
+				padding-top: .5em;
+				padding-bottom: .5em;
+				background-color: $color__background-body; /* should be same as main background */
 
 				li {
-					background-color: $color__background-body; /* should be same as main background */
 				}
 
 				a {
 					padding-top: .5em;
 					padding-bottom: .5em;
-					border-bottom: $border__width solid $color__border;
+					padding-left: 1em;
+					padding-right: 1em;
+					// border-bottom: $border__width solid $color__border;
 					@include rem('min-width',150px);
 				}
 			}
 
 			li:hover > ul {
-				left: 0;
+				left: -.5em;
 			}
 		}
 

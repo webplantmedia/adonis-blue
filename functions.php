@@ -351,6 +351,9 @@ function painted_lady_scripts() {
 	// Register accordion.
 	wp_enqueue_script( 'painted-lady-accordion', get_template_directory_uri() . '/js/accordion.js', array( 'jquery' ), PAINTED_LADY_VERSION, true );
 
+	// Add sticky script
+	wp_enqueue_script( 'jquery-sticky', get_template_directory_uri() . '/js/jquery.sticky.js', array( 'jquery' ), '1.0.4', true );
+
 	// Add menu script.
 	wp_enqueue_script( 'painted-lady-navigation', get_template_directory_uri() . '/js/navigation.js', array( 'jquery' ), PAINTED_LADY_VERSION, true );
 

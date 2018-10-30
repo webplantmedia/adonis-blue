@@ -38,6 +38,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 	## Links
 	## Menus
 	## Top Menus
+	## Sticky Menu
 	## Posts
 # Accessibility
 # Alignments
@@ -1869,6 +1870,14 @@ a:hover, a:active {
   display: inline-block;
 }
 
+.split-menu-part-center {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
 .main-menu ul {
   float: left;
   list-style: none;
@@ -1886,17 +1895,19 @@ a:hover, a:active {
   z-index: 99999;
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.08);
   text-align: left;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  background-color: #ffffff;
 }
 
 .main-menu ul ul ul {
   left: -999em;
-  top: 0;
+  top: -1em;
   margin-top: -1px;
   border-top-color: #ececec;
 }
 
 .main-menu ul ul li {
-  background-color: #ffffff;
   float: none;
 }
 
@@ -1905,9 +1916,8 @@ a:hover, a:active {
 }
 
 .main-menu ul ul a {
-  border-bottom: 1px solid #ececec;
-  padding-top: 1em;
-  padding-bottom: 1em;
+  padding-top: .7em;
+  padding-bottom: .7em;
   font-size: 14px;
   font-size: 0.875rem;
   line-height: 1.375;
@@ -1938,10 +1948,10 @@ a:hover, a:active {
   display: block;
   text-decoration: none;
   text-transform: uppercase;
-  padding-top: 12px;
-  padding-top: 0.75rem;
-  padding-bottom: 12px;
-  padding-bottom: 0.75rem;
+  padding-top: 20px;
+  padding-top: 1.25rem;
+  padding-bottom: 20px;
+  padding-bottom: 1.25rem;
   padding-left: 20px;
   padding-left: 1.25rem;
   padding-right: 20px;
@@ -2253,6 +2263,19 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 ## Menu Search
 --------------------------------------------------------------*/
+html#master .top-header ul.menu li.menu-search-button {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+html#master .top-header ul.menu li.menu-search-button i,
+html#master .top-header ul.menu li.menu-search-button i:before {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 36px;
+  line-height: 2.25rem;
+}
+
 #master .menu-search ul.menu {
   float: left;
   list-style: none;
@@ -2264,6 +2287,10 @@ a:hover, a:active {
 
 #master .menu-search ul.menu li.menu-search-button {
   position: relative;
+  padding-left: 10px;
+  padding-left: 0.625rem;
+  padding-right: 10px;
+  padding-right: 0.625rem;
 }
 
 #master .menu-search ul.menu li.menu-search-button a.menu-search-link {
@@ -2279,10 +2306,10 @@ a:hover, a:active {
 
 #master .menu-search ul.menu li.menu-search-button i,
 #master .menu-search ul.menu li.menu-search-button i:before {
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 36px;
-  line-height: 2.25rem;
+  font-size: 22px;
+  font-size: 1.375rem;
+  line-height: 52px;
+  line-height: 3.25rem;
 }
 
 #master .menu-search ul.menu li.menu-search-button .menu-search-form-container {
@@ -2369,10 +2396,8 @@ a:hover, a:active {
   left: -999em;
   z-index: 99999;
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.08);
-}
-
-.top-header .social-navigation ul ul li,
-.top-header .header-menu ul ul li {
+  padding-top: .5em;
+  padding-bottom: .5em;
   background-color: #ffffff;
   /* should be same as main background */
 }
@@ -2381,14 +2406,15 @@ a:hover, a:active {
 .top-header .header-menu ul ul a {
   padding-top: .5em;
   padding-bottom: .5em;
-  border-bottom: 1px solid #ececec;
+  padding-left: 1em;
+  padding-right: 1em;
   min-width: 150px;
   min-width: 9.375rem;
 }
 
 .top-header .social-navigation ul li:hover > ul,
 .top-header .header-menu ul li:hover > ul {
-  left: 0;
+  left: -.5em;
 }
 
 .top-header .social-navigation li,
@@ -2526,6 +2552,30 @@ a:hover, a:active {
 }
 
 /*--------------------------------------------------------------
+## Sticky Menu
+--------------------------------------------------------------*/
+.sticky-navigation {
+  display: none;
+  background-color: #ffffff;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.08);
+}
+
+.sticky-navigation .split-menu .split-menu-part-left {
+  padding-right: 30px;
+  padding-right: 1.875rem;
+}
+
+.sticky-navigation .split-menu .split-menu-part-right {
+  padding-left: 30px;
+  padding-left: 1.875rem;
+}
+
+.sticky-navigation .main-menu ul.menu > li > a {
+  font-size: 14px;
+  font-size: 0.875rem;
+}
+
+/*--------------------------------------------------------------
 ## Post Navigation
 --------------------------------------------------------------*/
 .site-main .posts-navigation, .site-main
@@ -2652,7 +2702,7 @@ a:hover, a:active {
 /* Text meant only for screen readers. */
 .screen-reader-text {
   clip: rect(1px, 1px, 1px, 1px);
-  position: absolute !important;
+  position: absolute;
   height: 1px;
   width: 1px;
   overflow: hidden;
@@ -3387,8 +3437,8 @@ a:hover, a:active {
   padding: 0;
   border: none;
   background: none;
-  font-size: 16px;
-  font-size: 1rem;
+  font-size: 22px;
+  font-size: 1.375rem;
   line-height: 1;
 }
 
@@ -4550,6 +4600,7 @@ body.widgetized-page .site-content {
   padding-bottom: 2.5rem;
   line-height: 1.375;
   position: relative;
+  display: block;
 }
 
 .site-branding .site-logo {

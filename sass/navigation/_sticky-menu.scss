@@ -1,0 +1,17 @@
+.sticky-navigation {
+	display: none;
+	background-color: $color__background-body;
+	box-shadow: 0 1px 10px rgba(0, 0, 0, 0.08);
+
+	.split-menu .split-menu-part-left {
+		@include rem( 'padding-right', 30px );
+	}
+
+	.split-menu .split-menu-part-right {
+		@include rem( 'padding-left', 30px );
+	}
+
+	.main-menu ul.menu > li > a {
+		@include rem( 'font-size', ( $font__menu-size - 2 ) );
+	}
+}

@@ -43,6 +43,7 @@
 	@include rem('padding-bottom',40px);
 	line-height: $font__line-height-heading;
 	position: relative; // causes logo to show over header image
+	display: block;
 
 	.site-logo {
 		text-align: center;

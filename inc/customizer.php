@@ -428,6 +428,23 @@ function painted_lady_customize_register( $wp_customize ) {
 		)
 	);
 
+	$setting_id = 'sticky_menu_logo_width';
+	$wp_customize->add_setting(
+		$setting_id, array(
+			'default'           => $painted_lady_default[ $setting_id ],
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'absint',
+		)
+	);
+
+	$wp_customize->add_control(
+		$setting_id, array(
+			'type'    => 'number',
+			'label'   => esc_html__( 'Sticky Menu Logo Width', 'painted-lady' ),
+			'section' => $section_id,
+		)
+	);
+
 	$setting_id = 'split_menu_top_offset';
 	$wp_customize->add_setting(
 		$setting_id, array(

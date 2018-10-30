@@ -32,44 +32,27 @@
 		<div class="site-header-inner">
 			<?php get_template_part( 'template-parts/menu', 'top' ); ?>
 
-			<div class="site-branding">
-				<div class="site-boundary">
-					<div class="site-logo-container">
-						<?php if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) : ?>
-							<div class="site-logo">
-								<?php the_custom_logo(); ?>
-							</div>
-						<?php endif; ?>
+			<?php get_template_part( 'template-parts/site', 'branding' ); ?>
 
-						<?php if ( is_front_page() && is_home() ) : ?>
-							<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-						<?php else : ?>
-							<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-						<?php endif; ?>
+			<div id="site-navigation" class="main-navigation">
 
-						<?php $description = get_bloginfo( 'description', 'display' ); ?>
-						<?php if ( $description || is_customize_preview() ) : ?>
-							<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-						<?php endif; ?>
-					</div><!-- .site-logo-container -->
-				</div><!-- .site-boundary -->
-			</div><!-- .site-branding -->
+				<?php painted_lady_mobile_menu_button(); ?>
+
+				<?php get_template_part( 'template-parts/menu', 'mobile-cart' ); ?>
+
+				<?php get_template_part( 'template-parts/menu', 'mobile-search' ); ?>
+
+				<?php get_template_part( 'template-parts/menu', 'main' ); ?>
+
+				<?php get_template_part( 'template-parts/menu', 'mobile' ); ?>
+
+			</div><!-- #site-navigation -->
+			<div id="sticky-menu" class="main-navigation sticky-navigation">
+
+				<?php get_template_part( 'template-parts/menu', 'main' ); ?>
+
+			</div><!-- #sticky-menu -->
 		</div><!-- .site-header-inner -->
-
-		<div id="site-navigation" class="main-navigation">
-
-			<?php painted_lady_mobile_menu_button(); ?>
-
-			<?php get_template_part( 'template-parts/menu', 'mobile-cart' ); ?>
-
-			<?php get_template_part( 'template-parts/menu', 'mobile-search' ); ?>
-
-			<?php get_template_part( 'template-parts/menu', 'main' ); ?>
-
-			<?php get_template_part( 'template-parts/menu', 'mobile' ); ?>
-
-		</div><!-- #site-navigation -->
-
 	</header><!-- #masthead -->
 
 	<?php if ( is_category() || is_tag() || is_tax() || is_date() || is_author() ) : ?>
