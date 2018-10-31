@@ -12,50 +12,45 @@
  */
 
 ( function($) {
-	var container, button, menu, links, i, lenn, $menuParent;
+	var $container, $button, $menu, links, i, lenn, $menuParent, $searchButton;
 
-	container = document.getElementById( 'site-navigation' );
-	if ( ! container ) {
-		return;
-	}
-
-	button = container.getElementsByTagName( 'button' )[0];
-	if ( 'undefined' === typeof button ) {
-		return;
-	}
-
-	menu = container.getElementsByTagName( 'ul' )[0];
+	$container    = $( '.main-navigation' );
+	$button       = $( '.menu-toggle' );
+	$menu         = $( '.main-menu' );
+	$menuParent   = $container.find( '.menu-item-has-children > a, .page_item_has_children > a' );
+	$searchButton = $( '.menu-search-button' );
 
 	// Hide menu toggle button if menu is empty and return early.
-	if ( 'undefined' === typeof menu ) {
-		button.style.display = 'none';
+	if ( 'undefined' === typeof $menu ) {
+		$button.hide();
 		return;
 	}
 
-	menu.setAttribute( 'aria-expanded', 'false' );
-	if ( -1 === menu.className.indexOf( 'nav-menu' ) ) {
-		menu.className += ' nav-menu';
+	$menu.attr( 'aria-expanded', 'false' );
+	if ( ! $menu.hasClass( 'nav-menu' ) ) {
+		$menu.addClass( 'nav-menu' );
 	}
 
-	button.onclick = function() {
-		if ( -1 !== container.className.indexOf( 'toggled' ) ) {
-			container.className = container.className.replace( ' toggled', '' );
-			button.setAttribute( 'aria-expanded', 'false' );
-			menu.setAttribute( 'aria-expanded', 'false' );
-		} else {
-			container.className += ' toggled';
-			button.setAttribute( 'aria-expanded', 'true' );
-			menu.setAttribute( 'aria-expanded', 'true' );
-		}
-	};
-
-	var $menuParent = $( container ).find( '.menu-item-has-children > a, .page_item_has_children > a' );
-
-	var menuToggleButton = $( container ).find( '.menu-toggle' );
+	if ( $button.length ) {
+		$button.click(
+			function() {
+				if ( $container.hasClass( 'toggled' ) ) {
+					$container.removeClass( 'toggled' );
+					$button.attr( 'aria-expanded', 'false' );
+					$menu.attr( 'aria-expanded', 'false' );
+				}
+				else {
+					$container.addClass( 'toggled' );
+					$button.attr( 'aria-expanded', 'true' );
+					$menu.attr( 'aria-expanded', 'true' );
+				}
+			}
+		);
+	}
 
 	$menuParent.click(
 		function( event ) {
-			if ( ! $( menuToggleButton ).is( ':visible' ) ) {
+			if ( ! $button.is( ':visible' ) ) {
 				return;
 			}
 
@@ -71,8 +66,6 @@
 	/**
 	 * Toggles search form in menu.
 	 */
-	var $searchButton = $( '.menu-search-button' );
-
 	if ( $searchButton.length ) {
 		$.each( $searchButton,
 			function() {
@@ -113,12 +106,11 @@
 	/**
 	 * Toggles `focus` class to allow submenu access on tablets.
 	 */
-	( function( container, menu ) {
-		var touchStartFn, i,
-			parentLinks = menu.querySelectorAll( '.menu-item-has-children > a, .page_item_has_children > a' ),
-			menuToggle  = $( container ).find( '.menu-toggle' ),
-			links       = container.querySelectorAll( 'ul a' );
-			li          = container.querySelectorAll( 'ul li' );
+	( function( $container, $menuParent, $button ) {
+		var touchStartFn,
+			i,
+			links = $container.find( 'ul a' );
+			li    = $container.find( 'ul li' );
 
 		if ( 'ontouchstart' in window ) {
 			clickOutsideMenu = function ( event ) {
@@ -129,7 +121,7 @@
 			};
 
 			touchStartFn = function( e ) {
-				if ( $( menuToggle ).is( ':visible' ) ) {
+				if ( $button.is( ':visible' ) ) {
 					return;
 				}
 
@@ -150,12 +142,12 @@
 				}
 			};
 
-			var parentLinksLength = parentLinks.length;
+			var parentLinksLength = $menuParent.length;
 			for ( i = 0; i < parentLinksLength; ++i ) {
-				parentLinks[i].addEventListener( 'click', touchStartFn, false );
+				$menuParent[i].addEventListener( 'click', touchStartFn, false );
 			}
 		}
-	}( container, menu ) );
+	}( $container, $menuParent, $button ) );
 
 	// Prevent action of dropdowns with href="#".
 	$( '.menu' ).find( 'a[href="#"]' ).click(
@@ -167,7 +159,7 @@
 	function anchorScroll( anchor ) {
 		$anchor = $( anchor );
 		if ( $anchor.length ) {
-			$( 'html,body' ).animate( {scrollTop: $anchor.offset().top},'slow' );
+			$( 'html,body' ).animate( { scrollTop: $anchor.offset().top }, 'slow' );
 		}
 	}
 
@@ -202,6 +194,7 @@
 		}
 	);
 
+	// initiate sticky menu.
 	$( '#site-navigation' ).sticky();
 
 } )( jQuery );
