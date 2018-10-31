@@ -12,10 +12,10 @@
  */
 
 ( function($) {
-	var $header, $container, $button, $menu, links, i, lenn, $menuParent, $searchButton;
+	var $header, $mobileMenu, $button, $menu, links, i, lenn, $menuParent, $searchButton;
 
 	$header       = $( '#masthead' );
-	$container    = $( '.main-navigation' );
+	$mobileMenu   = $( '#mobile-navigation' );
 	$button       = $( '.menu-toggle' );
 	$menu         = $( '.main-menu' );
 	$menuParent   = $header.find( '.menu-item-has-children > a, .page_item_has_children > a' );
@@ -35,13 +35,13 @@
 	if ( $button.length ) {
 		$button.click(
 			function() {
-				if ( $container.hasClass( 'toggled' ) ) {
-					$container.removeClass( 'toggled' );
+				if ( $mobileMenu.hasClass( 'toggled' ) ) {
+					$mobileMenu.removeClass( 'toggled' );
 					$button.attr( 'aria-expanded', 'false' );
 					$menu.attr( 'aria-expanded', 'false' );
 				}
 				else {
-					$container.addClass( 'toggled' );
+					$mobileMenu.addClass( 'toggled' );
 					$button.attr( 'aria-expanded', 'true' );
 					$menu.attr( 'aria-expanded', 'true' );
 				}

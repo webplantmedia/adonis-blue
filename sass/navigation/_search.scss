@@ -87,13 +87,13 @@ html#master .top-header {
 }
 
 @media screen and (max-width: $size__menu-collapse-width) {
-	#site-navigation {
+	#mobile-navigation {
 		.menu-search {
 			display: none;
 		}
 	}
 
-	#site-navigation.toggled {
+	#mobile-navigation.toggled {
 		.mobile-search-navigation {
 			display: block;
 		}

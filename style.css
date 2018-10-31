@@ -1857,8 +1857,11 @@ a:hover, a:active {
   clear: both;
   display: block;
   width: 100%;
-  border-bottom: 1px solid #ececec;
   text-align: center;
+}
+
+.site-menu {
+  border-bottom: 1px solid #ececec;
 }
 
 .in-menu-bar {
@@ -2001,52 +2004,6 @@ a:hover, a:active {
   color: #333333;
 }
 
-.top-mobile-header {
-  display: none;
-}
-
-#master #site-navigation .menu-toggle {
-  display: none;
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 28px;
-  line-height: 1.75rem;
-  text-transform: uppercase;
-  padding: 1em 1.2em;
-  background: none;
-  font-weight: bold;
-  width: 100%;
-  border-radius: 0;
-}
-
-#master #site-navigation .menu-toggle .menu-label {
-  padding-right: 10px;
-  padding-right: 0.625rem;
-  vertical-align: middle;
-}
-
-#master #site-navigation .menu-toggle .menu-label.menu-label-empty {
-  padding-right: 0;
-}
-
-#master #site-navigation .menu-toggle i {
-  vertical-align: middle;
-  font-size: 22px;
-  font-size: 1.375rem;
-}
-
-#master #site-navigation .menu-toggle i:before {
-  content: "\f419";
-}
-
-#master #site-navigation .menu-toggle:hover {
-  background: none;
-}
-
-#master #site-navigation .menu-toggle, #master #site-navigation .menu-toggle:hover {
-  color: #6d686c;
-}
-
 @media screen and (min-width: 961px) {
   .show-menu-arrows .main-menu ul ul li.page_item_has_children > a,
   .show-menu-arrows .main-menu ul ul li.menu-item-has-children > a {
@@ -2107,39 +2064,92 @@ a:hover, a:active {
   }
 }
 
+/*--------------------------------------------------------------
+## Mobile Menu
+--------------------------------------------------------------*/
+#master #mobile-navigation .menu-toggle {
+  display: none;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 28px;
+  line-height: 1.75rem;
+  text-transform: uppercase;
+  padding: 1em 1.2em;
+  background: none;
+  font-weight: bold;
+  width: 100%;
+  border-radius: 0;
+}
+
+#master #mobile-navigation .menu-toggle .menu-label {
+  padding-right: 10px;
+  padding-right: 0.625rem;
+  vertical-align: middle;
+}
+
+#master #mobile-navigation .menu-toggle .menu-label.menu-label-empty {
+  padding-right: 0;
+}
+
+#master #mobile-navigation .menu-toggle i {
+  vertical-align: middle;
+  font-size: 22px;
+  font-size: 1.375rem;
+}
+
+#master #mobile-navigation .menu-toggle i:before {
+  content: "\f419";
+}
+
+#master #mobile-navigation .menu-toggle:hover {
+  background: none;
+}
+
+#master #mobile-navigation .menu-toggle, #master #mobile-navigation .menu-toggle:hover {
+  color: #6d686c;
+}
+
+.top-mobile-header {
+  display: none;
+}
+
 /* Small menu. */
 @media screen and (max-width: 960px) {
-  #site-navigation .site-boundary {
+  #master .site-branding {
+    padding-top: 20px;
+    padding-top: 1.25rem;
+    padding-bottom: 50px;
+    padding-bottom: 3.125rem;
+    border-bottom: 1px solid #ececec;
+  }
+  #sticky-navigation,
+  #site-navigation {
+    display: none;
+  }
+  #mobile-navigation .site-boundary {
     padding-left: 0;
     padding-right: 0;
   }
-  #site-navigation .split-menu-part {
-    display: block;
-  }
-  #site-navigation .top-mobile-header,
-  #site-navigation .main-menu {
-    display: none;
-  }
-  #site-navigation .top-mobile-header #top-left-menu a,
-  #site-navigation .top-mobile-header #top-right-menu a {
+  #mobile-navigation .top-mobile-header #top-left-menu a,
+  #mobile-navigation .top-mobile-header #top-right-menu a {
     text-transform: uppercase;
     font-size: 13px;
     font-size: 0.8125rem;
     font-weight: bold;
   }
-  #site-navigation .top-mobile-header #top-left-menu a, #site-navigation .top-mobile-header #top-left-menu a:hover, #site-navigation .top-mobile-header #top-left-menu a:active, #site-navigation .top-mobile-header #top-left-menu a:visited, #site-navigation .top-mobile-header #top-left-menu a:focus,
-  #site-navigation .top-mobile-header #top-right-menu a,
-  #site-navigation .top-mobile-header #top-right-menu a:hover,
-  #site-navigation .top-mobile-header #top-right-menu a:active,
-  #site-navigation .top-mobile-header #top-right-menu a:visited,
-  #site-navigation .top-mobile-header #top-right-menu a:focus {
+  #mobile-navigation .top-mobile-header #top-left-menu a, #mobile-navigation .top-mobile-header #top-left-menu a:hover, #mobile-navigation .top-mobile-header #top-left-menu a:active, #mobile-navigation .top-mobile-header #top-left-menu a:visited, #mobile-navigation .top-mobile-header #top-left-menu a:focus,
+  #mobile-navigation .top-mobile-header #top-right-menu a,
+  #mobile-navigation .top-mobile-header #top-right-menu a:hover,
+  #mobile-navigation .top-mobile-header #top-right-menu a:active,
+  #mobile-navigation .top-mobile-header #top-right-menu a:visited,
+  #mobile-navigation .top-mobile-header #top-right-menu a:focus {
     color: #959595;
   }
-  #site-navigation .top-mobile-header .social-navigation a:before {
+  #mobile-navigation .top-mobile-header .social-navigation a:before {
     line-height: inherit;
     height: auto;
   }
-  #site-navigation ul {
+  #mobile-navigation ul {
     border-width: 0;
     float: none;
     list-style: none;
@@ -2148,7 +2158,7 @@ a:hover, a:active {
     vertical-align: top;
     text-align: left;
   }
-  #site-navigation ul ul {
+  #mobile-navigation ul ul {
     position: static;
     left: auto;
     float: none;
@@ -2156,47 +2166,47 @@ a:hover, a:active {
     box-shadow: none;
     border-top-width: 0;
   }
-  #site-navigation ul ul a {
+  #mobile-navigation ul ul a {
     min-width: 0;
     padding-left: 40px;
     padding-left: 2.5rem;
     font-weight: normal;
   }
-  #site-navigation ul ul ul a {
+  #mobile-navigation ul ul ul a {
     padding-left: 60px;
     padding-left: 3.75rem;
   }
-  #site-navigation ul ul ul ul a {
+  #mobile-navigation ul ul ul ul a {
     padding-left: 80px;
     padding-left: 5rem;
   }
-  #site-navigation ul li {
+  #mobile-navigation ul li {
     float: none;
     display: block;
   }
-  #site-navigation ul li:last-child > a {
+  #mobile-navigation ul li:last-child > a {
     border-bottom: 1px solid #ececec;
   }
-  #site-navigation ul li ul {
+  #mobile-navigation ul li ul {
     display: none;
   }
-  #site-navigation ul li.focus > a {
+  #mobile-navigation ul li.focus > a {
     font-weight: bold;
   }
-  #site-navigation ul li.focus > ul {
+  #mobile-navigation ul li.focus > ul {
     display: block;
   }
-  #site-navigation ul li.focus.page_item_has_children > a:after,
-  #site-navigation ul li.focus.menu-item-has-children > a:after {
+  #mobile-navigation ul li.focus.page_item_has_children > a:after,
+  #mobile-navigation ul li.focus.menu-item-has-children > a:after {
     content: "\f50e";
   }
-  #site-navigation ul li.page_item_has_children > a,
-  #site-navigation ul li.menu-item-has-children > a {
+  #mobile-navigation ul li.page_item_has_children > a,
+  #mobile-navigation ul li.menu-item-has-children > a {
     padding-right: 50px;
     padding-right: 3.125rem;
   }
-  #site-navigation ul li.page_item_has_children > a:after,
-  #site-navigation ul li.menu-item-has-children > a:after {
+  #mobile-navigation ul li.page_item_has_children > a:after,
+  #mobile-navigation ul li.menu-item-has-children > a:after {
     font-family: "Genericons-Neue";
     display: inline-block;
     vertical-align: middle;
@@ -2227,7 +2237,7 @@ a:hover, a:active {
     font-size: 1rem;
     content: "\f510";
   }
-  #site-navigation ul a {
+  #mobile-navigation ul a {
     position: relative;
     font-size: 16px;
     font-size: 1rem;
@@ -2246,38 +2256,35 @@ a:hover, a:active {
     width: auto;
     height: auto;
   }
-  #site-navigation ul a, #site-navigation ul a:hover, #site-navigation ul a:active, #site-navigation ul a:visited, #site-navigation ul a:focus {
+  #mobile-navigation ul a, #mobile-navigation ul a:hover, #mobile-navigation ul a:active, #mobile-navigation ul a:visited, #mobile-navigation ul a:focus {
     color: #6d686c;
   }
-  #site-navigation ul .current_page_ancestor > a,
-  #site-navigation ul .current-menu-ancestor > a {
+  #mobile-navigation ul .current_page_ancestor > a,
+  #mobile-navigation ul .current-menu-ancestor > a {
     background-color: #ffffff;
   }
-  #master #site-navigation .menu-toggle {
+  #master #mobile-navigation .menu-toggle {
+    display: block;
+    text-align: left;
+  }
+  #mobile-navigation.toggled .top-mobile-header,
+  #mobile-navigation.toggled .main-menu {
     display: block;
   }
-  #site-navigation.toggled .top-mobile-header,
-  #site-navigation.toggled .main-menu {
-    display: block;
-  }
-  #site-navigation.toggled .top-mobile-header a, #site-navigation.toggled .top-mobile-header a:hover, #site-navigation.toggled .top-mobile-header a:focus, #site-navigation.toggled .top-mobile-header a:active, #site-navigation.toggled .top-mobile-header a:visited {
+  #mobile-navigation.toggled .top-mobile-header a, #mobile-navigation.toggled .top-mobile-header a:hover, #mobile-navigation.toggled .top-mobile-header a:focus, #mobile-navigation.toggled .top-mobile-header a:active, #mobile-navigation.toggled .top-mobile-header a:visited {
     color: #959595;
   }
-  #site-navigation.toggled .top-mobile-header .focus > a {
+  #mobile-navigation.toggled .top-mobile-header .focus > a {
     color: #6d686c;
   }
-  #master #site-navigation.toggled {
+  #master #mobile-navigation.toggled {
     border-bottom-width: 0;
   }
-  #master #site-navigation.toggled .menu-toggle {
+  #master #mobile-navigation.toggled .menu-toggle {
     border-bottom: 1px solid #ececec;
   }
-  #master #site-navigation.toggled .menu-toggle i:before {
+  #master #mobile-navigation.toggled .menu-toggle i:before {
     content: "\f406";
-  }
-  .top-header + .site-branding {
-    margin-top: 36px;
-    margin-top: 2.25rem;
   }
 }
 
@@ -2369,10 +2376,10 @@ html#master .top-header ul.menu li.menu-search-button i:before {
 }
 
 @media screen and (max-width: 960px) {
-  #site-navigation .menu-search {
+  #mobile-navigation .menu-search {
     display: none;
   }
-  #site-navigation.toggled .mobile-search-navigation {
+  #mobile-navigation.toggled .mobile-search-navigation {
     display: block;
   }
 }
@@ -2573,23 +2580,23 @@ html#master .top-header ul.menu li.menu-search-button i:before {
 /*--------------------------------------------------------------
 ## Sticky Menu
 --------------------------------------------------------------*/
-.sticky-navigation {
+#sticky-navigation {
   display: none;
   background-color: #ffffff;
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.08);
 }
 
-.sticky-navigation .split-menu .split-menu-part-left {
+#sticky-navigation .split-menu .split-menu-part-left {
   padding-right: 30px;
   padding-right: 1.875rem;
 }
 
-.sticky-navigation .split-menu .split-menu-part-right {
+#sticky-navigation .split-menu .split-menu-part-right {
   padding-left: 30px;
   padding-left: 1.875rem;
 }
 
-.sticky-navigation .main-menu ul.menu > li > a {
+#sticky-navigation .main-menu ul.menu > li > a {
   font-size: 14px;
   font-size: 0.875rem;
 }

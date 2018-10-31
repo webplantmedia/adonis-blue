@@ -30,11 +30,7 @@
 
 	<header id="masthead" class="site-header">
 		<div class="site-header-inner">
-			<?php get_template_part( 'template-parts/menu', 'top' ); ?>
-
-			<?php get_template_part( 'template-parts/site', 'branding' ); ?>
-
-			<div id="site-navigation" class="main-navigation">
+			<div id="mobile-navigation" class="main-navigation mobile-menu">
 
 				<?php painted_lady_mobile_menu_button(); ?>
 
@@ -42,17 +38,25 @@
 
 				<?php get_template_part( 'template-parts/menu', 'mobile-search' ); ?>
 
-				<?php get_template_part( 'template-parts/menu', 'main' ); ?>
-
 				<?php get_template_part( 'template-parts/menu', 'mobile' ); ?>
+
+			</div><!-- .#mobile-navigation -->
+
+			<?php get_template_part( 'template-parts/menu', 'top' ); ?>
+
+			<?php get_template_part( 'template-parts/site', 'branding' ); ?>
+
+			<div id="site-navigation" class="main-navigation site-menu">
+
+				<?php get_template_part( 'template-parts/menu', 'main' ); ?>
 
 			</div><!-- #site-navigation -->
 
-			<div id="sticky-menu" class="main-navigation sticky-navigation">
+			<div id="sticky-navigation" class="main-navigation sticky-menu">
 
 				<?php get_template_part( 'template-parts/menu', 'main' ); ?>
 
-			</div><!-- #sticky-menu -->
+			</div><!-- #sticky-navigation -->
 		</div><!-- .site-header-inner -->
 	</header><!-- #masthead -->
 

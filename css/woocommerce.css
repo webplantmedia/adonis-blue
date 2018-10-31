@@ -155,10 +155,10 @@ WooCommerce styling
 }
 
 @media screen and (max-width: 960px) {
-  #site-navigation .cart-menu {
+  #mobile-navigation .cart-menu {
     display: none;
   }
-  #site-navigation.toggled .mobile-cart-navigation {
+  #mobile-navigation.toggled .mobile-cart-navigation {
     display: block;
   }
 }

@@ -4,7 +4,7 @@
 	$.fn.sticky = function() {
 
 		var $content    = $( '#content' );
-		var $stickyMenu = $( '#sticky-menu' );
+		var $stickyMenu = $( '#sticky-navigation' );
 
 		window.onscroll = function() {
 			stick();

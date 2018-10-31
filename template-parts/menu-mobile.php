@@ -11,12 +11,41 @@
  * @license http://www.gnu.org/licenses/gpl-2.0.html
  */
 
-if ( ! has_nav_menu( 'menu-3' ) && ! has_nav_menu( 'menu-2' ) && ! has_nav_menu( 'social' ) ) {
-	return;
-}
 ?>
 
 <div class="top-mobile-header">
+	<?php if ( has_nav_menu( 'menu-1' ) ) : ?>
+		<nav class="main-menu" role="navigation">
+			<?php
+			wp_nav_menu(
+				array(
+					'theme_location' => 'menu-1',
+					'fallback_cb'    => false,
+					'container'      => 'ul',
+					'menu_id'        => 'primary-menu',
+					'menu_class'     => 'menu',
+				)
+			);
+			?>
+		</nav>
+	<?php endif; ?>
+
+	<?php if ( has_nav_menu( 'menu-4' ) ) : ?>
+		<nav class="main-menu" role="navigation">
+			<?php
+			wp_nav_menu(
+				array(
+					'theme_location' => 'menu-4',
+					'fallback_cb'    => false,
+					'container'      => 'ul',
+					'menu_id'        => 'primary-menu-right',
+					'menu_class'     => 'menu',
+				)
+			);
+			?>
+		</nav>
+	<?php endif; ?>
+
 	<?php if ( has_nav_menu( 'menu-2' ) ) : ?>
 		<nav id="top-left-navigation" class="top-left-header-menu header-menu" role="navigation">
 			<?php

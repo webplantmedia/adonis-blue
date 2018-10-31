@@ -150,12 +150,12 @@
 }
 
 @media screen and (max-width: $size__menu-collapse-width) {
-	#site-navigation {
+	#mobile-navigation {
 		.cart-menu {
 			display: none;
 		}
 	}
-	#site-navigation.toggled {
+	#mobile-navigation.toggled {
 		.mobile-cart-navigation {
 			display: block;
 		}

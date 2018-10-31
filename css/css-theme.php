@@ -329,7 +329,7 @@ textarea {
 		top: 32px;
 	}
 
-	#sticky-menu {
+	#sticky-navigation {
 		display: block;
 		transition: all 0.5s ease 0s;
 		position: fixed;
@@ -343,8 +343,8 @@ textarea {
 		' . painted_lady_css_set_unit( 'padding-bottom', $painted_lady['heading_padding_bottom'] ) . ' /*id:heading_padding_bottom*/
 	}
 
-	#sticky-menu .split-menu .split-menu-part-center,
-	#sticky-menu .site-logo-container {
+	#sticky-navigation .split-menu .split-menu-part-center,
+	#sticky-navigation .site-logo-container {
 		width: ' . $painted_lady['sticky_menu_logo_width'] . 'px; /*id:sticky_menu_logo_width*/
 	}
 
