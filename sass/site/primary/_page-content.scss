@@ -51,16 +51,9 @@
 		}
 
 		.site-content {
-			@include rem('padding-top',300px);
-
 			.content-area {
 				background-color: $color__background-body;
 
-			}
-
-			#secondary,
-			.site-main {
-				@include rem('padding-top',70px);
 			}
 		}
 	}

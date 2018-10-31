@@ -244,15 +244,6 @@ a:hover {
 	.site-header-inner {
 		background-position: calc(50% + ' . ( $painted_lady['top_header_background_offset'] - 75 ) . 'px) top; /*id:top_header_background_offset_3*/
 	}
-}
-@media (min-width: 800px) {
-	#master .page.has-post-thumbnail .page-image-header-background {
-		height: ' . $painted_lady['page_image_header_height'] . 'px; /*id:page_image_header_height*/
-	}
-
-	#master .page.has-post-thumbnail .site-content {
-		padding-top: ' . max( ( $painted_lady['page_image_header_height'] - 100 ), 0 ) . 'px; /*id:page_image_header_height_1*/
-	}
 }';
 
 	if ( $painted_lady['thumb_excerpt_max_height'] > 0 ) {

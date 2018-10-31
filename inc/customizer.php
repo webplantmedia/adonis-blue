@@ -592,31 +592,6 @@ function painted_lady_customize_register( $wp_customize ) {
 		)
 	);
 
-	$setting_id = 'page_image_header_height';
-	$wp_customize->add_setting(
-		$setting_id, array(
-			'default'           => $painted_lady_default[ $setting_id ],
-			'transport'         => 'postMessage',
-			'sanitize_callback' => 'absint',
-		)
-	);
-
-	$wp_customize->add_control(
-		$setting_id, array(
-			'section'     => $section_id,
-			'type'        => 'range',
-			'label'       => esc_html__( 'Page Image Header Height', 'painted-lady' ),
-			'description' => esc_html__( 'This changes the height of your featured image in your page header area.', 'painted-lady' ),
-			'section'     => $section_id,
-			'input_attrs' => array(
-				'min'   => 0,
-				'max'   => 800,
-				'step'  => 5,
-				'style' => 'width:100%;',
-			),
-		)
-	);
-
 	/**
 	 * Blog
 	 */

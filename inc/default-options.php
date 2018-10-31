@@ -61,7 +61,6 @@ $painted_lady_default['default_button_style']         = 'button-2';
 $painted_lady_default['disable_body_font']            = 0;
 $painted_lady_default['disable_heading_font']         = 0;
 $painted_lady_default['disable_accent_font']          = 0;
-$painted_lady_default['page_image_header_height']     = 400;
 
 // Blog.
 $painted_lady_default['blog_display']                     = 'blog4';

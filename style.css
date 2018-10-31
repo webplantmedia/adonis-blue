@@ -5040,17 +5040,8 @@ h1.h1-title,
     right: 0;
     height: 400px;
   }
-  .page.has-post-thumbnail .site-content {
-    padding-top: 300px;
-    padding-top: 18.75rem;
-  }
   .page.has-post-thumbnail .site-content .content-area {
     background-color: #ffffff;
-  }
-  .page.has-post-thumbnail .site-content #secondary,
-  .page.has-post-thumbnail .site-content .site-main {
-    padding-top: 70px;
-    padding-top: 4.375rem;
   }
 }
 

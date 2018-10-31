@@ -47,6 +47,7 @@
 				<?php get_template_part( 'template-parts/menu', 'mobile' ); ?>
 
 			</div><!-- #site-navigation -->
+
 			<div id="sticky-menu" class="main-navigation sticky-navigation">
 
 				<?php get_template_part( 'template-parts/menu', 'main' ); ?>
@@ -55,30 +56,7 @@
 		</div><!-- .site-header-inner -->
 	</header><!-- #masthead -->
 
-	<?php if ( is_category() || is_tag() || is_tax() || is_date() || is_author() ) : ?>
-		<header class="archive-page-header">
-			<div class="site-boundary">
-				<?php the_archive_title( '<h1 class="page-title">', '</h1>' ); ?>
-			</div><!-- .site-boundary -->
-		</header><!-- .page-header -->
-	<?php elseif ( is_search() ) : ?>
-		<header class="archive-page-header">
-			<div class="site-boundary">
-				<h1 class="page-title">
-					<span class="archive-type"><?php echo esc_html__( 'Search Results for:', 'painted-lady' ); ?></span>
-					<span class="archive-title"><?php echo get_search_query(); ?></span>
-				</h1>
-			</div>
-		</header><!-- .page-header -->
-
-	<?php endif; ?>
-
-	<?php if ( painted_lady_display_header_image() ) : ?>
-		<?php $url = get_the_post_thumbnail_url( get_the_ID(), 'full' ); ?>
-		<div class="page-image-header">
-			<div class="page-image-header-background" style="background-image:url('<?php echo esc_url( $url ); ?>');"></div>
-		</div><!-- .entry-image -->
-	<?php endif; ?>
+	<?php get_template_part( 'template-parts/site', 'page-title' ); ?>
 
 	<div id="content" class="site-content">
 		<div class="site-content-inner">
