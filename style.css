@@ -1870,6 +1870,10 @@ a:hover, a:active {
   display: inline-block;
 }
 
+.split-menu .split-menu-part-center {
+  display: none;
+}
+
 .split-menu-part-center {
   clip: rect(1px, 1px, 1px, 1px);
   position: absolute;
