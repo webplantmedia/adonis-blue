@@ -42,6 +42,7 @@
 					// border-bottom: $border__width solid $color__border;
 					@include rem('min-width',150px);
 					@include rem( 'font-size', ( $font__top-menu-size - 1 ) );
+					white-space: nowrap;
 				}
 			}
 

@@ -58,6 +58,7 @@
 
 			li {
 				float: none;
+				width: 100%;
 
 				&:hover > ul {
 					left: 100%;
@@ -77,6 +78,7 @@
 				text-transform: none;
 				font-weight: normal;
 				@include rem('min-width',200px);
+				white-space: nowrap;
 
 				&,
 				&:focus,

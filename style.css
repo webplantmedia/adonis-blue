@@ -1916,6 +1916,7 @@ a:hover, a:active {
 
 .main-menu ul ul li {
   float: none;
+  width: 100%;
 }
 
 .main-menu ul ul li:hover > ul {
@@ -1932,6 +1933,7 @@ a:hover, a:active {
   font-weight: normal;
   min-width: 200px;
   min-width: 12.5rem;
+  white-space: nowrap;
 }
 
 .main-menu ul ul a, .main-menu ul ul a:focus, .main-menu ul ul a:active, .main-menu ul ul a:visited {
@@ -2436,6 +2438,7 @@ html#master .top-header ul.menu li.menu-search-button i:before {
   min-width: 9.375rem;
   font-size: 11px;
   font-size: 0.6875rem;
+  white-space: nowrap;
 }
 
 .top-header .social-navigation ul li:hover > ul,
