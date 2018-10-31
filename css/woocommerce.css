@@ -61,10 +61,6 @@ WooCommerce styling
   display: block;
 }
 
-.cart-menu ul.menu li.cart a.cart_dropdown_link:hover {
-  color: #333333;
-}
-
 .cart-menu ul.menu li.cart .alert-count {
   position: absolute;
   top: 15%;

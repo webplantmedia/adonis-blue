@@ -6,7 +6,7 @@ html#master .top-header {
 
 			i,
 			i:before {
-				@include rem('font-size',($font__top-menu-social-size - 5));
+				@include rem('font-size',($font__top-menu-social-size - 4));
 				@include rem('line-height',$font__line-height-top-menu);
 			}
 		}
@@ -35,7 +35,7 @@ html#master .top-header {
 				display: block;
 
 				&:hover {
-					color: $color__text-dark;
+					// color: $color__text-dark;
 				}
 			}
 
