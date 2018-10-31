@@ -443,6 +443,10 @@ function painted_lady_display_sidebar() {
 	global $painted_lady;
 
 	if ( is_single() && 'post' === get_post_type() ) {
+		if ( is_page_template( 'templates/full-width-post.php' ) ) {
+			return false;
+		}
+
 		if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 			return false;
 		}
@@ -537,6 +541,10 @@ function painted_lady_display_fullwidth() {
 	}
 
 	if ( is_page_template( 'templates/full-width-page.php' ) ) {
+		return true;
+	}
+
+	if ( is_page_template( 'templates/full-width-post.php' ) ) {
 		return true;
 	}
 
