@@ -12,12 +12,13 @@
  */
 
 ( function($) {
-	var $container, $button, $menu, links, i, lenn, $menuParent, $searchButton;
+	var $header, $container, $button, $menu, links, i, lenn, $menuParent, $searchButton;
 
+	$header       = $( '#masthead' );
 	$container    = $( '.main-navigation' );
 	$button       = $( '.menu-toggle' );
 	$menu         = $( '.main-menu' );
-	$menuParent   = $container.find( '.menu-item-has-children > a, .page_item_has_children > a' );
+	$menuParent   = $header.find( '.menu-item-has-children > a, .page_item_has_children > a' );
 	$searchButton = $( '.menu-search-button' );
 
 	// Hide menu toggle button if menu is empty and return early.
@@ -99,6 +100,15 @@
 						}
 					}
 				);
+
+				$( document ).on(
+					'touchstart',
+					function( e ) {
+						if ( ! $this.is( e.target ) && $this.has( e.target ).length === 0) {
+							$this.removeClass( 'focus' );
+						}
+					}
+				);
 			}
 		);
 	}
@@ -106,11 +116,11 @@
 	/**
 	 * Toggles `focus` class to allow submenu access on tablets.
 	 */
-	( function( $container, $menuParent, $button ) {
+	( function( $header, $menuParent, $button ) {
 		var touchStartFn,
 			i,
-			links = $container.find( 'ul a' );
-			li    = $container.find( 'ul li' );
+			links = $header.find( 'ul a' );
+			li    = $header.find( 'ul li' );
 
 		if ( 'ontouchstart' in window ) {
 			clickOutsideMenu = function ( event ) {
@@ -147,7 +157,7 @@
 				$menuParent[i].addEventListener( 'click', touchStartFn, false );
 			}
 		}
-	}( $container, $menuParent, $button ) );
+	}( $header, $menuParent, $button ) );
 
 	// Prevent action of dropdowns with href="#".
 	$( '.menu' ).find( 'a[href="#"]' ).click(

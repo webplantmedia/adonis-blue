@@ -56,6 +56,24 @@
 
 				}
 			);
+
+			var $cartMenu = $( '.cart-menu' );
+
+			$.each( $cartMenu,
+				function() {
+					var $nav = $( this );
+					var $li = $nav.find( 'li.cart' );
+					var $ul = $nav.find( '.woo-sub-menu' );
+
+					$nav.find( '.cart_dropdown_link' ).on(
+						'touchstart',
+						function( e ) {
+							// figure out how to open and close it.
+							e.preventDefault();
+						}
+					);
+				}
+			);
 		}
 	);
 })( jQuery );
