@@ -24,6 +24,7 @@
 					'container'      => 'ul',
 					'menu_id'        => 'primary-menu',
 					'menu_class'     => 'menu',
+					'link_after'     => '<span class="menu-item-controller"></span>',
 				)
 			);
 			?>
@@ -40,6 +41,7 @@
 					'container'      => 'ul',
 					'menu_id'        => 'primary-menu-right',
 					'menu_class'     => 'menu',
+					'link_after'     => '<span class="menu-item-controller"></span>',
 				)
 			);
 			?>
@@ -57,6 +59,7 @@
 					'container'      => 'ul',
 					'menu_id'        => 'top-left-menu',
 					'menu_class'     => 'menu',
+					'link_after'     => '<span class="menu-item-controller"></span>',
 				)
 			);
 			?>
@@ -74,6 +77,7 @@
 					'container'      => 'ul',
 					'menu_id'        => 'top-right-menu',
 					'menu_class'     => 'menu',
+					'link_after'     => '<span class="menu-item-controller"></span>',
 				)
 			);
 			?>

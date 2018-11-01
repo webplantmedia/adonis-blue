@@ -16,7 +16,7 @@ if ( ! has_nav_menu( 'menu-3' ) && ! has_nav_menu( 'menu-2' ) && ! has_nav_menu(
 }
 ?>
 
-<div class="top-header">
+<div id="top-navigation" class="top-header">
 	<div class="site-boundary">
 		<div class="top-left-header">
 			<?php if ( has_nav_menu( 'social' ) ) : ?>

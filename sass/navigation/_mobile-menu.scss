@@ -129,12 +129,8 @@
 				&.focus > a {
 				}
 
-				&.current_page_parent > a,
-				&.current-menu-parent > a,
 				&.current_page_item > a,
-				&.current-menu-item > a,
-				&.current_page_ancestor > a,
-				&.current-menu-ancestor > a {
+				&.current-menu-item > a {
 				}
 
 				&:last-child > a {
@@ -156,8 +152,10 @@
 
 					&.page_item_has_children > a,
 					&.menu-item-has-children > a {
-						&:after {
-							content: "\f50e";
+						.menu-item-controller {
+							&:before {
+								content: "\f50e";
+							}
 						}
 					}
 				}
@@ -166,7 +164,7 @@
 				&.menu-item-has-children > a {
 					@include rem('padding-right',50px);
 
-					&:after {
+					.menu-item-controller {
 						font-family:"Genericons-Neue";
 						
 						display:inline-block;
@@ -192,7 +190,10 @@
 						text-align: right;
 						line-height: $font__line-height-menu-bar;
 						@include rem('font-size',$font__menu-size);
-						content: "\f510";
+
+						&:before {
+							content: "\f510";
+						}
 					}
 				}
 			}
@@ -232,7 +233,7 @@
 		text-align: left;
 	}
 
-	#mobile-navigation.toggled {
+	#master #mobile-navigation.toggled {
 		.top-mobile-header,
 		.main-menu {
 			display: block;

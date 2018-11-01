@@ -88,12 +88,8 @@ a:hover {
 }
 
 #master .affwp-affiliate-dashboard-tab.active a,
-#master .main-menu .current_page_parent > a,
-#master .main-menu .current-menu-parent > a,
-#master .main-menu .current_page_item > a,
-#master .main-menu .current-menu-item > a,
-#master .main-menu .current_page_ancestor > a,
-#master .main-menu .current-menu-ancestor > a,
+#master #page #masthead .main-menu .current_page_item > a,
+#master #page #masthead .main-menu .current-menu-item > a,
 #master .content-callout__content .content-callout__text ul li:before,
 #master .menu-toggle i,
 #master .entry-cat-meta span > a {
@@ -105,12 +101,8 @@ a:hover {
 }
 
 #master #affwp-affiliate-dashboard-tabs .affwp-affiliate-dashboard-tab.active a:hover,
-#master .main-menu .current_page_parent > a:hover,
-#master .main-menu .current-menu-parent > a:hover,
 #master .main-menu .current_page_item > a:hover,
 #master .main-menu .current-menu-item > a:hover,
-#master .main-menu .current_page_ancestor > a:hover,
-#master .main-menu .current-menu-ancestor > a:hover,
 #master .entry-cat-meta span > a:hover {
 	color: ' . $painted_lady['primary_hover_color'] . '; /*id:primary_hover_color*/
 }

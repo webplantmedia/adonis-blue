@@ -12,14 +12,18 @@
  */
 
 ( function($) {
-	var $header, $mobileMenu, $button, $menu, links, i, lenn, $menuParent, $searchButton;
+	'use strict';
 
-	$header       = $( '#masthead' );
-	$mobileMenu   = $( '#mobile-navigation' );
-	$button       = $( '.menu-toggle' );
-	$menu         = $( '.main-menu' );
-	$menuParent   = $header.find( '.menu-item-has-children > a, .page_item_has_children > a' );
-	$searchButton = $( '.menu-search-button' );
+	var $header, $mobileMenu, $mainMenu, $button, $menu, links, i, lenn, $menuParent, $mobileMenuParent, $searchButton;
+
+	$header           = $( '#masthead' );
+	$mobileMenu       = $( '#mobile-navigation' );
+	$mainMenu         = $( '#site-navigation, #top-navigation, #sticky-navigation' );
+	$button           = $( '.menu-toggle' );
+	$menu             = $( '.main-menu' );
+	$menuParent       = $mainMenu.find( '.menu-item-has-children > a, .page_item_has_children > a' );
+	$mobileMenuParent = $mobileMenu.find( '.menu-item-has-children > a, .page_item_has_children > a' );
+	$searchButton     = $( '.menu-search-button' );
 
 	// Hide menu toggle button if menu is empty and return early.
 	if ( 'undefined' === typeof $menu ) {
@@ -49,15 +53,25 @@
 		);
 	}
 
-	$menuParent.click(
-		function( event ) {
+	/**
+	 * Mobile menu.
+	 */
+	$mobileMenuParent.click(
+		function( e ) {
 			if ( ! $button.is( ':visible' ) ) {
 				return;
 			}
 
-			$parent = $( this ).parent();
+			var $this   = $( this );
+			var $parent = $this.parent();
+			var $target = $( e.target );
+
 
 			if ( ! $parent.hasClass( 'focus' ) ) {
+				$parent.toggleClass( 'focus' );
+				return false;
+			}
+			else if ( $target.length && $target.hasClass( 'menu-item-controller' ) ) {
 				$parent.toggleClass( 'focus' );
 				return false;
 			}
@@ -119,7 +133,7 @@
 	( function( $header, $menuParent, $button ) {
 		var touchStartFn,
 			i,
-			links = $header.find( 'ul a' );
+			links = $header.find( 'ul a' ),
 			li    = $header.find( 'ul li' );
 
 		if ( 'ontouchstart' in window ) {

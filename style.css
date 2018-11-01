@@ -1983,12 +1983,8 @@ a:hover, a:active {
   letter-spacing: 0.07em;
 }
 
-.main-menu ul .current_page_parent > a,
-.main-menu ul .current-menu-parent > a,
 .main-menu ul .current_page_item > a,
-.main-menu ul .current-menu-item > a,
-.main-menu ul .current_page_ancestor > a,
-.main-menu ul .current-menu-ancestor > a {
+.main-menu ul .current-menu-item > a {
   font-weight: bold;
 }
 
@@ -2198,8 +2194,8 @@ a:hover, a:active {
   #mobile-navigation ul li.focus > ul {
     display: block;
   }
-  #mobile-navigation ul li.focus.page_item_has_children > a:after,
-  #mobile-navigation ul li.focus.menu-item-has-children > a:after {
+  #mobile-navigation ul li.focus.page_item_has_children > a .menu-item-controller:before,
+  #mobile-navigation ul li.focus.menu-item-has-children > a .menu-item-controller:before {
     content: "\f50e";
   }
   #mobile-navigation ul li.page_item_has_children > a,
@@ -2207,8 +2203,8 @@ a:hover, a:active {
     padding-right: 50px;
     padding-right: 3.125rem;
   }
-  #mobile-navigation ul li.page_item_has_children > a:after,
-  #mobile-navigation ul li.menu-item-has-children > a:after {
+  #mobile-navigation ul li.page_item_has_children > a .menu-item-controller,
+  #mobile-navigation ul li.menu-item-has-children > a .menu-item-controller {
     font-family: "Genericons-Neue";
     display: inline-block;
     vertical-align: middle;
@@ -2237,6 +2233,9 @@ a:hover, a:active {
     line-height: 28px;
     font-size: 16px;
     font-size: 1rem;
+  }
+  #mobile-navigation ul li.page_item_has_children > a .menu-item-controller:before,
+  #mobile-navigation ul li.menu-item-has-children > a .menu-item-controller:before {
     content: "\f510";
   }
   #mobile-navigation ul a {
@@ -2269,14 +2268,14 @@ a:hover, a:active {
     display: block;
     text-align: left;
   }
-  #mobile-navigation.toggled .top-mobile-header,
-  #mobile-navigation.toggled .main-menu {
+  #master #mobile-navigation.toggled .top-mobile-header,
+  #master #mobile-navigation.toggled .main-menu {
     display: block;
   }
-  #mobile-navigation.toggled .top-mobile-header a, #mobile-navigation.toggled .top-mobile-header a:hover, #mobile-navigation.toggled .top-mobile-header a:focus, #mobile-navigation.toggled .top-mobile-header a:active, #mobile-navigation.toggled .top-mobile-header a:visited {
+  #master #mobile-navigation.toggled .top-mobile-header a, #master #mobile-navigation.toggled .top-mobile-header a:hover, #master #mobile-navigation.toggled .top-mobile-header a:focus, #master #mobile-navigation.toggled .top-mobile-header a:active, #master #mobile-navigation.toggled .top-mobile-header a:visited {
     color: #959595;
   }
-  #mobile-navigation.toggled .top-mobile-header .focus > a {
+  #master #mobile-navigation.toggled .top-mobile-header .focus > a {
     color: #6d686c;
   }
   #master #mobile-navigation.toggled {
@@ -4438,8 +4437,14 @@ body:not(.single-post) .entry-footer,
   display: block;
 }
 
+#master body.woocommerce-page .comments-area .comments-title,
+#master body.woocommerce-page .entry-footer,
+#master body.woocommerce-page .entry-header,
 #master body.woocommerce-page .site-main,
 #master body.woocommerce-page .entry-content,
+#master .display-fullwidth .comments-area .comments-title,
+#master .display-fullwidth .entry-footer,
+#master .display-fullwidth .entry-header,
 #master .display-fullwidth .site-main,
 #master .display-fullwidth .entry-content {
   max-width: none;
@@ -5285,12 +5290,15 @@ h1.h1-title,
   margin: 0;
 }
 
+.entry-author-container {
+  border-bottom: 1px solid #ececec;
+}
+
 .entry-author {
   margin-top: 70px;
   margin-top: 4.375rem;
   padding-bottom: 70px;
   padding-bottom: 4.375rem;
-  border-bottom: 1px solid #ececec;
 }
 
 .entry-author .author-avatar {
