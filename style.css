@@ -2061,10 +2061,8 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 ## Mobile Menu
 --------------------------------------------------------------*/
-@media screen and (min-width: 601px) {
-  #master .admin-bar #mobile-navigation .menu-toggle {
-    top: 46px;
-  }
+#master .admin-bar #mobile-navigation .menu-toggle {
+  top: 46px;
 }
 
 @media screen and (min-width: 783px) {
@@ -2131,6 +2129,10 @@ a:hover, a:active {
 /* Small menu. */
 @media screen and (max-width: 960px) {
   #master .site-branding {
+    padding-top: 60px;
+    padding-top: 3.75rem;
+    padding-bottom: 60px;
+    padding-bottom: 3.75rem;
     border-bottom: 1px solid #ececec;
   }
   #sticky-navigation,
