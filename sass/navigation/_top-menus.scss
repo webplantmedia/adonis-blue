@@ -37,17 +37,17 @@
 				a {
 					padding-top: .4em;
 					padding-bottom: .4em;
-					padding-left: 1em;
-					padding-right: 1em;
+					padding-left: 1.5em;
+					padding-right: 1.5em;
 					// border-bottom: $border__width solid $color__border;
-					@include rem('min-width',150px);
+					// @include rem('min-width',150px);
 					@include rem( 'font-size', ( $font__top-menu-size - 1 ) );
 					white-space: nowrap;
 				}
 			}
 
 			li:hover > ul {
-				left: -.5em;
+				left: -1em;
 			}
 		}
 

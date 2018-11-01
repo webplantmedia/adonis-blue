@@ -1931,8 +1931,6 @@ a:hover, a:active {
   line-height: 1.375;
   text-transform: none;
   font-weight: normal;
-  min-width: 200px;
-  min-width: 12.5rem;
   white-space: nowrap;
 }
 
@@ -1951,6 +1949,10 @@ a:hover, a:active {
 
 .main-menu ul li:hover > ul {
   left: 0;
+}
+
+.main-menu ul#primary-menu-right ul {
+  text-align: right;
 }
 
 .main-menu ul#primary-menu-right li:hover > ul {
@@ -2006,7 +2008,7 @@ a:hover, a:active {
   .show-menu-arrows .main-menu ul ul li.page_item_has_children > a,
   .show-menu-arrows .main-menu ul ul li.menu-item-has-children > a {
     position: relative;
-    padding-right: 3em;
+    padding-right: 5em;
   }
   .show-menu-arrows .main-menu ul ul li.page_item_has_children > a:after,
   .show-menu-arrows .main-menu ul ul li.menu-item-has-children > a:after {
@@ -2053,8 +2055,16 @@ a:hover, a:active {
     line-height: 1;
     content: "\f431";
   }
+  .show-menu-arrows .main-menu ul#primary-menu-right ul li.page_item_has_children > a,
+  .show-menu-arrows .main-menu ul#primary-menu-right ul li.menu-item-has-children > a {
+    padding-left: 5em;
+    padding-right: 20px;
+    padding-right: 1.25rem;
+  }
   .show-menu-arrows .main-menu ul#primary-menu-right ul li.page_item_has_children > a:after,
   .show-menu-arrows .main-menu ul#primary-menu-right ul li.menu-item-has-children > a:after {
+    left: 1.4em;
+    right: auto;
     -webkit-transform: translateY(-50%) rotate(90deg);
     -moz-transform: translateY(-50%) rotate(90deg);
     -ms-transform: translateY(-50%) rotate(90deg);
@@ -2452,10 +2462,8 @@ html#master .top-header ul.menu li.menu-search-button i:before {
 .top-header .header-menu ul ul a {
   padding-top: .4em;
   padding-bottom: .4em;
-  padding-left: 1em;
-  padding-right: 1em;
-  min-width: 150px;
-  min-width: 9.375rem;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
   font-size: 11px;
   font-size: 0.6875rem;
   white-space: nowrap;
@@ -2463,7 +2471,7 @@ html#master .top-header ul.menu li.menu-search-button i:before {
 
 .top-header .social-navigation ul li:hover > ul,
 .top-header .header-menu ul li:hover > ul {
-  left: -.5em;
+  left: -1em;
 }
 
 .top-header .social-navigation li,
