@@ -2320,8 +2320,8 @@ html#master .top-header ul.menu li.menu-search-button {
 
 html#master .top-header ul.menu li.menu-search-button i,
 html#master .top-header ul.menu li.menu-search-button i:before {
-  font-size: 17px;
-  font-size: 1.0625rem;
+  font-size: 15px;
+  font-size: 0.9375rem;
   line-height: 36px;
   line-height: 2.25rem;
 }
@@ -2525,8 +2525,8 @@ html#master .top-header ul.menu li.menu-search-button i:before {
 .top-header .social-navigation a:before {
   line-height: 36px;
   line-height: 2.25rem;
-  font-size: 21px;
-  font-size: 1.3125rem;
+  font-size: 18px;
+  font-size: 1.125rem;
 }
 
 .top-header .top-left-header > nav {

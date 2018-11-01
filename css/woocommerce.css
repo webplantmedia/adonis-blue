@@ -18,8 +18,8 @@ WooCommerce styling
 
 .top-header .cart-menu ul.menu li.cart i,
 .top-header .cart-menu ul.menu li.cart i:before {
-  font-size: 21px;
-  font-size: 1.3125rem;
+  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 36px;
   line-height: 2.25rem;
 }

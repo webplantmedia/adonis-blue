@@ -6,7 +6,7 @@ html#master .top-header {
 
 			i,
 			i:before {
-				@include rem('font-size',($font__top-menu-social-size - 4));
+				@include rem( 'font-size', ( round( 0.86 * $font__top-menu-social-size ) ) );
 				@include rem('line-height',$font__line-height-top-menu);
 			}
 		}
