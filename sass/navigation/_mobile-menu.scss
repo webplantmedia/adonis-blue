@@ -226,6 +226,31 @@
 				background-color: $color__background-body;
 			}
 		}
+
+		ul#menu-social-links-menu {
+			display: table;
+			table-layout: fixed;
+			width: 100%;
+			// display: flex;
+			// flex-wrap: wrap;
+
+			li {
+				display: table-cell;
+				// flex-grow: 1;
+				// width: 33%;
+				border-right: $border__width solid $color__menu-border;
+				text-align: center;
+
+				&:last-child {
+					border-right-width: 0;
+				}
+				
+				a {
+					padding-left: 0;
+					padding-right: 0;
+				}
+			}
+		}
 	}
 
 	#master #mobile-navigation .menu-toggle {
@@ -234,6 +259,8 @@
 	}
 
 	#master #mobile-navigation.toggled {
+		@include rem( 'padding-bottom', 30px );
+
 		.top-mobile-header,
 		.main-menu {
 			display: block;

@@ -2264,9 +2264,30 @@ a:hover, a:active {
   #mobile-navigation ul .current-menu-ancestor > a {
     background-color: #ffffff;
   }
+  #mobile-navigation ul#menu-social-links-menu {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+  }
+  #mobile-navigation ul#menu-social-links-menu li {
+    display: table-cell;
+    border-right: 1px solid #ececec;
+    text-align: center;
+  }
+  #mobile-navigation ul#menu-social-links-menu li:last-child {
+    border-right-width: 0;
+  }
+  #mobile-navigation ul#menu-social-links-menu li a {
+    padding-left: 0;
+    padding-right: 0;
+  }
   #master #mobile-navigation .menu-toggle {
     display: block;
     text-align: left;
+  }
+  #master #mobile-navigation.toggled {
+    padding-bottom: 30px;
+    padding-bottom: 1.875rem;
   }
   #master #mobile-navigation.toggled .top-mobile-header,
   #master #mobile-navigation.toggled .main-menu {
