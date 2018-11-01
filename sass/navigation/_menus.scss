@@ -37,7 +37,7 @@
 		vertical-align: top;
 
 		ul {
-			border-top: $border__width solid $color__menu-border;
+			// border-top: $border__width solid $color__menu-border;
 			float: left;
 			position: absolute;
 			top: 100%;
@@ -52,7 +52,7 @@
 			ul {
 				left: -999em;
 				top: -1em;
-				margin-top: -$border__width;
+				// margin-top: -$border__width;
 				border-top-color: $color__border;
 			}
 
@@ -103,10 +103,6 @@
 		}
 
 		&#primary-menu-right {
-			ul {
-				text-align: right;
-			}
-
 			li {
 				&:hover > ul {
 					left: auto;
@@ -224,12 +220,7 @@
 					li {
 						&.page_item_has_children > a,
 						&.menu-item-has-children > a {
-							padding-left: 5em;
-							@include rem('padding-right',20px);
-
 							&:after {
-								left: 1.4em;
-								right: auto;
 								@include crossBrowser('transform',translateY(-50%) rotate(90deg));
 							}
 						}

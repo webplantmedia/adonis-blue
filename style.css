@@ -1894,7 +1894,6 @@ a:hover, a:active {
 }
 
 .main-menu ul ul {
-  border-top: 1px solid #ececec;
   float: left;
   position: absolute;
   top: 100%;
@@ -1910,7 +1909,6 @@ a:hover, a:active {
 .main-menu ul ul ul {
   left: -999em;
   top: -1em;
-  margin-top: -1px;
   border-top-color: #ececec;
 }
 
@@ -1949,10 +1947,6 @@ a:hover, a:active {
 
 .main-menu ul li:hover > ul {
   left: 0;
-}
-
-.main-menu ul#primary-menu-right ul {
-  text-align: right;
 }
 
 .main-menu ul#primary-menu-right li:hover > ul {
@@ -2055,16 +2049,8 @@ a:hover, a:active {
     line-height: 1;
     content: "\f431";
   }
-  .show-menu-arrows .main-menu ul#primary-menu-right ul li.page_item_has_children > a,
-  .show-menu-arrows .main-menu ul#primary-menu-right ul li.menu-item-has-children > a {
-    padding-left: 5em;
-    padding-right: 20px;
-    padding-right: 1.25rem;
-  }
   .show-menu-arrows .main-menu ul#primary-menu-right ul li.page_item_has_children > a:after,
   .show-menu-arrows .main-menu ul#primary-menu-right ul li.menu-item-has-children > a:after {
-    left: 1.4em;
-    right: auto;
     -webkit-transform: translateY(-50%) rotate(90deg);
     -moz-transform: translateY(-50%) rotate(90deg);
     -ms-transform: translateY(-50%) rotate(90deg);
@@ -2075,6 +2061,23 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 ## Mobile Menu
 --------------------------------------------------------------*/
+@media screen and (min-width: 601px) {
+  #master .admin-bar #mobile-navigation .menu-toggle {
+    top: 46px;
+  }
+}
+
+@media screen and (min-width: 783px) {
+  #master .admin-bar #mobile-navigation .menu-toggle {
+    top: 32px;
+  }
+}
+
+#master #mobile-navigation button,
+#master #mobile-navigation a {
+  outline: 0;
+}
+
 #master #mobile-navigation .menu-toggle {
   display: none;
   font-size: 16px;
@@ -2085,8 +2088,12 @@ a:hover, a:active {
   padding: 1em 1.2em;
   background: none;
   font-weight: bold;
-  width: 100%;
   border-radius: 0;
+  float: left;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99999;
 }
 
 #master #mobile-navigation .menu-toggle .menu-label {
@@ -2124,15 +2131,14 @@ a:hover, a:active {
 /* Small menu. */
 @media screen and (max-width: 960px) {
   #master .site-branding {
-    padding-top: 20px;
-    padding-top: 1.25rem;
-    padding-bottom: 50px;
-    padding-bottom: 3.125rem;
     border-bottom: 1px solid #ececec;
   }
   #sticky-navigation,
   #site-navigation {
     display: none;
+  }
+  #mobile-navigation {
+    background-color: #ffffff;
   }
   #mobile-navigation .site-boundary {
     padding-left: 0;
@@ -2295,9 +2301,11 @@ a:hover, a:active {
     display: block;
     text-align: left;
   }
-  #master #mobile-navigation.toggled {
-    padding-bottom: 30px;
-    padding-bottom: 1.875rem;
+  #master #mobile-navigation.toggled .menu-toggle {
+    float: none;
+    width: 100%;
+    display: block;
+    position: static;
   }
   #master #mobile-navigation.toggled .top-mobile-header,
   #master #mobile-navigation.toggled .main-menu {

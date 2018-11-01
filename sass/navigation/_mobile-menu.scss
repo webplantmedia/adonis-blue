@@ -1,3 +1,20 @@
+#master .admin-bar #mobile-navigation .menu-toggle {
+	@media screen and ( min-width: 601px ) {
+		top: 46px;
+	}
+
+	@media screen and ( min-width: 783px ) {
+		top: 32px;
+	}
+}
+
+#master #mobile-navigation {
+	button,
+	a {
+		outline: 0;
+	}
+}
+
 #master #mobile-navigation .menu-toggle {
 	display: none;
 	@include rem('font-size',$font__menu-size);
@@ -6,8 +23,12 @@
 	padding: 1em 1.2em;
 	background: none;
 	font-weight: bold;
-	width: 100%;
 	border-radius: 0;
+	float: left;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 99999;
 
 	.menu-label {
 		@include rem('padding-right',10px);
@@ -44,8 +65,6 @@
 /* Small menu. */
 @media screen and (max-width: $size__menu-collapse-width) {
 	#master .site-branding {
-		@include rem( 'padding-top', 20px );
-		@include rem( 'padding-bottom', 50px );
 		border-bottom: $border__width solid $color__menu-border;
 	}
 
@@ -55,6 +74,8 @@
 	}
 
 	#mobile-navigation {
+		background-color: $color__background-body;
+
 		.site-boundary {
 			padding-left: 0;
 			padding-right: 0;
@@ -259,7 +280,12 @@
 	}
 
 	#master #mobile-navigation.toggled {
-		@include rem( 'padding-bottom', 30px );
+		.menu-toggle {
+			float: none;
+			width: 100%;
+			display: block;
+			position: static;
+		}
 
 		.top-mobile-header,
 		.main-menu {

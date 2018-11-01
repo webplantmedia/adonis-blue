@@ -270,20 +270,6 @@
 		}
 	);
 	wp.customize(
-		'mobile_menu_label', function( value ) {
-			value.bind(
-				function( to ) {
-					if ( to.length == 0 ) {
-						$( '.menu-label' ).addClass( 'menu-label-empty' );
-					} else {
-						$( '.menu-label' ).removeClass( 'menu-label-empty' );
-					}
-					$( '.menu-label' ).text( to );
-				}
-			);
-		}
-	);
-	wp.customize(
 		'read_more_label', function( value ) {
 			value.bind(
 				function( to ) {

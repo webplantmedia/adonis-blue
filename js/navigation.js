@@ -14,9 +14,12 @@
 ( function($) {
 	'use strict';
 
-	var $header, $mobileMenu, $mainMenu, $button, $menu, links, i, lenn, $menuParent, $mobileMenuParent, $searchButton;
+	var $header, $page, $mobileMenu, $mainMenu,
+		$button, scrollTop = 0, $menu, links, i, lenn, $menuParent,
+		$mobileMenuParent, $searchButton;
 
 	$header           = $( '#masthead' );
+	$page             = $( '#page' );
 	$mobileMenu       = $( '#mobile-navigation' );
 	$mainMenu         = $( '#site-navigation, #top-navigation, #sticky-navigation' );
 	$button           = $( '.menu-toggle' );
@@ -43,11 +46,16 @@
 					$mobileMenu.removeClass( 'toggled' );
 					$button.attr( 'aria-expanded', 'false' );
 					$menu.attr( 'aria-expanded', 'false' );
+					$page.show();
+					window.scrollTo( 0, scrollTop );
 				}
 				else {
+					scrollTop = window.pageYOffset;
 					$mobileMenu.addClass( 'toggled' );
 					$button.attr( 'aria-expanded', 'true' );
 					$menu.attr( 'aria-expanded', 'true' );
+					$page.hide();
+					window.scrollTo( 0, 0 );
 				}
 			}
 		);

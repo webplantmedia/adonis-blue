@@ -1273,23 +1273,6 @@ function painted_lady_customize_register( $wp_customize ) {
 		)
 	);
 
-	$setting_id = 'mobile_menu_label';
-	$wp_customize->add_setting(
-		$setting_id, array(
-			'default'           => $painted_lady_default[ $setting_id ],
-			'transport'         => 'postMessage',
-			'sanitize_callback' => 'sanitize_text_field',
-		)
-	);
-
-	$wp_customize->add_control(
-		$setting_id, array(
-			'type'    => 'text',
-			'label'   => esc_html__( 'Mobile Menu Label', 'painted-lady' ),
-			'section' => $section_id,
-		)
-	);
-
 	$setting_id = 'read_more_label';
 	$wp_customize->add_setting(
 		$setting_id, array(

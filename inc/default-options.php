@@ -104,7 +104,6 @@ $painted_lady_default['display_sidebar_shop_archive'] = 0;
 $painted_lady_default['display_sidebar_attachment']   = 0;
 
 // Labels.
-$painted_lady_default['mobile_menu_label'] = __( 'Menu', 'painted-lady' );
 $painted_lady_default['read_more_label']   = __( 'Continue Reading', 'painted-lady' );
 
 // 404 Page.

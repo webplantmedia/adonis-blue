@@ -96,6 +96,18 @@ $column = 1;
 
 </div><!-- #page -->
 
+<div id="mobile-navigation" class="main-navigation mobile-menu">
+
+	<?php painted_lady_mobile_menu_button(); ?>
+
+	<?php get_template_part( 'template-parts/menu', 'mobile-cart' ); ?>
+
+	<?php get_template_part( 'template-parts/menu', 'mobile-search' ); ?>
+
+	<?php get_template_part( 'template-parts/menu', 'mobile' ); ?>
+
+</div><!-- .#mobile-navigation -->
+
 <?php wp_footer(); ?>
 
 </body>

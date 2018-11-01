@@ -148,15 +148,9 @@ if ( ! function_exists( 'painted_lady_mobile_menu_button' ) ) :
 	 * @return void
 	 */
 	function painted_lady_mobile_menu_button() {
-		global $painted_lady;
-
 		?>
 		<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-			<?php if ( empty( $painted_lady['mobile_menu_label'] ) ) : ?>
-				<span class="menu-label menu-label-empty"></span>
-			<?php else : ?>
-				<span class="menu-label"><?php echo esc_html( $painted_lady['mobile_menu_label'] ); ?></span>
-			<?php endif; ?>
+			<span class="menu-label menu-label-empty"></span>
 			<i class="genericons-neue"></i>
 		</button>
 		<?php
