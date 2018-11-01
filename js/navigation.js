@@ -181,7 +181,7 @@
 	);
 
 	function anchorScroll( anchor ) {
-		$anchor = $( anchor );
+		var $anchor = $( anchor );
 		if ( $anchor.length ) {
 			$( 'html,body' ).animate( { scrollTop: $anchor.offset().top }, 'slow' );
 		}
