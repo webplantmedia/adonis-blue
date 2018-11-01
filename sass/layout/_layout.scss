@@ -37,6 +37,12 @@ body:not(.single-post) .entry-footer,
 
 #master body.woocommerce-page,
 #master .display-fullwidth {
+	.comments-area .comments-title,
+	// .comments-area .comment-list,
+	// .comments-area .comment-respond,
+	.entry-footer,
+	// .entry-author,
+	.entry-header,
 	.site-main,
 	.entry-content {
 		max-width: none;

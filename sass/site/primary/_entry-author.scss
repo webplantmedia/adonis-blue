@@ -1,7 +1,10 @@
+.entry-author-container {
+	border-bottom: $border__width solid $color__menu-border;
+}
+
 .entry-author {
 	@include rem('margin-top', 70px);
 	@include rem('padding-bottom', 70px);
-	border-bottom: $border__width solid $color__border;
 
 	.author-avatar {
 		margin-top: 5px;
