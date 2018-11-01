@@ -137,14 +137,14 @@
 			li    = $header.find( 'ul li' );
 
 		if ( 'ontouchstart' in window ) {
-			clickOutsideMenu = function ( event ) {
+			var clickOutsideMenu = function ( event ) {
 				if ( ! $( event.target ).closest( 'li.focus' ).length) {
 					$( li ).removeClass( 'focus' );
 					$( document ).off( 'touchstart', clickOutsideMenu );
 				}
 			};
 
-			touchStartFn = function( e ) {
+			var touchStartFn = function( e ) {
 				if ( $button.is( ':visible' ) ) {
 					return;
 				}
