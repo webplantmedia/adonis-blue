@@ -64,8 +64,8 @@
 				&:after {
 					content: " ";
 					position: absolute;
-					bottom: -2px;
-					height: 2px;
+					bottom: -$border__width;
+					height: $border__width;
 					background-color: $color__background-body;
 					left: 0;
 					right: 0;
