@@ -300,34 +300,27 @@ textarea {
 	}
 
 	$css .= '
-.site-logo-container {
-	margin-left: auto;
-	margin-right: auto;
-	position: relative;
-	z-index: 2;
+.site-branding .site-logo-container {
 	max-width: ' . $painted_lady['split_menu_logo_width'] . 'px; /*id:split_menu_logo_width*/
-	height: auto;
-	clip: auto;
-	overflow: visible;
 }
 
+#site-navigation .split-menu .split-menu-part-center {
+	width: ' . $painted_lady['split_menu_logo_width'] . 'px; /*id:split_menu_logo_width*/
+}
+
+#sticky-navigation .site-logo-container,
+#sticky-navigation .split-menu .split-menu-part-center {
+	width: ' . $painted_lady['sticky_menu_logo_width'] . 'px; /*id:sticky_menu_logo_width*/
+}';
+
+	$css .= '
 @media (min-width: ' . $painted_lady['split_menu_collapse_width'] . 'px) { /*id:split_menu_collapse_width*/
-	#master .sticky {
-		position: fixed;
-		top: 0;
+	#masthead {
+		border-bottom-width: 1px;
 	}
 
-	#master .admin-bar .sticky {
-		top: 32px;
-	}
-
-	#sticky-navigation {
-		display: block;
-		transition: all 0.5s ease 0s;
-		position: fixed;
-		top: -100%;
-		left: 0;
-		right: 0;
+	#master .site-branding {
+		display: none;
 	}
 
 	#site-navigation {
@@ -335,69 +328,50 @@ textarea {
 		' . painted_lady_css_set_unit( 'padding-bottom', $painted_lady['heading_padding_bottom'] ) . ' /*id:heading_padding_bottom*/
 	}
 
-	#sticky-navigation .split-menu .split-menu-part-center,
-	#sticky-navigation .site-logo-container {
-		width: ' . $painted_lady['sticky_menu_logo_width'] . 'px; /*id:sticky_menu_logo_width*/
-	}
-
-	#master .main-navigation {
+	#site-navigation {
 		border-bottom-width: 0;
-		z-index: 2;
 	}
 
-	#master .split-menu {
+	#site-navigation .split-menu {
 		display: table;
 		table-layout: fixed;
 	}
 
-	#master .split-menu-part {
+	#site-navigation .split-menu-part {
 		display: table-cell;
 		vertical-align: middle;
 	}
 
-	#master .custom-logo-link img {
+	#site-navigation .custom-logo-link img {
 		vertical-align: middle;
 	}
 
-	#masthead {
-		border-bottom-width: 1px;
-	}
-
-	.split-menu .split-menu-part-center {
+	#site-navigation .split-menu .split-menu-part-center {
 		margin-left: auto;
 		margin-right: auto;
 		position: relative;
 		z-index: 2;
-		width: ' . $painted_lady['split_menu_logo_width'] . 'px; /*id:split_menu_logo_width*/
 		height: auto;
 		clip: auto;
 		overflow: visible;
 	}
 
-	#master .site-branding {
-		display: none;
-	}
-
-	.split-menu {
+	#site-navigation .split-menu {
 		width: 100%;
 	}
 
-	.split-menu .split-menu-part {
-	}
-
-	.split-menu .split-menu-part-left {
+	#site-navigation .split-menu .split-menu-part-left {
 		text-align: right;
 		padding-right: 50px;
 		width: 100%;
 	}
 
-	.split-menu .split-menu-part-right {
+	#site-navigation .split-menu .split-menu-part-right {
 		text-align: left;
 		padding-left: 50px;
 		width: 100%;
 	}
-}
-';
+}';
 
 	return $css;
 }

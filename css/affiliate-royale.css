@@ -73,8 +73,8 @@ Affiliate Royale styling
 #master ul.wafp-nav-bar > li.wafp-nav-active:after {
   content: " ";
   position: absolute;
-  bottom: -2px;
-  height: 2px;
+  bottom: -1px;
+  height: 1px;
   background-color: #ffffff;
   left: 0;
   right: 0;

@@ -68,8 +68,8 @@
 		border-bottom: $border__width solid $color__menu-border;
 	}
 
-	#sticky-navigation,
-	#site-navigation {
+	#master #sticky-navigation,
+	#master #site-navigation {
 		display: none;
 	}
 

@@ -1,7 +1,13 @@
 #sticky-navigation {
-	display: none;
+	transition: all 0.5s ease 0s;
+	position: fixed;
+	top: -100%;
+	left: 0;
+	right: 0;
+	display: block;
 	background-color: $color__background-body;
 	box-shadow: 0 1px 10px rgba(0, 0, 0, 0.08);
+	z-index: 2;
 
 	.split-menu .split-menu-part-left {
 		@include rem( 'padding-right', 30px );
@@ -14,4 +20,54 @@
 	.main-menu ul.menu > li > a {
 		@include rem( 'font-size', ( $font__menu-size - 2 ) );
 	}
+}
+
+#master .sticky {
+	position: fixed;
+	top: 0;
+}
+
+#master .admin-bar .sticky {
+	top: 32px;
+}
+
+// From css-theme.php
+#sticky-navigation .split-menu {
+	display: table;
+	table-layout: fixed;
+}
+
+#sticky-navigation .split-menu-part {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+#sticky-navigation .custom-logo-link img {
+	vertical-align: middle;
+}
+
+#sticky-navigation .split-menu .split-menu-part-center {
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	z-index: 2;
+	height: auto;
+	clip: auto;
+	overflow: visible;
+}
+
+#sticky-navigation .split-menu {
+	width: 100%;
+}
+
+#sticky-navigation .split-menu .split-menu-part-left {
+	text-align: right;
+	padding-right: 50px;
+	width: 100%;
+}
+
+#sticky-navigation .split-menu .split-menu-part-right {
+	text-align: left;
+	padding-left: 50px;
+	width: 100%;
 }

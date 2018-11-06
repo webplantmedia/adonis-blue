@@ -14,20 +14,26 @@
 	vertical-align: top;
 }
 
+// Split Menu
 .split-menu {
 	.split-menu-part {
 		display: inline-block;
 	}
 
 	.split-menu-part-center {
-		display: none;
+		vertical-align: middle;
+
+		img {
+			vertical-align: middle;
+		}
 	}
 }
 
-.split-menu-part-center {
+.main-navigation .split-menu .split-menu-part-center {
 	@include clip();
 }
 
+// Single Menu Bar
 .main-menu {
 	ul {
 		float: left;
