@@ -2450,7 +2450,53 @@ html#master .top-header ul.menu li.menu-search-button i:before {
   float: left;
 }
 
+.top-header .top-left-header ul.menu > li > a {
+  margin-right: 15px;
+  margin-right: 0.9375rem;
+}
+
+.top-header .top-left-header ul.menu > li:last-child > a {
+  margin-right: 0;
+}
+
+.top-header .top-left-header ul.menu li:hover > ul {
+  left: -1em;
+}
+
+.top-header .top-left-header .cart-menu a,
+.top-header .top-left-header .menu-search a,
+.top-header .top-left-header .social-navigation ul.menu > li > a {
+  margin-right: 17px;
+  margin-right: 1.0625rem;
+}
+
 .top-header .top-right-header {
+  float: right;
+}
+
+.top-header .top-right-header ul.menu > li > a {
+  margin-right: 15px;
+  margin-right: 0.9375rem;
+}
+
+.top-header .top-right-header ul.menu > li:last-child > a {
+  margin-right: 0;
+}
+
+.top-header .top-right-header ul.menu li:hover > ul {
+  left: auto;
+  right: -1em;
+}
+
+.top-header .top-right-header .cart-menu a,
+.top-header .top-right-header .menu-search a,
+.top-header .top-right-header .social-navigation ul.menu > li > a {
+  margin-left: 1.8em;
+  margin-left: 17px;
+  margin-left: 1.0625rem;
+}
+
+.top-header .top-right-header > nav.in-menu-bar {
   float: right;
 }
 
@@ -2488,16 +2534,11 @@ html#master .top-header ul.menu li.menu-search-button i:before {
 .top-header .header-menu ul ul a {
   padding-top: .4em;
   padding-bottom: .4em;
-  padding-left: 1.5em;
-  padding-right: 1.5em;
+  padding-left: 1em;
+  padding-right: 1em;
   font-size: 11px;
   font-size: 0.6875rem;
   white-space: nowrap;
-}
-
-.top-header .social-navigation ul li:hover > ul,
-.top-header .header-menu ul li:hover > ul {
-  left: -1em;
 }
 
 .top-header .social-navigation li,
@@ -2511,7 +2552,7 @@ html#master .top-header ul.menu li.menu-search-button i:before {
   display: block;
   text-decoration: none;
   text-transform: uppercase;
-  padding: 0 0.5em;
+  padding: 0;
   font-size: 12px;
   font-size: 0.75rem;
   width: auto;
@@ -2524,16 +2565,6 @@ html#master .top-header ul.menu li.menu-search-button i:before {
 .top-header .header-menu .menu > li > a {
   line-height: 36px;
   line-height: 2.25rem;
-}
-
-.top-header .social-navigation .menu > li:last-child a,
-.top-header .header-menu .menu > li:last-child a {
-  padding-right: 0;
-}
-
-.top-header .social-navigation .menu > li:first-child a,
-.top-header .header-menu .menu > li:first-child a {
-  padding-left: 0;
 }
 
 .top-header .top-left-header-menu {
@@ -2550,8 +2581,6 @@ html#master .top-header ul.menu li.menu-search-button i:before {
 
 .top-header .social-navigation a {
   font-weight: normal;
-  padding-left: 0.2em;
-  padding-right: 0.2em;
   height: 36px;
   height: 2.25rem;
 }
@@ -2561,28 +2590,6 @@ html#master .top-header ul.menu li.menu-search-button i:before {
   line-height: 2.25rem;
   font-size: 18px;
   font-size: 1.125rem;
-}
-
-.top-header .top-left-header > nav {
-  padding-right: 10px;
-  padding-right: 0.625rem;
-}
-
-.top-header .top-left-header > nav:last-child {
-  padding-right: 0;
-}
-
-.top-header .top-right-header > nav {
-  padding-left: 10px;
-  padding-left: 0.625rem;
-}
-
-.top-header .top-right-header > nav:last-child {
-  padding-left: 0;
-}
-
-.top-header .top-right-header > nav.in-menu-bar {
-  float: right;
 }
 
 .top-header a, .top-header a:focus, .top-header a:active, .top-header a:visited {
@@ -2596,7 +2603,7 @@ html#master .top-header ul.menu li.menu-search-button i:before {
 @media screen and (min-width: 961px) {
   .show-menu-arrows .top-header ul li.page_item_has_children > a,
   .show-menu-arrows .top-header ul li.menu-item-has-children > a {
-    padding-right: 1.8em;
+    padding-right: 1.2em;
     position: relative;
   }
   .show-menu-arrows .top-header ul li.page_item_has_children > a:after,

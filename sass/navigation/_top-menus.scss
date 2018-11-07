@@ -1,12 +1,71 @@
 .top-header {
 	.top-left-header {
 		float: left;
-	}
 
+		ul.menu {
+			> li {
+				> a {
+					@include rem( 'margin-right', 15px );
+				}
+
+				&:last-child {
+					> a {
+						margin-right: 0;
+					}
+				}
+			}
+
+			li:hover > ul {
+				left: -1em;
+			}
+		}
+
+		.cart-menu a,
+		.menu-search a,
+		.social-navigation ul.menu > li > a {
+			@include rem( 'margin-right', 17px );
+		}
+
+		> nav {
+		}
+	}
+	
 	.top-right-header {
 		float: right;
-	}
 
+		ul.menu {
+			> li {
+				> a {
+					@include rem( 'margin-right', 15px );
+				}
+
+				&:last-child {
+					> a {
+						margin-right: 0;
+					}
+				}
+			}
+
+			li:hover > ul {
+				left: auto;
+				right: -1em;
+			}
+		}
+
+		.cart-menu a,
+		.menu-search a,
+		.social-navigation ul.menu > li > a {
+			margin-left: 1.8em;
+			@include rem( 'margin-left', 17px );
+		}
+
+		> nav {
+			&.in-menu-bar {
+				float: right;
+			}
+		}
+	}
+	
 	.social-navigation,
 	.header-menu {
 		@include rem('font-size',$font__top-menu-size);
@@ -37,17 +96,13 @@
 				a {
 					padding-top: .4em;
 					padding-bottom: .4em;
-					padding-left: 1.5em;
-					padding-right: 1.5em;
+					padding-left: 1em;
+					padding-right: 1em;
 					// border-bottom: $border__width solid $color__border;
 					// @include rem('min-width',150px);
 					@include rem( 'font-size', ( $font__top-menu-size - 1 ) );
 					white-space: nowrap;
 				}
-			}
-
-			li:hover > ul {
-				left: -1em;
 			}
 		}
 
@@ -60,7 +115,7 @@
 			display: block;
 			text-decoration: none;
 			text-transform: uppercase;
-			padding: 0 0.5em;
+			padding: 0;
 			@include rem('font-size',$font__top-menu-size);
 			width: auto;
 			height: auto;
@@ -70,14 +125,6 @@
 
 		.menu > li > a {
 			@include rem('line-height',$font__line-height-top-menu);
-		}
-
-		.menu > li:last-child a {
-			padding-right: 0;
-		}
-
-		.menu > li:first-child a {
-			padding-left: 0;
 		}
 	}
 
@@ -94,8 +141,6 @@
 
 		a {
 			font-weight: normal;
-			padding-left: 0.2em;
-			padding-right: 0.2em;
 			@include rem('height',$font__line-height-top-menu);
 
 			&:before {
@@ -105,26 +150,6 @@
 		}
 	}
 
-	.top-left-header > nav {
-		@include rem('padding-right',10px);
-
-		&:last-child {
-			padding-right: 0;
-		}
-	}
-	
-	.top-right-header > nav {
-		@include rem('padding-left',10px);
-
-		&:last-child {
-			padding-left: 0;
-		}
-
-		&.in-menu-bar {
-			float: right;
-		}
-	}
-	
 	a {
 		&,
 		&:focus,
@@ -149,7 +174,7 @@
 			li {
 				&.page_item_has_children > a,
 				&.menu-item-has-children > a {
-					padding-right: 1.8em;
+					padding-right: 1.2em;
 					position: relative;
 
 					&:after {
