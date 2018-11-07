@@ -22,15 +22,10 @@
 	margin-right: auto;
 }
 
-// Clearfix
+// Clearfix. Modern clearfix fixed strange caching bug with FF dev tools.
 @mixin clearfix() {
 	content: "";
 	display: table;
-	table-layout: fixed;
-}
-
-// Clear after (not all clearfix need this also)
-@mixin clearfix-after() {
 	clear: both;
 }
 
