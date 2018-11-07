@@ -2761,9 +2761,6 @@ html#master .top-header ul.menu li.menu-search-button i:before {
     padding-left: 0;
     padding-right: 0;
     text-align: left;
-    content: "";
-    display: table;
-    table-layout: fixed;
   }
   #master .comment-navigation .nav-next:after,
   #master .comment-navigation .nav-previous:after,
@@ -2771,6 +2768,8 @@ html#master .top-header ul.menu li.menu-search-button i:before {
   #master .posts-navigation .nav-previous:after,
   #master .post-navigation .nav-next:after,
   #master .post-navigation .nav-previous:after {
+    content: "";
+    display: table;
     clear: both;
   }
 }
@@ -2994,47 +2993,20 @@ html#master .top-header ul.menu li.menu-search-button i:before {
 /*--------------------------------------------------------------
 # Clearings
 --------------------------------------------------------------*/
-.entry-author:before,
 .entry-author:after,
-.footer-container:before,
 .footer-container:after,
-.all-posts:before,
 .all-posts:after,
-.top-header:before,
 .top-header:after,
-.site-boundary:before,
 .site-boundary:after,
-.clear:before,
 .clear:after,
-.entry-content:before,
 .entry-content:after,
-.comment-content:before,
 .comment-content:after,
-.site-header:before,
 .site-header:after,
-.main-navigation:before,
 .main-navigation:after,
-.site-content:before,
 .site-content:after,
-.site-footer:before,
 .site-footer:after {
   content: "";
   display: table;
-  table-layout: fixed;
-}
-
-.entry-author:after,
-.footer-container:after,
-.all-posts:after,
-.top-header:after,
-.site-boundary:after,
-.clear:after,
-.entry-content:after,
-.comment-content:after,
-.site-header:after,
-.main-navigation:after,
-.site-content:after,
-.site-footer:after {
   clear: both;
 }
 

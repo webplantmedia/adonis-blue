@@ -596,7 +596,7 @@ WooCommerce styling
 #master .woocommerce div.product div.images .woocommerce-product-gallery__wrapper {
   content: "";
   display: table;
-  table-layout: fixed;
+  clear: both;
 }
 
 #master .woocommerce div.product div.images .woocommerce-product-gallery__image:nth-child(n+2) {
@@ -1300,3 +1300,5 @@ WooCommerce styling
     display: none;
   }
 }
+
+/*# sourceMappingURL=woocommerce.css.map */
