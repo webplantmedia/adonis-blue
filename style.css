@@ -2459,7 +2459,6 @@ html#master .top-header ul.menu li.menu-search-button i:before {
 
 .top-header .social-navigation ul ul,
 .top-header .header-menu ul ul {
-  border-top: 1px solid #ececec;
   float: left;
   position: absolute;
   top: 100%;
