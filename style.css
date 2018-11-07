@@ -1889,6 +1889,25 @@ a:hover, a:active {
   overflow: hidden;
 }
 
+.main-menu ul.menu > li > ul.sub-menu {
+  padding-top: 0;
+}
+
+.main-menu ul.menu > li > ul.sub-menu > li:first-child > ul.sub-menu {
+  padding-top: 0;
+  top: 0;
+}
+
+.main-menu ul.menu > li > ul.sub-menu > li:first-child > ul.sub-menu > li:first-child > ul.sub-menu {
+  padding-top: 0;
+  top: 0;
+}
+
+.main-menu ul.menu > li > ul.sub-menu > li:first-child > ul.sub-menu > li:first-child > ul.sub-menu > li:first-child > ul.sub-menu {
+  padding-top: 0;
+  top: 0;
+}
+
 .main-menu ul {
   float: left;
   list-style: none;
@@ -1903,11 +1922,12 @@ a:hover, a:active {
   top: 100%;
   left: -999em;
   z-index: 99999;
-  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.08);
   text-align: left;
   padding-top: 1em;
   padding-bottom: 1em;
-  background-color: #ffffff;
+  background: #ffffff;
+  /* The Fallback */
+  background: rgba(255, 255, 255, 0.95);
 }
 
 .main-menu ul ul ul {
@@ -1936,14 +1956,6 @@ a:hover, a:active {
   white-space: nowrap;
 }
 
-.main-menu ul ul a, .main-menu ul ul a:focus, .main-menu ul ul a:active, .main-menu ul ul a:visited {
-  color: #959595;
-}
-
-.main-menu ul ul a:hover {
-  color: #6d686c;
-}
-
 .main-menu ul li {
   position: relative;
   display: inline-block;
@@ -1955,7 +1967,7 @@ a:hover, a:active {
 
 .main-menu ul#primary-menu-right li:hover > ul {
   left: auto;
-  right: 0;
+  right: -1.53em;
 }
 
 .main-menu ul#primary-menu-right li li:hover > ul {
@@ -1971,10 +1983,10 @@ a:hover, a:active {
   padding-top: 1.25rem;
   padding-bottom: 20px;
   padding-bottom: 1.25rem;
-  padding-left: 20px;
-  padding-left: 1.25rem;
-  padding-right: 20px;
-  padding-right: 1.25rem;
+  padding-left: 30px;
+  padding-left: 1.875rem;
+  padding-right: 30px;
+  padding-right: 1.875rem;
   font-size: 16px;
   font-size: 1rem;
   width: auto;
@@ -2012,7 +2024,8 @@ a:hover, a:active {
   .show-menu-arrows .main-menu ul ul li.menu-item-has-children > a:after {
     position: absolute;
     top: 51%;
-    right: 1.4em;
+    right: 30px;
+    right: 1.875rem;
     margin: 0;
     -webkit-transform: translateY(-50%) rotate(270deg);
     -moz-transform: translateY(-50%) rotate(270deg);
@@ -2464,11 +2477,11 @@ html#master .top-header ul.menu li.menu-search-button i:before {
   top: 100%;
   left: -999em;
   z-index: 99999;
-  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.08);
-  padding-top: .8em;
+  padding-top: 0;
   padding-bottom: .8em;
-  background-color: #ffffff;
-  /* should be same as main background */
+  background: #ffffff;
+  /* The Fallback */
+  background: rgba(255, 255, 255, 0.95);
 }
 
 .top-header .social-navigation ul ul a,
@@ -2631,8 +2644,9 @@ html#master .top-header ul.menu li.menu-search-button i:before {
   left: 0;
   right: 0;
   display: block;
-  background-color: #ffffff;
-  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.08);
+  background: #ffffff;
+  /* The Fallback */
+  background: rgba(255, 255, 255, 0.95);
   z-index: 2;
 }
 
