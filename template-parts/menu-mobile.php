@@ -13,6 +13,10 @@
 
 ?>
 
+<?php painted_lady_mobile_menu_button(); ?>
+
+<?php get_template_part( 'template-parts/menu', 'mobile-cart' ); ?>
+
 <div class="top-mobile-header">
 	<?php if ( has_nav_menu( 'menu-1' ) ) : ?>
 		<nav class="main-menu" role="navigation">
@@ -104,3 +108,5 @@
 		</nav><!-- .social-navigation -->
 	<?php endif; ?>
 </div>
+
+<?php get_template_part( 'template-parts/menu', 'mobile-search' ); ?>
