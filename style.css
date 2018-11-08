@@ -1967,7 +1967,8 @@ a:hover, a:active {
 
 .main-menu ul#primary-menu-right li:hover > ul {
   left: auto;
-  right: -1.53em;
+  right: -30px;
+  right: -1.875rem;
 }
 
 .main-menu ul#primary-menu-right li li:hover > ul {

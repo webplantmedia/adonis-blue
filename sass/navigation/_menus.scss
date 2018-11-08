@@ -131,7 +131,7 @@
 			li {
 				&:hover > ul {
 					left: auto;
-					right: -1.53em;
+					@include rem( 'right', -30px );
 				}
 
 				li {
