@@ -14,19 +14,19 @@
 ( function($) {
 	'use strict';
 
-	var $header, $page, $mobileMenu, $mainMenu,
-		$button, scrollTop = 0, $menu, links, i, lenn, $menuParent,
-		$mobileMenuParent, $searchButton;
-
-	$header           = $( '#masthead' );
-	$page             = $( '#page' );
-	$mobileMenu       = $( '#mobile-navigation' );
-	$mainMenu         = $( '#site-navigation, #top-navigation, #sticky-navigation' );
-	$button           = $( '.menu-toggle' );
-	$menu             = $( '.main-menu' );
-	$menuParent       = $mainMenu.find( '.menu-item-has-children > a, .page_item_has_children > a' );
-	$mobileMenuParent = $mobileMenu.find( '.menu-item-has-children > a, .page_item_has_children > a' );
-	$searchButton     = $( '.menu-search-button' );
+	var scrollTop = 0;
+	var links;
+	var i
+	
+	var $header           = $( '#masthead' );
+	var $page             = $( '#page' );
+	var $mobileMenu       = $( '#mobile-navigation' );
+	var $mainMenu         = $( '#site-navigation, #top-navigation, #sticky-navigation' );
+	var $button           = $( '.menu-toggle' );
+	var $menu             = $( '.main-menu' );
+	var $menuParent       = $mainMenu.find( '.menu-item-has-children > a, .page_item_has_children > a' );
+	var $mobileMenuParent = $mobileMenu.find( '.menu-item-has-children > a, .page_item_has_children > a' );
+	var $searchButton     = $( '.menu-search-button' );
 
 	// Hide menu toggle button if menu is empty and return early.
 	if ( 'undefined' === typeof $menu ) {
@@ -46,7 +46,7 @@
 					$mobileMenu.removeClass( 'toggled' );
 					$button.attr( 'aria-expanded', 'false' );
 					$menu.attr( 'aria-expanded', 'false' );
-					$page.show();
+					$page.css( { 'height': 'auto', 'overflow': 'visible' } );
 					window.scrollTo( 0, scrollTop );
 				}
 				else {
@@ -54,7 +54,7 @@
 					$mobileMenu.addClass( 'toggled' );
 					$button.attr( 'aria-expanded', 'true' );
 					$menu.attr( 'aria-expanded', 'true' );
-					$page.hide();
+					$page.css( { 'height': 0, 'overflow': 'hidden' } );
 					window.scrollTo( 0, 0 );
 				}
 			}
