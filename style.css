@@ -3208,7 +3208,7 @@ html#master .top-header ul.menu li.menu-search-button i:before {
 #tertiary .widget input[type="datetime"],
 #tertiary .widget input[type="datetime-local"],
 #tertiary .widget input[type="color"] {
-  height: auto;
+  height: 46px;
   font-size: 14px;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -4985,8 +4985,8 @@ body.widgetized-page .site-content {
 .archive .archive-page-header .page-title {
   margin: 0;
   text-transform: uppercase;
-  font-size: 30px;
-  font-size: 1.875rem;
+  font-size: 15px;
+  font-size: 0.9375rem;
 }
 
 .search .archive-page-header .page-title .archive-title,
@@ -4998,8 +4998,8 @@ body.widgetized-page .site-content {
 
 .search .archive-page-header .page-title .archive-type,
 .archive .archive-page-header .page-title .archive-type {
-  font-size: 35px;
-  font-size: 2.1875rem;
+  font-size: 28px;
+  font-size: 1.75rem;
   line-height: 1;
   display: inline-block;
   font-weight: normal;
@@ -5015,20 +5015,20 @@ body.widgetized-page .site-content {
 
 .wpm-fonts.search .archive-page-header .page-title .archive-type,
 .wpm-fonts.archive .archive-page-header .page-title .archive-type {
-  font-size: 15px;
-  font-size: 0.9375rem;
+  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .wpm-fonts.wpm-fonts-accent-medium-small-font.search .archive-page-header .page-title .archive-type,
 .wpm-fonts.wpm-fonts-accent-medium-small-font.archive .archive-page-header .page-title .archive-type {
-  font-size: 25px;
-  font-size: 1.5625rem;
+  font-size: 18px;
+  font-size: 1.125rem;
 }
 
 .wpm-fonts.wpm-fonts-accent-small-font.search .archive-page-header .page-title .archive-type,
 .wpm-fonts.wpm-fonts-accent-small-font.archive .archive-page-header .page-title .archive-type {
-  font-size: 38px;
-  font-size: 2.375rem;
+  font-size: 28px;
+  font-size: 1.75rem;
 }
 
 #master .archive-title-light .archive-page-header .page-title {
