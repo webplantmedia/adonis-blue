@@ -131,7 +131,7 @@ if ( ! function_exists( 'painted_lady_setup' ) ) :
 					'selectors' => '#master .h1, #master .h2, #master .h3, #master .h4, #master .h5, #master .h6, h1, h2, h3, h4, h5, h6',
 				),
 				'accent'           => array(
-					'font'      => 'Mrs Saint Delafield', /* This is a lookup value, and should not be translated. */
+					'font'      => 'Sacramento', /* This is a lookup value, and should not be translated. */
 					'selectors' => array(
 						'.search .archive-page-header .page-title .archive-type',
 						'.archive .archive-page-header .page-title .archive-type',
