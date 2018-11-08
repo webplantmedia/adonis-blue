@@ -3166,11 +3166,57 @@ html#master .top-header ul.menu li.menu-search-button i:before {
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
+#secondary .widget,
+#tertiary .widget {
+  font-size: 15px;
+  font-size: 0.9375rem;
+}
+
+#secondary .widget select,
+#secondary .widget .sq-input,
+#secondary .widget .wc-stripe-elements-field,
+#secondary .widget input[type="text"],
+#secondary .widget input[type="email"],
+#secondary .widget input[type="url"],
+#secondary .widget input[type="password"],
+#secondary .widget input[type="search"],
+#secondary .widget input[type="number"],
+#secondary .widget input[type="tel"],
+#secondary .widget input[type="range"],
+#secondary .widget input[type="date"],
+#secondary .widget input[type="month"],
+#secondary .widget input[type="week"],
+#secondary .widget input[type="time"],
+#secondary .widget input[type="datetime"],
+#secondary .widget input[type="datetime-local"],
+#secondary .widget input[type="color"],
+#tertiary .widget select,
+#tertiary .widget .sq-input,
+#tertiary .widget .wc-stripe-elements-field,
+#tertiary .widget input[type="text"],
+#tertiary .widget input[type="email"],
+#tertiary .widget input[type="url"],
+#tertiary .widget input[type="password"],
+#tertiary .widget input[type="search"],
+#tertiary .widget input[type="number"],
+#tertiary .widget input[type="tel"],
+#tertiary .widget input[type="range"],
+#tertiary .widget input[type="date"],
+#tertiary .widget input[type="month"],
+#tertiary .widget input[type="week"],
+#tertiary .widget input[type="time"],
+#tertiary .widget input[type="datetime"],
+#tertiary .widget input[type="datetime-local"],
+#tertiary .widget input[type="color"] {
+  height: auto;
+  font-size: 14px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 #secondary .widget {
   margin-bottom: 40px;
   margin-bottom: 2.5rem;
-  font-size: 15px;
-  font-size: 0.9375rem;
 }
 
 #secondary .widget:before {
@@ -3560,7 +3606,7 @@ html#master .top-header ul.menu li.menu-search-button i:before {
   -moz-osx-font-smoothing: grayscale;
   position: absolute;
   left: 0;
-  top: 1px;
+  top: 0;
   -webkit-transform: rotate(270deg);
   -moz-transform: rotate(270deg);
   -ms-transform: rotate(270deg);
