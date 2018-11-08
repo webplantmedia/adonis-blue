@@ -22,18 +22,20 @@
 				</a>
 
 				<div class="container menu-search-form-container">
-					<form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-						<label>
-							<span class="screen-reader-text">
-								<?php
-								/* Translators: this string is a label for a search input that is only visible to screen readers. */
-								esc_html_e( 'Search for:', 'painted-lady' );
-								?>
-							</span>
+					<div class="menu-search-form-container-inner">
+						<form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+							<label>
+								<span class="screen-reader-text">
+									<?php
+									/* Translators: this string is a label for a search input that is only visible to screen readers. */
+									esc_html_e( 'Search for:', 'painted-lady' );
+									?>
+								</span>
 
-							<input type="search" class="search-field" placeholder="<?php esc_attr_e( 'Type keyword', 'painted-lady' ); ?>" title="<?php esc_attr_e( 'Press Enter to submit your search', 'painted-lady' ); ?>" value="<?php esc_attr( get_search_query() ); ?>" name="s">
-						</label>
-					</form>
+								<input type="search" class="search-field" placeholder="<?php esc_attr_e( 'Type keyword', 'painted-lady' ); ?>" title="<?php esc_attr_e( 'Press Enter to submit your search', 'painted-lady' ); ?>" value="<?php esc_attr( get_search_query() ); ?>" name="s">
+							</label>
+						</form>
+					</div>
 				</div>
 			</li>
 		</ul>

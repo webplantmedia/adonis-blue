@@ -5,20 +5,20 @@ WooCommerce styling
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
-# Menu
-	## Cart Content
+# Cart Menu
+# Cart Content
 # General
 --------------------------------------------------------------*/
 @import "variables-site/variables-site";
 @import "mixins/mixins-master";
 
 /*--------------------------------------------------------------
-# Menu
+# Cart Menu
 --------------------------------------------------------------*/
-@import "plugins/woocommerce/menu";
+@import "plugins/woocommerce/cart-menu";
 
 /*--------------------------------------------------------------
-## Cart Content
+# Cart Content
 --------------------------------------------------------------*/
 @import "plugins/woocommerce/cart-content";
 

@@ -1,3 +1,27 @@
+#master #page .top-header {
+	.menu-search .menu-search-form-container {
+		width: 150px;
+		background: none;
+
+		.search-field {
+			@include rem( 'font-size', ( $font__top-menu-size - 1 ) );
+			color: $color__text-light;
+			padding-top: .4em;
+			padding-bottom: .4em;
+			text-transform: uppercase;
+			font-weight: bold;
+			letter-spacing: 0.07em;
+			height: auto;
+			text-align: right;
+			background: none;
+
+			@include placeholder {
+				color: $color__text-light;
+			}
+		}
+	}
+}
+
 .top-header {
 	.top-left-header {
 		float: left;

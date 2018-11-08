@@ -4,12 +4,12 @@ WooCommerce styling
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
-# Menu
-	## Cart Content
+# Cart Menu
+# Cart Content
 # General
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
-# Menu
+# Cart Menu
 --------------------------------------------------------------*/
 .top-header .cart-menu ul.menu li.cart {
   padding-left: 0;
@@ -75,7 +75,9 @@ WooCommerce styling
   width: 400px;
   margin: 0;
   padding: 0;
-  background-color: #ffffff;
+  background: #ffffff;
+  /* The Fallback */
+  background: rgba(255, 255, 255, 0.95);
   float: left;
   list-style: none;
   vertical-align: top;
@@ -86,7 +88,6 @@ WooCommerce styling
   left: -999em;
   top: 100%;
   z-index: 99999;
-  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.08);
 }
 
 .cart-menu ul.menu li.cart:hover ul.woo-sub-menu {
@@ -151,7 +152,7 @@ WooCommerce styling
 }
 
 /*--------------------------------------------------------------
-## Cart Content
+# Cart Content
 --------------------------------------------------------------*/
 #master .woocommerce ul.cart_list li img,
 #master .woocommerce ul.product_list_widget li img {
@@ -205,7 +206,7 @@ WooCommerce styling
 
 #master .woocommerce .widget_shopping_cart .total,
 #master .woocommerce.widget_shopping_cart .total {
-  border-top: 1px solid #ececec;
+  border-top: 0 solid #ececec;
 }
 
 #master .woocommerce .widget_shopping_cart .buttons a,

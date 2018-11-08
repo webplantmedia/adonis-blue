@@ -60,7 +60,7 @@ html#master .top-header {
 				left: -999em;
 				top: 100%;
 				z-index: 99998;
-				box-shadow: 0 1px 10px rgba(0, 0, 0, 0.08);
+				// box-shadow: 0 1px 10px rgba(0, 0, 0, 0.07);
 
 				.search-field {
 					padding: 14px;
@@ -70,7 +70,7 @@ html#master .top-header {
 
 			&.focus .menu-search-form-container {
 				left: auto;
-				right: 0;
+				right: -14px;
 			}
 		}
 	}

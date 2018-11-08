@@ -2461,7 +2461,6 @@ html#master .top-header ul.menu li.menu-search-button i:before {
   left: -999em;
   top: 100%;
   z-index: 99998;
-  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.08);
 }
 
 #master .menu-search ul.menu li.menu-search-button .menu-search-form-container .search-field {
@@ -2471,7 +2470,7 @@ html#master .top-header ul.menu li.menu-search-button i:before {
 
 #master .menu-search ul.menu li.menu-search-button.focus .menu-search-form-container {
   left: auto;
-  right: 0;
+  right: -14px;
 }
 
 #master .mobile-search-navigation {
@@ -2488,6 +2487,41 @@ html#master .top-header ul.menu li.menu-search-button i:before {
 /*--------------------------------------------------------------
 ## Top Menus
 --------------------------------------------------------------*/
+#master #page .top-header .menu-search .menu-search-form-container {
+  width: 150px;
+  background: none;
+}
+
+#master #page .top-header .menu-search .menu-search-form-container .search-field {
+  font-size: 11px;
+  font-size: 0.6875rem;
+  color: #959595;
+  padding-top: .4em;
+  padding-bottom: .4em;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.07em;
+  height: auto;
+  text-align: right;
+  background: none;
+}
+
+#master #page .top-header .menu-search .menu-search-form-container .search-field::-webkit-input-placeholder {
+  color: #959595;
+}
+
+#master #page .top-header .menu-search .menu-search-form-container .search-field:-moz-placeholder {
+  color: #959595;
+}
+
+#master #page .top-header .menu-search .menu-search-form-container .search-field::-moz-placeholder {
+  color: #959595;
+}
+
+#master #page .top-header .menu-search .menu-search-form-container .search-field:-ms-input-placeholder {
+  color: #959595;
+}
+
 .top-header .top-left-header {
   float: left;
 }
