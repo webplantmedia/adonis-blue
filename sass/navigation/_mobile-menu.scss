@@ -63,9 +63,10 @@
 .mobile-site-branding {
 	margin-left: auto;
 	margin-right: auto;
-	@include rem( 'margin-bottom', 60px );
+	@include rem( 'padding-bottom', 50px );
 	@include rem( 'padding-left', 20px );
 	@include rem( 'padding-right', 20px );
+	border-bottom: $border__width solid $color__menu-border;
 }
 
 /* Small menu. */
