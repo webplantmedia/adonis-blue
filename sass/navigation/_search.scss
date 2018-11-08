@@ -77,25 +77,10 @@ html#master .top-header {
 }
 
 #master .mobile-search-navigation {
-	display: none;
 	border-bottom: $border__width solid $color__border;
 	@include rem( 'padding', 20px );
 
 	.search-field {
 		@include rem('padding-left',20px);
-	}
-}
-
-@media screen and (max-width: $size__menu-collapse-width) {
-	#mobile-navigation {
-		.menu-search {
-			display: none;
-		}
-	}
-
-	#mobile-navigation.toggled {
-		.mobile-search-navigation {
-			display: block;
-		}
 	}
 }

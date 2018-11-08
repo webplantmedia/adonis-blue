@@ -111,7 +111,6 @@ WooCommerce styling
 }
 
 .mobile-cart-navigation {
-  display: none;
   margin-top: 20px;
   margin-top: 1.25rem;
   margin-bottom: 20px;
@@ -150,15 +149,6 @@ WooCommerce styling
     margin-top: 20px;
     margin-top: 1.25rem;
     float: none;
-  }
-}
-
-@media screen and (max-width: 960px) {
-  #mobile-navigation .cart-menu {
-    display: none;
-  }
-  #mobile-navigation.toggled .mobile-cart-navigation {
-    display: block;
   }
 }
 

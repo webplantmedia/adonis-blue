@@ -107,7 +107,6 @@
 }
 
 .mobile-cart-navigation {
-	display: none;
 	@include rem('margin-top',20px);
 	@include rem('margin-bottom',20px);
 	@include rem('padding-left',20px);
@@ -145,19 +144,6 @@
 				@include rem('margin-top',20px);
 				float: none;
 			}
-		}
-	}
-}
-
-@media screen and (max-width: $size__menu-collapse-width) {
-	#mobile-navigation {
-		.cart-menu {
-			display: none;
-		}
-	}
-	#mobile-navigation.toggled {
-		.mobile-cart-navigation {
-			display: block;
 		}
 	}
 }
