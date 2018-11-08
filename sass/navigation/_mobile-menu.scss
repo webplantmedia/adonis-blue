@@ -60,6 +60,14 @@
 	display: none;
 }
 
+.mobile-site-branding {
+	margin-left: auto;
+	margin-right: auto;
+	@include rem( 'margin-bottom', 60px );
+	@include rem( 'padding-left', 20px );
+	@include rem( 'padding-right', 20px );
+}
+
 /* Small menu. */
 @media screen and (max-width: $size__menu-collapse-width) {
 	#master .site-branding {
@@ -82,6 +90,8 @@
 		}
 
 		.top-mobile-header {
+			@include rem('margin-top',20px);
+
 			#top-left-menu,
 			#top-right-menu {
 				a {
@@ -155,7 +165,7 @@
 				}
 
 				&:last-child > a {
-					border-bottom: $border__width solid $color__border;
+					// border-bottom: $border__width solid $color__border;
 				}
 
 				ul {
@@ -206,8 +216,8 @@
 						right: 0;
 						@include rem('padding-left',20px);
 						@include rem('padding-right',20px);
-						@include rem('padding-top',20px);
-						@include rem('padding-bottom',20px);
+						@include rem('padding-top',10px);
+						@include rem('padding-bottom',10px);
 						text-align: right;
 						line-height: $font__line-height-menu-bar;
 						@include rem('font-size',$font__menu-size);
@@ -222,16 +232,17 @@
 			a {
 				position: relative;
 				@include rem('font-size',$font__menu-size);
-				border-bottom: $border__width solid $color__border;
+				// border-bottom: $border__width solid $color__border;
 				@include rem('padding-left',20px);
 				@include rem('padding-right',20px);
-				@include rem('padding-top',20px);
-				@include rem('padding-bottom',20px);
+				@include rem('padding-top',10px);
+				@include rem('padding-bottom',10px);
 				line-height: $font__line-height-menu-bar;
 				display: block;
 				text-decoration: none;
 				width: auto;
 				height: auto;
+				white-space: normal;
 
 				&,
 				&:hover,
@@ -251,7 +262,8 @@
 		ul.social-links-menu {
 			display: table;
 			table-layout: fixed;
-			width: 100%;
+			margin-left: auto;
+			margin-right: auto;
 			// display: flex;
 			// flex-wrap: wrap;
 
@@ -259,16 +271,16 @@
 				display: table-cell;
 				// flex-grow: 1;
 				// width: 33%;
-				border-right: $border__width solid $color__menu-border;
+				// border-right: $border__width solid $color__menu-border;
 				text-align: center;
 
 				&:last-child {
-					border-right-width: 0;
+					// border-right-width: 0;
 				}
 				
 				a {
-					padding-left: 0;
-					padding-right: 0;
+					@include rem( 'padding-left', 15px );
+					@include rem( 'padding-right', 15px );
 				}
 			}
 		}
@@ -313,8 +325,6 @@
 		border-bottom-width: 0;
 
 		.menu-toggle {
-			border-bottom: $border__width solid $color__menu-border;
-
 			i:before {
 				content: "\f406";
 			}

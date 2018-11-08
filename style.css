@@ -2144,6 +2144,17 @@ a:hover, a:active {
   display: none;
 }
 
+.mobile-site-branding {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 60px;
+  margin-bottom: 3.75rem;
+  padding-left: 20px;
+  padding-left: 1.25rem;
+  padding-right: 20px;
+  padding-right: 1.25rem;
+}
+
 /* Small menu. */
 @media screen and (max-width: 960px) {
   #master .site-branding {
@@ -2163,6 +2174,10 @@ a:hover, a:active {
   #mobile-navigation .site-boundary {
     padding-left: 0;
     padding-right: 0;
+  }
+  #mobile-navigation .top-mobile-header {
+    margin-top: 20px;
+    margin-top: 1.25rem;
   }
   #mobile-navigation .top-mobile-header #top-left-menu a,
   #mobile-navigation .top-mobile-header #top-right-menu a {
@@ -2218,9 +2233,6 @@ a:hover, a:active {
     float: none;
     display: block;
   }
-  #mobile-navigation ul li:last-child > a {
-    border-bottom: 1px solid #ececec;
-  }
   #mobile-navigation ul li ul {
     display: none;
   }
@@ -2261,10 +2273,10 @@ a:hover, a:active {
     padding-left: 1.25rem;
     padding-right: 20px;
     padding-right: 1.25rem;
-    padding-top: 20px;
-    padding-top: 1.25rem;
-    padding-bottom: 20px;
-    padding-bottom: 1.25rem;
+    padding-top: 10px;
+    padding-top: 0.625rem;
+    padding-bottom: 10px;
+    padding-bottom: 0.625rem;
     text-align: right;
     line-height: 28px;
     font-size: 16px;
@@ -2278,20 +2290,20 @@ a:hover, a:active {
     position: relative;
     font-size: 16px;
     font-size: 1rem;
-    border-bottom: 1px solid #ececec;
     padding-left: 20px;
     padding-left: 1.25rem;
     padding-right: 20px;
     padding-right: 1.25rem;
-    padding-top: 20px;
-    padding-top: 1.25rem;
-    padding-bottom: 20px;
-    padding-bottom: 1.25rem;
+    padding-top: 10px;
+    padding-top: 0.625rem;
+    padding-bottom: 10px;
+    padding-bottom: 0.625rem;
     line-height: 28px;
     display: block;
     text-decoration: none;
     width: auto;
     height: auto;
+    white-space: normal;
   }
   #mobile-navigation ul a, #mobile-navigation ul a:hover, #mobile-navigation ul a:active, #mobile-navigation ul a:visited, #mobile-navigation ul a:focus {
     color: #6d686c;
@@ -2303,19 +2315,18 @@ a:hover, a:active {
   #mobile-navigation ul.social-links-menu {
     display: table;
     table-layout: fixed;
-    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
   #mobile-navigation ul.social-links-menu li {
     display: table-cell;
-    border-right: 1px solid #ececec;
     text-align: center;
   }
-  #mobile-navigation ul.social-links-menu li:last-child {
-    border-right-width: 0;
-  }
   #mobile-navigation ul.social-links-menu li a {
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 15px;
+    padding-left: 0.9375rem;
+    padding-right: 15px;
+    padding-right: 0.9375rem;
   }
   #master #mobile-navigation .menu-toggle {
     display: block;
@@ -2339,9 +2350,6 @@ a:hover, a:active {
   }
   #master #mobile-navigation.toggled {
     border-bottom-width: 0;
-  }
-  #master #mobile-navigation.toggled .menu-toggle {
-    border-bottom: 1px solid #ececec;
   }
   #master #mobile-navigation.toggled .menu-toggle i:before {
     content: "\f406";
@@ -2427,10 +2435,11 @@ html#master .top-header ul.menu li.menu-search-button i:before {
 #master .mobile-search-navigation {
   display: none;
   border-bottom: 1px solid #ececec;
+  padding: 20px;
+  padding: 1.25rem;
 }
 
 #master .mobile-search-navigation .search-field {
-  border-width: 0;
   padding-left: 20px;
   padding-left: 1.25rem;
 }

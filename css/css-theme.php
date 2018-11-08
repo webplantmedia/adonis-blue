@@ -300,6 +300,7 @@ textarea {
 	}
 
 	$css .= '
+.mobile-site-branding .custom-logo-link,
 .site-branding .site-logo-container {
 	max-width: ' . $painted_lady['split_menu_logo_width'] . 'px; /*id:split_menu_logo_width*/
 }

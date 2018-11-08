@@ -79,9 +79,9 @@ html#master .top-header {
 #master .mobile-search-navigation {
 	display: none;
 	border-bottom: $border__width solid $color__border;
+	@include rem( 'padding', 20px );
 
 	.search-field {
-		border-width: 0;
 		@include rem('padding-left',20px);
 	}
 }

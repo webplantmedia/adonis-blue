@@ -15,6 +15,12 @@
 
 <?php painted_lady_mobile_menu_button(); ?>
 
+<div class="mobile-site-branding">
+
+	<?php get_template_part( 'template-parts/sticky', 'branding' ); ?>
+
+</div>
+
 <?php get_template_part( 'template-parts/menu', 'mobile-cart' ); ?>
 
 <div class="top-mobile-header">
@@ -76,7 +82,7 @@
 			wp_nav_menu(
 				array(
 					'theme_location' => 'menu-3',
-					'depth'          => -1,
+					'depth'          => 2,
 					'fallback_cb'    => false,
 					'container'      => 'ul',
 					'menu_id'        => 'top-right-menu',
