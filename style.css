@@ -2730,7 +2730,7 @@ html#master .top-header ul.menu li.menu-search-button i:before {
   background: #ffffff;
   /* The Fallback */
   background: rgba(255, 255, 255, 0.95);
-  z-index: 2;
+  z-index: 9999;
 }
 
 #sticky-navigation .split-menu .split-menu-part-left {

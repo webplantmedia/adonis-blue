@@ -7,7 +7,7 @@
 	display: block;
 	@include background-opacity( $color__background-body, 0.95 );
 	// box-shadow: 0 1px 10px rgba(0, 0, 0, 0.08);
-	z-index: 2;
+	z-index: 9999;
 
 	.split-menu .split-menu-part-left {
 		@include rem( 'padding-right', 30px );
