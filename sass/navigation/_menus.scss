@@ -30,7 +30,7 @@
 }
 
 .main-navigation .split-menu .split-menu-part-center {
-	@include clip();
+	display: none;
 }
 
 // Single Menu Bar

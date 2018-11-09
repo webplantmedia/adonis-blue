@@ -46,7 +46,7 @@
 					$mobileMenu.removeClass( 'toggled' );
 					$button.attr( 'aria-expanded', 'false' );
 					$menu.attr( 'aria-expanded', 'false' );
-					$page.css( { 'height': 'auto', 'overflow': 'visible' } );
+					$page.removeClass( 'page-hide' );
 					window.scrollTo( 0, scrollTop );
 				}
 				else {
@@ -54,7 +54,7 @@
 					$mobileMenu.addClass( 'toggled' );
 					$button.attr( 'aria-expanded', 'true' );
 					$menu.attr( 'aria-expanded', 'true' );
-					$page.css( { 'height': 0, 'overflow': 'hidden' } );
+					$page.addClass( 'page-hide' );
 					window.scrollTo( 0, 0 );
 				}
 			}

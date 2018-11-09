@@ -352,9 +352,7 @@ textarea {
 		margin-right: auto;
 		position: relative;
 		z-index: 2;
-		height: auto;
-		clip: auto;
-		overflow: visible;
+		display: table-cell;
 	}
 
 	#site-navigation .split-menu {
