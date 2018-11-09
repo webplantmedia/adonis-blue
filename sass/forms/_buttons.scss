@@ -1,10 +1,12 @@
+// default
 button {
-border: 0 solid;
-padding: 0;
-line-height: 1.2;
-background: transparent;
+	border: 0 solid;
+	padding: 0;
+	line-height: 1.2;
+	background: transparent;
 }
 
+// Gutenberg Button
 #master .wp-block-button__link {
 	display: inline-block;
 	padding: 14px 24px;
@@ -14,19 +16,25 @@ background: transparent;
 	line-height: 1.2;
 	text-align: center;
 	text-decoration: none;
+	border-width: 0;
+}
+
+#master #page .is-style-squared .wp-block-button__link {
+	border-radius: 0;
 }
 
 #master #page .is-style-outline .wp-block-button__link,
 #master #page .is-style-default .wp-block-button__link {
 	border-radius: $button__radius;
-	border-width: $border__width;
-	border-style: solid;
 }
 
 #master #page .is-style-outline .wp-block-button__link {
 	background: none;
+	border-width: $border__width;
+	border-style: solid;
 }
 
+// Common Buttons
 #master .wp-block-button__link:not(.has-text-color):not(.has-background),
 #master .wc-stripe-checkout-button,
 #master .widget.null-instagram-feed > p.clear a,
@@ -88,6 +96,29 @@ background: transparent;
 	}
 }
 
+@media (min-width: 601px) {
+	#master #page .button-large .wp-block-button__link,
+	#master .button.alt {
+		@include rem('font-size',$font__large-size);
+		padding: 17px 59px;
+	}
+}
+
+#master #page .button-small .wp-block-button__link,
+#master .widget_shopping_cart .button,
+#master .addresses .edit,
+#master .woocommerce-MyAccount-downloads-file.button,
+#master .woocommerce-MyAccount-orders .woocommerce-button,
+#master .grofile-full-link,
+#master .flickr-more,
+#master #eu-cookie-law input,
+#master .button.button-small {
+	padding: 7px 14px;
+	@include rem('font-size',$font__tiny-size);
+	text-transform: uppercase;
+}
+
+// Button Psuedo's
 #master .wp-block-button__link:not(.has-text-color):not(.has-background):active,
 #master .wp-block-button__link:not(.has-text-color):not(.has-background):focus,
 #master .wc-stripe-checkout-button:active,
@@ -147,23 +178,6 @@ background: transparent;
 	background: #1c2220;
 }
 
-#master .button.alt {
-	padding: 17px 59px;
-}
-
-#master .widget_shopping_cart .button,
-#master .addresses .edit,
-#master .woocommerce-MyAccount-downloads-file.button,
-#master .woocommerce-MyAccount-orders .woocommerce-button,
-#master .grofile-full-link,
-#master .flickr-more,
-#master #eu-cookie-law input,
-#master .button.button-small {
-	padding: 7px 14px;
-	@include rem('font-size',$font__tiny-size);
-	text-transform: uppercase;
-}
-
 #master .button.alt:hover {
 	color: #fff;
 	background: #1c2220;
@@ -175,86 +189,85 @@ background: transparent;
 	background: #252323;
 }
 
-#master .fancy-button:focus,
-#master .fancy-button:visited,
-#master .fancy-button:active,
-#master .fancy-button:hover,
-#master .fancy-button {
-	// background-color: transparent;
+// Button Style 1
+#master #page div.button-1 .wp-block-button__link:focus,
+#master #page div.button-1 .wp-block-button__link:visited,
+#master #page div.button-1 .wp-block-button__link:active,
+#master #page div.button-1 .wp-block-button__link:hover,
+#master #page div.button-1 .wp-block-button__link,
+#master a.button-1:focus,
+#master a.button-1:visited,
+#master a.button-1:active,
+#master a.button-1:hover,
+#master a.button-1 {
 	border-width: 0;
-	color: $color__white;
 	text-transform: uppercase;
 	font-weight: bold;
 	@include rem('font-size',$font__large-size);
-	// background-size: 100% 100%;
-	// background-repeat: no-repeat;
 	padding: 22px 30px;
 	cursor: pointer;
 	border-radius: 0;
 }
 
-#master .fancy-button {
-	&,
-	&:focus,
-	&:visited,
-	&:active {
-		// background-image: url("img/button-bg.png");
-	}
+#master #page div.button-1 .wp-block-button__link:not(.button):not(.wp-block-button__link):focus,
+#master #page div.button-1 .wp-block-button__link:not(.button):not(.wp-block-button__link):visited,
+#master #page div.button-1 .wp-block-button__link:not(.button):not(.wp-block-button__link):active,
+#master #page div.button-1 .wp-block-button__link:not(.button):not(.wp-block-button__link):hover,
+#master #page div.button-1 .wp-block-button__link:not(.button):not(.wp-block-button__link),
+#master a.button-1:focus,
+#master a.button-1:visited,
+#master a.button-1:active,
+#master a.button-1:hover,
+#master a.button-1 {
+	color: $color__white;
+}
 
-	&:before {
-		// content: " ";
-		// position: absolute;
-		// clip: rect(1px, 1px, 1px, 1px);
-		// background-repeat: no-repeat;
-		// background-position: -9999px -9999px;
-	}
+#master #page div.button-1 .wp-block-button__link,
+#master a.button-1 {
 	&:after {
 		content: ">>";
 		margin-left: 10px;
 	}
 }
 
-#master .fancy-button:before,
-#master .fancy-button:hover {
-	// background-image: url("img/button-bg-dark.png");
-}
-
-#master .fancy2-button:focus,
-#master .fancy2-button:visited,
-#master .fancy2-button:active,
-#master .fancy2-button:hover,
-#master .fancy2-button {
-	// background-color: transparent;
+// Button Style 2
+#master #page div.button-2 .wp-block-button__link:focus,
+#master #page div.button-2 .wp-block-button__link:visited,
+#master #page div.button-2 .wp-block-button__link:active,
+#master #page div.button-2 .wp-block-button__link:hover,
+#master #page div.button-2 .wp-block-button__link,
+#master a.button-2:focus,
+#master a.button-2:visited,
+#master a.button-2:active,
+#master a.button-2:hover,
+#master a.button-2 {
 	border-width: 0;
 	text-transform: uppercase;
 	@include rem('font-size',$font__large-size);
-	// background-size: 100% 100%;
-	// background-repeat: no-repeat;
 	padding: 22px 30px;
 	padding-right: 71px;
 	cursor: pointer;
 	border-radius: 0;
-	color: $color__white;
 	font-weight: bold;
 	position: relative;
 }
 
-#master .fancy2-button {
-	&,
-	&:focus,
-	&:visited,
-	&:active {
-		// background-image: url("img/button2-bg.jpg");
-	}
+#master #page div.button-2 .wp-block-button__link:not(.button):not(.wp-block-button__link):focus,
+#master #page div.button-2 .wp-block-button__link:not(.button):not(.wp-block-button__link):visited,
+#master #page div.button-2 .wp-block-button__link:not(.button):not(.wp-block-button__link):active,
+#master #page div.button-2 .wp-block-button__link:not(.button):not(.wp-block-button__link):hover,
+#master #page div.button-2 .wp-block-button__link:not(.button):not(.wp-block-button__link),
+#master a.button-2:focus,
+#master a.button-2:visited,
+#master a.button-2:active,
+#master a.button-2:hover,
+#master a.button-2 {
+	color: $color__white;
+}
 
-	&:before {
-		// content: " ";
-		// position: absolute;
-		// clip: rect(1px, 1px, 1px, 1px);
-		// background-repeat: no-repeat;
-		// background-position: -9999px -9999px;
-	}
 
+#master #page div.button-2 .wp-block-button__link,
+#master a.button-2 {
 	&:after {
 		font-family:"Genericons-Neue";
 		
@@ -297,11 +310,16 @@ background: transparent;
 }
 
 @media (max-width: 600px) {
-	#master .fancy2-button:focus,
-	#master .fancy2-button:visited,
-	#master .fancy2-button:active,
-	#master .fancy2-button:hover,
-	#master .fancy2-button {
+	#master #page div.button-2 .wp-block-button__link:focus,
+	#master #page div.button-2 .wp-block-button__link:visited,
+	#master #page div.button-2 .wp-block-button__link:active,
+	#master #page div.button-2 .wp-block-button__link:hover,
+	#master #page div.button-2 .wp-block-button__link,
+	#master a.button-2:focus,
+	#master a.button-2:visited,
+	#master a.button-2:active,
+	#master a.button-2:hover,
+	#master a.button-2 {
 		padding-right: 30px;
 
 		&:after {
@@ -310,16 +328,13 @@ background: transparent;
 	}
 }
 
-#master .fancy2-button:before,
-#master .fancy2-button:hover {
-	// background-image: url("img/button2-bg-dark.jpg");
-}
-
+// Button Style 3
 #master #page #content .option-white-text input[type="button"],
 #master #page #content .option-white-text input[type="reset"],
 #master #page #content .option-white-text input[type="submit"],
 #master #page #content .option-white-text .button,
-#master .white-border-button {
+#master div.button-3 .wp-block-button__link,
+#master a.button-3 {
 	&,
 	&:active,
 	&:visited,

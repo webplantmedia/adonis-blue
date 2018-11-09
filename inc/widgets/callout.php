@@ -278,10 +278,10 @@ class Painted_Lady_Content_Widget_Callout extends Painted_Lady_Widget {
 				$output .= '<div class="button-text">';
 				switch ( $o['button_style'] ) {
 					case 'button-1':
-						$button_class = ' fancy-button';
+						$button_class = ' button-1';
 						break;
 					case 'button-2':
-						$button_class = ' fancy2-button';
+						$button_class = ' button-2';
 						break;
 					default:
 						$button_class = '';

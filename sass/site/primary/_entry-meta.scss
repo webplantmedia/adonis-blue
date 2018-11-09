@@ -1,5 +1,5 @@
 // Entry cat header
-.entry-cat-meta {
+#master .entry-cat-meta {
 	text-align: center;
 	@include rem('font-size',$font__xsmall-size - 4);
 	text-transform: uppercase;

@@ -346,11 +346,11 @@
 			h5,
 			h6,
 			p,
-			a:not(.theme-generated-button),
-			a:not(.theme-generated-button):hover,
-			a:not(.theme-generated-button):focus,
-			a:not(.theme-generated-button):active,
-			a:not(.theme-generated-button):visited {
+			a:not(.button):not(.wp-block-button__link),
+			a:not(.button):not(.wp-block-button__link):hover,
+			a:not(.button):not(.wp-block-button__link):focus,
+			a:not(.button):not(.wp-block-button__link):active,
+			a:not(.button):not(.wp-block-button__link):visited {
 				color: inherit;
 			}
 		}
