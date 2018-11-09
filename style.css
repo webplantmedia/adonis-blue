@@ -2404,7 +2404,7 @@ a:hover, a:active {
   bottom: 0;
   overflow: hidden;
   z-index: -9999;
-  opacity: 0;
+  opacity: 1;
 }
 
 /*--------------------------------------------------------------
