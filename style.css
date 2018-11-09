@@ -1129,8 +1129,31 @@ button {
   background: transparent;
 }
 
+#master .wp-block-button__link {
+  display: inline-block;
+  padding: 14px 24px;
+  font-size: 17px;
+  font-size: 1.0625rem;
+  /*font-size: 0.75rem;*/
+  font-weight: bold;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+}
+
+#master #page .is-style-outline .wp-block-button__link,
+#master #page .is-style-default .wp-block-button__link {
+  border-radius: 3px;
+  border-width: 1px;
+  border-style: solid;
+}
+
+#master #page .is-style-outline .wp-block-button__link {
+  background: none;
+}
+
+#master .wp-block-button__link:not(.has-text-color):not(.has-background),
 #master .wc-stripe-checkout-button,
-#master .wp-block-button__link,
 #master .widget.null-instagram-feed > p.clear a,
 #master .woocommerce-product-search button[type="submit"],
 #master .grofile-full-link,
@@ -1196,10 +1219,10 @@ button {
   padding: 12px 30px;
 }
 
+#master .wp-block-button__link:not(.has-text-color):not(.has-background):active,
+#master .wp-block-button__link:not(.has-text-color):not(.has-background):focus,
 #master .wc-stripe-checkout-button:active,
 #master .wc-stripe-checkout-button:focus,
-#master .wp-block-button__link:active,
-#master .wp-block-button__link:focus,
 #master .widget.null-instagram-feed > p.clear a:active,
 #master .widget.null-instagram-feed > p.clear a:focus,
 #master .woocommerce-product-search button[type="submit"]:active,
@@ -1234,8 +1257,8 @@ button {
   background: #252323;
 }
 
+#master .wp-block-button__link:not(.has-text-color):not(.has-background):hover,
 #master .wc-stripe-checkout-button:hover,
-#master .wp-block-button__link:hover,
 #master .widget.null-instagram-feed > p.clear a:hover,
 #master .woocommerce-product-search button[type="submit"]:hover,
 #master .grofile-full-link:hover,
@@ -1284,11 +1307,11 @@ button {
   background: #252323;
 }
 
-#master body .fancy-button:focus,
-#master body .fancy-button:visited,
-#master body .fancy-button:active,
-#master body .fancy-button:hover,
-#master body .fancy-button {
+#master .fancy-button:focus,
+#master .fancy-button:visited,
+#master .fancy-button:active,
+#master .fancy-button:hover,
+#master .fancy-button {
   border-width: 0;
   color: #ffffff;
   text-transform: uppercase;
@@ -1300,16 +1323,16 @@ button {
   border-radius: 0;
 }
 
-#master body .fancy-button:after {
+#master .fancy-button:after {
   content: ">>";
   margin-left: 10px;
 }
 
-#master body .fancy2-button:focus,
-#master body .fancy2-button:visited,
-#master body .fancy2-button:active,
-#master body .fancy2-button:hover,
-#master body .fancy2-button {
+#master .fancy2-button:focus,
+#master .fancy2-button:visited,
+#master .fancy2-button:active,
+#master .fancy2-button:hover,
+#master .fancy2-button {
   border-width: 0;
   text-transform: uppercase;
   font-size: 20px;
@@ -1323,7 +1346,7 @@ button {
   position: relative;
 }
 
-#master body .fancy2-button:after {
+#master .fancy2-button:after {
   font-family: "Genericons-Neue";
   display: inline-block;
   vertical-align: top;
@@ -1361,43 +1384,43 @@ button {
 }
 
 @media (max-width: 600px) {
-  #master body .fancy2-button:focus,
-  #master body .fancy2-button:visited,
-  #master body .fancy2-button:active,
-  #master body .fancy2-button:hover,
-  #master body .fancy2-button {
+  #master .fancy2-button:focus,
+  #master .fancy2-button:visited,
+  #master .fancy2-button:active,
+  #master .fancy2-button:hover,
+  #master .fancy2-button {
     padding-right: 30px;
   }
-  #master body .fancy2-button:focus:after,
-  #master body .fancy2-button:visited:after,
-  #master body .fancy2-button:active:after,
-  #master body .fancy2-button:hover:after,
-  #master body .fancy2-button:after {
+  #master .fancy2-button:focus:after,
+  #master .fancy2-button:visited:after,
+  #master .fancy2-button:active:after,
+  #master .fancy2-button:hover:after,
+  #master .fancy2-button:after {
     display: none;
   }
 }
 
-#master body #page #content .option-white-text input[type="button"], #master body #page #content .option-white-text input[type="button"]:active, #master body #page #content .option-white-text input[type="button"]:visited, #master body #page #content .option-white-text input[type="button"]:focus, #master body #page #content .option-white-text input[type="button"]:hover,
-#master body #page #content .option-white-text input[type="reset"],
-#master body #page #content .option-white-text input[type="reset"]:active,
-#master body #page #content .option-white-text input[type="reset"]:visited,
-#master body #page #content .option-white-text input[type="reset"]:focus,
-#master body #page #content .option-white-text input[type="reset"]:hover,
-#master body #page #content .option-white-text input[type="submit"],
-#master body #page #content .option-white-text input[type="submit"]:active,
-#master body #page #content .option-white-text input[type="submit"]:visited,
-#master body #page #content .option-white-text input[type="submit"]:focus,
-#master body #page #content .option-white-text input[type="submit"]:hover,
-#master body #page #content .option-white-text .button,
-#master body #page #content .option-white-text .button:active,
-#master body #page #content .option-white-text .button:visited,
-#master body #page #content .option-white-text .button:focus,
-#master body #page #content .option-white-text .button:hover,
-#master body .white-border-button,
-#master body .white-border-button:active,
-#master body .white-border-button:visited,
-#master body .white-border-button:focus,
-#master body .white-border-button:hover {
+#master #page #content .option-white-text input[type="button"], #master #page #content .option-white-text input[type="button"]:active, #master #page #content .option-white-text input[type="button"]:visited, #master #page #content .option-white-text input[type="button"]:focus, #master #page #content .option-white-text input[type="button"]:hover,
+#master #page #content .option-white-text input[type="reset"],
+#master #page #content .option-white-text input[type="reset"]:active,
+#master #page #content .option-white-text input[type="reset"]:visited,
+#master #page #content .option-white-text input[type="reset"]:focus,
+#master #page #content .option-white-text input[type="reset"]:hover,
+#master #page #content .option-white-text input[type="submit"],
+#master #page #content .option-white-text input[type="submit"]:active,
+#master #page #content .option-white-text input[type="submit"]:visited,
+#master #page #content .option-white-text input[type="submit"]:focus,
+#master #page #content .option-white-text input[type="submit"]:hover,
+#master #page #content .option-white-text .button,
+#master #page #content .option-white-text .button:active,
+#master #page #content .option-white-text .button:visited,
+#master #page #content .option-white-text .button:focus,
+#master #page #content .option-white-text .button:hover,
+#master .white-border-button,
+#master .white-border-button:active,
+#master .white-border-button:visited,
+#master .white-border-button:focus,
+#master .white-border-button:hover {
   background-color: transparent;
   border: 1px solid #ffffff;
   padding: 14px 24px;
@@ -1409,28 +1432,28 @@ button {
   line-height: 1.2;
 }
 
-#master body #page #content .option-white-text input[type="button"]:after,
-#master body #page #content .option-white-text input[type="reset"]:after,
-#master body #page #content .option-white-text input[type="submit"]:after,
-#master body #page #content .option-white-text .button:after,
-#master body .white-border-button:after {
+#master #page #content .option-white-text input[type="button"]:after,
+#master #page #content .option-white-text input[type="reset"]:after,
+#master #page #content .option-white-text input[type="submit"]:after,
+#master #page #content .option-white-text .button:after,
+#master .white-border-button:after {
   display: none;
   content: "";
 }
 
-#master body #page #content .option-white-text input[type="button"]:hover,
-#master body #page #content .option-white-text input[type="reset"]:hover,
-#master body #page #content .option-white-text input[type="submit"]:hover,
-#master body #page #content .option-white-text .button:hover,
-#master body .white-border-button:hover {
+#master #page #content .option-white-text input[type="button"]:hover,
+#master #page #content .option-white-text input[type="reset"]:hover,
+#master #page #content .option-white-text input[type="submit"]:hover,
+#master #page #content .option-white-text .button:hover,
+#master .white-border-button:hover {
   text-decoration: underline;
 }
 
-#master body #page #content .option-white-text input[type="button"]:hover:after,
-#master body #page #content .option-white-text input[type="reset"]:hover:after,
-#master body #page #content .option-white-text input[type="submit"]:hover:after,
-#master body #page #content .option-white-text .button:hover:after,
-#master body .white-border-button:hover:after {
+#master #page #content .option-white-text input[type="button"]:hover:after,
+#master #page #content .option-white-text input[type="reset"]:hover:after,
+#master #page #content .option-white-text input[type="submit"]:hover:after,
+#master #page #content .option-white-text .button:hover:after,
+#master .white-border-button:hover:after {
   text-decoration: none;
 }
 
@@ -1824,7 +1847,7 @@ a {
   text-decoration: none;
 }
 
-a, a:focus, a:active, a:visited {
+a:not(.wp-block-button__link), a:not(.wp-block-button__link):focus, a:not(.wp-block-button__link):active, a:not(.wp-block-button__link):visited {
   color: #6d686c;
 }
 

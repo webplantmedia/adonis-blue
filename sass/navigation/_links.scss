@@ -2,10 +2,10 @@ a {
 	outline: none;
 	text-decoration: none;
 
-	&,
-	&:focus,
-	&:active,
-	&:visited {
+	&:not(.wp-block-button__link),
+	&:not(.wp-block-button__link):focus,
+	&:not(.wp-block-button__link):active,
+	&:not(.wp-block-button__link):visited {
 		color: $color__text;
 	}
 

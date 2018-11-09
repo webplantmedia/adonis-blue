@@ -55,14 +55,14 @@ function painted_lady_custom_css() {
 	}
 
 	$css .= '
-.entry-content a:visited,
-.entry-content a:focus,
-.entry-content a:active,
-.entry-content a {
+.entry-content a:not(.wp-block-button__link):visited,
+.entry-content a:not(.wp-block-button__link):focus,
+.entry-content a:not(.wp-block-button__link):active,
+.entry-content a:not(.wp-block-button__link) {
 	color: ' . $painted_lady['link_color'] . '; /*id:link_color*/
 }
 
-.entry-content a:hover,
+.entry-content a:not(.wp-block-button__link):hover,
 .accordion-item h3:hover,
 #master a.more-link:hover,
 #master h1 a:hover,
@@ -79,7 +79,7 @@ function painted_lady_custom_css() {
 #master a:hover h6,
 #master .post-navigation a:hover .post-title,
 #master .widget ul a:hover,
-a:hover {
+a:not(.wp-block-button__link):hover {
 	color: ' . $painted_lady['link_hover_color'] . '; /*id:link_hover_color*/
 }
 
@@ -114,9 +114,9 @@ a:hover {
 #master .wc-stripe-checkout-button,
 #master .wc-stripe-checkout-button:active,
 #master .wc-stripe-checkout-button:focus,
-#master .wp-block-button__link,
-#master .wp-block-button__link:active,
-#master .wp-block-button__link:focus,
+#master .wp-block-button__link:not(.has-text-color):not(.has-background),
+#master .wp-block-button__link:not(.has-text-color):not(.has-background):active,
+#master .wp-block-button__link:not(.has-text-color):not(.has-background):focus,
 #master .widget.null-instagram-feed > p.clear a,
 #master .widget.null-instagram-feed > p.clear a:active,
 #master .widget.null-instagram-feed > p.clear a:focus,
@@ -176,10 +176,18 @@ a:hover {
 #master input[type="reset"]:active,
 #master input[type="submit"]:active {
 	background-color: ' . $painted_lady['primary_color'] . '; /*id:primary_color*/
+	border-color: ' . $painted_lady['primary_color'] . '; /*id:primary_color*/
+}
+
+#master .is-style-outline .wp-block-button__link:not(.has-text-color):not(.has-background),
+#master .is-style-outline .wp-block-button__link:not(.has-text-color):not(.has-background):active,
+#master .is-style-outline .wp-block-button__link:not(.has-text-color):not(.has-background):focus,
+#master .is-style-outline .wp-block-button__link:not(.has-text-color):not(.has-background):hover {
+	color: ' . $painted_lady['primary_color'] . '; /*id:primary_color*/
 }
 
 #master .wc-stripe-checkout-button:hover,
-#master .wp-block-button__link:hover,
+#master .wp-block-button__link:not(.has-text-color):not(.has-background):hover,
 #master .widget.null-instagram-feed > p.clear a:hover,
 #master .woocommerce-product-search button[type="submit"]:hover,
 #master .grofile-full-link:hover,
