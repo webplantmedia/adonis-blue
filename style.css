@@ -4794,6 +4794,11 @@ body:not(.single-post) .entry-footer,
   position: relative;
 }
 
+.blog-widget-area {
+  margin-bottom: 50px;
+  margin-bottom: 3.125rem;
+}
+
 body.widgetized-page .site-content {
   padding-top: 20px;
   padding-top: 1.25rem;
