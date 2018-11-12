@@ -229,7 +229,7 @@ add_filter( 'tiled_gallery_content_width', 'painted_lady_jetpack_overwrite_image
 /* add_filter( 'jetpack_content_width', 'painted_lady_jetpack_overwrite_image_width' ); */
 
 /**
- * Add wrapper around author bio
+ * Redundant check for Jetpack bio. If true, add wrapper around author bio.
  *
  * @since Painted_Lady 1.01
  *
