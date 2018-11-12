@@ -124,35 +124,6 @@ function painted_lady_pingback_header() {
 add_action( 'wp_head', 'painted_lady_pingback_header' );
 
 /**
- * Add retina src image to custom logo
- *
- * @since Painted_Lady 1.01
- *
- * @param string $html
- * @param int    $blog_id
- * @return string
- */
-function painted_lady_get_custom_logo( $html, $blog_id ) {
-	global $painted_lady;
-
-	if ( is_customize_preview() || is_preview() ) {
-		// fixes obscure bug when admin panel is ssl and front end is not ssl.
-		$painted_lady['custom_logo_2x'] = preg_replace( '/^https?:/', '', $painted_lady['custom_logo_2x'] );
-	}
-
-	if ( ! empty( $painted_lady['custom_logo_2x'] ) ) {
-		if ( preg_match( '/srcset=(\'|\").*?(\'|\")/', $html ) ) {
-			$html = preg_replace( '/srcset=(\'|\").*?(\'|\")/', 'srcset="' . esc_url( $painted_lady['custom_logo_2x'] ) . ' 2x"', $html );
-		} else {
-			$html = preg_replace( '/(src=(\'|\").*?(\'|\"))/', '\\1 srcset="' . esc_url( $painted_lady['custom_logo_2x'] ) . ' 2x"', $html );
-		}
-	}
-
-	return $html;
-}
-add_filter( 'get_custom_logo', 'painted_lady_get_custom_logo', 10, 2 );
-
-/**
  * Add "read more" link on all excerpts.
  *
  * @since Painted_Lady 1.01

@@ -22,7 +22,6 @@ $painted_lady_default = array();
  */
 
 // Title & Tagline.
-$painted_lady_default['custom_logo_2x']            = '';
 $painted_lady_default['display_site_title']        = 1;
 $painted_lady_default['display_site_tagline']      = 1;
 

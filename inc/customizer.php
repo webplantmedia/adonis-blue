@@ -43,45 +43,12 @@ function painted_lady_customize_register( $wp_customize ) {
 				'render_callback' => 'painted_lady_customize_partial_blogdescription',
 			)
 		);
-		$wp_customize->selective_refresh->add_partial(
-			'custom_logo_2x', array(
-				'selector'        => '.site-logo',
-				'render_callback' => 'painted_lady_customize_partial_custom_logo',
-			)
-		);
 	}
 
 	/**
 	 * Logo
 	 */
 	$section_id = 'title_tagline';
-
-	$setting_id = 'custom_logo_2x';
-	$wp_customize->add_setting(
-		$setting_id, array(
-			'default'           => $painted_lady_default[ $setting_id ],
-			'transport'         => 'postMessage',
-			'sanitize_callback' => 'esc_url_raw',
-		)
-	);
-
-	$wp_customize->add_control(
-		new WP_Customize_Image_Control(
-			$wp_customize, $setting_id, array(
-				'label'         => esc_html__( 'Retina Logo', 'painted-lady' ),
-				'priority'      => 8, /* below the logo media selector. */
-				'section'       => $section_id,
-				'button_labels' => array(
-					'select'       => esc_html__( 'Select Retina Logo', 'painted-lady' ),
-					'change'       => esc_html__( 'Change Retina Logo', 'painted-lady' ),
-					'placeholder'  => esc_html__( 'No retina logo selected', 'painted-lady' ),
-					'frame_title'  => esc_html__( 'Select Retina Logo', 'painted-lady' ),
-					'frame_button' => esc_html__( 'Choose Retina Logo', 'painted-lady' ),
-				),
-				'description'   => esc_html__( 'Select image twice the size as your original logo image for crisp display on retina screens.', 'painted-lady' ),
-			)
-		)
-	);
 
 	$setting_id = 'display_site_title';
 	$wp_customize->add_setting(
@@ -1441,17 +1408,6 @@ function painted_lady_customize_partial_blogname() {
  */
 function painted_lady_customize_partial_blogdescription() {
 	bloginfo( 'description' );
-}
-
-/**
- * Render the site logo for the selective refresh partial.
- *
- * @since Painted_Lady 1.01
- *
- * @return void
- */
-function painted_lady_customize_partial_custom_logo() {
-	the_custom_logo();
 }
 
 /**
