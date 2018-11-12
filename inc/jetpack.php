@@ -236,7 +236,31 @@ add_filter( 'tiled_gallery_content_width', 'painted_lady_jetpack_overwrite_image
  * @return void
  */
 function painted_lady_jetpack_author_bio() {
+	// If the theme doesn't support 'jetpack-content-options', don't continue.
+	if ( ! current_theme_supports( 'jetpack-content-options' ) ) {
+		return;
+	}
+
+	$options            = get_theme_support( 'jetpack-content-options' );
+	$author_bio         = ( ! empty( $options[0]['author-bio'] ) ) ? $options[0]['author-bio'] : null;
+	$author_bio_default = ( isset( $options[0]['author-bio-default'] ) && false === $options[0]['author-bio-default'] ) ? '' : 1;
+
+	// If the theme doesn't support 'jetpack-content-options[ 'author-bio' ]', don't continue.
+	if ( true !== $author_bio ) {
+		return;
+	}
+
+	// If 'jetpack_content_author_bio' is false, don't continue.
+	if ( ! get_option( 'jetpack_content_author_bio', $author_bio_default ) ) {
+		return;
+	}
+
+	// If we aren't on a single post, don't continue.
+	if ( ! is_single() ) {
+		return;
+	}
 	?>
+
 	<div class="entry-author-container">
 		<?php jetpack_author_bio(); ?>
 	</div>
