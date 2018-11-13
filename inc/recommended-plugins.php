@@ -84,6 +84,12 @@ function painted_lady_register_required_plugins() {
 		),
 
 		array(
+			'name'     => 'Yoast SEO',
+			'slug'     => 'wordpress-seo',
+			'required' => false,
+		),
+
+		array(
 			'name'     => 'MailChimp',
 			'slug'     => 'mailchimp-for-wp',
 			'required' => false,
