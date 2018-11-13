@@ -209,15 +209,24 @@
 	// Click div href links. HTML doesn't allow for nested anchor tags.
 	$( '.div-href-link' ).click(
 		function( event ) {
+			var $this = $( this );
 			var $clicked = $( event.target );
 
 			if ( $clicked.length ) {
 				if ( ! $clicked.is( 'a, a *' ) ) {
 					event.preventDefault();
 
-					var href = $( this ).data( 'href' );
-					if ( href.length ) {
+					var href = $this.data( 'href' );
+
+					if ( 'string' ==  typeof( href ) ) {
 						window.location = href;
+					}
+					else {
+						var $a = $this.children( 'a' );
+						href = $a.attr( 'href' );
+						if ( 'string' ==  typeof( href ) ) {
+							window.location = href;
+						}
 					}
 				}
 			}
