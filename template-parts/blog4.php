@@ -18,20 +18,18 @@ if ( painted_lady_display_sidebar() ) {
 ?>
 
 <?php if ( have_posts() ) : ?>
-	<div class="grid">
+	<div class="grid"><!-- No White Space
 		<?php
 
 		/* Start the Loop */
 		while ( have_posts() ) :
 			the_post();
 			?>
-
-			<div class="grid__col grid__col--1-of-<?php echo $columns; ?> grid__col--m-1-of-2">
+			--><div class="grid__col grid__col--1-of-<?php echo $columns; ?> grid__col--m-1-of-2">
 
 				<?php get_template_part( 'template-parts/excerpt2' ); ?>
 
-			</div>
-
+			</div><!-- No White Space
 		<?php endwhile; ?>
-	</div>
+	--></div>
 <?php endif; ?>

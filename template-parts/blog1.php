@@ -21,7 +21,7 @@
 <?php endif; ?>
 
 <?php if ( have_posts() ) : ?>
-	<div class="grid">
+	<div class="grid"><!-- No White Space
 		<?php
 
 		/* Start the Loop */
@@ -29,12 +29,12 @@
 			the_post();
 		?>
 
-			<div class="grid__col grid__col--1-of-2">
+			--><div class="grid__col grid__col--1-of-2">
 
 				<?php get_template_part( 'template-parts/excerpt2', painted_lady_get_page_template_in_loop() ); ?>
 
-			</div>
+			</div><!-- No White Space
 
 		<?php endwhile; ?>
-	</div>
+	--></div>
 <?php endif; ?>
