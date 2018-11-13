@@ -2843,12 +2843,12 @@ html#master .top-header ul.menu li.menu-search-button i:before {
   font-size: 0.875rem;
 }
 
-#master .sticky {
+#master .sticky-menu.sticky {
   position: fixed;
   top: 0;
 }
 
-#master .admin-bar .sticky {
+#master .admin-bar .sticky-menu.sticky {
   top: 32px;
 }
 
