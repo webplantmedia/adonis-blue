@@ -2473,6 +2473,7 @@ a:hover, a:active {
 /* Small menu. */
 @media screen and (max-width: 960px) {
   #master .site-branding {
+    margin-top: 36px;
     border-bottom: 1px solid #ececec;
   }
   #master #sticky-navigation,

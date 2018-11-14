@@ -320,6 +320,7 @@
 /* Small menu. */
 @media screen and (max-width: $size__menu-collapse-width) {
 	#master .site-branding {
+		margin-top: $font__line-height-top-menu;
 		border-bottom: $border__width solid $color__menu-border;
 	}
 
