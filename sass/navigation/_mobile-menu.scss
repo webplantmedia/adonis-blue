@@ -62,7 +62,7 @@
 .mobile-site-branding {
 	margin-left: auto;
 	margin-right: auto;
-	@include rem( 'padding-bottom', 50px );
+	@include rem( 'margin-top', $font__line-height-top-menu );
 	@include rem( 'padding-left', 20px );
 	@include rem( 'padding-right', 20px );
 	border-bottom: $border__width solid $color__menu-border;
@@ -320,7 +320,7 @@
 /* Small menu. */
 @media screen and (max-width: $size__menu-collapse-width) {
 	#master .site-branding {
-		margin-top: $font__line-height-top-menu;
+		@include rem( 'margin-top', $font__line-height-top-menu );
 		border-bottom: $border__width solid $color__menu-border;
 	}
 

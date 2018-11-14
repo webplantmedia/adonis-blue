@@ -219,6 +219,7 @@ a:not(.wp-block-button__link):hover {
 	background-color: ' . $painted_lady['archive_background_color'] . '; /*id:archive_background_color*/
 }
 
+.mobile-site-branding,
 .site-branding {
 	' . painted_lady_css_set_unit( 'padding-top', $painted_lady['heading_padding_top'] ) . ' /*id:heading_padding_top*/
 	' . painted_lady_css_set_unit( 'padding-bottom', $painted_lady['heading_padding_bottom'] ) . ' /*id:heading_padding_bottom*/

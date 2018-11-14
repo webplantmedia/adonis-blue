@@ -2240,8 +2240,8 @@ a:hover, a:active {
 .mobile-site-branding {
   margin-left: auto;
   margin-right: auto;
-  padding-bottom: 50px;
-  padding-bottom: 3.125rem;
+  margin-top: 36px;
+  margin-top: 2.25rem;
   padding-left: 20px;
   padding-left: 1.25rem;
   padding-right: 20px;
@@ -2474,6 +2474,7 @@ a:hover, a:active {
 @media screen and (max-width: 960px) {
   #master .site-branding {
     margin-top: 36px;
+    margin-top: 2.25rem;
     border-bottom: 1px solid #ececec;
   }
   #master #sticky-navigation,
