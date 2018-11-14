@@ -8,7 +8,7 @@
 				i,
 				i:before {
 					@include rem('font-size',$font__top-menu-social-size);
-					@include rem('line-height',$font__line-height-top-menu);
+					line-height: $font__line-height-top-menu;
 				}
 				
 				.alert-count {
@@ -37,7 +37,7 @@
 			i,
 			i:before {
 				@include rem('font-size',$font__menu-cart-icon-size);
-				@include rem('line-height',$font__line-height-menu-icon);
+				line-height: $font__line-height-menu-icon;
 			}
 
 			a.cart_dropdown_link {
@@ -93,7 +93,7 @@
 			}
 
 			.widget_shopping_cart_content {
-				@include rem('padding',30px);
+				@include rem('padding', ( 2 * $dropdown__padding ) );
 
 				> *:first-child {
 					margin-top: 0;

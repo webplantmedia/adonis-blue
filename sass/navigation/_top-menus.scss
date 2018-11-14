@@ -6,8 +6,8 @@
 		.search-field {
 			@include rem( 'font-size', ( $font__top-menu-size - 1 ) );
 			color: $color__text-light;
-			padding-top: .4em;
-			padding-bottom: .4em;
+			padding-top: $dropdown__top-menu-item-spacing;
+			padding-bottom: $dropdown__top-menu-item-spacing;
 			text-transform: uppercase;
 			font-weight: bold;
 			letter-spacing: 0.07em;
@@ -29,7 +29,7 @@
 		ul.menu {
 			> li {
 				> a {
-					@include rem( 'margin-right', 15px );
+					@include rem( 'margin-right', $dropdown__padding );
 				}
 
 				&:last-child {
@@ -40,14 +40,14 @@
 			}
 
 			li:hover > ul {
-				left: -1em;
+				left: -$dropdown__padding;
 			}
 		}
 
 		.cart-menu a,
 		.menu-search a,
 		.social-navigation ul.menu > li > a {
-			@include rem( 'margin-right', 17px );
+			@include rem( 'margin-right', $dropdown__padding );
 		}
 
 		> nav {
@@ -60,7 +60,7 @@
 		ul.menu {
 			> li {
 				> a {
-					@include rem( 'margin-right', 15px );
+					@include rem( 'margin-right', $dropdown__padding );
 				}
 
 				&:last-child {
@@ -72,7 +72,7 @@
 
 			li:hover > ul {
 				left: auto;
-				right: -1em;
+				right: -$dropdown__padding;
 			}
 		}
 
@@ -111,20 +111,21 @@
 				z-index: 99999;
 				// box-shadow: 0 1px 10px rgba(0, 0, 0, 0.08);
 				padding-top: 0;
-				padding-bottom: .8em;
+				padding-bottom: round( $dropdown__padding - ( $font__line-height-heading * $dropdown__top-menu-item-spacing ) );
 				@include background-opacity( $color__background-body, 0.95 );
 
 				li {
 				}
 
 				a {
-					padding-top: .4em;
-					padding-bottom: .4em;
-					padding-left: 1em;
-					padding-right: 1em;
+					@include rem('padding-top',$dropdown__top-menu-item-spacing);
+					@include rem('padding-bottom',$dropdown__top-menu-item-spacing);
+					padding-left: $dropdown__padding;
+					padding-right: $dropdown__padding;
 					// border-bottom: $border__width solid $color__border;
 					// @include rem('min-width',150px);
 					@include rem( 'font-size', ( $font__top-menu-size - 1 ) );
+					line-height: $font__line-height-heading;
 					white-space: nowrap;
 				}
 			}
@@ -148,7 +149,7 @@
 		}
 
 		.menu > li > a {
-			@include rem('line-height',$font__line-height-top-menu);
+			line-height: $font__line-height-top-menu;
 		}
 	}
 
@@ -168,7 +169,7 @@
 			@include rem('height',$font__line-height-top-menu);
 
 			&:before {
-				@include rem('line-height',$font__line-height-top-menu);
+				line-height: $font__line-height-top-menu;
 				@include rem('font-size',($font__top-menu-social-size));
 			}
 		}

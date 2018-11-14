@@ -2007,8 +2007,10 @@ a:hover, a:active {
   left: -999em;
   z-index: 99999;
   text-align: left;
-  padding-top: 1em;
-  padding-bottom: 1em;
+  padding-top: 7px;
+  padding-top: 0.4375rem;
+  padding-bottom: 7px;
+  padding-bottom: 0.4375rem;
   background: #ffffff;
   /* The Fallback */
   background: rgba(255, 255, 255, 0.95);
@@ -2016,12 +2018,14 @@ a:hover, a:active {
 
 .main-menu ul ul ul {
   left: -999em;
-  top: -1em;
+  top: -7px;
+  top: -0.4375rem;
   border-top-color: #ececec;
 }
 
 .main-menu ul ul li {
-  float: none;
+  float: left;
+  /* fixed issues with spacing with <a> padding gets too low */
   width: 100%;
 }
 
@@ -2030,8 +2034,14 @@ a:hover, a:active {
 }
 
 .main-menu ul ul a {
-  padding-top: .7em;
-  padding-bottom: .7em;
+  padding-top: 5px;
+  padding-top: 0.3125rem;
+  padding-bottom: 5px;
+  padding-bottom: 0.3125rem;
+  padding-left: 14px;
+  padding-left: 0.875rem;
+  padding-right: 14px;
+  padding-right: 0.875rem;
   font-size: 13px;
   font-size: 0.8125rem;
   line-height: 1.375;
@@ -2046,13 +2056,14 @@ a:hover, a:active {
 }
 
 .main-menu ul li:hover > ul {
-  left: 0;
+  left: 14px;
+  left: 0.875rem;
 }
 
 .main-menu ul#primary-menu-right li:hover > ul {
   left: auto;
-  right: -30px;
-  right: -1.875rem;
+  right: -7px;
+  right: -0.4375rem;
 }
 
 .main-menu ul#primary-menu-right li li:hover > ul {
@@ -2103,14 +2114,14 @@ a:hover, a:active {
   .show-menu-arrows .main-menu ul ul li.page_item_has_children > a,
   .show-menu-arrows .main-menu ul ul li.menu-item-has-children > a {
     position: relative;
-    padding-right: 5em;
+    padding-right: 56px;
   }
   .show-menu-arrows .main-menu ul ul li.page_item_has_children > a:after,
   .show-menu-arrows .main-menu ul ul li.menu-item-has-children > a:after {
     position: absolute;
     top: 51%;
-    right: 30px;
-    right: 1.875rem;
+    right: 14px;
+    right: 0.875rem;
     margin: 0;
     -webkit-transform: translateY(-50%) rotate(270deg);
     -moz-transform: translateY(-50%) rotate(270deg);
@@ -2186,7 +2197,6 @@ a:hover, a:active {
   font-size: 16px;
   font-size: 1rem;
   line-height: 28px;
-  line-height: 1.75rem;
   text-transform: uppercase;
   padding: 1em 1.2em;
   background: none;
@@ -2508,7 +2518,6 @@ html#master .top-header ul.menu li.menu-search-button i:before {
   font-size: 15px;
   font-size: 0.9375rem;
   line-height: 36px;
-  line-height: 2.25rem;
 }
 
 #master .menu-search ul.menu {
@@ -2540,7 +2549,6 @@ html#master .top-header ul.menu li.menu-search-button i:before {
   font-size: 22px;
   font-size: 1.375rem;
   line-height: 52px;
-  line-height: 3.25rem;
 }
 
 #master .menu-search ul.menu li.menu-search-button .menu-search-form-container {
@@ -2561,6 +2569,8 @@ html#master .top-header ul.menu li.menu-search-button i:before {
 #master .menu-search ul.menu li.menu-search-button .menu-search-form-container .search-field {
   padding: 14px;
   border-width: 0;
+  float: left;
+  line-height: 1.375;
 }
 
 #master .menu-search ul.menu li.menu-search-button.focus .menu-search-form-container {
@@ -2591,8 +2601,8 @@ html#master .top-header ul.menu li.menu-search-button i:before {
   font-size: 11px;
   font-size: 0.6875rem;
   color: #959595;
-  padding-top: .4em;
-  padding-bottom: .4em;
+  padding-top: 3px;
+  padding-bottom: 3px;
   text-transform: uppercase;
   font-weight: bold;
   letter-spacing: 0.07em;
@@ -2622,8 +2632,8 @@ html#master .top-header ul.menu li.menu-search-button i:before {
 }
 
 .top-header .top-left-header ul.menu > li > a {
-  margin-right: 15px;
-  margin-right: 0.9375rem;
+  margin-right: 14px;
+  margin-right: 0.875rem;
 }
 
 .top-header .top-left-header ul.menu > li:last-child > a {
@@ -2631,14 +2641,14 @@ html#master .top-header ul.menu li.menu-search-button i:before {
 }
 
 .top-header .top-left-header ul.menu li:hover > ul {
-  left: -1em;
+  left: -14px;
 }
 
 .top-header .top-left-header .cart-menu a,
 .top-header .top-left-header .menu-search a,
 .top-header .top-left-header .social-navigation ul.menu > li > a {
-  margin-right: 17px;
-  margin-right: 1.0625rem;
+  margin-right: 14px;
+  margin-right: 0.875rem;
 }
 
 .top-header .top-right-header {
@@ -2646,8 +2656,8 @@ html#master .top-header ul.menu li.menu-search-button i:before {
 }
 
 .top-header .top-right-header ul.menu > li > a {
-  margin-right: 15px;
-  margin-right: 0.9375rem;
+  margin-right: 14px;
+  margin-right: 0.875rem;
 }
 
 .top-header .top-right-header ul.menu > li:last-child > a {
@@ -2656,7 +2666,7 @@ html#master .top-header ul.menu li.menu-search-button i:before {
 
 .top-header .top-right-header ul.menu li:hover > ul {
   left: auto;
-  right: -1em;
+  right: -14px;
 }
 
 .top-header .top-right-header .cart-menu a,
@@ -2695,7 +2705,7 @@ html#master .top-header ul.menu li.menu-search-button i:before {
   left: -999em;
   z-index: 99999;
   padding-top: 0;
-  padding-bottom: .8em;
+  padding-bottom: 10px;
   background: #ffffff;
   /* The Fallback */
   background: rgba(255, 255, 255, 0.95);
@@ -2703,12 +2713,15 @@ html#master .top-header ul.menu li.menu-search-button i:before {
 
 .top-header .social-navigation ul ul a,
 .top-header .header-menu ul ul a {
-  padding-top: .4em;
-  padding-bottom: .4em;
-  padding-left: 1em;
-  padding-right: 1em;
+  padding-top: 3px;
+  padding-top: 0.1875rem;
+  padding-bottom: 3px;
+  padding-bottom: 0.1875rem;
+  padding-left: 14px;
+  padding-right: 14px;
   font-size: 11px;
   font-size: 0.6875rem;
+  line-height: 1.375;
   white-space: nowrap;
 }
 
@@ -2735,7 +2748,6 @@ html#master .top-header ul.menu li.menu-search-button i:before {
 .top-header .social-navigation .menu > li > a,
 .top-header .header-menu .menu > li > a {
   line-height: 36px;
-  line-height: 2.25rem;
 }
 
 .top-header .top-left-header-menu {
@@ -2758,7 +2770,6 @@ html#master .top-header ul.menu li.menu-search-button i:before {
 
 .top-header .social-navigation a:before {
   line-height: 36px;
-  line-height: 2.25rem;
   font-size: 18px;
   font-size: 1.125rem;
 }

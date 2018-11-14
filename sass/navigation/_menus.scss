@@ -70,19 +70,19 @@
 			z-index: 99999;
 			// box-shadow: 0 1px 10px rgba(0, 0, 0, 0.07);
 			text-align: left;
-			padding-top: 1em;
-			padding-bottom: 1em;
+			@include rem('padding-top', round( $dropdown__padding - ( $font__line-height-heading * $dropdown__item-spacing ) ) );
+			@include rem('padding-bottom', round( $dropdown__padding - ( $font__line-height-heading * $dropdown__item-spacing ) ) );
 			@include background-opacity( $color__background-body, 0.95 );
 
 			ul {
 				left: -999em;
-				top: -1em;
+				@include rem('top', round( -1 * ( $dropdown__padding - ( $font__line-height-heading * $dropdown__item-spacing ) ) ) );
 				// margin-top: -$border__width;
 				border-top-color: $color__border;
 			}
 
 			li {
-				float: none;
+				float: left; /* fixed issues with spacing with <a> padding gets too low */
 				width: 100%;
 
 				&:hover > ul {
@@ -96,8 +96,10 @@
 
 			a {
 				// border-bottom: $border__width solid $color__border;
-				padding-top: .7em;
-				padding-bottom: .7em;
+				@include rem('padding-top',$dropdown__item-spacing);
+				@include rem('padding-bottom',$dropdown__item-spacing);
+				@include rem('padding-left',$dropdown__padding);
+				@include rem('padding-right',$dropdown__padding);
 				@include rem('font-size',$font__dropdown-size);
 				line-height: $font__line-height-heading;
 				text-transform: none;
@@ -123,7 +125,7 @@
 			display: inline-block;
 
 			&:hover > ul {
-				left: 0;
+				@include rem( 'left', $dropdown__padding );
 			}
 		}
 
@@ -131,7 +133,7 @@
 			li {
 				&:hover > ul {
 					left: auto;
-					@include rem( 'right', -30px );
+					@include rem( 'right', -( round( $dropdown__padding / 2 ) ) );
 				}
 
 				li {
@@ -192,12 +194,12 @@
 					&.page_item_has_children > a,
 					&.menu-item-has-children > a {
 						position: relative;
-						padding-right: 5em;
+						padding-right: ( $dropdown__padding * 4 );
 
 						&:after {
 							position: absolute;
 							top: 51%;
-							@include rem( 'right', 30px );
+							@include rem( 'right', $dropdown__padding );
 							margin: 0;
 							@include crossBrowser('transform',translateY(-50%) rotate(270deg));
 							@include rem('font-size',( $font__menu-size - 3 ) );

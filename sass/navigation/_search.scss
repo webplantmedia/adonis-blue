@@ -7,7 +7,7 @@ html#master .top-header {
 			i,
 			i:before {
 				@include rem( 'font-size', ( round( 0.86 * $font__top-menu-social-size ) ) );
-				@include rem('line-height',$font__line-height-top-menu);
+				line-height: $font__line-height-top-menu;
 			}
 		}
 	}
@@ -42,7 +42,7 @@ html#master .top-header {
 			i,
 			i:before {
 				@include rem('font-size',$font__menu-search-icon-size);
-				@include rem('line-height',$font__line-height-menu-icon);
+				line-height: $font__line-height-menu-icon;
 			}
 
 			.menu-search-form-container {
@@ -65,6 +65,8 @@ html#master .top-header {
 				.search-field {
 					padding: 14px;
 					border-width: 0;
+					float: left;
+					line-height: $font__line-height-heading;
 				}
 			}
 
