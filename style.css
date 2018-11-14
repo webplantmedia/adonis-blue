@@ -2447,7 +2447,7 @@ a:hover, a:active {
   float: none;
   width: 100%;
   display: block;
-  position: static;
+  position: absolute;
 }
 
 #master #mobile-navigation.toggled .menu-toggle i:before {
@@ -2473,10 +2473,6 @@ a:hover, a:active {
 /* Small menu. */
 @media screen and (max-width: 960px) {
   #master .site-branding {
-    padding-top: 60px;
-    padding-top: 3.75rem;
-    padding-bottom: 60px;
-    padding-bottom: 3.75rem;
     border-bottom: 1px solid #ececec;
   }
   #master #sticky-navigation,

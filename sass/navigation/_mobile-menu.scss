@@ -285,7 +285,7 @@
 		float: none;
 		width: 100%;
 		display: block;
-		position: static;
+		position: absolute;
 
 		i:before {
 			content: "\f406";
@@ -320,8 +320,6 @@
 /* Small menu. */
 @media screen and (max-width: $size__menu-collapse-width) {
 	#master .site-branding {
-		@include rem( 'padding-top', 60px );
-		@include rem( 'padding-bottom', 60px );
 		border-bottom: $border__width solid $color__menu-border;
 	}
 
