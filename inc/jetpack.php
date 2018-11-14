@@ -56,7 +56,7 @@ function painted_lady_jetpack_setup() {
 			'featured-images'    => array(
 				'archive' => true,
 				'post'    => true,
-				'page'    => true,
+				// 'page'    => true,
 			),
 		)
 	);
