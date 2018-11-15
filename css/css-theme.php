@@ -228,6 +228,12 @@ a:not(.wp-block-button__link):hover {
 	' . painted_lady_css_set_unit( 'padding-bottom', $painted_lady['heading_padding_bottom'] ) . ' /*id:heading_padding_bottom*/
 }
 
+@media screen and (max-width: 960px) {
+	.site-branding {
+		' . painted_lady_css_set_unit( 'padding-top', $painted_lady['heading_padding_bottom'] ) . ' /*id:heading_padding_bottom*/
+	}
+}
+
 .site-header-inner {
 	background-position: calc(50% + ' . $painted_lady['top_header_background_offset'] . 'px) top; /*id:top_header_background_offset*/
 }
