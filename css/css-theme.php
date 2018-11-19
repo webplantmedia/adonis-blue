@@ -87,6 +87,8 @@ a:not(.wp-block-button__link):hover {
 	color: ' . $painted_lady['link_hover_color'] . ' !important; /*id:link_hover_color*/
 }
 
+#master .comment-meta .fn,
+#master .comment-meta .fn a,
 #master .affwp-affiliate-dashboard-tab.active a,
 #master #page #masthead .main-menu .current_page_item > a,
 #master #page #masthead .main-menu .current-menu-item > a,
@@ -100,6 +102,7 @@ a:not(.wp-block-button__link):hover {
 	border-color: ' . $painted_lady['primary_color'] . '; /*id:primary_color*/
 }
 
+#master .comment-meta .fn a:hover,
 #master #affwp-affiliate-dashboard-tabs .affwp-affiliate-dashboard-tab.active a:hover,
 #master .main-menu .current_page_item > a:hover,
 #master .main-menu .current-menu-item > a:hover,

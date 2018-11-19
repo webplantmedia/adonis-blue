@@ -459,3 +459,7 @@
 .no-comments {
 	margin-top: 2em;
 }
+
+.says {
+	@include clip;
+}
