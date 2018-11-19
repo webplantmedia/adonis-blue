@@ -64,48 +64,48 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 	## Contact Form 7
 	## AffiliateWP
 --------------------------------------------------------------*/
-@import "variables-site/variables-site";
-@import "mixins/mixins-master";
+@import "sass/variables-site/variables-site";
+@import "sass/mixins/mixins-master";
 
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
-@import "normalize";
+@import "sass/normalize";
 
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
-@import "typography/typography";
+@import "sass/typography/typography";
 
 /*--------------------------------------------------------------
 ## Headings
 --------------------------------------------------------------*/
-@import "typography/headings";
+@import "sass/typography/headings";
 
 /*--------------------------------------------------------------
 ## Copy
 --------------------------------------------------------------*/
-@import "typography/copy";
+@import "sass/typography/copy";
 
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
-@import "elements/elements";
+@import "sass/elements/elements";
 
 /*--------------------------------------------------------------
 ## Lists
 --------------------------------------------------------------*/
-@import "elements/lists";
+@import "sass/elements/lists";
 
 /*--------------------------------------------------------------
 ## Tables
 --------------------------------------------------------------*/
-@import "elements/tables";
+@import "sass/elements/tables";
 
 /*--------------------------------------------------------------
 # Grid
 --------------------------------------------------------------*/
-@import "layout/grid";
+@import "sass/layout/grid";
 
 /*--------------------------------------------------------------
 # Forms
@@ -113,12 +113,12 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 ## Buttons
 --------------------------------------------------------------*/
-@import "forms/buttons";
+@import "sass/forms/buttons";
 
 /*--------------------------------------------------------------
 ## Fields
 --------------------------------------------------------------*/
-@import "forms/fields";
+@import "sass/forms/fields";
 
 /*--------------------------------------------------------------
 # Navigation
@@ -126,97 +126,97 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 ## Links
 --------------------------------------------------------------*/
-@import "navigation/links";
+@import "sass/navigation/links";
 
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
-@import "navigation/menus";
+@import "sass/navigation/menus";
 
 /*--------------------------------------------------------------
 ## Mobile Menu
 --------------------------------------------------------------*/
-@import "navigation/mobile-menu";
+@import "sass/navigation/mobile-menu";
 
 /*--------------------------------------------------------------
 ## Menu Search
 --------------------------------------------------------------*/
-@import "navigation/search";
+@import "sass/navigation/search";
 
 /*--------------------------------------------------------------
 ## Top Menus
 --------------------------------------------------------------*/
-@import "navigation/top-menus";
+@import "sass/navigation/top-menus";
 
 /*--------------------------------------------------------------
 ## Sticky Menu
 --------------------------------------------------------------*/
-@import "navigation/sticky-menu";
+@import "sass/navigation/sticky-menu";
 
 /*--------------------------------------------------------------
 ## Post Navigation
 --------------------------------------------------------------*/
-@import "navigation/posts";
+@import "sass/navigation/posts";
 
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
-@import "modules/accessibility";
+@import "sass/modules/accessibility";
 
 /*--------------------------------------------------------------
 # Alignments
 --------------------------------------------------------------*/
-@import "modules/alignments";
+@import "sass/modules/alignments";
 
 /*--------------------------------------------------------------
 # Clearings
 --------------------------------------------------------------*/
-@import "modules/clearings";
+@import "sass/modules/clearings";
 
 /*--------------------------------------------------------------
 # Global Classes
 --------------------------------------------------------------*/
-@import "modules/global-classes";
+@import "sass/modules/global-classes";
 
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
-@import "site/secondary/widgets";
+@import "sass/site/secondary/widgets";
 
 /*--------------------------------------------------------------
 ## Search Widget
 --------------------------------------------------------------*/
-@import "site/secondary/search-widget";
+@import "sass/site/secondary/search-widget";
 
 /*--------------------------------------------------------------
 # Content Widgets
 --------------------------------------------------------------*/
-@import "site/secondary/content-widgets";
+@import "sass/site/secondary/content-widgets";
 
 /*--------------------------------------------------------------
 ## Collage Widget
 --------------------------------------------------------------*/
-@import "site/secondary/collage-widget";
+@import "sass/site/secondary/collage-widget";
 
 /*--------------------------------------------------------------
 ## Slider Widget
 --------------------------------------------------------------*/
-@import "site/secondary/slider-widget";
+@import "sass/site/secondary/slider-widget";
 
 /*--------------------------------------------------------------
 # Layout
 --------------------------------------------------------------*/
-@import "layout/layout";
+@import "sass/layout/layout";
 
 /*--------------------------------------------------------------
 ## Content & Sidebar
 --------------------------------------------------------------*/
-@import "layout/content-sidebar";
+@import "sass/layout/content-sidebar";
 
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
-@import "layout/header";
+@import "sass/layout/header";
 
 /*--------------------------------------------------------------
 # Site
@@ -224,44 +224,44 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
-@import "site/primary/posts-and-pages";
+@import "sass/site/primary/posts-and-pages";
 
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
-@import "site/primary/comments";
+@import "sass/site/primary/comments";
 
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
-@import "layout/footer";
+@import "sass/layout/footer";
 
 /*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/
-@import "modules/infinite-scroll";
+@import "sass/modules/infinite-scroll";
 
 /*--------------------------------------------------------------
 # Gutenberg
 --------------------------------------------------------------*/
-@import "modules/gutenberg";
+@import "sass/modules/gutenberg";
 
 /*--------------------------------------------------------------
 # Media
 --------------------------------------------------------------*/
-@import "media/media";
+@import "sass/media/media";
 
 /*--------------------------------------------------------------
 ## Captions
 --------------------------------------------------------------*/
-@import "media/captions";
+@import "sass/media/captions";
 
 /*--------------------------------------------------------------
 ## Galleries
 --------------------------------------------------------------*/
-@import "media/galleries";
+@import "sass/media/galleries";
 
 /*--------------------------------------------------------------
 # Plugins
 --------------------------------------------------------------*/
-@import "plugins/plugins";
+@import "sass/plugins/plugins";
