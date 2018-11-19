@@ -33,7 +33,7 @@ Affiliate Royale styling
 }
 
 #master .wafp-stats-table th {
-  background-color: #f7f7f7;
+  background-color: #fafafa;
   color: #6d686c !important;
   text-align: left !important;
 }
@@ -143,7 +143,7 @@ Affiliate Royale styling
 
 @media screen and (max-width: 600px) {
   #master .wafp-stats-table tr:nth-child(2n) {
-    background-color: #f7f7f7;
+    background-color: #fafafa;
   }
   #master .wafp-stats-table thead th {
     font-size: 15px;

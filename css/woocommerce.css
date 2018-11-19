@@ -446,7 +446,7 @@ WooCommerce styling
 }
 
 #master .woocommerce-terms-and-conditions {
-  background: #f7f7f7;
+  background: #fafafa;
   box-shadow: none;
   border: 1px solid #ececec;
 }
@@ -731,7 +731,7 @@ WooCommerce styling
 #master .woocommerce input.button.disabled:hover,
 #master .woocommerce input.button:disabled:hover,
 #master .woocommerce input.button:disabled[disabled]:hover {
-  background-color: #f7f7f7;
+  background-color: #fafafa;
 }
 
 #master .woocommerce #reviews h2 small {

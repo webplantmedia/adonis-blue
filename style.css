@@ -677,7 +677,7 @@ table th {
 
 .comment-content > table thead th,
 .entry-content > table thead th {
-  background-color: #f7f7f7;
+  background-color: #fafafa;
 }
 
 .comment-content > table th,
@@ -692,7 +692,7 @@ table th {
 @media screen and (max-width: 600px) {
   .comment-content > table tr:nth-child(2n),
   .entry-content > table tr:nth-child(2n) {
-    background-color: #f7f7f7;
+    background-color: #fafafa;
   }
   .comment-content > table th,
   .comment-content > table td,
@@ -3970,7 +3970,7 @@ html#master .top-header ul.menu li.menu-search-button i:before {
 
 .content-jetpack-testimonial .testimonial-entry-wrapper {
   padding: 0 40px;
-  background-color: #f7f7f7;
+  background-color: #fafafa;
   position: relative;
 }
 
@@ -5086,7 +5086,7 @@ body.widgetized-page .site-content {
   padding-top: 2.5rem;
   padding-bottom: 40px;
   padding-bottom: 2.5rem;
-  background-color: #f7f7f7;
+  background-color: #fafafa;
 }
 
 .search .archive-page-header .page-title,
@@ -6084,7 +6084,7 @@ h1.h1-title,
 .comment-list .comment-body {
   padding: 30px;
   padding: 1.875rem;
-  background-color: #f7f7f7;
+  background-color: #fafafa;
   margin-bottom: 30px;
   margin-bottom: 1.875rem;
 }

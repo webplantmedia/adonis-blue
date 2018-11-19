@@ -2,7 +2,7 @@
 	"version": 3,
 	"file": "style.css",
 	"sources": [
-		"sass/style.scss",
+		"style.scss",
 		"sass/variables-site/_variables-site.scss",
 		"sass/mixins/_mixins-master.scss",
 		"sass/mixins/_utilities.scss",
