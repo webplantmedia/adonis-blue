@@ -54,6 +54,11 @@
 	display: block;
 }
 
+.comment {
+	// For comment reply link button.
+	position: relative;
+}
+
 .pingback .comment-body,
 .comment-author {
 	@include rem('font-size',$font__small-size);
@@ -346,10 +351,6 @@
 		margin-bottom: 44px;
 	}
 
-	.comment-reply-link {
-		margin-top: 0;
-	}
-
 	.comments-title {
 		float: none;
 		padding-bottom: 20px;
@@ -383,19 +384,9 @@
 		padding-left: 0px;
 	}
 
-	.comment-list .children .comment-reply-link {
-		margin-top: 0;
-		margin-left: 0px;
-	}
-
 	.comment-list .children .children .comment-meta,
 	.comment-list .children .children .comment-content {
 		padding-left: 0px;
-	}
-
-	.comment-list .children .children .comment-reply-link {
-		margin-top: 0;
-		margin-left: 0px;
 	}
 
 	.comment-list .children .children .children .comment-meta,
@@ -403,10 +394,6 @@
 		padding-left: 0px;
 	}
 
-	.comment-list .children .children .children .comment-reply-link {
-		margin-top: 0;
-		margin-left: 0px;
-	}
 	.comment .comment-respond {
 		margin-left: 0;
 	}
@@ -418,35 +405,34 @@
 	@include rem('font-size',$font__small-size);
 }
 
-.comment-reply-link {
+.comment-body .reply {
 	display: inline-block;
+	line-height: 1;
+	@include rem( 'margin-top', 20px );
+}
+
+@include media( mobile ) {
+	.comment-body .reply {
+		margin-top: 0;
+		position: absolute;
+		@include rem( 'top', 30px );
+		@include rem( 'right', 30px );
+	}
+}
+
+body a.comment-reply-link {
+	display: block;
 	margin-top: 0;
-	// padding: 5px 10px;
-	// border-radius: $button__radius;
-	// color: #fff;
-	// @include rem('font-size',$font__small-size);
-	// font-weight: bold;
-	// line-height: 1;
-	// background-color: #000000;
-	// text-transform: uppercase;
-	margin-top: 25px;
+	@include rem('font-size',$font__small-size);
+	font-weight: bold;
+	text-transform: uppercase;
+	line-height: 1;
+	color: $color__gray;
+
 }
 
 .comment-reply-link:hover {
 	color: #fff;
-	background: #1c2220;
-}
-
-@media (min-width: 960px) {
-	.comment-reply-link {
-		margin-left: 100px;
-	}
-}
-
-@media (max-width: 640px) {
-	.comment-reply-link {
-		margin-top: 0;
-	}
 }
 
 .logged-in-as,
