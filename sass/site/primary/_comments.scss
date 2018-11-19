@@ -55,7 +55,8 @@
 }
 
 .comment-body {
-	// For comment reply link button.
+	// For comment reply link button. Needs to be in comment-body
+	// instead of comment because of comment plugins.
 	position: relative;
 }
 
