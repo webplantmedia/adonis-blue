@@ -421,14 +421,14 @@
 .comment-reply-link {
 	display: inline-block;
 	margin-top: 0;
-	padding: 5px 10px;
-	border-radius: $button__radius;
-	color: #fff;
-	@include rem('font-size',$font__small-size);
-	font-weight: bold;
-	line-height: 1;
-	background-color: #000000;
-	text-transform: uppercase;
+	// padding: 5px 10px;
+	// border-radius: $button__radius;
+	// color: #fff;
+	// @include rem('font-size',$font__small-size);
+	// font-weight: bold;
+	// line-height: 1;
+	// background-color: #000000;
+	// text-transform: uppercase;
 	margin-top: 25px;
 }
 

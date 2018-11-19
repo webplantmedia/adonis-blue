@@ -1166,6 +1166,7 @@ button {
 #master #eu-cookie-law input,
 #master .wc-shortcodes-button,
 #master #infinite-handle span button,
+#master .comment-reply-link,
 #master .woocommerce #respond input#submit,
 #master .woocommerce-pagination ul span,
 #master .woocommerce-pagination ul a,
@@ -1233,6 +1234,7 @@ button {
   }
 }
 
+#master .comment-reply-link,
 #master #page .button-small .wp-block-button__link,
 #master .widget_shopping_cart .button,
 #master .addresses .edit,
@@ -1248,6 +1250,8 @@ button {
   text-transform: uppercase;
 }
 
+#master .comment-reply-link:active,
+#master .comment-reply-link:focus,
 #master .wp-block-button__link:not(.has-text-color):not(.has-background):active,
 #master .wp-block-button__link:not(.has-text-color):not(.has-background):focus,
 #master .wc-stripe-checkout-button:active,
@@ -1286,6 +1290,7 @@ button {
   background: #252323;
 }
 
+#masete .comment-reply-link:hover,
 #master .wp-block-button__link:not(.has-text-color):not(.has-background):hover,
 #master .wc-stripe-checkout-button:hover,
 #master .widget.null-instagram-feed > p.clear a:hover,
@@ -6237,15 +6242,6 @@ h1.h1-title,
 .comment-reply-link {
   display: inline-block;
   margin-top: 0;
-  padding: 5px 10px;
-  border-radius: 3px;
-  color: #fff;
-  font-size: 14px;
-  font-size: 0.875rem;
-  font-weight: bold;
-  line-height: 1;
-  background-color: #000000;
-  text-transform: uppercase;
   margin-top: 25px;
 }
 

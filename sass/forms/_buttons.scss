@@ -44,6 +44,7 @@ button {
 #master #eu-cookie-law input,
 #master .wc-shortcodes-button,
 #master #infinite-handle span button,
+#master .comment-reply-link,
 #master .woocommerce #respond input#submit,
 #master .woocommerce-pagination ul span,
 #master .woocommerce-pagination ul a,
@@ -104,6 +105,7 @@ button {
 	}
 }
 
+#master .comment-reply-link,
 #master #page .button-small .wp-block-button__link,
 #master .widget_shopping_cart .button,
 #master .addresses .edit,
@@ -119,6 +121,8 @@ button {
 }
 
 // Button Psuedo's
+#master .comment-reply-link:active,
+#master .comment-reply-link:focus,
 #master .wp-block-button__link:not(.has-text-color):not(.has-background):active,
 #master .wp-block-button__link:not(.has-text-color):not(.has-background):focus,
 #master .wc-stripe-checkout-button:active,
@@ -157,6 +161,7 @@ button {
 	background: #252323;
 }
 
+#masete .comment-reply-link:hover,
 #master .wp-block-button__link:not(.has-text-color):not(.has-background):hover,
 #master .wc-stripe-checkout-button:hover,
 #master .widget.null-instagram-feed > p.clear a:hover,
